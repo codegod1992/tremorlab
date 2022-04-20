@@ -5,7 +5,7 @@ import Card from '../components/Card/Card';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'ReactComponentLibrary/Card',
+    title: 'Tremor/Card',
     component: Card,
 } as ComponentMeta<typeof Card>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

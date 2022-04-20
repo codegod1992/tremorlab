@@ -22,6 +22,14 @@ export const parseTextColorClassNames: TailwindClassParser = (twClassName) => {
     return twClassName.startsWith('text-') ? twClassName : '';
 };
 
+export const parseTextAlignmentClassNames: TailwindClassParser = (twClassName) => {
+    const validClassNames = new Set<string>([
+        'text-left', 'text-center', 'text-right', 'text-justify'
+    ]);
+    if (twClassName===undefined) return '';
+    return (validClassNames.has(twClassName)) ? twClassName : '';
+};
+
 export const parseMaxWidthClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
     return twClassName.startsWith('max-w-') ? twClassName : '';
