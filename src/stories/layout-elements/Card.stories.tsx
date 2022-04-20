@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import Card from '../components/Card/Card';
+import Card from 'components/layout-elements/Card/Card';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/Card',
+    title: 'Tremor/LayoutElements/Card',
     component: Card,
 } as ComponentMeta<typeof Card>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

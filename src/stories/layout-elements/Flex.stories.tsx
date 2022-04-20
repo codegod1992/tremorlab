@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import Flex from '../components/Flex/Flex';
+import Flex from 'components/layout-elements/Flex/Flex';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/Flex',
+    title: 'Tremor/LayoutElements/Flex',
     component: Flex,
 } as ComponentMeta<typeof Flex>;
   
