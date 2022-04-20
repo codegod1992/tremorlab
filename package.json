@@ -4,7 +4,9 @@
   "description": "",
   "scripts": {
     "rollup": "rollup -c",
-    "test": "jest",
+    "tests": "jest",
+    "lint": "eslint . --ext .ts --ext .tsx",
+    "fix-lint": "eslint . --ext .ts --ext .tsx --fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -36,9 +38,12 @@
     "@testing-library/react": "^13.1.1",
     "@types/jest": "^27.4.1",
     "@types/react": "^18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
     "autoprefixer": "^10.4.4",
     "babel-jest": "^27.5.1",
     "babel-loader": "^8.2.5",
+    "eslint": "^8.13.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
     "postcss": "^8.4.12",

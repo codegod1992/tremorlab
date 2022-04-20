@@ -1,23 +1,24 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import Button from "../components/Button/Button";
+import React from 'react';
+
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import Button from '../components/Button/Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: "ReactComponentLibrary/Button",
+    title: 'ReactComponentLibrary/Button',
     component: Button,
-  } as ComponentMeta<typeof Button>;
+} as ComponentMeta<typeof Button>;
   
-  // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-  const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
   
-  export const HelloWorld = Template.bind({});
-  // More on args: https://storybook.js.org/docs/react/writing-stories/args
-  HelloWorld.args = {
-    label: "Hello world!",
-  };
+export const HelloWorld = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+HelloWorld.args = {
+    label: 'Hello world!',
+};
   
-  export const ClickMe = Template.bind({});
-  ClickMe.args = {
-    label: "Click me!",
-  };
+export const ClickMe = Template.bind({});
+ClickMe.args = {
+    label: 'Click me!',
+};

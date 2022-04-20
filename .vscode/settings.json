@@ -1,4 +1,6 @@
 {
+    "editor.wordWrapColumn": 120,
+    "editor.rulers": [120],
     "typescript.preferences.importModuleSpecifier": "non-relative",
     "typescript.tsdk": "node_modules/typescript/lib",
 }

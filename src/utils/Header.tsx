@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 
 export interface Props {
     title: string
@@ -7,7 +7,7 @@ export interface Props {
 const Header = (props: Props) => {
     return(
         <div>{ props.title }</div>
-    )
-}
+    );
+};
 
 export default Header;

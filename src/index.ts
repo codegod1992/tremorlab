@@ -1,3 +1,3 @@
-import './tremor.css'
+import './tremor.css';
 
 export * from './components';
