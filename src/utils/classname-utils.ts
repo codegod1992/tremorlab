@@ -51,3 +51,13 @@ export const parseRoundedCornersClassNames: TailwindClassParser = (twClassName) 
     if (twClassName===undefined) return '';
     return twClassName.startsWith('rounded') ? twClassName : '';
 };
+
+export const parseJustifyContentClassNames: TailwindClassParser = (twClassName) => {
+    if (twClassName===undefined) return '';
+    return twClassName.startsWith('justify-') ? twClassName : '';
+};
+
+export const parseAlignItemsClassNames: TailwindClassParser = (twClassName) => {
+    if (twClassName===undefined) return '';
+    return twClassName.startsWith('items-') ? twClassName : '';
+};
