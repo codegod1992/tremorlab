@@ -4,13 +4,15 @@ import {
     classNames,
     parseAlignItemsClassNames,
     parseJustifyContentClassNames,
-    parseSpaceXClassNames
+    parseSpaceXClassNames,
+    parseTruncateOption
 } from '@utils/classname-utils';
 
 export interface FlexProps {
     justifyContent?: string,
     alignItems?: string,
     spaceX?: string,
+    truncate?: boolean,
     children: React.ReactNode,
 }
 
@@ -18,6 +20,7 @@ const Flex = ({
     justifyContent = 'justify-between',
     alignItems = 'items-center',
     spaceX,
+    truncate = false,
     children
 }: FlexProps) => {
     return(
@@ -25,7 +28,8 @@ const Flex = ({
             'flex',
             parseJustifyContentClassNames(justifyContent),
             parseAlignItemsClassNames(alignItems),
-            parseSpaceXClassNames(spaceX)
+            parseSpaceXClassNames(spaceX),
+            parseTruncateOption(truncate)
         ) }
         >
             { children }
