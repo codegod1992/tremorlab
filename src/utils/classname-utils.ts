@@ -3,7 +3,7 @@ interface StringJoiner {
 }
 
 interface TailwindClassParser {
-    (twClassName: string): string
+    (twClassName: string|undefined): string
 }
 
 export const classNames: StringJoiner = (
