@@ -17,19 +17,12 @@ const Template: ComponentStory<typeof Title> = (args) => (
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
-};
-
-export const WithSubtitle = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-WithSubtitle.args = {
-    subtitle: 'Subititle'
+    text: 'Title'
 };
 
 export const ChangeTextColor = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ChangeTextColor.args = {
-    title: 'Other Title',
-    subtitle: 'Subtitle',
-    titleTextColor: 'text-green-600',
-    subtitleTextColor: 'text-green-400'
+    text: 'Other Title',
+    textColor: 'text-green-600',
 };

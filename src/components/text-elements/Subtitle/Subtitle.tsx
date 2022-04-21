@@ -2,22 +2,22 @@ import React from 'react';
 
 import { classNames, parseTextColorClassNames, parseTruncateOption } from '@utils/classname-utils';
 
-export interface TitleProps {
+export interface SubtitleProps {
     text: string,
     truncate?: boolean,
     textColor?: string,
 }
 
-const Title = ({
+const Subtitle = ({
     text,
     truncate = false,
-    textColor = 'text-gray-600',
-}: TitleProps) => {
+    textColor = 'text-gray-400',
+}: SubtitleProps) => {
     return(
         <p className={ classNames(
             parseTextColorClassNames(textColor),
             parseTruncateOption(truncate),
-            'text-lg font-medium shrink-0'
+            'text-base font-normal shrink-0'
         ) }
         >
             { text }
@@ -25,4 +25,4 @@ const Title = ({
     );
 };
 
-export default Title;
+export default Subtitle;
