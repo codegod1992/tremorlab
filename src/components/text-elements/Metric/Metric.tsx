@@ -2,19 +2,19 @@ import React from 'react';
 
 import { classNames, parseTextColorClassNames } from '@utils/classname-utils';
 
-export interface MainMetricProps {
+export interface MetricProps {
     value: string,
     context?: string,
     valueTextColor?: string,
     contexTextColor?: string
 }
 
-const MainMetric = ({
+const Metric = ({
     value,
     context,
     valueTextColor = 'text-gray-600',
     contexTextColor = 'text-gray-400',
-}: MainMetricProps) => {
+}: MetricProps) => {
     return(
         <div className="flex justify-start items-baseline space-x-2">
             <p className={ classNames(
@@ -37,4 +37,4 @@ const MainMetric = ({
     );
 };
 
-export default MainMetric;
+export default Metric;

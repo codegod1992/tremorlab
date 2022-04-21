@@ -7,19 +7,19 @@ import {
     parseTruncateOption 
 } from '@utils/classname-utils';
 
-export interface BodyTextProps {
+export interface TextProps {
     textColor?: string,
     textAlignment?: string,
     truncate?: boolean,
     children: React.ReactNode
 }
 
-const BodyText = ({
+const Text = ({
     textColor = 'text-gray-500',
     textAlignment = 'text-left',
     truncate = false,
     children 
-}: BodyTextProps) => {
+}: TextProps) => {
     return(
         <p className={classNames(
             parseTextColorClassNames(textColor),
@@ -32,4 +32,4 @@ const BodyText = ({
     );
 };
 
-export default BodyText;
+export default Text;

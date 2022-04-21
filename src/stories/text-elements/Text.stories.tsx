@@ -1,21 +1,21 @@
 import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import BodyText from 'components/text-elements/BodyText/BodyText';
+import Text from 'components/text-elements/Text/Text';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/TextElements/BodyText',
-    component: BodyText,
-} as ComponentMeta<typeof BodyText>;
+    title: 'Tremor/TextElements/Text',
+    component: Text,
+} as ComponentMeta<typeof Text>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Template: ComponentStory<typeof BodyText> = (args) => (
-    <BodyText {...args}>
+const Template: ComponentStory<typeof Text> = (args) => (
+    <Text {...args}>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
         standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
         a type specimen book.
-    </BodyText>
+    </Text>
 );
   
 export const Default = Template.bind({});

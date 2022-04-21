@@ -1,17 +1,17 @@
 import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import MainMetric from '../../components/text-elements/MainMetric/MainMetric';
+import Metric from '../../components/text-elements/Metric/Metric';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/TextElements/MainMetric',
-    component: MainMetric,
-} as ComponentMeta<typeof MainMetric>;
+    title: 'Tremor/TextElements/Metric',
+    component: Metric,
+} as ComponentMeta<typeof Metric>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Template: ComponentStory<typeof MainMetric> = (args) => (
-    <MainMetric {...args} />
+const Template: ComponentStory<typeof Metric> = (args) => (
+    <Metric {...args} />
 );
   
 export const Default = Template.bind({});

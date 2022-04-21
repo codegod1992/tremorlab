@@ -1,4 +1,4 @@
-export { default as BodyText } from './BodyText';
+export { default as Text } from './Text';
 export { default as BodyValue } from './BodyValue';
-export { default as MainMetric } from './MainMetric';
+export { default as Metric } from './Metric';
 export { default as Title } from './Title';

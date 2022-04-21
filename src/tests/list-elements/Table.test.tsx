@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import BodyText from 'components/text-elements/BodyText';
 import Table from 'components/list-elements/Table';
 import TableCell from 'components/list-elements/TableCell';
 import TableRow from 'components/list-elements/TableRow';
+import Text from 'components/text-elements/Text';
 
 describe('Table', () => {
     test('renders the Table component', () => {
@@ -12,12 +12,12 @@ describe('Table', () => {
             <Table>
                 <TableRow>
                     <TableCell>
-                        <BodyText>Hello</BodyText>
+                        <Text>Hello</Text>
                     </TableCell>
                 </TableRow>
                 <TableRow>
                     <TableCell>
-                        <BodyText>World</BodyText>
+                        <Text>World</Text>
                     </TableCell>
                 </TableRow>
             </Table>
