@@ -21,7 +21,7 @@ const List = ({
             divideY,
             parseDivideYClassNames(divideY),
             parseDivideColorClassNames(divideColor),
-            'overflow-hidden',
+            'overflow-hidden w-full',
         ) }
         >
             { children }

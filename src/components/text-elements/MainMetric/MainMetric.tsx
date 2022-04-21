@@ -10,7 +10,7 @@ export interface MainMetricProps {
 }
 
 const MainMetric = ({
-    value = 'Metric',
+    value,
     context,
     valueTextColor = 'text-gray-600',
     contexTextColor = 'text-gray-400',

@@ -84,6 +84,16 @@ export const parsePaddingYClassNames: TailwindClassParser = (twClassName) => {
     return twClassName.startsWith('py-') ? twClassName : '';
 };
 
+export const parsePaddingLeftClassNames: TailwindClassParser = (twClassName) => {
+    if (twClassName===undefined) return '';
+    return twClassName.startsWith('pl-') ? twClassName : '';
+};
+
+export const parsePaddingRightClassNames: TailwindClassParser = (twClassName) => {
+    if (twClassName===undefined) return '';
+    return twClassName.startsWith('pr-') ? twClassName : '';
+};
+
 export const parseDivideYClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
     return twClassName.startsWith('divide-y') ? twClassName : '';
