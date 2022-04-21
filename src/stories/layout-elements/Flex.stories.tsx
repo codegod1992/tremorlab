@@ -53,3 +53,11 @@ ItemsStart.args = {
     alignItems: 'items-start',
     children: null
 };
+
+export const SpaceX = Template.bind({});
+SpaceX.args = {
+    justifyContent: 'justify-start',
+    alignItems: 'items-baseline',
+    spaceX: 'space-x-8',
+    children: null
+};

@@ -69,3 +69,8 @@ export const parseAlignItemsClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
     return twClassName.startsWith('items-') ? twClassName : '';
 };
+
+export const parseSpaceXClassNames: TailwindClassParser = (twClassName) => {
+    if (twClassName===undefined) return '';
+    return twClassName.startsWith('space-x-') ? twClassName : '';
+};
