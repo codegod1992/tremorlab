@@ -6,6 +6,10 @@ interface TailwindClassParser {
     (twClassName: string|undefined): string
 }
 
+interface BoolClassParser {
+    (twClassName: boolean): string
+}
+
 export const classNames: StringJoiner = (
     ...classes: string[]
 ): string => {
@@ -73,4 +77,23 @@ export const parseAlignItemsClassNames: TailwindClassParser = (twClassName) => {
 export const parseSpaceXClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
     return twClassName.startsWith('space-x-') ? twClassName : '';
+};
+
+export const parsePaddingYClassNames: TailwindClassParser = (twClassName) => {
+    if (twClassName===undefined) return '';
+    return twClassName.startsWith('py-') ? twClassName : '';
+};
+
+export const parseDivideYClassNames: TailwindClassParser = (twClassName) => {
+    if (twClassName===undefined) return '';
+    return twClassName.startsWith('divide-y') ? twClassName : '';
+};
+
+export const parseDivideColorClassNames: TailwindClassParser = (twClassName) => {
+    if (twClassName===undefined) return '';
+    return twClassName.startsWith('divide-') ? twClassName : '';
+};
+
+export const parseTruncateOption: BoolClassParser = (option) => {
+    return option===true ? 'truncate' : '';
 };
