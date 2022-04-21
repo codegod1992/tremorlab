@@ -11,13 +11,13 @@ import {
 } from '@utils/classname-utils';
 
 export interface CardProps {
-    maxWidth: string,
-    width: string,
-    border: string,
-    borderColor: string,
-    shadow: string,
-    roundedCorners: string,
-    bgColor: string,
+    maxWidth?: string,
+    width?: string,
+    border?: string,
+    borderColor?: string,
+    shadow?: string,
+    roundedCorners?: string,
+    bgColor?: string,
     children: React.ReactNode
 }
 
