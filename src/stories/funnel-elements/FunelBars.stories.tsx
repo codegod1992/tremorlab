@@ -17,5 +17,5 @@ const Template: ComponentStory<typeof FunnelBars> = (args) => (
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
-    widthPercentageList: [1]
+    widthPercentageList: [100, 70, 30, 10]
 };

@@ -1,11 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 
-import { classNames, parseBgClassNames, parseTextColorClassNames } from "@utils/classname-utils";
-import BarWrapper from "@common/BarWrapper";
+import { classNames, parseBgClassNames } from '@utils/classname-utils';
+import BarWrapper from '@common/BarWrapper';
+import Trapezoid from '@common/Trapzoid';
 
 export interface FunnelBarsProps {
     widthPercentageList: number[],
-    funnelBgColor?: string,
+    funnelColor?: string,
     funnelPixelHeight?: number
     primaryBarBgColor?: string,
     secondaryBarBgColor?: string,
@@ -14,8 +15,8 @@ export interface FunnelBarsProps {
 const FunnelBars = ({
     widthPercentageList,
     funnelPixelHeight = 70,
-    funnelBgColor = 'text-gray-100',
-    primaryBarBgColor = 'bg-gray-300',
+    funnelColor = 'text-gray-100',
+    primaryBarBgColor = 'bg-gray-400',
     secondaryBarBgColor = 'bg-gray-100',
 }: FunnelBarsProps) => {
 
@@ -30,10 +31,6 @@ const FunnelBars = ({
         setBarWrapperWidth(getRefPixelWidth(barWrapperWidthRef));
     };
 
-    const calculateSideBorderWidth = (topElementWidth: number, bottomElementWidth: number): number => (
-        Math.floor((topElementWidth - bottomElementWidth) / 2)
-    );
-
     useEffect(() => {
         handleWindowResize();
         window.addEventListener('resize', handleWindowResize);
@@ -43,34 +40,41 @@ const FunnelBars = ({
     }, []);
 
     return(
-        <>
-            <BarWrapper 
-                widthRef={ barWrapperWidthRef }
-                bgColor={ secondaryBarBgColor }
-                addClassNames={'justify-center'}
-            >
-                <div className="h-full bg-gray-400 rounded" style={ {'width': '100%'} }></div>
-            </BarWrapper>
-            <div className="flex justify-center">
-                <div
-                    className={ classNames(
-                        parseTextColorClassNames(funnelBgColor),
-                        'boder-b-0 h-0'
-                    )}
-                    style={{
-                        width: `100%`,
-                        borderTop: `${funnelPixelHeight}px solid`,
-                        borderLeft: `${calculateSideBorderWidth(barWrapperWidth*1, barWrapperWidth*0.50)}px 
-                                     solid transparent`,
-                        borderRight: `${calculateSideBorderWidth(barWrapperWidth*1, barWrapperWidth*0.50)}px
-                                      solid transparent`,
-                    }}
-                />
-            </div>
-            <BarWrapper bgColor="bg-gray-100" widthRef={ barWrapperWidthRef } addClassNames={'justify-center'}>
-                <div className="h-full bg-gray-400 rounded" style={ {'width': '50%'} }></div>
-            </BarWrapper>
-        </>
+        <div ref={ barWrapperWidthRef }>
+            { widthPercentageList?.map((widthPercentage, idx) => {
+                const currentWidthPercentage: number = widthPercentage;
+                const nextWithPercentage: number = idx!=widthPercentageList.length - 1
+                    ? widthPercentageList[idx + 1]
+                    : -1;
+
+                return(
+                    <React.Fragment key={idx}>
+                        <BarWrapper
+                            bgColor={ secondaryBarBgColor }
+                            addClassNames={'justify-center'}
+                        >
+                            <div 
+                                className={ classNames(
+                                    parseBgClassNames(primaryBarBgColor),
+                                    'h-full rounded'
+                                ) }
+                                style={ {'width': `${currentWidthPercentage}%`} } />
+                        </BarWrapper>
+                        {idx!=widthPercentageList.length - 1 ? (
+                            <div className="flex justify-center">
+                                <Trapezoid
+                                    wrapperPixelWidth={ barWrapperWidth }
+                                    topWidthPercentage={ currentWidthPercentage }
+                                    bottomWidthPercentage = {nextWithPercentage}
+                                    pixelHeight = { funnelPixelHeight }
+                                    textColor = { funnelColor }
+                                />
+                            </div>    
+                        ) : null}
+                    </React.Fragment>
+                );
+            }) }
+        </div>
     );
 };
 
