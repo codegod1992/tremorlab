@@ -17,7 +17,7 @@ const BarWrapper = ({
         <div className={ classNames(
             parseBgClassNames(bgColor),
             addClassNames,
-            'h-3 w-full flex rounded overflow-hidden',
+            'h-3 w-full relative flex rounded',
         ) }
         >
             { children }
