@@ -58,7 +58,7 @@ export const mapInputsToDeltaType = (deltaType: string, isIncreasePositive: bool
     case DeltaTypes.Decrease:
         return DeltaTypes.Increase;
     case DeltaTypes.ModerateDecrease:
-        return DeltaTypes.ModerateDecrease;
+        return DeltaTypes.ModerateIncrease;
     }
     return '';
 };
