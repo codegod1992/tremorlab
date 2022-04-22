@@ -5,30 +5,30 @@ import {
     DeltaBgColors,
     DeltaIcons,
     DeltaTextColors,
-    IconProportions, 
-    mapInputsToDeltaType
+    IconProportions,
+    mapInputsToDeltaType 
 } from '@common/component-utils';
 import BadgeWrapper from '@common/BadgeWrapper';
 import { classNames } from '@utils/classname-utils';
 
 const badgeProportionsAttributes: {[char: string]: BadgeProportions} = {
     xs: {
-        paddingX: 'px-2',
+        paddingX: 'px-1.5',
         paddingY: 'py-0.5',
         textSize: 'text-xs',
     },
     sm: {
-        paddingX: 'px-2.5',
-        paddingY: 'py-0.5',
+        paddingX: 'px-2',
+        paddingY: 'py-1',
         textSize: 'text-sm',
     },
     md: {
-        paddingX: 'px-3',
-        paddingY: 'py-0.5',
+        paddingX: 'px-2',
+        paddingY: 'py-1',
         textSize: 'text-md',
     },
     lg: {
-        paddingX: 'px-3',
+        paddingX: 'px-2',
         paddingY: 'py-0.5',
         textSize: 'text-lg',
     },
@@ -36,36 +36,34 @@ const badgeProportionsAttributes: {[char: string]: BadgeProportions} = {
 
 const iconProportionsAttributes: {[char: string]: IconProportions} = {
     xs: {
-        margin: '-ml-0.5 mr-0.5',
+        margin: '',
         iconSize: 'w-4 h-4',
     },
     sm: {
-        margin: '-ml-0.5 mr-0.5',
+        margin: '',
         iconSize: 'w-4 h-4',
     },
     md: {
-        margin: '-ml-0.5 mr-0.5',
-        iconSize: 'w-4 h-4',
+        margin: '',
+        iconSize: 'w-5 h-5',
     },
     lg: {
-        margin: '-ml-0.5 mr-0.5',
-        iconSize: 'w-4 h-4',
+        margin: '',
+        iconSize: 'w-6 h-6',
     },
 };
 
-export interface DeltaBadgeProps {
-    delta: string,
+export interface DeltaIconBadgeProps {
     deltaType: string,
     isIncreasePositive?: boolean,
     badgeSize: string
 }
 
-const DeltaBadge = ({
-    delta,
+const DeltaIconBadge = ({
     deltaType,
     isIncreasePositive = true,
     badgeSize = 'sm'
-}: DeltaBadgeProps) => {
+}: DeltaIconBadgeProps) => {
     const Icon = DeltaIcons[deltaType];
     const mappedDeltaType = mapInputsToDeltaType(deltaType, isIncreasePositive);
     return(
@@ -79,9 +77,8 @@ const DeltaBadge = ({
                 iconProportionsAttributes[badgeSize].iconSize || '',
             ) }
             />
-            { delta }
         </BadgeWrapper>
     );
 };
 
-export default DeltaBadge;
+export default DeltaIconBadge;
