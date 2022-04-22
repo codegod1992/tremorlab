@@ -14,9 +14,22 @@ const Template: ComponentStory<typeof DeltaBar> = (args) => (
     <DeltaBar {...args} />
 );
   
-export const Default = Template.bind({});
+export const Increase = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Default.args = {
+Increase.args = {
     widthPercentage: 50,
     deltaType:'increase'
+};
+
+export const Decrease = Template.bind({});
+Decrease.args = {
+    widthPercentage: 50,
+    deltaType:'decrease'
+};
+
+export const IncreaseReversed = Template.bind({});
+IncreaseReversed.args = {
+    widthPercentage: 50,
+    deltaType:'increase',
+    isIncreasePositive: false
 };

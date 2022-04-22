@@ -7,13 +7,20 @@ import { DeltaTypes } from '@common/component-utils';
 export interface DeltaBarProps {
     widthPercentage: number,
     deltaType: string,
+    isIncreasePositive: boolean,
     barBgColor?: string,
     markerBgColor?: string
 }
 
+const DeltaTypeBgColors = {
+    Increase: 'bg-emerald-500',
+    Decrease: 'bg-rose-500'
+};
+
 const DeltaBar = ({
     widthPercentage,
     deltaType,
+    isIncreasePositive = true,
     barBgColor = 'bg-gray-200',
     markerBgColor = 'bg-gray-400'
 }: DeltaBarProps) => {
@@ -21,7 +28,13 @@ const DeltaBar = ({
         <BarWrapper bgColor={ classNames(parseBgClassNames(barBgColor)) }>
             <div className="w-1/2 h-full flex justify-end bg-transparent rounded-l-full">
                 { deltaType===DeltaTypes.Decrease ? (
-                    <div className="bg-rose-500 rounded-l-full" style={ {'width': `${widthPercentage}%`} } />
+                    <div 
+                        className={ classNames(
+                            isIncreasePositive ? DeltaTypeBgColors.Decrease : DeltaTypeBgColors.Increase,
+                            'rounded-l-full'
+                        ) } 
+                        style={ {'width': `${widthPercentage}%`} } 
+                    />
                 ) : null}
             </div>
             <div className={ classNames(
@@ -31,7 +44,13 @@ const DeltaBar = ({
             />
             <div className="w-1/2 h-full flex justify-start bg-transparent rounded-r-full">
                 { deltaType===DeltaTypes.Increase ? (
-                    <div className="bg-emerald-500 rounded-r-full" style={ {'width': `${widthPercentage}%`} } />
+                    <div 
+                        className={ classNames(
+                            isIncreasePositive ? DeltaTypeBgColors.Increase : DeltaTypeBgColors.Decrease,
+                            'rounded-r-full'
+                        ) }
+                        style={ {'width': `${widthPercentage}%`} } 
+                    />
                 ) : null}
             </div>
         </BarWrapper>
