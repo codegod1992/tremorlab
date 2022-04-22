@@ -29,48 +29,50 @@ const badgeProportionsAttributes: {[char: string]: BadgeProportions} = {
 
 const iconProportionsAttributes: {[char: string]: IconProportions} = {
     xs: {
-        margin: 'mr-1',
-        iconSize: 'w-4 h-4',
+        margin: 'ml-0.5 mr-1.5',
+        iconSize: 'w-2 h-2',
     },
     sm: {
-        margin: '-ml-0.5 mr-1',
-        iconSize: 'w-4 h-4',
+        margin: 'mr-1.5',
+        iconSize: 'w-2.5 h-2.5',
     },
     md: {
         margin: '-ml-0.5 mr-1.5',
-        iconSize: 'w-4 h-4',
+        iconSize: 'w-2.5 h-2.5',
     },
     lg: {
         margin: '-ml-0.5 mr-1.5',
-        iconSize: 'w-5 h-5',
+        iconSize: 'w-2.5 h-2.5',
     },
 };
 
-export interface IconTextBadgeProps {
+export interface StatusBadgeProps {
     text: string,
-    badgeSize?: string,
-    Icon: React.ElementType
+    badgeSize?: string
 }
 
-const IconTextBadge = ({
+const StatusBadge = ({
     text,
-    Icon,
-    badgeSize = 'sm',
-}: IconTextBadgeProps) => {
+    badgeSize = 'sm'
+}: StatusBadgeProps) => {
     return(
-        <BadgeWrapper 
-            {...badgeProportionsAttributes[badgeSize]}
-            bgColor = {'bg-gray-100'}
-            textColor = {'text-gray-800'}
+        <BadgeWrapper
+            { ...badgeProportionsAttributes[badgeSize] }
+            bgColor={ 'bg-emerald-100' }
+            textColor={ 'text-emerald-800' }
         >
-            <Icon className={ classNames(
-                iconProportionsAttributes[badgeSize].margin || '',
-                iconProportionsAttributes[badgeSize].iconSize || '',
-            ) }
-            />
+            <svg
+                className={ classNames( 
+                    iconProportionsAttributes[badgeSize].margin || '',
+                    iconProportionsAttributes[badgeSize].iconSize || '',
+                )}
+                fill="currentColor" viewBox="0 0 8 8"
+            >
+                <circle cx={4} cy={4} r={3} />
+            </svg>
             { text }
         </BadgeWrapper>
     );
 };
 
-export default IconTextBadge;
+export default StatusBadge;

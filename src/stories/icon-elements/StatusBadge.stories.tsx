@@ -3,19 +3,19 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Flex } from 'components';
-import TextBadge from 'components/icon-elements/TextBadge/TextBadge';
+import StatusBadge from 'components/icon-elements/StatusBadge/StatusBadge';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/IconElements/TextBadge',
-    component: TextBadge,
-} as ComponentMeta<typeof TextBadge>;
+    title: 'Tremor/IconElements/StatusBadge',
+    component: StatusBadge,
+} as ComponentMeta<typeof StatusBadge>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Template: ComponentStory<typeof TextBadge> = (args) => (
+const Template: ComponentStory<typeof StatusBadge> = (args) => (
     <Flex>
         <div>Hello</div>
-        <TextBadge {...args} text={ 'Only Text' } />
+        <StatusBadge {...args} text={ 'Live' } />
     </Flex>
 );
 
