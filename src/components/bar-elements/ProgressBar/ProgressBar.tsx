@@ -5,20 +5,20 @@ import BarWrapper from '@common/BarWrapper';
 
 export interface ProgressBarProps {
     widthPercentage: number,
-    primaryBgColor?: string,
-    secondaryBgColor?: string
+    primaryBarBgColor?: string,
+    secondaryBarBgColor?: string
 }
 
 const ProgressBar = ({
     widthPercentage,
-    primaryBgColor = 'bg-blue-500',
-    secondaryBgColor = 'bg-blue-200', 
+    primaryBarBgColor = 'bg-blue-500',
+    secondaryBarBgColor = 'bg-blue-200', 
 }: ProgressBarProps) => {
     return(
-        <BarWrapper bgColor={ secondaryBgColor }>
+        <BarWrapper bgColor={ secondaryBarBgColor }>
             <div 
                 className={ classNames(
-                    parseBgClassNames(primaryBgColor),
+                    parseBgClassNames(primaryBarBgColor),
                     'h-full flex-col text-center rounded justify-center'
                 ) }
                 style={ {'width': `${widthPercentage}%`} }
