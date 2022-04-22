@@ -20,18 +20,17 @@ Default.args = {
     value: 'USD 70,000.00',
 };
 
-export const WithSubtitle = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-WithSubtitle.args = {
-    value: 'USD 70,000.00',
-    context: 'from 20,000.00 $'
+export const WithName = Template.bind({});
+WithName.args = {
+    value: '70,000.00 USD',
+    name: 'Salary'
 };
 
 export const ChangeTextColor = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ChangeTextColor.args = {
     value: 'USD 70,000.00',
-    context: 'from USD 20,000.00',
+    name: 'Salary',
     valueTextColor: 'text-green-600',
-    contexTextColor: 'text-green-400'
+    nameTextColor: 'text-green-600',
 };

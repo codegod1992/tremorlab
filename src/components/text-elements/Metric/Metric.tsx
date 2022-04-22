@@ -4,19 +4,27 @@ import { classNames, parseTextColorClassNames } from '@utils/classname-utils';
 
 export interface MetricProps {
     value: string,
-    context?: string,
+    name?: string,
     valueTextColor?: string,
-    contexTextColor?: string
+    nameTextColor?: string
 }
 
 const Metric = ({
     value,
-    context,
+    name,
     valueTextColor = 'text-gray-600',
-    contexTextColor = 'text-gray-400',
+    nameTextColor = 'text-gray-600'
 }: MetricProps) => {
     return(
-        <div className="flex justify-start items-baseline space-x-2">
+        <div>
+            { name ? (
+                <p className={ classNames(
+                    parseTextColorClassNames(nameTextColor),
+                    'text-sm font-normal'
+                ) }>
+                    { name }
+                </p>
+            ) : null}
             <p className={ classNames(
                 parseTextColorClassNames(valueTextColor),
                 'text-3xl shrink-0 font-semibold'
@@ -24,15 +32,6 @@ const Metric = ({
             >
                 { value }
             </p>
-            {context ? (
-                <p className={ classNames(
-                    parseTextColorClassNames(contexTextColor),
-                    'text-sm shrink-0 font-normal'
-                ) }
-                >
-                    { context }
-                </p>
-            ) : null}
         </div>
     );
 };
