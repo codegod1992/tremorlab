@@ -1,8 +1,8 @@
 import React from 'react';
 
+import { DeltaBgColors, DeltaTypes, mapInputsToDeltaType } from '@common/component-utils';
 import { classNames, parseBgClassNames } from '@utils/classname-utils';
 import BarWrapper from '@common/BarWrapper';
-import { DeltaTypes } from '@common/component-utils';
 
 export interface DeltaBarProps {
     widthPercentage: number,
@@ -11,11 +11,6 @@ export interface DeltaBarProps {
     barBgColor?: string,
     markerBgColor?: string
 }
-
-const DeltaTypeBgColors = {
-    Increase: 'bg-emerald-500',
-    Decrease: 'bg-rose-500'
-};
 
 const DeltaBar = ({
     widthPercentage,
@@ -30,7 +25,7 @@ const DeltaBar = ({
                 { deltaType===DeltaTypes.Decrease ? (
                     <div 
                         className={ classNames(
-                            isIncreasePositive ? DeltaTypeBgColors.Decrease : DeltaTypeBgColors.Increase,
+                            DeltaBgColors[mapInputsToDeltaType(deltaType, isIncreasePositive)],
                             'rounded-l-full'
                         ) } 
                         style={ {'width': `${widthPercentage}%`} } 
@@ -46,9 +41,9 @@ const DeltaBar = ({
                 { deltaType===DeltaTypes.Increase ? (
                     <div 
                         className={ classNames(
-                            isIncreasePositive ? DeltaTypeBgColors.Increase : DeltaTypeBgColors.Decrease,
+                            DeltaBgColors[mapInputsToDeltaType(deltaType, isIncreasePositive)],
                             'rounded-r-full'
-                        ) }
+                        ) } 
                         style={ {'width': `${widthPercentage}%`} } 
                     />
                 ) : null}
