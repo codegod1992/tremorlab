@@ -20,6 +20,7 @@ const StackedBar = ({
             {elements.map(([widthPercentage, bgColor], idx) => (
                 <div key={ idx } style={ { width: `${widthPercentage}%` } } className={ classNames(
                     parseBgClassNames(bgColor),
+                    'h-full'
                 ) }
                 />
             ))}

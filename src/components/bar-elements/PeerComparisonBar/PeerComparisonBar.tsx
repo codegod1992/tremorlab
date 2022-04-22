@@ -22,11 +22,11 @@ const PeerComparisonBar = ({
 }: PeerComparisonBarProps) => {
     return(
         <BarWrapper bgColor={ classNames(parseBgClassNames(barBgColor)) }>
-            <div className="h-3 bg-transparent" style={ {'width': `${peerGroupMinPercentage}%`} } />
+            <div className="h-full bg-transparent" style={ {'width': `${peerGroupMinPercentage}%`} } />
             <div
                 className={ classNames(
                     parseBgClassNames(peerGroupBgColor),
-                    'h-3 rounded-full'
+                    'h-full rounded-full'
                 ) }
                 style={ {'width': `${peerGroupMaxPercentage - peerGroupMinPercentage}%`} } 
             />

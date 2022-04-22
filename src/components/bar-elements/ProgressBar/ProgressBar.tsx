@@ -19,7 +19,7 @@ const ProgressBar = ({
             <div 
                 className={ classNames(
                     parseBgClassNames(primaryBgColor),
-                    'flex-col text-center rounded justify-center'
+                    'h-full flex-col text-center rounded justify-center'
                 ) }
                 style={ {'width': `${widthPercentage}%`} }
             />
