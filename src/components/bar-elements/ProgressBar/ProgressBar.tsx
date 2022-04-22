@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { classNames, parseBgClassNames } from '@utils/classname-utils';
+import BarWrapper from '@common/BarWrapper';
 
 export interface ProgressBarProps {
     widthPercentage: number,
@@ -14,11 +15,7 @@ const ProgressBar = ({
     secondaryColor = 'bg-blue-200', 
 }: ProgressBarProps) => {
     return(
-        <div className={ classNames(
-            parseBgClassNames(secondaryColor),
-            'h-3 flex rounded w-full overflow-hidden'
-        ) }
-        >
+        <BarWrapper bgColor={ secondaryColor }>
             <div 
                 className={ classNames(
                     parseBgClassNames(primaryColor),
@@ -26,7 +23,7 @@ const ProgressBar = ({
                 ) }
                 style={ {'width': `${widthPercentage}%`} }
             />
-        </div>
+        </BarWrapper>
     );
 };
 
