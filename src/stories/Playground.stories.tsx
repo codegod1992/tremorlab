@@ -2,8 +2,21 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Caption, Card, DeltaBadge, Flex, Metric, ProgressBar, Subtitle, Text, Title, DeltaBar, PrimaryButton } from 'components';
+import { 
+    Caption,
+    Card,
+    DeltaBadge,
+    DeltaBar,
+    Flex,
+    Metric,
+    PrimaryButton,
+    ProgressBar,
+    Subtitle,
+    Text,
+    Title 
+} from 'components';
 
+const onClick = () => (console.log('clicked'));
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -45,7 +58,7 @@ const Template: ComponentStory<typeof Card> = (args) => (
             </div>
             <div className="mt-2">
                 <Flex justifyContent="justify-end">
-                    <PrimaryButton text="Button Text" onClick={console.log('clicked')}/>
+                    <PrimaryButton text="Button Text" onClick={onClick}/>
                 </Flex>
             </div>
         </Card>
