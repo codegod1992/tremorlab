@@ -59,6 +59,12 @@ export type ButtonColorTypes = {
     focusRingColor: string,
 }
 
+export interface ButtonProps {
+    text: string,
+    buttonSize?: string,
+    onClick: React.MouseEventHandler<HTMLButtonElement>,
+} 
+
 export type IconProportions = {
     margin?: string,
     iconSize: string,

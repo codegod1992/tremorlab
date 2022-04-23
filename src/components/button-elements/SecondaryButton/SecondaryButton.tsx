@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ButtonProportions } from '@common/component-utils';
+import { ButtonProportions, ButtonProps } from '@common/component-utils';
 import ButtonWrapper from '@common/ButtonWrapper';
 
 const buttonProportionsAttributes: {[char: string]: ButtonProportions} = {
@@ -34,17 +34,11 @@ const buttonProportionsAttributes: {[char: string]: ButtonProportions} = {
     },
 };
 
-export interface SecondaryButtonProps {
-    text: string,
-    onClick: React.MouseEventHandler<HTMLButtonElement>,
-    buttonSize?: string,
-}
-
 const SecondaryButton = ({
     text,
     onClick,
     buttonSize = 'sm'
-}: SecondaryButtonProps) => {
+}: ButtonProps) => {
     return(
         <ButtonWrapper
             onClick={ onClick }

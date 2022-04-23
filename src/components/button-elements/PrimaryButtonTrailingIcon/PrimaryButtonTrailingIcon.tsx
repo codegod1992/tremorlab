@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { ButtonProportions, ButtonProps } from '@common/component-utils';
+import { ButtonProportions, ButtonProps, IconProportions } from '@common/component-utils';
 import ButtonWrapper from '@common/ButtonWrapper';
+import { classNames } from '@utils/classname-utils';
 
 const buttonProportionsAttributes: {[char: string]: ButtonProportions} = {
     xs: {
@@ -34,11 +35,35 @@ const buttonProportionsAttributes: {[char: string]: ButtonProportions} = {
     },
 };
 
-const PrimaryButton = ({
+const iconProportionsAttributes: {[char: string]: IconProportions} = {
+    xs: {
+        margin: '-mr-1 ml-1.5',
+        iconSize: 'w-4 h-4',
+    },
+    sm: {
+        margin: '-mr-1 ml-1.5',
+        iconSize: 'w-5 h-5',
+    },
+    md: {
+        margin: '-mr-1 ml-1.5',
+        iconSize: 'w-5 h-5',
+    },
+    lg: {
+        margin: '-mr-1 ml-1.5',
+        iconSize: 'w-6 h-6',
+    },
+};
+
+export interface PrimaryButtonTrailingIconProps extends ButtonProps {
+    Icon: React.ElementType,
+}
+
+const PrimaryButtonTrailingIcon = ({
     text,
+    Icon,
     onClick,
     buttonSize = 'sm'
-}: ButtonProps) => {
+}: PrimaryButtonTrailingIconProps) => {
     return(
         <ButtonWrapper
             onClick={ onClick }
@@ -52,8 +77,15 @@ const PrimaryButton = ({
             focusRingColor={ 'ring-blue-500' }
         >
             { text }
+            <Icon 
+                className={classNames(
+                    iconProportionsAttributes[buttonSize].margin || '',
+                    iconProportionsAttributes[buttonSize].iconSize || '',
+                )}
+                aria-hidden="true"
+            />   
         </ButtonWrapper>
     );
 };
 
-export default PrimaryButton;
+export default PrimaryButtonTrailingIcon;
