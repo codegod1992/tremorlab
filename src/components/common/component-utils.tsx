@@ -78,10 +78,6 @@ export type IconProportions = {
     iconSize: string,
 }
 
-export type HandleChangeFunc = {
-    (e: React.ChangeEvent<HTMLInputElement>): void
-}
-
 export const mapInputsToDeltaType = (deltaType: string, isIncreasePositive: boolean): string => {
     if (isIncreasePositive || deltaType===DeltaTypes.Unchanged) {
         return deltaType;

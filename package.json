@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "rollup": "rollup -c",
+    "publish": "npm run rollup && npm publish",
     "tests": "jest",
     "lint": "eslint . --ext .ts --ext .tsx",
     "fix-lint": "eslint . --ext .ts --ext .tsx --fix",
