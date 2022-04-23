@@ -36,15 +36,18 @@ const buttonProportionsAttributes: {[char: string]: ButtonProportions} = {
 
 export interface PrimaryButtonProps {
     text: string,
+    onClick: React.MouseEventHandler<HTMLButtonElement>,
     buttonSize?: string,
 }
 
 const PrimaryButton = ({
     text,
+    onClick,
     buttonSize = 'sm'
 }: PrimaryButtonProps) => {
     return(
         <ButtonWrapper
+            onClick={ onClick }
             { ...buttonProportionsAttributes[buttonSize] }
             textColor={ 'text-white' }
             hoverTextColor={ '' }

@@ -36,15 +36,18 @@ const buttonProportionsAttributes: {[char: string]: ButtonProportions} = {
 
 export interface SecondaryButtonProps {
     text: string,
+    onClick: React.MouseEventHandler<HTMLButtonElement>,
     buttonSize?: string,
 }
 
 const SecondaryButton = ({
     text,
+    onClick,
     buttonSize = 'sm'
 }: SecondaryButtonProps) => {
     return(
         <ButtonWrapper
+            onClick={ onClick }
             { ...buttonProportionsAttributes[buttonSize] }
             textColor={ 'text-blue-600' }
             bgColor={ 'bg-transparent' }
