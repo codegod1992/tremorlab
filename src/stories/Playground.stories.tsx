@@ -5,6 +5,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { 
     Caption,
     Card,
+    ContentOverflow,
     DeltaBadge,
     DeltaBar,
     Flex,
@@ -36,14 +37,14 @@ const Template: ComponentStory<typeof Card> = (args) => (
             <div style={{'marginTop': '10px'}}>
                 <Metric value="21.345"/>
             </div>
-            <div className="overflow-y-auto h-24 mt-2">
+            <ContentOverflow>
                 <Text>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                     industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
                     and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
                     leap into electronic typesetting, remaining essentially unchanged.
                 </Text>
-            </div>
+            </ContentOverflow>
             <div style={{'marginTop': '20px'}}>
                 <Flex>
                     <Flex justifyContent="justify-start" alignItems="items-baseline" spaceX="space-x-2">
@@ -71,11 +72,11 @@ const Template: ComponentStory<typeof Card> = (args) => (
             <div style={{'marginTop': '10px'}}>
                 <Metric value="21.345"/>
             </div>
-            <div className="overflow-y-auto h-24 mt-2">
+            <ContentOverflow>
                 <Text>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
                 </Text>
-            </div>
+            </ContentOverflow>
             <div style={{'marginTop': '20px'}}>
                 <Flex>
                     <Flex justifyContent="justify-start" alignItems="items-baseline" spaceX="space-x-2">
@@ -98,14 +99,14 @@ const Template: ComponentStory<typeof Card> = (args) => (
             <div style={{'marginTop': '10px'}}>
                 <Metric value="21.345"/>
             </div>
-            <div className="overflow-y-auto h-24  mt-2">
+            <ContentOverflow>
                 <Text>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
                     industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type 
                     and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
                     leap into electronic typesetting, remaining essentially unchanged.
                 </Text>
-            </div>
+            </ContentOverflow>
             <div style={{'marginTop': '20px'}}>
                 <Flex>
                     <Flex justifyContent="justify-start" alignItems="items-baseline" spaceX="space-x-2">

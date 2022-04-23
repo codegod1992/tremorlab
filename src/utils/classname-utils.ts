@@ -107,3 +107,20 @@ export const parseDivideColorClassNames: TailwindClassParser = (twClassName) => 
 export const parseTruncateOption: BoolClassParser = (option) => {
     return option===true ? 'truncate' : '';
 };
+
+export const stringIsNumeric = (str: string|undefined): boolean => {
+    return !isNaN(Number(str)) && (str!==undefined);
+};
+
+export const stringEndsWithNumber = (str: string): boolean => {
+    return stringIsNumeric(str.split('-').pop());
+};
+
+export const parseFixedHeightClassNames: TailwindClassParser = (twClassName) => {
+    if (twClassName===undefined) return '';
+    return (
+        twClassName.startsWith('h-') && stringEndsWithNumber(twClassName)
+            ? twClassName
+            : ''
+    );
+};
