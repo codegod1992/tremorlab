@@ -51,9 +51,11 @@ export type ButtonProportions = {
 
 export type ButtonColorTypes = {
     textColor: string, 
+    hoverTextColor: string,
     bgColor: string,
     hoverBgColor: string,
     borderColor: string,
+    hoverBorderColor: string,
     focusRingColor: string,
 }
 

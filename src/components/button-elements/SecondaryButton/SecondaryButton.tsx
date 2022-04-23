@@ -34,24 +34,24 @@ const buttonProportionsAttributes: {[char: string]: ButtonProportions} = {
     },
 };
 
-export interface PrimaryButtonProps {
+export interface SecondaryButtonProps {
     text: string,
     buttonSize?: string,
 }
 
-const PrimaryButton = ({
+const SecondaryButton = ({
     text,
     buttonSize = 'sm'
-}: PrimaryButtonProps) => {
+}: SecondaryButtonProps) => {
     return(
         <ButtonWrapper
             { ...buttonProportionsAttributes[buttonSize] }
-            textColor={ 'text-white' }
-            hoverTextColor={ '' }
-            bgColor={ 'bg-blue-600' }
+            textColor={ 'text-blue-600' }
+            bgColor={ 'bg-transparent' }
             hoverBgColor={ 'bg-blue-700' }
-            borderColor={ 'border-transparent' }
-            hoverBorderColor={ 'bg-blue-700' }
+            hoverTextColor={ 'text-white' }
+            borderColor={ 'border-blue-600' }
+            hoverBorderColor={ 'border-blue-700' }
             focusRingColor={ 'ring-blue-500' }
         >
             { text }
@@ -59,4 +59,4 @@ const PrimaryButton = ({
     );
 };
 
-export default PrimaryButton;
+export default SecondaryButton;

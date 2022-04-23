@@ -14,18 +14,20 @@ const ButtonWrapper = ({
     rounded,
     border,
     textColor,
+    hoverTextColor,
     bgColor,
     hoverBgColor,
     borderColor,
+    hoverBorderColor,
     focusRingColor,
     children
 }: ButtonWrapperProps) => {
     return(
         <button className={classNames(
             paddingX, paddingY, textSize, rounded, border, textColor, bgColor, borderColor,
-            `focus:${focusRingColor}`, `hover:${hoverBgColor}`,
+            `focus:${focusRingColor}`, `hover:${hoverBgColor}`, `hover:${hoverTextColor}`, `hover:${hoverBorderColor}`,
             'flex-shrink-0 inline-flex items-center border border-transparent font-medium shadow-sm',
-            'bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2'
+            'focus:outline-none focus:ring-2 focus:ring-offset-2'
         )}
         >
             { children }
