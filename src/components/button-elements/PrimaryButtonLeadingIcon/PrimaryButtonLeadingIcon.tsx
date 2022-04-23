@@ -37,33 +37,33 @@ const buttonProportionsAttributes: {[char: string]: ButtonProportions} = {
 
 const iconProportionsAttributes: {[char: string]: IconProportions} = {
     xs: {
-        margin: '-mr-0.5 ml-1.5',
+        margin: '-ml-0.5 mr-1.5',
         iconSize: 'w-4 h-4',
     },
     sm: {
-        margin: '-mr-1 ml-1.5',
+        margin: '-ml-1 mr-1.5',
         iconSize: 'w-5 h-5',
     },
     md: {
-        margin: '-mr-1 ml-1.5',
+        margin: '-ml-1 mr-1.5',
         iconSize: 'w-5 h-5',
     },
     lg: {
-        margin: '-mr-1 ml-1.5',
+        margin: '-ml-1 mr-1.5',
         iconSize: 'w-6 h-6',
     },
 };
 
-export interface PrimaryButtonTrailingIconProps extends ButtonProps {
+export interface PrimaryButtonLeadingIconProps extends ButtonProps {
     Icon: React.ElementType,
 }
 
-const PrimaryButtonTrailingIcon = ({
+const PrimaryButtonLeadingIcon = ({
     text,
     Icon,
     onClick,
     buttonSize = 'sm'
-}: PrimaryButtonTrailingIconProps) => {
+}: PrimaryButtonLeadingIconProps) => {
     return(
         <ButtonWrapper
             onClick={ onClick }
@@ -76,7 +76,6 @@ const PrimaryButtonTrailingIcon = ({
             hoverBorderColor={ 'bg-blue-700' }
             focusRingColor={ 'ring-blue-500' }
         >
-            { text }
             <Icon 
                 className={classNames(
                     iconProportionsAttributes[buttonSize].margin || '',
@@ -84,8 +83,9 @@ const PrimaryButtonTrailingIcon = ({
                 )}
                 aria-hidden="true"
             />   
+            { text }
         </ButtonWrapper>
     );
 };
 
-export default PrimaryButtonTrailingIcon;
+export default PrimaryButtonLeadingIcon;
