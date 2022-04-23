@@ -57,7 +57,7 @@ export interface DeltaBadgeProps {
     delta: string,
     deltaType: string,
     isIncreasePositive?: boolean,
-    badgeSize: string
+    badgeSize?: string
 }
 
 const DeltaBadge = ({

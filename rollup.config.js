@@ -28,13 +28,13 @@ export default [
         ],
         plugins: [
             peerDepsExternal(),
+            postcss(),
             resolve(),
             commonjs(),
             typescript({ 
                 tsconfig: './tsconfig.json',
                 exclude: ['**/stories/**', '**/tests/**']
             }),
-            postcss(),
             terser(),
             typescriptPaths()
         ],

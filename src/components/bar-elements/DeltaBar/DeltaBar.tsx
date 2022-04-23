@@ -7,7 +7,7 @@ import BarWrapper from '@common/BarWrapper';
 export interface DeltaBarProps {
     widthPercentage: number,
     deltaType: string,
-    isIncreasePositive: boolean,
+    isIncreasePositive?: boolean,
     barBgColor?: string,
     markerBgColor?: string
 }
