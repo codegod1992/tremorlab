@@ -17,7 +17,7 @@ import {
     Title 
 } from 'components';
 
-const onClick = () => (console.log('clicked'));
+const handleClick = () => (console.log('clicked'));
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -59,7 +59,7 @@ const Template: ComponentStory<typeof Card> = (args) => (
             </div>
             <div className="mt-2">
                 <Flex justifyContent="justify-end">
-                    <PrimaryButton text="Button Text" onClick={onClick}/>
+                    <PrimaryButton text="Button Text" handleClick={handleClick}/>
                 </Flex>
             </div>
         </Card>

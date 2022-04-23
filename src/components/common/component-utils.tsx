@@ -66,17 +66,20 @@ export type ButtonColorTypes = {
 export interface ButtonProps {
     text: string,
     buttonSize?: string,
-    onClick: React.MouseEventHandler<HTMLButtonElement>,
+    handleClick: React.MouseEventHandler<HTMLButtonElement>,
 } 
 
 export interface ButtonWithIconProps extends ButtonProps {
     Icon: React.ElementType,
 } 
 
-
 export type IconProportions = {
     margin?: string,
     iconSize: string,
+}
+
+export type HandleChangeFunc = {
+    (e: React.ChangeEvent<HTMLInputElement>): void
 }
 
 export const mapInputsToDeltaType = (deltaType: string, isIncreasePositive: boolean): string => {

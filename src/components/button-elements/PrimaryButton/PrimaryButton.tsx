@@ -34,12 +34,12 @@ const buttonShapeAttributes: ButtonShapeTypes = {
 
 const PrimaryButton = ({
     text,
-    onClick,
+    handleClick,
     buttonSize = 'sm'
 }: ButtonProps) => {
     return(
         <ButtonWrapper
-            onClick={ onClick }
+            onClick={ handleClick }
             { ...buttonProportionsAttributes[buttonSize] }
             { ...buttonShapeAttributes }
             textColor={ 'text-white' }

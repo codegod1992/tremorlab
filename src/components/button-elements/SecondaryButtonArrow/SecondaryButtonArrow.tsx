@@ -34,12 +34,12 @@ const buttonShapeAttributes: ButtonShapeTypes = {
 
 const SecondaryButtonArrow = ({
     text,
-    onClick,
+    handleClick,
     buttonSize = 'sm'
 }: ButtonProps) => {
     return(
         <ButtonWrapper
-            onClick={ onClick }
+            onClick={ handleClick }
             { ...buttonProportionsAttributes[buttonSize] }
             { ...buttonShapeAttributes }
             textColor={ 'text-blue-600' }

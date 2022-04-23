@@ -55,12 +55,12 @@ const iconProportionsAttributes: {[char: string]: IconProportions} = {
 const SecondaryButtonLeadingIcon = ({
     text,
     Icon,
-    onClick,
+    handleClick,
     buttonSize = 'sm'
 }: ButtonWithIconProps) => {
     return(
         <ButtonWrapper
-            onClick={ onClick }
+            onClick={ handleClick }
             { ...buttonProportionsAttributes[buttonSize] }
             { ...buttonShapeAttributes }
             textColor={ 'text-blue-600' }

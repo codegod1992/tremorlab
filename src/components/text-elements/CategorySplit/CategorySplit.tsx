@@ -52,7 +52,7 @@ const LeftCategoryBlock = ({
                     </span>
                     <span className={ classNames(
                         parseTextColorClassNames(textColor),
-                        'text-base font-normal tabular-nums'
+                        'text-base font-normal'
                     ) }
                     >
                         { context }

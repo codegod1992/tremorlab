@@ -56,12 +56,12 @@ const iconProportionsAttributes: {[char: string]: IconProportions} = {
 const PrimaryButtonTrailingIcon = ({
     text,
     Icon,
-    onClick,
+    handleClick,
     buttonSize = 'sm'
 }: ButtonWithIconProps) => {
     return(
         <ButtonWrapper
-            onClick={ onClick }
+            onClick={ handleClick }
             { ...buttonProportionsAttributes[buttonSize] }
             { ...buttonShapeAttributes }
             textColor={ 'text-white' }

@@ -54,6 +54,11 @@ export const parseBorderLeftClassNames: TailwindClassParser = (twClassName) => {
     return twClassName.startsWith('border-l') ? twClassName : '';
 };
 
+export const parseBorderBottomClassNames: TailwindClassParser = (twClassName) => {
+    if (twClassName===undefined) return '';
+    return twClassName.startsWith('border-b') ? twClassName : '';
+};
+
 export const parseShadowClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
     return twClassName.startsWith('shadow') ? twClassName : '';
