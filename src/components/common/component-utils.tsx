@@ -41,6 +41,22 @@ export type BadgeProportions = {
     textSize: string,
 }
 
+export type ButtonProportions = {
+    paddingX: string,
+    paddingY: string,
+    textSize: string,
+    rounded: string,
+    border: string
+}
+
+export type ButtonColorTypes = {
+    textColor: string, 
+    bgColor: string,
+    hoverBgColor: string,
+    borderColor: string,
+    focusRingColor: string,
+}
+
 export type IconProportions = {
     margin?: string,
     iconSize: string,
