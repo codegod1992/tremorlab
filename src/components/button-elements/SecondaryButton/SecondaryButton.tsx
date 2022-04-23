@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ButtonProportions, ButtonProps } from '@common/component-utils';
+import { ButtonProportions, ButtonProps, ButtonShapeTypes } from '@common/component-utils';
 import ButtonWrapper from '@common/ButtonWrapper';
 
 const buttonProportionsAttributes: {[char: string]: ButtonProportions} = {
@@ -8,30 +8,28 @@ const buttonProportionsAttributes: {[char: string]: ButtonProportions} = {
         paddingX: 'px-2.5',
         paddingY: 'py-1.5',
         textSize: 'text-xs',
-        rounded: 'rounded-lg',
-        border: 'border',
     },
     sm: {
         paddingX: 'px-4',
         paddingY: 'py-2',
         textSize: 'text-sm',
-        rounded: 'rounded-lg',
-        border: 'border',
     },
     md: {
         paddingX: 'px-4',
         paddingY: 'py-2',
         textSize: 'text-base',
-        rounded: 'rounded-lg',
-        border: 'border',
     },
     lg: {
         paddingX: 'px-4',
         paddingY: 'py-2.5',
         textSize: 'text-lg',
-        rounded: 'rounded-lg',
-        border: 'border',
     },
+};
+
+const buttonShapeAttributes: ButtonShapeTypes = {
+    rounded: 'rounded-lg',
+    border: 'border',
+    shadow: 'shadow-sm'
 };
 
 const SecondaryButton = ({
@@ -43,6 +41,7 @@ const SecondaryButton = ({
         <ButtonWrapper
             onClick={ onClick }
             { ...buttonProportionsAttributes[buttonSize] }
+            { ...buttonShapeAttributes }
             textColor={ 'text-blue-600' }
             bgColor={ 'bg-transparent' }
             hoverBgColor={ 'bg-blue-700' }

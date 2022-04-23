@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ButtonProportions, ButtonProps, IconProportions } from '@common/component-utils';
+import { ButtonProportions, ButtonShapeTypes, ButtonWithIconProps, IconProportions } from '@common/component-utils';
 import ButtonWrapper from '@common/ButtonWrapper';
 import { classNames } from '@utils/classname-utils';
 
@@ -9,31 +9,30 @@ const buttonProportionsAttributes: {[char: string]: ButtonProportions} = {
         paddingX: 'px-2.5',
         paddingY: 'py-1.5',
         textSize: 'text-xs',
-        rounded: 'rounded-lg',
-        border: 'border',
     },
     sm: {
         paddingX: 'px-4',
         paddingY: 'py-2',
         textSize: 'text-sm',
-        rounded: 'rounded-lg',
-        border: 'border',
     },
     md: {
         paddingX: 'px-4',
         paddingY: 'py-2',
         textSize: 'text-base',
-        rounded: 'rounded-lg',
-        border: 'border',
     },
     lg: {
         paddingX: 'px-4',
         paddingY: 'py-2.5',
         textSize: 'text-lg',
-        rounded: 'rounded-lg',
-        border: 'border',
     },
 };
+
+const buttonShapeAttributes: ButtonShapeTypes = {
+    rounded: 'rounded-lg',
+    border: 'border',
+    shadow: 'shadow-sm'
+};
+
 
 const iconProportionsAttributes: {[char: string]: IconProportions} = {
     xs: {
@@ -54,20 +53,17 @@ const iconProportionsAttributes: {[char: string]: IconProportions} = {
     },
 };
 
-export interface PrimaryButtonTrailingIconProps extends ButtonProps {
-    Icon: React.ElementType,
-}
-
 const PrimaryButtonTrailingIcon = ({
     text,
     Icon,
     onClick,
     buttonSize = 'sm'
-}: PrimaryButtonTrailingIconProps) => {
+}: ButtonWithIconProps) => {
     return(
         <ButtonWrapper
             onClick={ onClick }
             { ...buttonProportionsAttributes[buttonSize] }
+            { ...buttonShapeAttributes }
             textColor={ 'text-white' }
             hoverTextColor={ '' }
             bgColor={ 'bg-blue-600' }

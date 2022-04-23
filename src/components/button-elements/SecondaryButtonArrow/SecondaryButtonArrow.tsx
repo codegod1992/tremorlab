@@ -32,7 +32,7 @@ const buttonShapeAttributes: ButtonShapeTypes = {
     shadow: 'shadow-sm'
 };
 
-const PrimaryButton = ({
+const SecondaryButtonArrow = ({
     text,
     onClick,
     buttonSize = 'sm'
@@ -42,17 +42,18 @@ const PrimaryButton = ({
             onClick={ onClick }
             { ...buttonProportionsAttributes[buttonSize] }
             { ...buttonShapeAttributes }
-            textColor={ 'text-white' }
-            hoverTextColor={ '' }
-            bgColor={ 'bg-blue-600' }
+            textColor={ 'text-blue-600' }
+            bgColor={ 'bg-transparent' }
             hoverBgColor={ 'bg-blue-700' }
-            borderColor={ 'border-transparent' }
-            hoverBorderColor={ 'bg-blue-700' }
+            hoverTextColor={ 'text-white' }
+            borderColor={ 'border-blue-600' }
+            hoverBorderColor={ 'border-blue-700' }
             focusRingColor={ 'ring-blue-500' }
         >
             { text }
+            <span aria-hidden="true" className="ml-2 inline-block">→</span> 
         </ButtonWrapper>
     );
 };
 
-export default PrimaryButton;
+export default SecondaryButtonArrow;

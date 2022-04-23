@@ -45,8 +45,12 @@ export type ButtonProportions = {
     paddingX: string,
     paddingY: string,
     textSize: string,
+}
+
+export type ButtonShapeTypes = {
     rounded: string,
-    border: string
+    border: string,
+    shadow: string,
 }
 
 export type ButtonColorTypes = {
@@ -64,6 +68,11 @@ export interface ButtonProps {
     buttonSize?: string,
     onClick: React.MouseEventHandler<HTMLButtonElement>,
 } 
+
+export interface ButtonWithIconProps extends ButtonProps {
+    Icon: React.ElementType,
+} 
+
 
 export type IconProportions = {
     margin?: string,

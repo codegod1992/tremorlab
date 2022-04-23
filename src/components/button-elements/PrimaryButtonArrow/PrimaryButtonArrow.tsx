@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { ButtonProportions, ButtonShapeTypes, ButtonWithIconProps, IconProportions } from '@common/component-utils';
+import { ButtonProportions, ButtonProps, ButtonShapeTypes } from '@common/component-utils';
 import ButtonWrapper from '@common/ButtonWrapper';
-import { classNames } from '@utils/classname-utils';
 
 const buttonProportionsAttributes: {[char: string]: ButtonProportions} = {
     xs: {
@@ -33,31 +32,11 @@ const buttonShapeAttributes: ButtonShapeTypes = {
     shadow: 'shadow-sm'
 };
 
-const iconProportionsAttributes: {[char: string]: IconProportions} = {
-    xs: {
-        margin: '-ml-0.5 mr-1.5',
-        iconSize: 'w-4 h-4',
-    },
-    sm: {
-        margin: '-ml-1 mr-1.5',
-        iconSize: 'w-5 h-5',
-    },
-    md: {
-        margin: '-ml-1 mr-1.5',
-        iconSize: 'w-5 h-5',
-    },
-    lg: {
-        margin: '-ml-1 mr-1.5',
-        iconSize: 'w-6 h-6',
-    },
-};
-
-const PrimaryButtonLeadingIcon = ({
+const PrimaryButtonArrow = ({
     text,
-    Icon,
     onClick,
     buttonSize = 'sm'
-}: ButtonWithIconProps) => {
+}: ButtonProps) => {
     return(
         <ButtonWrapper
             onClick={ onClick }
@@ -71,16 +50,10 @@ const PrimaryButtonLeadingIcon = ({
             hoverBorderColor={ 'bg-blue-700' }
             focusRingColor={ 'ring-blue-500' }
         >
-            <Icon 
-                className={classNames(
-                    iconProportionsAttributes[buttonSize].margin || '',
-                    iconProportionsAttributes[buttonSize].iconSize || '',
-                )}
-                aria-hidden="true"
-            />   
             { text }
+            <span aria-hidden="true" className="ml-2 inline-block">→</span> 
         </ButtonWrapper>
     );
 };
 
-export default PrimaryButtonLeadingIcon;
+export default PrimaryButtonArrow;

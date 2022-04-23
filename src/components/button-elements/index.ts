@@ -1,3 +1,10 @@
+export { default as InlineButton } from './InlineButton';
+export { default as InlineButtonArrow } from './InlineButtonArrow';
 export { default as PrimaryButton } from './PrimaryButton';
+export { default as PrimaryButtonArrow } from './PrimaryButtonArrow';
+export { default as PrimaryButtonLeadingIcon } from './PrimaryButtonLeadingIcon';
 export { default as PrimaryButtonTrailingIcon } from './PrimaryButtonTrailingIcon';
 export { default as SecondaryButton } from './SecondaryButton';
+export { default as SecondaryButtonArrow } from './SecondaryButtonArrow';
+export { default as SecondaryButtonLeadingIcon } from './SecondaryButtonLeadingIcon';
+export { default as SecondaryButtonTrailingIcon } from './SecondaryButtonTrailingIcon';

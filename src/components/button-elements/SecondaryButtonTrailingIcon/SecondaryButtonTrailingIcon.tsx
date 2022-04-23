@@ -35,24 +35,24 @@ const buttonShapeAttributes: ButtonShapeTypes = {
 
 const iconProportionsAttributes: {[char: string]: IconProportions} = {
     xs: {
-        margin: '-ml-0.5 mr-1.5',
+        margin: '-mr-0.5 ml-1.5',
         iconSize: 'w-4 h-4',
     },
     sm: {
-        margin: '-ml-1 mr-1.5',
+        margin: '-mr-1 ml-1.5',
         iconSize: 'w-5 h-5',
     },
     md: {
-        margin: '-ml-1 mr-1.5',
+        margin: '-mr-1 ml-1.5',
         iconSize: 'w-5 h-5',
     },
     lg: {
-        margin: '-ml-1 mr-1.5',
+        margin: '-mr-1 ml-1.5',
         iconSize: 'w-6 h-6',
     },
 };
 
-const PrimaryButtonLeadingIcon = ({
+const SecondaryButtonTrailingIcon = ({
     text,
     Icon,
     onClick,
@@ -63,14 +63,15 @@ const PrimaryButtonLeadingIcon = ({
             onClick={ onClick }
             { ...buttonProportionsAttributes[buttonSize] }
             { ...buttonShapeAttributes }
-            textColor={ 'text-white' }
-            hoverTextColor={ '' }
-            bgColor={ 'bg-blue-600' }
+            textColor={ 'text-blue-600' }
+            bgColor={ 'bg-transparent' }
             hoverBgColor={ 'bg-blue-700' }
-            borderColor={ 'border-transparent' }
-            hoverBorderColor={ 'bg-blue-700' }
+            hoverTextColor={ 'text-white' }
+            borderColor={ 'border-blue-600' }
+            hoverBorderColor={ 'border-blue-700' }
             focusRingColor={ 'ring-blue-500' }
         >
+            { text }
             <Icon 
                 className={classNames(
                     iconProportionsAttributes[buttonSize].margin || '',
@@ -78,9 +79,8 @@ const PrimaryButtonLeadingIcon = ({
                 )}
                 aria-hidden="true"
             />   
-            { text }
         </ButtonWrapper>
     );
 };
 
-export default PrimaryButtonLeadingIcon;
+export default SecondaryButtonTrailingIcon;
