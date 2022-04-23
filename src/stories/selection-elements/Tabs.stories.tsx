@@ -27,14 +27,14 @@ const tabs = [
 const setActiveTab = (activeTabId: string, tabs: TabType[]) => {
     return tabs.map(tab => (
         tab.id === activeTabId ? {...tab, isActive: true} : {...tab, isActive: false}
-    ))
-}
+    ));
+};
 
 const TabComponent = () => {
     const [tabState, setTabState] = useState(setActiveTab('tremor.so', tabs));
 
-    const handleChange = (e) => {
-        setTabState(setActiveTab(e.target.value, tabs))
+    const handleChange = (e: any) => {
+        setTabState(setActiveTab(e.target.value, tabs));
     };
 
     return(
