@@ -1,8 +1,14 @@
 import React from 'react';
 
-import { ButtonProportions, ButtonShapeTypes, Sizes } from '@common/component-utils';
-import { ButtonProps } from '../../common/component-utils';
+import { 
+    ButtonProportions,
+    ButtonShapeTypes,
+    IconProportions,
+    Sizes
+} from '@common/component-utils';
+import { ButtonWithIconProps } from '../../common/component-utils';
 import ButtonWrapper from '@common/ButtonWrapper';
+import { classNames } from '@utils/classname-utils';
 
 const buttonProportionsAttributes: {[char: string]: ButtonProportions} = {
     xs: {
@@ -33,11 +39,31 @@ const buttonShapeAttributes: ButtonShapeTypes = {
     shadow: 'shadow-sm'
 };
 
-const SecondaryButtonArrow = ({
+const iconProportionsAttributes: {[char: string]: IconProportions} = {
+    xs: {
+        margin: '-ml-0.5 mr-1.5',
+        iconSize: 'w-4 h-4',
+    },
+    sm: {
+        margin: '-ml-1 mr-1.5',
+        iconSize: 'w-5 h-5',
+    },
+    md: {
+        margin: '-ml-1 mr-1.5',
+        iconSize: 'w-5 h-5',
+    },
+    lg: {
+        margin: '-ml-1 mr-1.5',
+        iconSize: 'w-6 h-6',
+    },
+};
+
+const ButtonSecondaryIconLeading = ({
     text,
+    Icon,
     handleClick,
     size = Sizes.SM
-}: ButtonProps) => {
+}: ButtonWithIconProps) => {
     return(
         <ButtonWrapper
             onClick={ handleClick }
@@ -51,10 +77,16 @@ const SecondaryButtonArrow = ({
             hoverBorderColor={ 'border-blue-700' }
             focusRingColor={ 'ring-blue-500' }
         >
+            <Icon 
+                className={classNames(
+                    iconProportionsAttributes[size].margin || '',
+                    iconProportionsAttributes[size].iconSize || '',
+                )}
+                aria-hidden="true"
+            />   
             { text }
-            <span aria-hidden="true" className="ml-2 inline-block">→</span> 
         </ButtonWrapper>
     );
 };
 
-export default SecondaryButtonArrow;
+export default ButtonSecondaryIconLeading;

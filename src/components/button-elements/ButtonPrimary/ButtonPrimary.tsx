@@ -29,11 +29,11 @@ const buttonProportionsAttributes: {[char: string]: ButtonProportions} = {
 
 const buttonShapeAttributes: ButtonShapeTypes = {
     rounded: 'rounded-lg',
-    border: '',
-    shadow: ''
+    border: 'border',
+    shadow: 'shadow-sm'
 };
 
-const InlineButtonArrow = ({
+const ButtonPrimary = ({
     text,
     handleClick,
     size = Sizes.SM
@@ -43,23 +43,17 @@ const InlineButtonArrow = ({
             onClick={ handleClick }
             { ...buttonProportionsAttributes[size] }
             { ...buttonShapeAttributes }
-            textColor={ 'text-blue-600' }
-            hoverTextColor={ 'text-blue-700' }
-            bgColor={ 'bg-transparent' }
-            hoverBgColor={ 'bg-transparent' }
-            borderColor={ '' }
-            hoverBorderColor={ '' }
+            textColor={ 'text-white' }
+            hoverTextColor={ '' }
+            bgColor={ 'bg-blue-600' }
+            hoverBgColor={ 'bg-blue-700' }
+            borderColor={ 'border-transparent' }
+            hoverBorderColor={ 'bg-blue-700' }
             focusRingColor={ 'ring-blue-500' }
         >
             { text }
-            <span 
-                aria-hidden="true"
-                className="ml-1.5 inline-block translate-x-0 group-hover:translate-x-1 transition-transform \
-                           ease-in-out duration-50" >
-                    →
-            </span> 
         </ButtonWrapper>
     );
 };
 
-export default InlineButtonArrow;
+export default ButtonPrimary;

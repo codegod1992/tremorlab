@@ -29,11 +29,11 @@ const buttonProportionsAttributes: {[char: string]: ButtonProportions} = {
 
 const buttonShapeAttributes: ButtonShapeTypes = {
     rounded: 'rounded-lg',
-    border: 'border',
-    shadow: 'shadow-sm'
+    border: '',
+    shadow: ''
 };
 
-const PrimaryButton = ({
+const ButtonInline = ({
     text,
     handleClick,
     size = Sizes.SM
@@ -43,12 +43,12 @@ const PrimaryButton = ({
             onClick={ handleClick }
             { ...buttonProportionsAttributes[size] }
             { ...buttonShapeAttributes }
-            textColor={ 'text-white' }
-            hoverTextColor={ '' }
-            bgColor={ 'bg-blue-600' }
-            hoverBgColor={ 'bg-blue-700' }
-            borderColor={ 'border-transparent' }
-            hoverBorderColor={ 'bg-blue-700' }
+            textColor={ 'text-blue-600' }
+            hoverTextColor={ 'text-blue-700' }
+            bgColor={ 'bg-transparent' }
+            hoverBgColor={ 'bg-transparent' }
+            borderColor={ '' }
+            hoverBorderColor={ '' }
             focusRingColor={ 'ring-blue-500' }
         >
             { text }
@@ -56,4 +56,4 @@ const PrimaryButton = ({
     );
 };
 
-export default PrimaryButton;
+export default ButtonInline;

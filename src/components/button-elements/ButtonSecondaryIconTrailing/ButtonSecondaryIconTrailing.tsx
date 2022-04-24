@@ -58,7 +58,7 @@ const iconProportionsAttributes: {[char: string]: IconProportions} = {
     },
 };
 
-const SecondaryButtonTrailingIcon = ({
+const ButtonSecondaryIconTrailing = ({
     text,
     Icon,
     handleClick,
@@ -89,4 +89,4 @@ const SecondaryButtonTrailingIcon = ({
     );
 };
 
-export default SecondaryButtonTrailingIcon;
+export default ButtonSecondaryIconTrailing;

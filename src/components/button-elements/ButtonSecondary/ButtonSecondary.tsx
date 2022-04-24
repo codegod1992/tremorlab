@@ -33,7 +33,7 @@ const buttonShapeAttributes: ButtonShapeTypes = {
     shadow: 'shadow-sm'
 };
 
-const SecondaryButton = ({
+const ButtonSecondary = ({
     text,
     handleClick,
     size = Sizes.SM
@@ -56,4 +56,4 @@ const SecondaryButton = ({
     );
 };
 
-export default SecondaryButton;
+export default ButtonSecondary;

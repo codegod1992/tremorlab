@@ -33,7 +33,7 @@ const buttonShapeAttributes: ButtonShapeTypes = {
     shadow: ''
 };
 
-const InlineButton = ({
+const ButtonInlineArrow = ({
     text,
     handleClick,
     size = Sizes.SM
@@ -52,8 +52,14 @@ const InlineButton = ({
             focusRingColor={ 'ring-blue-500' }
         >
             { text }
+            <span 
+                aria-hidden="true"
+                className="ml-1.5 inline-block translate-x-0 group-hover:translate-x-1 transition-transform \
+                           ease-in-out duration-50" >
+                    →
+            </span> 
         </ButtonWrapper>
     );
 };
 
-export default InlineButton;
+export default ButtonInlineArrow;

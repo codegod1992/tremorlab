@@ -58,7 +58,7 @@ const iconProportionsAttributes: {[char: string]: IconProportions} = {
     },
 };
 
-const SecondaryButtonLeadingIcon = ({
+const ButtonPrimaryIconLeading = ({
     text,
     Icon,
     handleClick,
@@ -69,12 +69,12 @@ const SecondaryButtonLeadingIcon = ({
             onClick={ handleClick }
             { ...buttonProportionsAttributes[size] }
             { ...buttonShapeAttributes }
-            textColor={ 'text-blue-600' }
-            bgColor={ 'bg-transparent' }
+            textColor={ 'text-white' }
+            hoverTextColor={ '' }
+            bgColor={ 'bg-blue-600' }
             hoverBgColor={ 'bg-blue-700' }
-            hoverTextColor={ 'text-white' }
-            borderColor={ 'border-blue-600' }
-            hoverBorderColor={ 'border-blue-700' }
+            borderColor={ 'border-transparent' }
+            hoverBorderColor={ 'bg-blue-700' }
             focusRingColor={ 'ring-blue-500' }
         >
             <Icon 
@@ -89,4 +89,4 @@ const SecondaryButtonLeadingIcon = ({
     );
 };
 
-export default SecondaryButtonLeadingIcon;
+export default ButtonPrimaryIconLeading;

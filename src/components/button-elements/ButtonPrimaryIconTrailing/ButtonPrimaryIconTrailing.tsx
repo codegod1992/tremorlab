@@ -1,8 +1,14 @@
 import React from 'react';
 
-import { ButtonProportions, ButtonShapeTypes, Sizes } from '@common/component-utils';
-import { ButtonProps } from '../../common/component-utils';
+import { 
+    ButtonProportions,
+    ButtonShapeTypes,
+    IconProportions,
+    Sizes
+} from '@common/component-utils';
+import { ButtonWithIconProps } from '../../common/component-utils';
 import ButtonWrapper from '@common/ButtonWrapper';
+import { classNames } from '@utils/classname-utils';
 
 const buttonProportionsAttributes: {[char: string]: ButtonProportions} = {
     xs: {
@@ -33,11 +39,32 @@ const buttonShapeAttributes: ButtonShapeTypes = {
     shadow: 'shadow-sm'
 };
 
-const PrimaryButtonArrow = ({
+
+const iconProportionsAttributes: {[char: string]: IconProportions} = {
+    xs: {
+        margin: '-mr-0.5 ml-1.5',
+        iconSize: 'w-4 h-4',
+    },
+    sm: {
+        margin: '-mr-1 ml-1.5',
+        iconSize: 'w-5 h-5',
+    },
+    md: {
+        margin: '-mr-1 ml-1.5',
+        iconSize: 'w-5 h-5',
+    },
+    lg: {
+        margin: '-mr-1 ml-1.5',
+        iconSize: 'w-6 h-6',
+    },
+};
+
+const ButtonPrimaryIconTrailing = ({
     text,
+    Icon,
     handleClick,
     size = Sizes.SM
-}: ButtonProps) => {
+}: ButtonWithIconProps) => {
     return(
         <ButtonWrapper
             onClick={ handleClick }
@@ -52,9 +79,15 @@ const PrimaryButtonArrow = ({
             focusRingColor={ 'ring-blue-500' }
         >
             { text }
-            <span aria-hidden="true" className="ml-2 inline-block">→</span> 
+            <Icon 
+                className={classNames(
+                    iconProportionsAttributes[size].margin || '',
+                    iconProportionsAttributes[size].iconSize || '',
+                )}
+                aria-hidden="true"
+            />   
         </ButtonWrapper>
     );
 };
 
-export default PrimaryButtonArrow;
+export default ButtonPrimaryIconTrailing;

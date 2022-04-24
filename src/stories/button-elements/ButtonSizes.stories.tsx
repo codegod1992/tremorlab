@@ -9,16 +9,16 @@ import { Title } from 'components';
 import { Flex } from 'components';
 
 import {
-    InlineButton,
-    InlineButtonArrow,
-    PrimaryButton,
-    PrimaryButtonArrow,
-    PrimaryButtonLeadingIcon,
-    PrimaryButtonTrailingIcon,
-    SecondaryButton,
-    SecondaryButtonArrow,
-    SecondaryButtonLeadingIcon,
-    SecondaryButtonTrailingIcon,
+    ButtonInline,
+    ButtonInlineArrow,
+    ButtonPrimary,
+    ButtonPrimaryArrow,
+    ButtonPrimaryIconLeading,
+    ButtonPrimaryIconTrailing,
+    ButtonSecondary,
+    ButtonSecondaryArrow,
+    ButtonSecondaryIconLeading,
+    ButtonSecondaryIconTrailing,
 } from 'components';
 
 
@@ -36,56 +36,56 @@ const buttonText = 'Button Text';
 const Template: ComponentStory<never> = () => (
     <>
         <div className="mb-5">
-            <Title text="PrimaryButton"/>
+            <Title text="ButtonPrimary"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
-                        <PrimaryButton text={ buttonText } size={ Sizes[key] } handleClick={ handleClick } />
+                        <ButtonPrimary text={ buttonText } size={ Sizes[key] } handleClick={ handleClick } />
                     );
                 })}
             </div>
         </div>
         <div className="mb-5">
-            <Title text="SecondaryButton"/>
+            <Title text="ButtonSecondary"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
-                        <SecondaryButton text={ buttonText } size={ Sizes[key] } handleClick={ handleClick } />
+                        <ButtonSecondary text={ buttonText } size={ Sizes[key] } handleClick={ handleClick } />
                     );
                 })}
             </div>
         </div>
         <div className="mb-5">
-            <Title text="PrimaryButtonArrow"/>
+            <Title text="ButtonPrimaryArrow"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
-                        <PrimaryButtonArrow text={ buttonText } size={ Sizes[key] } handleClick={ handleClick } />
+                        <ButtonPrimaryArrow text={ buttonText } size={ Sizes[key] } handleClick={ handleClick } />
                     );
                 })}
             </div>
         </div>
         <div className="mb-5">
-            <Title text="SecondaryButtonArrow"/>
+            <Title text="ButtonSecondaryArrow"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
-                        <SecondaryButtonArrow text={ buttonText } size={ Sizes[key] } handleClick={ handleClick } />
+                        <ButtonSecondaryArrow text={ buttonText } size={ Sizes[key] } handleClick={ handleClick } />
                     );
                 })}
             </div>
         </div>
         <div className="mb-5">
-            <Title text="PrimaryButtonLeadingIcon"/>
+            <Title text="ButtonPrimaryIconLeading"/>
             <div className="grid grid-cols-8 justify-items-start items-center gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
-                        <PrimaryButtonLeadingIcon
+                        <ButtonPrimaryIconLeading
                             Icon={ Icon }
                             text={ buttonText }
                             size={ Sizes[key] }
@@ -96,12 +96,12 @@ const Template: ComponentStory<never> = () => (
             </div>
         </div>
         <div className="mb-5">
-            <Title text="SecondaryButtonLeadingIcon"/>
+            <Title text="ButtonSecondaryIconLeading"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
-                        <SecondaryButtonLeadingIcon
+                        <ButtonSecondaryIconLeading
                             Icon={ Icon }
                             text={ buttonText }
                             size={ Sizes[key] }
@@ -112,12 +112,12 @@ const Template: ComponentStory<never> = () => (
             </div>
         </div>
         <div className="mb-5">
-            <Title text="PrimaryButtonTrailingIcon"/>
+            <Title text="ButtonPrimaryIconTrailing"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
-                        <PrimaryButtonTrailingIcon
+                        <ButtonPrimaryIconTrailing
                             Icon={ Icon }
                             text={ buttonText }
                             size={ Sizes[key] }
@@ -128,12 +128,12 @@ const Template: ComponentStory<never> = () => (
             </div>
         </div>
         <div className="mb-5">
-            <Title text="SecondaryButtonTrailingIcon"/>
+            <Title text="ButtonSecondaryIconTrailing"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
-                        <SecondaryButtonTrailingIcon
+                        <ButtonSecondaryIconTrailing
                             Icon={ Icon }
                             text={ buttonText }
                             size={ Sizes[key] }
@@ -144,12 +144,12 @@ const Template: ComponentStory<never> = () => (
             </div>
         </div>
         <div className="mb-5">
-            <Title text="InlineButton"/>
+            <Title text="ButtonInline"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
-                        <InlineButton
+                        <ButtonInline
                             text={ buttonText }
                             size={ Sizes[key] }
                             handleClick={ handleClick }
@@ -159,12 +159,12 @@ const Template: ComponentStory<never> = () => (
             </div>
         </div>
         <div className="mb-5">
-            <Title text="InlineButtonArrow"/>
+            <Title text="ButtonInlineArrow"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
-                        <InlineButtonArrow
+                        <ButtonInlineArrow
                             text={ buttonText }
                             size={ Sizes[key] }
                             handleClick={ handleClick }
@@ -175,8 +175,6 @@ const Template: ComponentStory<never> = () => (
         </div>
     </>
 );
-  
-
 
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
