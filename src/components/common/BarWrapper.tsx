@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { classNames, parseBgClassNames } from '@utils/classname-utils';
+import { classNames } from '@utils/classname-utils';
 
 export interface BarWrapperProps {
     bgColor?: string,
