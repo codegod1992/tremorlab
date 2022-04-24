@@ -3,14 +3,16 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { 
+    BadgeDelta,
+    ButtonPrimary,
+    ButtonSecondary,
     Caption,
     Card,
     ContentOverflow,
-    DeltaBadge,
     DeltaBar,
     Flex,
+    Footer,
     Metric,
-    PrimaryButton,
     ProgressBar,
     Subtitle,
     Text,
@@ -31,7 +33,7 @@ const Template: ComponentStory<typeof Card> = (args) => (
         <Card>
             <Flex>
                 <Title text="Ticket Sales" />
-                <DeltaBadge delta="20.1%" deltaType="decrease" isIncreasePositive={ false } />
+                <BadgeDelta delta="20.1%" deltaType="decrease" isIncreasePositive={ false } />
             </Flex>
             <Subtitle text="April 2021" />
             <div style={{'marginTop': '10px'}}>
@@ -51,22 +53,26 @@ const Template: ComponentStory<typeof Card> = (args) => (
                         <Text>20.000</Text>
                         <Caption>(50%)</Caption>
                     </Flex>
-                    <Text>20.000</Text>
-                </Flex>
-                <div style={{'marginTop': '5px'}}>
-                    <ProgressBar widthPercentage={50} />
-                </div>
-            </div>
-            <div className="mt-2">
-                <Flex justifyContent="justify-end">
-                    <PrimaryButton text="Button Text" handleClick={handleClick}/>
+                    <Flex justifyContent="justify-end" alignItems="items-baseline" spaceX="space-x-2">
+                        <Text>20.000</Text>
+                        <Caption>(50%)</Caption>
+                    </Flex>
                 </Flex>
             </div>
+            <div style={{'marginTop': '5px'}}>
+                <ProgressBar widthPercentage={50} />
+            </div>
+            <Footer>
+                <Flex justifyContent='justify-end' spaceX='space-x-2'>
+                    <ButtonSecondary text="Button Text" handleClick={handleClick} size='xs' />
+                    <ButtonPrimary text="Button Text" handleClick={handleClick} size='xs' />
+                </Flex>
+            </Footer>
         </Card>
         <Card>
             <Flex>
                 <Title text="Ticket Sales" />
-                <DeltaBadge delta="20.1%" deltaType="decrease" isIncreasePositive={ false } />
+                <BadgeDelta delta="20.1%" deltaType="decrease" isIncreasePositive={ false } />
             </Flex>
             <Subtitle text="April 2021" />
             <div style={{'marginTop': '10px'}}>
@@ -89,11 +95,14 @@ const Template: ComponentStory<typeof Card> = (args) => (
                     <ProgressBar widthPercentage={50} />
                 </div>
             </div>
+            <Footer>
+                <ButtonPrimary text="Button Text" handleClick={handleClick} size='xs' />
+            </Footer>
         </Card>
         <Card>
             <Flex>
                 <Title text="Ticket Sales" />
-                <DeltaBadge delta="20.1%" deltaType="decrease" isIncreasePositive={ false } />
+                <BadgeDelta delta="20.1%" deltaType="decrease" isIncreasePositive={ false } />
             </Flex>
             <Subtitle text="April 2021" />
             <div style={{'marginTop': '10px'}}>
@@ -119,6 +128,9 @@ const Template: ComponentStory<typeof Card> = (args) => (
                     <DeltaBar widthPercentage={75} deltaType="increase" />
                 </div>
             </div>
+            <Footer>
+                <ButtonPrimary text="Button Text" handleClick={handleClick} size='xs' />
+            </Footer>
         </Card>
     </div>
 );
