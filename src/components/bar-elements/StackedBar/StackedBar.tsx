@@ -13,10 +13,10 @@ const StackedBar = ({
     gap = true
 }: StackedBarProps) => {
     return(
-        <BarWrapper addClassNames={classNames(
-            gap ? 'space-x-0.5' : '',
-            'overflow-hidden'
-        )}>
+        <BarWrapper 
+            gap={ gap }
+            overflowHidden={ true }
+        >
             {elements.map(([widthPercentage, bgColor], idx) => (
                 <div key={ idx } style={ { width: `${widthPercentage}%` } } className={ classNames(
                     parseBgClassNames(bgColor),

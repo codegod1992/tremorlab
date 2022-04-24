@@ -51,7 +51,7 @@ const FunnelBars = ({
                     <React.Fragment key={idx}>
                         <BarWrapper
                             bgColor={ secondaryBarBgColor }
-                            addClassNames={'justify-center'}
+                            justifyContent={'justify-center'}
                         >
                             <div 
                                 className={ classNames(

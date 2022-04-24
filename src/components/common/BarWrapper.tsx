@@ -4,20 +4,26 @@ import { classNames, parseBgClassNames } from '@utils/classname-utils';
 
 export interface BarWrapperProps {
     bgColor?: string,
-    addClassNames?: string,
+    gap?: boolean,
+    overflowHidden?: boolean,
+    justifyContent?: string,
     children: React.ReactNode
 }
 
 const BarWrapper = ({
     bgColor = 'bg-transparent',
-    addClassNames = '',
+    gap = false,
+    overflowHidden = false,
+    justifyContent = '',
     children
 }: BarWrapperProps) => {
     return(
         <div 
             className={ classNames(
-                parseBgClassNames(bgColor),
-                addClassNames,
+                bgColor,
+                gap ? 'space-x-0.5' : '',
+                overflowHidden ? 'overflow-hidden' : '',
+                justifyContent,
                 'h-3 w-full relative flex rounded items-center',
             ) }
         >
