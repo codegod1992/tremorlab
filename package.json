@@ -4,6 +4,9 @@
   "description": "",
   "scripts": {
     "rollup": "rollup -c",
+    "release-patch": "npm run rollup && npm version patch && npm publish",
+    "release-minor": "npm run rollup && npm minor patch && npm publish",
+    "release-major": "npm run rollup && npm major patch && npm publish",
     "tests": "jest",
     "lint": "eslint . --ext .ts --ext .tsx",
     "fix-lint": "eslint . --ext .ts --ext .tsx --fix",
