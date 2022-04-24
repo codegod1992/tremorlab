@@ -26,6 +26,7 @@ const Flex = ({
     return(
         <div className={ classNames(
             'flex',
+            'w-full',
             parseJustifyContentClassNames(justifyContent),
             parseAlignItemsClassNames(alignItems),
             parseSpaceXClassNames(spaceX),
