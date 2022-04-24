@@ -14,7 +14,7 @@ import IconSolid from 'components/icon-elements/IconSolid/IconSolid';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/IconElements/IconTypes',
+    title: 'Tremor/IconElements/IconColors',
     component: IconNeutral,
 } as ComponentMeta<typeof IconNeutral>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
