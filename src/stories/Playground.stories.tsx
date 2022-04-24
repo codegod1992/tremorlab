@@ -63,9 +63,9 @@ const Template: ComponentStory<typeof Card> = (args) => (
                 <ProgressBar widthPercentage={50} />
             </div>
             <Footer>
-                <Flex justifyContent='justify-end' spaceX='space-x-2'>
-                    <ButtonSecondary text="Button Text" handleClick={handleClick} size='xs' />
-                    <ButtonPrimary text="Button Text" handleClick={handleClick} size='xs' />
+                <Flex justifyContent="justify-end" spaceX="space-x-2">
+                    <ButtonSecondary text="Button Text" handleClick={handleClick} size="xs" />
+                    <ButtonPrimary text="Button Text" handleClick={handleClick} size="xs" />
                 </Flex>
             </Footer>
         </Card>
@@ -96,7 +96,7 @@ const Template: ComponentStory<typeof Card> = (args) => (
                 </div>
             </div>
             <Footer>
-                <ButtonPrimary text="Button Text" handleClick={handleClick} size='xs' />
+                <ButtonPrimary text="Button Text" handleClick={handleClick} size="xs" />
             </Footer>
         </Card>
         <Card>
@@ -129,7 +129,7 @@ const Template: ComponentStory<typeof Card> = (args) => (
                 </div>
             </div>
             <Footer>
-                <ButtonPrimary text="Button Text" handleClick={handleClick} size='xs' />
+                <ButtonPrimary text="Button Text" handleClick={handleClick} size="xs" />
             </Footer>
         </Card>
     </div>
