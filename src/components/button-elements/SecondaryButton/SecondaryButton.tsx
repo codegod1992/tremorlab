@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { ButtonProportions, ButtonProps, ButtonShapeTypes } from '../../common/component-utils';
+import { ButtonProportions, ButtonShapeTypes } from '@common/component-utils';
+import { ButtonProps } from '../../common/component-utils';
 import ButtonWrapper from '@common/ButtonWrapper';
 
 const buttonProportionsAttributes: {[char: string]: ButtonProportions} = {

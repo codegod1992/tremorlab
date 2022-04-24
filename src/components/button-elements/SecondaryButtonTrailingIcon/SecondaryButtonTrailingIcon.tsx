@@ -3,9 +3,9 @@ import React from 'react';
 import { 
     ButtonProportions,
     ButtonShapeTypes,
-    ButtonWithIconProps,
     IconProportions
-} from '../../common/component-utils';
+} from '@common/component-utils';
+import { ButtonWithIconProps } from '../../common/component-utils';
 import ButtonWrapper from '@common/ButtonWrapper';
 import { classNames } from '@utils/classname-utils';
 
