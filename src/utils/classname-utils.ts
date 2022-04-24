@@ -84,6 +84,11 @@ export const parseSpaceXClassNames: TailwindClassParser = (twClassName) => {
     return twClassName.startsWith('space-x-') ? twClassName : '';
 };
 
+export const parsePaddingXClassNames: TailwindClassParser = (twClassName) => {
+    if (twClassName===undefined) return '';
+    return twClassName.startsWith('px-') ? twClassName : '';
+};
+
 export const parsePaddingYClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
     return twClassName.startsWith('py-') ? twClassName : '';
