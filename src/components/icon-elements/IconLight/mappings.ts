@@ -57,7 +57,7 @@ export const colorMapping: {[char: string]: IconElementColorTypes} = {
     },
     'neutral': { 
         textColor: 'text-neutral-500',
-        bgColor: 'bg-neutral-500',
+        bgColor: 'bg-neutral-100',
         borderColor: '',
         ringColor: '',
     },
