@@ -6,7 +6,7 @@ import ArrowRightLineIcon from 'remixicon-react/ArrowRightLineIcon';
 import ArrowRightUpLineIcon from 'remixicon-react/ArrowRightUpLineIcon';
 import ArrowUpLineIcon from 'remixicon-react/ArrowUpLineIcon';
 
-export const DeltaTypes: {[char: string]: string} = {
+export const DeltaTypes: {[key: string]: string} = {
     Increase: 'increase',
     ModerateIncrease: 'moderateIncrease',
     Decrease: 'decrease',
@@ -14,12 +14,12 @@ export const DeltaTypes: {[char: string]: string} = {
     Unchanged: 'unchanged'
 };
 
-export const DeltaBgColors: {[char: string]: string} = {
+export const DeltaBgColors: {[key: string]: string} = {
     'increase': 'bg-emerald-500',
     'decrease': 'bg-rose-500'
 };
 
-export const DeltaTextColors: {[char: string]: string} = {
+export const DeltaTextColors: {[key: string]: string} = {
     'increase': 'bg-emerald-100',
     'moderateIncrease': 'bg-emerald-100',
     'decrease': 'bg-rose-100',
@@ -27,12 +27,45 @@ export const DeltaTextColors: {[char: string]: string} = {
     'unchanged': 'bg-orange-100',
 };
 
-export const DeltaIcons: {[char: string]: React.ElementType} = {
+export const DeltaIcons: {[key: string]: React.ElementType} = {
     'increase': ArrowUpLineIcon,
     'moderateIncrease': ArrowRightUpLineIcon,
     'decrease': ArrowDownLineIcon,
     'moderateDecrease': ArrowRightDownLineIcon,
     'unchanged': ArrowRightLineIcon,
+};
+
+export const Colors: {[key: string]: string} = {
+    Black: 'black',
+    Slate: 'slate',
+    Gray: 'gray',
+    Zinc: 'zinc',
+    Neutral: 'neutral',
+    Stone: 'stone',
+    Red: 'red',
+    Orange: 'orange',
+    Amber: 'amber',
+    Yellow: 'yellow',
+    Lime: 'lime',
+    Green: 'green',
+    Emerald: 'emerald',
+    Teal: 'teal',
+    Cyan: 'cyan',
+    Sky: 'sky',
+    Blue: 'blue',
+    Indigo: 'indigo',
+    Violet: 'violet',
+    Purple: 'purple',
+    Fuchsia: 'fuchsia',
+    Pink: 'pink',
+    Rose: 'rose'
+};
+
+export const Sizes: {[key: string]: string} = {
+    XS: 'xs',
+    SM: 'sm',
+    MD: 'md',
+    LG: 'lg'
 };
 
 export type BadgeProportions = {
@@ -72,6 +105,32 @@ export interface ButtonProps {
 export interface ButtonWithIconProps extends ButtonProps {
     Icon: React.ElementType,
 } 
+
+export type IconElementProporions = {
+    paddingX: string,
+    paddingY: string,
+    iconSize: string,
+}
+
+export type IconElementShapeTypes = {
+    rounded: string,
+    border: string,
+    ring: string,
+    shadow: string
+}
+
+export type IconElementColorTypes = {
+    textColor: string,
+    bgColor: string,
+    borderColor: string,
+    ringColor: string,
+}
+
+export interface IconElementProps {
+    Icon: React.ElementType,
+    size?: string
+    color?: string
+}
 
 export type IconProportions = {
     margin?: string,

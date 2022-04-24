@@ -1,6 +1,12 @@
-export { default as DeltaBadge } from './DeltaBadge';
-export { default as DeltaIconBadge } from './DeltaIconBadge';
-export { default as IconBadge } from './IconBadge';
-export { default as IconTextBadge } from './IconTextBadge';
-export { default as StatusBadge } from './StatusBadge';
-export { default as TextBadge } from './TextBadge';
+export { default as BadgeDelta } from './BadgeDelta';
+export { default as BadgeDeltaIcon } from './BadgeDeltaIcon';
+export { default as BadgeIcon } from './BadgeIcon';
+export { default as BadgeIconText } from './BadgeIconText';
+export { default as BadgeStatus } from './BadgeStatus';
+export { default as BadgeText } from './BadgeText';
+
+export { default as IconCircled } from './IconCircled';
+export { default as IconLight } from './IconLight';
+export { default as IconNeutral } from './IconNeutral';
+export { default as IconShadow } from './IconShadow';
+export { default as IconSolid } from './IconSolid';
