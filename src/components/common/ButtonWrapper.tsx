@@ -27,14 +27,22 @@ const ButtonWrapper = ({
 }: ButtonWrapperProps) => {
     return(
         <button onClick={onClick} className={ classNames(
-            paddingX, paddingY, textSize,
-            rounded, border, shadow,
-            textColor, bgColor, borderColor,
-            `hover:${hoverBgColor}`, `hover:${hoverTextColor}`, `hover:${hoverBorderColor}`,
-            'flex-shrink-0 inline-flex items-center group font-medium',
-            'focus:outline-none focus:ring-2 focus:ring-offset-2',
+            paddingX,
+            paddingY,
+            textSize,
+            rounded,
+            border,
+            shadow,
+            textColor,
+            bgColor,
+            borderColor,
+            'hover:'.concat(hoverBgColor),
+            `hover:${hoverTextColor}`,
+            `hover:${hoverBorderColor}`,
             `focus:${focusRingColor}`,
-        )}
+            'flex-shrink-0 inline-flex items-center group font-medium group',
+            'focus:outline-none focus:ring-2 focus:ring-offset-2',
+        ) }
         >
             { children }
         </button>

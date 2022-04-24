@@ -3,7 +3,8 @@ import React from 'react';
 import { 
     ButtonProportions,
     ButtonShapeTypes,
-    IconProportions
+    IconProportions,
+    Sizes
 } from '@common/component-utils';
 import { ButtonWithIconProps } from '../../common/component-utils';
 import ButtonWrapper from '@common/ButtonWrapper';
@@ -61,12 +62,12 @@ const SecondaryButtonLeadingIcon = ({
     text,
     Icon,
     handleClick,
-    buttonSize = 'sm'
+    size = Sizes.SM
 }: ButtonWithIconProps) => {
     return(
         <ButtonWrapper
             onClick={ handleClick }
-            { ...buttonProportionsAttributes[buttonSize] }
+            { ...buttonProportionsAttributes[size] }
             { ...buttonShapeAttributes }
             textColor={ 'text-blue-600' }
             bgColor={ 'bg-transparent' }
@@ -78,8 +79,8 @@ const SecondaryButtonLeadingIcon = ({
         >
             <Icon 
                 className={classNames(
-                    iconProportionsAttributes[buttonSize].margin || '',
-                    iconProportionsAttributes[buttonSize].iconSize || '',
+                    iconProportionsAttributes[size].margin || '',
+                    iconProportionsAttributes[size].iconSize || '',
                 )}
                 aria-hidden="true"
             />   

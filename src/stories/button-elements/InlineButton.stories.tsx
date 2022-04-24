@@ -23,7 +23,7 @@ const Template: ComponentStory<typeof InlineButton> = (args) => (
 export const ButtonXs = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ButtonXs.args = {
-    buttonSize: 'xs'
+    size: 'xs'
 };
 
 export const ButtonSm = Template.bind({});
@@ -34,11 +34,11 @@ ButtonSm.args = {
 export const ButtonMd = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ButtonMd.args = {
-    buttonSize: 'md'
+    size: 'md'
 };
 
 export const ButtonLg = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ButtonLg.args = {
-    buttonSize: 'lg'
+    size: 'lg'
 };

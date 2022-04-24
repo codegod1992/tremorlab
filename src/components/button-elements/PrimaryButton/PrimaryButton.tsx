@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ButtonProportions, ButtonShapeTypes } from '@common/component-utils';
+import { ButtonProportions, ButtonShapeTypes, Sizes } from '@common/component-utils';
 import { ButtonProps } from '../../common/component-utils';
 import ButtonWrapper from '@common/ButtonWrapper';
 
@@ -36,12 +36,12 @@ const buttonShapeAttributes: ButtonShapeTypes = {
 const PrimaryButton = ({
     text,
     handleClick,
-    buttonSize = 'sm'
+    size = Sizes.SM
 }: ButtonProps) => {
     return(
         <ButtonWrapper
             onClick={ handleClick }
-            { ...buttonProportionsAttributes[buttonSize] }
+            { ...buttonProportionsAttributes[size] }
             { ...buttonShapeAttributes }
             textColor={ 'text-white' }
             hoverTextColor={ '' }

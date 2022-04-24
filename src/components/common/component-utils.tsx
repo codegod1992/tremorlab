@@ -98,7 +98,7 @@ export type ButtonColorTypes = {
 
 export interface ButtonProps {
     text: string,
-    buttonSize?: string,
+    size?: string,
     handleClick: React.MouseEventHandler<HTMLButtonElement>,
 } 
 
