@@ -1,9 +1,11 @@
 import React from 'react';
 
-import { classNames, parseBgClassNames } from '@utils/classname-utils';
+import BaseComponentProps from '@common/BaseComponentInterface';
+
+import { classNames, parseBgClassNames, parseMarginTopClassNames } from '@utils/classname-utils';
 import BarWrapper from '@common/BarWrapper';
 
-export interface PeerComparisonBarProps {
+export interface PeerComparisonBarProps extends BaseComponentProps {
     markerPercentage: number,
     peerGroupMinPercentage: number,
     peerGroupMaxPercentage: number, 
@@ -19,9 +21,13 @@ const PeerComparisonBar = ({
     markerBgColor = 'bg-blue-500',
     peerGroupBgColor = 'bg-gray-300',
     barBgColor = 'bg-gray-100',
+    marginTop,
 }: PeerComparisonBarProps) => {
     return(
-        <BarWrapper bgColor={ classNames(parseBgClassNames(barBgColor)) }>
+        <BarWrapper
+            bgColor={ classNames(parseBgClassNames(barBgColor)) }
+            marginTop={ parseMarginTopClassNames(marginTop) } 
+        >
             <div className="h-full bg-transparent" style={ {'width': `${peerGroupMinPercentage}%`} } />
             <div
                 className={ classNames(

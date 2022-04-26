@@ -1,5 +1,7 @@
 import React from 'react';
 
+import BaseComponentProps from '@common/BaseComponentInterface';
+
 import { 
     classNames,
     parseBgClassNames,
@@ -7,10 +9,11 @@ import {
     parseMaxWidthClassNames,
     parseRoundedCornersClassNames,
     parseShadowClassNames,
+    parseTextAlignmentClassNames,
     parseWidthClassNames,
 } from '@utils/classname-utils';
 
-export interface CardProps {
+export interface CardProps extends BaseComponentProps {
     maxWidth?: string,
     width?: string,
     border?: string,
@@ -29,6 +32,7 @@ const Card = ({
     shadow = 'shadow',
     roundedCorners = 'rounded-lg',
     bgColor = 'bg-white',
+    marginTop,
     children
 }: CardProps) => {
     return(
@@ -40,6 +44,7 @@ const Card = ({
             parseShadowClassNames(shadow),
             parseRoundedCornersClassNames(roundedCorners),
             parseBgClassNames(bgColor),
+            parseTextAlignmentClassNames(marginTop),
             'relative overflow-hidden mx-auto text-left'
         ) }
         >

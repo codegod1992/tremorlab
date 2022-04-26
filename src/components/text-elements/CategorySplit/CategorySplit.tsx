@@ -1,6 +1,13 @@
 import React from 'react';
 
-import { classNames, parseBorderClassNames, parseTextColorClassNames } from '@utils/classname-utils';
+import BaseComponentProps from '@common/BaseComponentInterface';
+
+import { 
+    classNames,
+    parseBorderClassNames,
+    parseMarginTopClassNames,
+    parseTextColorClassNames 
+} from '@utils/classname-utils';
 
 interface CategoryProps {
     name: string,
@@ -10,7 +17,7 @@ interface CategoryProps {
     borderColor?: string
 }
 
-export interface CategorySplitProps {
+export interface CategorySplitProps extends BaseComponentProps {
     firstCategory: CategoryProps,
     secondCategory: CategoryProps,
     textColor: string
@@ -109,10 +116,11 @@ const RightCategoryBlock = ({
 const CategorySplit = ({
     firstCategory,
     secondCategory,
-    textColor = 'text-gray-600'
+    textColor = 'text-gray-600',
+    marginTop,
 }: CategorySplitProps) => {
     return(
-        <div className="flex justify-between">
+        <div className={ classNames(parseMarginTopClassNames(marginTop), 'flex justify-between') }>
             <LeftCategoryBlock {...firstCategory} nameTextColor={ textColor } />
             <RightCategoryBlock {...secondCategory} nameTextColor={ textColor } />
         </div>

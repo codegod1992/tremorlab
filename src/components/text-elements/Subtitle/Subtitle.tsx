@@ -1,8 +1,15 @@
 import React from 'react';
 
-import { classNames, parseTextColorClassNames, parseTruncateOption } from '@utils/classname-utils';
+import BaseComponentProps from '@common/BaseComponentInterface';
 
-export interface SubtitleProps {
+import { 
+    classNames,
+    parseMarginTopClassNames,
+    parseTextColorClassNames,
+    parseTruncateOption
+} from '@utils/classname-utils';
+
+export interface SubtitleProps extends BaseComponentProps {
     text: string,
     truncate?: boolean,
     textColor?: string,
@@ -12,11 +19,13 @@ const Subtitle = ({
     text,
     truncate = false,
     textColor = 'text-gray-400',
+    marginTop
 }: SubtitleProps) => {
     return(
         <p className={ classNames(
             parseTextColorClassNames(textColor),
             parseTruncateOption(truncate),
+            parseMarginTopClassNames(marginTop),
             'text-base font-normal shrink-0'
         ) }
         >

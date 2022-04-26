@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import { classNames, parseBgClassNames } from '@utils/classname-utils';
+import BaseComponentProps from '@common/BaseComponentInterface';
+
+import { classNames, parseBgClassNames, parseMarginTopClassNames } from '@utils/classname-utils';
 import BarWrapper from '@common/BarWrapper';
 import Trapezoid from '@common/Trapzoid';
 
-export interface FunnelBarsProps {
+export interface FunnelBarsProps extends BaseComponentProps {
     widthPercentageList: number[],
     funnelColor?: string,
     funnelPixelHeight?: number
@@ -18,6 +20,7 @@ const FunnelBars = ({
     funnelColor = 'text-gray-100',
     primaryBarBgColor = 'bg-gray-400',
     secondaryBarBgColor = 'bg-gray-100',
+    marginTop
 }: FunnelBarsProps) => {
 
     const getRefPixelWidth = (refElement: React.RefObject<HTMLDivElement>): number => {
@@ -40,7 +43,7 @@ const FunnelBars = ({
     }, []);
 
     return(
-        <div ref={ barWrapperWidthRef }>
+        <div ref={ barWrapperWidthRef } className={ classNames(parseMarginTopClassNames(marginTop)) }>
             { widthPercentageList?.map((widthPercentage, idx) => {
                 const currentWidthPercentage: number = widthPercentage;
                 const nextWithPercentage: number = idx!=widthPercentageList.length - 1

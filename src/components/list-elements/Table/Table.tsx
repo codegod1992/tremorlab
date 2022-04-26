@@ -1,13 +1,16 @@
 import React from 'react';
 
+import BaseComponentProps from '@common/BaseComponentInterface';
+
 import { 
     classNames,
     parseDivideColorClassNames,
     parseDivideYClassNames,
+    parseMarginTopClassNames,
     parseTextColorClassNames 
 } from '@utils/classname-utils';
 
-export interface TableProps {
+export interface TableProps extends BaseComponentProps {
     textColor?: string,
     divideY?: string,
     divideColor?: string,
@@ -18,11 +21,13 @@ const Table = ({
     textColor = 'text-gray-500',
     divideY = 'divide-y',
     divideColor = 'divide-gray-200',
+    marginTop,
     children
 }: TableProps) => {
     return(
         <table className={ classNames(
             parseTextColorClassNames(textColor),
+            parseMarginTopClassNames(marginTop),
             'w-full font-normal text-sm tabular-nums'
         ) }
         >

@@ -134,3 +134,8 @@ export const parseFixedHeightClassNames: TailwindClassParser = (twClassName) => 
             : ''
     );
 };
+
+export const parseMarginTopClassNames: TailwindClassParser = (twClassName) => {
+    if (twClassName===undefined) return '';
+    return twClassName.startsWith('mt-') ? twClassName : '';
+};

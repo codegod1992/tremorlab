@@ -1,11 +1,14 @@
 import React from 'react';
 
+import BaseComponentProps from '@common/BaseComponentInterface';
+
 import { 
     classNames,
     parseFixedHeightClassNames,
+    parseMarginTopClassNames,
 } from '@utils/classname-utils';
 
-export interface CallOutProps {
+export interface CallOutProps extends BaseComponentProps {
     title: string,
     text: string,
     Icon?: React.ElementType,
@@ -17,9 +20,11 @@ const CallOut = ({
     text,
     Icon,
     fixedHeight = 'h-24',
+    marginTop
 }: CallOutProps) => {
     return(
         <div className={ classNames(
+            parseMarginTopClassNames(marginTop),
             'bg-gray-100',
             'border-l-4',
             'border-gray-400',

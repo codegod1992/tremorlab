@@ -1,8 +1,15 @@
 import React from 'react';
 
-import { classNames, parseDivideColorClassNames, parseDivideYClassNames } from '@utils/classname-utils';
+import BaseComponentProps from '@common/BaseComponentInterface';
 
-export interface ListProps {
+import { 
+    classNames,
+    parseDivideColorClassNames,
+    parseDivideYClassNames,
+    parseMarginTopClassNames 
+} from '@utils/classname-utils';
+
+export interface ListProps extends BaseComponentProps {
     textColor?: string,
     divideY?: string,
     divideColor?: string,
@@ -13,6 +20,7 @@ const List = ({
     textColor = 'text-gray-500',
     divideY = 'divide-y',
     divideColor = 'divide-gray-200',
+    marginTop,
     children
 }: ListProps) => {
     return(
@@ -21,6 +29,7 @@ const List = ({
             divideY,
             parseDivideYClassNames(divideY),
             parseDivideColorClassNames(divideColor),
+            parseMarginTopClassNames(marginTop),
             'overflow-hidden w-full',
         ) }
         >

@@ -1,22 +1,31 @@
 import React from 'react';
 
-import { classNames, parseTextAlignmentClassNames, parseTruncateOption } from '@utils/classname-utils';
+import BaseComponentProps from '@common/BaseComponentInterface';
 
-export interface TextBlockProps {
+import { 
+    classNames,
+    parseMarginTopClassNames,
+    parseTextAlignmentClassNames,
+    parseTruncateOption
+} from '@utils/classname-utils';
+
+export interface TextBlockProps extends BaseComponentProps {
     textAlignment?: string,
-    truncate?: boolean
+    truncate?: boolean,
     children: React.ReactNode
 }
 
 const TextBlock = ({
     textAlignment = 'text-left',
     truncate = false,
+    marginTop,
     children
 }: TextBlockProps) => {
     return(
         <div className={ classNames(
             parseTextAlignmentClassNames(textAlignment),
-            parseTruncateOption(truncate)
+            parseTruncateOption(truncate),
+            parseMarginTopClassNames(marginTop)
         ) }
         >
             { children }

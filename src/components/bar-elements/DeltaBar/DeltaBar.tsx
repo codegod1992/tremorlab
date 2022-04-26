@@ -1,10 +1,12 @@
 import React from 'react';
 
+import BaseComponentProps from '@common/BaseComponentInterface';
+
 import { DeltaBgColors, DeltaTypes, mapInputsToDeltaType } from '@common/component-utils';
-import { classNames, parseBgClassNames } from '@utils/classname-utils';
+import { classNames, parseBgClassNames, parseMarginTopClassNames } from '@utils/classname-utils';
 import BarWrapper from '@common/BarWrapper';
 
-export interface DeltaBarProps {
+export interface DeltaBarProps extends BaseComponentProps {
     widthPercentage: number,
     deltaType: string,
     isIncreasePositive?: boolean,
@@ -17,10 +19,14 @@ const DeltaBar = ({
     deltaType,
     isIncreasePositive = true,
     barBgColor = 'bg-gray-200',
-    markerBgColor = 'bg-gray-400'
+    markerBgColor = 'bg-gray-400',
+    marginTop,
 }: DeltaBarProps) => {
     return(
-        <BarWrapper bgColor={ classNames(parseBgClassNames(barBgColor)) }>
+        <BarWrapper 
+            bgColor={ classNames(parseBgClassNames(barBgColor)) }
+            marginTop={ parseMarginTopClassNames(marginTop) }
+        >
             <div className="w-1/2 h-full flex justify-end bg-transparent rounded-l-full">
                 { deltaType===DeltaTypes.Decrease ? (
                     <div 

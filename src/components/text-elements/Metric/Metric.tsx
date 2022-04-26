@@ -1,22 +1,25 @@
 import React from 'react';
 
-import { classNames, parseTextColorClassNames } from '@utils/classname-utils';
+import BaseComponentProps from '@common/BaseComponentInterface';
 
-export interface MetricProps {
+import { classNames, parseMarginTopClassNames, parseTextColorClassNames } from '@utils/classname-utils';
+
+export interface MetricProps extends BaseComponentProps {
     value: string,
     name?: string,
     valueTextColor?: string,
-    nameTextColor?: string
+    nameTextColor?: string,
 }
 
 const Metric = ({
     value,
     name,
     valueTextColor = 'text-gray-600',
-    nameTextColor = 'text-gray-600'
+    nameTextColor = 'text-gray-600',
+    marginTop
 }: MetricProps) => {
     return(
-        <div>
+        <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
             { name ? (
                 <p className={ classNames(
                     parseTextColorClassNames(nameTextColor),
