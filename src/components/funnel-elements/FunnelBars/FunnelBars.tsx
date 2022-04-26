@@ -43,7 +43,7 @@ const FunnelBars = ({
     }, []);
 
     return(
-        <div ref={ barWrapperWidthRef } className={ classNames(parseMarginTopClassNames(marginTop)) }>
+        <div ref={ barWrapperWidthRef } className={ classNames(parseMarginTopClassNames(marginTop), 'w-full') }>
             { widthPercentageList?.map((widthPercentage, idx) => {
                 const currentWidthPercentage: number = widthPercentage;
                 const nextWithPercentage: number = idx!=widthPercentageList.length - 1
