@@ -27,8 +27,8 @@ const Template: ComponentStory<typeof TextBlock> = (args) => (
             Text with <Bold>bold text</Bold> and <It>Italics Text</It> and <Light>Light Text</Light> 
             and <Bold><It>Bold italics text</It></Bold>
         </Text>
-        <p className='text-right'>
-            Hello WOrld
+        <p className="text-right">
+            Hello World
         </p>
         <Caption>Caption</Caption>
     </TextBlock>
