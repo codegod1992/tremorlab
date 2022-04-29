@@ -6,16 +6,18 @@ import {
     classNames,
     parseBgClassNames,
     parseBorderClassNames,
+    parseHFullOption,
     parseMaxWidthClassNames,
     parseRoundedCornersClassNames,
     parseShadowClassNames,
     parseTextAlignmentClassNames,
-    parseWidthClassNames,
+    parseWFullOption,
 } from '@utils/classname-utils';
 
 export interface CardProps extends BaseComponentProps {
     maxWidth?: string,
-    width?: string,
+    wFull?: boolean,
+    hFull?: boolean,
     border?: string,
     borderColor?: string,
     shadow?: string,
@@ -26,7 +28,8 @@ export interface CardProps extends BaseComponentProps {
 
 const Card = ({
     maxWidth = '',
-    width = '',
+    wFull = true,
+    hFull = false,
     border = 'border',
     borderColor = '',
     shadow = 'shadow',
@@ -38,7 +41,8 @@ const Card = ({
     return(
         <div className={ classNames(
             parseMaxWidthClassNames(maxWidth),
-            parseWidthClassNames(width),
+            parseWFullOption(wFull),
+            parseHFullOption(hFull),
             parseBorderClassNames(border),
             parseBorderClassNames(borderColor),
             parseShadowClassNames(shadow),
