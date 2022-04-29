@@ -6,6 +6,10 @@ interface TailwindClassParser {
     (twClassName: string|undefined): string
 }
 
+interface TailwindClassConverter {
+    (twClassName: string): string
+}
+
 interface BoolClassParser {
     (twClassName: boolean): string
 }
@@ -138,4 +142,10 @@ export const parseFixedHeightClassNames: TailwindClassParser = (twClassName) => 
 export const parseMarginTopClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
     return twClassName.startsWith('mt-') ? twClassName : '';
+};
+
+export const toBorderColorClass: TailwindClassConverter = (twClassName: string): string => {
+    const classNameParts = twClassName.split('-').splice(1);
+    classNameParts.unshift('border');
+    return classNameParts.join('-');
 };

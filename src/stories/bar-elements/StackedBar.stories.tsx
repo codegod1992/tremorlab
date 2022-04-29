@@ -14,12 +14,26 @@ const Template: ComponentStory<typeof StackedBar> = (args) => (
     <StackedBar {...args} />
 );
   
-export const Default = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Default.args = {
+
+export const WithoutMarker = Template.bind({});
+WithoutMarker.args = {
     elements: [
-        [25, 'bg-yellow-400'],
-        [50, 'bg-green-400'],
+        [10, 'bg-red-400'],
         [25, 'bg-blue-400'],
-    ]
+        [40, 'bg-green-400'],
+        [25, 'bg-red-400'],
+    ],
+};
+
+
+export const WithMarker = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+WithMarker.args = {
+    elements: [
+        [10, 'bg-red-400'],
+        [25, 'bg-blue-400'],
+        [40, 'bg-green-400'],
+        [25, 'bg-red-400'],
+    ],
+    markerPercentageValue: 20,
 };
