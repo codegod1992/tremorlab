@@ -136,6 +136,14 @@ export const parseTruncateOption: BoolClassParser = (option) => {
     return option===true ? 'truncate' : '';
 };
 
+export const parseHFullOption: BoolClassParser = (option) => {
+    return option===true ? 'h-full' : '';
+};
+
+export const parseWFullOption: BoolClassParser = (option) => {
+    return option===true ? 'w-full' : '';
+};
+
 export const parseMarginTopClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
     return twClassName.startsWith('mt-') ? twClassName.split(' ')[0] : '';
@@ -154,7 +162,7 @@ export const parseGapYClassNames: TailwindClassParser = (twClassName) => {
 export const parseColSpanClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
     if (twClassName==='col-auto') return twClassName;
-    return twClassName.startsWith('col-span-') ? twClassName.split(' ')[0] : 'col-auto';
+    return twClassName.startsWith('col-span-') ? twClassName.split(' ')[0] : '';
 };
 
 export const parseColStartClassNames: TailwindClassParser = (twClassName) => {
@@ -165,6 +173,22 @@ export const parseColStartClassNames: TailwindClassParser = (twClassName) => {
 export const parseColEndClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
     return twClassName.startsWith('col-end-') ? twClassName.split(' ')[0] : '';
+};
+
+export const parseRowSpanClassNames: TailwindClassParser = (twClassName) => {
+    if (twClassName===undefined) return '';
+    if (twClassName==='row-auto') return twClassName;
+    return twClassName.startsWith('row-span-') ? twClassName.split(' ')[0] : '';
+};
+
+export const parseRowStartClassNames: TailwindClassParser = (twClassName) => {
+    if (twClassName===undefined) return '';
+    return twClassName.startsWith('row-start-') ? twClassName.split(' ')[0] : '';
+};
+
+export const parseRowEndClassNames: TailwindClassParser = (twClassName) => {
+    if (twClassName===undefined) return '';
+    return twClassName.startsWith('row-end-') ? twClassName.split(' ')[0] : '';
 };
 
 export const parseFixedHeightClassNames: TailwindClassParser = (twClassName) => {
