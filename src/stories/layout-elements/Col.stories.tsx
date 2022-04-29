@@ -9,13 +9,16 @@ import ColGrid from 'components/layout-elements/ColGrid/ColGrid';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/LayoutElements/ColGrid',
-    component: ColGrid,
+    title: 'Tremor/LayoutElements/Col',
+    component: Col,
 } as ComponentMeta<typeof ColGrid>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
 const Template: ComponentStory<typeof ColGrid> = (args) => (
     <ColGrid {...args}>
+        <Col><Card>Hello</Card></Col>
+        <Col><Card>World</Card></Col>
+        <Col><Card>!!!</Card></Col>
         <Col colStart="col-start-2" colSpan="col-span-2"><Card>Hello</Card></Col>
         <Col><Card>World</Card></Col>
     </ColGrid>

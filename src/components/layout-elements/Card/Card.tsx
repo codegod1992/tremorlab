@@ -25,7 +25,7 @@ export interface CardProps extends BaseComponentProps {
 }
 
 const Card = ({
-    maxWidth = 'max-w-lg',
+    maxWidth = '',
     width = '',
     border = 'border',
     borderColor = '',
