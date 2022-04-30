@@ -12,7 +12,46 @@ type ColorTypes = {
     focusOutlineColor: string,
 };
 
-export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]: ColorTypes}} = {
+export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]: ColorTypes}|ColorTypes} = {
+    'transparent': {
+        bgColor: 'bg-transparent',
+        hoverBgColor: 'hover:bg-transparent',
+        textColor: 'text-transparent',
+        hoverTextColor: 'hover:text-transparent',
+        borderColor: 'border-transparent',
+        hoverBorderColor: 'hover:border-transparent',
+        ringRolor: 'ring-transparent',
+        hoverRingColor: 'hover:ring-transparent',
+        divideColor: 'divide-transparent',
+        outlineColor: 'outline-transparent',
+        focusOutlineColor: 'focus:outline-transparent',
+    },
+    'white': {
+        bgColor: 'bg-white',
+        hoverBgColor: 'hover:bg-white',
+        textColor: 'text-white',
+        hoverTextColor: 'hover:text-white',
+        borderColor: 'border-white',
+        hoverBorderColor: 'hover:border-white',
+        ringRolor: 'ring-white',
+        hoverRingColor: 'hover:ring-white',
+        divideColor: 'divide-white',
+        outlineColor: 'outline-white',
+        focusOutlineColor: 'focus:outline-white',
+    },
+    'black': {
+        bgColor: 'bg-black',
+        hoverBgColor: 'hover:bg-black',
+        textColor: 'text-black',
+        hoverTextColor: 'hover:text-black',
+        borderColor: 'border-black',
+        hoverBorderColor: 'hover:border-black',
+        ringRolor: 'ring-black',
+        hoverRingColor: 'hover:ring-black',
+        divideColor: 'divide-black',
+        outlineColor: 'outline-black',
+        focusOutlineColor: 'focus:outline-black',
+    },
     'slate': {
         '50': {
             bgColor: 'bg-slate-50',
