@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import BaseComponentProps from '@common/BaseComponentInterface';
+import BaseComponentProps from '@utils/BaseComponentInterface';
 
 import { classNames, parseBgClassNames, parseMarginTopClassNames } from '@utils/classname-utils';
 import BarWrapper from '@common/BarWrapper';

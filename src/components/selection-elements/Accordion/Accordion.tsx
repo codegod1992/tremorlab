@@ -4,7 +4,7 @@ import ArrowDownSLineIcon from 'remixicon-react/ArrowDownSLineIcon';
 import ArrowLeftSLineIcon from 'remixicon-react/ArrowLeftSLineIcon';
 import ArrowRightSLineIcon from 'remixicon-react/ArrowRightSLineIcon';
 
-import BaseComponentProps from '@common/BaseComponentInterface';
+import BaseComponentProps from '@utils/BaseComponentInterface';
 
 import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
 
