@@ -7,7 +7,7 @@ import {
     DeltaTextColors,
     IconProportions, 
     mapInputsToDeltaType
-} from '@common/component-utils';
+} from '@utils/component-utils';
 import BadgeWrapper from '@common/BadgeWrapper';
 import { classNames } from '@utils/classname-utils';
 

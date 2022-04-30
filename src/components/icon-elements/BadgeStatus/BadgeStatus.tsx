@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BadgeProportions, IconProportions } from '@common/component-utils';
+import { BadgeProportions, IconProportions } from '@utils/component-utils';
 import BadgeWrapper from '@common/BadgeWrapper';
 import { classNames } from '@utils/classname-utils';
 

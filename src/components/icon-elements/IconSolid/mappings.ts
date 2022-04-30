@@ -1,4 +1,4 @@
-import { IconElementColorTypes, IconElementProporions, IconElementShapeTypes } from '@common/component-utils';
+import { IconElementColorTypes, IconElementProporions, IconElementShapeTypes } from '@utils/component-utils';
 
 export const shapeMapping: IconElementShapeTypes = {
     rounded: 'rounded-lg',

@@ -1,4 +1,4 @@
-import { IconElementColorTypes, IconElementProporions, IconElementShapeTypes } from '@common/component-utils';
+import { IconElementColorTypes, IconElementProporions, IconElementShapeTypes } from '@utils/component-utils';
 
 export const shapeMapping: IconElementShapeTypes = {
     rounded: 'rounded-lg',
@@ -30,7 +30,7 @@ export const proportinsMapping: {[char: string]: IconElementProporions} = {
     },
 };
 
-export const colorMapping: {[char: string]: IconElementColorTypes} = {
+export const colorVariantMapping: {[char: string]: IconElementColorTypes} = {
     'black': { 
         textColor: 'text-black',
         bgColor: 'bg-gray-100',

@@ -3,7 +3,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import ArrowUpLineIcon from 'remixicon-react/ArrowUpLineIcon';
 
-import { Sizes } from '@common/component-utils';
+import { Sizes } from '@utils/component-utils';
 import { Title } from 'components';
 
 import IconCircled from 'components/icon-elements/IconCircled/IconCircled';

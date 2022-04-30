@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BadgeProportions } from '@common/component-utils';
+import { BadgeProportions } from '@utils/component-utils';
 import BadgeWrapper from '@common/BadgeWrapper';
 
 const badgeProportionsAttributes: {[char: string]: BadgeProportions} = {

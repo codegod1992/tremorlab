@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ButtonColorTypes, ButtonProportions, ButtonShapeTypes } from '@common/component-utils';
+import { ButtonColorTypes, ButtonProportions, ButtonShapeTypes } from '@utils/component-utils';
 import { classNames } from '@utils/classname-utils';
 
 export interface ButtonWrapperProps extends ButtonProportions, ButtonShapeTypes, ButtonColorTypes {

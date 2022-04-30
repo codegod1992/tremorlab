@@ -5,8 +5,8 @@ import {
     ButtonShapeTypes,
     IconProportions,
     Sizes
-} from '@common/component-utils';
-import { ButtonWithIconProps } from '../../common/component-utils';
+} from '@utils/component-utils';
+import { ButtonWithIconProps } from '../../../utils/component-utils';
 import ButtonWrapper from '@common/ButtonWrapper';
 import { classNames } from '@utils/classname-utils';
 

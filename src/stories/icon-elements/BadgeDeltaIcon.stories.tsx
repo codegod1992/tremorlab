@@ -5,7 +5,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Flex } from 'components';
 
 import BadgeDeltaIcon from 'components/icon-elements/BadgeDeltaIcon/BadgeDeltaIcon';
-import { DeltaTypes } from '@common/component-utils';
+import { DeltaTypes } from '@utils/component-utils';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

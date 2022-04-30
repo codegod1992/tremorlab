@@ -2,7 +2,7 @@ import React from 'react';
 
 import BaseComponentProps from '@common/BaseComponentInterface';
 
-import { DeltaBgColors, DeltaTypes, mapInputsToDeltaType } from '@common/component-utils';
+import { DeltaBgColors, DeltaTypes, mapInputsToDeltaType } from '@utils/component-utils';
 import { classNames, parseBgClassNames, parseMarginTopClassNames } from '@utils/classname-utils';
 import BarWrapper from '@common/BarWrapper';
 

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Colors, Sizes } from '@common/component-utils';
+import { Colors, Sizes } from '@utils/component-utils';
 import { colorMapping, proportinsMapping, shapeMapping } from 'components/icon-elements/IconCircled/mappings';
-import { IconElementProps } from '../../common/component-utils';
+import { IconElementProps } from '../../../utils/component-utils';
 import IconWrapper from '@common/IconWrapper';
 
 const IconCircled = ({

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BadgeProportions } from '@common/component-utils';
+import { BadgeProportions } from '@utils/component-utils';
 import { classNames } from '@utils/classname-utils';
 
 export interface BadgeWrapperProps extends BadgeProportions {
