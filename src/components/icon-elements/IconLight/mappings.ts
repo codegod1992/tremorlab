@@ -30,7 +30,7 @@ export const proportinsMapping: {[char: string]: IconElementProporions} = {
     },
 };
 
-export const colorVariantMapping: {[char: string]: IconElementColorTypes} = {
+export const colorMapping: {[char: string]: IconElementColorTypes} = {
     'black': { 
         textColor: 'text-black',
         bgColor: 'bg-gray-100',
