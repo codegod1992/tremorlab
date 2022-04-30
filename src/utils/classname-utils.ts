@@ -1,3 +1,5 @@
+import { ColorTypes, colorVariantMapping } from './colorVariantMapping';
+
 interface StringJoiner {
     (...classes: string[]): string
 }
@@ -28,10 +30,17 @@ export const stringEndsWithNumber = (str: string): boolean => {
     return stringIsNumeric(str.split('-').pop());
 };
 
+export const getColorVariantTypes = (twClassName: string): ColorTypes => {
+    const classNameParts = twClassName.split('-');
+    const baseColor = classNameParts[1];
+    const colorVariant = classNameParts[2] ? classNameParts[2] : 'none';
+    const colorTypes = colorVariantMapping[baseColor][colorVariant];
+    return colorTypes;
+};
+
 export const toBorderColorClass: TailwindClassConverter = (twClassName: string): string => {
-    const classNameParts = twClassName.split('-').splice(1);
-    classNameParts.unshift('border');
-    return classNameParts.join('-');
+    const colorTypes = getColorVariantTypes(twClassName);
+    return colorTypes.borderColor;
 };
 
 export const parseBgClassNames: TailwindClassParser = (twClassName) => {

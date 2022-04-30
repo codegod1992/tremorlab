@@ -18,9 +18,9 @@ const Template: ComponentStory<typeof StackedBar> = (args) => (
 export const WithoutMarker = Template.bind({});
 WithoutMarker.args = {
     elements: [
-        [10, 'bg-red-400'],
+        [10, 'bg-green-400'],
         [25, 'bg-blue-400'],
-        [40, 'bg-green-400'],
+        [40, 'bg-yellow-400'],
         [25, 'bg-red-400'],
     ],
 };
@@ -30,10 +30,10 @@ export const WithMarker = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 WithMarker.args = {
     elements: [
-        [10, 'bg-red-400'],
+        [10, 'bg-green-400'],
         [25, 'bg-blue-400'],
-        [40, 'bg-green-400'],
+        [40, 'bg-yellow-400'],
         [25, 'bg-red-400'],
     ],
-    markerPercentageValue: 20,
+    markerPercentageValue: 90,
 };

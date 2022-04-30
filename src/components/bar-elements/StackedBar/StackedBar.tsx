@@ -42,8 +42,6 @@ const StackedBar = ({
     };
 
     const markerBorderColor = getMarkerBorderColor();
-    
-    console.log('marker', markerBorderColor, parseBorderClassNames(markerBorderColor));
 
     return(
         <BarWrapper 
