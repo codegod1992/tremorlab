@@ -1,9 +1,13 @@
 import React from 'react';
 
+import 'tippy.js/dist/tippy.css';
+import Tooltip from '@tippyjs/react';
+
 import { classNames } from '@utils/classname-utils';
 
 export interface IconWrapperProps {
     Icon: React.ElementType,
+    info?: string,
     iconSize: string,
     paddingX: string,
     paddingY: string,
@@ -19,25 +23,27 @@ export interface IconWrapperProps {
 
 const IconWrapper = (props: IconWrapperProps) => {
     return(
-        <div 
-            className={ classNames(
-                props.paddingX,
-                props.paddingY,
-                props.rounded,
-                props.bgColor,
-                props.textColor,
-                props.border,
-                props.borderColor,
-                props.ring,
-                props.ringColor,
-                props.shadow,
-                'flex-shrink-0 inline-flex items-center'
-            ) }
-        >
-            <props.Icon className={ classNames(
-                props.iconSize
-            ) }/>
-        </div>
+        <Tooltip content={ props.info } className={ props.info ? '' : 'hidden' }>
+            <div 
+                className={ classNames(
+                    props.paddingX,
+                    props.paddingY,
+                    props.rounded,
+                    props.bgColor,
+                    props.textColor,
+                    props.border,
+                    props.borderColor,
+                    props.ring,
+                    props.ringColor,
+                    props.shadow,
+                    'flex-shrink-0 inline-flex items-center'
+                ) }
+            >
+                <props.Icon className={ classNames(
+                    props.iconSize
+                ) }/>
+            </div>
+        </Tooltip>
     );
 };
 

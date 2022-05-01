@@ -7,12 +7,14 @@ import IconWrapper from '@common/IconWrapper';
 
 const IconCircled = ({
     Icon,
+    info,
     size = Sizes.SM,
     color = Colors.Blue,
 }: IconElementProps) => {
     return(
         <IconWrapper
             Icon = { Icon }
+            info={ info }
             { ...colorMapping[color] }
             { ...proportinsMapping[size] }
             { ...shapeMapping }

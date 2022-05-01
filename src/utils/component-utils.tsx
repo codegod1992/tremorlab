@@ -129,6 +129,7 @@ export type IconElementColorTypes = {
 
 export interface IconElementProps {
     Icon: React.ElementType,
+    info?: string,
     size?: string
     color?: string
 }

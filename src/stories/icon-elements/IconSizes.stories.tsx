@@ -27,9 +27,8 @@ const Template: ComponentStory<never> = () => (
             <Title text="Icon Neutral"/>
             <div className="grid grid-cols-8 justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
-                    console.log(Sizes[key]);
                     return(
-                        <IconNeutral Icon={ Icon } size={ Sizes[key] } />
+                        <IconNeutral Icon={ Icon } size={ Sizes[key] } info="Icon Info" />
                     );
                 })}
             </div>
@@ -38,9 +37,8 @@ const Template: ComponentStory<never> = () => (
             <Title text="Icon Light"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
-                    console.log(Sizes[key]);
                     return(
-                        <IconLight Icon={ Icon } size={ Sizes[key] } />
+                        <IconLight Icon={ Icon } size={ Sizes[key] } info="Icon Info" />
                     );
                 })}
             </div>
@@ -49,7 +47,6 @@ const Template: ComponentStory<never> = () => (
             <Title text="Icon Shadow"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
-                    console.log(Sizes[key]);
                     return(
                         <IconShadow Icon={ Icon } size={ Sizes[key] } />
                     );
@@ -60,7 +57,6 @@ const Template: ComponentStory<never> = () => (
             <Title text="Icon Solid"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
-                    console.log(Sizes[key]);
                     return(
                         <IconSolid Icon={ Icon } size={ Sizes[key] } />
                     );
@@ -71,7 +67,6 @@ const Template: ComponentStory<never> = () => (
             <Title text="Icon Circled"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
-                    console.log(Sizes[key]);
                     return(
                         <IconCircled Icon={ Icon } size={ Sizes[key] } />
                     );
