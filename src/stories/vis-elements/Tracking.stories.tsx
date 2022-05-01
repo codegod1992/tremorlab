@@ -17,36 +17,36 @@ export default {
 const Template: ComponentStory<typeof Tracking> = (args) => (
     <Card>
         <Tracking>
-            <TrackingBlock bgColor="bg-emerald-400"/>
-            <TrackingBlock bgColor="bg-emerald-400"/>
-            <TrackingBlock bgColor="bg-yellow-400"/>
-            <TrackingBlock bgColor="bg-emerald-400"/>
-            <TrackingBlock bgColor="bg-red-400"/>
-            <TrackingBlock bgColor="bg-emerald-400"/>
-            <TrackingBlock bgColor="bg-emerald-400"/>
-            <TrackingBlock bgColor="bg-yellow-400"/>
-            <TrackingBlock bgColor="bg-emerald-400"/>
-            <TrackingBlock bgColor="bg-red-400"/>
-            <TrackingBlock bgColor="bg-emerald-400"/>
-            <TrackingBlock bgColor="bg-emerald-400"/>
-            <TrackingBlock bgColor="bg-yellow-400"/>
-            <TrackingBlock bgColor="bg-emerald-400"/>
-            <TrackingBlock bgColor="bg-red-400"/>
-            <TrackingBlock bgColor="bg-emerald-400"/>
-            <TrackingBlock bgColor="bg-emerald-400"/>
-            <TrackingBlock bgColor="bg-yellow-400"/>
-            <TrackingBlock bgColor="bg-emerald-400"/>
-            <TrackingBlock bgColor="bg-red-400"/>
-            <TrackingBlock bgColor="bg-emerald-400"/>
-            <TrackingBlock bgColor="bg-emerald-400"/>
-            <TrackingBlock bgColor="bg-yellow-400"/>
-            <TrackingBlock bgColor="bg-emerald-400"/>
-            <TrackingBlock bgColor="bg-red-400"/>
-            <TrackingBlock bgColor="bg-emerald-400"/>
-            <TrackingBlock bgColor="bg-emerald-400"/>
-            <TrackingBlock bgColor="bg-yellow-400"/>
-            <TrackingBlock bgColor="bg-emerald-400"/>
-            <TrackingBlock bgColor="bg-red-400"/>
+            <TrackingBlock bgColor="bg-emerald-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-emerald-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-yellow-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-emerald-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-red-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-emerald-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-emerald-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-yellow-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-emerald-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-red-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-emerald-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-emerald-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-yellow-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-emerald-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-red-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-emerald-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-emerald-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-yellow-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-emerald-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-red-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-emerald-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-emerald-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-yellow-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-emerald-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-red-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-emerald-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-emerald-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-yellow-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-emerald-400" info="Tracking Info" />
+            <TrackingBlock bgColor="bg-red-400" info="Tracking Info" />
         </Tracking>
     </Card>
 );

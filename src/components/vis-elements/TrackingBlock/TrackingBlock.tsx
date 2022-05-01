@@ -1,24 +1,30 @@
 import React from 'react';
 
+import 'tippy.js/dist/tippy.css';
+import Tooltip from '@tippyjs/react';
+
 import { classNames, parseBgClassNames, parseFixedHeightClassNames } from '@utils/classname-utils';
 
 export interface TrackingBlockProps {
+    bgColor: string,
     fixedHeight?: string,
-    bgColor: string, 
+    info?: string
 }
 
 const TrackingBlock = ({
+    bgColor,
     fixedHeight = 'h-10',
-    bgColor
+    info
 }: TrackingBlockProps) => {
     return(
-        <div className={ classNames(
-            parseBgClassNames(bgColor),
-            parseFixedHeightClassNames(fixedHeight),
-            'w-full rounded'
-        ) }
-        >
-        </div>
+        <Tooltip content={ info } className={ info ? '' : 'hidden' }>
+            <div className={ classNames(
+                parseBgClassNames(bgColor),
+                parseFixedHeightClassNames(fixedHeight),
+                'w-full rounded'
+            ) }
+            />
+        </Tooltip>
     );
 };
 
