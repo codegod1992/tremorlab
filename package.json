@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/tremorlabs/tremor#readme",
   "dependencies": {
+    "@tippyjs/react": "^4.2.6",
     "tailwindcss": "^3.0.24"
   },
   "devDependencies": {

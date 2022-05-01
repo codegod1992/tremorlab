@@ -9,7 +9,7 @@ export type ColorTypes = {
     hoverRingColor: string,
     divideColor: string,
     outlineColor: string,
-    focusOutlineColor: string,
+    focusRingColor: string,
 };
 
 export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]: ColorTypes}} = {
@@ -25,7 +25,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-transparent',
             divideColor: 'divide-transparent',
             outlineColor: 'outline-transparent',
-            focusOutlineColor: 'focus:outline-transparent',
+            focusRingColor: 'focus:ring-transparent',
         }
     },
     'white': {
@@ -40,7 +40,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-white',
             divideColor: 'divide-white',
             outlineColor: 'outline-white',
-            focusOutlineColor: 'focus:outline-white',
+            focusRingColor: 'focus:ring-white',
         }
     },
     'black': {
@@ -55,7 +55,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-black',
             divideColor: 'divide-black',
             outlineColor: 'outline-black',
-            focusOutlineColor: 'focus:outline-black',
+            focusRingColor: 'focus:ring-black',
         }
     },
     'slate': {
@@ -70,7 +70,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-slate-50',
             divideColor: 'divide-slate-50',
             outlineColor: 'outline-slate-50',
-            focusOutlineColor: 'focus:outline-slate-50',
+            focusRingColor: 'focus:ring-slate-50',
         },
         '100': {
             bgColor: 'bg-slate-100',
@@ -83,7 +83,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-slate-100',
             divideColor: 'divide-slate-100',
             outlineColor: 'outline-slate-100',
-            focusOutlineColor: 'focus:outline-slate-100',
+            focusRingColor: 'focus:ring-slate-100',
         },
         '200': {
             bgColor: 'bg-slate-200',
@@ -96,7 +96,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-slate-200',
             divideColor: 'divide-slate-200',
             outlineColor: 'outline-slate-200',
-            focusOutlineColor: 'focus:outline-slate-200',
+            focusRingColor: 'focus:ring-slate-200',
         },
         '300': {
             bgColor: 'bg-slate-300',
@@ -109,7 +109,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-slate-300',
             divideColor: 'divide-slate-300',
             outlineColor: 'outline-slate-300',
-            focusOutlineColor: 'focus:outline-slate-300',
+            focusRingColor: 'focus:ring-slate-300',
         },
         '400': {
             bgColor: 'bg-slate-400',
@@ -122,7 +122,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-slate-400',
             divideColor: 'divide-slate-400',
             outlineColor: 'outline-slate-400',
-            focusOutlineColor: 'focus:outline-slate-400',
+            focusRingColor: 'focus:ring-slate-400',
         },
         '500': {
             bgColor: 'bg-slate-500',
@@ -135,7 +135,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-slate-500',
             divideColor: 'divide-slate-500',
             outlineColor: 'outline-slate-500',
-            focusOutlineColor: 'focus:outline-slate-500',
+            focusRingColor: 'focus:ring-slate-500',
         },
         '600': {
             bgColor: 'bg-slate-600',
@@ -148,7 +148,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-slate-600',
             divideColor: 'divide-slate-600',
             outlineColor: 'outline-slate-600',
-            focusOutlineColor: 'focus:outline-slate-600',
+            focusRingColor: 'focus:ring-slate-600',
         },
         '700': {
             bgColor: 'bg-slate-700',
@@ -161,7 +161,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-slate-700',
             divideColor: 'divide-slate-700',
             outlineColor: 'outline-slate-700',
-            focusOutlineColor: 'focus:outline-slate-700',
+            focusRingColor: 'focus:ring-slate-700',
         },
         '800': {
             bgColor: 'bg-slate-800',
@@ -174,7 +174,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-slate-800',
             divideColor: 'divide-slate-800',
             outlineColor: 'outline-slate-800',
-            focusOutlineColor: 'focus:outline-slate-800',
+            focusRingColor: 'focus:ring-slate-800',
         },
         '900': {
             bgColor: 'bg-slate-900',
@@ -187,7 +187,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-slate-900',
             divideColor: 'divide-slate-900',
             outlineColor: 'outline-slate-900',
-            focusOutlineColor: 'focus:outline-slate-900',
+            focusRingColor: 'focus:ring-slate-900',
         },
     },
     'gray': {
@@ -202,7 +202,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-gray-50',
             divideColor: 'divide-gray-50',
             outlineColor: 'outline-gray-50',
-            focusOutlineColor: 'focus:outline-gray-50',
+            focusRingColor: 'focus:ring-gray-50',
         },
         '100': {
             bgColor: 'bg-gray-100',
@@ -215,7 +215,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-gray-100',
             divideColor: 'divide-gray-100',
             outlineColor: 'outline-gray-100',
-            focusOutlineColor: 'focus:outline-gray-100',
+            focusRingColor: 'focus:ring-gray-100',
         },
         '200': {
             bgColor: 'bg-gray-200',
@@ -228,7 +228,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-gray-200',
             divideColor: 'divide-gray-200',
             outlineColor: 'outline-gray-200',
-            focusOutlineColor: 'focus:outline-gray-200',
+            focusRingColor: 'focus:ring-gray-200',
         },
         '300': {
             bgColor: 'bg-gray-300',
@@ -241,7 +241,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-gray-300',
             divideColor: 'divide-gray-300',
             outlineColor: 'outline-gray-300',
-            focusOutlineColor: 'focus:outline-gray-300',
+            focusRingColor: 'focus:ring-gray-300',
         },
         '400': {
             bgColor: 'bg-gray-400',
@@ -254,7 +254,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-gray-400',
             divideColor: 'divide-gray-400',
             outlineColor: 'outline-gray-400',
-            focusOutlineColor: 'focus:outline-gray-400',
+            focusRingColor: 'focus:ring-gray-400',
         },
         '500': {
             bgColor: 'bg-gray-500',
@@ -267,7 +267,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-gray-500',
             divideColor: 'divide-gray-500',
             outlineColor: 'outline-gray-500',
-            focusOutlineColor: 'focus:outline-gray-500',
+            focusRingColor: 'focus:ring-gray-500',
         },
         '600': {
             bgColor: 'bg-gray-600',
@@ -280,7 +280,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-gray-600',
             divideColor: 'divide-gray-600',
             outlineColor: 'outline-gray-600',
-            focusOutlineColor: 'focus:outline-gray-600',
+            focusRingColor: 'focus:ring-gray-600',
         },
         '700': {
             bgColor: 'bg-gray-700',
@@ -293,7 +293,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-gray-700',
             divideColor: 'divide-gray-700',
             outlineColor: 'outline-gray-700',
-            focusOutlineColor: 'focus:outline-gray-700',
+            focusRingColor: 'focus:ring-gray-700',
         },
         '800': {
             bgColor: 'bg-gray-800',
@@ -306,7 +306,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-gray-800',
             divideColor: 'divide-gray-800',
             outlineColor: 'outline-gray-800',
-            focusOutlineColor: 'focus:outline-gray-800',
+            focusRingColor: 'focus:ring-gray-800',
         },
         '900': {
             bgColor: 'bg-gray-900',
@@ -319,7 +319,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-gray-900',
             divideColor: 'divide-gray-900',
             outlineColor: 'outline-gray-900',
-            focusOutlineColor: 'focus:outline-gray-900',
+            focusRingColor: 'focus:ring-gray-900',
         },
     },
     'zinc': {
@@ -334,7 +334,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-zinc-50',
             divideColor: 'divide-zinc-50',
             outlineColor: 'outline-zinc-50',
-            focusOutlineColor: 'focus:outline-zinc-50',
+            focusRingColor: 'focus:ring-zinc-50',
         },
         '100': {
             bgColor: 'bg-zinc-100',
@@ -347,7 +347,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-zinc-100',
             divideColor: 'divide-zinc-100',
             outlineColor: 'outline-zinc-100',
-            focusOutlineColor: 'focus:outline-zinc-100',
+            focusRingColor: 'focus:ring-zinc-100',
         },
         '200': {
             bgColor: 'bg-zinc-200',
@@ -360,7 +360,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-zinc-200',
             divideColor: 'divide-zinc-200',
             outlineColor: 'outline-zinc-200',
-            focusOutlineColor: 'focus:outline-zinc-200',
+            focusRingColor: 'focus:ring-zinc-200',
         },
         '300': {
             bgColor: 'bg-zinc-300',
@@ -373,7 +373,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-zinc-300',
             divideColor: 'divide-zinc-300',
             outlineColor: 'outline-zinc-300',
-            focusOutlineColor: 'focus:outline-zinc-300',
+            focusRingColor: 'focus:ring-zinc-300',
         },
         '400': {
             bgColor: 'bg-zinc-400',
@@ -386,7 +386,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-zinc-400',
             divideColor: 'divide-zinc-400',
             outlineColor: 'outline-zinc-400',
-            focusOutlineColor: 'focus:outline-zinc-400',
+            focusRingColor: 'focus:ring-zinc-400',
         },
         '500': {
             bgColor: 'bg-zinc-500',
@@ -399,7 +399,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-zinc-500',
             divideColor: 'divide-zinc-500',
             outlineColor: 'outline-zinc-500',
-            focusOutlineColor: 'focus:outline-zinc-500',
+            focusRingColor: 'focus:ring-zinc-500',
         },
         '600': {
             bgColor: 'bg-zinc-600',
@@ -412,7 +412,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-zinc-600',
             divideColor: 'divide-zinc-600',
             outlineColor: 'outline-zinc-600',
-            focusOutlineColor: 'focus:outline-zinc-600',
+            focusRingColor: 'focus:ring-zinc-600',
         },
         '700': {
             bgColor: 'bg-zinc-700',
@@ -425,7 +425,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-zinc-700',
             divideColor: 'divide-zinc-700',
             outlineColor: 'outline-zinc-700',
-            focusOutlineColor: 'focus:outline-zinc-700',
+            focusRingColor: 'focus:ring-zinc-700',
         },
         '800': {
             bgColor: 'bg-zinc-800',
@@ -438,7 +438,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-zinc-800',
             divideColor: 'divide-zinc-800',
             outlineColor: 'outline-zinc-800',
-            focusOutlineColor: 'focus:outline-zinc-800',
+            focusRingColor: 'focus:ring-zinc-800',
         },
         '900': {
             bgColor: 'bg-zinc-900',
@@ -451,7 +451,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-zinc-900',
             divideColor: 'divide-zinc-900',
             outlineColor: 'outline-zinc-900',
-            focusOutlineColor: 'focus:outline-zinc-900',
+            focusRingColor: 'focus:ring-zinc-900',
         },
     },
     'neutral': {
@@ -466,7 +466,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-neutral-50',
             divideColor: 'divide-neutral-50',
             outlineColor: 'outline-neutral-50',
-            focusOutlineColor: 'focus:outline-neutral-50',
+            focusRingColor: 'focus:ring-neutral-50',
         },
         '100': {
             bgColor: 'bg-neutral-100',
@@ -479,7 +479,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-neutral-100',
             divideColor: 'divide-neutral-100',
             outlineColor: 'outline-neutral-100',
-            focusOutlineColor: 'focus:outline-neutral-100',
+            focusRingColor: 'focus:ring-neutral-100',
         },
         '200': {
             bgColor: 'bg-neutral-200',
@@ -492,7 +492,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-neutral-200',
             divideColor: 'divide-neutral-200',
             outlineColor: 'outline-neutral-200',
-            focusOutlineColor: 'focus:outline-neutral-200',
+            focusRingColor: 'focus:ring-neutral-200',
         },
         '300': {
             bgColor: 'bg-neutral-300',
@@ -505,7 +505,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-neutral-300',
             divideColor: 'divide-neutral-300',
             outlineColor: 'outline-neutral-300',
-            focusOutlineColor: 'focus:outline-neutral-300',
+            focusRingColor: 'focus:ring-neutral-300',
         },
         '400': {
             bgColor: 'bg-neutral-400',
@@ -518,7 +518,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-neutral-400',
             divideColor: 'divide-neutral-400',
             outlineColor: 'outline-neutral-400',
-            focusOutlineColor: 'focus:outline-neutral-400',
+            focusRingColor: 'focus:ring-neutral-400',
         },
         '500': {
             bgColor: 'bg-neutral-500',
@@ -531,7 +531,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-neutral-500',
             divideColor: 'divide-neutral-500',
             outlineColor: 'outline-neutral-500',
-            focusOutlineColor: 'focus:outline-neutral-500',
+            focusRingColor: 'focus:ring-neutral-500',
         },
         '600': {
             bgColor: 'bg-neutral-600',
@@ -544,7 +544,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-neutral-600',
             divideColor: 'divide-neutral-600',
             outlineColor: 'outline-neutral-600',
-            focusOutlineColor: 'focus:outline-neutral-600',
+            focusRingColor: 'focus:ring-neutral-600',
         },
         '700': {
             bgColor: 'bg-neutral-700',
@@ -557,7 +557,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-neutral-700',
             divideColor: 'divide-neutral-700',
             outlineColor: 'outline-neutral-700',
-            focusOutlineColor: 'focus:outline-neutral-700',
+            focusRingColor: 'focus:ring-neutral-700',
         },
         '800': {
             bgColor: 'bg-neutral-800',
@@ -570,7 +570,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-neutral-800',
             divideColor: 'divide-neutral-800',
             outlineColor: 'outline-neutral-800',
-            focusOutlineColor: 'focus:outline-neutral-800',
+            focusRingColor: 'focus:ring-neutral-800',
         },
         '900': {
             bgColor: 'bg-neutral-900',
@@ -583,7 +583,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-neutral-900',
             divideColor: 'divide-neutral-900',
             outlineColor: 'outline-neutral-900',
-            focusOutlineColor: 'focus:outline-neutral-900',
+            focusRingColor: 'focus:ring-neutral-900',
         },
     },
     'stone': {
@@ -598,7 +598,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-stone-50',
             divideColor: 'divide-stone-50',
             outlineColor: 'outline-stone-50',
-            focusOutlineColor: 'focus:outline-stone-50',
+            focusRingColor: 'focus:ring-stone-50',
         },
         '100': {
             bgColor: 'bg-stone-100',
@@ -611,7 +611,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-stone-100',
             divideColor: 'divide-stone-100',
             outlineColor: 'outline-stone-100',
-            focusOutlineColor: 'focus:outline-stone-100',
+            focusRingColor: 'focus:ring-stone-100',
         },
         '200': {
             bgColor: 'bg-stone-200',
@@ -624,7 +624,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-stone-200',
             divideColor: 'divide-stone-200',
             outlineColor: 'outline-stone-200',
-            focusOutlineColor: 'focus:outline-stone-200',
+            focusRingColor: 'focus:ring-stone-200',
         },
         '300': {
             bgColor: 'bg-stone-300',
@@ -637,7 +637,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-stone-300',
             divideColor: 'divide-stone-300',
             outlineColor: 'outline-stone-300',
-            focusOutlineColor: 'focus:outline-stone-300',
+            focusRingColor: 'focus:ring-stone-300',
         },
         '400': {
             bgColor: 'bg-stone-400',
@@ -650,7 +650,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-stone-400',
             divideColor: 'divide-stone-400',
             outlineColor: 'outline-stone-400',
-            focusOutlineColor: 'focus:outline-stone-400',
+            focusRingColor: 'focus:ring-stone-400',
         },
         '500': {
             bgColor: 'bg-stone-500',
@@ -663,7 +663,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-stone-500',
             divideColor: 'divide-stone-500',
             outlineColor: 'outline-stone-500',
-            focusOutlineColor: 'focus:outline-stone-500',
+            focusRingColor: 'focus:ring-stone-500',
         },
         '600': {
             bgColor: 'bg-stone-600',
@@ -676,7 +676,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-stone-600',
             divideColor: 'divide-stone-600',
             outlineColor: 'outline-stone-600',
-            focusOutlineColor: 'focus:outline-stone-600',
+            focusRingColor: 'focus:ring-stone-600',
         },
         '700': {
             bgColor: 'bg-stone-700',
@@ -689,7 +689,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-stone-700',
             divideColor: 'divide-stone-700',
             outlineColor: 'outline-stone-700',
-            focusOutlineColor: 'focus:outline-stone-700',
+            focusRingColor: 'focus:ring-stone-700',
         },
         '800': {
             bgColor: 'bg-stone-800',
@@ -702,7 +702,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-stone-800',
             divideColor: 'divide-stone-800',
             outlineColor: 'outline-stone-800',
-            focusOutlineColor: 'focus:outline-stone-800',
+            focusRingColor: 'focus:ring-stone-800',
         },
         '900': {
             bgColor: 'bg-stone-900',
@@ -715,7 +715,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-stone-900',
             divideColor: 'divide-stone-900',
             outlineColor: 'outline-stone-900',
-            focusOutlineColor: 'focus:outline-stone-900',
+            focusRingColor: 'focus:ring-stone-900',
         },
     },
     'red': {
@@ -730,7 +730,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-red-50',
             divideColor: 'divide-red-50',
             outlineColor: 'outline-red-50',
-            focusOutlineColor: 'focus:outline-red-50',
+            focusRingColor: 'focus:ring-red-50',
         },
         '100': {
             bgColor: 'bg-red-100',
@@ -743,7 +743,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-red-100',
             divideColor: 'divide-red-100',
             outlineColor: 'outline-red-100',
-            focusOutlineColor: 'focus:outline-red-100',
+            focusRingColor: 'focus:ring-red-100',
         },
         '200': {
             bgColor: 'bg-red-200',
@@ -756,7 +756,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-red-200',
             divideColor: 'divide-red-200',
             outlineColor: 'outline-red-200',
-            focusOutlineColor: 'focus:outline-red-200',
+            focusRingColor: 'focus:ring-red-200',
         },
         '300': {
             bgColor: 'bg-red-300',
@@ -769,7 +769,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-red-300',
             divideColor: 'divide-red-300',
             outlineColor: 'outline-red-300',
-            focusOutlineColor: 'focus:outline-red-300',
+            focusRingColor: 'focus:ring-red-300',
         },
         '400': {
             bgColor: 'bg-red-400',
@@ -782,7 +782,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-red-400',
             divideColor: 'divide-red-400',
             outlineColor: 'outline-red-400',
-            focusOutlineColor: 'focus:outline-red-400',
+            focusRingColor: 'focus:ring-red-400',
         },
         '500': {
             bgColor: 'bg-red-500',
@@ -795,7 +795,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-red-500',
             divideColor: 'divide-red-500',
             outlineColor: 'outline-red-500',
-            focusOutlineColor: 'focus:outline-red-500',
+            focusRingColor: 'focus:ring-red-500',
         },
         '600': {
             bgColor: 'bg-red-600',
@@ -808,7 +808,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-red-600',
             divideColor: 'divide-red-600',
             outlineColor: 'outline-red-600',
-            focusOutlineColor: 'focus:outline-red-600',
+            focusRingColor: 'focus:ring-red-600',
         },
         '700': {
             bgColor: 'bg-red-700',
@@ -821,7 +821,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-red-700',
             divideColor: 'divide-red-700',
             outlineColor: 'outline-red-700',
-            focusOutlineColor: 'focus:outline-red-700',
+            focusRingColor: 'focus:ring-red-700',
         },
         '800': {
             bgColor: 'bg-red-800',
@@ -834,7 +834,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-red-800',
             divideColor: 'divide-red-800',
             outlineColor: 'outline-red-800',
-            focusOutlineColor: 'focus:outline-red-800',
+            focusRingColor: 'focus:ring-red-800',
         },
         '900': {
             bgColor: 'bg-red-900',
@@ -847,7 +847,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-red-900',
             divideColor: 'divide-red-900',
             outlineColor: 'outline-red-900',
-            focusOutlineColor: 'focus:outline-red-900',
+            focusRingColor: 'focus:ring-red-900',
         },
     },
     'orange': {
@@ -862,7 +862,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-orange-50',
             divideColor: 'divide-orange-50',
             outlineColor: 'outline-orange-50',
-            focusOutlineColor: 'focus:outline-orange-50',
+            focusRingColor: 'focus:ring-orange-50',
         },
         '100': {
             bgColor: 'bg-orange-100',
@@ -875,7 +875,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-orange-100',
             divideColor: 'divide-orange-100',
             outlineColor: 'outline-orange-100',
-            focusOutlineColor: 'focus:outline-orange-100',
+            focusRingColor: 'focus:ring-orange-100',
         },
         '200': {
             bgColor: 'bg-orange-200',
@@ -888,7 +888,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-orange-200',
             divideColor: 'divide-orange-200',
             outlineColor: 'outline-orange-200',
-            focusOutlineColor: 'focus:outline-orange-200',
+            focusRingColor: 'focus:ring-orange-200',
         },
         '300': {
             bgColor: 'bg-orange-300',
@@ -901,7 +901,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-orange-300',
             divideColor: 'divide-orange-300',
             outlineColor: 'outline-orange-300',
-            focusOutlineColor: 'focus:outline-orange-300',
+            focusRingColor: 'focus:ring-orange-300',
         },
         '400': {
             bgColor: 'bg-orange-400',
@@ -914,7 +914,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-orange-400',
             divideColor: 'divide-orange-400',
             outlineColor: 'outline-orange-400',
-            focusOutlineColor: 'focus:outline-orange-400',
+            focusRingColor: 'focus:ring-orange-400',
         },
         '500': {
             bgColor: 'bg-orange-500',
@@ -927,7 +927,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-orange-500',
             divideColor: 'divide-orange-500',
             outlineColor: 'outline-orange-500',
-            focusOutlineColor: 'focus:outline-orange-500',
+            focusRingColor: 'focus:ring-orange-500',
         },
         '600': {
             bgColor: 'bg-orange-600',
@@ -940,7 +940,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-orange-600',
             divideColor: 'divide-orange-600',
             outlineColor: 'outline-orange-600',
-            focusOutlineColor: 'focus:outline-orange-600',
+            focusRingColor: 'focus:ring-orange-600',
         },
         '700': {
             bgColor: 'bg-orange-700',
@@ -953,7 +953,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-orange-700',
             divideColor: 'divide-orange-700',
             outlineColor: 'outline-orange-700',
-            focusOutlineColor: 'focus:outline-orange-700',
+            focusRingColor: 'focus:ring-orange-700',
         },
         '800': {
             bgColor: 'bg-orange-800',
@@ -966,7 +966,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-orange-800',
             divideColor: 'divide-orange-800',
             outlineColor: 'outline-orange-800',
-            focusOutlineColor: 'focus:outline-orange-800',
+            focusRingColor: 'focus:ring-orange-800',
         },
         '900': {
             bgColor: 'bg-orange-900',
@@ -979,7 +979,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-orange-900',
             divideColor: 'divide-orange-900',
             outlineColor: 'outline-orange-900',
-            focusOutlineColor: 'focus:outline-orange-900',
+            focusRingColor: 'focus:ring-orange-900',
         },
     },
     'amber': {
@@ -994,7 +994,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-orange-50',
             divideColor: 'divide-orange-50',
             outlineColor: 'outline-orange-50',
-            focusOutlineColor: 'focus:outline-orange-50',
+            focusRingColor: 'focus:ring-orange-50',
         },
         '100': {
             bgColor: 'bg-orange-100',
@@ -1007,7 +1007,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-orange-100',
             divideColor: 'divide-orange-100',
             outlineColor: 'outline-orange-100',
-            focusOutlineColor: 'focus:outline-orange-100',
+            focusRingColor: 'focus:ring-orange-100',
         },
         '200': {
             bgColor: 'bg-orange-200',
@@ -1020,7 +1020,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-orange-200',
             divideColor: 'divide-orange-200',
             outlineColor: 'outline-orange-200',
-            focusOutlineColor: 'focus:outline-orange-200',
+            focusRingColor: 'focus:ring-orange-200',
         },
         '300': {
             bgColor: 'bg-orange-300',
@@ -1033,7 +1033,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-orange-300',
             divideColor: 'divide-orange-300',
             outlineColor: 'outline-orange-300',
-            focusOutlineColor: 'focus:outline-orange-300',
+            focusRingColor: 'focus:ring-orange-300',
         },
         '400': {
             bgColor: 'bg-orange-400',
@@ -1046,7 +1046,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-orange-400',
             divideColor: 'divide-orange-400',
             outlineColor: 'outline-orange-400',
-            focusOutlineColor: 'focus:outline-orange-400',
+            focusRingColor: 'focus:ring-orange-400',
         },
         '500': {
             bgColor: 'bg-orange-500',
@@ -1059,7 +1059,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-orange-500',
             divideColor: 'divide-orange-500',
             outlineColor: 'outline-orange-500',
-            focusOutlineColor: 'focus:outline-orange-500',
+            focusRingColor: 'focus:ring-orange-500',
         },
         '600': {
             bgColor: 'bg-orange-600',
@@ -1072,7 +1072,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-orange-600',
             divideColor: 'divide-orange-600',
             outlineColor: 'outline-orange-600',
-            focusOutlineColor: 'focus:outline-orange-600',
+            focusRingColor: 'focus:ring-orange-600',
         },
         '700': {
             bgColor: 'bg-orange-700',
@@ -1085,7 +1085,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-orange-700',
             divideColor: 'divide-orange-700',
             outlineColor: 'outline-orange-700',
-            focusOutlineColor: 'focus:outline-orange-700',
+            focusRingColor: 'focus:ring-orange-700',
         },
         '800': {
             bgColor: 'bg-orange-800',
@@ -1098,7 +1098,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-orange-800',
             divideColor: 'divide-orange-800',
             outlineColor: 'outline-orange-800',
-            focusOutlineColor: 'focus:outline-orange-800',
+            focusRingColor: 'focus:ring-orange-800',
         },
         '900': {
             bgColor: 'bg-orange-900',
@@ -1111,7 +1111,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-orange-900',
             divideColor: 'divide-orange-900',
             outlineColor: 'outline-orange-900',
-            focusOutlineColor: 'focus:outline-orange-900',
+            focusRingColor: 'focus:ring-orange-900',
         },
     },
     'yellow': {
@@ -1126,7 +1126,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-yellow-50',
             divideColor: 'divide-yellow-50',
             outlineColor: 'outline-yellow-50',
-            focusOutlineColor: 'focus:outline-yellow-50',
+            focusRingColor: 'focus:ring-yellow-50',
         },
         '100': {
             bgColor: 'bg-yellow-100',
@@ -1139,7 +1139,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-yellow-100',
             divideColor: 'divide-yellow-100',
             outlineColor: 'outline-yellow-100',
-            focusOutlineColor: 'focus:outline-yellow-100',
+            focusRingColor: 'focus:ring-yellow-100',
         },
         '200': {
             bgColor: 'bg-yellow-200',
@@ -1152,7 +1152,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-yellow-200',
             divideColor: 'divide-yellow-200',
             outlineColor: 'outline-yellow-200',
-            focusOutlineColor: 'focus:outline-yellow-200',
+            focusRingColor: 'focus:ring-yellow-200',
         },
         '300': {
             bgColor: 'bg-yellow-300',
@@ -1165,7 +1165,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-yellow-300',
             divideColor: 'divide-yellow-300',
             outlineColor: 'outline-yellow-300',
-            focusOutlineColor: 'focus:outline-yellow-300',
+            focusRingColor: 'focus:ring-yellow-300',
         },
         '400': {
             bgColor: 'bg-yellow-400',
@@ -1178,7 +1178,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-yellow-400',
             divideColor: 'divide-yellow-400',
             outlineColor: 'outline-yellow-400',
-            focusOutlineColor: 'focus:outline-yellow-400',
+            focusRingColor: 'focus:ring-yellow-400',
         },
         '500': {
             bgColor: 'bg-yellow-500',
@@ -1191,7 +1191,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-yellow-500',
             divideColor: 'divide-yellow-500',
             outlineColor: 'outline-yellow-500',
-            focusOutlineColor: 'focus:outline-yellow-500',
+            focusRingColor: 'focus:ring-yellow-500',
         },
         '600': {
             bgColor: 'bg-yellow-600',
@@ -1204,7 +1204,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-yellow-600',
             divideColor: 'divide-yellow-600',
             outlineColor: 'outline-yellow-600',
-            focusOutlineColor: 'focus:outline-yellow-600',
+            focusRingColor: 'focus:ring-yellow-600',
         },
         '700': {
             bgColor: 'bg-yellow-700',
@@ -1217,7 +1217,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-yellow-700',
             divideColor: 'divide-yellow-700',
             outlineColor: 'outline-yellow-700',
-            focusOutlineColor: 'focus:outline-yellow-700',
+            focusRingColor: 'focus:ring-yellow-700',
         },
         '800': {
             bgColor: 'bg-yellow-800',
@@ -1230,7 +1230,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-yellow-800',
             divideColor: 'divide-yellow-800',
             outlineColor: 'outline-yellow-800',
-            focusOutlineColor: 'focus:outline-yellow-800',
+            focusRingColor: 'focus:ring-yellow-800',
         },
         '900': {
             bgColor: 'bg-yellow-900',
@@ -1243,7 +1243,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-yellow-900',
             divideColor: 'divide-yellow-900',
             outlineColor: 'outline-yellow-900',
-            focusOutlineColor: 'focus:outline-yellow-900',
+            focusRingColor: 'focus:ring-yellow-900',
         },
     },
     'lime': {
@@ -1258,7 +1258,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-lime-50',
             divideColor: 'divide-lime-50',
             outlineColor: 'outline-lime-50',
-            focusOutlineColor: 'focus:outline-lime-50',
+            focusRingColor: 'focus:ring-lime-50',
         },
         '100': {
             bgColor: 'bg-lime-100',
@@ -1271,7 +1271,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-lime-100',
             divideColor: 'divide-lime-100',
             outlineColor: 'outline-lime-100',
-            focusOutlineColor: 'focus:outline-lime-100',
+            focusRingColor: 'focus:ring-lime-100',
         },
         '200': {
             bgColor: 'bg-lime-200',
@@ -1284,7 +1284,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-lime-200',
             divideColor: 'divide-lime-200',
             outlineColor: 'outline-lime-200',
-            focusOutlineColor: 'focus:outline-lime-200',
+            focusRingColor: 'focus:ring-lime-200',
         },
         '300': {
             bgColor: 'bg-lime-300',
@@ -1297,7 +1297,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-lime-300',
             divideColor: 'divide-lime-300',
             outlineColor: 'outline-lime-300',
-            focusOutlineColor: 'focus:outline-lime-300',
+            focusRingColor: 'focus:ring-lime-300',
         },
         '400': {
             bgColor: 'bg-lime-400',
@@ -1310,7 +1310,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-lime-400',
             divideColor: 'divide-lime-400',
             outlineColor: 'outline-lime-400',
-            focusOutlineColor: 'focus:outline-lime-400',
+            focusRingColor: 'focus:ring-lime-400',
         },
         '500': {
             bgColor: 'bg-lime-500',
@@ -1323,7 +1323,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-lime-500',
             divideColor: 'divide-lime-500',
             outlineColor: 'outline-lime-500',
-            focusOutlineColor: 'focus:outline-lime-500',
+            focusRingColor: 'focus:ring-lime-500',
         },
         '600': {
             bgColor: 'bg-lime-600',
@@ -1336,7 +1336,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-lime-600',
             divideColor: 'divide-lime-600',
             outlineColor: 'outline-lime-600',
-            focusOutlineColor: 'focus:outline-lime-600',
+            focusRingColor: 'focus:ring-lime-600',
         },
         '700': {
             bgColor: 'bg-lime-700',
@@ -1349,7 +1349,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-lime-700',
             divideColor: 'divide-lime-700',
             outlineColor: 'outline-lime-700',
-            focusOutlineColor: 'focus:outline-lime-700',
+            focusRingColor: 'focus:ring-lime-700',
         },
         '800': {
             bgColor: 'bg-lime-800',
@@ -1362,7 +1362,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-lime-800',
             divideColor: 'divide-lime-800',
             outlineColor: 'outline-lime-800',
-            focusOutlineColor: 'focus:outline-lime-800',
+            focusRingColor: 'focus:ring-lime-800',
         },
         '900': {
             bgColor: 'bg-lime-900',
@@ -1375,7 +1375,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-lime-900',
             divideColor: 'divide-lime-900',
             outlineColor: 'outline-lime-900',
-            focusOutlineColor: 'focus:outline-lime-900',
+            focusRingColor: 'focus:ring-lime-900',
         },
     },
     'green': {
@@ -1390,7 +1390,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-green-50',
             divideColor: 'divide-green-50',
             outlineColor: 'outline-green-50',
-            focusOutlineColor: 'focus:outline-green-50',
+            focusRingColor: 'focus:ring-green-50',
         },
         '100': {
             bgColor: 'bg-green-100',
@@ -1403,7 +1403,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-green-100',
             divideColor: 'divide-green-100',
             outlineColor: 'outline-green-100',
-            focusOutlineColor: 'focus:outline-green-100',
+            focusRingColor: 'focus:ring-green-100',
         },
         '200': {
             bgColor: 'bg-green-200',
@@ -1416,7 +1416,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-green-200',
             divideColor: 'divide-green-200',
             outlineColor: 'outline-green-200',
-            focusOutlineColor: 'focus:outline-green-200',
+            focusRingColor: 'focus:ring-green-200',
         },
         '300': {
             bgColor: 'bg-green-300',
@@ -1429,7 +1429,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-green-300',
             divideColor: 'divide-green-300',
             outlineColor: 'outline-green-300',
-            focusOutlineColor: 'focus:outline-green-300',
+            focusRingColor: 'focus:ring-green-300',
         },
         '400': {
             bgColor: 'bg-green-400',
@@ -1442,7 +1442,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-green-400',
             divideColor: 'divide-green-400',
             outlineColor: 'outline-green-400',
-            focusOutlineColor: 'focus:outline-green-400',
+            focusRingColor: 'focus:ring-green-400',
         },
         '500': {
             bgColor: 'bg-green-500',
@@ -1455,7 +1455,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-green-500',
             divideColor: 'divide-green-500',
             outlineColor: 'outline-green-500',
-            focusOutlineColor: 'focus:outline-green-500',
+            focusRingColor: 'focus:ring-green-500',
         },
         '600': {
             bgColor: 'bg-green-600',
@@ -1468,7 +1468,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-green-600',
             divideColor: 'divide-green-600',
             outlineColor: 'outline-green-600',
-            focusOutlineColor: 'focus:outline-green-600',
+            focusRingColor: 'focus:ring-green-600',
         },
         '700': {
             bgColor: 'bg-green-700',
@@ -1481,7 +1481,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-green-700',
             divideColor: 'divide-green-700',
             outlineColor: 'outline-green-700',
-            focusOutlineColor: 'focus:outline-green-700',
+            focusRingColor: 'focus:ring-green-700',
         },
         '800': {
             bgColor: 'bg-green-800',
@@ -1494,7 +1494,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-green-800',
             divideColor: 'divide-green-800',
             outlineColor: 'outline-green-800',
-            focusOutlineColor: 'focus:outline-green-800',
+            focusRingColor: 'focus:ring-green-800',
         },
         '900': {
             bgColor: 'bg-green-900',
@@ -1507,7 +1507,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-green-900',
             divideColor: 'divide-green-900',
             outlineColor: 'outline-green-900',
-            focusOutlineColor: 'focus:outline-green-900',
+            focusRingColor: 'focus:ring-green-900',
         },
     },
     'emerald': {
@@ -1522,7 +1522,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-emerald-50',
             divideColor: 'divide-emerald-50',
             outlineColor: 'outline-emerald-50',
-            focusOutlineColor: 'focus:outline-emerald-50',
+            focusRingColor: 'focus:ring-emerald-50',
         },
         '100': {
             bgColor: 'bg-emerald-100',
@@ -1535,7 +1535,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-emerald-100',
             divideColor: 'divide-emerald-100',
             outlineColor: 'outline-emerald-100',
-            focusOutlineColor: 'focus:outline-emerald-100',
+            focusRingColor: 'focus:ring-emerald-100',
         },
         '200': {
             bgColor: 'bg-emerald-200',
@@ -1548,7 +1548,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-emerald-200',
             divideColor: 'divide-emerald-200',
             outlineColor: 'outline-emerald-200',
-            focusOutlineColor: 'focus:outline-emerald-200',
+            focusRingColor: 'focus:ring-emerald-200',
         },
         '300': {
             bgColor: 'bg-emerald-300',
@@ -1561,7 +1561,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-emerald-300',
             divideColor: 'divide-emerald-300',
             outlineColor: 'outline-emerald-300',
-            focusOutlineColor: 'focus:outline-emerald-300',
+            focusRingColor: 'focus:ring-emerald-300',
         },
         '400': {
             bgColor: 'bg-emerald-400',
@@ -1574,7 +1574,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-emerald-400',
             divideColor: 'divide-emerald-400',
             outlineColor: 'outline-emerald-400',
-            focusOutlineColor: 'focus:outline-emerald-400',
+            focusRingColor: 'focus:ring-emerald-400',
         },
         '500': {
             bgColor: 'bg-emerald-500',
@@ -1587,7 +1587,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-emerald-500',
             divideColor: 'divide-emerald-500',
             outlineColor: 'outline-emerald-500',
-            focusOutlineColor: 'focus:outline-emerald-500',
+            focusRingColor: 'focus:ring-emerald-500',
         },
         '600': {
             bgColor: 'bg-emerald-600',
@@ -1600,7 +1600,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-emerald-600',
             divideColor: 'divide-emerald-600',
             outlineColor: 'outline-emerald-600',
-            focusOutlineColor: 'focus:outline-emerald-600',
+            focusRingColor: 'focus:ring-emerald-600',
         },
         '700': {
             bgColor: 'bg-emerald-700',
@@ -1613,7 +1613,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-emerald-700',
             divideColor: 'divide-emerald-700',
             outlineColor: 'outline-emerald-700',
-            focusOutlineColor: 'focus:outline-emerald-700',
+            focusRingColor: 'focus:ring-emerald-700',
         },
         '800': {
             bgColor: 'bg-emerald-800',
@@ -1626,7 +1626,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-emerald-800',
             divideColor: 'divide-emerald-800',
             outlineColor: 'outline-emerald-800',
-            focusOutlineColor: 'focus:outline-emerald-800',
+            focusRingColor: 'focus:ring-emerald-800',
         },
         '900': {
             bgColor: 'bg-emerald-900',
@@ -1639,7 +1639,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-emerald-900',
             divideColor: 'divide-emerald-900',
             outlineColor: 'outline-emerald-900',
-            focusOutlineColor: 'focus:outline-emerald-900',
+            focusRingColor: 'focus:ring-emerald-900',
         },
     },
     'teal': {
@@ -1654,7 +1654,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-teal-50',
             divideColor: 'divide-teal-50',
             outlineColor: 'outline-teal-50',
-            focusOutlineColor: 'focus:outline-teal-50',
+            focusRingColor: 'focus:ring-teal-50',
         },
         '100': {
             bgColor: 'bg-teal-100',
@@ -1667,7 +1667,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-teal-100',
             divideColor: 'divide-teal-100',
             outlineColor: 'outline-teal-100',
-            focusOutlineColor: 'focus:outline-teal-100',
+            focusRingColor: 'focus:ring-teal-100',
         },
         '200': {
             bgColor: 'bg-teal-200',
@@ -1680,7 +1680,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-teal-200',
             divideColor: 'divide-teal-200',
             outlineColor: 'outline-teal-200',
-            focusOutlineColor: 'focus:outline-teal-200',
+            focusRingColor: 'focus:ring-teal-200',
         },
         '300': {
             bgColor: 'bg-teal-300',
@@ -1693,7 +1693,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-teal-300',
             divideColor: 'divide-teal-300',
             outlineColor: 'outline-teal-300',
-            focusOutlineColor: 'focus:outline-teal-300',
+            focusRingColor: 'focus:ring-teal-300',
         },
         '400': {
             bgColor: 'bg-teal-400',
@@ -1706,7 +1706,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-teal-400',
             divideColor: 'divide-teal-400',
             outlineColor: 'outline-teal-400',
-            focusOutlineColor: 'focus:outline-teal-400',
+            focusRingColor: 'focus:ring-teal-400',
         },
         '500': {
             bgColor: 'bg-teal-500',
@@ -1719,7 +1719,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-teal-500',
             divideColor: 'divide-teal-500',
             outlineColor: 'outline-teal-500',
-            focusOutlineColor: 'focus:outline-teal-500',
+            focusRingColor: 'focus:ring-teal-500',
         },
         '600': {
             bgColor: 'bg-teal-600',
@@ -1732,7 +1732,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-teal-600',
             divideColor: 'divide-teal-600',
             outlineColor: 'outline-teal-600',
-            focusOutlineColor: 'focus:outline-teal-600',
+            focusRingColor: 'focus:ring-teal-600',
         },
         '700': {
             bgColor: 'bg-teal-700',
@@ -1745,7 +1745,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-teal-700',
             divideColor: 'divide-teal-700',
             outlineColor: 'outline-teal-700',
-            focusOutlineColor: 'focus:outline-teal-700',
+            focusRingColor: 'focus:ring-teal-700',
         },
         '800': {
             bgColor: 'bg-teal-800',
@@ -1758,7 +1758,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-teal-800',
             divideColor: 'divide-teal-800',
             outlineColor: 'outline-teal-800',
-            focusOutlineColor: 'focus:outline-teal-800',
+            focusRingColor: 'focus:ring-teal-800',
         },
         '900': {
             bgColor: 'bg-teal-900',
@@ -1771,7 +1771,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-teal-900',
             divideColor: 'divide-teal-900',
             outlineColor: 'outline-teal-900',
-            focusOutlineColor: 'focus:outline-teal-900',
+            focusRingColor: 'focus:ring-teal-900',
         },
     },
     'cyan': {
@@ -1786,7 +1786,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-cyan-50',
             divideColor: 'divide-cyan-50',
             outlineColor: 'outline-cyan-50',
-            focusOutlineColor: 'focus:outline-cyan-50',
+            focusRingColor: 'focus:ring-cyan-50',
         },
         '100': {
             bgColor: 'bg-cyan-100',
@@ -1799,7 +1799,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-cyan-100',
             divideColor: 'divide-cyan-100',
             outlineColor: 'outline-cyan-100',
-            focusOutlineColor: 'focus:outline-cyan-100',
+            focusRingColor: 'focus:ring-cyan-100',
         },
         '200': {
             bgColor: 'bg-cyan-200',
@@ -1812,7 +1812,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-cyan-200',
             divideColor: 'divide-cyan-200',
             outlineColor: 'outline-cyan-200',
-            focusOutlineColor: 'focus:outline-cyan-200',
+            focusRingColor: 'focus:ring-cyan-200',
         },
         '300': {
             bgColor: 'bg-cyan-300',
@@ -1825,7 +1825,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-cyan-300',
             divideColor: 'divide-cyan-300',
             outlineColor: 'outline-cyan-300',
-            focusOutlineColor: 'focus:outline-cyan-300',
+            focusRingColor: 'focus:ring-cyan-300',
         },
         '400': {
             bgColor: 'bg-cyan-400',
@@ -1838,7 +1838,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-cyan-400',
             divideColor: 'divide-cyan-400',
             outlineColor: 'outline-cyan-400',
-            focusOutlineColor: 'focus:outline-cyan-400',
+            focusRingColor: 'focus:ring-cyan-400',
         },
         '500': {
             bgColor: 'bg-cyan-500',
@@ -1851,7 +1851,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-cyan-500',
             divideColor: 'divide-cyan-500',
             outlineColor: 'outline-cyan-500',
-            focusOutlineColor: 'focus:outline-cyan-500',
+            focusRingColor: 'focus:ring-cyan-500',
         },
         '600': {
             bgColor: 'bg-cyan-600',
@@ -1864,7 +1864,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-cyan-600',
             divideColor: 'divide-cyan-600',
             outlineColor: 'outline-cyan-600',
-            focusOutlineColor: 'focus:outline-cyan-600',
+            focusRingColor: 'focus:ring-cyan-600',
         },
         '700': {
             bgColor: 'bg-cyan-700',
@@ -1877,7 +1877,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-cyan-700',
             divideColor: 'divide-cyan-700',
             outlineColor: 'outline-cyan-700',
-            focusOutlineColor: 'focus:outline-cyan-700',
+            focusRingColor: 'focus:ring-cyan-700',
         },
         '800': {
             bgColor: 'bg-cyan-800',
@@ -1890,7 +1890,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-cyan-800',
             divideColor: 'divide-cyan-800',
             outlineColor: 'outline-cyan-800',
-            focusOutlineColor: 'focus:outline-cyan-800',
+            focusRingColor: 'focus:ring-cyan-800',
         },
         '900': {
             bgColor: 'bg-cyan-900',
@@ -1903,7 +1903,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-cyan-900',
             divideColor: 'divide-cyan-900',
             outlineColor: 'outline-cyan-900',
-            focusOutlineColor: 'focus:outline-cyan-900',
+            focusRingColor: 'focus:ring-cyan-900',
         },
     },
     'sky': {
@@ -1918,7 +1918,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-sky-50',
             divideColor: 'divide-sky-50',
             outlineColor: 'outline-sky-50',
-            focusOutlineColor: 'focus:outline-sky-50',
+            focusRingColor: 'focus:ring-sky-50',
         },
         '100': {
             bgColor: 'bg-sky-100',
@@ -1931,7 +1931,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-sky-100',
             divideColor: 'divide-sky-100',
             outlineColor: 'outline-sky-100',
-            focusOutlineColor: 'focus:outline-sky-100',
+            focusRingColor: 'focus:ring-sky-100',
         },
         '200': {
             bgColor: 'bg-sky-200',
@@ -1944,7 +1944,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-sky-200',
             divideColor: 'divide-sky-200',
             outlineColor: 'outline-sky-200',
-            focusOutlineColor: 'focus:outline-sky-200',
+            focusRingColor: 'focus:ring-sky-200',
         },
         '300': {
             bgColor: 'bg-sky-300',
@@ -1957,7 +1957,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-sky-300',
             divideColor: 'divide-sky-300',
             outlineColor: 'outline-sky-300',
-            focusOutlineColor: 'focus:outline-sky-300',
+            focusRingColor: 'focus:ring-sky-300',
         },
         '400': {
             bgColor: 'bg-sky-400',
@@ -1970,7 +1970,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-sky-400',
             divideColor: 'divide-sky-400',
             outlineColor: 'outline-sky-400',
-            focusOutlineColor: 'focus:outline-sky-400',
+            focusRingColor: 'focus:ring-sky-400',
         },
         '500': {
             bgColor: 'bg-sky-500',
@@ -1983,7 +1983,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-sky-500',
             divideColor: 'divide-sky-500',
             outlineColor: 'outline-sky-500',
-            focusOutlineColor: 'focus:outline-sky-500',
+            focusRingColor: 'focus:ring-sky-500',
         },
         '600': {
             bgColor: 'bg-sky-600',
@@ -1996,7 +1996,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-sky-600',
             divideColor: 'divide-sky-600',
             outlineColor: 'outline-sky-600',
-            focusOutlineColor: 'focus:outline-sky-600',
+            focusRingColor: 'focus:ring-sky-600',
         },
         '700': {
             bgColor: 'bg-sky-700',
@@ -2009,7 +2009,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-sky-700',
             divideColor: 'divide-sky-700',
             outlineColor: 'outline-sky-700',
-            focusOutlineColor: 'focus:outline-sky-700',
+            focusRingColor: 'focus:ring-sky-700',
         },
         '800': {
             bgColor: 'bg-sky-800',
@@ -2022,7 +2022,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-sky-800',
             divideColor: 'divide-sky-800',
             outlineColor: 'outline-sky-800',
-            focusOutlineColor: 'focus:outline-sky-800',
+            focusRingColor: 'focus:ring-sky-800',
         },
         '900': {
             bgColor: 'bg-sky-900',
@@ -2035,7 +2035,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-sky-900',
             divideColor: 'divide-sky-900',
             outlineColor: 'outline-sky-900',
-            focusOutlineColor: 'focus:outline-sky-900',
+            focusRingColor: 'focus:ring-sky-900',
         },
     },
     'blue': {
@@ -2050,7 +2050,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-blue-50',
             divideColor: 'divide-blue-50',
             outlineColor: 'outline-blue-50',
-            focusOutlineColor: 'focus:outline-blue-50',
+            focusRingColor: 'focus:ring-blue-50',
         },
         '100': {
             bgColor: 'bg-blue-100',
@@ -2063,7 +2063,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-blue-100',
             divideColor: 'divide-blue-100',
             outlineColor: 'outline-blue-100',
-            focusOutlineColor: 'focus:outline-blue-100',
+            focusRingColor: 'focus:ring-blue-100',
         },
         '200': {
             bgColor: 'bg-blue-200',
@@ -2076,7 +2076,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-blue-200',
             divideColor: 'divide-blue-200',
             outlineColor: 'outline-blue-200',
-            focusOutlineColor: 'focus:outline-blue-200',
+            focusRingColor: 'focus:ring-blue-200',
         },
         '300': {
             bgColor: 'bg-blue-300',
@@ -2089,7 +2089,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-blue-300',
             divideColor: 'divide-blue-300',
             outlineColor: 'outline-blue-300',
-            focusOutlineColor: 'focus:outline-blue-300',
+            focusRingColor: 'focus:ring-blue-300',
         },
         '400': {
             bgColor: 'bg-blue-400',
@@ -2102,7 +2102,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-blue-400',
             divideColor: 'divide-blue-400',
             outlineColor: 'outline-blue-400',
-            focusOutlineColor: 'focus:outline-blue-400',
+            focusRingColor: 'focus:ring-blue-400',
         },
         '500': {
             bgColor: 'bg-blue-500',
@@ -2115,7 +2115,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-blue-500',
             divideColor: 'divide-blue-500',
             outlineColor: 'outline-blue-500',
-            focusOutlineColor: 'focus:outline-blue-500',
+            focusRingColor: 'focus:ring-blue-500',
         },
         '600': {
             bgColor: 'bg-blue-600',
@@ -2128,7 +2128,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-blue-600',
             divideColor: 'divide-blue-600',
             outlineColor: 'outline-blue-600',
-            focusOutlineColor: 'focus:outline-blue-600',
+            focusRingColor: 'focus:ring-blue-600',
         },
         '700': {
             bgColor: 'bg-blue-700',
@@ -2141,7 +2141,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-blue-700',
             divideColor: 'divide-blue-700',
             outlineColor: 'outline-blue-700',
-            focusOutlineColor: 'focus:outline-blue-700',
+            focusRingColor: 'focus:ring-blue-700',
         },
         '800': {
             bgColor: 'bg-blue-800',
@@ -2154,7 +2154,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-blue-800',
             divideColor: 'divide-blue-800',
             outlineColor: 'outline-blue-800',
-            focusOutlineColor: 'focus:outline-blue-800',
+            focusRingColor: 'focus:ring-blue-800',
         },
         '900': {
             bgColor: 'bg-blue-900',
@@ -2167,7 +2167,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-blue-900',
             divideColor: 'divide-blue-900',
             outlineColor: 'outline-blue-900',
-            focusOutlineColor: 'focus:outline-blue-900',
+            focusRingColor: 'focus:ring-blue-900',
         },
     },
     'indigo': {
@@ -2182,7 +2182,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-indigo-50',
             divideColor: 'divide-indigo-50',
             outlineColor: 'outline-indigo-50',
-            focusOutlineColor: 'focus:outline-indigo-50',
+            focusRingColor: 'focus:ring-indigo-50',
         },
         '100': {
             bgColor: 'bg-indigo-100',
@@ -2195,7 +2195,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-indigo-100',
             divideColor: 'divide-indigo-100',
             outlineColor: 'outline-indigo-100',
-            focusOutlineColor: 'focus:outline-indigo-100',
+            focusRingColor: 'focus:ring-indigo-100',
         },
         '200': {
             bgColor: 'bg-indigo-200',
@@ -2208,7 +2208,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-indigo-200',
             divideColor: 'divide-indigo-200',
             outlineColor: 'outline-indigo-200',
-            focusOutlineColor: 'focus:outline-indigo-200',
+            focusRingColor: 'focus:ring-indigo-200',
         },
         '300': {
             bgColor: 'bg-indigo-300',
@@ -2221,7 +2221,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-indigo-300',
             divideColor: 'divide-indigo-300',
             outlineColor: 'outline-indigo-300',
-            focusOutlineColor: 'focus:outline-indigo-300',
+            focusRingColor: 'focus:ring-indigo-300',
         },
         '400': {
             bgColor: 'bg-indigo-400',
@@ -2234,7 +2234,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-indigo-400',
             divideColor: 'divide-indigo-400',
             outlineColor: 'outline-indigo-400',
-            focusOutlineColor: 'focus:outline-indigo-400',
+            focusRingColor: 'focus:ring-indigo-400',
         },
         '500': {
             bgColor: 'bg-indigo-500',
@@ -2247,7 +2247,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-indigo-500',
             divideColor: 'divide-indigo-500',
             outlineColor: 'outline-indigo-500',
-            focusOutlineColor: 'focus:outline-indigo-500',
+            focusRingColor: 'focus:ring-indigo-500',
         },
         '600': {
             bgColor: 'bg-indigo-600',
@@ -2260,7 +2260,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-indigo-600',
             divideColor: 'divide-indigo-600',
             outlineColor: 'outline-indigo-600',
-            focusOutlineColor: 'focus:outline-indigo-600',
+            focusRingColor: 'focus:ring-indigo-600',
         },
         '700': {
             bgColor: 'bg-indigo-700',
@@ -2273,7 +2273,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-indigo-700',
             divideColor: 'divide-indigo-700',
             outlineColor: 'outline-indigo-700',
-            focusOutlineColor: 'focus:outline-indigo-700',
+            focusRingColor: 'focus:ring-indigo-700',
         },
         '800': {
             bgColor: 'bg-indigo-800',
@@ -2286,7 +2286,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-indigo-800',
             divideColor: 'divide-indigo-800',
             outlineColor: 'outline-indigo-800',
-            focusOutlineColor: 'focus:outline-indigo-800',
+            focusRingColor: 'focus:ring-indigo-800',
         },
         '900': {
             bgColor: 'bg-indigo-900',
@@ -2299,7 +2299,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-indigo-900',
             divideColor: 'divide-indigo-900',
             outlineColor: 'outline-indigo-900',
-            focusOutlineColor: 'focus:outline-indigo-900',
+            focusRingColor: 'focus:ring-indigo-900',
         },
     },
     'violet': {
@@ -2314,7 +2314,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-violet-50',
             divideColor: 'divide-violet-50',
             outlineColor: 'outline-violet-50',
-            focusOutlineColor: 'focus:outline-violet-50',
+            focusRingColor: 'focus:ring-violet-50',
         },
         '100': {
             bgColor: 'bg-violet-100',
@@ -2327,7 +2327,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-violet-100',
             divideColor: 'divide-violet-100',
             outlineColor: 'outline-violet-100',
-            focusOutlineColor: 'focus:outline-violet-100',
+            focusRingColor: 'focus:ring-violet-100',
         },
         '200': {
             bgColor: 'bg-violet-200',
@@ -2340,7 +2340,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-violet-200',
             divideColor: 'divide-violet-200',
             outlineColor: 'outline-violet-200',
-            focusOutlineColor: 'focus:outline-violet-200',
+            focusRingColor: 'focus:ring-violet-200',
         },
         '300': {
             bgColor: 'bg-violet-300',
@@ -2353,7 +2353,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-violet-300',
             divideColor: 'divide-violet-300',
             outlineColor: 'outline-violet-300',
-            focusOutlineColor: 'focus:outline-violet-300',
+            focusRingColor: 'focus:ring-violet-300',
         },
         '400': {
             bgColor: 'bg-violet-400',
@@ -2366,7 +2366,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-violet-400',
             divideColor: 'divide-violet-400',
             outlineColor: 'outline-violet-400',
-            focusOutlineColor: 'focus:outline-violet-400',
+            focusRingColor: 'focus:ring-violet-400',
         },
         '500': {
             bgColor: 'bg-violet-500',
@@ -2379,7 +2379,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-violet-500',
             divideColor: 'divide-violet-500',
             outlineColor: 'outline-violet-500',
-            focusOutlineColor: 'focus:outline-violet-500',
+            focusRingColor: 'focus:ring-violet-500',
         },
         '600': {
             bgColor: 'bg-violet-600',
@@ -2392,7 +2392,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-violet-600',
             divideColor: 'divide-violet-600',
             outlineColor: 'outline-violet-600',
-            focusOutlineColor: 'focus:outline-violet-600',
+            focusRingColor: 'focus:ring-violet-600',
         },
         '700': {
             bgColor: 'bg-violet-700',
@@ -2405,7 +2405,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-violet-700',
             divideColor: 'divide-violet-700',
             outlineColor: 'outline-violet-700',
-            focusOutlineColor: 'focus:outline-violet-700',
+            focusRingColor: 'focus:ring-violet-700',
         },
         '800': {
             bgColor: 'bg-violet-800',
@@ -2418,7 +2418,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-violet-800',
             divideColor: 'divide-violet-800',
             outlineColor: 'outline-violet-800',
-            focusOutlineColor: 'focus:outline-violet-800',
+            focusRingColor: 'focus:ring-violet-800',
         },
         '900': {
             bgColor: 'bg-violet-900',
@@ -2431,7 +2431,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-violet-900',
             divideColor: 'divide-violet-900',
             outlineColor: 'outline-violet-900',
-            focusOutlineColor: 'focus:outline-violet-900',
+            focusRingColor: 'focus:ring-violet-900',
         },
     },
     'purple': {
@@ -2446,7 +2446,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-purple-50',
             divideColor: 'divide-purple-50',
             outlineColor: 'outline-purple-50',
-            focusOutlineColor: 'focus:outline-purple-50',
+            focusRingColor: 'focus:ring-purple-50',
         },
         '100': {
             bgColor: 'bg-purple-100',
@@ -2459,7 +2459,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-purple-100',
             divideColor: 'divide-purple-100',
             outlineColor: 'outline-purple-100',
-            focusOutlineColor: 'focus:outline-purple-100',
+            focusRingColor: 'focus:ring-purple-100',
         },
         '200': {
             bgColor: 'bg-purple-200',
@@ -2472,7 +2472,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-purple-200',
             divideColor: 'divide-purple-200',
             outlineColor: 'outline-purple-200',
-            focusOutlineColor: 'focus:outline-purple-200',
+            focusRingColor: 'focus:ring-purple-200',
         },
         '300': {
             bgColor: 'bg-purple-300',
@@ -2485,7 +2485,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-purple-300',
             divideColor: 'divide-purple-300',
             outlineColor: 'outline-purple-300',
-            focusOutlineColor: 'focus:outline-purple-300',
+            focusRingColor: 'focus:ring-purple-300',
         },
         '400': {
             bgColor: 'bg-purple-400',
@@ -2498,7 +2498,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-purple-400',
             divideColor: 'divide-purple-400',
             outlineColor: 'outline-purple-400',
-            focusOutlineColor: 'focus:outline-purple-400',
+            focusRingColor: 'focus:ring-purple-400',
         },
         '500': {
             bgColor: 'bg-purple-500',
@@ -2511,7 +2511,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-purple-500',
             divideColor: 'divide-purple-500',
             outlineColor: 'outline-purple-500',
-            focusOutlineColor: 'focus:outline-purple-500',
+            focusRingColor: 'focus:ring-purple-500',
         },
         '600': {
             bgColor: 'bg-purple-600',
@@ -2524,7 +2524,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-purple-600',
             divideColor: 'divide-purple-600',
             outlineColor: 'outline-purple-600',
-            focusOutlineColor: 'focus:outline-purple-600',
+            focusRingColor: 'focus:ring-purple-600',
         },
         '700': {
             bgColor: 'bg-purple-700',
@@ -2537,7 +2537,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-purple-700',
             divideColor: 'divide-purple-700',
             outlineColor: 'outline-purple-700',
-            focusOutlineColor: 'focus:outline-purple-700',
+            focusRingColor: 'focus:ring-purple-700',
         },
         '800': {
             bgColor: 'bg-purple-800',
@@ -2550,7 +2550,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-purple-800',
             divideColor: 'divide-purple-800',
             outlineColor: 'outline-purple-800',
-            focusOutlineColor: 'focus:outline-purple-800',
+            focusRingColor: 'focus:ring-purple-800',
         },
         '900': {
             bgColor: 'bg-purple-900',
@@ -2563,7 +2563,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-purple-900',
             divideColor: 'divide-purple-900',
             outlineColor: 'outline-purple-900',
-            focusOutlineColor: 'focus:outline-purple-900',
+            focusRingColor: 'focus:ring-purple-900',
         },
     },
     'fuchsia': {
@@ -2578,7 +2578,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-fuchsia-50',
             divideColor: 'divide-fuchsia-50',
             outlineColor: 'outline-fuchsia-50',
-            focusOutlineColor: 'focus:outline-fuchsia-50',
+            focusRingColor: 'focus:ring-fuchsia-50',
         },
         '100': {
             bgColor: 'bg-fuchsia-100',
@@ -2591,7 +2591,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-fuchsia-100',
             divideColor: 'divide-fuchsia-100',
             outlineColor: 'outline-fuchsia-100',
-            focusOutlineColor: 'focus:outline-fuchsia-100',
+            focusRingColor: 'focus:ring-fuchsia-100',
         },
         '200': {
             bgColor: 'bg-fuchsia-200',
@@ -2604,7 +2604,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-fuchsia-200',
             divideColor: 'divide-fuchsia-200',
             outlineColor: 'outline-fuchsia-200',
-            focusOutlineColor: 'focus:outline-fuchsia-200',
+            focusRingColor: 'focus:ring-fuchsia-200',
         },
         '300': {
             bgColor: 'bg-fuchsia-300',
@@ -2617,7 +2617,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-fuchsia-300',
             divideColor: 'divide-fuchsia-300',
             outlineColor: 'outline-fuchsia-300',
-            focusOutlineColor: 'focus:outline-fuchsia-300',
+            focusRingColor: 'focus:ring-fuchsia-300',
         },
         '400': {
             bgColor: 'bg-fuchsia-400',
@@ -2630,7 +2630,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-fuchsia-400',
             divideColor: 'divide-fuchsia-400',
             outlineColor: 'outline-fuchsia-400',
-            focusOutlineColor: 'focus:outline-fuchsia-400',
+            focusRingColor: 'focus:ring-fuchsia-400',
         },
         '500': {
             bgColor: 'bg-fuchsia-500',
@@ -2643,7 +2643,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-fuchsia-500',
             divideColor: 'divide-fuchsia-500',
             outlineColor: 'outline-fuchsia-500',
-            focusOutlineColor: 'focus:outline-fuchsia-500',
+            focusRingColor: 'focus:ring-fuchsia-500',
         },
         '600': {
             bgColor: 'bg-fuchsia-600',
@@ -2656,7 +2656,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-fuchsia-600',
             divideColor: 'divide-fuchsia-600',
             outlineColor: 'outline-fuchsia-600',
-            focusOutlineColor: 'focus:outline-fuchsia-600',
+            focusRingColor: 'focus:ring-fuchsia-600',
         },
         '700': {
             bgColor: 'bg-fuchsia-700',
@@ -2669,7 +2669,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-fuchsia-700',
             divideColor: 'divide-fuchsia-700',
             outlineColor: 'outline-fuchsia-700',
-            focusOutlineColor: 'focus:outline-fuchsia-700',
+            focusRingColor: 'focus:ring-fuchsia-700',
         },
         '800': {
             bgColor: 'bg-fuchsia-800',
@@ -2682,7 +2682,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-fuchsia-800',
             divideColor: 'divide-fuchsia-800',
             outlineColor: 'outline-fuchsia-800',
-            focusOutlineColor: 'focus:outline-fuchsia-800',
+            focusRingColor: 'focus:ring-fuchsia-800',
         },
         '900': {
             bgColor: 'bg-fuchsia-900',
@@ -2695,7 +2695,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-fuchsia-900',
             divideColor: 'divide-fuchsia-900',
             outlineColor: 'outline-fuchsia-900',
-            focusOutlineColor: 'focus:outline-fuchsia-900',
+            focusRingColor: 'focus:ring-fuchsia-900',
         },
     },
     'pink': {
@@ -2710,7 +2710,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-pink-50',
             divideColor: 'divide-pink-50',
             outlineColor: 'outline-pink-50',
-            focusOutlineColor: 'focus:outline-pink-50',
+            focusRingColor: 'focus:ring-pink-50',
         },
         '100': {
             bgColor: 'bg-pink-100',
@@ -2723,7 +2723,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-pink-100',
             divideColor: 'divide-pink-100',
             outlineColor: 'outline-pink-100',
-            focusOutlineColor: 'focus:outline-pink-100',
+            focusRingColor: 'focus:ring-pink-100',
         },
         '200': {
             bgColor: 'bg-pink-200',
@@ -2736,7 +2736,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-pink-200',
             divideColor: 'divide-pink-200',
             outlineColor: 'outline-pink-200',
-            focusOutlineColor: 'focus:outline-pink-200',
+            focusRingColor: 'focus:ring-pink-200',
         },
         '300': {
             bgColor: 'bg-pink-300',
@@ -2749,7 +2749,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-pink-300',
             divideColor: 'divide-pink-300',
             outlineColor: 'outline-pink-300',
-            focusOutlineColor: 'focus:outline-pink-300',
+            focusRingColor: 'focus:ring-pink-300',
         },
         '400': {
             bgColor: 'bg-pink-400',
@@ -2762,7 +2762,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-pink-400',
             divideColor: 'divide-pink-400',
             outlineColor: 'outline-pink-400',
-            focusOutlineColor: 'focus:outline-pink-400',
+            focusRingColor: 'focus:ring-pink-400',
         },
         '500': {
             bgColor: 'bg-pink-500',
@@ -2775,7 +2775,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-pink-500',
             divideColor: 'divide-pink-500',
             outlineColor: 'outline-pink-500',
-            focusOutlineColor: 'focus:outline-pink-500',
+            focusRingColor: 'focus:ring-pink-500',
         },
         '600': {
             bgColor: 'bg-pink-600',
@@ -2788,7 +2788,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-pink-600',
             divideColor: 'divide-pink-600',
             outlineColor: 'outline-pink-600',
-            focusOutlineColor: 'focus:outline-pink-600',
+            focusRingColor: 'focus:ring-pink-600',
         },
         '700': {
             bgColor: 'bg-pink-700',
@@ -2801,7 +2801,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-pink-700',
             divideColor: 'divide-pink-700',
             outlineColor: 'outline-pink-700',
-            focusOutlineColor: 'focus:outline-pink-700',
+            focusRingColor: 'focus:ring-pink-700',
         },
         '800': {
             bgColor: 'bg-pink-700',
@@ -2814,7 +2814,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-pink-700',
             divideColor: 'divide-pink-700',
             outlineColor: 'outline-pink-700',
-            focusOutlineColor: 'focus:outline-pink-700',
+            focusRingColor: 'focus:ring-pink-700',
         },
         '900': {
             bgColor: 'bg-pink-900',
@@ -2827,7 +2827,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-pink-900',
             divideColor: 'divide-pink-900',
             outlineColor: 'outline-pink-900',
-            focusOutlineColor: 'focus:outline-pink-900',
+            focusRingColor: 'focus:ring-pink-900',
         },
     },
     'rose': {
@@ -2842,7 +2842,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-rose-50',
             divideColor: 'divide-rose-50',
             outlineColor: 'outline-rose-50',
-            focusOutlineColor: 'focus:outline-rose-50',
+            focusRingColor: 'focus:ring-rose-50',
         },
         '100': {
             bgColor: 'bg-rose-100',
@@ -2855,7 +2855,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-rose-100',
             divideColor: 'divide-rose-100',
             outlineColor: 'outline-rose-100',
-            focusOutlineColor: 'focus:outline-rose-100',
+            focusRingColor: 'focus:ring-rose-100',
         },
         '200': {
             bgColor: 'bg-rose-200',
@@ -2868,7 +2868,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-rose-200',
             divideColor: 'divide-rose-200',
             outlineColor: 'outline-rose-200',
-            focusOutlineColor: 'focus:outline-rose-200',
+            focusRingColor: 'focus:ring-rose-200',
         },
         '300': {
             bgColor: 'bg-rose-300',
@@ -2881,7 +2881,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-rose-300',
             divideColor: 'divide-rose-300',
             outlineColor: 'outline-rose-300',
-            focusOutlineColor: 'focus:outline-rose-300',
+            focusRingColor: 'focus:ring-rose-300',
         },
         '400': {
             bgColor: 'bg-rose-400',
@@ -2894,7 +2894,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-rose-400',
             divideColor: 'divide-rose-400',
             outlineColor: 'outline-rose-400',
-            focusOutlineColor: 'focus:outline-rose-400',
+            focusRingColor: 'focus:ring-rose-400',
         },
         '500': {
             bgColor: 'bg-rose-500',
@@ -2907,7 +2907,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-rose-500',
             divideColor: 'divide-rose-500',
             outlineColor: 'outline-rose-500',
-            focusOutlineColor: 'focus:outline-rose-500',
+            focusRingColor: 'focus:ring-rose-500',
         },
         '600': {
             bgColor: 'bg-rose-600',
@@ -2920,7 +2920,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-rose-600',
             divideColor: 'divide-rose-600',
             outlineColor: 'outline-rose-600',
-            focusOutlineColor: 'focus:outline-rose-600',
+            focusRingColor: 'focus:ring-rose-600',
         },
         '700': {
             bgColor: 'bg-rose-700',
@@ -2933,7 +2933,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-rose-700',
             divideColor: 'divide-rose-700',
             outlineColor: 'outline-rose-700',
-            focusOutlineColor: 'focus:outline-rose-700',
+            focusRingColor: 'focus:ring-rose-700',
         },
         '800': {
             bgColor: 'bg-rose-800',
@@ -2946,7 +2946,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-rose-800',
             divideColor: 'divide-rose-800',
             outlineColor: 'outline-rose-800',
-            focusOutlineColor: 'focus:outline-rose-800',
+            focusRingColor: 'focus:ring-rose-800',
         },
         '900': {
             bgColor: 'bg-rose-900',
@@ -2959,7 +2959,7 @@ export const colorVariantMapping: {[baseColor: string]: {[colorVariant: string]:
             hoverRingColor: 'hover:ring-rose-900',
             divideColor: 'divide-rose-900',
             outlineColor: 'outline-rose-900',
-            focusOutlineColor: 'focus:outline-rose-900',
+            focusRingColor: 'focus:ring-rose-900',
         },
     },
 };

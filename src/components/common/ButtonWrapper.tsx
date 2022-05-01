@@ -1,15 +1,20 @@
 import React from 'react';
 
 import { ButtonColorTypes, ButtonProportions, ButtonShapeTypes } from '@utils/component-utils';
-import { classNames } from '@utils/classname-utils';
+import { classNames, getColorVariantTypes } from '@utils/classname-utils';
+
+import 'tippy.js/dist/tippy.css';
+import Tooltip from '@tippyjs/react';
 
 export interface ButtonWrapperProps extends ButtonProportions, ButtonShapeTypes, ButtonColorTypes {
     onClick: React.MouseEventHandler<HTMLButtonElement>,
+    info?: string,
     children: React.ReactNode
 }
 
 const ButtonWrapper = ({
     onClick,
+    info,
     paddingX,
     paddingY,
     textSize,
@@ -26,26 +31,28 @@ const ButtonWrapper = ({
     children
 }: ButtonWrapperProps) => {
     return(
-        <button onClick={onClick} className={ classNames(
-            paddingX,
-            paddingY,
-            textSize,
-            rounded,
-            border,
-            shadow,
-            textColor,
-            bgColor,
-            borderColor,
-            'hover:'.concat(hoverBgColor),
-            `hover:${hoverTextColor}`,
-            `hover:${hoverBorderColor}`,
-            `focus:${focusRingColor}`,
-            'flex-shrink-0 inline-flex items-center group font-medium group',
-            'focus:outline-none focus:ring-2 focus:ring-offset-2',
-        ) }
-        >
-            { children }
-        </button>
+        <Tooltip content={ info } className={ info ? '' : 'hidden' }>
+            <button onClick={ onClick } className={ classNames(
+                paddingX,
+                paddingY,
+                textSize,
+                rounded,
+                border,
+                shadow,
+                textColor,
+                bgColor,
+                borderColor,
+                getColorVariantTypes(hoverBgColor).hoverBgColor,
+                getColorVariantTypes(hoverTextColor).hoverTextColor,
+                getColorVariantTypes(hoverBorderColor).hoverBorderColor,
+                getColorVariantTypes(focusRingColor).focusRingColor,
+                'flex-shrink-0 inline-flex items-center group font-medium group',
+                'focus:outline-none focus:ring-2 focus:ring-offset-2',
+            ) }
+            >
+                { children }
+            </button>
+        </Tooltip>
     );
 };
 

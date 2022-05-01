@@ -41,7 +41,12 @@ const Template: ComponentStory<never> = () => (
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
-                        <ButtonPrimary text={ buttonText } size={ Sizes[key] } handleClick={ handleClick } />
+                        <ButtonPrimary
+                            text={ buttonText }
+                            size={ Sizes[key] }
+                            handleClick={ handleClick } 
+                            info={ 'Button Info' } 
+                        />
                     );
                 })}
             </div>

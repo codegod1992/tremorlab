@@ -31,6 +31,23 @@ export const stringEndsWithNumber = (str: string): boolean => {
 };
 
 export const getColorVariantTypes = (twClassName: string): ColorTypes => {
+    if (!twClassName) {
+        return (
+            {
+                bgColor: '',
+                hoverBgColor: '',
+                textColor: '',
+                hoverTextColor: '',
+                borderColor: '',
+                hoverBorderColor: '',
+                ringRolor: '',
+                hoverRingColor: '',
+                divideColor: '',
+                outlineColor: '',
+                focusRingColor: '',
+            }
+        );
+    }
     const classNameParts = twClassName.split('-');
     const baseColor = classNameParts[1];
     const colorVariant = classNameParts[2] ? classNameParts[2] : 'none';

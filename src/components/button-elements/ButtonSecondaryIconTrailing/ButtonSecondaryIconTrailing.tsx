@@ -62,11 +62,13 @@ const ButtonSecondaryIconTrailing = ({
     text,
     Icon,
     handleClick,
+    info,
     size = Sizes.SM
 }: ButtonWithIconProps) => {
     return(
         <ButtonWrapper
             onClick={ handleClick }
+            info={ info }
             { ...buttonProportionsAttributes[size] }
             { ...buttonShapeAttributes }
             textColor={ 'text-blue-600' }
