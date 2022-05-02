@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BadgeProportions, IconProportions } from '@utils/component-utils';
+import { BadgeProportions, IconProportionTypes } from '@utils/component-utils';
 import BadgeWrapper from '@common/BadgeWrapper';
 import { classNames } from '@utils/classname-utils';
 
@@ -27,7 +27,7 @@ const badgeProportionsAttributes: {[char: string]: BadgeProportions} = {
     },
 };
 
-const iconProportionsAttributes: {[char: string]: IconProportions} = {
+const iconProportions: {[char: string]: IconProportionTypes} = {
     xs: {
         margin: 'ml-0.5 mr-1.5',
         iconSize: 'w-2 h-2',
@@ -63,8 +63,8 @@ const BadgeStatus = ({
         >
             <svg
                 className={ classNames( 
-                    iconProportionsAttributes[badgeSize].margin || '',
-                    iconProportionsAttributes[badgeSize].iconSize || '',
+                    iconProportions[badgeSize].margin || '',
+                    iconProportions[badgeSize].iconSize || '',
                 )}
                 fill="currentColor" viewBox="0 0 8 8"
             >

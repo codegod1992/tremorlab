@@ -52,12 +52,12 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     }    
 };
 
-export type ButtonIconProportionTypes = {
+export type IconProportionTypes = {
     margin?: string,
     iconSize: string,
 }
 
-export const iconLeftProportions: {[size: string]: ButtonIconProportionTypes} = {
+export const iconLeftProportions: {[size: string]: IconProportionTypes} = {
     xs: {
         margin: '-ml-0.5 mr-1.5',
         iconSize: 'w-4 h-4',
@@ -76,7 +76,7 @@ export const iconLeftProportions: {[size: string]: ButtonIconProportionTypes} = 
     },
 };
 
-export const iconRightProportions: {[size: string]: ButtonIconProportionTypes} = {
+export const iconRightProportions: {[size: string]: IconProportionTypes} = {
     xs: {
         margin: '-mr-0.5 ml-1.5',
         iconSize: 'w-4 h-4',

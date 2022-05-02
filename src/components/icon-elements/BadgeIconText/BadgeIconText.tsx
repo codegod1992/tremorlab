@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BadgeProportions, IconProportions } from '@utils/component-utils';
+import { BadgeProportions, IconProportionTypes } from '@utils/component-utils';
 import BadgeWrapper from '@common/BadgeWrapper';
 import { classNames } from '@utils/classname-utils';
 
@@ -27,7 +27,7 @@ const badgeProportionsAttributes: {[char: string]: BadgeProportions} = {
     },
 };
 
-const iconProportionsAttributes: {[char: string]: IconProportions} = {
+const iconProportions: {[char: string]: IconProportionTypes} = {
     xs: {
         margin: 'mr-1',
         iconSize: 'w-4 h-4',
@@ -64,8 +64,8 @@ const BadgeIconText = ({
             textColor = {'text-gray-800'}
         >
             <Icon className={ classNames(
-                iconProportionsAttributes[badgeSize].margin || '',
-                iconProportionsAttributes[badgeSize].iconSize || '',
+                iconProportions[badgeSize].margin || '',
+                iconProportions[badgeSize].iconSize || '',
             ) }
             />
             { text }

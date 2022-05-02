@@ -68,6 +68,11 @@ export const Sizes: {[key: string]: string} = {
     LG: 'lg'
 };
 
+export type IconProportionTypes = {
+    margin?: string,
+    iconSize: string,
+}
+
 export type BadgeProportions = {
     paddingX: string,
     paddingY: string,
