@@ -1,50 +1,8 @@
 import React from 'react';
 
-import { BadgeProportions, IconProportionTypes } from '@utils/component-utils';
+import { badgeProportions, iconProportions } from './mappings';
 import BadgeWrapper from '@common/BadgeWrapper';
 import { classNames } from '@utils/classname-utils';
-
-const badgeProportionsAttributes: {[char: string]: BadgeProportions} = {
-    xs: {
-        paddingX: 'px-2',
-        paddingY: 'py-0.5',
-        textSize: 'text-xs',
-    },
-    sm: {
-        paddingX: 'px-2.5',
-        paddingY: 'py-0.5',
-        textSize: 'text-sm',
-    },
-    md: {
-        paddingX: 'px-3',
-        paddingY: 'py-0.5',
-        textSize: 'text-md',
-    },
-    lg: {
-        paddingX: 'px-3',
-        paddingY: 'py-0.5',
-        textSize: 'text-lg',
-    },
-};
-
-const iconProportions: {[char: string]: IconProportionTypes} = {
-    xs: {
-        margin: 'ml-0.5 mr-1.5',
-        iconSize: 'w-2 h-2',
-    },
-    sm: {
-        margin: 'mr-1.5',
-        iconSize: 'w-2.5 h-2.5',
-    },
-    md: {
-        margin: '-ml-0.5 mr-1.5',
-        iconSize: 'w-2.5 h-2.5',
-    },
-    lg: {
-        margin: '-ml-0.5 mr-1.5',
-        iconSize: 'w-2.5 h-2.5',
-    },
-};
 
 export interface BadgeStatusProps {
     text: string,
@@ -57,7 +15,7 @@ const BadgeStatus = ({
 }: BadgeStatusProps) => {
     return(
         <BadgeWrapper
-            { ...badgeProportionsAttributes[badgeSize] }
+            { ...badgeProportions[badgeSize] }
             bgColor={ 'bg-emerald-100' }
             textColor={ 'text-emerald-800' }
         >
