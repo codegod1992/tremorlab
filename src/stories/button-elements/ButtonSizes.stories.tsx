@@ -9,14 +9,10 @@ import { Title } from 'components';
 import { Flex } from 'components';
 
 import {
+    Button,
     ButtonInline,
-    ButtonInlineArrow,
-    ButtonPrimary,
-    ButtonPrimaryArrow,
     ButtonPrimaryIconLeading,
     ButtonPrimaryIconTrailing,
-    ButtonSecondary,
-    ButtonSecondaryArrow,
     ButtonSecondaryIconLeading,
     ButtonSecondaryIconTrailing,
 } from 'components';
@@ -41,7 +37,7 @@ const Template: ComponentStory<never> = () => (
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
-                        <ButtonPrimary
+                        <Button
                             text={ buttonText }
                             size={ Sizes[key] }
                             handleClick={ handleClick } 
@@ -57,7 +53,11 @@ const Template: ComponentStory<never> = () => (
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
-                        <ButtonSecondary text={ buttonText } size={ Sizes[key] } handleClick={ handleClick } />
+                        <Button 
+                            text={ buttonText }
+                            size={ Sizes[key] }
+                            handleClick={ handleClick }
+                            importance="secondary" />
                     );
                 })}
             </div>
@@ -68,7 +68,7 @@ const Template: ComponentStory<never> = () => (
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
-                        <ButtonPrimary
+                        <Button
                             text={ buttonText }
                             size={ Sizes[key] }
                             handleClick={ handleClick }
@@ -84,11 +84,12 @@ const Template: ComponentStory<never> = () => (
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
-                        <ButtonSecondary
+                        <Button
                             text={ buttonText }
                             size={ Sizes[key] }
                             handleClick={ handleClick }
                             arrow={ true }
+                            importance="secondary"
                         />
                     );
                 })}

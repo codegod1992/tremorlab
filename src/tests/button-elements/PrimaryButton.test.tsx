@@ -2,12 +2,12 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import ButtonPrimary from 'components/button-elements/ButtonPrimary';
+import Button from 'components/button-elements/Button';
 
-describe('ButtonPrimary', () => {
-    test('renders the ButtonPrimary component', () => {
+describe('Button', () => {
+    test('renders the Button component', () => {
         render(
-            <ButtonPrimary
+            <Button
                 text="Button Text"
                 handleClick={()=>console.log('clicked')}
             />

@@ -4,8 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { 
     BadgeDelta,
-    ButtonPrimary,
-    ButtonSecondary,
+    Button,
     Caption,
     Card,
     ContentOverflow,
@@ -64,8 +63,8 @@ const Template: ComponentStory<typeof Card> = (args) => (
             </div>
             <Footer>
                 <Flex justifyContent="justify-end" spaceX="space-x-2">
-                    <ButtonSecondary text="Button Text" handleClick={handleClick} size="xs" />
-                    <ButtonPrimary text="Button Text" handleClick={handleClick} size="xs" />
+                    <Button text="Button Text" handleClick={handleClick} size="xs" importance="secondary" />
+                    <Button text="Button Text" handleClick={handleClick} size="xs" />
                 </Flex>
             </Footer>
         </Card>
@@ -96,7 +95,7 @@ const Template: ComponentStory<typeof Card> = (args) => (
                 </div>
             </div>
             <Footer>
-                <ButtonPrimary text="Button Text" handleClick={handleClick} size="xs" />
+                <Button text="Button Text" handleClick={handleClick} size="xs" />
             </Footer>
         </Card>
         <Card>
@@ -129,7 +128,7 @@ const Template: ComponentStory<typeof Card> = (args) => (
                 </div>
             </div>
             <Footer>
-                <ButtonPrimary text="Button Text" handleClick={handleClick} size="xs" />
+                <Button text="Button Text" handleClick={handleClick} size="xs" />
             </Footer>
         </Card>
     </div>

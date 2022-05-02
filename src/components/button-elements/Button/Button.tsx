@@ -1,45 +1,42 @@
 import React from 'react';
 
 import { Colors, Sizes } from '@utils/component-utils';
-import { buttonColors, buttonProportions, buttonShape } from './mappings';
+import { buttonColors, buttonProportions, buttonShape } from 'components/button-elements/Button/mappings';
 import ButtonWrapper from '@common/ButtonWrapper';
 
-export interface ButtonInlineProps {
+export interface ButtonProps {
     text: string,
     info?: string,
     arrow?: boolean,
     size?: string,
     color?: string,
+    importance?: string,
     handleClick: React.MouseEventHandler<HTMLButtonElement>,
-} 
+}
 
-const ButtonInline = ({
+const Button = ({
     text,
     handleClick,
     info,
     arrow = false,
     size = Sizes.SM,
-    color = Colors.Blue
-}: ButtonInlineProps) => {
+    color = Colors.Blue,
+    importance = 'primary'
+}: ButtonProps) => {
     return(
         <ButtonWrapper
             onClick={ handleClick }
             info={ info }
             { ...buttonProportions[size] }
             { ...buttonShape }
-            { ...buttonColors[color] }
+            { ...buttonColors[color][importance]}
         >
             { text }
             { arrow ? (
-                <span 
-                    aria-hidden="true"
-                    className="ml-1.5 inline-block translate-x-0 group-hover:translate-x-1 transition-transform \
-                            ease-in-out duration-50" >
-                        →
-                </span>
-            ) : null }
+                <span aria-hidden="true" className="ml-2 inline-block">→</span>
+            ) : null}
         </ButtonWrapper>
     );
 };
 
-export default ButtonInline;
+export default Button;

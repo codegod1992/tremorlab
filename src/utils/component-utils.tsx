@@ -98,14 +98,15 @@ export type ButtonColorTypes = {
 
 export interface ButtonProps {
     text: string,
-    size?: string,
     info?: string,
     arrow?: boolean,
+    size?: string,
     handleClick: React.MouseEventHandler<HTMLButtonElement>,
 } 
 
 export interface ButtonWithIconProps extends ButtonProps {
     Icon: React.ElementType,
+    iconPosition?: string,
 } 
 
 export type IconElementProporions = {
