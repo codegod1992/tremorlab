@@ -102,7 +102,7 @@ export const IncreaseXs = Template.bind({});
 IncreaseXs.args = {
     delta: '12.5%',
     deltaType: DeltaTypes.Increase,
-    badgeSize: 'xs'
+    size: 'xs'
 };
 
 export const ModerateIncreaseXs = Template.bind({});
@@ -110,7 +110,7 @@ export const ModerateIncreaseXs = Template.bind({});
 ModerateIncreaseXs.args = {
     delta: '12.5%',
     deltaType: DeltaTypes.ModerateIncrease,
-    badgeSize: 'xs'
+    size: 'xs'
 };
 
 export const DecreaseXs = Template.bind({});
@@ -118,7 +118,7 @@ export const DecreaseXs = Template.bind({});
 DecreaseXs.args = {
     delta: '12.5%',
     deltaType: DeltaTypes.Decrease,
-    badgeSize: 'xs'
+    size: 'xs'
 };
 
 export const ModerateDecreaseXs = Template.bind({});
@@ -126,7 +126,7 @@ export const ModerateDecreaseXs = Template.bind({});
 ModerateDecreaseXs.args = {
     delta: '12.5%',
     deltaType: DeltaTypes.ModerateDecrease,
-    badgeSize: 'xs'
+    size: 'xs'
 };
 
 export const UnchangedXs = Template.bind({});
@@ -134,6 +134,6 @@ export const UnchangedXs = Template.bind({});
 UnchangedXs.args = {
     delta: '12.5%',
     deltaType: DeltaTypes.Unchanged,
-    badgeSize: 'xs'
+    size: 'xs'
 };
 

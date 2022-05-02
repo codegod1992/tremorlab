@@ -1,85 +1,48 @@
 import React from 'react';
 
 import { 
-    BadgeProportions,
     DeltaBgColors,
     DeltaIcons,
     DeltaTextColors,
-    IconProportionTypes, 
-    mapInputsToDeltaType
+    mapInputsToDeltaType 
 } from '@utils/component-utils';
+import { 
+    badgeProportionsIconOnly,
+    badgeProportionsWithText,
+    iconProportionsIconOnly,
+    iconProportionsWithText
+} from './mappings';
 import BadgeWrapper from '@common/BadgeWrapper';
 import { classNames } from '@utils/classname-utils';
 
-const badgeProportionsAttributes: {[char: string]: BadgeProportions} = {
-    xs: {
-        paddingX: 'px-2',
-        paddingY: 'py-0.5',
-        textSize: 'text-xs',
-    },
-    sm: {
-        paddingX: 'px-2.5',
-        paddingY: 'py-0.5',
-        textSize: 'text-sm',
-    },
-    md: {
-        paddingX: 'px-3',
-        paddingY: 'py-0.5',
-        textSize: 'text-md',
-    },
-    lg: {
-        paddingX: 'px-3',
-        paddingY: 'py-0.5',
-        textSize: 'text-lg',
-    },
-};
-
-const iconProportions: {[char: string]: IconProportionTypes} = {
-    xs: {
-        margin: '-ml-0.5 mr-0.5',
-        iconSize: 'w-4 h-4',
-    },
-    sm: {
-        margin: '-ml-0.5 mr-0.5',
-        iconSize: 'w-4 h-4',
-    },
-    md: {
-        margin: '-ml-0.5 mr-0.5',
-        iconSize: 'w-4 h-4',
-    },
-    lg: {
-        margin: '-ml-0.5 mr-0.5',
-        iconSize: 'w-4 h-4',
-    },
-};
-
 export interface BadgeDeltaProps {
-    delta: string,
+    delta?: string,
     deltaType: string,
     isIncreasePositive?: boolean,
-    badgeSize?: string
+    size?: string
 }
 
 const BadgeDelta = ({
     delta,
     deltaType,
     isIncreasePositive = true,
-    badgeSize = 'sm'
+    size = 'sm'
 }: BadgeDeltaProps) => {
     const Icon = DeltaIcons[deltaType];
     const mappedDeltaType = mapInputsToDeltaType(deltaType, isIncreasePositive);
+    const badgeProportions = delta ? badgeProportionsWithText : badgeProportionsIconOnly;
     return(
         <BadgeWrapper
-            {...badgeProportionsAttributes[badgeSize]}
+            { ...badgeProportions[size] }
             bgColor={ DeltaBgColors[mappedDeltaType] }
             textColor={ DeltaTextColors[mappedDeltaType] }
         >
             <Icon className={ classNames(
-                iconProportions[badgeSize].margin || '',
-                iconProportions[badgeSize].iconSize || '',
+                delta ? (iconProportionsWithText[size].margin || '') : (iconProportionsIconOnly[size].margin || '') ,
+                delta ? (iconProportionsWithText[size].iconSize || '') : (iconProportionsIconOnly[size].iconSize || '')
             ) }
             />
-            { delta }
+            { delta ? delta : null}
         </BadgeWrapper>
     );
 };

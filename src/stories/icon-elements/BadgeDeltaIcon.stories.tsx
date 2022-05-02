@@ -4,20 +4,20 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Flex } from 'components';
 
-import BadgeDeltaIcon from 'components/icon-elements/BadgeDeltaIcon/BadgeDeltaIcon';
+import BadgeDelta from 'components/icon-elements/BadgeDelta/BadgeDelta';
 import { DeltaTypes } from '@utils/component-utils';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/IconElements/BadgeDeltaIcon',
-    component: BadgeDeltaIcon,
-} as ComponentMeta<typeof BadgeDeltaIcon>;
+    title: 'Tremor/IconElements/BadgeDeltaIconOnly',
+    component: BadgeDelta,
+} as ComponentMeta<typeof BadgeDelta>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Template: ComponentStory<typeof BadgeDeltaIcon> = (args) => (
+const Template: ComponentStory<typeof BadgeDelta> = (args) => (
     <Flex>
         <div>Hello</div>
-        <BadgeDeltaIcon {...args} />
+        <BadgeDelta {...args} />
     </Flex>
 );
   
@@ -91,34 +91,34 @@ export const IncreaseXs = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 IncreaseXs.args = {
     deltaType: DeltaTypes.Increase,
-    badgeSize: 'xs'
+    size: 'xs'
 };
 
 export const ModerateIncreaseXs = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ModerateIncreaseXs.args = {
     deltaType: DeltaTypes.ModerateIncrease,
-    badgeSize: 'xs'
+    size: 'xs'
 };
 
 export const DecreaseXs = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 DecreaseXs.args = {
     deltaType: DeltaTypes.Decrease,
-    badgeSize: 'xs'
+    size: 'xs'
 };
 
 export const ModerateDecreaseXs = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ModerateDecreaseXs.args = {
     deltaType: DeltaTypes.ModerateDecrease,
-    badgeSize: 'xs'
+    size: 'xs'
 };
 
 export const UnchangedXs = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 UnchangedXs.args = {
     deltaType: DeltaTypes.Unchanged,
-    badgeSize: 'xs'
+    size: 'xs'
 };
 

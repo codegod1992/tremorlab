@@ -20,11 +20,11 @@ export const DeltaBgColors: {[key: string]: string} = {
 };
 
 export const DeltaTextColors: {[key: string]: string} = {
-    'increase': 'text-emerald-100',
-    'moderateIncrease': 'text-emerald-100',
-    'decrease': 'text-rose-100',
-    'moderateDecrease': 'text-rose-100',
-    'unchanged': 'text-orange-100',
+    'increase': 'bg-emerald-100',
+    'moderateIncrease': 'bg-emerald-100',
+    'decrease': 'bg-rose-100',
+    'moderateDecrease': 'bg-rose-100',
+    'unchanged': 'bg-orange-100',
 };
 
 export const DeltaIcons: {[key: string]: React.ElementType} = {
