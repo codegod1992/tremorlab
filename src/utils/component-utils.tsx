@@ -96,38 +96,6 @@ export type ButtonColorTypes = {
     focusRingColor: string,
 }
 
-export type IconElementProporions = {
-    paddingX: string,
-    paddingY: string,
-    iconSize: string,
-}
-
-export type IconElementShapeTypes = {
-    rounded: string,
-    border: string,
-    ring: string,
-    shadow: string
-}
-
-export type IconElementColorTypes = {
-    textColor: string,
-    bgColor: string,
-    borderColor: string,
-    ringColor: string,
-}
-
-export interface IconElementProps {
-    Icon: React.ElementType,
-    info?: string,
-    size?: string
-    color?: string
-}
-
-export type IconProportionTypes = {
-    margin?: string,
-    iconSize: string,
-}
-
 export const mapInputsToDeltaType = (deltaType: string, isIncreasePositive: boolean): string => {
     if (isIncreasePositive || deltaType===DeltaTypes.Unchanged) {
         return deltaType;

@@ -6,20 +6,18 @@ import ArrowUpLineIcon from 'remixicon-react/ArrowUpLineIcon';
 import { Colors } from '@utils/component-utils';
 import { Title } from 'components';
 
-import IconCircled from 'components/icon-elements/IconCircled/IconCircled';
-import IconLight from 'components/icon-elements/IconLight/IconLight';
-import IconNeutral from 'components/icon-elements/IconNeutral/IconNeutral';
-import IconShadow from 'components/icon-elements/IconShadow/IconShadow';
-import IconSolid from 'components/icon-elements/IconSolid/IconSolid';
+import { IconTypes } from 'components/icon-elements/Icon/Icon';
+
+import Icon from 'components/icon-elements/Icon/Icon';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
     title: 'Tremor/IconElements/IconColors',
-    component: IconNeutral,
-} as ComponentMeta<typeof IconNeutral>;
+    component: Icon,
+} as ComponentMeta<typeof Icon>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Icon = ArrowUpLineIcon;
+const MyIcon = ArrowUpLineIcon;
 
 const Template: ComponentStory<never> = () => (
     <>
@@ -29,7 +27,7 @@ const Template: ComponentStory<never> = () => (
                 {Object.keys(Colors).map(key => {
                     console.log(Colors[key]);
                     return(
-                        <IconNeutral Icon={ Icon } color={ Colors[key] } />
+                        <Icon Icon={ MyIcon } style={ IconTypes.Simple } color={ Colors[key] } />
                     );
                 })}
             </div>
@@ -40,7 +38,7 @@ const Template: ComponentStory<never> = () => (
                 {Object.keys(Colors).map(key => {
                     console.log(Colors[key]);
                     return(
-                        <IconLight Icon={ Icon } color={ Colors[key] } />
+                        <Icon Icon={ MyIcon } style={ IconTypes.Light } color={ Colors[key] } />
                     );
                 })}
             </div>
@@ -51,7 +49,7 @@ const Template: ComponentStory<never> = () => (
                 {Object.keys(Colors).map(key => {
                     console.log(Colors[key]);
                     return(
-                        <IconShadow Icon={ Icon } color={ Colors[key] } />
+                        <Icon Icon={ MyIcon } style={ IconTypes.Shadow } color={ Colors[key] } />
                     );
                 })}
             </div>
@@ -62,7 +60,7 @@ const Template: ComponentStory<never> = () => (
                 {Object.keys(Colors).map(key => {
                     console.log(Colors[key]);
                     return(
-                        <IconSolid Icon={ Icon } color={ Colors[key] } />
+                        <Icon Icon={ MyIcon } style={ IconTypes.Solid } color={ Colors[key] } />
                     );
                 })}
             </div>
@@ -73,7 +71,7 @@ const Template: ComponentStory<never> = () => (
                 {Object.keys(Colors).map(key => {
                     console.log(Colors[key]);
                     return(
-                        <IconCircled Icon={ Icon } color={ Colors[key] } />
+                        <Icon Icon={ MyIcon } style={ IconTypes.Circled } color={ Colors[key] } />
                     );
                 })}
             </div>

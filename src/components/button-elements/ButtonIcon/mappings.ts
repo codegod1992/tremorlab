@@ -1,4 +1,4 @@
-import { ButtonColorTypes, ButtonProportionTypes, ButtonShapeTypes, IconProportionTypes } from '@utils/component-utils';
+import { ButtonColorTypes, ButtonProportionTypes, ButtonShapeTypes } from '@utils/component-utils';
 
 export const buttonProportions: {[char: string]: ButtonProportionTypes} = {
     xs: {
@@ -52,7 +52,12 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     }    
 };
 
-export const iconLeftProportions: {[size: string]: IconProportionTypes} = {
+export type ButtonIconProportionTypes = {
+    margin?: string,
+    iconSize: string,
+}
+
+export const iconLeftProportions: {[size: string]: ButtonIconProportionTypes} = {
     xs: {
         margin: '-ml-0.5 mr-1.5',
         iconSize: 'w-4 h-4',
@@ -71,7 +76,7 @@ export const iconLeftProportions: {[size: string]: IconProportionTypes} = {
     },
 };
 
-export const iconRightProportions: {[size: string]: IconProportionTypes} = {
+export const iconRightProportions: {[size: string]: ButtonIconProportionTypes} = {
     xs: {
         margin: '-mr-0.5 ml-1.5',
         iconSize: 'w-4 h-4',

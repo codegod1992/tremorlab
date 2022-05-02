@@ -6,20 +6,16 @@ import ArrowUpLineIcon from 'remixicon-react/ArrowUpLineIcon';
 import { Sizes } from '@utils/component-utils';
 import { Title } from 'components';
 
-import IconCircled from 'components/icon-elements/IconCircled/IconCircled';
-import IconLight from 'components/icon-elements/IconLight/IconLight';
-import IconNeutral from 'components/icon-elements/IconNeutral/IconNeutral';
-import IconShadow from 'components/icon-elements/IconShadow/IconShadow';
-import IconSolid from 'components/icon-elements/IconSolid/IconSolid';
+import Icon, { IconTypes } from 'components/icon-elements/Icon/Icon';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
     title: 'Tremor/IconElements/IconSizes',
-    component: IconNeutral,
-} as ComponentMeta<typeof IconNeutral>;
+    component: Icon,
+} as ComponentMeta<typeof Icon>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Icon = ArrowUpLineIcon;
+const MyIcon = ArrowUpLineIcon;
 
 const Template: ComponentStory<never> = () => (
     <>
@@ -28,7 +24,7 @@ const Template: ComponentStory<never> = () => (
             <div className="grid grid-cols-8 justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     return(
-                        <IconNeutral Icon={ Icon } size={ Sizes[key] } info="Icon Info" />
+                        <Icon Icon={ MyIcon } style={ IconTypes.Simple } size={ Sizes[key] } info="Icon Info" />
                     );
                 })}
             </div>
@@ -38,7 +34,7 @@ const Template: ComponentStory<never> = () => (
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     return(
-                        <IconLight Icon={ Icon } size={ Sizes[key] } info="Icon Info" />
+                        <Icon Icon={ MyIcon } style={ IconTypes.Light } size={ Sizes[key] } info="Icon Info" />
                     );
                 })}
             </div>
@@ -48,7 +44,7 @@ const Template: ComponentStory<never> = () => (
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     return(
-                        <IconShadow Icon={ Icon } size={ Sizes[key] } />
+                        <Icon Icon={ MyIcon } style={ IconTypes.Shadow } size={ Sizes[key] } info="Icon Info" />
                     );
                 })}
             </div>
@@ -58,7 +54,7 @@ const Template: ComponentStory<never> = () => (
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     return(
-                        <IconSolid Icon={ Icon } size={ Sizes[key] } />
+                        <Icon Icon={ MyIcon } style={ IconTypes.Solid } size={ Sizes[key] } info="Icon Info" />
                     );
                 })}
             </div>
@@ -68,7 +64,7 @@ const Template: ComponentStory<never> = () => (
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     return(
-                        <IconCircled Icon={ Icon } size={ Sizes[key] } />
+                        <Icon Icon={ MyIcon } style={ IconTypes.Circled } size={ Sizes[key] } info="Icon Info" />
                     );
                 })}
             </div>
