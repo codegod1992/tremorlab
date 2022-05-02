@@ -10,8 +10,8 @@ import { Flex } from 'components';
 
 import {
     Button,
+    ButtonIcon,
     ButtonInline,
-    ButtonPrimaryIconLeading,
     ButtonPrimaryIconTrailing,
     ButtonSecondaryIconLeading,
     ButtonSecondaryIconTrailing,
@@ -101,8 +101,9 @@ const Template: ComponentStory<never> = () => (
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
-                        <ButtonPrimaryIconLeading
+                        <ButtonIcon
                             Icon={ Icon }
+                            iconPosition={ 'left' }
                             text={ buttonText }
                             size={ Sizes[key] }
                             handleClick={ handleClick }
@@ -117,9 +118,10 @@ const Template: ComponentStory<never> = () => (
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
-                        <ButtonSecondaryIconLeading
+                        <ButtonIcon
                             Icon={ Icon }
                             text={ buttonText }
+                            importance={ 'secondary' }
                             size={ Sizes[key] }
                             handleClick={ handleClick }
                         />
@@ -133,8 +135,9 @@ const Template: ComponentStory<never> = () => (
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
-                        <ButtonPrimaryIconTrailing
+                        <ButtonIcon
                             Icon={ Icon }
+                            iconPosition={ 'right' }
                             text={ buttonText }
                             size={ Sizes[key] }
                             handleClick={ handleClick }
@@ -149,8 +152,10 @@ const Template: ComponentStory<never> = () => (
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
-                        <ButtonSecondaryIconTrailing
+                        <ButtonIcon
                             Icon={ Icon }
+                            iconPosition={ 'right' }
+                            importance={ 'secondary' }
                             text={ buttonText }
                             size={ Sizes[key] }
                             handleClick={ handleClick }
