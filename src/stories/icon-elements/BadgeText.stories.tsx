@@ -4,19 +4,19 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Flex } from 'components';
 
-import BadgeText from 'components/icon-elements/BadgeText/BadgeText';
+import Badge from 'components/icon-elements/Badge/Badge';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/IconElements/BadgeText',
-    component: BadgeText,
-} as ComponentMeta<typeof BadgeText>;
+    title: 'Tremor/IconElements/BadgeTextOnly',
+    component: Badge,
+} as ComponentMeta<typeof Badge>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Template: ComponentStory<typeof BadgeText> = (args) => (
+const Template: ComponentStory<typeof Badge> = (args) => (
     <Flex>
         <div>Hello</div>
-        <BadgeText {...args} text={ 'Only Text' } />
+        <Badge {...args} text={ 'Only Text' } />
     </Flex>
 );
 
@@ -24,7 +24,7 @@ const Template: ComponentStory<typeof BadgeText> = (args) => (
 export const BadgeXs = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 BadgeXs.args = {
-    badgeSize: 'xs'
+    size: 'xs'
 };
 
 export const BadgeSm = Template.bind({});
@@ -35,11 +35,11 @@ BadgeSm.args = {
 export const BadgeMd = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 BadgeMd.args = {
-    badgeSize: 'md'
+    size: 'md'
 };
 
 export const BadgeLg = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 BadgeLg.args = {
-    badgeSize: 'lg'
+    size: 'lg'
 };

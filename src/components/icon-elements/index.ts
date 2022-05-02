@@ -1,7 +1,6 @@
+export { default as Badge } from './Badge';
 export { default as BadgeDelta } from './BadgeDelta';
 export { default as BadgeIcon } from './BadgeIcon';
-export { default as BadgeIconText } from './BadgeIconText';
 export { default as BadgeStatus } from './BadgeStatus';
-export { default as BadgeText } from './BadgeText';
 
 export { default as Icon } from './Icon';

@@ -5,42 +5,42 @@ import ArrowUpLineIcon from 'remixicon-react/ArrowUpLineIcon';
 
 import { Flex } from 'components';
 
-import BadgeIconText from 'components/icon-elements/BadgeIconText/BadgeIconText';
+import Badge from 'components/icon-elements/Badge/Badge';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/IconElements/BadgeIconText',
-    component: BadgeIconText,
-} as ComponentMeta<typeof BadgeIconText>;
+    title: 'Tremor/IconElements/BadgeWithIcon',
+    component: Badge,
+} as ComponentMeta<typeof Badge>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Template: ComponentStory<typeof BadgeIconText> = (args) => (
+const Template: ComponentStory<typeof Badge> = (args) => (
     <Flex>
         <div>Hello</div>
-        <BadgeIconText {...args} text={ 'with icon '} Icon={ ArrowUpLineIcon } />
+        <Badge {...args} text={ 'with icon '} Icon={ ArrowUpLineIcon } />
     </Flex>
 );
   
 export const BadgeXs = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 BadgeXs.args = {
-    badgeSize: 'xs'
+    size: 'xs'
 };
 
 export const BadgeSm = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 BadgeSm.args = {
-    badgeSize: 'sm'
+    size: 'sm'
 };
 
 export const BadgeMd = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 BadgeMd.args = {
-    badgeSize: 'md'
+    size: 'md'
 };
 
 export const BadgeLg = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 BadgeLg.args = {
-    badgeSize: 'lg'
+    size: 'lg'
 };
