@@ -35,7 +35,6 @@ const ColGrid = ({
             GridCols[numColumns] ? GridCols[numColumns] : 'grid-cols-none',
             parseGapXClassNames(gapX),
             parseGapYClassNames(gapY),
-            `grid-cols-${String(numColumns)}`,
             'grid'
         ) }>
             { children }

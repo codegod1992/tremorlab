@@ -29,7 +29,6 @@ const RowGrid = ({
             GridRows[numRows] ? GridRows[numRows] : 'grid-rows-none',
             parseGapXClassNames(gapX),
             parseGapYClassNames(gapY),
-            `grid-rows-${String(numRows)}`,
             'grid-flow-col',
             'grid'
         ) }>
