@@ -100,6 +100,7 @@ export interface ButtonProps {
     text: string,
     size?: string,
     info?: string,
+    arrow?: boolean,
     handleClick: React.MouseEventHandler<HTMLButtonElement>,
 } 
 

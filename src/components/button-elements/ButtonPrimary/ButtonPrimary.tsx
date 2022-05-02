@@ -37,6 +37,7 @@ const ButtonPrimary = ({
     text,
     handleClick,
     info,
+    arrow = false,
     size = Sizes.SM
 }: ButtonProps) => {
     return(
@@ -54,6 +55,9 @@ const ButtonPrimary = ({
             focusRingColor={ 'ring-blue-500' }
         >
             { text }
+            { arrow ? (
+                <span aria-hidden="true" className="ml-2 inline-block">→</span>
+            ) : null}
         </ButtonWrapper>
     );
 };

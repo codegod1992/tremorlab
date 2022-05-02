@@ -68,7 +68,12 @@ const Template: ComponentStory<never> = () => (
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
-                        <ButtonPrimaryArrow text={ buttonText } size={ Sizes[key] } handleClick={ handleClick } />
+                        <ButtonPrimary
+                            text={ buttonText }
+                            size={ Sizes[key] }
+                            handleClick={ handleClick }
+                            arrow={ true } 
+                        />
                     );
                 })}
             </div>
@@ -79,7 +84,12 @@ const Template: ComponentStory<never> = () => (
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
-                        <ButtonSecondaryArrow text={ buttonText } size={ Sizes[key] } handleClick={ handleClick } />
+                        <ButtonSecondary
+                            text={ buttonText }
+                            size={ Sizes[key] }
+                            handleClick={ handleClick }
+                            arrow={ true }
+                        />
                     );
                 })}
             </div>
@@ -169,9 +179,10 @@ const Template: ComponentStory<never> = () => (
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
-                        <ButtonInlineArrow
+                        <ButtonInline
                             text={ buttonText }
                             size={ Sizes[key] }
+                            arrow={ true }
                             handleClick={ handleClick }
                         />
                     );

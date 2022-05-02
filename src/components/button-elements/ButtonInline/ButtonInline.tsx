@@ -37,6 +37,7 @@ const ButtonInline = ({
     text,
     handleClick,
     info,
+    arrow = false,
     size = Sizes.SM
 }: ButtonProps) => {
     return(
@@ -54,6 +55,14 @@ const ButtonInline = ({
             focusRingColor={ 'ring-blue-500' }
         >
             { text }
+            { arrow ? (
+                <span 
+                    aria-hidden="true"
+                    className="ml-1.5 inline-block translate-x-0 group-hover:translate-x-1 transition-transform \
+                            ease-in-out duration-50" >
+                        →
+                </span>
+            ) : null }
         </ButtonWrapper>
     );
 };
