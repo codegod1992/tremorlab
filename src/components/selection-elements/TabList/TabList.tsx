@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BaseComponentProps from '@utils/BaseComponentInterface';
+import BaseComponentProps from '@common/BaseComponentInterface';
 
 import { classNames, parseBorderClassNames, parseMarginTopClassNames } from '@utils/classname-utils';
 

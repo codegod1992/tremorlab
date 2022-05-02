@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { BadgeProportions } from '@utils/component-utils';
+import { BadgeProportionTypes } from '@common/common-types';
 import { classNames } from '@utils/classname-utils';
 
-export interface BadgeWrapperProps extends BadgeProportions {
+export interface BadgeWrapperProps extends BadgeProportionTypes {
     textColor: string,
     bgColor: string,
     children: React.ReactNode

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Colors, Sizes } from '@utils/component-utils';
+import { Colors, Sizes } from '@utils/objects';
 import { buttonColors, buttonProportions, buttonShape, iconLeftProportions, iconRightProportions } from './mappings';
 import ButtonWrapper from '@common/ButtonWrapper';
 import { classNames } from '@utils/classname-utils';

@@ -3,9 +3,8 @@ import React from 'react';
 import { 
     DeltaBgColors,
     DeltaIcons,
-    DeltaTextColors,
-    mapInputsToDeltaType 
-} from '@utils/component-utils';
+    DeltaTextColors, 
+} from '@utils/objects';
 import { 
     badgeProportionsIconOnly,
     badgeProportionsWithText,
@@ -14,6 +13,7 @@ import {
 } from './mappings';
 import BadgeWrapper from '@common/BadgeWrapper';
 import { classNames } from '@utils/classname-utils';
+import { mapInputsToDeltaType } from '@utils/utils';
 
 export interface BadgeDeltaProps {
     delta?: string,

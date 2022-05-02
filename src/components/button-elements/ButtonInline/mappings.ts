@@ -1,4 +1,4 @@
-import { ButtonColorTypes, ButtonProportionTypes, ButtonShapeTypes } from '@utils/component-utils';
+import { ButtonColorTypes, ButtonProportionTypes, ButtonShapeTypes } from '@common/common-types';
 
 export const buttonProportions: {[char: string]: ButtonProportionTypes} = {
     xs: {

@@ -1,10 +1,11 @@
 import React from 'react';
 
-import BaseComponentProps from '@utils/BaseComponentInterface';
+import BaseComponentProps from '@common/BaseComponentInterface';
 
-import { DeltaBgColors, DeltaTypes, mapInputsToDeltaType } from '@utils/component-utils';
+import { DeltaBgColors, DeltaTypes } from '@utils/objects';
 import { classNames, parseBgClassNames, parseMarginTopClassNames } from '@utils/classname-utils';
 import BarWrapper from '@common/BarWrapper';
+import { mapInputsToDeltaType } from '@utils/utils';
 
 export interface DeltaBarProps extends BaseComponentProps {
     widthPercentage: number,

@@ -1,6 +1,6 @@
-import { BadgeProportions, IconProportionTypes } from '@utils/component-utils';
+import { BadgeProportionTypes, IconProportionTypes } from '@common/common-types';
 
-export const badgeProportions: {[char: string]: BadgeProportions} = {
+export const badgeProportions: {[char: string]: BadgeProportionTypes} = {
     xs: {
         paddingX: 'px-2',
         paddingY: 'py-0.5',

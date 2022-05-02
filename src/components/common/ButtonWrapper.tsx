@@ -3,7 +3,7 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { ButtonColorTypes, ButtonProportionTypes, ButtonShapeTypes } from '@utils/component-utils';
+import { ButtonColorTypes, ButtonProportionTypes, ButtonShapeTypes } from '@common/common-types';
 import { classNames, getColorVariantTypes } from '@utils/classname-utils';
 
 export interface ButtonWrapperProps extends ButtonProportionTypes, ButtonShapeTypes, ButtonColorTypes {

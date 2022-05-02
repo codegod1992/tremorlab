@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Colors, Sizes } from '@utils/component-utils';
+import { Colors, Sizes } from '@utils/objects';
 import { colorMapping, proportinsMapping, shapeMapping } from './mappings';
 import IconWrapper from './IconWrapper';
 
