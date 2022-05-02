@@ -1,16 +1,16 @@
 import React from 'react';
 
 import { 
-    ButtonProportions,
+    ButtonProportionTypes,
     ButtonShapeTypes,
-    IconProportions,
+    IconProportionTypes,
     Sizes
 } from '@utils/component-utils';
 import { ButtonWithIconProps } from '../../../utils/component-utils';
 import ButtonWrapper from '@common/ButtonWrapper';
 import { classNames } from '@utils/classname-utils';
 
-const buttonProportionsAttributes: {[char: string]: ButtonProportions} = {
+const buttonProportions: {[char: string]: ButtonProportionTypes} = {
     xs: {
         paddingX: 'px-2.5',
         paddingY: 'py-1.5',
@@ -33,14 +33,14 @@ const buttonProportionsAttributes: {[char: string]: ButtonProportions} = {
     },
 };
 
-const buttonShapeAttributes: ButtonShapeTypes = {
+const buttonShape: ButtonShapeTypes = {
     rounded: 'rounded-lg',
     border: 'border',
     shadow: 'shadow-sm'
 };
 
 
-const iconProportionsAttributes: {[char: string]: IconProportions} = {
+const iconProportions: {[char: string]: IconProportionTypes} = {
     xs: {
         margin: '-mr-0.5 ml-1.5',
         iconSize: 'w-4 h-4',
@@ -70,8 +70,8 @@ const ButtonPrimaryIconTrailing = ({
         <ButtonWrapper
             onClick={ handleClick }
             info={ info }
-            { ...buttonProportionsAttributes[size] }
-            { ...buttonShapeAttributes }
+            { ...buttonProportions[size] }
+            { ...buttonShape }
             textColor={ 'text-white' }
             hoverTextColor={ '' }
             bgColor={ 'bg-blue-600' }
@@ -83,8 +83,8 @@ const ButtonPrimaryIconTrailing = ({
             { text }
             <Icon 
                 className={classNames(
-                    iconProportionsAttributes[size].margin || '',
-                    iconProportionsAttributes[size].iconSize || '',
+                    iconProportions[size].margin || '',
+                    iconProportions[size].iconSize || '',
                 )}
                 aria-hidden="true"
             />   

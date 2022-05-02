@@ -74,7 +74,7 @@ export type BadgeProportions = {
     textSize: string,
 }
 
-export type ButtonProportions = {
+export type ButtonProportionTypes = {
     paddingX: string,
     paddingY: string,
     textSize: string,
@@ -135,7 +135,7 @@ export interface IconElementProps {
     color?: string
 }
 
-export type IconProportions = {
+export type IconProportionTypes = {
     margin?: string,
     iconSize: string,
 }

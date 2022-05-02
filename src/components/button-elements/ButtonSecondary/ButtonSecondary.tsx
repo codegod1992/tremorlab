@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { ButtonProportions, ButtonShapeTypes, Sizes } from '@utils/component-utils';
+import { ButtonProportionTypes, ButtonShapeTypes, Sizes } from '@utils/component-utils';
 import { ButtonProps } from '../../../utils/component-utils';
 import ButtonWrapper from '@common/ButtonWrapper';
 
-const buttonProportionsAttributes: {[char: string]: ButtonProportions} = {
+const buttonProportions: {[char: string]: ButtonProportionTypes} = {
     xs: {
         paddingX: 'px-2.5',
         paddingY: 'py-1.5',
@@ -27,7 +27,7 @@ const buttonProportionsAttributes: {[char: string]: ButtonProportions} = {
     },
 };
 
-const buttonShapeAttributes: ButtonShapeTypes = {
+const buttonShape: ButtonShapeTypes = {
     rounded: 'rounded-lg',
     border: 'border',
     shadow: 'shadow-sm'
@@ -44,8 +44,8 @@ const ButtonSecondary = ({
         <ButtonWrapper
             onClick={ handleClick }
             info={ info }
-            { ...buttonProportionsAttributes[size] }
-            { ...buttonShapeAttributes }
+            { ...buttonProportions[size] }
+            { ...buttonShape }
             textColor={ 'text-blue-600' }
             bgColor={ 'bg-transparent' }
             hoverBgColor={ 'bg-blue-700' }
