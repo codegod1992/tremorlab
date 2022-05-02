@@ -12,9 +12,6 @@ import {
     Button,
     ButtonIcon,
     ButtonInline,
-    ButtonPrimaryIconTrailing,
-    ButtonSecondaryIconLeading,
-    ButtonSecondaryIconTrailing,
 } from 'components';
 
 
