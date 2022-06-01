@@ -24,7 +24,8 @@
   },
   "homepage": "https://github.com/tremorlabs/tremor#readme",
   "dependencies": {
-    "@tippyjs/react": "^4.2.6"
+    "@tippyjs/react": "^4.2.6",
+    "recharts": "^2.1.10"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
