@@ -76,7 +76,12 @@ const TrmAreaChart = ({
                 isAnimationActive={false}
                 cursor={{ stroke: '#d1d5db', strokeWidth: 1 }}
                 content={ ({ active, payload, label }) => (
-                    <ChartTooltip active={ active } payload={ payload } label={ label } />
+                    <ChartTooltip
+                        active={ active }
+                        payload={ payload }
+                        label={ label }
+                        valueFormater={ valueFormater }
+                    />
                 ) }
                 position={ { y: 0 } }
             />

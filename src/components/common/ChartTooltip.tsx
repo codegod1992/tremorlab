@@ -1,7 +1,9 @@
 import React from 'react';
 
+import { ValueFormater } from '@utils/utils';
+
 export interface ChartTooltipRowProps {
-    value: number,
+    value: string,
     name: string,
 }
 
@@ -19,9 +21,10 @@ export interface ChartTooltipProps {
     active: boolean | undefined,
     payload: any,
     label: string,
+    valueFormater: ValueFormater,
 }
 
-const ChartTooltip = ({ active, payload, label }: ChartTooltipProps) => {    
+const ChartTooltip = ({ active, payload, label, valueFormater }: ChartTooltipProps) => {    
     if (active && payload) {
         return (
             <div className="bg-white border text-sm shadow-lg rounded-md">
@@ -31,8 +34,8 @@ const ChartTooltip = ({ active, payload, label }: ChartTooltipProps) => {
   
                 <div className="pt-2.5 pb-2.5 px-4 space-y-1">
                     {
-                        payload.map(({value, name}: ChartTooltipRowProps, idx: number) => (
-                            <ChartTooltipRow value={ value } name={ name } key={ `id-${idx}` } />
+                        payload.map(({value, name}: { value: number, name: string }, idx: number) => (
+                            <ChartTooltipRow value={ valueFormater(value) } name={ name } key={ `id-${idx}` } />
                         ))
                     }
                 </div>

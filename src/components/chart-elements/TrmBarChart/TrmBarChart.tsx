@@ -73,7 +73,12 @@ const TrmBarChart = ({
                 isAnimationActive={false}
                 cursor={{ fill: '#d1d5db', opacity: '0.15' }}
                 content={ ({ active, payload, label }) => (
-                    <ChartTooltip active={ active } payload={ payload } label={ label } />
+                    <ChartTooltip
+                        active={ active }
+                        payload={ payload }
+                        label={ label }
+                        valueFormater={ valueFormater }
+                    />
                 ) }
                 position={{ y: 0 }}
             />
