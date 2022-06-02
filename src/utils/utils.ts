@@ -16,3 +16,10 @@ export const mapInputsToDeltaType = (deltaType: string, isIncreasePositive: bool
     }
     return '';
 };
+
+export interface ValueFormater {
+    (value: number): string
+}
+
+export const defaultValueFormater: ValueFormater = (value: number) => value.toString();
+

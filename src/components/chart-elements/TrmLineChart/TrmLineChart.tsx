@@ -11,34 +11,17 @@ import {
     YAxis,
 } from 'recharts';
 
+import ChartLegend from '@common/ChartLegend';
+import { ChartProps } from '@common/common-types';
 import ChartTooltip from '@common/ChartTooltip';
 
-const renderLegend = ({ payload }: any) => {
-    return (
-        <ul className="flex items-center space-x-6 justify-end text-sm text-gray-500">
-            {payload.map((entry: any, index: number) => (
-                <li key={`item-${index}`} className="flex items-center space-x-1.5">
-                    <div className="bg-blue-500 w-2.5 h-2.5 rounded-full" />
-                    <div>{ entry.value }</div>
-                </li>
-            ))}
-        </ul>
-    );
-};
-
-type ValueFormater = {
-    (value: number): string
-}
-
-export interface TrmLineChartProps {
-    data: any[],
-    valueFormater?: ValueFormater,
-}
+import { defaultValueFormater } from '@utils/utils';
 
 const TrmLineChart = ({
     data,
-    valueFormater = (number) => number.toString(),
-}: TrmLineChartProps) => {
+    attributes,
+    valueFormater = defaultValueFormater,
+}: ChartProps) => {
     return (
         <ResponsiveContainer width="100%" height="100%">
             <LineChart
@@ -55,7 +38,6 @@ const TrmLineChart = ({
                     horizontal={ true }
                     vertical={ false }
                 />
-
                 <XAxis
                     dataKey="name"
                     padding={{ left: 30, right: 30 }}
@@ -68,7 +50,6 @@ const TrmLineChart = ({
                     tickLine={ false }
                     axisLine={ false }
                 />
-
                 <YAxis
                     axisLine={ false }
                     tickLine={ false }
@@ -92,24 +73,18 @@ const TrmLineChart = ({
                 <Legend
                     verticalAlign="top"
                     height={ 40 }
-                    content={ renderLegend }
+                    content={ ChartLegend }
                 />
-                <Line
-                    type="linear"
-                    dataKey="Sales"
-                    stroke="#d1d5db"
-                    strokeWidth={ 2 }
-                    dot={ false }
-                    isAnimationActive={ false }
-                />
-                <Line
-                    type="linear"
-                    dataKey="Profit"
-                    stroke="#3b82f6"
-                    strokeWidth={ 2 }
-                    dot={ false }
-                    isAnimationActive={ false }
-                />
+                { attributes.map((attribute) => (
+                    <Line
+                        type="linear"
+                        dataKey={ attribute }
+                        stroke="#3b82f6"
+                        strokeWidth={ 2 }
+                        dot={ false }
+                        isAnimationActive={ false }
+                    />
+                )) }
             </LineChart>
         </ResponsiveContainer>
     );

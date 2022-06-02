@@ -1,3 +1,5 @@
+import { ValueFormater } from '@utils/utils';
+
 export type IconProportionTypes = {
     margin?: string,
     iconSize: string,
@@ -29,4 +31,10 @@ export type ButtonColorTypes = {
     borderColor: string,
     hoverBorderColor: string,
     focusRingColor: string,
+}
+
+export interface ChartProps {
+    data: any[],
+    attributes: string[],
+    valueFormater?: ValueFormater,
 }
