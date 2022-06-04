@@ -21,16 +21,22 @@ const TrmLineChart = ({
     data,
     attributes,
     valueFormater = defaultValueFormater,
+    showTooltip = true,
+    showLegend = true,
+    paddingTopPixels = 5,
+    paddingRightPixels = 20,
+    paddingBottomPixels = 5,
+    paddingLeftPixels = 5,
 }: ChartProps) => {
     return (
         <ResponsiveContainer width="100%" height="100%">
             <LineChart
                 data={ data }
                 margin={{
-                    top: 5,
-                    right: 20,
-                    left: 5,
-                    bottom: 5,
+                    top: paddingTopPixels,
+                    right: paddingRightPixels,
+                    left: paddingBottomPixels,
+                    bottom: paddingLeftPixels,
                 }}
             >
                 <CartesianGrid
@@ -66,20 +72,26 @@ const TrmLineChart = ({
                     isAnimationActive={ false }
                     cursor={ { stroke: '#d1d5db', strokeWidth: 1 } }
                     content={ ({ active, payload, label }) => (
-                        <ChartTooltip
-                            active={ active }
-                            payload={ payload }
-                            label={ label }
-                            valueFormater={ valueFormater }
-                        />
+                        showTooltip
+                            ? (
+                                <ChartTooltip
+                                    active={ active }
+                                    payload={ payload }
+                                    label={ label }
+                                    valueFormater={ valueFormater }
+                                />
+                            )
+                            : null
                     ) }
                     position={{ y: 0 }}
                 />
-                <Legend
-                    verticalAlign="top"
-                    height={ 40 }
-                    content={ ChartLegend }
-                />
+                { showLegend ? (
+                    <Legend
+                        verticalAlign="top"
+                        height={ 40 }
+                        content={ ChartLegend }
+                    />
+                ) : null }
                 { attributes.map((attribute) => (
                     <Line
                         type="linear"

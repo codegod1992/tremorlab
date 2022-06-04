@@ -26,15 +26,21 @@ const TrmAreaChart = ({
     data,
     attributes,
     valueFormater = defaultValueFormater,
+    showTooltip = true,
+    showLegend = true,
+    paddingTopPixels = 5,
+    paddingRightPixels = 20,
+    paddingBottomPixels = 5,
+    paddingLeftPixels = 5,
 }: ChartProps) => (
     <ResponsiveContainer width="100%" height="100%">
         <AreaChart
             data={ data }
             margin={ {
-                top: 5,
-                right: 20,
-                left: 5,
-                bottom: 5,
+                top: paddingTopPixels,
+                right: paddingRightPixels,
+                left: paddingLeftPixels,
+                bottom: paddingBottomPixels,
             } }
         >
             <defs>
@@ -76,20 +82,26 @@ const TrmAreaChart = ({
                 isAnimationActive={false}
                 cursor={{ stroke: '#d1d5db', strokeWidth: 1 }}
                 content={ ({ active, payload, label }) => (
-                    <ChartTooltip
-                        active={ active }
-                        payload={ payload }
-                        label={ label }
-                        valueFormater={ valueFormater }
-                    />
+                    showTooltip
+                        ? (
+                            <ChartTooltip
+                                active={ active }
+                                payload={ payload }
+                                label={ label }
+                                valueFormater={ valueFormater }
+                            />
+                        )
+                        : null
                 ) }
                 position={ { y: 0 } }
             />
-            <Legend
-                verticalAlign="top"
-                height={ 60 }
-                content={ ChartLegend }
-            />
+            { showLegend ? (
+                <Legend
+                    verticalAlign="top"
+                    height={ 60 }
+                    content={ ChartLegend }
+                />
+            ) : null }
             { attributes.map((attribute) => (
                 <Area
                     type="linear"

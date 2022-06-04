@@ -26,15 +26,21 @@ const TrmBarChart = ({
     data,
     attributes,
     valueFormater = defaultValueFormater,
+    showTooltip = true,
+    showLegend = true,
+    paddingTopPixels = 5,
+    paddingRightPixels = 20,
+    paddingBottomPixels = 5,
+    paddingLeftPixels = 5,
 }: ChartProps) => (
     <ResponsiveContainer width="100%" height="100%">
         <BarChart
             data={data}
             margin={{
-                top: 5,
-                right: 20,
-                left: 5,
-                bottom: 5,
+                top: paddingTopPixels,
+                right: paddingRightPixels,
+                left: paddingLeftPixels,
+                bottom: paddingBottomPixels,
             }}
         >
             <CartesianGrid
@@ -73,32 +79,35 @@ const TrmBarChart = ({
                 isAnimationActive={false}
                 cursor={{ fill: '#d1d5db', opacity: '0.15' }}
                 content={ ({ active, payload, label }) => (
-                    <ChartTooltip
-                        active={ active }
-                        payload={ payload }
-                        label={ label }
-                        valueFormater={ valueFormater }
-                    />
+                    showTooltip
+                        ? (
+                            <ChartTooltip
+                                active={ active }
+                                payload={ payload }
+                                label={ label }
+                                valueFormater={ valueFormater }
+                            />
+                        )
+                        : null
                 ) }
                 position={{ y: 0 }}
             />
-
-            <Legend
-                verticalAlign="top"
-                height={40}
-                content={ ChartLegend }
-            />
+            {
+                showLegend ? (
+                    <Legend
+                        verticalAlign="top"
+                        height={40}
+                        content={ ChartLegend }
+                    />
+                ) : null
+            }
             {
                 attributes.map((attribute) => (
                     <Bar
                         type="linear"
                         dataKey={ attribute }
                         fill="#3b82f6"
-                        // stackId="Sales"
-                        // activeDot={{ r: 2 }}
-                        // legendType="circle"
                         isAnimationActive={false}
-                        // animationDuration={700} (default value when active)
                     />
 
                 ))

@@ -24,7 +24,7 @@ export interface ChartTooltipProps {
     valueFormater: ValueFormater,
 }
 
-const ChartTooltip = ({ active, payload, label, valueFormater }: ChartTooltipProps) => {    
+const ChartTooltip = ({ active, payload, label, valueFormater }: ChartTooltipProps) => {
     if (active && payload) {
         return (
             <div className="bg-white border text-sm shadow-lg rounded-md">
