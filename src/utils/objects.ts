@@ -67,8 +67,3 @@ export const Sizes: {[key: string]: string} = {
     MD: 'md',
     LG: 'lg'
 };
-
-export const OrientationTypes = {
-    Horizontal: 'horizontal',
-    Vertical: 'Vertical',
-};
