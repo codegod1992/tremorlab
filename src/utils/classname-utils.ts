@@ -83,9 +83,19 @@ export const parseMaxWidthClassNames: TailwindClassParser = (twClassName) => {
     return twClassName.startsWith('max-w-') ? twClassName.split(' ')[0] : '';
 };
 
+export const parseMaxHeightClassNames: TailwindClassParser = (twClassName) => {
+    if (twClassName===undefined) return '';
+    return twClassName.startsWith('max-h-') ? twClassName.split(' ')[0] : '';
+};
+
 export const parseWidthClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
     return twClassName.startsWith('w-') ? twClassName.split(' ')[0] : '';
+};
+
+export const parseHeightClassNames: TailwindClassParser = (twClassName) => {
+    if (twClassName===undefined) return '';
+    return twClassName.startsWith('h-') ? twClassName.split(' ')[0] : '';
 };
 
 export const parseBorderClassNames: TailwindClassParser = (twClassName) => {
@@ -173,6 +183,16 @@ export const parseWFullOption: BoolClassParser = (option) => {
 export const parseMarginTopClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
     return twClassName.startsWith('mt-') ? twClassName.split(' ')[0] : '';
+};
+
+export const parseMarginYClassNames: TailwindClassParser = (twClassName) => {
+    if (twClassName===undefined) return '';
+    return twClassName.startsWith('my-') ? twClassName.split(' ')[0] : '';
+};
+
+export const parseMarginXClassNames: TailwindClassParser = (twClassName) => {
+    if (twClassName===undefined) return '';
+    return twClassName.startsWith('mx-') ? twClassName.split(' ')[0] : '';
 };
 
 export const parseGapXClassNames: TailwindClassParser = (twClassName) => {
