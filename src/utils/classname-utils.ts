@@ -182,27 +182,27 @@ export const parseWFullOption: BoolClassParser = (option) => {
 
 export const parseMarginTopClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
-    return twClassName.startsWith('mt-') ? twClassName.split(' ')[0] : '';
+    return twClassName.startsWith('mt-') || twClassName.startsWith('-mt-') ? twClassName.split(' ')[0] : '';
 };
 
 export const parseMarginYClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
-    return twClassName.startsWith('my-') ? twClassName.split(' ')[0] : '';
+    return twClassName.startsWith('my-') || twClassName.startsWith('-my-') ? twClassName.split(' ')[0] : '';
 };
 
 export const parseMarginXClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
-    return twClassName.startsWith('mx-') ? twClassName.split(' ')[0] : '';
+    return twClassName.startsWith('mx-') || twClassName.startsWith('-mx-') ? twClassName.split(' ')[0] : '';
 };
 
 export const parseGapXClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
-    return twClassName.startsWith('gap-x-') ? twClassName.split(' ')[0] : '';
+    return twClassName.startsWith('gap-x-') || twClassName.startsWith('-gap-x') ? twClassName.split(' ')[0] : '';
 };
 
 export const parseGapYClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
-    return twClassName.startsWith('gap-y-') ? twClassName.split(' ')[0] : '';
+    return twClassName.startsWith('gap-y-') || twClassName.startsWith('-gap-y-') ? twClassName.split(' ')[0] : '';
 };
 
 export const parseColSpanClassNames: TailwindClassParser = (twClassName) => {
