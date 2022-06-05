@@ -145,17 +145,17 @@ export const parsePaddingXClassNames: TailwindClassParser = (twClassName) => {
 
 export const parsePaddingYClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
-    return twClassName.startsWith('py-') ? twClassName.split(' ')[0] : '';
+    return twClassName.startsWith('py-') || twClassName.startsWith('-py-') ? twClassName.split(' ')[0] : '';
 };
 
 export const parsePaddingLeftClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
-    return twClassName.startsWith('pl-') ? twClassName.split(' ')[0] : '';
+    return twClassName.startsWith('pl-') || twClassName.startsWith('-pl-') ? twClassName.split(' ')[0] : '';
 };
 
 export const parsePaddingRightClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
-    return twClassName.startsWith('pr-') ? twClassName.split(' ')[0] : '';
+    return twClassName.startsWith('pr-') || twClassName.startsWith('-pr-') ? twClassName.split(' ')[0] : '';
 };
 
 export const parseDivideYClassNames: TailwindClassParser = (twClassName) => {
