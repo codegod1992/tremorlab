@@ -135,12 +135,12 @@ export const parseAlignItemsClassNames: TailwindClassParser = (twClassName) => {
 
 export const parseSpaceXClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
-    return twClassName.startsWith('space-x-') ? twClassName.split(' ')[0] : '';
+    return twClassName.startsWith('space-x-') || twClassName.startsWith('-space-x-') ? twClassName.split(' ')[0] : '';
 };
 
 export const parsePaddingXClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
-    return twClassName.startsWith('px-') ? twClassName.split(' ')[0] : '';
+    return twClassName.startsWith('px-') || twClassName.startsWith('-px-') ? twClassName.split(' ')[0] : '';
 };
 
 export const parsePaddingYClassNames: TailwindClassParser = (twClassName) => {

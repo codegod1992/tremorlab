@@ -31,7 +31,10 @@ const Dropwdown = ({
     const shortcutMapping: ShortcutMapping = {};
     const consturctShortcutMapping = () => {
         React.Children.map(children, (child) => {
-            shortcutMapping[child.props.shortcut.toLowerCase()] = [child.props.value, child.props.name];
+            shortcutMapping[child.props.shortcut.toLowerCase()] = {
+                value: child.props.value,
+                name: child.props.name,
+            };
         });
     };
 
@@ -39,9 +42,9 @@ const Dropwdown = ({
         const keyLower = event.key.toLocaleLowerCase();
         if (Object.keys(shortcutMapping).includes(keyLower)) {
             setShowModal(false);
-            setActiveDropdownItem(shortcutMapping[keyLower][0]);
-            setDropdownText(shortcutMapping[keyLower][1]);
-            handleSelect(shortcutMapping[keyLower]);
+            setActiveDropdownItem(shortcutMapping[keyLower].value);
+            setDropdownText(shortcutMapping[keyLower].name);
+            handleSelect(shortcutMapping[keyLower].value);
         }
     };
 
