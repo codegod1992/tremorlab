@@ -60,10 +60,11 @@ const Dropwdown = ({
     return(
         <>
             <button
-                className="inline-flex justify-center rounded-md border border-gray-300 px-4 py-2 bg-white text-sm
+                before="button-dropdown"
+                className="inline-flex rounded-md border border-gray-300 px-4 py-2 bg-white text-sm
                            font-medium text-gray-700 hover:bg-gray-50 focus:ring-2 focus:ring-opacity-100
                            focus:outline-none focus:ring-blue-300"
-                onClick={() => setShowModal(true)}
+                onClick={ () => setShowModal(true) }
             >
                 { dropdownText ? dropdownText : placeholder }
                 <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -71,8 +72,8 @@ const Dropwdown = ({
             { showModal ? (
                 <div
                     ref={ ref }
-                    className="mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y
-                            divide-gray-100 focus:outline-none"
+                    className="before:content-button-dropdown absolute w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y
+                            divide-gray-100 focus:outline-none translate-y-1/3 mt-1"
                 >
                     { React.Children.map(children, (child: React.ReactElement) => (
                         <>

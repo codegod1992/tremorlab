@@ -15,13 +15,13 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
 const Template: ComponentStory<typeof Dropdown> = (args) => (
-    <>
+    <div className="flex justify-end w-full">
         <Dropdown handleSelect={ (value) => console.log('The selected value is', value) }>
             <DropdownItem value={ 5 } name={ 'Five' } Icon={ CalendarIcon } shortcut={ 'F' } />
             <DropdownItem value={ 3 } name={ 'Three' } Icon={ CalendarIcon } shortcut={ 'T' } />
             <DropdownItem value={ 1 } name={ 'One' } Icon={ CalendarIcon } shortcut={ 'O' } />
         </Dropdown>
-    </>
+    </div>
 );
   
 export const Default = Template.bind({});
