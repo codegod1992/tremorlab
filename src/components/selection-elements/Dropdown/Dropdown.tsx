@@ -29,6 +29,11 @@ const Dropwdown = ({
         [shortcut: string]: any
     }
     const shortcutMapping: ShortcutMapping = {};
+    const consturctShortcutMapping = () => {
+        React.Children.map(children, (child) => {
+            shortcutMapping[child.props.shortcut.toLowerCase()] = [child.props.value, child.props.name];
+        });
+    };
 
     const handleKeyDown = (event: React.KeyboardEvent, shortcutMapping: ShortcutMapping) => {
         const keyLower = event.key.toLocaleLowerCase();
@@ -41,16 +46,11 @@ const Dropwdown = ({
     };
 
     useEffect(() => {
-        console.log('start');
-        React.Children.map(children, (child) => {
-            shortcutMapping[child.props.shortcut.toLowerCase()] = [child.props.value, child.props.name];
-        });
-        console.log(JSON.stringify(shortcutMapping));
+        consturctShortcutMapping();
         document.addEventListener('keydown', (e) => handleKeyDown(e, shortcutMapping));
 
         return () => {
             document.removeEventListener('keydown', (e) => handleKeyDown(e, shortcutMapping));
-            console.log('end');
         };
     }, []);
 
