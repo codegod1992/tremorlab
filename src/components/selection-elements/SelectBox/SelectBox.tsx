@@ -92,7 +92,8 @@ const SelectBox = ({
                                 return (
                                     <>
                                         { React.cloneElement(child, {
-                                            setSelectedSelectBoxItemValue: setSelectedSelectBoxItemValue
+                                            setSelectedSelectBoxItemValue: setSelectedSelectBoxItemValue,
+                                            setShowModal: setShowModal,
                                         }) }
                                     </>
                                 );
