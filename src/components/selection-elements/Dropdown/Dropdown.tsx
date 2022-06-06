@@ -19,7 +19,7 @@ const Dropwdown = ({
 }: DropdownProps) => {
 
     const [dropdownText, setDropdownText] = useState(null);
-    const [activeDropdownItem, setActiveDropdownItem] = useState(defaultValue);
+    const [selectedDropdownItem, setSelectedDropdownItem] = useState(defaultValue);
 
     const [showModal, setShowModal] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
@@ -42,7 +42,7 @@ const Dropwdown = ({
         const keyLower = event.key.toLocaleLowerCase();
         if (Object.keys(shortcutMapping).includes(keyLower)) {
             setShowModal(false);
-            setActiveDropdownItem(shortcutMapping[keyLower].value);
+            setSelectedDropdownItem(shortcutMapping[keyLower].value);
             setDropdownText(shortcutMapping[keyLower].name);
             handleSelect(shortcutMapping[keyLower].value);
         }
@@ -72,17 +72,18 @@ const Dropwdown = ({
             { showModal ? (
                 <div
                     ref={ ref }
-                    className="before:content-button-dropdown absolute w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y
-                            divide-gray-100 focus:outline-none translate-y-1/3 mt-1"
+                    className="before:content-button-dropdown absolute w-56 rounded-md shadow-lg bg-white ring-1 
+                               ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none translate-y-1/3
+                               mt-1"
                 >
                     { React.Children.map(children, (child: React.ReactElement) => (
                         <>
                             { React.cloneElement(child, {
                                 handleClick: child.props.handleClick ? child.props.handleClick : handleSelect,
                                 setDropdownText: setDropdownText,
-                                setActiveDropdownItem: setActiveDropdownItem,
+                                setSelectedDropdownItem: setSelectedDropdownItem,
                                 setShowModal: setShowModal,
-                                isActive: child?.props.value === activeDropdownItem,
+                                isSelected: child?.props.value === selectedDropdownItem,
                             }) }
                         </>
                     )) }
