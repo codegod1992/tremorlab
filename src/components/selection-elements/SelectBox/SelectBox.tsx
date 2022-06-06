@@ -19,20 +19,18 @@ const SelectBox = ({
     const ref = useRef<HTMLDivElement>(null);
     useOnClickOutside(ref, () => setShowModal(false));
 
-    type ValueToNameMapping = {
-        [value: string]: string
-    }
-
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedSelectBoxItemValue, setSelectedSelectBoxItemValue] = useState(defaultValue);
 
+    type ValueToNameMapping = {
+        [value: string]: string
+    }
     const valueToNameMapping: ValueToNameMapping = {};
     const consturctValueToNameMapping = () => {
         React.Children.map(children, (child) => {
             valueToNameMapping[child.props.value] = child.props.name;
         });
     };
-
     consturctValueToNameMapping();
 
     useEffect(() => {

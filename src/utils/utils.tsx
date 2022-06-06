@@ -44,3 +44,20 @@ export const useOnClickOutside = (ref: React.RefObject<HTMLDivElement>, handler:
         [ref, handler]
     );
 };
+
+export const removeValueFromArray = (value: any, array: any[]): any[] => {
+    const index = array.indexOf(value);
+    if (index > -1) {
+        array.splice(index, 1);
+    }
+    return array;
+};
+
+export const isValueInArray = (value: any, array: any[]): boolean => {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === value) {
+            return true;
+        }
+    }
+    return false;
+};
