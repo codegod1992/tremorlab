@@ -15,7 +15,7 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
 const Template: ComponentStory<typeof MultiSelectBox> = (args) => (
-    <div className="flex justify-end w-full">
+    <div className="flex">
         <MultiSelectBox defaultValues={ [1, 2] }>
             <MultiSelectBoxItem name="Option 1" value={ 1 } />
             <MultiSelectBoxItem name="Option 2" value={ 2 } />

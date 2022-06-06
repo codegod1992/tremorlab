@@ -15,7 +15,7 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
 const Template: ComponentStory<typeof SelectBox> = (args) => (
-    <div className="flex justify-end w-full">
+    <div className="flex">
         <SelectBox defaultValue={ 1 } handleSelect={ (value) => console.log('the new value is', value) }>
             <SelectBoxItem  value={1} name="Option One" />
             <SelectBoxItem  value={2} name="Option Two" />

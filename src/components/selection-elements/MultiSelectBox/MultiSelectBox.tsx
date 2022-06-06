@@ -57,11 +57,17 @@ const MultiSelectBox = ({
     };
     consturctValueToNameMapping();
 
+    useEffect(() => {
+        if (selectedItemsValues) {
+            if(handleSelect) handleSelect(setSelectedItemsValues);
+        }
+    }, [selectedItemsValues]);
+
     return (
         <>
             <button
                 before="button-multiselectbox"
-                className="flex items-center justify-between rounded-md border border-gray-300 pl-4 h-8 bg-white
+                className="flex items-center justify-between rounded-md border border-gray-300 pl-4 h-10 bg-white
                     text-sm font-medium text-gray-700 hover:bg-gray-50 focus:ring-2 focus:ring-opacity-100
                     focus:outline-none focus:ring-blue-300"
                 onClick={ () => setShowModal(true) }
@@ -90,7 +96,7 @@ const MultiSelectBox = ({
                 <div
                     ref={ ref }
                     className="before:button-multiselectbox absolute w-56 rounded-md shadow-lg bg-white ring-1 
-                        ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none mt-10"
+                        ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none mt-11"
                 >
                     { React.Children.map(children, (child) => (
                         <>
