@@ -6,11 +6,13 @@ import { useOnClickOutside } from '@utils/utils';
 
 export interface SelectBoxProps {
     defaultValue?: any,
+    handleSelect?: { (value: any): void },
     children: React.ReactElement[],
 }
 
 const SelectBox = ({
     defaultValue,
+    handleSelect,
     children,
 }: SelectBoxProps) => {
     const [showModal, setShowModal] = useState(false);
@@ -34,7 +36,9 @@ const SelectBox = ({
     consturctValueToNameMapping();
 
     useEffect(() => {
-        if (selectedSelectBoxItemValue) console.log('The new value is', selectedSelectBoxItemValue);
+        if (selectedSelectBoxItemValue) {
+            if(handleSelect) handleSelect(selectedSelectBoxItemValue);
+        }
     }, [selectedSelectBoxItemValue]);
 
     const getOptionNamesFromChildren = (children: React.ReactElement[]): string[] => (
