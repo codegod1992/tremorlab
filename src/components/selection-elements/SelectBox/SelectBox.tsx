@@ -7,12 +7,14 @@ import { useOnClickOutside } from '@utils/utils';
 export interface SelectBoxProps {
     defaultValue?: any,
     handleSelect?: { (value: any): void },
+    placeholder?: string,
     children: React.ReactElement[],
 }
 
 const SelectBox = ({
     defaultValue,
     handleSelect,
+    placeholder = 'Select',
     children,
 }: SelectBoxProps) => {
     const [showModal, setShowModal] = useState(false);
@@ -68,7 +70,7 @@ const SelectBox = ({
                                 focus:outline-none focus:ring-blue-300"
                         type="input"
                         defaultValue={
-                            selectedSelectBoxItemValue ? valueToNameMapping[selectedSelectBoxItemValue] : ''
+                            selectedSelectBoxItemValue ? valueToNameMapping[selectedSelectBoxItemValue] : placeholder
                         }
                         onChange={ (e) => setSearchQuery(e.target.value) }
                         onClick={ () => setShowModal(true) }

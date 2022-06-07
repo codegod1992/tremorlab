@@ -16,7 +16,7 @@ export default {
 
 const Template: ComponentStory<typeof SelectBox> = (args) => (
     <div className="flex">
-        <SelectBox defaultValue={ 1 } handleSelect={ (value) => console.log('the new value is', value) }>
+        <SelectBox handleSelect={ (value) => console.log('the new value is', value) }>
             <SelectBoxItem  value={1} name="Option One" />
             <SelectBoxItem  value={2} name="Option Two" />
             <SelectBoxItem  value={3} name="Option Three" />
