@@ -59,7 +59,7 @@ const MultiSelectBox = ({
 
     useEffect(() => {
         if (selectedItemsValues) {
-            if(handleSelect) handleSelect(setSelectedItemsValues);
+            if(handleSelect) handleSelect(selectedItemsValues);
         }
     }, [selectedItemsValues]);
 
