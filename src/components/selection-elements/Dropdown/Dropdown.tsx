@@ -17,13 +17,22 @@ const Dropwdown = ({
     handleSelect = (value: any) => { value; },
     children,
 }: DropdownProps) => {
-
-    const [dropdownText, setDropdownText] = useState(null);
-    const [selectedDropdownItem, setSelectedDropdownItem] = useState(defaultValue);
-
     const [showModal, setShowModal] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
     useOnClickOutside(ref, () => setShowModal(false));
+
+    type ValueToNameMapping = {
+        [value: string]: string
+    }
+    const valueToNameMapping: ValueToNameMapping = {};
+    const consturctValueToNameMapping = () => {
+        React.Children.map(children, (child) => {
+            valueToNameMapping[child.props.value] = child.props.name;
+        });
+    };
+    consturctValueToNameMapping();
+
+    const [selectedItem, setSelectedItem] = useState(defaultValue);
 
     type ShortcutMapping = {
         [shortcut: string]: any
@@ -42,20 +51,25 @@ const Dropwdown = ({
         const keyLower = event.key.toLocaleLowerCase();
         if (Object.keys(shortcutMapping).includes(keyLower)) {
             setShowModal(false);
-            setSelectedDropdownItem(shortcutMapping[keyLower].value);
-            setDropdownText(shortcutMapping[keyLower].name);
-            handleSelect(shortcutMapping[keyLower].value);
+            setSelectedItem(shortcutMapping[keyLower].value);
         }
     };
 
     useEffect(() => {
         consturctShortcutMapping();
-        document.addEventListener('keydown', (e) => handleKeyDown(e, shortcutMapping));
+
+        if (selectedItem) {
+            if(handleSelect) handleSelect(selectedItem);
+        }
+
+        document.addEventListener('keydown', (e) => handleKeyDown(e, shortcutMapping));        
+
+        console.log('go');
 
         return () => {
             document.removeEventListener('keydown', (e) => handleKeyDown(e, shortcutMapping));
         };
-    }, []);
+    }, [selectedItem]);
 
     return(
         <>
@@ -66,7 +80,7 @@ const Dropwdown = ({
                            focus:outline-none focus:ring-blue-300"
                 onClick={ () => setShowModal(true) }
             >
-                { dropdownText ? dropdownText : placeholder }
+                { selectedItem ? valueToNameMapping[selectedItem] : placeholder }
                 <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
             </button>
             { showModal ? (
@@ -79,11 +93,9 @@ const Dropwdown = ({
                     { React.Children.map(children, (child: React.ReactElement) => (
                         <>
                             { React.cloneElement(child, {
-                                handleClick: child.props.handleClick ? child.props.handleClick : handleSelect,
-                                setDropdownText: setDropdownText,
-                                setSelectedDropdownItem: setSelectedDropdownItem,
+                                setSelectedItem: setSelectedItem,
                                 setShowModal: setShowModal,
-                                isSelected: child?.props.value === selectedDropdownItem,
+                                isSelected: child?.props.value === selectedItem,
                             }) }
                         </>
                     )) }

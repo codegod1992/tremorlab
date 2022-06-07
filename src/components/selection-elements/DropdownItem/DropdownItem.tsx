@@ -8,9 +8,7 @@ export interface DropdownItemProps {
     Icon?: React.ElementType,
     shortcut?: string,
     isSelected?: boolean, 
-    handleClick?: { (value: any): void },
-    setDropdownText?: React.Dispatch<React.SetStateAction<string>>,
-    setSelectedDropdownItem?: React.Dispatch<React.SetStateAction<any>>,
+    setSelectedItem?: React.Dispatch<React.SetStateAction<any>>,
     setShowModal?: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
@@ -20,9 +18,7 @@ const DropdownItem = ({
     Icon,
     shortcut,
     isSelected = false,
-    handleClick,
-    setDropdownText,
-    setSelectedDropdownItem,
+    setSelectedItem,
     setShowModal,
 }: DropdownItemProps) => (
     <div>
@@ -34,10 +30,8 @@ const DropdownItem = ({
             ) }
             value={ value }
             onClick={ () => {
-                setDropdownText!(name);
-                setSelectedDropdownItem!(value);
+                setSelectedItem!(value);
                 setShowModal!(false);
-                handleClick!(value);
             } }
         >
             <div className="flex font-medium">
