@@ -32,12 +32,14 @@ const SelectedItemBadge = ({
 export interface MultiSelectBoxProps {
     defaultValues?: any[],
     handleSelect?: { (value: any): void },
+    placeholder?: string,
     children: React.ReactElement[],
 }
 
 const MultiSelectBox = ({
     defaultValues = [],
     handleSelect,
+    placeholder = 'Select',
     children,
 }: MultiSelectBoxProps) => {
     const [showModal, setShowModal] = useState(false);
@@ -67,8 +69,8 @@ const MultiSelectBox = ({
         <>
             <button
                 before="button-multiselectbox"
-                className="flex items-center justify-between rounded-md border border-gray-300 pl-4 h-10 bg-white
-                    text-sm font-medium text-gray-700 hover:bg-gray-50 focus:ring-2 focus:ring-opacity-100
+                className="flex items-center justify-between space-x-4 rounded-md border border-gray-300 pl-4 h-10
+                    bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:ring-2 focus:ring-opacity-100
                     focus:outline-none focus:ring-blue-300"
                 onClick={ () => setShowModal(true) }
             >
@@ -81,7 +83,7 @@ const MultiSelectBox = ({
                                 selectedItemsValues={ selectedItemsValues }
                                 setSelectedItemsValues={ setSelectedItemsValues }
                             />
-                        )) : <div className="w-32 h-full" />
+                        )) : <>{ placeholder }</>
                     }
                 </div>
                 <div className="flex items-center space-x-1.5">
