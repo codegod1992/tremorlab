@@ -26,6 +26,8 @@ const TrmBarChart = ({
     data,
     attributes,
     valueFormater = defaultValueFormater,
+    showXAxis = true,
+    showYAxis = true,
     showTooltip = true,
     showLegend = true,
     paddingTopPixels = 5,
@@ -50,6 +52,7 @@ const TrmBarChart = ({
             />
 
             <XAxis
+                hide={ !showXAxis }
                 dataKey="name"
                 padding={{ left: 30, right: 30 }}
                 tick={{ transform: 'translate(0, 6)' }} //padding between labels and axis
@@ -63,6 +66,7 @@ const TrmBarChart = ({
             />
 
             <YAxis
+                hide={ !showYAxis }
                 axisLine={false}
                 tickLine={false}
                 type="number"

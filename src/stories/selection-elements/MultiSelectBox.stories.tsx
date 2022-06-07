@@ -5,8 +5,6 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import MultiSelectBox from 'components/selection-elements/MultiSelectBox/MultiSelectBox';
 import MultiSelectBoxItem from 'components/selection-elements/MultiSelectBoxItem/MultiSelectBoxItem';
 
-import { CalendarIcon } from '@heroicons/react/solid';
-
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
     title: 'Tremor/SelectionElements/MultiSelectBox',

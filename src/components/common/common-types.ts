@@ -37,6 +37,8 @@ export interface ChartProps {
     data: any[],
     attributes: string[],
     valueFormater?: ValueFormater,
+    showXAxis?: boolean,
+    showYAxis?: boolean,
     showTooltip?: boolean,
     showLegend?: boolean,
     paddingTopPixels?: number,

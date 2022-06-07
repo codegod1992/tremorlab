@@ -5,8 +5,6 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import SelectBox from 'components/selection-elements/SelectBox/SelectBox';
 import { SelectBoxItem } from 'components';
 
-import { CalendarIcon } from '@heroicons/react/solid';
-
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
     title: 'Tremor/SelectionElements/SelectBox',

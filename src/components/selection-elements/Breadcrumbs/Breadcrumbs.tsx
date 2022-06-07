@@ -34,9 +34,11 @@ const Breadcrumbs = ({
                         >
                             { separator }
                         </div>
-                        <span className={ classNames(parseTextColorClassNames(textColor)) }>
+                        <button
+                            className={ classNames(parseTextColorClassNames(textColor)) }
+                        >
                             ...
-                        </span>
+                        </button>
                         <div className={ classNames(
                             parseTextColorClassNames(textColor),
                             'mx-4'

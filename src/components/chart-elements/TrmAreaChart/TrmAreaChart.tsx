@@ -16,16 +16,14 @@ import { ChartProps } from '@common/common-types';
 import ChartTooltip from '@common/ChartTooltip';
 
 import { defaultValueFormater } from '@utils/utils';
-
-// export interface TrmAreaChartProps {
-//     data: any[],
-//     valueFormater?: ValueFormater,
-// }
+import { classNames } from '@utils/classname-utils';
 
 const TrmAreaChart = ({
     data,
     attributes,
     valueFormater = defaultValueFormater,
+    showXAxis = true,
+    showYAxis = true,
     showTooltip = true,
     showLegend = true,
     paddingTopPixels = 5,
@@ -55,6 +53,7 @@ const TrmAreaChart = ({
                 vertical={false}
             />
             <XAxis
+                hide={ !showXAxis }
                 dataKey="name"
                 padding={ { left: 30, right: 30 } }
                 tick={ { transform: 'translate(0, 6)' } } //padding between labels and axis
@@ -67,6 +66,7 @@ const TrmAreaChart = ({
                 axisLine={ false }
             />
             <YAxis
+                hide={ !showYAxis }
                 axisLine={ false }
                 tickLine={ false }
                 type="number"
@@ -104,6 +104,7 @@ const TrmAreaChart = ({
             ) : null }
             { attributes.map((attribute) => (
                 <Area
+                    key={ attribute }
                     type="linear"
                     dataKey={ attribute }
                     stroke="#3b82f6"

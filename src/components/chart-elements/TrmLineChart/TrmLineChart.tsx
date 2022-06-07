@@ -21,6 +21,8 @@ const TrmLineChart = ({
     data,
     attributes,
     valueFormater = defaultValueFormater,
+    showXAxis = true,
+    showYAxis = true,
     showTooltip = true,
     showLegend = true,
     paddingTopPixels = 5,
@@ -45,6 +47,7 @@ const TrmLineChart = ({
                     vertical={ false }
                 />
                 <XAxis
+                    hide={ !showXAxis }
                     dataKey="name"
                     padding={{ left: 30, right: 30 }}
                     tick={{ transform: 'translate(0, 6)' }} //padding between labels and axis
@@ -57,6 +60,7 @@ const TrmLineChart = ({
                     axisLine={ false }
                 />
                 <YAxis
+                    hide={ !showYAxis }
                     axisLine={ false }
                     tickLine={ false }
                     type="number"
