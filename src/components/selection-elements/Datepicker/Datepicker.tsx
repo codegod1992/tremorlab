@@ -59,7 +59,9 @@ const Datepicker = () => {
                     <button
                         type="button"
                         onClick={previousMonth}
-                        className="inline-flex p-1 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-blue-500"
+                        className="inline-flex p-1 text-sm font-medium text-gray-700 bg-white border border-gray-300
+                            rounded shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-0
+                            focus:ring-blue-500"
                     >
                         <span className="sr-only">Previous month</span>
                         <ChevronLeftIcon className="w-5 h-5 text-gray-600" aria-hidden="true" />
@@ -72,7 +74,9 @@ const Datepicker = () => {
                     <button
                         onClick={nextMonth}
                         type="button"
-                        className="inline-flex p-1 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-blue-500"
+                        className="inline-flex p-1 text-sm font-medium text-gray-700 bg-white border border-gray-300
+                            rounded shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-0
+                            focus:ring-blue-500"
                     >
                         <span className="sr-only">Next month</span>
                         <ChevronRightIcon className="w-5 h-5 text-gray-600" aria-hidden="true" />
@@ -103,10 +107,12 @@ const Datepicker = () => {
                                 className={classNames(
                                     isEqual(day, selectedDay) && 'text-white',
                                     !isEqual(day, selectedDay) && isToday(day) && 'text-blue-500',
-                                    !isEqual(day, selectedDay) && !isToday(day) && isSameMonth(day, firstDayCurrentMonth)
-                                    && 'text-gray-900',
-                                    !isEqual(day, selectedDay) && !isToday(day) && !isSameMonth(day, firstDayCurrentMonth)
-                                    && 'text-gray-400',
+                                    !isEqual(day, selectedDay) && !isToday(day)
+                                        && isSameMonth(day, firstDayCurrentMonth)
+                                        && 'text-gray-900',
+                                    !isEqual(day, selectedDay) && !isToday(day)
+                                        && !isSameMonth(day, firstDayCurrentMonth)
+                                        && 'text-gray-400',
                                     isEqual(day, selectedDay) && isToday(day) && 'bg-blue-500',
                                     isEqual(day, selectedDay) && !isToday(day) && 'bg-blue-500',
                                     !isEqual(day, selectedDay) && 'hover:bg-gray-200',
