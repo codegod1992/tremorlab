@@ -26,11 +26,13 @@ const colStartClasses = [
     'col-start-5',
     'col-start-6',
     'col-start-7',
-];  
+];
 
 const Datepicker = () => {
     const today = startOfToday();
-    const [selectedDay, setSelectedDay] = useState(today);
+    const [hoveredDay, setHoveredDay] = useState(null);
+    const [selectedStartDay, setSelectedStartDay] = useState(null);
+    const [selectedEndDay, setSelectedEndDay] = useState(null);
     const [currentMonth, setCurrentMonth] = useState(format(today, 'MMM-yyyy'));
     const firstDayCurrentMonth = parse(currentMonth, 'MMM-yyyy', new Date());
 
@@ -48,11 +50,135 @@ const Datepicker = () => {
         const firstDayNextMonth = add(firstDayCurrentMonth, { months: 1 });
         setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'));
     }
-  
+
+    const getDayBgColorClassName = (day) => {
+        if (selectedStartDay && isEqual(day, selectedStartDay)) {
+            return 'bg-blue-500';
+        }
+        if (selectedStartDay && !selectedEndDay && hoveredDay && (day > selectedStartDay && day < hoveredDay)) {
+            return 'bg-gray-200';
+        }
+        if (selectedEndDay && isEqual(day, selectedEndDay)) {
+            return 'bg-blue-500';
+        }
+        if (selectedStartDay && selectedEndDay && (day > selectedStartDay && day < selectedEndDay)) {
+            return 'bg-gray-200';
+        }
+        return 'bg-transparent';
+        
+    };
+    const getDayTextColorClassName = (day) => {
+        if (isEqual(day, today)) {
+            if ((selectedStartDay && isEqual(day, selectedStartDay))
+                || (selectedEndDay && isEqual(day, selectedEndDay))) {
+                return 'text-white';
+            }
+            // if (selectedStartDay && selectedEndDay && (day > selectedStartDay && day < selectedEndDay)) {
+            //     return 'text-white';
+            // }
+            return 'text-blue-500';
+        }
+        if (selectedStartDay && isEqual(day, selectedStartDay)) {
+            return 'text-white';
+        }
+        if (selectedStartDay && !selectedEndDay && hoveredDay && (day > selectedStartDay && day < hoveredDay)) {
+            return 'text-gray-900';
+        }
+        if (selectedEndDay && isEqual(day, selectedEndDay)) {
+            return 'text-white';
+        }
+        if (selectedStartDay && selectedEndDay && (day > selectedStartDay && day < selectedEndDay)) {
+            return 'text-blue-500';
+        }
+        return 'text-gray-900';
+    };
+
+    const getDayHoverBgColorClassName = (day) => {
+        if (selectedStartDay && isEqual(day, selectedStartDay)) {
+            return '';
+        }
+        if (selectedEndDay && isEqual(day, selectedEndDay)) {
+            return '';
+        }
+        return 'hover:bg-gray-200';
+    };
+
+    const getDayRoundedClassName = (day) => {
+        if (!selectedStartDay && !selectedEndDay) {
+            return 'rounded-md';
+        }
+        if (selectedStartDay && selectedEndDay && isEqual(day, selectedStartDay)) {
+            return 'rounded-l-md';
+        }
+        if (selectedStartDay && !selectedEndDay && !hoveredDay && isEqual(day, selectedStartDay)) {
+            return 'rounded-md';
+        }
+        if (selectedStartDay && !selectedEndDay && hoveredDay && (day < selectedStartDay)) {
+            return 'rounded-md';
+        }
+        if (selectedStartDay && !selectedEndDay && hoveredDay && (isEqual(day, selectedStartDay))
+            && (hoveredDay > selectedStartDay)) {
+            return 'rounded-l-md';
+        }
+        if (selectedStartDay && !selectedEndDay && hoveredDay && (day > selectedStartDay && day < hoveredDay)) {
+            return 'rounded-none';
+        }
+        if (selectedStartDay && selectedEndDay && (day > selectedStartDay && day < selectedEndDay)) {
+            return 'rounded-none';
+        }
+        if (selectedStartDay && !selectedEndDay && hoveredDay && isEqual(day, hoveredDay)
+            && !isEqual(day, selectedStartDay)) {
+            return 'rounded-r-md';
+        }
+        if (selectedStartDay && selectedEndDay && isEqual(day, selectedEndDay)) {
+            return 'rounded-r-md';
+        }
+        if (selectedStartDay && selectedEndDay && (day < selectedStartDay || day > selectedEndDay)) {
+            return 'rounded-md';
+        }
+        return 'rounded-md';
+    };
+
+    const handleClick = (day) => {
+        if (!selectedStartDay) {
+            setSelectedStartDay(day);
+        } else if (selectedStartDay && !selectedEndDay) {
+            if (day < selectedStartDay) {
+                setSelectedStartDay(day);
+            } else if (day > selectedStartDay) {
+                setSelectedEndDay(day);
+            }
+        } else if (selectedStartDay && selectedEndDay) {
+            setSelectedStartDay(day);
+            setSelectedEndDay(null);
+        }
+    };
+
+    const displaySelected = (selectedStartDay, selectedEndDay) => {
+        if (!selectedStartDay && !selectedEndDay) {
+            return 'dd/mm/yyyy - dd/mm/yyyy';
+        } else if (selectedStartDay && !selectedEndDay) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return selectedStartDay.toLocaleDateString('en-US', options);
+        } else if (selectedStartDay && selectedEndDay) {
+            if (selectedStartDay.getMonth() === selectedEndDay.getMonth()) {
+                const optionsStartDate = { month: 'long', day: 'numeric' };
+                return `${selectedStartDay.toLocaleDateString('en-US', optionsStartDate)} - 
+                        ${selectedEndDay.getDate()}, ${selectedEndDay.getFullYear()}`;
+            } else {
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                return `${selectedStartDay.toLocaleDateString('en-US', options)} - 
+                        ${selectedEndDay.toLocaleDateString('en-US', options)}`;
+            }
+        }
+    };
+
     return (
         <>
-            <button className="rounded-md bg-gray-100 p-3">
-                { String(selectedDay) }
+            <button className="flex items-center justify-between rounded-md border border-gray-300 px-4 h-10
+                    bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:ring-2 focus:ring-opacity-100
+                    focus:outline-none focus:ring-blue-300">
+                { displaySelected(selectedStartDay, selectedEndDay) }
             </button>
             <div className="rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 w-fit py-2 px-3">
                 <div className="flex justify-between items-center py-2 px-1">
@@ -93,31 +219,25 @@ const Datepicker = () => {
                     <div className="flex items-center justify-center w-10 h-10">Sa</div>
                 </div>
                 <div className="grid grid-cols-7 text-sm">
-                    {days.map((day, dayIdx) => (
+                    {days.map((day) => (
                         <div
                             key={day.toString()}
                             className={classNames(
-                                dayIdx === 0 && colStartClasses[getDay(day)],
-                                'py-1'
+                                colStartClasses[getDay(day)],
+                                'w-full'
                             )}
                         >
                             <button
                                 type="button"
-                                onClick={() => setSelectedDay(day)}
+                                onClick={() => handleClick(day)}
+                                onMouseEnter={ () => setHoveredDay(day) }
+                                onMouseLeave={ () => setHoveredDay(null) }
                                 className={classNames(
-                                    isEqual(day, selectedDay) && 'text-white',
-                                    !isEqual(day, selectedDay) && isToday(day) && 'text-blue-500',
-                                    !isEqual(day, selectedDay) && !isToday(day)
-                                        && isSameMonth(day, firstDayCurrentMonth)
-                                        && 'text-gray-900',
-                                    !isEqual(day, selectedDay) && !isToday(day)
-                                        && !isSameMonth(day, firstDayCurrentMonth)
-                                        && 'text-gray-400',
-                                    isEqual(day, selectedDay) && isToday(day) && 'bg-blue-500',
-                                    isEqual(day, selectedDay) && !isToday(day) && 'bg-blue-500',
-                                    !isEqual(day, selectedDay) && 'hover:bg-gray-200',
-                                    (isEqual(day, selectedDay) || isToday(day)) && 'font-semibold',
-                                    'mx-auto flex h-8 w-8 items-center justify-center rounded-full'
+                                    getDayBgColorClassName(day),
+                                    getDayTextColorClassName(day),
+                                    getDayHoverBgColorClassName(day),
+                                    getDayRoundedClassName(day),
+                                    'h-10 w-10 flex items-center justify-center'
                                 )}
                             >
                                 <time dateTime={format(day, 'yyyy-MM-dd')}>
