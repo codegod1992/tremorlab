@@ -161,7 +161,8 @@ const Datepicker = () => {
             const options = { year: 'numeric', month: 'long', day: 'numeric' };
             return selectedStartDay.toLocaleDateString('en-US', options);
         } else if (selectedStartDay && selectedEndDay) {
-            if (selectedStartDay.getMonth() === selectedEndDay.getMonth()) {
+            if ((selectedStartDay.getMonth() === selectedEndDay.getMonth())
+                && (selectedStartDay.getFullYear() === selectedEndDay.getFullYear())) {
                 const optionsStartDate = { month: 'long', day: 'numeric' };
                 return `${selectedStartDay.toLocaleDateString('en-US', optionsStartDate)} - 
                         ${selectedEndDay.getDate()}, ${selectedEndDay.getFullYear()}`;
