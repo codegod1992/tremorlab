@@ -1,38 +1,37 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
+import { CalendarIcon, ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 import {
-    add,
     eachDayOfInterval,
     endOfMonth,
     format,
     getDay,
-    isEqual,
-    isSameDay,
-    isSameMonth,
-    isToday,
     parse,
-    parseISO,
     startOfToday,
 } from 'date-fns';
+
+import {
+    colStartClasses,
+    displaySelected,
+    getDayBgColorClassName,
+    getDayHoverBgColorClassName,
+    getDayRoundedClassName,
+    getDayTextColorClassName,
+    nextMonth,
+    previousMonth
+} from 'components/selection-elements/Datepicker/date-picker-utils';
 import { classNames } from '@utils/classname-utils';
-
-
-const colStartClasses = [
-    '',
-    'col-start-2',
-    'col-start-3',
-    'col-start-4',
-    'col-start-5',
-    'col-start-6',
-    'col-start-7',
-];
+import { useOnClickOutside } from '@utils/utils';
 
 const Datepicker = () => {
+    const [showDatePickerModal, setShowDatePickerModal] = useState(false);
+    const datePickerRef = useRef<HTMLDivElement>(null);
+    useOnClickOutside(datePickerRef, () => setShowDatePickerModal(false));
+
     const today = startOfToday();
-    const [hoveredDay, setHoveredDay] = useState(null);
-    const [selectedStartDay, setSelectedStartDay] = useState(null);
-    const [selectedEndDay, setSelectedEndDay] = useState(null);
+    const [hoveredDay, setHoveredDay] = useState<Date|null>(null);
+    const [selectedStartDay, setSelectedStartDay] = useState<Date|null>(null);
+    const [selectedEndDay, setSelectedEndDay] = useState<Date|null>(null);
     const [currentMonth, setCurrentMonth] = useState(format(today, 'MMM-yyyy'));
     const firstDayCurrentMonth = parse(currentMonth, 'MMM-yyyy', new Date());
 
@@ -41,105 +40,7 @@ const Datepicker = () => {
         end: endOfMonth(firstDayCurrentMonth),
     });
 
-    function previousMonth() {
-        const firstDayNextMonth = add(firstDayCurrentMonth, { months: -1 });
-        setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'));
-    }
-
-    function nextMonth() {
-        const firstDayNextMonth = add(firstDayCurrentMonth, { months: 1 });
-        setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'));
-    }
-
-    const getDayBgColorClassName = (day) => {
-        if (selectedStartDay && isEqual(day, selectedStartDay)) {
-            return 'bg-blue-500';
-        }
-        if (selectedStartDay && !selectedEndDay && hoveredDay && (day > selectedStartDay && day < hoveredDay)) {
-            return 'bg-gray-200';
-        }
-        if (selectedEndDay && isEqual(day, selectedEndDay)) {
-            return 'bg-blue-500';
-        }
-        if (selectedStartDay && selectedEndDay && (day > selectedStartDay && day < selectedEndDay)) {
-            return 'bg-gray-200';
-        }
-        return 'bg-transparent';
-        
-    };
-    const getDayTextColorClassName = (day) => {
-        if (isEqual(day, today)) {
-            if ((selectedStartDay && isEqual(day, selectedStartDay))
-                || (selectedEndDay && isEqual(day, selectedEndDay))) {
-                return 'text-white';
-            }
-            // if (selectedStartDay && selectedEndDay && (day > selectedStartDay && day < selectedEndDay)) {
-            //     return 'text-white';
-            // }
-            return 'text-blue-500';
-        }
-        if (selectedStartDay && isEqual(day, selectedStartDay)) {
-            return 'text-white';
-        }
-        if (selectedStartDay && !selectedEndDay && hoveredDay && (day > selectedStartDay && day < hoveredDay)) {
-            return 'text-gray-900';
-        }
-        if (selectedEndDay && isEqual(day, selectedEndDay)) {
-            return 'text-white';
-        }
-        if (selectedStartDay && selectedEndDay && (day > selectedStartDay && day < selectedEndDay)) {
-            return 'text-blue-500';
-        }
-        return 'text-gray-900';
-    };
-
-    const getDayHoverBgColorClassName = (day) => {
-        if (selectedStartDay && isEqual(day, selectedStartDay)) {
-            return '';
-        }
-        if (selectedEndDay && isEqual(day, selectedEndDay)) {
-            return '';
-        }
-        return 'hover:bg-gray-200';
-    };
-
-    const getDayRoundedClassName = (day) => {
-        if (!selectedStartDay && !selectedEndDay) {
-            return 'rounded-md';
-        }
-        if (selectedStartDay && selectedEndDay && isEqual(day, selectedStartDay)) {
-            return 'rounded-l-md';
-        }
-        if (selectedStartDay && !selectedEndDay && !hoveredDay && isEqual(day, selectedStartDay)) {
-            return 'rounded-md';
-        }
-        if (selectedStartDay && !selectedEndDay && hoveredDay && (day < selectedStartDay)) {
-            return 'rounded-md';
-        }
-        if (selectedStartDay && !selectedEndDay && hoveredDay && (isEqual(day, selectedStartDay))
-            && (hoveredDay > selectedStartDay)) {
-            return 'rounded-l-md';
-        }
-        if (selectedStartDay && !selectedEndDay && hoveredDay && (day > selectedStartDay && day < hoveredDay)) {
-            return 'rounded-none';
-        }
-        if (selectedStartDay && selectedEndDay && (day > selectedStartDay && day < selectedEndDay)) {
-            return 'rounded-none';
-        }
-        if (selectedStartDay && !selectedEndDay && hoveredDay && isEqual(day, hoveredDay)
-            && !isEqual(day, selectedStartDay)) {
-            return 'rounded-r-md';
-        }
-        if (selectedStartDay && selectedEndDay && isEqual(day, selectedEndDay)) {
-            return 'rounded-r-md';
-        }
-        if (selectedStartDay && selectedEndDay && (day < selectedStartDay || day > selectedEndDay)) {
-            return 'rounded-md';
-        }
-        return 'rounded-md';
-    };
-
-    const handleClick = (day) => {
+    const handleDayClick = (day: Date) => {
         if (!selectedStartDay) {
             setSelectedStartDay(day);
         } else if (selectedStartDay && !selectedEndDay) {
@@ -147,6 +48,7 @@ const Datepicker = () => {
                 setSelectedStartDay(day);
             } else if (day > selectedStartDay) {
                 setSelectedEndDay(day);
+                setShowDatePickerModal(false);
             }
         } else if (selectedStartDay && selectedEndDay) {
             setSelectedStartDay(day);
@@ -154,101 +56,101 @@ const Datepicker = () => {
         }
     };
 
-    const displaySelected = (selectedStartDay, selectedEndDay) => {
-        if (!selectedStartDay && !selectedEndDay) {
-            return 'dd/mm/yyyy - dd/mm/yyyy';
-        } else if (selectedStartDay && !selectedEndDay) {
-            const options = { year: 'numeric', month: 'long', day: 'numeric' };
-            return selectedStartDay.toLocaleDateString('en-US', options);
-        } else if (selectedStartDay && selectedEndDay) {
-            if ((selectedStartDay.getMonth() === selectedEndDay.getMonth())
-                && (selectedStartDay.getFullYear() === selectedEndDay.getFullYear())) {
-                const optionsStartDate = { month: 'long', day: 'numeric' };
-                return `${selectedStartDay.toLocaleDateString('en-US', optionsStartDate)} - 
-                        ${selectedEndDay.getDate()}, ${selectedEndDay.getFullYear()}`;
-            } else {
-                const options = { year: 'numeric', month: 'long', day: 'numeric' };
-                return `${selectedStartDay.toLocaleDateString('en-US', options)} - 
-                        ${selectedEndDay.toLocaleDateString('en-US', options)}`;
-            }
-        }
-    };
-
     return (
         <>
-            <button className="flex items-center justify-between rounded-md border border-gray-300 px-4 h-10
-                    bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:ring-2 focus:ring-opacity-100
-                    focus:outline-none focus:ring-blue-300">
-                { displaySelected(selectedStartDay, selectedEndDay) }
-            </button>
-            <div className="rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 w-fit py-2 px-3">
-                <div className="flex justify-between items-center py-2 px-1">
+            <div className="flex space-x-2">
+                <div className="flex items-center justify-between text-sm font-medium text-gray-700 border-gray-300 
+                    bg-white">
                     <button
-                        type="button"
-                        onClick={previousMonth}
-                        className="inline-flex p-1 text-sm font-medium text-gray-700 bg-white border border-gray-300
-                            rounded shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-0
-                            focus:ring-blue-500"
+                        onClick={ () => setShowDatePickerModal(true)}
+                        className="flex whitespace-nowrap items-center pl-2 pr-4 py-2 space-x-4 rounded-l-md border 
+                            border-r-0 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-opacity-100
+                            focus:outline-none focus:ring-blue-300"
                     >
-                        <span className="sr-only">Previous month</span>
-                        <ChevronLeftIcon className="w-5 h-5 text-gray-600" aria-hidden="true" />
+                        <CalendarIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                        <span>{ displaySelected(selectedStartDay, selectedEndDay) }</span>
                     </button>
-
-                    <h2 className="font-semibold text-sm text-gray-900">
-                        {format(firstDayCurrentMonth, 'MMMM yyyy')}
-                    </h2>
-
-                    <button
-                        onClick={nextMonth}
-                        type="button"
-                        className="inline-flex p-1 text-sm font-medium text-gray-700 bg-white border border-gray-300
-                            rounded shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-0
-                            focus:ring-blue-500"
-                    >
-                        <span className="sr-only">Next month</span>
-                        <ChevronRightIcon className="w-5 h-5 text-gray-600" aria-hidden="true" />
+                    <button className="inline-flex justify-center w-full rounded-r-md border px-4 py-2 hover:bg-gray-50 
+                        focus:ring-2 focus:ring-opacity-100 focus:outline-none focus:ring-blue-300">
+                        Last month
+                        <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
                     </button>
-
-                </div>
-                <div className="grid grid-cols-7 text-xs leading-6 text-center font-medium text-gray-400">
-                    <div className="flex items-center justify-center w-10 h-10">Su</div>
-                    <div className="flex items-center justify-center w-10 h-10">Mo</div>
-                    <div className="flex items-center justify-center w-10 h-10">Tu</div>
-                    <div className="flex items-center justify-center w-10 h-10">We</div>
-                    <div className="flex items-center justify-center w-10 h-10">Th</div>
-                    <div className="flex items-center justify-center w-10 h-10">Fr</div>
-                    <div className="flex items-center justify-center w-10 h-10">Sa</div>
-                </div>
-                <div className="grid grid-cols-7 text-sm">
-                    {days.map((day) => (
-                        <div
-                            key={day.toString()}
-                            className={classNames(
-                                colStartClasses[getDay(day)],
-                                'w-full'
-                            )}
-                        >
-                            <button
-                                type="button"
-                                onClick={() => handleClick(day)}
-                                onMouseEnter={ () => setHoveredDay(day) }
-                                onMouseLeave={ () => setHoveredDay(null) }
-                                className={classNames(
-                                    getDayBgColorClassName(day),
-                                    getDayTextColorClassName(day),
-                                    getDayHoverBgColorClassName(day),
-                                    getDayRoundedClassName(day),
-                                    'h-10 w-10 flex items-center justify-center'
-                                )}
-                            >
-                                <time dateTime={format(day, 'yyyy-MM-dd')}>
-                                    {format(day, 'd')}
-                                </time>
-                            </button>
-                        </div>
-                    ))}
                 </div>
             </div>
+            { showDatePickerModal ? (
+                <div
+                    ref={ datePickerRef }
+                    className="absolute rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 w-fit py-2 px-3"
+                >
+                    <div className="flex justify-between items-center py-2 px-1">
+                        <button
+                            type="button"
+                            onClick={() => previousMonth(firstDayCurrentMonth, setCurrentMonth)}
+                            className="inline-flex p-1 text-sm font-medium text-gray-700 bg-white border border-gray-300
+                            rounded shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-0
+                            focus:ring-blue-500"
+                        >
+                            <span className="sr-only">Previous month</span>
+                            <ChevronLeftIcon className="w-5 h-5 text-gray-600" aria-hidden="true" />
+                        </button>
+
+                        <h2 className="font-semibold text-sm text-gray-900">
+                            {format(firstDayCurrentMonth, 'MMMM yyyy')}
+                        </h2>
+
+                        <button
+                            onClick={() => nextMonth(firstDayCurrentMonth, setCurrentMonth)}
+                            type="button"
+                            className="inline-flex p-1 text-sm font-medium text-gray-700 bg-white border border-gray-300
+                            rounded shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-0
+                            focus:ring-blue-500"
+                        >
+                            <span className="sr-only">Next month</span>
+                            <ChevronRightIcon className="w-5 h-5 text-gray-600" aria-hidden="true" />
+                        </button>
+
+                    </div>
+                    <div className="grid grid-cols-7 text-xs leading-6 text-center font-medium text-gray-400">
+                        <div className="flex items-center justify-center w-10 h-10">Su</div>
+                        <div className="flex items-center justify-center w-10 h-10">Mo</div>
+                        <div className="flex items-center justify-center w-10 h-10">Tu</div>
+                        <div className="flex items-center justify-center w-10 h-10">We</div>
+                        <div className="flex items-center justify-center w-10 h-10">Th</div>
+                        <div className="flex items-center justify-center w-10 h-10">Fr</div>
+                        <div className="flex items-center justify-center w-10 h-10">Sa</div>
+                    </div>
+                    <div className="grid grid-cols-7 text-sm">
+                        {days.map((day) => (
+                            <div
+                                key={day.toString()}
+                                className={classNames(
+                                    colStartClasses[getDay(day)],
+                                    'w-full'
+                                )}
+                            >
+                                <button
+                                    type="button"
+                                    onClick={() => handleDayClick(day)}
+                                    onMouseEnter={ () => setHoveredDay(day) }
+                                    onMouseLeave={ () => setHoveredDay(null) }
+                                    className={classNames(
+                                        getDayBgColorClassName(day, selectedStartDay, selectedEndDay, hoveredDay),
+                                        getDayTextColorClassName(day, selectedStartDay, selectedEndDay, hoveredDay),
+                                        getDayHoverBgColorClassName(day, selectedStartDay, selectedEndDay),
+                                        getDayRoundedClassName(day, selectedStartDay, selectedEndDay, hoveredDay),
+                                        'h-10 w-10 flex items-center justify-center'
+                                    )}
+                                >
+                                    <time dateTime={format(day, 'yyyy-MM-dd')}>
+                                        {format(day, 'd')}
+                                    </time>
+                                </button>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+            ) : null }
         </>
     );
 };
