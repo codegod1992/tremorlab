@@ -1,6 +1,29 @@
 import { add, format, isEqual, isToday, } from 'date-fns';
 import React from 'react';
 
+export const relativeFilterOptions = [
+    {
+        value: 'w',
+        name: 'Last 7 days',
+        shortcut: 'W',
+    },
+    {
+        value: 't',
+        name: 'Last 30 days',
+        shortcut: 'T',
+    },
+    {
+        value: 'm',
+        name: 'Month to Date',
+        shortcut: 'M',
+    },
+    {
+        value: 'y',
+        name: 'Year to Date',
+        shortcut: 'Y',
+    },
+];
+
 export const colStartClasses = [
     '',
     'col-start-2',

@@ -18,8 +18,9 @@ import {
     getDayRoundedClassName,
     getDayTextColorClassName,
     nextMonth,
-    previousMonth
-} from 'components/selection-elements/Datepicker/date-picker-utils';
+    previousMonth,
+    relativeFilterOptions
+} from 'components/selection-elements/Datepicker/datepicker-utils';
 import { classNames } from '@utils/classname-utils';
 import { useOnClickOutside } from '@utils/utils';
 
@@ -27,6 +28,12 @@ const Datepicker = () => {
     const [showDatePickerModal, setShowDatePickerModal] = useState(false);
     const datePickerRef = useRef<HTMLDivElement>(null);
     useOnClickOutside(datePickerRef, () => setShowDatePickerModal(false));
+
+    const [showDropdownModal, setShowDropdownModal] = useState(false);
+    const dropDownRef = useRef<HTMLDivElement>(null);
+    useOnClickOutside(dropDownRef, () => setShowDropdownModal(false));
+
+    const [selectedRelativeFilterOption, setSelectedRelativeFilterOption] = useState<string|null>(null);
 
     const today = startOfToday();
     const [hoveredDay, setHoveredDay] = useState<Date|null>(null);
@@ -58,11 +65,11 @@ const Datepicker = () => {
 
     return (
         <>
-            <div className="flex space-x-2">
+            <div className="relative inline-flex">
                 <div className="flex items-center justify-between text-sm font-medium text-gray-700 border-gray-300 
                     bg-white">
                     <button
-                        onClick={ () => setShowDatePickerModal(true)}
+                        onClick={ () => setShowDatePickerModal(true) }
                         className="flex whitespace-nowrap items-center pl-2 pr-4 py-2 space-x-4 rounded-l-md border 
                             border-r-0 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-opacity-100
                             focus:outline-none focus:ring-blue-300"
@@ -70,87 +77,119 @@ const Datepicker = () => {
                         <CalendarIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
                         <span>{ displaySelected(selectedStartDay, selectedEndDay) }</span>
                     </button>
-                    <button className="inline-flex justify-center w-full rounded-r-md border px-4 py-2 hover:bg-gray-50 
-                        focus:ring-2 focus:ring-opacity-100 focus:outline-none focus:ring-blue-300">
+                    <button
+                        onClick={ () => setShowDropdownModal(true) }
+                        className="inline-flex justify-center w-full rounded-r-md border px-4 py-2 hover:bg-gray-50 
+                            focus:ring-2 focus:ring-opacity-100 focus:outline-none focus:ring-blue-300"
+                    >
                         Last month
                         <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
                     </button>
                 </div>
-            </div>
-            { showDatePickerModal ? (
-                <div
-                    ref={ datePickerRef }
-                    className="absolute rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 w-fit py-2 px-3"
-                >
-                    <div className="flex justify-between items-center py-2 px-1">
-                        <button
-                            type="button"
-                            onClick={() => previousMonth(firstDayCurrentMonth, setCurrentMonth)}
-                            className="inline-flex p-1 text-sm font-medium text-gray-700 bg-white border border-gray-300
-                            rounded shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-0
-                            focus:ring-blue-500"
-                        >
-                            <span className="sr-only">Previous month</span>
-                            <ChevronLeftIcon className="w-5 h-5 text-gray-600" aria-hidden="true" />
-                        </button>
-
-                        <h2 className="font-semibold text-sm text-gray-900">
-                            {format(firstDayCurrentMonth, 'MMMM yyyy')}
-                        </h2>
-
-                        <button
-                            onClick={() => nextMonth(firstDayCurrentMonth, setCurrentMonth)}
-                            type="button"
-                            className="inline-flex p-1 text-sm font-medium text-gray-700 bg-white border border-gray-300
-                            rounded shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-0
-                            focus:ring-blue-500"
-                        >
-                            <span className="sr-only">Next month</span>
-                            <ChevronRightIcon className="w-5 h-5 text-gray-600" aria-hidden="true" />
-                        </button>
-
-                    </div>
-                    <div className="grid grid-cols-7 text-xs leading-6 text-center font-medium text-gray-400">
-                        <div className="flex items-center justify-center w-10 h-10">Su</div>
-                        <div className="flex items-center justify-center w-10 h-10">Mo</div>
-                        <div className="flex items-center justify-center w-10 h-10">Tu</div>
-                        <div className="flex items-center justify-center w-10 h-10">We</div>
-                        <div className="flex items-center justify-center w-10 h-10">Th</div>
-                        <div className="flex items-center justify-center w-10 h-10">Fr</div>
-                        <div className="flex items-center justify-center w-10 h-10">Sa</div>
-                    </div>
-                    <div className="grid grid-cols-7 text-sm">
-                        {days.map((day) => (
-                            <div
-                                key={day.toString()}
-                                className={classNames(
-                                    colStartClasses[getDay(day)],
-                                    'w-full'
-                                )}
+                { showDatePickerModal ? (
+                    <div
+                        ref={ datePickerRef }
+                        className="absolute rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 w-fit py-2
+                            px-3 -bottom-1 left-0 translate-y-full"
+                    >
+                        <div className="flex justify-between items-center py-2 px-1">
+                            <button
+                                type="button"
+                                onClick={() => previousMonth(firstDayCurrentMonth, setCurrentMonth)}
+                                className="inline-flex p-1 text-sm font-medium text-gray-700 bg-white border
+                                    border-gray-300 rounded shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2
+                                    focus:ring-offset-0 focus:ring-blue-500"
                             >
-                                <button
-                                    type="button"
-                                    onClick={() => handleDayClick(day)}
-                                    onMouseEnter={ () => setHoveredDay(day) }
-                                    onMouseLeave={ () => setHoveredDay(null) }
+                                <span className="sr-only">Previous month</span>
+                                <ChevronLeftIcon className="w-5 h-5 text-gray-600" aria-hidden="true" />
+                            </button>
+
+                            <h2 className="font-semibold text-sm text-gray-900">
+                                {format(firstDayCurrentMonth, 'MMMM yyyy')}
+                            </h2>
+
+                            <button
+                                onClick={() => nextMonth(firstDayCurrentMonth, setCurrentMonth)}
+                                type="button"
+                                className="inline-flex p-1 text-sm font-medium text-gray-700 bg-white border
+                                    border-gray-300 rounded shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2
+                                    focus:ring-offset-0 focus:ring-blue-500"
+                            >
+                                <span className="sr-only">Next month</span>
+                                <ChevronRightIcon className="w-5 h-5 text-gray-600" aria-hidden="true" />
+                            </button>
+
+                        </div>
+                        <div className="grid grid-cols-7 text-xs leading-6 text-center font-medium text-gray-400">
+                            <div className="flex items-center justify-center w-10 h-10">Su</div>
+                            <div className="flex items-center justify-center w-10 h-10">Mo</div>
+                            <div className="flex items-center justify-center w-10 h-10">Tu</div>
+                            <div className="flex items-center justify-center w-10 h-10">We</div>
+                            <div className="flex items-center justify-center w-10 h-10">Th</div>
+                            <div className="flex items-center justify-center w-10 h-10">Fr</div>
+                            <div className="flex items-center justify-center w-10 h-10">Sa</div>
+                        </div>
+                        <div className="grid grid-cols-7 text-sm">
+                            {days.map((day) => (
+                                <div
+                                    key={day.toString()}
                                     className={classNames(
-                                        getDayBgColorClassName(day, selectedStartDay, selectedEndDay, hoveredDay),
-                                        getDayTextColorClassName(day, selectedStartDay, selectedEndDay, hoveredDay),
-                                        getDayHoverBgColorClassName(day, selectedStartDay, selectedEndDay),
-                                        getDayRoundedClassName(day, selectedStartDay, selectedEndDay, hoveredDay),
-                                        'h-10 w-10 flex items-center justify-center'
+                                        colStartClasses[getDay(day)],
+                                        'w-full'
                                     )}
                                 >
-                                    <time dateTime={format(day, 'yyyy-MM-dd')}>
-                                        {format(day, 'd')}
-                                    </time>
-                                </button>
-                            </div>
-                        ))}
+                                    <button
+                                        type="button"
+                                        onClick={() => handleDayClick(day)}
+                                        onMouseEnter={ () => setHoveredDay(day) }
+                                        onMouseLeave={ () => setHoveredDay(null) }
+                                        className={classNames(
+                                            getDayBgColorClassName(day, selectedStartDay, selectedEndDay, hoveredDay),
+                                            getDayTextColorClassName(day, selectedStartDay, selectedEndDay, hoveredDay),
+                                            getDayHoverBgColorClassName(day, selectedStartDay, selectedEndDay),
+                                            getDayRoundedClassName(day, selectedStartDay, selectedEndDay, hoveredDay),
+                                            'h-10 w-10 flex items-center justify-center'
+                                        )}
+                                    >
+                                        <time dateTime={format(day, 'yyyy-MM-dd')}>
+                                            {format(day, 'd')}
+                                        </time>
+                                    </button>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
-
-            ) : null }
+                ) : null }
+                { showDropdownModal ? (
+                    <div
+                        ref={ dropDownRef }
+                        className="absolute min-w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5
+                            divide-y divide-gray-100 focus:outline-none right-0 -bottom-1 translate-y-full"
+                    >
+                        { relativeFilterOptions.map((filterOption) => (
+                            <button
+                                className={ classNames(
+                                    selectedRelativeFilterOption === filterOption.value
+                                        ? 'bg-gray-100 text-gray-900'
+                                        : 'text-gray-700',
+                                    `group flex items-center justify-between px-4 py-2.5 text-sm border-b
+                                    border-gray-100 w-full group-hover:text-gray-500 hover:bg-gray-50`
+                                ) }
+                                value={ filterOption.value }
+                                onClick={ () => {
+                                    setSelectedRelativeFilterOption(filterOption.value);
+                                    setShowDropdownModal(false);
+                                } }
+                            >
+                                <div className="flex font-medium">
+                                    { filterOption.name }
+                                </div>
+                                <span className="font-normal text-gray-400">{ filterOption.shortcut }</span>
+                            </button>
+                        ))}                    
+                    </div>
+                ) : null }
+            </div>
         </>
     );
 };
