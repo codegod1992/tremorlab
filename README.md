@@ -1,8 +1,8 @@
 <br>
 <br>
+<br>
 <div align="center">
   <img alt="Tremor Logo" src="images/tremor-light.svg" height="50"/>
-<br>
 <br>
 <br>
 <br>
