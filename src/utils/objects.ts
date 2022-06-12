@@ -65,5 +65,6 @@ export const Sizes: {[key: string]: string} = {
     XS: 'xs',
     SM: 'sm',
     MD: 'md',
-    LG: 'lg'
+    LG: 'lg',
+    XL: 'xl',
 };
