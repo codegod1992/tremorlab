@@ -63,7 +63,7 @@ To get started with tremor, follow these steps:
 
 ## Example
 
-With tremor creating an analyticl interface is easy.
+With tremor creating an analytical interface is easy.
 <br>
 <br>
 
@@ -91,7 +91,7 @@ import { Card, Title, Metric, Text, Bold, ProgressBar } from "@tremor/react";
 
 ## Community and Contribution
 
-We are always looking for new ideas or other ways to improve tremor. If you have developed anything cool or found bug, send us a pull request.
+We are always looking for new ideas or other ways to improve tremor. If you have developed anything cool or found a bug, send us a pull request.
 <br>
 <br>
 
