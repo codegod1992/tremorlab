@@ -31,7 +31,6 @@
 
 </div>
 
-
 [Tremor](https://tremor.so/) lets you create simple and modular components to build insightful dashboards in a breeze. Fully open-source, made by data scientists and software engineers with a sweet spot for design.
 
 <br>
@@ -85,11 +84,9 @@ import { Card, Title, Metric, Text, Bold, ProgressBar } from "@tremor/react";
 </Card>
 ```
 <br>
-<br>
 
 ![Tremor Banner](images/example.png)
 
-<br>
 <br>
 
 ## Community and Contribution
