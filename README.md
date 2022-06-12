@@ -21,7 +21,7 @@
       <img alt="Read the documentation" src="https://img.shields.io/badge/Docs-blue?style=flat&logo=readthedocs&labelColor=5c5c5c&color=5C9BA1" height="20" width="auto">
     </a>
     <a href="https://github.com/tremorlabs/tremor/blob/main/License">
-      <img alt="License MIT" src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat&color=5C9BA1" height="20" width="auto">
+      <img alt="License MIT" src="https://img.shields.io/badge/license-Apache 2.0-blue.svg?style=flat&color=5C9BA1" height="20" width="auto">
     </a>
   </div>
 
