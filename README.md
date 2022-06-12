@@ -71,7 +71,7 @@ Card.tsx
 ```jsx
 // example of component composition
 
-import { Card, Title, Metric, Text, Bold, ProgressBar } from "@tremor/react";
+import { Card, Title, Metric, Flex, Text, Bold, ProgressBar } from "@tremor/react";
 
 <Card>
     <Title title="Ticket Sales"/>
