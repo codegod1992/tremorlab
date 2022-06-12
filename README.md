@@ -1,15 +1,13 @@
 <br>
 <br>
-<br>
 <div align="center">
   <img alt="Tremor Logo" src="images/tremor-light.svg" height="50"/>
+<br>
+<br>
+<br>
+<br>
 
-  <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="images/tremor-light.jpg">
-  <source media="(prefers-color-scheme: light)" srcset="images/tremor-light.jpg">
-</picture>
-
-  <div align="center" style='margin-top: 5rem;'>
+  <div align="center"'>
     <a href="#">
       <img alt="View Storybook" src="https://raw.githubusercontent.com/storybooks/brand/master/badge/badge-storybook.svg" height="20" width="auto">
     </a>
