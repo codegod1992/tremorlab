@@ -1,4 +1,7 @@
-<div align="center" style='margin-top: 5rem;'>
+<br>
+<br>
+<br>
+<div align="center">
   <img alt="Tremor Logo" src="images/tremor-light.svg" height="50"/>
 
   <picture>
@@ -58,7 +61,8 @@ To get started with tremor, follow these steps:
     ```
 
 **💡 Hint:** If you want to see how you can build your first dashboard, have a look at our [documentation](#).
-
+<br>
+<br>
 
 ## Example
 
@@ -90,10 +94,11 @@ import { Card, Title, Metric, Text, Bold, ProgressBar } from "@tremor/react";
 <br>
 <br>
 
-
 ## Community and Contribution
 
 We are always looking for new ideas or other ways to improve tremor. If you have developed anything cool or found bug, send us a pull request.
+<br>
+<br>
 
 ## License
 
