@@ -99,4 +99,4 @@ We are always looking for new ideas or other ways to improve tremor. If you have
 
 [Apache License 2.0](https://github.com/tremorlabs/tremor/blob/main/License)
 
-Copyright (c) 2022 Tremor.
+Copyright &copy;  2022 Tremor. All rights reserved.
