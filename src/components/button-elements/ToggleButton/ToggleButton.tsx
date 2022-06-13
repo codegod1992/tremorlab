@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export interface ToggleButtonProps {
-    children: React.ReactElement[]
+    defaultValue: any,
+    handleSelect: {(value: any): void},
+    children: React.ReactElement[],
 }
 
 const ToggleButton = ({
+    defaultValue,
+    handleSelect = (value) => null,
     children,
 }: ToggleButtonProps) => {
-    const [activeToggleButtonItem, setActiveToggleButtonItem] = useState<any|null>(null);
+    const [activeToggleButtonItem, setActiveToggleButtonItem] = useState<any|null>(defaultValue);
+
+    useEffect(() => {
+        handleSelect(activeToggleButtonItem);
+    }, [activeToggleButtonItem]);
 
     return (
         <div className="flex justify-between bg-gray-100 rounded-md p-1">

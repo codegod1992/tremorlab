@@ -6,7 +6,6 @@ export interface ToggleButtonItemProps {
     value: any,
     text: string,
     Icon?: React.ElementType,
-    handleClick: React.MouseEventHandler<HTMLButtonElement>,
     setActiveToggleButtonItem?: React.Dispatch<React.SetStateAction<any>>,
     isActive?: boolean,
 }
@@ -15,7 +14,6 @@ const ToggleButtonItem = ({
     value,
     text,
     Icon,
-    handleClick,
     setActiveToggleButtonItem,
     isActive,
 }: ToggleButtonItemProps) => (
@@ -26,7 +24,7 @@ const ToggleButtonItem = ({
                 ? 'bg-white shadow-sm ring-black ring-opacity-5'
                 : 'text-gray-500 hover:text-gray-700 ring-transparent',
         )}
-        onClick={ () => { setActiveToggleButtonItem!(value); handleClick(value); }}
+        onClick={ () => { setActiveToggleButtonItem!(value); }}
     >
         { Icon ? <Icon className="h-5 w-5 mr-2 text-gray-400" aria-hidden="true"/> : null }
         <span>{ text }</span>
