@@ -38,7 +38,7 @@ export interface MultiSelectBoxProps {
 
 const MultiSelectBox = ({
     defaultValues = [],
-    handleSelect,
+    handleSelect = (value) => null,
     placeholder = 'Select',
     children,
 }: MultiSelectBoxProps) => {
