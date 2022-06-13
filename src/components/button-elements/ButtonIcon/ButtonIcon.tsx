@@ -31,15 +31,19 @@ const ButtonIcon = ({
         <ButtonWrapper
             onClick={ handleClick }
             info={ info }
-            { ...buttonProportions[size] }
+            { ...buttonProportions[size] ? buttonProportions[size] : buttonProportions['md'] }
             { ...buttonShape }
             { ...buttonColors[color][importance] }
         >
             { iconPosition==='left' || iconPosition!=='right' ? (
                 <Icon
                     className={classNames(
-                        iconLeftProportions[size].margin || '',
-                        iconLeftProportions[size].iconSize || '',
+                        iconLeftProportions[size]
+                            ? iconLeftProportions[size].margin!
+                            : iconLeftProportions['md'].margin!,
+                        iconLeftProportions[size]
+                            ? iconLeftProportions[size].iconSize!
+                            : iconLeftProportions['md'].iconSize!,
                     )}
                     aria-hidden="true"
                 />
@@ -48,8 +52,12 @@ const ButtonIcon = ({
             { iconPosition==='right' ? (
                 <Icon
                     className={classNames(
-                        iconRightProportions[size].margin || '',
-                        iconRightProportions[size].iconSize || '',
+                        iconRightProportions[size]
+                            ? iconRightProportions[size].margin!
+                            : iconRightProportions['md'].margin!,
+                        iconRightProportions[size]
+                            ? iconRightProportions[size].iconSize!
+                            : iconRightProportions['md'].iconSize!,
                     )}
                     aria-hidden="true"
                 />
