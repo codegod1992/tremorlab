@@ -3,14 +3,16 @@ import React, { useState } from 'react';
 import { classNames } from '@utils/classname-utils';
 
 export interface ButtonGroupProps {
+    defaultValue?: any,
     children: React.ReactElement[]
 }
 
 const ButtonGroup = ({
+    defaultValue,
     children,
 }: ButtonGroupProps) => {
     const childrenCount = React.Children.count(children);
-    const [activeButtonItem, setActiveButtonItem] = useState<any|null>(null);
+    const [activeButtonItem, setActiveButtonItem] = useState<any|null>(defaultValue);
     return (
         <>
             { React.Children.map(children, (child, idx) => {

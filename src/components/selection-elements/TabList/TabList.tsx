@@ -5,20 +5,20 @@ import BaseComponentProps from '@common/BaseComponentInterface';
 import { classNames, parseBorderClassNames, parseMarginTopClassNames } from '@utils/classname-utils';
 
 export interface TabListProps extends BaseComponentProps {
-    defaultTabValue?: any,
+    defaultValue?: any,
     borderColor?: string,
     handleSelect?: { (value: any): void },
     children: React.ReactElement[]
 }
 
 const TabList = ({
-    defaultTabValue,
+    defaultValue,
     borderColor = 'border-gray-200',
     marginTop,
     handleSelect = (value) => null,
     children,
 }: TabListProps) => {
-    const [selectedTab, setSelectedTab] = useState<any|null>(defaultTabValue);
+    const [selectedTab, setSelectedTab] = useState<any|null>(defaultValue);
 
     useEffect(() => {
         handleSelect(selectedTab);
