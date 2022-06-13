@@ -13,7 +13,7 @@ export default {
 } as ComponentMeta<typeof ToggleButton>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Template: ComponentStory<typeof ButtonGroup> = (args) => (
+const Template: ComponentStory<typeof ToggleButton> = (args) => (
     <ToggleButton>
         <ToggleButtonItem
             value={ 1 } text="Option 1" handleClick={ (value) => console.log(value) } Icon={ CalendarIcon } />
