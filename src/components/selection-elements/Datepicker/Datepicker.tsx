@@ -7,7 +7,10 @@ import {
     format,
     getDay,
     parse,
+    startOfMonth,
     startOfToday,
+    startOfYear,
+    sub,
 } from 'date-fns';
 
 import {
@@ -63,6 +66,27 @@ const Datepicker = () => {
         }
     };
 
+    const handleRelativeFilterOptionClick = (selectedRelativeFilterOption: string) => {
+        switch(selectedRelativeFilterOption) {
+        case 'w':
+            setSelectedStartDay(sub(today, { days: 7 }));
+            setSelectedEndDay(today);
+            break;
+        case 't':
+            setSelectedStartDay(sub(today, { days: 30 }));
+            setSelectedEndDay(today);
+            break;
+        case 'm':
+            setSelectedStartDay(startOfMonth(today));
+            setSelectedEndDay(today);
+            break;
+        case 'y':
+            setSelectedStartDay(startOfYear(today));
+            setSelectedEndDay(today);
+            break;
+        }
+    };
+
     return (
         <>
             <div className="relative inline-flex">
@@ -82,7 +106,10 @@ const Datepicker = () => {
                         className="inline-flex justify-center w-full rounded-r-md border px-4 py-2 hover:bg-gray-50 
                             focus:ring-2 focus:ring-opacity-100 focus:outline-none focus:ring-blue-300"
                     >
-                        Last month
+                        { selectedRelativeFilterOption
+                            ? relativeFilterOptions.find((filterOption) => (
+                                filterOption.value === selectedRelativeFilterOption
+                            ))?.name : 'Select' }
                         <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
                     </button>
                 </div>
@@ -178,6 +205,7 @@ const Datepicker = () => {
                                 value={ filterOption.value }
                                 onClick={ () => {
                                     setSelectedRelativeFilterOption(filterOption.value);
+                                    handleRelativeFilterOptionClick(filterOption.value);
                                     setShowDropdownModal(false);
                                 } }
                             >
