@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { CalendarIcon, ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 import {
@@ -27,7 +27,13 @@ import {
 import { classNames } from '@utils/classname-utils';
 import { useOnClickOutside } from '@utils/utils';
 
-const Datepicker = () => {
+export interface DatepickerProps {
+    handleSelect?: { (selectedStartDay: Date|null, selectedEndDay: Date|null): void },
+}
+
+const Datepicker = ({
+    handleSelect = (selectedStartDay: Date|null, selectedEndDay: Date|null) => null,
+}: DatepickerProps) => {
     const [showDatePickerModal, setShowDatePickerModal] = useState(false);
     const datePickerRef = useRef<HTMLDivElement>(null);
     useOnClickOutside(datePickerRef, () => setShowDatePickerModal(false));
@@ -86,6 +92,10 @@ const Datepicker = () => {
             break;
         }
     };
+
+    useEffect(() => {
+        if (selectedEndDay) {handleSelect(selectedStartDay, selectedEndDay);console.log('selected');}
+    }, [selectedEndDay]);
 
     return (
         <>
