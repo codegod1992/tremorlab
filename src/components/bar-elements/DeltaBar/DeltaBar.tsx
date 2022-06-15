@@ -28,7 +28,7 @@ const DeltaBar = ({
             bgColor={ classNames(parseBgClassNames(barBgColor)) }
             marginTop={ parseMarginTopClassNames(marginTop) }
         >
-            <div className="w-1/2 h-full flex justify-end bg-transparent rounded-l-full">
+            <div className="w-1/2 h-full flex justify-end bg-transparent rounded-l-lg">
                 { deltaType===DeltaTypes.Decrease ? (
                     <div 
                         className={ classNames(
@@ -41,10 +41,10 @@ const DeltaBar = ({
             </div>
             <div className={ classNames(
                 parseBgClassNames(markerBgColor),
-                'h-5 w-0.5'
+                'h-4 w-1 rounded-full ring-2 ring-white z-10'
             ) } 
             />
-            <div className="w-1/2 h-full flex justify-start bg-transparent rounded-r-full">
+            <div className="w-1/2 h-full flex justify-start bg-transparent rounded-r-lg">
                 { deltaType===DeltaTypes.Increase ? (
                     <div 
                         className={ classNames(

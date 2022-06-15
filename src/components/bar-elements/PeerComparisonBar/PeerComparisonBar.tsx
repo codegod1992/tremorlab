@@ -42,7 +42,7 @@ const PeerComparisonBar = ({
             >
                 <div className={ classNames(
                     parseBgClassNames(markerBgColor),
-                    'h-5 w-1'
+                    'h-4 w-1 rounded-full ring-2 ring-white'
                 ) }
                 />
             </div>

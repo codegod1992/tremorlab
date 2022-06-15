@@ -24,11 +24,11 @@ const BarWrapper = ({
         <div 
             className={ classNames(
                 bgColor,
-                gap ? 'space-x-0.5' : '',
+                gap ? 'space-x-1' : '',
                 overflowHidden ? 'overflow-hidden' : '',
                 justifyContent,
                 marginTop,
-                'h-3 w-full relative flex rounded items-center',
+                'h-2 w-full relative flex rounded-lg items-center',
             ) }
         >
             { children }
