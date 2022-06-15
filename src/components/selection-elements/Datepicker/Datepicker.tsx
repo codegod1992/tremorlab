@@ -126,7 +126,7 @@ const Datepicker = ({
                 { showDatePickerModal ? (
                     <div
                         ref={ datePickerRef }
-                        className="absolute rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 w-fit py-2
+                        className="absolute rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-2
                             px-3 -bottom-1 left-0 translate-y-full"
                     >
                         <div className="flex justify-between items-center py-2 px-1">

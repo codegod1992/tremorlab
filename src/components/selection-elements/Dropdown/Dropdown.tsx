@@ -62,9 +62,7 @@ const Dropwdown = ({
             if(handleSelect) handleSelect(selectedItem);
         }
 
-        document.addEventListener('keydown', (e) => handleKeyDown(e, shortcutMapping));        
-
-        console.log('go');
+        document.addEventListener('keydown', (e) => handleKeyDown(e, shortcutMapping));
 
         return () => {
             document.removeEventListener('keydown', (e) => handleKeyDown(e, shortcutMapping));
@@ -92,7 +90,7 @@ const Dropwdown = ({
                                 { React.cloneElement(child, {
                                     setSelectedItem: setSelectedItem,
                                     setShowModal: setShowModal,
-                                    isSelected: child?.props.value === selectedItem,
+                                    isActive: child?.props.value === selectedItem,
                                 }) }
                             </>
                         )) }

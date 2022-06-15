@@ -7,7 +7,7 @@ export interface DropdownItemProps {
     name: string,
     Icon?: React.ElementType,
     shortcut?: string,
-    isSelected?: boolean, 
+    isActive?: boolean, 
     setSelectedItem?: React.Dispatch<React.SetStateAction<any>>,
     setShowModal?: React.Dispatch<React.SetStateAction<boolean>>,
 }
@@ -17,14 +17,14 @@ const DropdownItem = ({
     name,
     Icon,
     shortcut,
-    isSelected = false,
+    isActive = false,
     setSelectedItem,
     setShowModal,
 }: DropdownItemProps) => (
     <div>
         <button
             className={ classNames(
-                isSelected ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                isActive ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                 `group flex items-center justify-between px-4 py-2.5 space-x-10 text-sm border-b border-gray-100 w-full
                  group-hover:text-gray-500 hover:bg-gray-50`
             ) }
@@ -32,6 +32,7 @@ const DropdownItem = ({
             onClick={ () => {
                 setSelectedItem!(value);
                 setShowModal!(false);
+                console.log("hello");
             } }
         >
             <div className="flex font-medium">
