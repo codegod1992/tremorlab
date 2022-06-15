@@ -1,5 +1,6 @@
-import { isValueInArray } from '@utils/utils';
 import React from 'react';
+
+import { isValueInArray } from '@utils/utils';
 
 export interface MultiSelectBoxItemProps {
     value: any,

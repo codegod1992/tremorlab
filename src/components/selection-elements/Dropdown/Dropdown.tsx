@@ -62,9 +62,7 @@ const Dropwdown = ({
             if(handleSelect) handleSelect(selectedItem);
         }
 
-        document.addEventListener('keydown', (e) => handleKeyDown(e, shortcutMapping));        
-
-        console.log('go');
+        document.addEventListener('keydown', (e) => handleKeyDown(e, shortcutMapping));
 
         return () => {
             document.removeEventListener('keydown', (e) => handleKeyDown(e, shortcutMapping));
@@ -74,33 +72,31 @@ const Dropwdown = ({
     return(
         <>
             <button
-                before="button-dropdown"
-                className="inline-flex rounded-md border border-gray-300 px-4 py-2 bg-white text-sm
+                className="relative inline-flex rounded-md border border-gray-300 px-4 py-2 bg-white text-sm
                            font-medium text-gray-700 hover:bg-gray-50 focus:ring-2 focus:ring-opacity-100
-                           focus:outline-none focus:ring-blue-300"
+                           focus:outline-none focus:ring-blue-300 button-dropdown"
                 onClick={ () => setShowModal(true) }
             >
                 { selectedItem ? valueToNameMapping[selectedItem] : placeholder }
                 <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
+                { showModal ? (
+                    <div
+                        ref={ ref }
+                        className="absolute rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y
+                            divide-gray-100 focus:outline-none -bottom-1 left-0 translate-y-full min-w-full"
+                    >
+                        { React.Children.map(children, (child: React.ReactElement) => (
+                            <>
+                                { React.cloneElement(child, {
+                                    setSelectedItem: setSelectedItem,
+                                    setShowModal: setShowModal,
+                                    isActive: child?.props.value === selectedItem,
+                                }) }
+                            </>
+                        )) }
+                    </div>
+                ) : null }
             </button>
-            { showModal ? (
-                <div
-                    ref={ ref }
-                    className="before:content-button-dropdown absolute w-56 rounded-md shadow-lg bg-white ring-1 
-                               ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none translate-y-1/3
-                               mt-1"
-                >
-                    { React.Children.map(children, (child: React.ReactElement) => (
-                        <>
-                            { React.cloneElement(child, {
-                                setSelectedItem: setSelectedItem,
-                                setShowModal: setShowModal,
-                                isSelected: child?.props.value === selectedItem,
-                            }) }
-                        </>
-                    )) }
-                </div>
-            ) : null }
         </>
     );
 };

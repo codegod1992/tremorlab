@@ -13,7 +13,7 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
 const Template: ComponentStory<typeof TabList> = (args) => (
-    <TabList defaultTabValue={ 1 } handleSelect={ (value) => console.log(value) }>
+    <TabList defaultValue={ 1 } handleSelect={ (value) => console.log(value) }>
         <Tab value={ 1 } name="tremor.so" />
         <Tab value={ 2 } name="thealchly.com" />
         <Tab value={ 3 } name="nac.coom" />
