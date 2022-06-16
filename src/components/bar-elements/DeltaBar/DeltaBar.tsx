@@ -8,6 +8,7 @@ import BarWrapper from '@common/BarWrapper';
 import { mapInputsToDeltaType } from '@utils/utils';
 
 export interface DeltaBarProps extends BaseComponentProps {
+    // change param here
     widthPercentage: number,
     deltaType: string,
     isIncreasePositive?: boolean,
@@ -16,6 +17,7 @@ export interface DeltaBarProps extends BaseComponentProps {
 }
 
 const DeltaBar = ({
+    // change param here
     widthPercentage,
     deltaType,
     isIncreasePositive = true,
@@ -24,11 +26,12 @@ const DeltaBar = ({
     marginTop,
 }: DeltaBarProps) => {
     return(
+        // change here
         <BarWrapper 
             bgColor={ classNames(parseBgClassNames(barBgColor)) }
             marginTop={ parseMarginTopClassNames(marginTop) }
         >
-            <div className="w-1/2 h-full flex justify-end bg-transparent rounded-l-full">
+            <div className="w-1/2 h-full flex justify-end bg-transparent rounded-l-lg">
                 { deltaType===DeltaTypes.Decrease ? (
                     <div 
                         className={ classNames(
@@ -41,10 +44,11 @@ const DeltaBar = ({
             </div>
             <div className={ classNames(
                 parseBgClassNames(markerBgColor),
-                'h-5 w-0.5'
+                // color of marker: same as delta?
+                'h-4 w-1 rounded-full ring-2 ring-white z-10'
             ) } 
             />
-            <div className="w-1/2 h-full flex justify-start bg-transparent rounded-r-full">
+            <div className="w-1/2 h-full flex justify-start bg-transparent rounded-r-lg">
                 { deltaType===DeltaTypes.Increase ? (
                     <div 
                         className={ classNames(

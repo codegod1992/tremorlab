@@ -1,4 +1,5 @@
 import React from 'react';
+import Tooltip from '@tippyjs/react'
 
 import BaseComponentProps from '@common/BaseComponentInterface';
 
@@ -19,13 +20,16 @@ const ProgressBar = ({
 }: ProgressBarProps) => {
     return(
         <BarWrapper bgColor={ secondaryBarBgColor } marginTop={ parseMarginTopClassNames(marginTop) }>
-            <div 
-                className={ classNames(
-                    parseBgClassNames(primaryBarBgColor),
-                    'h-full flex-col text-center rounded justify-center'
-                ) }
-                style={ {'width': `${widthPercentage}%`} }
-            />
+            {/* @Achi: External tooltip test */}
+            {/* <Tooltip content={ widthPercentage } className="flex justify-end"> */}
+                <div 
+                    className={ classNames(
+                        parseBgClassNames(primaryBarBgColor),
+                        'h-full flex-col rounded-lg'
+                    ) }
+                    style={ {'width': `${widthPercentage}%`} }
+                />
+            {/* </Tooltip> */}
         </BarWrapper>
     );
 };
