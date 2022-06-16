@@ -8,25 +8,24 @@ import { colors } from './mappings';
 export interface BadgeStatusProps {
     text: string,
     color?: string,
-    badgeSize?: string
+    size?: string
 }
 
 const BadgeStatus = ({
     text,
     color = 'blue',
-    badgeSize = 'sm'
+    size = 'sm'
 }: BadgeStatusProps) => {
-    console.log(badgeSize);
     return(
         <BadgeWrapper
-            { ...badgeProportions[badgeSize] }
+            { ...badgeProportions[size] }
             bgColor={ colors[color].bgColor }
             textColor={ colors[color].textColor }
         >
             <svg
                 className={ classNames( 
-                    iconProportions[badgeSize] ? iconProportions[badgeSize].margin! : iconProportions['sm'].margin!,
-                    iconProportions[badgeSize] ? iconProportions[badgeSize].iconSize : iconProportions['sm'].iconSize,
+                    iconProportions[size] ? iconProportions[size].margin! : iconProportions['sm'].margin!,
+                    iconProportions[size] ? iconProportions[size].iconSize : iconProportions['sm'].iconSize,
                 )}
                 fill="currentColor" viewBox="0 0 8 8"
             >

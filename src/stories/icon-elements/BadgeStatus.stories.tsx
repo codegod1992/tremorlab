@@ -20,7 +20,7 @@ const Template: ComponentStory<typeof BadgeStatus> = (args) => (
     <>
         { Object.values(Sizes).map(size => (
             <>
-                <BadgeStatus badgeSize={ size } text={ 'Live' } />
+                <BadgeStatus size={ size } text={ 'Live' } />
             </>
         )) }
         { Object.values(BaseColors).map(color => (
