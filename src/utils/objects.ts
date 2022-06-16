@@ -36,7 +36,6 @@ export const DeltaIcons: {[key: string]: React.ElementType} = {
 };
 
 export const BaseColors: {[key: string]: string} = {
-    Black: 'black',
     Slate: 'slate',
     Gray: 'gray',
     Zinc: 'zinc',

@@ -55,10 +55,10 @@ export const getColorVariantsFromTwClassName = (twClassName: string): ColorTypes
     return colorVariants;
 };
 
-export const getColorVariantsFromColorTheme = (colorTheme: string): ColorTypes => {
-    const classNameParts = colorTheme.split('-');
-    const baseColor = classNameParts[1];
-    const colorValue = classNameParts[2];
+export const getColorVariantsFromColorThemeValue = (colorThemeValue: string): ColorTypes => {
+    const colorThemeValueParts = colorThemeValue.split('-');
+    const baseColor = colorThemeValueParts[0];
+    const colorValue = colorThemeValueParts[1];
     const colorVariants = colorVariantMapping[baseColor][colorValue];
     return colorVariants;
 };

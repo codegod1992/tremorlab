@@ -17,6 +17,10 @@ export type BaseColorTheme = {
     icon: string,
 }
 
+// const defaultColors = {
+//     dark: 
+// }
+
 const colorTheme: { [baseColor: string]: BaseColorTheme } = {
     'slate': {
         white: 'white-none',
