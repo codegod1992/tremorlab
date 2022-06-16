@@ -94,7 +94,7 @@ const Datepicker = ({
     };
 
     useEffect(() => {
-        if (selectedEndDay) {handleSelect(selectedStartDay, selectedEndDay);console.log('selected');}
+        if (selectedEndDay) handleSelect(selectedStartDay, selectedEndDay);
     }, [selectedEndDay]);
 
     return (
@@ -126,7 +126,7 @@ const Datepicker = ({
                 { showDatePickerModal ? (
                     <div
                         ref={ datePickerRef }
-                        className="absolute rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-2
+                        className="absolute w-72 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-2
                             px-3 -bottom-1 left-0 translate-y-full"
                     >
                         <div className="flex justify-between items-center py-2 px-1">
