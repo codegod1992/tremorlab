@@ -66,7 +66,7 @@ const StackedBar = ({
                     style={{width: `${markerPercentageValue}%` }}
                 >
                     <div className={ classNames(
-                        'flex shrink-0 z-1 items-center bg-white  border-4 rounded-full h-4 w-4 shadow-md',
+                        'flex flex-none z-1 items-center bg-white  border-4 rounded-full h-4 w-4 shadow-md',
                         parseBorderClassNames(markerBorderColor)
                     ) }></div>
                 </div>
