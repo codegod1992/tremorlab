@@ -19,7 +19,6 @@ const DropdownItem = ({
     shortcut,
     isActive = false,
     setSelectedItem,
-    setShowModal,
 }: DropdownItemProps) => (
     <div>
         <button
@@ -29,11 +28,7 @@ const DropdownItem = ({
                  group-hover:text-gray-500 hover:bg-gray-50`
             ) }
             value={ value }
-            onClick={ () => {
-                setSelectedItem!(value);
-                setShowModal!(false);
-                console.log("hello");
-            } }
+            onClick={ () => setSelectedItem!(value) }
         >
             <div className="flex font-medium">
                 { Icon ? (

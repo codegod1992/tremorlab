@@ -50,7 +50,6 @@ const Dropwdown = ({
     const handleKeyDown = (event: React.KeyboardEvent, shortcutMapping: ShortcutMapping) => {
         const keyLower = event.key.toLocaleLowerCase();
         if (Object.keys(shortcutMapping).includes(keyLower)) {
-            setShowModal(false);
             setSelectedItem(shortcutMapping[keyLower].value);
         }
     };
@@ -59,7 +58,10 @@ const Dropwdown = ({
         consturctShortcutMapping();
 
         if (selectedItem) {
-            if(handleSelect) handleSelect(selectedItem);
+            if(handleSelect) {
+                handleSelect(selectedItem);
+            }
+            setShowModal(false);
         }
 
         document.addEventListener('keydown', (e) => handleKeyDown(e, shortcutMapping));
@@ -89,7 +91,6 @@ const Dropwdown = ({
                             <>
                                 { React.cloneElement(child, {
                                     setSelectedItem: setSelectedItem,
-                                    setShowModal: setShowModal,
                                     isActive: child?.props.value === selectedItem,
                                 }) }
                             </>
