@@ -57,6 +57,24 @@ export const getColorVariantsFromTwClassName = (twClassName: string): ColorTypes
 
 export const getColorVariantsFromColorThemeValue = (colorThemeValue: string): ColorTypes => {
     const colorThemeValueParts = colorThemeValue.split('-');
+
+    if (!colorThemeValue || colorThemeValueParts.length != 2) {
+        return (
+            {
+                bgColor: '',
+                hoverBgColor: '',
+                textColor: '',
+                hoverTextColor: '',
+                borderColor: '',
+                hoverBorderColor: '',
+                ringRolor: '',
+                hoverRingColor: '',
+                divideColor: '',
+                outlineColor: '',
+                focusRingColor: '',
+            }
+        );
+    }
     const baseColor = colorThemeValueParts[0];
     const colorValue = colorThemeValueParts[1];
     const colorVariants = colorVariantMapping[baseColor][colorValue];
