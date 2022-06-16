@@ -6,7 +6,7 @@ export type DefaultColors = {
     dark: string,
 }
 
-const defaultColors: DefaultColors = {
+export const defaultColors: DefaultColors = {
     white: 'white-none',
     black: 'black-none',
     light: 'gray-200',
