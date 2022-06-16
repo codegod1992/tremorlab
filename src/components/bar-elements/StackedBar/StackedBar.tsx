@@ -53,6 +53,7 @@ const StackedBar = ({
                     <div key={ idx } style={ { width: `${widthPercentage}%` } } className={ classNames(
                         parseBgClassNames(bgColor),
                         'h-full rounded-lg',
+                        // @Achi: old below, feel free to delete
                         // idx === 0 ? 'rounded-l' : '',
                         // idx === elements.length-1 ? 'rounded-r' : ''
                     ) }
