@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Colors, Sizes } from '@utils/objects';
+import { BaseColors, Sizes } from '@utils/objects';
 import { buttonColors, buttonProportions, buttonShape } from 'components/button-elements/Button/mappings';
 import ButtonWrapper from '@common/ButtonWrapper';
 
@@ -20,7 +20,7 @@ const Button = ({
     info,
     arrow = false,
     size = Sizes.SM,
-    color = Colors.Blue,
+    color = BaseColors.Blue,
     importance = 'primary'
 }: ButtonProps) => {
     return(

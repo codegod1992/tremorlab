@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Colors, Sizes } from '@utils/objects';
+import { BaseColors, Sizes } from '@utils/objects';
 import { buttonColors, buttonProportions, buttonShape, iconLeftProportions, iconRightProportions } from './mappings';
 import ButtonWrapper from '@common/ButtonWrapper';
 import { classNames } from '@utils/classname-utils';
@@ -24,7 +24,7 @@ const ButtonIcon = ({
     importance = 'primary',
     info,
     size = Sizes.SM,
-    color = Colors.Blue,
+    color = BaseColors.Blue,
     handleClick,
 }: ButtonIconProps) => {
     return(

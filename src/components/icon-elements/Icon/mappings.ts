@@ -1,3 +1,7 @@
+import colorTheme from '@utils/colorTheme';
+
+import { getColorVariantsFromColorTheme } from '@utils/classname-utils';
+
 export type IconElementProporions = {
     paddingX: string,
     paddingY: string,
@@ -81,12 +85,6 @@ export type IconElementColorTypes = {
 
 export const colorMapping: {[style: string]: {[baseColor: string]: IconElementColorTypes}} = {
     'simple': {
-        'black': { 
-            textColor:'text-black',
-            bgColor:'',
-            borderColor: '',
-            ringColor: '',
-        },
         'slate': { 
             textColor:'text-slate-500',
             bgColor:'',
@@ -221,12 +219,6 @@ export const colorMapping: {[style: string]: {[baseColor: string]: IconElementCo
         }
     },
     'light': {
-        'black': { 
-            textColor: 'text-black',
-            bgColor: 'bg-gray-100',
-            borderColor: '',
-            ringColor: '',
-        },
         'slate': { 
             textColor: 'text-slate-500',
             bgColor: 'bg-slate-100',
@@ -361,12 +353,6 @@ export const colorMapping: {[style: string]: {[baseColor: string]: IconElementCo
         }
     },
     'shadow': {
-        'black': { 
-            textColor: 'text-black',
-            bgColor: 'bg-white',
-            borderColor: 'border-gray-200',
-            ringColor: '',
-        },
         'slate': { 
             textColor: 'text-slate-500',
             bgColor: 'bg-white',
@@ -501,12 +487,6 @@ export const colorMapping: {[style: string]: {[baseColor: string]: IconElementCo
         }
     },
     'solid': {
-        'black': { 
-            textColor: 'text-white',
-            bgColor: 'bg-black',
-            borderColor: 'border-white',
-            ringColor: 'ring-gray-200',
-        },
         'slate': { 
             textColor: 'text-white',
             bgColor: 'bg-slate-500',
@@ -641,12 +621,6 @@ export const colorMapping: {[style: string]: {[baseColor: string]: IconElementCo
         }
     },
     'circled': {
-        'black': { 
-            textColor: 'text-black',
-            bgColor: 'bg-white',
-            borderColor: 'border-black',
-            ringColor: 'ring-gray-200',
-        },
         'slate': { 
             textColor: 'text-slate-500',
             bgColor: 'bg-white',

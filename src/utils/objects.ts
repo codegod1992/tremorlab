@@ -35,7 +35,7 @@ export const DeltaIcons: {[key: string]: React.ElementType} = {
     'unchanged': ArrowRightLineIcon,
 };
 
-export const Colors: {[key: string]: string} = {
+export const BaseColors: {[key: string]: string} = {
     Black: 'black',
     Slate: 'slate',
     Gray: 'gray',

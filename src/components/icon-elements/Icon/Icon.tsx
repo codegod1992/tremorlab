@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Colors, Sizes } from '@utils/objects';
+import { BaseColors, Sizes } from '@utils/objects';
 import { colorMapping, proportinsMapping, shapeMapping } from './mappings';
 import IconWrapper from './IconWrapper';
 
@@ -25,7 +25,7 @@ const Icon = ({
     style = IconTypes.Simple,
     info,
     size = Sizes.SM,
-    color = Colors.Blue,
+    color = BaseColors.Blue,
 }: IconProps) => {
     return(
         <IconWrapper

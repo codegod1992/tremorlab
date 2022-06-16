@@ -20,9 +20,9 @@ Default.args = {
     markerPercentageValue: 50,
 };
 
-export const Colors = Template.bind({});
+export const BaseColors = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Colors.args = {
+BaseColors.args = {
     markerPercentageValue: 20,
     markerBgColor: 'bg-green-600',
     barBgColor: 'bg-blue-100'

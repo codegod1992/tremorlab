@@ -50,9 +50,17 @@ export const getColorVariantsFromTwClassName = (twClassName: string): ColorTypes
     }
     const classNameParts = twClassName.split('-');
     const baseColor = classNameParts[1];
-    const colorVariant = classNameParts[2] ? classNameParts[2] : 'none';
-    const colorTypes = colorVariantMapping[baseColor][colorVariant];
-    return colorTypes;
+    const colorValue = classNameParts[2] ? classNameParts[2] : 'none';
+    const colorVariants = colorVariantMapping[baseColor][colorValue];
+    return colorVariants;
+};
+
+export const getColorVariantsFromColorTheme = (colorTheme: string): ColorTypes => {
+    const classNameParts = colorTheme.split('-');
+    const baseColor = classNameParts[1];
+    const colorValue = classNameParts[2];
+    const colorVariants = colorVariantMapping[baseColor][colorValue];
+    return colorVariants;
 };
 
 export const toBorderColorClass: TailwindClassConverter = (twClassName: string): string => {
