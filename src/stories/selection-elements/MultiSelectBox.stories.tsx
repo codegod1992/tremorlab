@@ -14,7 +14,7 @@ export default {
 
 const Template: ComponentStory<typeof MultiSelectBox> = (args) => (
     <MultiSelectBox defaultValues={ [1, 2] }>
-        <MultiSelectBoxItem name="Option 1" value={ 1 } />
+        <MultiSelectBoxItem name="Option 1 ABCSASDASDASDASASDASDASDSASDAS" value={ 1 } />
         <MultiSelectBoxItem name="Option 2" value={ 2 } />
         <MultiSelectBoxItem name="Option 3" value={ 3 } />
     </MultiSelectBox>

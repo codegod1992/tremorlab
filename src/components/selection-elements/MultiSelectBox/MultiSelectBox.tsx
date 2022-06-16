@@ -19,13 +19,11 @@ const SelectedItemBadge = ({
 }: SelectedItemBadgeProps) => (
     <span className="inline-flex rounded items-center py-0.5 pl-2 pr-1 sm:text-sm bg-blue-100 text-blue-500">
         { name }
-        <button
-            type="button"
-            className="flex-shrink-0 ml-2 h-4 w-4 inline-flex rounded-full items-center justify-center text-blue-500"
-            onClick={ () => { setSelectedItemsValues(removeValueFromArray(value, selectedItemsValues)); }}
-        >
-            <XIcon className="h-4 w-4 text-blue-500" aria-hidden="true" />
-        </button>
+        <div className="flex-shrink-0 ml-2 h-4 w-4 inline-flex rounded-full items-center justify-center text-blue-500">
+            <button onClick={ () => { setSelectedItemsValues(removeValueFromArray(value, selectedItemsValues)); }}>
+                <XIcon className="h-4 w-4 text-blue-500" aria-hidden="true" />
+            </button>
+        </div>
     </span>
 );
 
@@ -62,6 +60,7 @@ const MultiSelectBox = ({
     useEffect(() => {
         if (selectedItemsValues) {
             if(handleSelect) handleSelect(selectedItemsValues);
+            setShowModal(false);
         }
     }, [selectedItemsValues]);
 
@@ -71,7 +70,7 @@ const MultiSelectBox = ({
                 className="relative flex items-center justify-between rounded-md border border-gray-300 pl-4
                     pr-2 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:ring-2
                     focus:ring-opacity-100 focus:outline-none focus:ring-blue-300"
-                onClick={ () => setShowModal(true) }
+                onClick={ () => {setShowModal(true); console.log('clicked');} }
             >
                 <div className="flex items-center space-x-2">
                     {
@@ -103,7 +102,6 @@ const MultiSelectBox = ({
                                 { React.cloneElement(child, {
                                     selectedItemsValues: selectedItemsValues,
                                     setSelectedItemsValues: setSelectedItemsValues,
-                                    setShowModal: setShowModal,
                                 }) }
                             </>
                         )) }
