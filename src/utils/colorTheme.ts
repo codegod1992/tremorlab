@@ -1,3 +1,19 @@
+export type DefaultColors = {
+    white: string,
+    black: string,
+    light: string,
+    base: string,
+    dark: string,
+}
+
+const defaultColors: DefaultColors = {
+    white: 'white-none',
+    black: 'black-none',
+    light: 'gray-200',
+    base: 'gray-500',
+    dark: 'gray-700',
+}
+
 export type BaseColorTheme = {
     white: string,
     black: string,
@@ -16,10 +32,6 @@ export type BaseColorTheme = {
     darkText: string,
     icon: string,
 }
-
-// const defaultColors = {
-//     dark: 
-// }
 
 const colorTheme: { [baseColor: string]: BaseColorTheme } = {
     'slate': {
