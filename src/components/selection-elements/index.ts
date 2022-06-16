@@ -1,4 +1,7 @@
 export { default as Accordion } from './Accordion';
+export { default as AccordionBody } from './AccordionBody';
+export { default as AccordionHeader } from './AccordionHeader';
+export { default as AccordionList } from './AccordionList';
 export { default as Breadcrumbs } from './Breadcrumbs';
 export { default as BreadcrumbItem } from './BreadcrumbItem';
 export { default as Datepicker } from './Datepicker';
