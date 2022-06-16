@@ -4,7 +4,7 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { ButtonColorTypes, ButtonProportionTypes, ButtonShapeTypes } from '@common/common-types';
-import { classNames, getColorVariantTypes } from '@utils/classname-utils';
+import { classNames, getColorVariantsFromTwClassName } from '@utils/classname-utils';
 
 export interface ButtonWrapperProps extends ButtonProportionTypes, ButtonShapeTypes, ButtonColorTypes {
     onClick: React.MouseEventHandler<HTMLButtonElement>,
@@ -42,10 +42,10 @@ const ButtonWrapper = ({
                 textColor,
                 bgColor,
                 borderColor,
-                getColorVariantTypes(hoverBgColor).hoverBgColor,
-                getColorVariantTypes(hoverTextColor).hoverTextColor,
-                getColorVariantTypes(hoverBorderColor).hoverBorderColor,
-                getColorVariantTypes(focusRingColor).focusRingColor,
+                getColorVariantsFromTwClassName(hoverBgColor).hoverBgColor,
+                getColorVariantsFromTwClassName(hoverTextColor).hoverTextColor,
+                getColorVariantsFromTwClassName(hoverBorderColor).hoverBorderColor,
+                getColorVariantsFromTwClassName(focusRingColor).focusRingColor,
                 'flex-shrink-0 inline-flex items-center group font-medium group',
                 'focus:outline-none focus:ring-2 focus:ring-offset-2',
             ) }

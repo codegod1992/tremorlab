@@ -30,7 +30,7 @@ export const stringEndsWithNumber = (str: string): boolean => {
     return stringIsNumeric(str.split('-').pop());
 };
 
-export const getColorVariantTypes = (twClassName: string): ColorTypes => {
+export const getColorVariantsFromTwClassName = (twClassName: string): ColorTypes => {
     if (!twClassName) {
         return (
             {
@@ -56,7 +56,7 @@ export const getColorVariantTypes = (twClassName: string): ColorTypes => {
 };
 
 export const toBorderColorClass: TailwindClassConverter = (twClassName: string): string => {
-    const colorTypes = getColorVariantTypes(twClassName);
+    const colorTypes = getColorVariantsFromTwClassName(twClassName);
     return colorTypes.borderColor;
 };
 
