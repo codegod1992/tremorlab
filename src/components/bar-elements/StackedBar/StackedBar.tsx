@@ -52,9 +52,10 @@ const StackedBar = ({
                 return(
                     <div key={ idx } style={ { width: `${widthPercentage}%` } } className={ classNames(
                         parseBgClassNames(bgColor),
-                        'h-full',
-                        idx === 0 ? 'rounded-l' : '',
-                        idx === elements.length-1 ? 'rounded-r' : ''
+                        'h-full rounded-lg',
+                        // @Achi: old below, feel free to delete
+                        // idx === 0 ? 'rounded-l' : '',
+                        // idx === elements.length-1 ? 'rounded-r' : ''
                     ) }
                     />
                 );
@@ -65,7 +66,7 @@ const StackedBar = ({
                     style={{width: `${markerPercentageValue}%` }}
                 >
                     <div className={ classNames(
-                        'flex shrink-0 z-1 items-center bg-white border-2 rounded-full h-5 w-5',
+                        'flex flex-none z-1 items-center bg-white  border-4 rounded-full h-4 w-4 shadow-md',
                         parseBorderClassNames(markerBorderColor)
                     ) }></div>
                 </div>

@@ -14,7 +14,7 @@ export interface MarkerBarProps extends BaseComponentProps {
 const MarkerBar = ({
     markerPercentageValue,
     markerBgColor = 'bg-blue-500',
-    barBgColor = 'bg-gray-100',
+    barBgColor = 'bg-blue-100',
     marginTop
 }: MarkerBarProps) => {
     return(
@@ -25,7 +25,7 @@ const MarkerBar = ({
             <div className="bg-transparent" style={ {'width': `${markerPercentageValue}%` } } />
             <div className={ classNames(
                 parseBgClassNames(markerBgColor),
-                'h-5 w-1'
+                'h-4 w-1 rounded-lg ring-2 ring-white'
             ) }
             />
         </BarWrapper>
