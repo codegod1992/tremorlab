@@ -38,6 +38,7 @@ const SelectBox = ({
     useEffect(() => {
         if (selectedSelectBoxItemValue) {
             if(handleSelect) handleSelect(selectedSelectBoxItemValue);
+            setShowModal(false);
         }
     }, [selectedSelectBoxItemValue]);
 
@@ -92,7 +93,6 @@ const SelectBox = ({
                                     <>
                                         { React.cloneElement(child, {
                                             setSelectedSelectBoxItemValue: setSelectedSelectBoxItemValue,
-                                            setShowModal: setShowModal,
                                         }) }
                                     </>
                                 );
