@@ -156,12 +156,11 @@ const Template: ComponentStory<never> = () => (
         <div className="mb-5">
             <Title text="ButtonInline"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(Sizes).map(key => {
-                    console.log(Sizes[key]);
+                {Object.values(BaseColors).map(key => {
                     return(
                         <ButtonInline
                             text={ buttonText }
-                            size={ Sizes[key] }
+                            color={ key }
                             handleClick={ handleClick }
                         />
                     );
@@ -171,12 +170,11 @@ const Template: ComponentStory<never> = () => (
         <div className="mb-5">
             <Title text="ButtonInlineArrow"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(Sizes).map(key => {
-                    console.log(Sizes[key]);
+                {Object.values(BaseColors).map(key => {
                     return(
                         <ButtonInline
                             text={ buttonText }
-                            size={ Sizes[key] }
+                            color={ key }
                             arrow={ true }
                             handleClick={ handleClick }
                         />
