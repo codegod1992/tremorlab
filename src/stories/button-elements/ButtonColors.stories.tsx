@@ -60,12 +60,11 @@ const Template: ComponentStory<never> = () => (
         <div className="mb-5">
             <Title text="ButtonPrimaryArrow"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(Sizes).map(key => {
-                    console.log(Sizes[key]);
+                {Object.values(BaseColors).map(key => {
                     return(
                         <Button
                             text={ buttonText }
-                            size={ Sizes[key] }
+                            color={ key }
                             handleClick={ handleClick }
                             arrow={ true } 
                         />
@@ -76,12 +75,11 @@ const Template: ComponentStory<never> = () => (
         <div className="mb-5">
             <Title text="ButtonSecondaryArrow"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(Sizes).map(key => {
-                    console.log(Sizes[key]);
+                {Object.values(BaseColors).map(key => {
                     return(
                         <Button
                             text={ buttonText }
-                            size={ Sizes[key] }
+                            color={ key }
                             handleClick={ handleClick }
                             arrow={ true }
                             importance="secondary"
@@ -93,14 +91,13 @@ const Template: ComponentStory<never> = () => (
         <div className="mb-5">
             <Title text="ButtonPrimaryIconLeading"/>
             <div className="grid grid-cols-8 justify-items-start items-center gap-y-2">
-                {Object.keys(Sizes).map(key => {
-                    console.log(Sizes[key]);
+                {Object.values(BaseColors).map(key => {
                     return(
                         <ButtonIcon
                             Icon={ Icon }
                             iconPosition={ 'left' }
                             text={ buttonText }
-                            size={ Sizes[key] }
+                            color={ key }
                             handleClick={ handleClick }
                         />
                     );
@@ -110,14 +107,13 @@ const Template: ComponentStory<never> = () => (
         <div className="mb-5">
             <Title text="ButtonSecondaryIconLeading"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(Sizes).map(key => {
-                    console.log(Sizes[key]);
+                {Object.values(BaseColors).map(key => {
                     return(
                         <ButtonIcon
                             Icon={ Icon }
                             text={ buttonText }
                             importance={ 'secondary' }
-                            size={ Sizes[key] }
+                            color={ key }
                             handleClick={ handleClick }
                         />
                     );
@@ -127,14 +123,13 @@ const Template: ComponentStory<never> = () => (
         <div className="mb-5">
             <Title text="ButtonPrimaryIconTrailing"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(Sizes).map(key => {
-                    console.log(Sizes[key]);
+                {Object.values(BaseColors).map(key => {
                     return(
                         <ButtonIcon
                             Icon={ Icon }
                             iconPosition={ 'right' }
                             text={ buttonText }
-                            size={ Sizes[key] }
+                            color={ key }
                             handleClick={ handleClick }
                         />
                     );
@@ -144,15 +139,14 @@ const Template: ComponentStory<never> = () => (
         <div className="mb-5">
             <Title text="ButtonSecondaryIconTrailing"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(Sizes).map(key => {
-                    console.log(Sizes[key]);
+                {Object.values(BaseColors).map(key => {
                     return(
                         <ButtonIcon
                             Icon={ Icon }
                             iconPosition={ 'right' }
                             importance={ 'secondary' }
                             text={ buttonText }
-                            size={ Sizes[key] }
+                            color={ key }
                             handleClick={ handleClick }
                         />
                     );
