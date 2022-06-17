@@ -1,4 +1,8 @@
+/* eslint-disable max-len */
 import { ButtonColorTypes, ButtonProportionTypes, ButtonShapeTypes } from '@common/common-types';
+import colorTheme, { defaultColors } from '@utils/colorTheme';
+import { BaseColors } from '@utils/objects';
+import { getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
 
 export const buttonProportions: {[char: string]: ButtonProportionTypes} = {
     xs: {
@@ -32,13 +36,13 @@ export const buttonShape: ButtonShapeTypes = {
 export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonColorTypes}} = {
     'slate': {
         'primary': {
-            textColor: 'text-white',
+            textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             hoverTextColor: '',
-            bgColor: 'bg-blue-600',
-            hoverBgColor: 'hover:bg-blue-700',
-            borderColor: 'border-transparent',
-            hoverBorderColor: 'hover:bg-blue-700',
-            focusRingColor:'focus:ring-blue-500'
+            bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Slate].background).bgColor,
+            hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Slate].darkBackground).hoverBgColor,
+            borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
+            hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Slate].darkBackground).hoverBorderColor,
+            focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
         'secondary': {
             textColor: 'text-blue-600',
@@ -52,13 +56,13 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     },
     'gray': {
         'primary': {
-            textColor: 'text-white',
+            textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             hoverTextColor: '',
-            bgColor: 'bg-blue-600',
-            hoverBgColor: 'hover:bg-blue-700',
-            borderColor: 'border-transparent',
-            hoverBorderColor: 'hover:bg-blue-700',
-            focusRingColor:'focus:ring-blue-500'
+            bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Gray].background).bgColor,
+            hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Gray].darkBackground).hoverBgColor,
+            borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
+            hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Gray].darkBackground).hoverBorderColor,
+            focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
         'secondary': {
             textColor: 'text-blue-600',
@@ -72,13 +76,13 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     },
     'zinc': {
         'primary': {
-            textColor: 'text-white',
+            textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             hoverTextColor: '',
-            bgColor: 'bg-blue-600',
-            hoverBgColor: 'hover:bg-blue-700',
-            borderColor: 'border-transparent',
-            hoverBorderColor: 'hover:bg-blue-700',
-            focusRingColor:'focus:ring-blue-500'
+            bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Zinc].background).bgColor,
+            hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Zinc].darkBackground).hoverBgColor,
+            borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
+            hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Zinc].darkBackground).hoverBorderColor,
+            focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
         'secondary': {
             textColor: 'text-blue-600',
@@ -92,13 +96,13 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     },
     'neutral': {
         'primary': {
-            textColor: 'text-white',
+            textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             hoverTextColor: '',
-            bgColor: 'bg-blue-600',
-            hoverBgColor: 'hover:bg-blue-700',
-            borderColor: 'border-transparent',
-            hoverBorderColor: 'hover:bg-blue-700',
-            focusRingColor:'focus:ring-blue-500'
+            bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Neutral].background).bgColor,
+            hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Neutral].darkBackground).hoverBgColor,
+            borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
+            hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Neutral].darkBackground).hoverBorderColor,
+            focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
         'secondary': {
             textColor: 'text-blue-600',
@@ -112,13 +116,13 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     },
     'stone': {
         'primary': {
-            textColor: 'text-white',
+            textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             hoverTextColor: '',
-            bgColor: 'bg-blue-600',
-            hoverBgColor: 'hover:bg-blue-700',
-            borderColor: 'border-transparent',
-            hoverBorderColor: 'hover:bg-blue-700',
-            focusRingColor:'focus:ring-blue-500'
+            bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Stone].background).bgColor,
+            hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Stone].darkBackground).hoverBgColor,
+            borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
+            hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Stone].darkBackground).hoverBorderColor,
+            focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
         'secondary': {
             textColor: 'text-blue-600',
@@ -132,13 +136,13 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     },
     'red': {
         'primary': {
-            textColor: 'text-white',
+            textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             hoverTextColor: '',
-            bgColor: 'bg-blue-600',
-            hoverBgColor: 'hover:bg-blue-700',
-            borderColor: 'border-transparent',
-            hoverBorderColor: 'hover:bg-blue-700',
-            focusRingColor:'focus:ring-blue-500'
+            bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Red].background).bgColor,
+            hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Red].darkBackground).hoverBgColor,
+            borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
+            hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Red].darkBackground).hoverBorderColor,
+            focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
         'secondary': {
             textColor: 'text-blue-600',
@@ -152,13 +156,13 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     },
     'orange': {
         'primary': {
-            textColor: 'text-white',
+            textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             hoverTextColor: '',
-            bgColor: 'bg-blue-600',
-            hoverBgColor: 'hover:bg-blue-700',
-            borderColor: 'border-transparent',
-            hoverBorderColor: 'hover:bg-blue-700',
-            focusRingColor:'focus:ring-blue-500'
+            bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].background).bgColor,
+            hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].darkBackground).hoverBgColor,
+            borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
+            hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].darkBackground).hoverBorderColor,
+            focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
         'secondary': {
             textColor: 'text-blue-600',
@@ -172,13 +176,13 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     },
     'amber': {
         'primary': {
-            textColor: 'text-white',
+            textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             hoverTextColor: '',
-            bgColor: 'bg-blue-600',
-            hoverBgColor: 'hover:bg-blue-700',
-            borderColor: 'border-transparent',
-            hoverBorderColor: 'hover:bg-blue-700',
-            focusRingColor:'focus:ring-blue-500'
+            bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Amber].background).bgColor,
+            hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Amber].darkBackground).hoverBgColor,
+            borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
+            hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Amber].darkBackground).hoverBorderColor,
+            focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
         'secondary': {
             textColor: 'text-blue-600',
@@ -192,13 +196,13 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     },
     'yellow': {
         'primary': {
-            textColor: 'text-white',
+            textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             hoverTextColor: '',
-            bgColor: 'bg-blue-600',
-            hoverBgColor: 'hover:bg-blue-700',
-            borderColor: 'border-transparent',
-            hoverBorderColor: 'hover:bg-blue-700',
-            focusRingColor:'focus:ring-blue-500'
+            bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Yellow].background).bgColor,
+            hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Yellow].darkBackground).hoverBgColor,
+            borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
+            hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Yellow].darkBackground).hoverBorderColor,
+            focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
         'secondary': {
             textColor: 'text-blue-600',
@@ -212,13 +216,13 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     },
     'lime': {
         'primary': {
-            textColor: 'text-white',
+            textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             hoverTextColor: '',
-            bgColor: 'bg-blue-600',
-            hoverBgColor: 'hover:bg-blue-700',
-            borderColor: 'border-transparent',
-            hoverBorderColor: 'hover:bg-blue-700',
-            focusRingColor:'focus:ring-blue-500'
+            bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Lime].background).bgColor,
+            hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Lime].darkBackground).hoverBgColor,
+            borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
+            hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Lime].darkBackground).hoverBorderColor,
+            focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
         'secondary': {
             textColor: 'text-blue-600',
@@ -232,13 +236,13 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     },
     'green': {
         'primary': {
-            textColor: 'text-white',
+            textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             hoverTextColor: '',
-            bgColor: 'bg-blue-600',
-            hoverBgColor: 'hover:bg-blue-700',
-            borderColor: 'border-transparent',
-            hoverBorderColor: 'hover:bg-blue-700',
-            focusRingColor:'focus:ring-blue-500'
+            bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Green].background).bgColor,
+            hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Green].darkBackground).hoverBgColor,
+            borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
+            hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Green].darkBackground).hoverBorderColor,
+            focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
         'secondary': {
             textColor: 'text-blue-600',
@@ -252,13 +256,13 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     },
     'emerald': {
         'primary': {
-            textColor: 'text-white',
+            textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             hoverTextColor: '',
-            bgColor: 'bg-blue-600',
-            hoverBgColor: 'hover:bg-blue-700',
-            borderColor: 'border-transparent',
-            hoverBorderColor: 'hover:bg-blue-700',
-            focusRingColor:'focus:ring-blue-500'
+            bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].background).bgColor,
+            hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].darkBackground).hoverBgColor,
+            borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
+            hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].darkBackground).hoverBorderColor,
+            focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
         'secondary': {
             textColor: 'text-blue-600',
@@ -272,13 +276,13 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     },
     'teal': {
         'primary': {
-            textColor: 'text-white',
+            textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             hoverTextColor: '',
-            bgColor: 'bg-blue-600',
-            hoverBgColor: 'hover:bg-blue-700',
-            borderColor: 'border-transparent',
-            hoverBorderColor: 'hover:bg-blue-700',
-            focusRingColor:'focus:ring-blue-500'
+            bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Teal].background).bgColor,
+            hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Teal].darkBackground).hoverBgColor,
+            borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
+            hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Teal].darkBackground).hoverBorderColor,
+            focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
         'secondary': {
             textColor: 'text-blue-600',
@@ -292,13 +296,13 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     },
     'cyan': {
         'primary': {
-            textColor: 'text-white',
+            textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             hoverTextColor: '',
-            bgColor: 'bg-blue-600',
-            hoverBgColor: 'hover:bg-blue-700',
-            borderColor: 'border-transparent',
-            hoverBorderColor: 'hover:bg-blue-700',
-            focusRingColor:'focus:ring-blue-500'
+            bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Cyan].background).bgColor,
+            hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Cyan].darkBackground).hoverBgColor,
+            borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
+            hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Cyan].darkBackground).hoverBorderColor,
+            focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
         'secondary': {
             textColor: 'text-blue-600',
@@ -312,13 +316,13 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     },
     'sky': {
         'primary': {
-            textColor: 'text-white',
+            textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             hoverTextColor: '',
-            bgColor: 'bg-blue-600',
-            hoverBgColor: 'hover:bg-blue-700',
-            borderColor: 'border-transparent',
-            hoverBorderColor: 'hover:bg-blue-700',
-            focusRingColor:'focus:ring-blue-500'
+            bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Sky].background).bgColor,
+            hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Sky].darkBackground).hoverBgColor,
+            borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
+            hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Sky].darkBackground).hoverBorderColor,
+            focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
         'secondary': {
             textColor: 'text-blue-600',
@@ -332,13 +336,13 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     },
     'blue': {
         'primary': {
-            textColor: 'text-white',
+            textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             hoverTextColor: '',
-            bgColor: 'bg-blue-600',
-            hoverBgColor: 'hover:bg-blue-700',
-            borderColor: 'border-transparent',
-            hoverBorderColor: 'hover:bg-blue-700',
-            focusRingColor:'focus:ring-blue-500'
+            bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].background).bgColor,
+            hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].darkBackground).hoverBgColor,
+            borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
+            hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].darkBackground).hoverBorderColor,
+            focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
         'secondary': {
             textColor: 'text-blue-600',
@@ -352,13 +356,13 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     },
     'indigo': {
         'primary': {
-            textColor: 'text-white',
+            textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             hoverTextColor: '',
-            bgColor: 'bg-blue-600',
-            hoverBgColor: 'hover:bg-blue-700',
-            borderColor: 'border-transparent',
-            hoverBorderColor: 'hover:bg-blue-700',
-            focusRingColor:'focus:ring-blue-500'
+            bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Indigo].background).bgColor,
+            hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Indigo].darkBackground).hoverBgColor,
+            borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
+            hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Indigo].darkBackground).hoverBorderColor,
+            focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
         'secondary': {
             textColor: 'text-blue-600',
@@ -372,13 +376,13 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     },
     'violet': {
         'primary': {
-            textColor: 'text-white',
+            textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             hoverTextColor: '',
-            bgColor: 'bg-blue-600',
-            hoverBgColor: 'hover:bg-blue-700',
-            borderColor: 'border-transparent',
-            hoverBorderColor: 'hover:bg-blue-700',
-            focusRingColor:'focus:ring-blue-500'
+            bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Violet].background).bgColor,
+            hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Violet].darkBackground).hoverBgColor,
+            borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
+            hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Violet].darkBackground).hoverBorderColor,
+            focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
         'secondary': {
             textColor: 'text-blue-600',
@@ -392,13 +396,13 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     },
     'purple': {
         'primary': {
-            textColor: 'text-white',
+            textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             hoverTextColor: '',
-            bgColor: 'bg-blue-600',
-            hoverBgColor: 'hover:bg-blue-700',
-            borderColor: 'border-transparent',
-            hoverBorderColor: 'hover:bg-blue-700',
-            focusRingColor:'focus:ring-blue-500'
+            bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Purple].background).bgColor,
+            hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Purple].darkBackground).hoverBgColor,
+            borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
+            hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Purple].darkBackground).hoverBorderColor,
+            focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
         'secondary': {
             textColor: 'text-blue-600',
@@ -412,13 +416,13 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     },
     'fuchsia': {
         'primary': {
-            textColor: 'text-white',
+            textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             hoverTextColor: '',
-            bgColor: 'bg-blue-600',
-            hoverBgColor: 'hover:bg-blue-700',
-            borderColor: 'border-transparent',
-            hoverBorderColor: 'hover:bg-blue-700',
-            focusRingColor:'focus:ring-blue-500'
+            bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Fuchsia].background).bgColor,
+            hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Fuchsia].darkBackground).hoverBgColor,
+            borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
+            hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Fuchsia].darkBackground).hoverBorderColor,
+            focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
         'secondary': {
             textColor: 'text-blue-600',
@@ -432,13 +436,13 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     },
     'pink': {
         'primary': {
-            textColor: 'text-white',
+            textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             hoverTextColor: '',
-            bgColor: 'bg-blue-600',
-            hoverBgColor: 'hover:bg-blue-700',
-            borderColor: 'border-transparent',
-            hoverBorderColor: 'hover:bg-blue-700',
-            focusRingColor:'focus:ring-blue-500'
+            bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Pink].background).bgColor,
+            hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Pink].darkBackground).hoverBgColor,
+            borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
+            hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Pink].darkBackground).hoverBorderColor,
+            focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
         'secondary': {
             textColor: 'text-blue-600',
@@ -452,13 +456,13 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     },
     'rose': {
         'primary': {
-            textColor: 'text-white',
+            textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             hoverTextColor: '',
-            bgColor: 'bg-blue-600',
-            hoverBgColor: 'hover:bg-blue-700',
-            borderColor: 'border-transparent',
-            hoverBorderColor: 'hover:bg-blue-700',
-            focusRingColor:'focus:ring-blue-500'
+            bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].background).bgColor,
+            hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].darkBackground).hoverBgColor,
+            borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
+            hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].darkBackground).hoverBorderColor,
+            focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
         'secondary': {
             textColor: 'text-blue-600',
