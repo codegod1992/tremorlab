@@ -2,6 +2,7 @@ export type DefaultColors = {
     transparent: string,
     white: string,
     black: string,
+    canvas: string,
     light: string,
     base: string,
     dark: string,
@@ -11,7 +12,8 @@ export const defaultColors: DefaultColors = {
     transparent: 'transparent-none',
     white: 'white-none',
     black: 'black-none',
-    light: 'gray-200',
+    canvas: 'gray-50',
+    light: 'gray-300',
     base: 'gray-500',
     dark: 'gray-700',
 }
