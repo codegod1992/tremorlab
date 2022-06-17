@@ -1,4 +1,5 @@
 import { ButtonColorTypes, ButtonProportionTypes, ButtonShapeTypes } from '@common/common-types';
+import { BaseColors } from '@utils/objects';
 
 export const buttonProportions: {[char: string]: ButtonProportionTypes} = {
     xs: {
@@ -49,7 +50,7 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
             hoverBorderColor: 'hover:border-blue-700',
             focusRingColor: 'focus:ring-blue-500'
         }
-    }    
+    },
 };
 
 export type IconProportionTypes = {
