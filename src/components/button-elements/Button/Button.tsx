@@ -29,7 +29,7 @@ const Button = ({
             info={ info }
             { ...buttonProportions[size] }
             { ...buttonShape }
-            { ...buttonColors[color][importance]}
+            { ...buttonColors[color][importance] }
         >
             { text }
             { arrow ? (
