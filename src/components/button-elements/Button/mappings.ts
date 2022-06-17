@@ -35,19 +35,19 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
             textColor: 'text-white',
             hoverTextColor: '',
             bgColor: 'bg-blue-600',
-            hoverBgColor: 'bg-blue-700',
+            hoverBgColor: 'hover:bg-blue-700',
             borderColor: 'border-transparent',
-            hoverBorderColor: 'bg-blue-700',
-            focusRingColor:'ring-blue-500'
+            hoverBorderColor: 'hover:bg-blue-700',
+            focusRingColor:'focus:ring-blue-500'
         },
         'secondary': {
             textColor: 'text-blue-600',
+            hoverTextColor: 'hover:text-white',
             bgColor: 'bg-transparent',
-            hoverBgColor: 'bg-blue-700',
-            hoverTextColor: 'text-white',
+            hoverBgColor: 'hover:bg-blue-700',
             borderColor: 'border-blue-600',
-            hoverBorderColor: 'border-blue-700',
-            focusRingColor: 'ring-blue-500'
+            hoverBorderColor: 'hover:border-blue-700',
+            focusRingColor: 'focus:ring-blue-500'
         }
     }    
 };

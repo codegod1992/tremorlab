@@ -32,11 +32,11 @@ export const buttonShape: ButtonShapeTypes = {
 export const buttonColors: {[baseColor: string]: ButtonColorTypes} = {
     'blue': {
         textColor: 'text-blue-600',
-        hoverTextColor: 'text-blue-700',
+        hoverTextColor: 'hover:text-blue-700',
         bgColor: 'bg-transparent',
-        hoverBgColor: 'bg-transparent',
+        hoverBgColor: 'hover:bg-transparent',
         borderColor: '',
         hoverBorderColor: '',
-        focusRingColor: 'ring-blue-500'
+        focusRingColor: 'focus:ring-blue-500'
     }
 };
