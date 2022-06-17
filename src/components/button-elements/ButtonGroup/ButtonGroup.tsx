@@ -28,9 +28,9 @@ const ButtonGroup = ({
     );
     const inActiveColorClassNames = classNames(
         getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
-        getColorVariantsFromColorThemeValue(defaultColors.base).textColor,
-        getColorVariantsFromColorThemeValue(defaultColors.light).borderColor,
-        getColorVariantsFromColorThemeValue(defaultColors.canvas).hoverBgColor
+        getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
+        getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
+        getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor
     );
     return (
         <>

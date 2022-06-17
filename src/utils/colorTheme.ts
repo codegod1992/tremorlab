@@ -2,25 +2,43 @@ export type DefaultColors = {
     transparent: string,
     white: string,
     black: string,
-    canvas: string,
-    light: string,
-    base: string,
-    dark: string,
+    canvasBackground: string,
+    lightBackground: string,
+    background: string,
+    darkBackground: string,
+    darkestBackground: string,
+    lightBorder: string,
+    border: string,
+    darkBorder: string,
+    lightRing: string,
+    ring: string,
+    lightText: string,
+    text: string,
+    darkText: string,
+    icon: string,
 }
 
 export const defaultColors: DefaultColors = {
     transparent: 'transparent-none',
     white: 'white-none',
     black: 'black-none',
-    canvas: 'gray-50',
-    light: 'gray-300',
-    base: 'gray-500',
-    dark: 'gray-700',
+    canvasBackground: 'gray-50',
+    lightBackground: 'gray-100',
+    background: 'gray-300',
+    darkBackground: 'gray-600', //hover
+    darkestBackground: 'gray-800', //selected
+    lightBorder: 'gray-200',
+    border: 'gray-300',
+    darkBorder: 'gray-600',
+    lightRing: 'gray-200',
+    ring: 'gray-400',
+    lightText: 'gray-400',
+    text: 'gray-500',
+    darkText: 'gray-700',
+    icon: 'gray-500',
 }
 
 export type BaseColorTheme = {
-    white: string,
-    black: string,
     canvasBackground: string,
     lightBackground: string,
     background: string,
@@ -39,8 +57,6 @@ export type BaseColorTheme = {
 
 const colorTheme: { [baseColor: string]: BaseColorTheme } = {
     'slate': {
-        white: 'white-none',
-        black: 'black-none',
         canvasBackground: 'slate-50',
         lightBackground: 'slate-100',
         background: 'slate-500',
@@ -57,8 +73,6 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         icon: 'slate-500',
     },
     'gray': {
-        white: 'white-none',
-        black: 'black-none',
         canvasBackground: 'gray-50',
         lightBackground: 'gray-100',
         background: 'gray-500',
@@ -75,8 +89,6 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         icon: 'gray-500',
     },
     'zinc': {
-        white: 'white-none',
-        black: 'black-none',
         canvasBackground: 'zinc-50',
         lightBackground: 'zinc-100',
         background: 'zinc-500',
@@ -93,8 +105,6 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         icon: 'zinc-500',
     },
     'neutral': {
-        white: 'white-none',
-        black: 'black-none',
         canvasBackground: 'neutral-50',
         lightBackground: 'neutral-100',
         background: 'neutral-500',
@@ -111,8 +121,6 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         icon: 'neutral-500',
     },
     'stone': {
-        white: 'white-none',
-        black: 'black-none',
         canvasBackground: 'stone-50',
         lightBackground: 'stone-100',
         background: 'stone-500',
@@ -129,8 +137,6 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         icon: 'stone-500',
     },
     'red': {
-        white: 'white-none',
-        black: 'black-none',
         canvasBackground: 'red-50',
         lightBackground: 'red-100',
         background: 'red-500',
@@ -147,8 +153,6 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         icon: 'red-500',
     },
     'orange': {
-        white: 'white-none',
-        black: 'black-none',
         canvasBackground: 'orange-50',
         lightBackground: 'orange-100',
         background: 'orange-500',
@@ -165,8 +169,6 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         icon: 'orange-500',
     },
     'amber': {
-        white: 'white-none',
-        black: 'black-none',
         canvasBackground: 'amber-50',
         lightBackground: 'amber-100',
         background: 'amber-500',
@@ -183,8 +185,6 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         icon: 'amber-500',
     },
     'yellow': {
-        white: 'white-none',
-        black: 'black-none',
         canvasBackground: 'yellow-50',
         lightBackground: 'yellow-100',
         background: 'yellow-500',
@@ -201,8 +201,6 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         icon: 'yellow-500',
     },
     'lime': {
-        white: 'white-none',
-        black: 'black-none',
         canvasBackground: 'lime-50',
         lightBackground: 'lime-100',
         background: 'lime-500',
@@ -219,8 +217,6 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         icon: 'lime-500',
     },
     'green': {
-        white: 'white-none',
-        black: 'black-none',
         canvasBackground: 'green-50',
         lightBackground: 'green-100',
         background: 'green-500',
@@ -237,8 +233,6 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         icon: 'green-500',
     },
     'emerald': {
-        white: 'white-none',
-        black: 'black-none',
         canvasBackground: 'emerald-50',
         lightBackground: 'emerald-100',
         background: 'emerald-500',
@@ -255,8 +249,6 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         icon: 'emerald-500',
     },
     'teal': {
-        white: 'white-none',
-        black: 'black-none',
         canvasBackground: 'teal-50',
         lightBackground: 'teal-100',
         background: 'teal-500',
@@ -273,8 +265,6 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         icon: 'teal-500',
     },
     'cyan': {
-        white: 'white-none',
-        black: 'black-none',
         canvasBackground: 'cyan-50',
         lightBackground: 'cyan-100',
         background: 'cyan-500',
@@ -291,8 +281,6 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         icon: 'cyan-500',
     },
     'sky': {
-        white: 'white-none',
-        black: 'black-none',
         canvasBackground: 'sky-50',
         lightBackground: 'sky-100',
         background: 'sky-500',
@@ -309,8 +297,6 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         icon: 'sky-500',
     },
     'blue': {
-        white: 'white-none',
-        black: 'black-none',
         canvasBackground: 'blue-50',
         lightBackground: 'blue-100',
         background: 'blue-500',
@@ -327,8 +313,6 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         icon: 'blue-500',
     },
     'indigo': {
-        white: 'white-none',
-        black: 'black-none',
         canvasBackground: 'indigo-50',
         lightBackground: 'indigo-100',
         background: 'indigo-500',
@@ -345,8 +329,6 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         icon: 'indigo-500',
     },
     'violet': {
-        white: 'white-none',
-        black: 'black-none',
         canvasBackground: 'violet-50',
         lightBackground: 'violet-100',
         background: 'violet-500',
@@ -363,8 +345,6 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         icon: 'violet-500',
     },
     'purple': {
-        white: 'white-none',
-        black: 'black-none',
         canvasBackground: 'purple-50',
         lightBackground: 'purple-100',
         background: 'purple-500',
@@ -381,8 +361,6 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         icon: 'purple-500',
     },
     'fuchsia': {
-        white: 'white-none',
-        black: 'black-none',
         canvasBackground: 'fuchsia-50',
         lightBackground: 'fuchsia-100',
         background: 'fuchsia-500',
@@ -399,8 +377,6 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         icon: 'fuchsia-500',
     },
     'pink': {
-        white: 'white-none',
-        black: 'black-none',
         canvasBackground: 'pink-50',
         lightBackground: 'pink-100',
         background: 'pink-500',
@@ -417,8 +393,6 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         icon: 'pink-500',
     },
     'rose': {
-        white: 'white-none',
-        black: 'black-none',
         canvasBackground: 'rose-50',
         lightBackground: 'rose-100',
         background: 'rose-500',
