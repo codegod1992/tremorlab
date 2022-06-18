@@ -1,28 +1,53 @@
 import React from 'react';
 
-import BaseComponentProps from '@common/BaseComponentInterface';
-
 import { 
     classNames,
     getColorVariantsFromColorThemeValue,
-    parseBgClassNames,
     parseBorderClassNames,
     parseMarginTopClassNames,
     toBorderColorClass
 } from '@utils/classname-utils';
+import colorTheme, { defaultColors } from '@utils/colorTheme';
 import BarWrapper from '@common/BarWrapper';
-import colorTheme from '@utils/colorTheme';
+import BaseComponentProps from '@common/BaseComponentInterface';
+
+const BarLabels = ({ elements }: {elements: [number, string][]}) => {
+    let prefixSum = 0;
+    return (
+        <div className={ classNames(
+            'relative flex w-full',
+            getColorVariantsFromColorThemeValue(defaultColors.text).textColor
+        ) }
+        >
+            { elements.slice(0, elements.length).map(([widthPercentage, _], idx) => {
+                prefixSum += widthPercentage;
+                return (
+                    <div
+                        key={ `item-${idx}` }
+                        className={ classNames(idx !== 0 ? 'ml-1' : '') }
+                        style={ { 'width': `${widthPercentage}%` } }
+                    >
+                        { prefixSum-widthPercentage }
+                    </div>
+                );
+            }) }
+            <div className="absolute right-0 top-0">
+                100
+            </div>
+        </div>
+    );
+};
 
 export interface StackedBarProps extends BaseComponentProps {
     elements: [number, string][],
     markerPercentageValue?: number,
-    gap: boolean
+    showLabels?: boolean,
 }
 
 const StackedBar = ({
     elements,
     markerPercentageValue,
-    gap = true,
+    showLabels = true,
     marginTop
 }: StackedBarProps) => {
 
@@ -46,34 +71,31 @@ const StackedBar = ({
     const markerBorderColor = getMarkerBorderColor();
 
     return(
-        <BarWrapper 
-            marginTop={ parseMarginTopClassNames(marginTop) }
-            gap={ gap }
-        >
-            {elements.map(([widthPercentage, color], idx) => {
-                return(
-                    <div key={ idx } style={ { width: `${widthPercentage}%` } } className={ classNames(
-                        getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor,
-                        'h-full rounded-lg',
-                        // @Achi: old below, feel free to delete
-                        // idx === 0 ? 'rounded-l' : '',
-                        // idx === elements.length-1 ? 'rounded-r' : ''
-                    ) }
-                    />
-                );
-            })}
-            { markerPercentageValue!==undefined ? (
-                <div 
-                    className="absolute inset-0 flex justify-end z-10 items-center"
-                    style={{width: `${markerPercentageValue}%` }}
-                >
-                    <div className={ classNames(
-                        'flex flex-none z-1 items-center bg-white  border-4 rounded-full h-4 w-4 shadow-md',
-                        parseBorderClassNames(markerBorderColor)
-                    ) }></div>
-                </div>
-            ) : null}
-        </BarWrapper>
+        <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
+            { showLabels ? <BarLabels elements={ elements } /> : null }
+            <BarWrapper gap={ true }>
+                {elements.map(([widthPercentage, color], idx) => {
+                    return(
+                        <div key={ `item-${idx}` } style={ { width: `${widthPercentage}%` } } className={ classNames(
+                            getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor,
+                            'h-full rounded-md',
+                        ) }
+                        />
+                    );
+                })}
+                { markerPercentageValue!==undefined ? (
+                    <div 
+                        className="absolute inset-0 flex justify-end z-10 items-center"
+                        style={{width: `${markerPercentageValue}%` }}
+                    >
+                        <div className={ classNames(
+                            'flex flex-none z-1 items-center bg-white  border-4 rounded-full h-4 w-4 shadow-md',
+                            parseBorderClassNames(markerBorderColor)
+                        ) } />
+                    </div>
+                ) : null}
+            </BarWrapper>
+        </div>
     );
 };
 
