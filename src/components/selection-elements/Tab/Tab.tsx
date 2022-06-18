@@ -1,34 +1,40 @@
 import React from 'react';
 
-import { classNames, parseTextColorClassNames } from '@utils/classname-utils';
+import { classNames, getColorVariantsFromColorThemeValue, parseTextColorClassNames } from '@utils/classname-utils';
+import { BaseColors } from '@utils/objects';
+import { colors } from './mappings';
+import { defaultColors } from '@utils/colorTheme';
 
 export interface TabProps {
     name: string,
     value: any,
+    color?: string,
     isActive?: boolean,
-    textColor?: string,
-    activeTextColor?: string,
     setSelectedTab?: React.Dispatch<React.SetStateAction<string>>,
 }
 
 const Tab = ({
     name,
     value,
+    color = BaseColors.Blue,
     isActive,
-    textColor = 'text-gray-400',
-    activeTextColor = 'text-gray-500',
     setSelectedTab,
 }: TabProps) => {
+    const activeClassNames = classNames(
+        colors[color].textColor,
+        colors[color].borderColor,
+    );
+    const inActiveClassNames = classNames(
+        getColorVariantsFromColorThemeValue(defaultColors.transparent).borderColor,
+        getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
+        getColorVariantsFromColorThemeValue(defaultColors.text).hoverTextColor,
+    );
     return(
         <li>
             <button
                 className={ classNames(
-                    isActive ? (
-                        `border-gray-500 font-normal ${parseTextColorClassNames(activeTextColor)}`
-                    ) : (
-                        `border-transparent font-normal ${parseTextColorClassNames(textColor)} hover:${activeTextColor}`
-                    ),
-                    'whitespace-nowrap py-2 px-1 border-b-2 text-sm truncate group'
+                    isActive ? activeClassNames : inActiveClassNames,
+                    'whitespace-nowrap py-2 px-1 border-b-2 text-sm font-normal truncate group'
                 ) }
                 value={ value }
                 onClick={ () => setSelectedTab!(value) }
