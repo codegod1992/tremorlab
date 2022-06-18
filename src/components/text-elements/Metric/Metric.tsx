@@ -20,7 +20,7 @@ export interface MetricProps extends BaseComponentProps {
 const Metric = ({
     value,
     name,
-    color = BaseColors.Blue,
+    color = BaseColors.Gray,
     marginTop
 }: MetricProps) => {
     return(
