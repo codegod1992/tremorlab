@@ -33,7 +33,7 @@ const ButtonGroup = ({
         getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor
     );
     return (
-        <>
+        <div className="inline-flex">
             { React.Children.map(children, (child, idx) => {
                 if (idx === 0) {
                     return (
@@ -85,7 +85,7 @@ const ButtonGroup = ({
                     </div>
                 );
             })}
-        </>
+        </div>
     );
 };
 

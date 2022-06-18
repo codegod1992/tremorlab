@@ -39,8 +39,8 @@ const PeerComparisonBar = ({
                 style={ {'width': `${markerPercentage}%`} }
             >
                 <div className={ classNames(
-                    colors[color].markerBgColor,
-                    'h-4 w-1 rounded-full ring-2 ring-white'
+                    'bg-blue-500',
+                    'h-4 w-1 rounded-full ring-2 ring-white flex-none'
                 ) }
                 />
             </div>

@@ -28,7 +28,7 @@ const ToggleButton = ({
     return (
         <div className={ classNames(
             getColorVariantsFromColorThemeValue(defaultColors.lightBackground).bgColor,
-            'inline-flex justify-start rounded-md p-1'
+            'flex-nowrap inline-flex justify-start rounded-md p-1'
         ) }
         >
             { React.Children.map(children, (child) => (
