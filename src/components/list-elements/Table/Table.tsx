@@ -4,37 +4,33 @@ import BaseComponentProps from '@common/BaseComponentInterface';
 
 import { 
     classNames,
-    parseDivideColorClassNames,
+    getColorVariantsFromColorThemeValue,
     parseDivideYClassNames,
     parseMarginTopClassNames,
-    parseTextColorClassNames 
 } from '@utils/classname-utils';
+import { defaultColors } from '@utils/colorTheme';
 
 export interface TableProps extends BaseComponentProps {
-    textColor?: string,
     divideY?: string,
-    divideColor?: string,
     children: React.ReactNode
 }
 
 const Table = ({
-    textColor = 'text-gray-500',
     divideY = 'divide-y',
-    divideColor = 'divide-gray-200',
     marginTop,
     children
 }: TableProps) => {
     return(
         <table className={ classNames(
-            parseTextColorClassNames(textColor),
             parseMarginTopClassNames(marginTop),
+            getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
             'w-full font-normal text-sm tabular-nums'
         ) }
         >
             <tbody className={ classNames(
                 parseDivideYClassNames(divideY),
-                parseDivideColorClassNames(divideColor),
-                'divide-y divide-gray-200 align-top overflow-x-auto'
+                getColorVariantsFromColorThemeValue(defaultColors.lightBorder).divideColor,
+                'align-top overflow-x-auto'
             ) }>
                 {children}
             </tbody>
