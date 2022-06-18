@@ -23,10 +23,10 @@ const Template: ComponentStory<typeof StackedBar> = (args) => (
 export const WithoutMarker = Template.bind({});
 WithoutMarker.args = {
     elements: [
-        [10, 'bg-emerald-600'],
-        [25, 'bg-yellow-500'],
-        [40, 'bg-orange-500'],
-        [25, 'bg-rose-500'],
+        [10, 'emerald'],
+        [25, 'yellow'],
+        [40, 'orange'],
+        [25, 'rose'],
     ],
     marginTop: 'mt-5'
 };
@@ -36,10 +36,10 @@ export const WithMarker = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 WithMarker.args = {
     elements: [
-        [10, 'bg-emerald-500'],
-        [25, 'bg-amber-500'],
-        [40, 'bg-yellow-500'],
-        [25, 'bg-rose-500'],
+        [10, 'emerald'],
+        [25, 'amber'],
+        [40, 'yellow'],
+        [25, 'rose'],
     ],
     markerPercentageValue: 90,
     marginTop: 'mt-5' // only applies to story?
