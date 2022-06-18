@@ -2,6 +2,7 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import StackedBar from 'components/bar-elements/StackedBar/StackedBar';
+
 import Card from 'components/layout-elements/Card';
 import Metric from 'components/text-elements/Metric';
 
@@ -13,8 +14,8 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
 const Template: ComponentStory<typeof StackedBar> = (args) => (
-    <Card maxWidth='max-w-md'>
-        <Metric value='$23.456' name='Sales'/>
+    <Card maxWidth="max-w-md">
+        <Metric value="$23.456" name="Sales"/>
         <StackedBar {...args} />
     </Card>
 );
