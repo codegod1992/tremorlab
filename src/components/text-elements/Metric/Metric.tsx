@@ -2,34 +2,39 @@ import React from 'react';
 
 import BaseComponentProps from '@common/BaseComponentInterface';
 
-import { classNames, parseMarginTopClassNames, parseTextColorClassNames } from '@utils/classname-utils';
+import {
+    classNames,
+    getColorVariantsFromColorThemeValue,
+    parseMarginTopClassNames,
+} from '@utils/classname-utils';
+import { BaseColors } from '@utils/objects'; 
+import { colors } from './mappings';
+import { defaultColors } from '@utils/colorTheme';
 
 export interface MetricProps extends BaseComponentProps {
     value: string,
     name?: string,
-    valueTextColor?: string,
-    nameTextColor?: string,
+    color?: string,
 }
 
 const Metric = ({
     value,
     name,
-    valueTextColor = 'text-gray-600',
-    nameTextColor = 'text-gray-600',
+    color = BaseColors.Blue,
     marginTop
 }: MetricProps) => {
     return(
         <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
             { name ? (
                 <p className={ classNames(
-                    parseTextColorClassNames(nameTextColor),
+                    getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
                     'text-sm font-normal'
                 ) }>
                     { name }
                 </p>
             ) : null}
             <p className={ classNames(
-                parseTextColorClassNames(valueTextColor),
+                colors[color].textColor,
                 'text-3xl shrink-0 font-semibold'
             ) }
             >

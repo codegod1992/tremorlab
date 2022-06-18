@@ -3,26 +3,29 @@ import React from 'react';
 import { badgeProportions, iconProportions } from './mappings';
 import BadgeWrapper from '@common/BadgeWrapper';
 import { classNames } from '@utils/classname-utils';
+import { colors } from './mappings';
 
 export interface BadgeStatusProps {
     text: string,
-    badgeSize?: string
+    color?: string,
+    size?: string
 }
 
 const BadgeStatus = ({
     text,
-    badgeSize = 'sm'
+    color = 'blue',
+    size = 'sm'
 }: BadgeStatusProps) => {
     return(
         <BadgeWrapper
-            { ...badgeProportions[badgeSize] }
-            bgColor={ 'bg-emerald-100' }
-            textColor={ 'text-emerald-800' }
+            { ...badgeProportions[size] }
+            bgColor={ colors[color].bgColor }
+            textColor={ colors[color].textColor }
         >
             <svg
                 className={ classNames( 
-                    iconProportions[badgeSize].margin || '',
-                    iconProportions[badgeSize].iconSize || '',
+                    iconProportions[size] ? iconProportions[size].margin! : iconProportions['sm'].margin!,
+                    iconProportions[size] ? iconProportions[size].iconSize : iconProportions['sm'].iconSize,
                 )}
                 fill="currentColor" viewBox="0 0 8 8"
             >

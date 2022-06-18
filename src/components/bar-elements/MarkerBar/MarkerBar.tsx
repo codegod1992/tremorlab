@@ -4,27 +4,27 @@ import BaseComponentProps from '@common/BaseComponentInterface';
 
 import { classNames, parseBgClassNames, parseMarginTopClassNames } from '@utils/classname-utils';
 import BarWrapper from '@common/BarWrapper';
+import { BaseColors } from '@utils/objects';
+import { colors } from './mappings';
 
 export interface MarkerBarProps extends BaseComponentProps {
     markerPercentageValue: number,
-    markerBgColor?: string,
-    barBgColor?: string,
+    color?: string,
 }
 
 const MarkerBar = ({
     markerPercentageValue,
-    markerBgColor = 'bg-blue-500',
-    barBgColor = 'bg-blue-100',
+    color = BaseColors.Blue,
     marginTop
 }: MarkerBarProps) => {
     return(
         <BarWrapper
-            bgColor={ parseBgClassNames(barBgColor) }
+            bgColor={ colors[color].secondaryBgColor }
             marginTop={ parseMarginTopClassNames(marginTop) }
         >
             <div className="bg-transparent" style={ {'width': `${markerPercentageValue}%` } } />
             <div className={ classNames(
-                parseBgClassNames(markerBgColor),
+                colors[color].primaryBgColor,
                 'h-4 w-1 rounded-lg ring-2 ring-white'
             ) }
             />

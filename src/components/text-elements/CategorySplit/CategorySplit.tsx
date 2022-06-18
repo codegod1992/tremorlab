@@ -4,17 +4,17 @@ import BaseComponentProps from '@common/BaseComponentInterface';
 
 import { 
     classNames,
-    parseBorderClassNames,
+    getColorVariantsFromColorThemeValue,
     parseMarginTopClassNames,
-    parseTextColorClassNames 
 } from '@utils/classname-utils';
+import colorTheme, { defaultColors } from '@utils/colorTheme';
+import { BaseColors } from '@utils/objects';
 
 interface CategoryProps {
     name: string,
     value: string,
-    context?: string,
-    textColor?: string,
-    borderColor?: string
+    context: string,
+    color?: string,
 }
 
 export interface CategorySplitProps extends BaseComponentProps {
@@ -23,43 +23,39 @@ export interface CategorySplitProps extends BaseComponentProps {
     textColor: string
 }
 
-interface CategoryBlockProps extends CategoryProps {
-    nameTextColor: string,
-}
-
 const LeftCategoryBlock = ({
     name,
     value,
     context,
-    nameTextColor,
-    textColor = 'text-green-600',
-    borderColor = 'border-green-600'
-}: CategoryBlockProps) => {
+    color = BaseColors.Blue,
+}: CategoryProps) => {
     return(
         <>
             <div className={ classNames(
-                parseBorderClassNames(borderColor),
-                'border-l-2'
+                getColorVariantsFromColorThemeValue(colorTheme[color].darkText).borderColor,
+                'border-l-2 text-base'
             ) }
             >
                 <p className={ classNames(
-                    parseTextColorClassNames(nameTextColor),
-                    'ml-4 text-base text-left'
+                    getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
+                    'ml-4 text-left'
                 ) }
                 >
                     { name }
                 </p>
-                <div className="ml-4">
+                <div className={ classNames(
+                    'ml-4',
+                    getColorVariantsFromColorThemeValue(colorTheme[color].darkText).textColor,
+                )}
+                >
                     <span className={ classNames(
-                        parseTextColorClassNames(textColor),
-                        'mr-1 text-base font-semibold'
+                        'mr-2 font-semibold'
                     ) }
                     >
                         { value }
                     </span>
                     <span className={ classNames(
-                        parseTextColorClassNames(textColor),
-                        'text-base font-normal'
+                        'font-normal opacity-80'
                     ) }
                     >
                         { context }
@@ -74,37 +70,31 @@ const RightCategoryBlock = ({
     name,
     value,
     context,
-    nameTextColor,
-    textColor = 'text-gray-400',
-    borderColor = 'border-gray-400'
-}: CategoryBlockProps) => {
+    color = BaseColors.Slate,
+}: CategoryProps) => {
     return(
         <>
             <div className={ classNames(
-                parseBorderClassNames(borderColor),
-                'border-r-2'
+                getColorVariantsFromColorThemeValue(colorTheme[color].darkBorder).borderColor,
+                'border-r-2 text-base'
             ) }
             >
                 <p className={ classNames(
-                    parseTextColorClassNames(nameTextColor),
-                    'mr-4 text-base text-right'
+                    getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
+                    'mr-4 text-right'
                 ) }
                 >
                     { name }
                 </p>
-                <div className="mr-4">
-                    <span className={ classNames(
-                        parseTextColorClassNames(textColor),
-                        'mr-1 text-base font-semibold'
-                    ) }
-                    >
+                <div className={classNames(
+                    'mr-4',
+                    getColorVariantsFromColorThemeValue(colorTheme[color].darkText).textColor,
+                )}
+                >
+                    <span className="mr-2 font-semibold">
                         { value }
                     </span>
-                    <span className={ classNames(
-                        parseTextColorClassNames(textColor),
-                        'text-base font-normal'
-                    ) }
-                    >
+                    <span className="font-normal opacity-80">
                         { context }
                     </span>
                 </div>
@@ -116,13 +106,12 @@ const RightCategoryBlock = ({
 const CategorySplit = ({
     firstCategory,
     secondCategory,
-    textColor = 'text-gray-600',
     marginTop,
 }: CategorySplitProps) => {
     return(
         <div className={ classNames(parseMarginTopClassNames(marginTop), 'flex justify-between') }>
-            <LeftCategoryBlock {...firstCategory} nameTextColor={ textColor } />
-            <RightCategoryBlock {...secondCategory} nameTextColor={ textColor } />
+            <LeftCategoryBlock {...firstCategory} />
+            <RightCategoryBlock {...secondCategory} />
         </div>
     );
 };

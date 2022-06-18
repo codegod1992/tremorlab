@@ -4,6 +4,7 @@ import BaseComponentProps from '@common/BaseComponentInterface';
 
 import { 
     classNames,
+    getColorVariantsFromColorThemeValue,
     parseBgClassNames,
     parseBorderClassNames,
     parseHFullOption,
@@ -13,16 +14,12 @@ import {
     parseTextAlignmentClassNames,
     parseWFullOption,
 } from '@utils/classname-utils';
+import { defaultColors } from '@utils/colorTheme';
 
 export interface CardProps extends BaseComponentProps {
     maxWidth?: string,
     wFull?: boolean,
     hFull?: boolean,
-    border?: string,
-    borderColor?: string,
-    shadow?: string,
-    roundedCorners?: string,
-    bgColor?: string,
     children: React.ReactNode
 }
 
@@ -30,11 +27,6 @@ const Card = ({
     maxWidth = '',
     wFull = true,
     hFull = false,
-    border = 'border',
-    borderColor = '',
-    shadow = 'shadow',
-    roundedCorners = 'rounded-lg',
-    bgColor = 'bg-white',
     marginTop,
     children
 }: CardProps) => {
@@ -43,13 +35,9 @@ const Card = ({
             parseMaxWidthClassNames(maxWidth),
             parseWFullOption(wFull),
             parseHFullOption(hFull),
-            parseBorderClassNames(border),
-            parseBorderClassNames(borderColor),
-            parseShadowClassNames(shadow),
-            parseRoundedCornersClassNames(roundedCorners),
-            parseBgClassNames(bgColor),
+            getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
             parseTextAlignmentClassNames(marginTop),
-            'relative overflow-hidden mx-auto text-left'
+            'relative overflow-hidden mx-auto text-left border shadow rounded-lg'
         ) }
         >
             <div className="p-6">

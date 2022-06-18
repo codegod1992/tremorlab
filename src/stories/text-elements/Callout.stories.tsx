@@ -5,6 +5,8 @@ import ArrowRightUpLineIcon from 'remixicon-react/ArrowRightUpLineIcon';
 
 import CallOut from '../../components/text-elements/CallOut/CallOut';
 
+import { BaseColors } from '@utils/objects';
+
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
     title: 'Tremor/TextElements/CallOut',
@@ -13,7 +15,13 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
 const Template: ComponentStory<typeof CallOut> = (args) => (
-    <CallOut {...args} />
+    <>
+        { Object.values(BaseColors).map(color => (
+            <div className="mb-5 max-w-lg">
+                <CallOut {...args} color={ color } />
+            </div>
+        ))}
+    </>
 );
   
 export const Default = Template.bind({});

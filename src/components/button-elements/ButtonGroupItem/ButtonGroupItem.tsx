@@ -22,7 +22,6 @@ const ButtonGroupItem = ({
     handleClick,
     buttonSize = Sizes.MD,
     setActiveButtonItem,
-    isActive,
 }: ButtonGroupItemProps) => (
     <button
         className={ classNames(
@@ -36,7 +35,7 @@ const ButtonGroupItem = ({
         { Icon ? <Icon className={ classNames(
             iconProportions[buttonSize].iconSize || iconProportions['md'].iconSize!,
             iconProportions[buttonSize].margin || iconProportions['md'].margin!,
-            isActive ? 'text-blue-400' : 'text-gray-400'
+            'opacity-70'
         ) } aria-hidden="true"/> : null }
         <span>{ text }</span>
     </button>

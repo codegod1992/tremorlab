@@ -1,15 +1,13 @@
 import React from 'react';
 
 import { 
-    DeltaBgColors,
-    DeltaIcons,
-    DeltaTextColors, 
-} from '@utils/objects';
-import { 
     badgeProportionsIconOnly,
     badgeProportionsWithText,
+    deltaBgColors,
+    deltaIcons,
+    deltaTextColors,
     iconProportionsIconOnly,
-    iconProportionsWithText
+    iconProportionsWithText,
 } from './mappings';
 import BadgeWrapper from '@common/BadgeWrapper';
 import { classNames } from '@utils/classname-utils';
@@ -28,14 +26,14 @@ const BadgeDelta = ({
     isIncreasePositive = true,
     size = 'sm'
 }: BadgeDeltaProps) => {
-    const Icon = DeltaIcons[deltaType];
+    const Icon = deltaIcons[deltaType];
     const mappedDeltaType = mapInputsToDeltaType(deltaType, isIncreasePositive);
     const badgeProportions = delta ? badgeProportionsWithText : badgeProportionsIconOnly;
     return(
         <BadgeWrapper
             { ...badgeProportions[size] }
-            bgColor={ DeltaBgColors[mappedDeltaType] }
-            textColor={ DeltaTextColors[mappedDeltaType] }
+            bgColor={ deltaBgColors[mappedDeltaType] }
+            textColor={ deltaTextColors[mappedDeltaType] }
         >
             <Icon className={ classNames(
                 delta ? (iconProportionsWithText[size].margin || '') : (iconProportionsIconOnly[size].margin || '') ,

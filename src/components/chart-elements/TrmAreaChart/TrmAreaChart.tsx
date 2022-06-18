@@ -16,7 +16,6 @@ import { ChartProps } from '@common/common-types';
 import ChartTooltip from '@common/ChartTooltip';
 
 import { defaultValueFormater } from '@utils/utils';
-import { classNames } from '@utils/classname-utils';
 
 const TrmAreaChart = ({
     data,

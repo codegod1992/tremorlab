@@ -2,18 +2,20 @@ import React, { useEffect, useState } from 'react';
 
 import BaseComponentProps from '@common/BaseComponentInterface';
 
-import { classNames, parseBorderClassNames, parseMarginTopClassNames } from '@utils/classname-utils';
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
+import { BaseColors } from '@utils/objects';
+import { defaultColors } from '@utils/colorTheme';
 
 export interface TabListProps extends BaseComponentProps {
     defaultValue?: any,
-    borderColor?: string,
+    color?: string,
     handleSelect?: { (value: any): void },
     children: React.ReactElement[]
 }
 
 const TabList = ({
     defaultValue,
-    borderColor = 'border-gray-200',
+    color = BaseColors.Blue,
     marginTop,
     handleSelect = (value) => null,
     children,
@@ -26,7 +28,7 @@ const TabList = ({
 
     return(
         <ol aria-label="Tabs" className={ classNames(
-            parseBorderClassNames(borderColor),
+            getColorVariantsFromColorThemeValue(defaultColors.lightBorder).borderColor,
             parseMarginTopClassNames(marginTop),
             'border-b -mb-px flex justify-start space-x-4'
         ) }>
@@ -34,6 +36,7 @@ const TabList = ({
                 <>
                     { React.cloneElement(child, {
                         setSelectedTab: setSelectedTab,
+                        color: color,
                         isActive: selectedTab === child.props.value,
                     }) }
                 </>

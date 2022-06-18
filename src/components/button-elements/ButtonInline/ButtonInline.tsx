@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Colors, Sizes } from '@utils/objects';
+import { BaseColors, Sizes } from '@utils/objects';
 import { buttonColors, buttonProportions, buttonShape } from './mappings';
 import ButtonWrapper from '@common/ButtonWrapper';
 
@@ -19,7 +19,7 @@ const ButtonInline = ({
     info,
     arrow = false,
     size = Sizes.SM,
-    color = Colors.Blue
+    color = BaseColors.Blue
 }: ButtonInlineProps) => {
     return(
         <ButtonWrapper

@@ -3,7 +3,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import ArrowUpLineIcon from 'remixicon-react/ArrowUpLineIcon';
 
-import { Colors } from '@utils/objects';
+import { BaseColors } from '@utils/objects';
 import { Title } from 'components';
 
 import { IconTypes } from 'components/icon-elements/Icon/Icon';
@@ -24,10 +24,10 @@ const Template: ComponentStory<never> = () => (
         <div className="mb-5">
             <Title text="Icon Neutral"/>
             <div className="grid grid-cols-8">
-                {Object.keys(Colors).map(key => {
-                    console.log(Colors[key]);
+                {Object.keys(BaseColors).map(key => {
+                    console.log(BaseColors[key]);
                     return(
-                        <Icon Icon={ MyIcon } style={ IconTypes.Simple } color={ Colors[key] } />
+                        <Icon Icon={ MyIcon } style={ IconTypes.Simple } color={ BaseColors[key] } />
                     );
                 })}
             </div>
@@ -35,10 +35,10 @@ const Template: ComponentStory<never> = () => (
         <div className="mb-5">
             <Title text="Icon Light"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(Colors).map(key => {
-                    console.log(Colors[key]);
+                {Object.keys(BaseColors).map(key => {
+                    console.log(BaseColors[key]);
                     return(
-                        <Icon Icon={ MyIcon } style={ IconTypes.Light } color={ Colors[key] } />
+                        <Icon Icon={ MyIcon } style={ IconTypes.Light } color={ BaseColors[key] } />
                     );
                 })}
             </div>
@@ -46,10 +46,10 @@ const Template: ComponentStory<never> = () => (
         <div className="mb-5">
             <Title text="Icon Shadow"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(Colors).map(key => {
-                    console.log(Colors[key]);
+                {Object.keys(BaseColors).map(key => {
+                    console.log(BaseColors[key]);
                     return(
-                        <Icon Icon={ MyIcon } style={ IconTypes.Shadow } color={ Colors[key] } />
+                        <Icon Icon={ MyIcon } style={ IconTypes.Shadow } color={ BaseColors[key] } />
                     );
                 })}
             </div>
@@ -57,10 +57,10 @@ const Template: ComponentStory<never> = () => (
         <div className="mb-5">
             <Title text="Icon Solid"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(Colors).map(key => {
-                    console.log(Colors[key]);
+                {Object.keys(BaseColors).map(key => {
+                    console.log(BaseColors[key]);
                     return(
-                        <Icon Icon={ MyIcon } style={ IconTypes.Solid } color={ Colors[key] } />
+                        <Icon Icon={ MyIcon } style={ IconTypes.Solid } color={ BaseColors[key] } />
                     );
                 })}
             </div>
@@ -68,10 +68,10 @@ const Template: ComponentStory<never> = () => (
         <div className="mb-5">
             <Title text="Icon Circled"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(Colors).map(key => {
-                    console.log(Colors[key]);
+                {Object.keys(BaseColors).map(key => {
+                    console.log(BaseColors[key]);
                     return(
-                        <Icon Icon={ MyIcon } style={ IconTypes.Circled } color={ Colors[key] } />
+                        <Icon Icon={ MyIcon } style={ IconTypes.Circled } color={ BaseColors[key] } />
                     );
                 })}
             </div>

@@ -4,12 +4,14 @@ import BaseComponentProps from '@common/BaseComponentInterface';
 
 import { 
     classNames,
+    getColorVariantsFromColorThemeValue,
     parseBgClassNames,
     parseBorderClassNames,
     parseMarginTopClassNames,
     toBorderColorClass
 } from '@utils/classname-utils';
 import BarWrapper from '@common/BarWrapper';
+import colorTheme from '@utils/colorTheme';
 
 export interface StackedBarProps extends BaseComponentProps {
     elements: [number, string][],
@@ -31,7 +33,7 @@ const StackedBar = ({
         let prefixSum = 0;
         for (let i = 0; i < elements.length; i++) {
             const currentWidthPercentage = elements[i][0];
-            const currentBgColor = elements[i][1];
+            const currentBgColor = getColorVariantsFromColorThemeValue(colorTheme[elements[i][1]].background).bgColor;
 
             prefixSum += currentWidthPercentage;
             if (prefixSum >= markerPercentageValue)
@@ -48,10 +50,10 @@ const StackedBar = ({
             marginTop={ parseMarginTopClassNames(marginTop) }
             gap={ gap }
         >
-            {elements.map(([widthPercentage, bgColor], idx) => {
+            {elements.map(([widthPercentage, color], idx) => {
                 return(
                     <div key={ idx } style={ { width: `${widthPercentage}%` } } className={ classNames(
-                        parseBgClassNames(bgColor),
+                        getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor,
                         'h-full rounded-lg',
                         // @Achi: old below, feel free to delete
                         // idx === 0 ? 'rounded-l' : '',

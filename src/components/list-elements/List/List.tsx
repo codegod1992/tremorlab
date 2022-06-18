@@ -4,10 +4,12 @@ import BaseComponentProps from '@common/BaseComponentInterface';
 
 import { 
     classNames,
+    getColorVariantsFromColorThemeValue,
     parseDivideColorClassNames,
     parseDivideYClassNames,
     parseMarginTopClassNames 
 } from '@utils/classname-utils';
+import { defaultColors } from '@utils/colorTheme';
 
 export interface ListProps extends BaseComponentProps {
     textColor?: string,
@@ -17,18 +19,15 @@ export interface ListProps extends BaseComponentProps {
 }
 
 const List = ({
-    textColor = 'text-gray-500',
     divideY = 'divide-y',
-    divideColor = 'divide-gray-200',
     marginTop,
     children
 }: ListProps) => {
     return(
         <ul className={ classNames(
-            textColor,
-            divideY,
+            getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
             parseDivideYClassNames(divideY),
-            parseDivideColorClassNames(divideColor),
+            getColorVariantsFromColorThemeValue(defaultColors.lightBorder).divideColor,
             parseMarginTopClassNames(marginTop),
             'overflow-hidden w-full',
         ) }
