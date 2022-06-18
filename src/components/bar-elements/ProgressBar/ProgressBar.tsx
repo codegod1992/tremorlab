@@ -1,35 +1,31 @@
 import React from 'react';
-import Tooltip from '@tippyjs/react'
 
 import BaseComponentProps from '@common/BaseComponentInterface';
 
 import { classNames, parseBgClassNames, parseMarginTopClassNames } from '@utils/classname-utils';
 import BarWrapper from '@common/BarWrapper';
+import { BaseColors } from '@utils/objects';
+import { colors } from './mappings';
 
 export interface ProgressBarProps extends BaseComponentProps {
     widthPercentage: number,
-    primaryBarBgColor?: string,
-    secondaryBarBgColor?: string
+    color?: string,
 }
 
 const ProgressBar = ({
     widthPercentage,
-    primaryBarBgColor = 'bg-blue-500',
-    secondaryBarBgColor = 'bg-blue-200',
+    color = BaseColors.Blue,
     marginTop
 }: ProgressBarProps) => {
     return(
-        <BarWrapper bgColor={ secondaryBarBgColor } marginTop={ parseMarginTopClassNames(marginTop) }>
-            {/* @Achi: External tooltip test */}
-            {/* <Tooltip content={ widthPercentage } className="flex justify-end"> */}
-                <div 
-                    className={ classNames(
-                        parseBgClassNames(primaryBarBgColor),
-                        'h-full flex-col rounded-lg'
-                    ) }
-                    style={ {'width': `${widthPercentage}%`} }
-                />
-            {/* </Tooltip> */}
+        <BarWrapper bgColor={ colors[color].secondaryBgColor } marginTop={ parseMarginTopClassNames(marginTop) }>
+            <div 
+                className={ classNames(
+                    colors[color].primaryBgColor,
+                    'h-full flex-col rounded-lg'
+                ) }
+                style={ {'width': `${widthPercentage}%`} }
+            />
         </BarWrapper>
     );
 };

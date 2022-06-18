@@ -19,8 +19,8 @@ const PeerComparisonBar = ({
     peerGroupMinPercentage,
     peerGroupMaxPercentage,
     markerBgColor = 'bg-blue-500',
-    peerGroupBgColor = 'bg-gray-300',
-    barBgColor = 'bg-gray-100',
+    peerGroupBgColor = 'bg-gray-400',
+    barBgColor = 'bg-gray-200',
     marginTop,
 }: PeerComparisonBarProps) => {
     return(
