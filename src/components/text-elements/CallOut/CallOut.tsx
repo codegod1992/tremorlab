@@ -1,17 +1,19 @@
 import React from 'react';
 
-import BaseComponentProps from '@common/BaseComponentInterface';
-
 import { 
     classNames,
     parseFixedHeightClassNames,
     parseMarginTopClassNames,
 } from '@utils/classname-utils';
+import { BaseColors } from '@utils/objects';
+import BaseComponentProps from '@common/BaseComponentInterface';
+import { colors } from './mappings';
 
 export interface CallOutProps extends BaseComponentProps {
     title: string,
     text: string,
     Icon?: React.ElementType,
+    color?: string,
     fixedHeight?: string,
 }
 
@@ -19,20 +21,24 @@ const CallOut = ({
     title,
     text,
     Icon,
+    color = BaseColors.Blue,
     fixedHeight = 'h-24',
     marginTop
 }: CallOutProps) => {
     return(
         <div className={ classNames(
             parseMarginTopClassNames(marginTop),
-            'bg-gray-100',
-            'border-l-4',
-            'border-gray-400',
-            'relative rounded p-3'
+            colors[color].bgColor,
+            colors[color].borderColor,
+            'relative rounded border-l-4 p-3'
         ) }
         >
             <div className="ml-1.5 overflow-hidden">
-                <div className="flex items-start text-gray-700">
+                <div className={ classNames(
+                    colors[color].headerTextColor,
+                    'flex items-start'
+                ) }
+                >
                     {Icon ? (
                         <Icon className="h-5 w-5 mr-2 shrink-0" aria-hidden="true" />
                     ) : null}
@@ -40,7 +46,7 @@ const CallOut = ({
                 </div>
                 <div className={ classNames(
                     parseFixedHeightClassNames(fixedHeight),
-                    'text-gray-600',
+                    colors[color].bodyTextColor,
                     'mt-2 text-sm overflow-y-auto'
                 ) }
                 >
