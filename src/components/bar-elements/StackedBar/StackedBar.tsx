@@ -27,10 +27,13 @@ const BarLabels = ({ elements }: {elements: [number, string][]}) => {
                         className={ classNames(idx !== 0 ? 'ml-1' : '') }
                         style={ { 'width': `${widthPercentage}%` } }
                     >
-                        { prefixSum-widthPercentage }
+                        { idx !== 0 ? prefixSum - widthPercentage + 1 : null }
                     </div>
                 );
             }) }
+            <div className="absolute left-0 top-0">
+                0
+            </div>
             <div className="absolute right-0 top-0">
                 100
             </div>
