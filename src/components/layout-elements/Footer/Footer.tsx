@@ -9,6 +9,7 @@ import {
 export interface FooterProps {
     fixedHeight?: string,
     paddingX?: string,
+    // Add border = true/false?
     children: React.ReactNode;
 }
 
