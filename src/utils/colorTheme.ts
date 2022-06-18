@@ -24,9 +24,9 @@ export const defaultColors: DefaultColors = {
     black: 'black-none',
     canvasBackground: 'gray-50',
     lightBackground: 'gray-100',
-    background: 'gray-300',
-    darkBackground: 'gray-600', //hover
-    darkestBackground: 'gray-800', //selected
+    background: 'gray-200',
+    darkBackground: 'gray-400', //hover
+    darkestBackground: 'gray-600', //selected
     lightBorder: 'gray-200',
     border: 'gray-300',
     darkBorder: 'gray-600',
