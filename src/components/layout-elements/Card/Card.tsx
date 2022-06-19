@@ -5,13 +5,9 @@ import BaseComponentProps from '@common/BaseComponentInterface';
 import { 
     classNames,
     getColorVariantsFromColorThemeValue,
-    parseBgClassNames,
-    parseBorderClassNames,
     parseHFullOption,
+    parseMarginTopClassNames,
     parseMaxWidthClassNames,
-    parseRoundedCornersClassNames,
-    parseShadowClassNames,
-    parseTextAlignmentClassNames,
     parseWFullOption,
 } from '@utils/classname-utils';
 import { defaultColors } from '@utils/colorTheme';
@@ -36,7 +32,7 @@ const Card = ({
             parseWFullOption(wFull),
             parseHFullOption(hFull),
             getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
-            parseTextAlignmentClassNames(marginTop),
+            parseMarginTopClassNames(marginTop),
             'relative overflow-hidden mx-auto text-left border shadow rounded-lg'
         ) }
         >

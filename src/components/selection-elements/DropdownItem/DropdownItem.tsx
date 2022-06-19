@@ -24,21 +24,25 @@ const DropdownItem = ({
         <button
             className={ classNames(
                 isActive ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                `group flex items-center justify-between px-4 py-2.5 space-x-10 text-sm border-b border-gray-100 w-full
-                 group-hover:text-gray-500 hover:bg-gray-50 text-left`
+                `group flex items-center justify-between px-4 py-2.5 space-x-10 w-full sm:text-sm
+                 group-hover:text-gray-500 hover:bg-gray-100 text-left`
             ) }
             value={ value }
             onClick={ () => setSelectedItem!(value) }
         >
-            <div className="flex font-medium">
+            <div className="flex whitespace-nowrap group-hover:text-gray-900">
                 { Icon ? (
                     <Icon className={ classNames(
-                        'mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500'
-                    ) }/>
+                        'h-5 w-5 mr-3 flex-none text-gray-400'
+                    ) } aria-hidden="true" />
                 ) : null }
                 { name }
             </div>
-            { shortcut ? <span className="font-normal text-gray-400">{ shortcut }</span> : null}
+            { shortcut ? (
+                <span className="font-normal text-gray-400 group-hover:text-gray-500">
+                    { shortcut }
+                </span>
+            ) : null }
         </button>
     </div>
 );
