@@ -43,7 +43,6 @@ const DeltaBar = ({
             </div>
             <div className={ classNames(
                 getColorVariantsFromColorThemeValue(defaultColors.darkBackground).bgColor,
-                // color of marker: same as delta?
                 'h-4 w-1 rounded-full ring-2 ring-white z-10'
             ) }
             />

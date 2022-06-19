@@ -24,7 +24,7 @@ const BarWrapper = ({
         <div 
             className={ classNames(
                 bgColor,
-                gap ? 'space-x-2' : '',
+                gap ? 'space-x-1' : '',
                 overflowHidden ? 'overflow-hidden' : '',
                 justifyContent,
                 marginTop,
