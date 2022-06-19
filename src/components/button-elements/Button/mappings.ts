@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { ButtonColorTypes, ButtonProportionTypes, ButtonShapeTypes } from '@common/common-types';
+import { ButtonColorTypes, ButtonProportionTypes, ButtonShapeTypes, IconProportionTypes } from '@common/common-types';
 import colorTheme, { defaultColors } from '@utils/colorTheme';
 import { BaseColors } from '@utils/objects';
 import { getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
@@ -32,6 +32,26 @@ export const buttonShape: ButtonShapeTypes = {
     border: 'border',
     shadow: 'shadow-sm'
 };
+
+export const iconProportions: {[size: string]: IconProportionTypes} = {
+    xs: {
+        margin: '-ml-0.5 mr-1.5',
+        iconSize: 'w-4 h-4',
+    },
+    sm: {
+        margin: '-ml-1 mr-1.5',
+        iconSize: 'w-5 h-5',
+    },
+    md: {
+        margin: '-ml-1 mr-1.5',
+        iconSize: 'w-5 h-5',
+    },
+    lg: {
+        margin: '-ml-1 mr-1.5',
+        iconSize: 'w-6 h-6',
+    },
+};
+
 
 export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonColorTypes}} = {
     'slate': {

@@ -3,14 +3,13 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import ArrowUpLineIcon from 'remixicon-react/ArrowUpLineIcon';
 
-import { BaseColors, Sizes } from '@utils/objects';
+import { BaseColors } from '@utils/objects';
 import { Title } from 'components';
 
 import { Flex } from 'components';
 
 import {
     Button,
-    ButtonIcon,
     ButtonInline,
 } from 'components';
 
@@ -93,9 +92,8 @@ const Template: ComponentStory<never> = () => (
             <div className="grid grid-cols-8 justify-items-start items-center gap-y-2">
                 {Object.values(BaseColors).map(key => {
                     return(
-                        <ButtonIcon
+                        <Button
                             Icon={ Icon }
-                            iconPosition={ 'left' }
                             text={ buttonText }
                             color={ key }
                             handleClick={ handleClick }
@@ -109,43 +107,10 @@ const Template: ComponentStory<never> = () => (
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.values(BaseColors).map(key => {
                     return(
-                        <ButtonIcon
+                        <Button
                             Icon={ Icon }
                             text={ buttonText }
                             importance={ 'secondary' }
-                            color={ key }
-                            handleClick={ handleClick }
-                        />
-                    );
-                })}
-            </div>
-        </div>
-        <div className="mb-5">
-            <Title text="ButtonPrimaryIconTrailing"/>
-            <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.values(BaseColors).map(key => {
-                    return(
-                        <ButtonIcon
-                            Icon={ Icon }
-                            iconPosition={ 'right' }
-                            text={ buttonText }
-                            color={ key }
-                            handleClick={ handleClick }
-                        />
-                    );
-                })}
-            </div>
-        </div>
-        <div className="mb-5">
-            <Title text="ButtonSecondaryIconTrailing"/>
-            <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.values(BaseColors).map(key => {
-                    return(
-                        <ButtonIcon
-                            Icon={ Icon }
-                            iconPosition={ 'right' }
-                            importance={ 'secondary' }
-                            text={ buttonText }
                             color={ key }
                             handleClick={ handleClick }
                         />
