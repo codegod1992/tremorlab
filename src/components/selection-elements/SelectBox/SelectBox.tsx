@@ -72,8 +72,9 @@ const SelectBox = ({
                                 font-medium text-gray-700 hover:bg-gray-50 focus:ring-2 focus:ring-opacity-100
                                 focus:outline-none focus:ring-blue-300"
                         type="input"
+                        placeholder={ selectedSelectBoxItemValue ? undefined : placeholder }
                         defaultValue={
-                            selectedSelectBoxItemValue ? valueToNameMapping[selectedSelectBoxItemValue] : placeholder
+                            selectedSelectBoxItemValue ? valueToNameMapping[selectedSelectBoxItemValue] : undefined
                         }
                         onChange={ (e) => setSearchQuery(e.target.value) }
                         onClick={ () => setShowModal(true) }
