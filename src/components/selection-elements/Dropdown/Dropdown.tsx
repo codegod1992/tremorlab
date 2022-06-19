@@ -2,12 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { ChevronDownIcon } from '@heroicons/react/solid';
 
+import { classNames } from '@utils/classname-utils';
 import { useOnClickOutside } from '@utils/utils';
 
 export interface DropdownProps {
     placeholder?: string,
     defaultValue?: any,
     handleSelect?: { (value: any): void },
+    modalAlignment?: string,
     children: React.ReactElement[],
 }
 
@@ -15,6 +17,7 @@ const Dropwdown = ({
     placeholder = 'Select',
     defaultValue = null,
     handleSelect = (value: any) => { value; },
+    modalAlignment = 'left',
     children,
 }: DropdownProps) => {
     const [showModal, setShowModal] = useState(false);
@@ -84,8 +87,11 @@ const Dropwdown = ({
                 { showModal ? (
                     <div
                         ref={ ref }
-                        className="absolute rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y
-                            divide-gray-100 focus:outline-none -bottom-1 left-0 translate-y-full min-w-full"
+                        className={ classNames(
+                            'absolute rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y',
+                            'divide-gray-100 focus:outline-none -bottom-1 translate-y-full min-w-full',
+                            modalAlignment === 'left' ? 'left-0' : 'right-0'
+                        ) }
                     >
                         { React.Children.map(children, (child: React.ReactElement) => (
                             <>

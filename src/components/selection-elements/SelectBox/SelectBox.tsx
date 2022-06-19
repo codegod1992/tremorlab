@@ -2,12 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { ChevronDownIcon } from '@heroicons/react/solid';
 
+import { classNames } from '@utils/classname-utils';
 import { useOnClickOutside } from '@utils/utils';
 
 export interface SelectBoxProps {
     defaultValue?: any,
     handleSelect?: { (value: any): void },
     placeholder?: string,
+    modalAlignment?: string,
     children: React.ReactElement[],
 }
 
@@ -15,6 +17,7 @@ const SelectBox = ({
     defaultValue,
     handleSelect,
     placeholder = 'Select',
+    modalAlignment = 'left',
     children,
 }: SelectBoxProps) => {
     const [showModal, setShowModal] = useState(false);
@@ -83,9 +86,11 @@ const SelectBox = ({
                 { showModal ? (
                     <div
                         ref={ ref }
-                        className="absolute min-w-full rounded-md shadow-lg bg-white ring-1 
-                            ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none -bottom-1 left-0
-                            translate-y-full min-w-full"
+                        className={ classNames(
+                            'absolute min-w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5',
+                            'divide-y divide-gray-100 focus:outline-none -bottom-1 translate-y-full min-w-full',
+                            modalAlignment === 'left' ? 'left-0' : 'right-0'
+                        ) }
                     >
                         { React.Children.map(children, (child) => {
                             if (filteredOptionNames.has(String(child.props.name))) {

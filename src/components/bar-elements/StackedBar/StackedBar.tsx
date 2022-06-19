@@ -15,7 +15,7 @@ const BarLabels = ({ elements }: {elements: [number, string][]}) => {
     let prefixSum = 0;
     return (
         <div className={ classNames(
-            'relative flex w-full',
+            'relative text-sm flex w-full mb-2',
             getColorVariantsFromColorThemeValue(defaultColors.text).textColor
         ) }
         >

@@ -16,7 +16,7 @@ export default {
 
 const Template: ComponentStory<typeof Dropdown> = (args) => (
     <>
-        <div className="flex w-full mt-72">
+        <div className="">
             <Dropdown defaultValue={ 3 } handleSelect={ (value) => console.log('The selected value is', value) }>
                 <DropdownItem value={ 5 } name={ 'Five' } Icon={ CalendarIcon } shortcut={ 'F' } />
                 <DropdownItem value={ 3 } name={ 'Three' } Icon={ CalendarIcon } shortcut={ 'T' } />

@@ -1,4 +1,5 @@
 import { ColorTypes, colorVariantMapping } from './colorVariantMapping';
+import { twColorsHex } from '@utils/colorTheme';
 
 interface StringJoiner {
     (...classes: string[]): string
@@ -79,6 +80,15 @@ export const getColorVariantsFromColorThemeValue = (colorThemeValue: string): Co
     const colorValue = colorThemeValueParts[1];
     const colorVariants = colorVariantMapping[baseColor][colorValue];
     return colorVariants;
+};
+
+export const getHexFromColorThemeValue = (colorThemeValue: string): string => {
+    const colorThemeValueParts = colorThemeValue.split('-');
+    if (!colorThemeValue || colorThemeValueParts.length != 2) return '';
+    const baseColor = colorThemeValueParts[0];
+    // Currenlty only 500 is supported
+    const hexValue = twColorsHex[baseColor][500];
+    return hexValue;
 };
 
 export const toBorderColorClass: TailwindClassConverter = (twClassName: string): string => {

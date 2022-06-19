@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDownIcon, XCircleIcon, XIcon, } from '@heroicons/react/solid';
 
 import { removeValueFromArray, useOnClickOutside } from '@utils/utils';
+import { classNames } from '@utils/classname-utils';
 
 interface SelectedItemBadgeProps {
     name: string,
@@ -31,6 +32,7 @@ export interface MultiSelectBoxProps {
     defaultValues?: any[],
     handleSelect?: { (value: any): void },
     placeholder?: string,
+    modalAlignment?: string,
     children: React.ReactElement[],
 }
 
@@ -38,6 +40,7 @@ const MultiSelectBox = ({
     defaultValues = [],
     handleSelect = (value) => null,
     placeholder = 'Select',
+    modalAlignment = 'left',
     children,
 }: MultiSelectBoxProps) => {
     const [showModal, setShowModal] = useState(false);
@@ -94,8 +97,11 @@ const MultiSelectBox = ({
                 { showModal ? (
                     <div
                         ref={ ref }
-                        className="absolute rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y
-                            divide-gray-100 focus:outline-none left-0 -bottom-1 translate-y-full min-w-full"
+                        className={ classNames(
+                            'absolute rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y',
+                            'divide-gray-100 focus:outline-none -bottom-1 translate-y-full min-w-full',
+                            modalAlignment === 'left' ? 'left-0' : 'right-0'
+                        ) }
                     >
                         { React.Children.map(children, (child) => (
                             <>

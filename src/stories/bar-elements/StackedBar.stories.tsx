@@ -26,8 +26,8 @@ WithoutMarker.args = {
     elements: [
         [10, 'emerald'],
         [25, 'yellow'],
-        [55, 'orange'],
-        [10, 'rose'],
+        [50, 'orange'],
+        [15, 'rose'],
     ],
     marginTop: 'mt-5'
 };
