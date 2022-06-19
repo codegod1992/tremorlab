@@ -10,7 +10,6 @@ import { Flex } from 'components';
 
 import {
     Button,
-    ButtonIcon,
     ButtonInline,
 } from 'components';
 
