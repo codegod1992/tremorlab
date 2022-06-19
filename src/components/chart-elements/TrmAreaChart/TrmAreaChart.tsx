@@ -15,11 +15,14 @@ import ChartLegend from '@common/ChartLegend';
 import { ChartProps } from '@common/common-types';
 import ChartTooltip from '@common/ChartTooltip';
 
+import colorTheme, { themeColorRange } from '@utils/colorTheme';
 import { defaultValueFormater } from '@utils/utils';
+import { getHexFromColorThemeValue } from '@utils/classname-utils';
 
 const TrmAreaChart = ({
     data,
     attributes,
+    colors = themeColorRange,
     valueFormater = defaultValueFormater,
     showXAxis = true,
     showYAxis = true,
@@ -40,16 +43,10 @@ const TrmAreaChart = ({
                 bottom: paddingBottomPixels,
             } }
         >
-            <defs>
-                <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.4} />
-                    <stop offset="95%" stopColor="#3b82f6" stopOpacity={0} />
-                </linearGradient>
-            </defs>
             <CartesianGrid
                 strokeDasharray="3 3"
-                horizontal={true}
-                vertical={false}
+                horizontal={ true }
+                vertical={ false }
             />
             <XAxis
                 hide={ !showXAxis }
@@ -88,6 +85,7 @@ const TrmAreaChart = ({
                                 payload={ payload }
                                 label={ label }
                                 valueFormater={ valueFormater }
+                                colors={ colors }
                             />
                         )
                         : null
@@ -98,20 +96,36 @@ const TrmAreaChart = ({
                 <Legend
                     verticalAlign="top"
                     height={ 60 }
-                    content={ ChartLegend }
+                    content={ ({ payload }) => ChartLegend({ payload }, colors) }
                 />
             ) : null }
-            { attributes.map((attribute) => (
-                <Area
-                    key={ attribute }
-                    type="linear"
-                    dataKey={ attribute }
-                    stroke="#3b82f6"
-                    fill="url(#gradient)"
-                    strokeWidth={2}
-                    dot={false}
-                    isAnimationActive={false}
-                />
+            { attributes.map((attribute, idx) => (
+                <>
+                    <defs key={ `gradient-def-${idx}` }>
+                        <linearGradient id={ colors[idx] } x1="0" y1="0" x2="0" y2="1">
+                            <stop
+                                offset="5%"
+                                stopColor={ getHexFromColorThemeValue(colorTheme[colors[idx]].background) }
+                                stopOpacity={0.4}
+                            />
+                            <stop
+                                offset="95%"
+                                stopColor={ getHexFromColorThemeValue(colorTheme[colors[idx]].background) }
+                                stopOpacity={0}
+                            />
+                        </linearGradient>
+                    </defs>
+                    <Area
+                        key={ attribute }
+                        type="linear"
+                        dataKey={ attribute }
+                        stroke={ getHexFromColorThemeValue(colorTheme[colors[idx]].background) }
+                        fill={ `url(#${colors[idx]})` }
+                        strokeWidth={2}
+                        dot={false}
+                        isAnimationActive={false}
+                    />
+                </>
             ))}
         </AreaChart>
     </ResponsiveContainer>

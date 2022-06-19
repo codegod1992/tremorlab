@@ -15,7 +15,9 @@ import ChartLegend from '@common/ChartLegend';
 import { ChartProps } from '@common/common-types';
 import ChartTooltip from '@common/ChartTooltip';
 
+import colorTheme, { themeColorRange } from '@utils/colorTheme';
 import { defaultValueFormater } from '@utils/utils';
+import { getHexFromColorThemeValue } from '@utils/classname-utils';
 
 export interface TrmBarChartProps extends ChartProps {
     alignVertical?: boolean,
@@ -25,6 +27,7 @@ export interface TrmBarChartProps extends ChartProps {
 const TrmBarChart = ({
     data,
     attributes,
+    colors = themeColorRange,
     valueFormater = defaultValueFormater,
     alignVertical = false,
     stack = true,
@@ -39,7 +42,7 @@ const TrmBarChart = ({
 }: TrmBarChartProps) => (
     <ResponsiveContainer width="100%" height="100%">
         <BarChart
-            data={data}
+            data={ data }
             layout={ alignVertical ? 'vertical' : 'horizontal' }
             stackOffset={ stack ? 'expand' : undefined }
             margin={{
@@ -51,8 +54,8 @@ const TrmBarChart = ({
         >
             <CartesianGrid
                 strokeDasharray="3 3"
-                horizontal={true}
-                vertical={false}
+                horizontal={ true }
+                vertical={ false }
             />
 
             { !alignVertical ? (
@@ -126,6 +129,7 @@ const TrmBarChart = ({
                                 payload={ payload }
                                 label={ label }
                                 valueFormater={ valueFormater }
+                                colors={ colors }
                             />
                         )
                         : null
@@ -137,17 +141,18 @@ const TrmBarChart = ({
                     <Legend
                         verticalAlign="top"
                         height={40}
-                        content={ ChartLegend }
+                        content={ ({ payload }) => ChartLegend({ payload }, colors) }
                     />
                 ) : null
             }
             {
-                attributes.map((attribute) => (
+                attributes.map((attribute, idx) => (
                     <Bar
+                        key={ `item-${idx}` }
                         type="linear"
                         stackId={ stack ? 'a' : undefined }
                         dataKey={ attribute }
-                        fill="#3b82f6"
+                        fill={ getHexFromColorThemeValue(colorTheme[colors[idx]].background) }
                         isAnimationActive={false}
                     />
 

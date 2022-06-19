@@ -36,6 +36,7 @@ export type ButtonColorTypes = {
 export interface ChartProps {
     data: any[],
     attributes: string[],
+    colors: string[],
     valueFormater?: ValueFormater,
     showXAxis?: boolean,
     showYAxis?: boolean,

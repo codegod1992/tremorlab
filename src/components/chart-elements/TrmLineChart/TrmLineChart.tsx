@@ -15,11 +15,14 @@ import ChartLegend from '@common/ChartLegend';
 import { ChartProps } from '@common/common-types';
 import ChartTooltip from '@common/ChartTooltip';
 
+import colorTheme, { themeColorRange } from '@utils/colorTheme';
 import { defaultValueFormater } from '@utils/utils';
+import { getHexFromColorThemeValue } from '@utils/classname-utils';
 
 const TrmLineChart = ({
     data,
     attributes,
+    colors = themeColorRange,
     valueFormater = defaultValueFormater,
     showXAxis = true,
     showYAxis = true,
@@ -83,6 +86,7 @@ const TrmLineChart = ({
                                     payload={ payload }
                                     label={ label }
                                     valueFormater={ valueFormater }
+                                    colors={ colors }
                                 />
                             )
                             : null
@@ -93,14 +97,15 @@ const TrmLineChart = ({
                     <Legend
                         verticalAlign="top"
                         height={ 40 }
-                        content={ ChartLegend }
+                        content={ ({ payload }) => ChartLegend({ payload }, colors) }
                     />
                 ) : null }
-                { attributes.map((attribute) => (
+                { attributes.map((attribute, idx) => (
                     <Line
+                        key={ `item-${idx}` }
                         type="linear"
                         dataKey={ attribute }
-                        stroke="#3b82f6"
+                        stroke={ getHexFromColorThemeValue(colorTheme[colors[idx]].background) }
                         strokeWidth={ 2 }
                         dot={ false }
                         isAnimationActive={ false }

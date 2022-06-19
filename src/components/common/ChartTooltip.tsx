@@ -1,19 +1,35 @@
 import React from 'react';
 
+import { classNames, getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
+import colorTheme, { defaultColors, themeColorRange } from '@utils/colorTheme';
 import { ValueFormater } from '@utils/utils';
 
 export interface ChartTooltipRowProps {
     value: string,
     name: string,
+    color: string,
 }
 
-const ChartTooltipRow = ({ value, name }: ChartTooltipRowProps) => (
+const ChartTooltipRow = ({ value, name, color }: ChartTooltipRowProps) => (
     <div className="flex items-center justify-between space-x-8">
         <div className="flex items-center space-x-2">
-            <span className="w-3 h-3 bg-blue-500 rounded-full border-2 border-white shadow" />
-            <p className="text-gray-700 font-medium">{ value }</p>
+            <span className={ classNames(
+                getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor,
+                'w-3 h-3 rounded-full border-2 border-white shadow'
+            ) } />
+            <p className={ classNames(
+                getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
+                'font-medium'
+            ) }>
+                { value }
+            </p>
         </div>
-        <p className="text-gray-500 font-normal">{ name }</p>
+        <p className={ classNames(
+            getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
+            'font-normal'
+        ) }>
+            { name }
+        </p>
     </div>
 );
 
@@ -21,21 +37,35 @@ export interface ChartTooltipProps {
     active: boolean | undefined,
     payload: any,
     label: string,
+    colors?: string[],
     valueFormater: ValueFormater,
 }
 
-const ChartTooltip = ({ active, payload, label, valueFormater }: ChartTooltipProps) => {
+const ChartTooltip = ({ active, payload, label, colors = themeColorRange, valueFormater }: ChartTooltipProps) => {
     if (active && payload) {
         return (
             <div className="bg-white border text-sm shadow-lg rounded-md">
-                <div className="py-2 px-4 border-b border-gray-200">
-                    <p className="text-gray-700 font-medium">{ label }</p>
+                <div className={ classNames(
+                    getColorVariantsFromColorThemeValue(defaultColors.lightBorder).borderColor,
+                    'py-2 px-4 border-b'
+                ) }>
+                    <p className={ classNames(
+                        getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
+                        'font-medium'
+                    ) }>
+                        { label }
+                    </p>
                 </div>
   
                 <div className="pt-2.5 pb-2.5 px-4 space-y-1">
                     {
                         payload.map(({value, name}: { value: number, name: string }, idx: number) => (
-                            <ChartTooltipRow value={ valueFormater(value) } name={ name } key={ `id-${idx}` } />
+                            <ChartTooltipRow
+                                key={ `id-${idx}` }
+                                value={ valueFormater(value) }
+                                name={ name }
+                                color={ colors[idx] }
+                            />
                         ))
                     }
                 </div>

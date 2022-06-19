@@ -1,3 +1,28 @@
+export const themeColorRange = [
+    'cyan',
+    'sky',
+    'blue',
+    'indigo',
+    'violet',
+    'purple',
+    'fuchsia',
+    'slate',
+    'gray',
+    'zinc',
+    'neutral',
+    'stone',
+    'red',
+    'orange',
+    'amber',
+    'yellow',
+    'lime',
+    'green',
+    'emerald',
+    'teal',
+    'pink',
+    'rose',
+];
+
 export type DefaultColors = {
     transparent: string,
     white: string,
