@@ -16,26 +16,14 @@ const Template: ComponentStory<typeof List> = (args) => (
     <List {...args}>
         <ListItem spaceX="space-x-8">
             <Flex truncate={ true }>
-                <ListValue 
-                    primary="Lorem Ipsum is simply dummy text of the printing"
-                    secondary="World" truncate={ true }/>
-                <ListValue primary="Hello" secondary="World" truncate={ false }/>
             </Flex>
             <Flex truncate={ true }>
-                <ListValue primary="Lorem Ipsum" secondary="World" truncate={ true }/>
-                <ListValue primary="Hello" secondary="World" truncate={ true }/>
             </Flex>
         </ListItem>
         <ListItem spaceX="">
             <Flex truncate={ false }>
-                <ListValue 
-                    primary="Lorem Ipsum is simply dummy text of the printing"
-                    secondary="World" truncate={ false }/>
-                <ListValue primary="Hello" secondary="World" truncate={ false }/>
             </Flex>
             <Flex truncate={ false }>
-                <ListValue primary="Lorem Ipsum" secondary="World" truncate={ false }/>
-                <ListValue primary="Hello" secondary="World" truncate={ false }/>
             </Flex>
         </ListItem>
     </List>
@@ -44,16 +32,8 @@ const Template: ComponentStory<typeof List> = (args) => (
 const SimpleTemplate: ComponentStory<typeof List> = (args) => (
     <List {...args}>
         <ListItem spaceX="space-x-10">
-            <ListValue 
-                primary="Achilleas Georgios Mitrotasios"
-                secondary="World"
-                truncate={ true }
-            />
-            <ListValue primary="1000000000000000" secondary="World" truncate={ false } textAlignment="text-right"/>
         </ListItem>
         <ListItem spaceX="">
-            <ListValue primary="Lorem Ipsum" secondary="World" truncate={ false }/>
-            <ListValue primary="Hello" secondary="World" truncate={ false } textAlignment="text-right"/>
         </ListItem>
     </List>
 );
