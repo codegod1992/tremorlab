@@ -65,21 +65,19 @@ const SelectBox = ({
     return (
         <>
             <div className="relative">
-                <form>
-                    <input
-                        key={ selectedSelectBoxItemValue ? valueToNameMapping[selectedSelectBoxItemValue] : null }
-                        className="w-full inline-flex rounded-md border border-gray-300 pl-4 pr-6 py-2 bg-white text-sm
-                                font-medium text-gray-700 hover:bg-gray-50 focus:ring-2 focus:ring-opacity-100
-                                focus:outline-none focus:ring-blue-300"
-                        type="input"
-                        placeholder={ selectedSelectBoxItemValue ? undefined : placeholder }
-                        defaultValue={
-                            selectedSelectBoxItemValue ? valueToNameMapping[selectedSelectBoxItemValue] : undefined
-                        }
-                        onChange={ (e) => setSearchQuery(e.target.value) }
-                        onClick={ () => setShowModal(true) }
-                    />
-                </form>
+                <input
+                    key={ selectedSelectBoxItemValue ? valueToNameMapping[selectedSelectBoxItemValue] : null }
+                    className="inline-flex rounded-md border border-gray-300 pl-4 pr-10 py-2 bg-white sm:text-sm
+                        font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-0 focus:ring-2
+                        focus:ring-opacity-100 w-0 min-w-[10rem] placeholder:text-gray-500"
+                    type="input"
+                    placeholder={ selectedSelectBoxItemValue ? undefined : placeholder }
+                    defaultValue={
+                        selectedSelectBoxItemValue ? valueToNameMapping[selectedSelectBoxItemValue] : undefined
+                    }
+                    onChange={ (e) => setSearchQuery(e.target.value) }
+                    onClick={ () => setShowModal(true) }
+                />
                 <ChevronDownIcon
                     className="absolute top-1/2 right-2 h-5 w-5 text-gray-400 -translate-y-1/2"
                     aria-hidden="true"
@@ -88,8 +86,9 @@ const SelectBox = ({
                     <div
                         ref={ ref }
                         className={ classNames(
-                            'absolute min-w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5',
-                            'divide-y divide-gray-100 focus:outline-none -bottom-1 translate-y-full min-w-full',
+                            'absolute min-w-full rounded-md shadow-lg bg-white ring-1',
+                            'ring-black ring-opacity-5 py-1 divide-y divide-gray-100 max-h-72 overflow-auto',
+                            'focus:outline-none -bottom-2 left-0 translate-y-full',
                             modalAlignment === 'left' ? 'left-0' : 'right-0'
                         ) }
                     >

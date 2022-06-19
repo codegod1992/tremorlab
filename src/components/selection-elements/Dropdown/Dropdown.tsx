@@ -79,9 +79,10 @@ const Dropwdown = ({
             <button
                 className={ classNames(
                     selectedItem ? 'text-gray-700' : 'text-gray-500',
-                    'relative inline-flex rounded-md border border-gray-300 px-4 py-2 bg-white sm:text-sm',
+                    'relative inline-flex justify-between rounded-md border border-gray-300 px-4 py-2 bg-white sm:text-sm',
                     'font-medium shadow-sm hover:bg-gray-50 focus:ring-2 focus:ring-opacity-100',
                     'focus:outline-none focus:ring-blue-300 button-dropdown',
+                    'min-w-[10rem]'
                 ) }
                 onClick={ () => setShowModal(true) }
             >
