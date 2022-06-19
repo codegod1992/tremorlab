@@ -5,29 +5,29 @@ import { getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
 
 export const buttonProportions: {[char: string]: ButtonProportionTypes} = {
     xs: {
-        paddingX: 'px-2.5',
-        paddingY: 'py-1.5',
+        paddingX: '',
+        paddingY: '',
         textSize: 'text-xs',
     },
     sm: {
-        paddingX: 'px-4',
-        paddingY: 'py-2',
+        paddingX: '',
+        paddingY: '',
         textSize: 'text-sm',
     },
     md: {
-        paddingX: 'px-4',
-        paddingY: 'py-2',
+        paddingX: '',
+        paddingY: '',
         textSize: 'text-base',
     },
     lg: {
-        paddingX: 'px-4',
-        paddingY: 'py-2.5',
+        paddingX: '',
+        paddingY: '',
         textSize: 'text-lg',
     },
 };
 
 export const buttonShape: ButtonShapeTypes = {
-    rounded: 'rounded-lg',
+    rounded: '',
     border: '',
     shadow: ''
 };
@@ -40,7 +40,7 @@ export const buttonColors: {[baseColor: string]: ButtonColorTypes} = {
         hoverBgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
         borderColor: '',
         hoverBorderColor: '',
-        focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
+        focusRingColor: '',
     },
     'gray': { 
         textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Gray].text).textColor,
@@ -49,7 +49,7 @@ export const buttonColors: {[baseColor: string]: ButtonColorTypes} = {
         hoverBgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
         borderColor: '',
         hoverBorderColor: '',
-        focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Gray].ring).focusRingColor,
+        focusRingColor: '',
     },
     'zinc': { 
         textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Zinc].text).textColor,
@@ -58,7 +58,7 @@ export const buttonColors: {[baseColor: string]: ButtonColorTypes} = {
         hoverBgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
         borderColor: '',
         hoverBorderColor: '',
-        focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Zinc].ring).focusRingColor,
+        focusRingColor: '',
     },
     'neutral': { 
         textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Neutral].text).textColor,
@@ -67,7 +67,7 @@ export const buttonColors: {[baseColor: string]: ButtonColorTypes} = {
         hoverBgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
         borderColor: '',
         hoverBorderColor: '',
-        focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Neutral].ring).focusRingColor,
+        focusRingColor: '',
     },
     'stone': { 
         textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Stone].text).textColor,
@@ -76,7 +76,7 @@ export const buttonColors: {[baseColor: string]: ButtonColorTypes} = {
         hoverBgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
         borderColor: '',
         hoverBorderColor: '',
-        focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Stone].ring).focusRingColor,
+        focusRingColor: '',
     },
     'red': { 
         textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Red].text).textColor,
@@ -85,7 +85,7 @@ export const buttonColors: {[baseColor: string]: ButtonColorTypes} = {
         hoverBgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
         borderColor: '',
         hoverBorderColor: '',
-        focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Red].ring).focusRingColor,
+        focusRingColor: '',
     },
     'orange': { 
         textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].text).textColor,
@@ -94,7 +94,7 @@ export const buttonColors: {[baseColor: string]: ButtonColorTypes} = {
         hoverBgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
         borderColor: '',
         hoverBorderColor: '',
-        focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].ring).focusRingColor,
+        focusRingColor: '',
     },
     'amber': { 
         textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Amber].text).textColor,
@@ -103,7 +103,7 @@ export const buttonColors: {[baseColor: string]: ButtonColorTypes} = {
         hoverBgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
         borderColor: '',
         hoverBorderColor: '',
-        focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Amber].ring).focusRingColor,
+        focusRingColor: '',
     },
     'yellow': { 
         textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Yellow].text).textColor,
@@ -112,7 +112,7 @@ export const buttonColors: {[baseColor: string]: ButtonColorTypes} = {
         hoverBgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
         borderColor: '',
         hoverBorderColor: '',
-        focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Yellow].ring).focusRingColor,
+        focusRingColor: '',
     },
     'lime': { 
         textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Lime].text).textColor,
@@ -121,7 +121,7 @@ export const buttonColors: {[baseColor: string]: ButtonColorTypes} = {
         hoverBgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
         borderColor: '',
         hoverBorderColor: '',
-        focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Lime].ring).focusRingColor,
+        focusRingColor: '',
     },
     'green': { 
         textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Green].text).textColor,
@@ -130,7 +130,7 @@ export const buttonColors: {[baseColor: string]: ButtonColorTypes} = {
         hoverBgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
         borderColor: '',
         hoverBorderColor: '',
-        focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Green].ring).focusRingColor,
+        focusRingColor: '',
     },
     'emerald': { 
         textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].text).textColor,
@@ -139,7 +139,7 @@ export const buttonColors: {[baseColor: string]: ButtonColorTypes} = {
         hoverBgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
         borderColor: '',
         hoverBorderColor: '',
-        focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].ring).focusRingColor,
+        focusRingColor: '',
     },
     'teal': { 
         textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Teal].text).textColor,
@@ -148,7 +148,7 @@ export const buttonColors: {[baseColor: string]: ButtonColorTypes} = {
         hoverBgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
         borderColor: '',
         hoverBorderColor: '',
-        focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Teal].ring).focusRingColor,
+        focusRingColor: '',
     },
     'cyan': { 
         textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Cyan].text).textColor,
@@ -157,7 +157,7 @@ export const buttonColors: {[baseColor: string]: ButtonColorTypes} = {
         hoverBgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
         borderColor: '',
         hoverBorderColor: '',
-        focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Cyan].ring).focusRingColor,
+        focusRingColor: '',
     },
     'sky': { 
         textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Sky].text).textColor,
@@ -166,7 +166,7 @@ export const buttonColors: {[baseColor: string]: ButtonColorTypes} = {
         hoverBgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
         borderColor: '',
         hoverBorderColor: '',
-        focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Sky].ring).focusRingColor,
+        focusRingColor: '',
     },
     'blue': {
         textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].text).textColor,
@@ -175,7 +175,7 @@ export const buttonColors: {[baseColor: string]: ButtonColorTypes} = {
         hoverBgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
         borderColor: '',
         hoverBorderColor: '',
-        focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
+        focusRingColor: '',
     },
     'indigo': { 
         textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Indigo].text).textColor,
@@ -184,7 +184,7 @@ export const buttonColors: {[baseColor: string]: ButtonColorTypes} = {
         hoverBgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
         borderColor: '',
         hoverBorderColor: '',
-        focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Indigo].ring).focusRingColor,
+        focusRingColor: '',
     },
     'violet': { 
         textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Violet].text).textColor,
@@ -193,7 +193,7 @@ export const buttonColors: {[baseColor: string]: ButtonColorTypes} = {
         hoverBgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
         borderColor: '',
         hoverBorderColor: '',
-        focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Violet].ring).focusRingColor,
+        focusRingColor: '',
     },
     'purple': { 
         textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Purple].text).textColor,
@@ -202,7 +202,7 @@ export const buttonColors: {[baseColor: string]: ButtonColorTypes} = {
         hoverBgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
         borderColor: '',
         hoverBorderColor: '',
-        focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Purple].ring).focusRingColor,
+        focusRingColor: '',
     },
     'fuchsia': { 
         textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Fuchsia].text).textColor,
@@ -211,7 +211,7 @@ export const buttonColors: {[baseColor: string]: ButtonColorTypes} = {
         hoverBgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
         borderColor: '',
         hoverBorderColor: '',
-        focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Fuchsia].ring).focusRingColor,
+        focusRingColor: '',
     },
     'pink': { 
         textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Pink].text).textColor,
@@ -220,7 +220,7 @@ export const buttonColors: {[baseColor: string]: ButtonColorTypes} = {
         hoverBgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
         borderColor: '',
         hoverBorderColor: '',
-        focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Pink].ring).focusRingColor,
+        focusRingColor: '',
     },
     'rose': { 
         textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].text).textColor,
@@ -229,6 +229,6 @@ export const buttonColors: {[baseColor: string]: ButtonColorTypes} = {
         hoverBgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
         borderColor: '',
         hoverBorderColor: '',
-        focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].ring).focusRingColor,
+        focusRingColor: '',
     }
 };

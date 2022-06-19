@@ -47,7 +47,7 @@ const ButtonWrapper = ({
                 hoverBorderColor,
                 focusRingColor,
                 'flex-shrink-0 inline-flex items-center group font-medium group',
-                'focus:outline-none focus:ring-2 focus:ring-offset-2',
+                'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-transparent',
             ) }
             >
                 { children }
