@@ -83,7 +83,7 @@ const SelectBox = ({
                     className="absolute top-1/2 right-2 h-5 w-5 text-gray-400 -translate-y-1/2"
                     aria-hidden="true"
                 />
-                { showModal ? (
+                { showModal && (filteredOptionNames.size !== 0) ? (
                     <div
                         ref={ ref }
                         className={ classNames(
