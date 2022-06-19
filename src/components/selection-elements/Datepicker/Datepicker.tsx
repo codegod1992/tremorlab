@@ -19,7 +19,7 @@ import {
     getDayBgColorClassName,
     getDayHoverBgColorClassName,
     getDayRoundedClassName,
-    getDayTextColorClassName,
+    getDayTextClassNames,
     nextMonth,
     previousMonth,
     relativeFilterOptions
@@ -29,10 +29,12 @@ import { useOnClickOutside } from '@utils/utils';
 
 export interface DatepickerProps {
     handleSelect?: { (selectedStartDay: Date|null, selectedEndDay: Date|null): void },
+    modalAlignment?: string,
 }
 
 const Datepicker = ({
     handleSelect = (selectedStartDay: Date|null, selectedEndDay: Date|null) => null,
+    modalAlignment = 'left',
 }: DatepickerProps) => {
     const [showDatePickerModal, setShowDatePickerModal] = useState(false);
     const datePickerRef = useRef<HTMLDivElement>(null);
@@ -100,21 +102,25 @@ const Datepicker = ({
     return (
         <>
             <div className="relative inline-flex">
-                <div className="flex items-center justify-between text-sm font-medium text-gray-700 border-gray-300 
-                    bg-white">
+                <div className="flex items-center justify-between rounded-md shadow-sm sm:text-sm font-medium
+                    text-gray-700 bg-white"
+                >
                     <button
                         onClick={ () => setShowDatePickerModal(true) }
-                        className="flex whitespace-nowrap items-center pl-2 pr-4 py-2 space-x-4 rounded-l-md border 
-                            border-r-0 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-opacity-100
+                        className="flex whitespace-nowrap items-center px-2 py-2 rounded-l-md border 
+                            border-r-0 border-gray-300 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-opacity-100
                             focus:outline-none focus:ring-blue-300"
                     >
                         <CalendarIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
-                        <span>{ displaySelected(selectedStartDay, selectedEndDay) }</span>
+                        { selectedStartDay ? ( 
+                            <span className="ml-2 mr-0.5">{ displaySelected(selectedStartDay, selectedEndDay) }</span>
+                        ) : null }
                     </button>
                     <button
                         onClick={ () => setShowDropdownModal(true) }
-                        className="inline-flex justify-center w-full rounded-r-md border px-4 py-2 hover:bg-gray-50 
-                            focus:ring-2 focus:ring-opacity-100 focus:outline-none focus:ring-blue-300"
+                        className="inline-flex justify-center text-gray-500 w-full rounded-r-md border font-medium
+                            sm:text-sm border-gray-300 px-4 py-2 hover:bg-gray-50 focus:ring-2 focus:ring-opacity-100
+                            focus:outline-none focus:ring-blue-300"
                     >
                         { selectedRelativeFilterOption
                             ? relativeFilterOptions.find((filterOption) => (
@@ -126,14 +132,17 @@ const Datepicker = ({
                 { showDatePickerModal ? (
                     <div
                         ref={ datePickerRef }
-                        className="absolute w-72 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-2
-                            px-3 -bottom-1 left-0 translate-y-full"
+                        className={ classNames(
+                            `absolute w-72 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-2
+                            px-3 -bottom-2 translate-y-full`,
+                            modalAlignment === 'left' ? 'left-0' : 'right-0',
+                        ) }
                     >
                         <div className="flex justify-between items-center py-2 px-1">
                             <button
                                 type="button"
                                 onClick={() => previousMonth(firstDayCurrentMonth, setCurrentMonth)}
-                                className="inline-flex p-1 text-sm font-medium text-gray-700 bg-white border
+                                className="inline-flex p-1 sm:text-sm font-medium text-gray-700 bg-white border
                                     border-gray-300 rounded shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2
                                     focus:ring-offset-0 focus:ring-blue-500"
                             >
@@ -141,14 +150,14 @@ const Datepicker = ({
                                 <ChevronLeftIcon className="w-5 h-5 text-gray-600" aria-hidden="true" />
                             </button>
 
-                            <h2 className="font-semibold text-sm text-gray-900">
+                            <h2 className="font-semibold sm:text-sm text-gray-900">
                                 {format(firstDayCurrentMonth, 'MMMM yyyy')}
                             </h2>
 
                             <button
                                 onClick={() => nextMonth(firstDayCurrentMonth, setCurrentMonth)}
                                 type="button"
-                                className="inline-flex p-1 text-sm font-medium text-gray-700 bg-white border
+                                className="inline-flex p-1 sm:text-sm font-medium text-gray-700 bg-white border
                                     border-gray-300 rounded shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2
                                     focus:ring-offset-0 focus:ring-blue-500"
                             >
@@ -158,15 +167,29 @@ const Datepicker = ({
 
                         </div>
                         <div className="grid grid-cols-7 text-xs leading-6 text-center font-medium text-gray-400">
-                            <div className="flex items-center justify-center w-10 h-10">Su</div>
-                            <div className="flex items-center justify-center w-10 h-10">Mo</div>
-                            <div className="flex items-center justify-center w-10 h-10">Tu</div>
-                            <div className="flex items-center justify-center w-10 h-10">We</div>
-                            <div className="flex items-center justify-center w-10 h-10">Th</div>
-                            <div className="flex items-center justify-center w-10 h-10">Fr</div>
-                            <div className="flex items-center justify-center w-10 h-10">Sa</div>
+                            <div className="w-full flex justify-center">
+                                <div className="flex items-center justify-center w-full h-10">Su</div>
+                            </div>
+                            <div className="w-full flex justify-center">
+                                <div className="flex items-center justify-center w-full h-10">Mo</div>
+                            </div>
+                            <div className="w-full flex justify-center">
+                                <div className="flex items-center justify-center w-full h-10">Tu</div>
+                            </div>
+                            <div className="w-full flex justify-center">
+                                <div className="flex items-center justify-center w-full h-10">We</div>
+                            </div>
+                            <div className="w-full flex justify-center">
+                                <div className="flex items-center justify-center w-full h-10">Th</div>
+                            </div>
+                            <div className="w-full flex justify-center">
+                                <div className="flex items-center justify-center w-full h-10">Fr</div>
+                            </div>
+                            <div className="w-full flex justify-center">
+                                <div className="flex items-center justify-center w-full h-10">Sa</div>
+                            </div>
                         </div>
-                        <div className="grid grid-cols-7 text-sm">
+                        <div className="grid grid-cols-7 sm:text-sm">
                             {days.map((day) => (
                                 <div
                                     key={day.toString()}
@@ -182,10 +205,10 @@ const Datepicker = ({
                                         onMouseLeave={ () => setHoveredDay(null) }
                                         className={classNames(
                                             getDayBgColorClassName(day, selectedStartDay, selectedEndDay, hoveredDay),
-                                            getDayTextColorClassName(day, selectedStartDay, selectedEndDay, hoveredDay),
+                                            getDayTextClassNames(day, selectedStartDay, selectedEndDay, hoveredDay),
                                             getDayHoverBgColorClassName(day, selectedStartDay, selectedEndDay),
                                             getDayRoundedClassName(day, selectedStartDay, selectedEndDay, hoveredDay),
-                                            'h-10 w-10 flex items-center justify-center'
+                                            'h-10 w-full flex items-center justify-center'
                                         )}
                                     >
                                         <time dateTime={format(day, 'yyyy-MM-dd')}>
@@ -200,8 +223,12 @@ const Datepicker = ({
                 { showDropdownModal ? (
                     <div
                         ref={ dropDownRef }
-                        className="absolute min-w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5
-                            divide-y divide-gray-100 focus:outline-none right-0 -bottom-1 translate-y-full"
+                        className={ classNames(
+                            `absolute min-w-full text-left rounded-md shadow-lg bg-white ring-1 py-1 ring-black
+                            ring-opacity-5 divide-y divide-gray-100 focus:outline-none -bottom-2
+                            translate-y-full`,
+                            modalAlignment === 'left' ? 'left-0' : 'right-0',
+                        ) }
                     >
                         { relativeFilterOptions.map((filterOption) => (
                             <button
@@ -209,7 +236,7 @@ const Datepicker = ({
                                     selectedRelativeFilterOption === filterOption.value
                                         ? 'bg-gray-100 text-gray-900'
                                         : 'text-gray-700',
-                                    `group flex items-center justify-between px-4 py-2.5 text-sm border-b
+                                    `group flex items-center justify-between px-4 py-2.5 space-x-10 sm:text-sm border-b
                                     border-gray-100 w-full group-hover:text-gray-500 hover:bg-gray-50`
                                 ) }
                                 value={ filterOption.value }
@@ -219,10 +246,12 @@ const Datepicker = ({
                                     setShowDropdownModal(false);
                                 } }
                             >
-                                <div className="flex font-medium">
+                                <div className="flex whitespace-nowrap">
                                     { filterOption.name }
                                 </div>
-                                <span className="font-normal text-gray-400">{ filterOption.shortcut }</span>
+                                <span className="font-normal text-gray-400 whitespace-nowrap">
+                                    { filterOption.shortcut }
+                                </span>
                             </button>
                         ))}                    
                     </div>
