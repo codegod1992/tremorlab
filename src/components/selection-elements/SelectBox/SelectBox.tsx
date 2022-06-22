@@ -64,7 +64,7 @@ const SelectBox = ({
     
     return (
         <>
-            <div className="relative flex w-full">
+            <div className="relative flex">
                 <input
                     key={ selectedItemValue ? valueToNameMapping[selectedItemValue] : null }
                     className="inline-flex rounded-md border border-gray-300 pl-4 pr-10 py-2 bg-white sm:text-sm
