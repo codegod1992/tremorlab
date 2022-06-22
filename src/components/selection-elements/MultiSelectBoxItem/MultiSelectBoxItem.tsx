@@ -17,7 +17,7 @@ const MultiSelectBoxItem = ({
 }: MultiSelectBoxItemProps) => (
     <button
         className="group flex items-center justify-between px-4 py-2.5 text-sm border-b border-gray-100 w-full
-            text-gray-700 group-hover:text-gray-500 hover:bg-gray-50 text-left"
+            text-gray-700 group-hover:text-gray-500 hover:bg-gray-50 text-left truncate"
         value={ value }
         onClick={ () => {
             if (!isValueInArray(value, selectedItemsValues!)) {
@@ -26,7 +26,7 @@ const MultiSelectBoxItem = ({
                 setSelectedItemsValues!([...selectedItemsValues!]);
             }
         } }>
-        { name }
+        <span className="whitespace-nowrap truncate">{ name }</span>
     </button>
 );
 
