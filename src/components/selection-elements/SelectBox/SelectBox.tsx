@@ -69,7 +69,7 @@ const SelectBox = ({
                     key={ selectedSelectBoxItemValue ? valueToNameMapping[selectedSelectBoxItemValue] : null }
                     className="inline-flex rounded-md border border-gray-300 pl-4 pr-10 py-2 bg-white sm:text-sm
                         font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-0 focus:ring-2
-                        focus:ring-opacity-100 w-0 min-w-[10rem] placeholder:text-gray-500"
+                        focus:ring-opacity-100 w-0 min-w-[10rem] placeholder:text-gray-500 w-full"
                     type="input"
                     placeholder={ selectedSelectBoxItemValue ? undefined : placeholder }
                     defaultValue={
@@ -86,9 +86,9 @@ const SelectBox = ({
                     <div
                         ref={ ref }
                         className={ classNames(
-                            'absolute min-w-full rounded-md shadow-lg bg-white ring-1',
-                            'ring-black ring-opacity-5 py-1 divide-y divide-gray-100 max-h-72 overflow-auto',
-                            'focus:outline-none -bottom-2 left-0 translate-y-full',
+                            'absolute py-1 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y',
+                            'divide-gray-100 focus:outline-none -bottom-2 translate-y-full',
+                            'min-w-full max-h-72 overflow-y-auto max-w-sm',
                             modalAlignment === 'left' ? 'left-0' : 'right-0'
                         ) }
                     >

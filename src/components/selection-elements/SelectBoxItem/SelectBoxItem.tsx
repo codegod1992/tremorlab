@@ -27,13 +27,13 @@ const SelectBoxItem = ({
         value={ value }
         onClick={ () => setSelectedSelectBoxItemValue!(value) }
     >
-        <div className="flex group-hover:text-gray-900 whitespace-nowrap">
+        <div className="flex group-hover:text-gray-900 truncate">
             { Icon ? (
                 <Icon className={ classNames(
                     'h-5 w-5 mr-3 text-gray-400 flex-none'
                 ) } aria-hidden="true"/>
             ) : null }
-            { name }
+            <span className="whitespace-nowrap truncate">{ name }</span>
         </div>
     </button>
 );
