@@ -6,13 +6,13 @@ import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
 
 export interface AccordionProps extends BaseComponentProps {
     expanded?: boolean,
-    borderClassNames?: string,
+    shapeClassNames?: string,
     children: React.ReactElement[],
 }
 
 const Accordion = ({
     expanded = false,
-    borderClassNames = 'border-2 border-gray-300 rounded-md',
+    shapeClassNames = 'border rounded-lg shadow',
     marginTop,
     children
 }: AccordionProps) => {
@@ -20,7 +20,7 @@ const Accordion = ({
     const [isExpanded, setExpanded] = useState(expanded);
 
     return(
-        <div className={ classNames('overflow-hidden', parseMarginTopClassNames(marginTop), borderClassNames) }>
+        <div className={ classNames('overflow-hidden', parseMarginTopClassNames(marginTop), shapeClassNames) }>
             { React.Children.map(children, (child, idx) => {
                 if (idx===0) return (
                     <>

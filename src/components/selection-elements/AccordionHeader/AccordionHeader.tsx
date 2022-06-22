@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ArrowDownSLineIcon from 'remixicon-react/ArrowDownSLineIcon';
-import ArrowLeftSLineIcon from 'remixicon-react/ArrowLeftSLineIcon';
+import ArrowUpSLineIcon from 'remixicon-react/ArrowUpSLineIcon';
 
 export interface AccordionHeaderProps {
     isExpanded?: boolean,
@@ -15,14 +15,14 @@ const AccordionHeader = ({
     children
 }: AccordionHeaderProps) => {
     return(
-        <div className="w-full flex items-center justify-between px-2 py-2">
-            <div>
+        <div className="w-full flex items-center justify-between px-4 py-3">
+            <div className="w-[95%]">
                 { children }
             </div>
             <button onClick={ () => setExpanded!(!isExpanded) }>
                 { isExpanded
-                    ? <ArrowDownSLineIcon className="text-gray-400" />
-                    : <ArrowLeftSLineIcon className="text-gray-400" /> }
+                    ? <ArrowDownSLineIcon className="text-gray-400 h-6 w-6" />
+                    : <ArrowUpSLineIcon className="text-gray-400 h-6 w-6" /> }
             </button>
         </div>
     );
