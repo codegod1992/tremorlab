@@ -30,13 +30,15 @@ const DropdownItem = ({
             value={ value }
             onClick={ () => setSelectedItem!(value) }
         >
-            <div className="flex whitespace-nowrap group-hover:text-gray-900">
+            <div className="flex group-hover:text-gray-900 truncate">
                 { Icon ? (
                     <Icon className={ classNames(
                         'h-5 w-5 mr-3 flex-none text-gray-400'
                     ) } aria-hidden="true" />
                 ) : null }
-                { name }
+                <span className="whitespace-nowrap truncate">
+                    { name }
+                </span>
             </div>
             { shortcut ? (
                 <span className="font-normal text-gray-400 group-hover:text-gray-500">

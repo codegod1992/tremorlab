@@ -81,20 +81,22 @@ const Dropwdown = ({
                     selectedItem ? 'text-gray-700' : 'text-gray-500',
                     'relative inline-flex justify-between rounded-md border border-gray-300 px-4 py-2 bg-white',
                     'sm:text-sm font-medium shadow-sm hover:bg-gray-50 focus:ring-2 focus:ring-opacity-100',
-                    'focus:outline-none focus:ring-blue-300 button-dropdown',
+                    'focus:outline-none focus:ring-blue-300 button-dropdown max-w-sm',
                     'min-w-[10rem]'
                 ) }
                 onClick={ () => setShowModal(true) }
             >
-                { selectedItem ? valueToNameMapping[selectedItem] : placeholder }
-                <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
+                { selectedItem ? (
+                    <span className="whitespace-nowrap truncate">{ valueToNameMapping[selectedItem] }</span>
+                ) : placeholder }
+                <ChevronDownIcon className="flex-none -mr-1 ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
                 { showModal ? (
                     <div
                         ref={ ref }
                         className={ classNames(
                             'absolute py-1 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y',
                             'divide-gray-100 focus:outline-none -bottom-2 translate-y-full',
-                            'min-w-full max-h-72 overflow-auto',
+                            'min-w-full max-h-72 overflow-auto max-w-sm',
                             modalAlignment === 'left' ? 'left-0' : 'right-0'
                         ) }
                     >
