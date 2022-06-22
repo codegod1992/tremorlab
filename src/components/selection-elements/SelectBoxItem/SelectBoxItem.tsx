@@ -7,7 +7,7 @@ export interface SelectBoxItemProps {
     name: string,
     Icon?: React.ElementType,
     isActive?: boolean,
-    setSelectedSelectBoxItemValue?: React.Dispatch<React.SetStateAction<any>>,
+    setSelectedItemValue?: React.Dispatch<React.SetStateAction<any>>,
     setShowModal?: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
@@ -16,7 +16,7 @@ const SelectBoxItem = ({
     name,
     Icon,
     isActive,
-    setSelectedSelectBoxItemValue,
+    setSelectedItemValue,
 }: SelectBoxItemProps) => (
     <button
         className={ classNames(
@@ -25,7 +25,7 @@ const SelectBoxItem = ({
             group-hover:text-gray-500 hover:bg-gray-100 text-left`
         ) }
         value={ value }
-        onClick={ () => setSelectedSelectBoxItemValue!(value) }
+        onClick={ () => setSelectedItemValue!(value) }
     >
         <div className="flex group-hover:text-gray-900 truncate">
             { Icon ? (

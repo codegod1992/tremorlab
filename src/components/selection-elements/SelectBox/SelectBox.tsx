@@ -25,7 +25,7 @@ const SelectBox = ({
     useOnClickOutside(ref, () => setShowModal(false));
 
     const [searchQuery, setSearchQuery] = useState('');
-    const [selectedSelectBoxItemValue, setSelectedSelectBoxItemValue] = useState(defaultValue);
+    const [selectedItemValue, setSelectedItemValue] = useState(defaultValue);
 
     type ValueToNameMapping = {
         [value: string]: string
@@ -39,11 +39,11 @@ const SelectBox = ({
     consturctValueToNameMapping();
 
     useEffect(() => {
-        if (selectedSelectBoxItemValue) {
-            if(handleSelect) handleSelect(selectedSelectBoxItemValue);
+        if (selectedItemValue) {
+            if(handleSelect) handleSelect(selectedItemValue);
             setShowModal(false);
         }
-    }, [selectedSelectBoxItemValue]);
+    }, [selectedItemValue]);
 
     const getOptionNamesFromChildren = (children: React.ReactElement[]): string[] => (
         React.Children.map(children, (child) => {
@@ -64,16 +64,16 @@ const SelectBox = ({
     
     return (
         <>
-            <div className="relative">
+            <div className="relative flex w-full">
                 <input
-                    key={ selectedSelectBoxItemValue ? valueToNameMapping[selectedSelectBoxItemValue] : null }
+                    key={ selectedItemValue ? valueToNameMapping[selectedItemValue] : null }
                     className="inline-flex rounded-md border border-gray-300 pl-4 pr-10 py-2 bg-white sm:text-sm
                         font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-0 focus:ring-2
-                        focus:ring-opacity-100 w-0 min-w-[10rem] placeholder:text-gray-500 w-full"
+                        focus:ring-opacity-100 w-0 min-w-[10rem] placeholder:text-gray-500 flex-1"
                     type="input"
-                    placeholder={ selectedSelectBoxItemValue ? undefined : placeholder }
+                    placeholder={ selectedItemValue ? undefined : placeholder }
                     defaultValue={
-                        selectedSelectBoxItemValue ? valueToNameMapping[selectedSelectBoxItemValue] : undefined
+                        selectedItemValue ? valueToNameMapping[selectedItemValue] : undefined
                     }
                     onChange={ (e) => setSearchQuery(e.target.value) }
                     onClick={ () => setShowModal(true) }
@@ -97,7 +97,7 @@ const SelectBox = ({
                                 return (
                                     <>
                                         { React.cloneElement(child, {
-                                            setSelectedSelectBoxItemValue: setSelectedSelectBoxItemValue,
+                                            setSelectedItemValue: setSelectedItemValue,
                                         }) }
                                     </>
                                 );
