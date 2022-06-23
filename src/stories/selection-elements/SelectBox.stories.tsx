@@ -4,6 +4,9 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import SelectBox from 'components/selection-elements/SelectBox/SelectBox';
 import { SelectBoxItem } from 'components';
+import Dropdown from 'components/selection-elements/Dropdown/Dropdown';
+import DropdownItem from 'components/selection-elements/DropdownItem';
+import { CalendarIcon } from '@heroicons/react/solid';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -13,14 +16,22 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
 const Template: ComponentStory<typeof SelectBox> = (args) => (
-    <div className="flex justify-end">
-        <SelectBox handleSelect={ (value) => console.log('the new value is', value) } modalAlignment={ 'right' }>
-            <SelectBoxItem  value={1} name="Option One ABCSASDASDASDASASDASDASDSASDASABCSASDASDASDASASDASDASDSASDAS" />
-            <SelectBoxItem  value={2} name="Option Two" />
-            <SelectBoxItem  value={3} name="Option Three" />
-        </SelectBox>
-    </div>
-
+    <>
+        <div className="flex justify-end">
+            <SelectBox handleSelect={ (value) => console.log('the new value is', value) } modalAlignment={ 'right' }>
+                <SelectBoxItem  value={1} name="Option One ABCSASDASDASDASASDASDASDSASDASABCSASDASDASDASASDASDASDSASDAS" />
+                <SelectBoxItem  value={2} name="Option Two" />
+                <SelectBoxItem  value={3} name="Option Three" />
+            </SelectBox>
+        </div>
+        <div className="flex justify-end">
+            <Dropdown handleSelect={ (value) => console.log('The selected value is', value) }>
+                <DropdownItem value={ 5 } name={ 'Five BlablablasbdlabsdlasdlasdbasdadsBlablablasbdlabsdlasdlasdbasdadsBlablablasbdlabsdlasdlasdbasdadsBlablablasbdlabsdlasdlasdbasdads' } Icon={ CalendarIcon } shortcut={ 'F' } />
+                <DropdownItem value={ 3 } name={ 'Three' } Icon={ CalendarIcon } shortcut={ 'T' } />
+                <DropdownItem value={ 10 } name={ 'One' } Icon={ CalendarIcon } shortcut={ 'O' } />
+            </Dropdown>
+        </div>
+    </>
 );
   
 export const Default = Template.bind({});
