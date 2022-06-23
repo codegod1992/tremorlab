@@ -112,11 +112,11 @@ const Datepicker = ({
                             focus:outline-none focus:ring-blue-300 w-full truncate"
                     >
                         <CalendarIcon className="flex-none h-5 w-5 text-gray-400" aria-hidden="true" />
-                        <span className="ml-2 mr-0.5 whitespace-nowrap truncate">
+                        <div className="ml-2 mr-0.5 whitespace-nowrap truncate">
                             { selectedStartDay ? (
                                 displaySelected(selectedStartDay, selectedEndDay)
-                            ) : 'Select from...' }
-                        </span>
+                            ) : <p className="text-gray-500 truncate">Select from...</p> }
+                        </div>
                     </button>
                     <button
                         onClick={ () => setShowDropdownModal(true) }
