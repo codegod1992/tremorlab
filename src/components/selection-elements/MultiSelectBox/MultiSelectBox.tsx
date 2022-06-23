@@ -24,7 +24,7 @@ const SelectedItemBadge = ({
         { name }
         <div className="flex-shrink-0 ml-2 inline-flex items-center justify-center text-blue-500">
             <button onClick={ () => { setSelectedItemsValues(removeValueFromArray(value, selectedItemsValues)); }}>
-                <XIcon className="h-4 w-4 text-blue-500" aria-hidden="true" />
+                <XIcon className="flex-none h-4 w-4 text-blue-500" aria-hidden="true" />
             </button>
         </div>
     </span>
@@ -74,7 +74,7 @@ const MultiSelectBox = ({
             <button
                 className="relative flex items-center justify-between rounded-md border border-gray-300 pl-4
                     pr-2 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:ring-2
-                    focus:ring-opacity-100 focus:outline-none focus:ring-blue-300 min-w-[10rem] max-w-md"
+                    focus:ring-opacity-100 focus:outline-none focus:ring-blue-300 min-w-[10rem] w-full"
                 onClick={ () => {setShowModal(true); console.log('clicked');} }
             >
                 <div className="flex items-center space-x-2 overflow-x-auto">
@@ -97,10 +97,10 @@ const MultiSelectBox = ({
                     <span className="sr-only">Remove all selected options</span>
                     { selectedItemsValues.length !== 0 ? (
                         <button onClick={ () => setSelectedItemsValues([]) }>
-                            <XCircleIcon className="h-4 w-4 text-gray-400" aria-hidden="true" />
+                            <XCircleIcon className="flex-none h-4 w-4 text-gray-400" aria-hidden="true" />
                         </button>
                     ) : null }
-                    <ChevronDownIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                    <ChevronDownIcon className="flex-none h-5 w-5 text-gray-400" aria-hidden="true" />
                 </div>
                 { showModal ? (
                     <div

@@ -64,7 +64,7 @@ const SelectBox = ({
     
     return (
         <>
-            <div className="relative flex">
+            <div className="relative flex w-full">
                 <input
                     key={ selectedItemValue ? valueToNameMapping[selectedItemValue] : null }
                     className="inline-flex rounded-md border border-gray-300 pl-4 pr-10 py-2 bg-white sm:text-sm
@@ -79,7 +79,7 @@ const SelectBox = ({
                     onClick={ () => setShowModal(true) }
                 />
                 <ChevronDownIcon
-                    className="absolute top-1/2 right-2 h-5 w-5 text-gray-400 -translate-y-1/2"
+                    className="absolute top-1/2 right-3 h-5 w-5 text-gray-400 -translate-y-1/2"
                     aria-hidden="true"
                 />
                 { showModal && (filteredOptionNames.size !== 0) ? (

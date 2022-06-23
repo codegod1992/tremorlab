@@ -101,7 +101,7 @@ const Datepicker = ({
 
     return (
         <>
-            <div className="relative inline-flex">
+            <div className="relative w-full">
                 <div className="flex items-center justify-between rounded-md shadow-sm sm:text-sm font-medium
                     text-gray-700 bg-white"
                 >
@@ -109,24 +109,28 @@ const Datepicker = ({
                         onClick={ () => setShowDatePickerModal(true) }
                         className="flex whitespace-nowrap items-center px-2 py-2 rounded-l-md border 
                             border-r-0 border-gray-300 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-opacity-100
-                            focus:outline-none focus:ring-blue-300"
+                            focus:outline-none focus:ring-blue-300 w-full truncate"
                     >
-                        <CalendarIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
-                        { selectedStartDay ? ( 
-                            <span className="ml-2 mr-0.5">{ displaySelected(selectedStartDay, selectedEndDay) }</span>
-                        ) : null }
+                        <CalendarIcon className="flex-none h-5 w-5 text-gray-400" aria-hidden="true" />
+                        <span className="ml-2 mr-0.5 whitespace-nowrap truncate">
+                            { selectedStartDay ? (
+                                displaySelected(selectedStartDay, selectedEndDay)
+                            ) : 'Select from...' }
+                        </span>
                     </button>
                     <button
                         onClick={ () => setShowDropdownModal(true) }
-                        className="inline-flex justify-center text-gray-500 w-full rounded-r-md border font-medium
+                        className="inline-flex w-48 justify-between text-gray-500 w-full rounded-r-md border font-medium
                             sm:text-sm border-gray-300 px-4 py-2 hover:bg-gray-50 focus:ring-2 focus:ring-opacity-100
-                            focus:outline-none focus:ring-blue-300"
+                            focus:outline-none focus:ring-blue-300 truncate"
                     >
-                        { selectedRelativeFilterOption
-                            ? relativeFilterOptions.find((filterOption) => (
-                                filterOption.value === selectedRelativeFilterOption
-                            ))?.name : 'Select' }
-                        <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
+                        <span className="whitespace-nowrap truncate">
+                            { selectedRelativeFilterOption
+                                ? relativeFilterOptions.find((filterOption) => (
+                                    filterOption.value === selectedRelativeFilterOption
+                                ))?.name : 'Select' }
+                        </span>
+                        <ChevronDownIcon className="flex-none -mr-1 ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
                     </button>
                 </div>
                 { showDatePickerModal ? (
