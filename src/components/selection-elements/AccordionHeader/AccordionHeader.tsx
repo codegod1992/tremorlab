@@ -21,8 +21,8 @@ const AccordionHeader = ({
             </div>
             <button onClick={ () => setExpanded!(!isExpanded) }>
                 { isExpanded
-                    ? <ArrowDownSLineIcon className="text-gray-400 h-6 w-6" />
-                    : <ArrowUpSLineIcon className="text-gray-400 h-6 w-6" /> }
+                    ? <ArrowUpSLineIcon className="text-gray-400 h-6 w-6" />
+                    : <ArrowDownSLineIcon className="text-gray-400 h-6 w-6" /> }
             </button>
         </div>
     );

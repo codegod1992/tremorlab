@@ -13,12 +13,13 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
 const Template: ComponentStory<typeof SelectBox> = (args) => (
-          
-    <SelectBox handleSelect={ (value) => console.log('the new value is', value) }>
-        <SelectBoxItem  value={1} name="Option One ABCSASDASDASDASASDASDASDSASDASABCSASDASDASDASASDASDASDSASDAS" />
-        <SelectBoxItem  value={2} name="Option Two" />
-        <SelectBoxItem  value={3} name="Option Three" />
-    </SelectBox>
+    <div className="flex justify-end">
+        <SelectBox handleSelect={ (value) => console.log('the new value is', value) } modalAlignment={ 'right' }>
+            <SelectBoxItem  value={1} name="Option One ABCSASDASDASDASASDASDASDSASDASABCSASDASDASDASASDASDASDSASDAS" />
+            <SelectBoxItem  value={2} name="Option Two" />
+            <SelectBoxItem  value={3} name="Option Three" />
+        </SelectBox>
+    </div>
 
 );
   
