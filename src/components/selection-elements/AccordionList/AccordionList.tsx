@@ -1,16 +1,23 @@
 import React from 'react';
 
+import { classNames } from '@utils/classname-utils';
+
 export interface AccordionListProps {
+    shadow?: boolean,
     children: React.ReactElement[],
 }
 
 const AccordionList = ({
+    shadow = true,
     children,
 }: AccordionListProps) => {
     const numChildren = React.Children.count(children);
 
     return (
-        <div className="rounded-lg shadow">
+        <div className={ classNames(
+            'rounded-lg',
+            shadow ? 'shadow' : '',
+        ) }>
             { React.Children.map(children, (child, idx) => {
                 console.log(child.props.className);
                 if (idx === 0) {

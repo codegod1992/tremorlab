@@ -16,6 +16,7 @@ export interface CardProps extends BaseComponentProps {
     maxWidth?: string,
     wFull?: boolean,
     hFull?: boolean,
+    shadow?: boolean,
     children: React.ReactNode
 }
 
@@ -23,6 +24,7 @@ const Card = ({
     maxWidth = '',
     wFull = true,
     hFull = false,
+    shadow = true, 
     marginTop,
     children
 }: CardProps) => {
@@ -33,7 +35,8 @@ const Card = ({
             parseHFullOption(hFull),
             getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
             parseMarginTopClassNames(marginTop),
-            'relative overflow-hidden mx-auto text-left border shadow rounded-lg'
+            'relative overflow-hidden mx-auto text-left border rounded-lg',
+            shadow ? 'shadow' : '',
         ) }
         >
             <div className="p-6">
