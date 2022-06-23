@@ -26,7 +26,7 @@ const Accordion = ({
             'overflow-hidden',
             parseMarginTopClassNames(marginTop),
             shapeClassNames,
-            shadow ? 'shadow' : null,
+            shadow ? 'shadow' : '',
         ) }>
             { React.Children.map(children, (child, idx) => {
                 if (idx===0) return (

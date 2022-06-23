@@ -121,9 +121,10 @@ const MultiSelectBox = ({
                                 aria-describedby="search-bar"
                                 name="search"
                                 type="email"
-                                placeholder='Search'
-                                className="pl-11 py-2 blockfocus:ring-2 focus:ring-opacity-100 focus:rounded-t-lg focus:outline-none
-                                focus:ring-transparent focus:border-transparent border-transparent bg-transparent w-full"
+                                placeholder="Search"
+                                className="pl-11 py-2 blockfocus:ring-2 focus:ring-opacity-100 focus:rounded-t-lg
+                                focus:outline-none focus:ring-transparent focus:border-transparent border-transparent
+                                bg-transparent w-full"
                             />
                         </div>
                         <div className="pt-1">

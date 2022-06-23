@@ -138,7 +138,7 @@ const Datepicker = ({
                         ref={ datePickerRef }
                         className={ classNames(
                             `absolute w-72 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-2
-                            px-3 -bottom-2 translate-y-full`,
+                            px-3 -bottom-2 translate-y-full z-10`,
                             modalAlignment === 'left' ? 'left-0' : 'right-0',
                         ) }
                     >
@@ -230,7 +230,7 @@ const Datepicker = ({
                         className={ classNames(
                             `absolute min-w-full text-left rounded-md shadow-lg bg-white ring-1 py-1 ring-black
                             ring-opacity-5 divide-y divide-gray-100 focus:outline-none -bottom-2
-                            translate-y-full`,
+                            translate-y-full z-10 max-w-sm truncate`,
                             modalAlignment === 'left' ? 'left-0' : 'right-0',
                         ) }
                     >
@@ -241,7 +241,7 @@ const Datepicker = ({
                                         ? 'bg-gray-100 text-gray-900'
                                         : 'text-gray-700',
                                     `group flex items-center justify-between px-4 py-2.5 space-x-10 sm:text-sm border-b
-                                    border-gray-100 w-full group-hover:text-gray-500 hover:bg-gray-50`
+                                    border-gray-100 w-full group-hover:text-gray-500 hover:bg-gray-50 truncate`
                                 ) }
                                 value={ filterOption.value }
                                 onClick={ () => {
@@ -250,7 +250,7 @@ const Datepicker = ({
                                     setShowDropdownModal(false);
                                 } }
                             >
-                                <div className="flex whitespace-nowrap">
+                                <div className="flex whitespace-nowrap truncate">
                                     { filterOption.name }
                                 </div>
                                 <span className="font-normal text-gray-400 whitespace-nowrap">
