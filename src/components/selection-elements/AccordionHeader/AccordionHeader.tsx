@@ -15,16 +15,19 @@ const AccordionHeader = ({
     children
 }: AccordionHeaderProps) => {
     return(
-        <div className="w-full flex items-center justify-between px-4 py-3">
-            <div className="w-[95%]">
+        <button
+            className="w-full flex items-center justify-between px-4 py-3"
+            onClick={ () => setExpanded!(!isExpanded) }
+        >
+            <div className="w-[95%] flex">
                 { children }
             </div>
-            <button onClick={ () => setExpanded!(!isExpanded) }>
+            <div>
                 { isExpanded
                     ? <ArrowUpSLineIcon className="text-gray-400 h-6 w-6" />
                     : <ArrowDownSLineIcon className="text-gray-400 h-6 w-6" /> }
-            </button>
-        </div>
+            </div>
+        </button>
     );
 };
 

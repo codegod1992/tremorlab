@@ -15,7 +15,7 @@ export default {
 
 const Template: ComponentStory<typeof Accordion> = (args) => (
     <Accordion>
-        <AccordionHeader>Hello</AccordionHeader>
+        <AccordionHeader><div>Hello</div></AccordionHeader>
         <AccordionBody><div>Whats'up</div></AccordionBody>
     </Accordion>
 );
