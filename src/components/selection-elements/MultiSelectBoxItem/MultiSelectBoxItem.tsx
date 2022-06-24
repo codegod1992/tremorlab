@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { isValueInArray } from '@utils/utils';
+import { isValueInArray, removeValueFromArray } from '@utils/utils';
 
 export interface MultiSelectBoxItemProps {
     value: any,
@@ -23,10 +23,22 @@ const MultiSelectBoxItem = ({
             if (!isValueInArray(value, selectedItemsValues!)) {
                 setSelectedItemsValues!([...selectedItemsValues!, value]);
             } else {
-                setSelectedItemsValues!([...selectedItemsValues!]);
+                const newSelectedItemsValues = removeValueFromArray(value, selectedItemsValues!);
+                setSelectedItemsValues!([...newSelectedItemsValues!]);
             }
         } }>
-        <span className="whitespace-nowrap truncate">{ name }</span>
+        <div className="flex items-center space-x-3 h-4 truncate">
+            <input
+                id="options"
+                aria-describedby="options-description"
+                name="options"
+                type="checkbox"
+                className="flex-none focus:ring-2 focus:ring-opacity-100 focus:outline-none focus:ring-blue-300 h-4 w-4
+                    text-blue-500 border border-gray-300 rounded"
+                checked={ isValueInArray(value, selectedItemsValues!) }
+            />
+            <span className="whitespace-nowrap truncate"> { name } </span>
+        </div>
     </button>
 );
 

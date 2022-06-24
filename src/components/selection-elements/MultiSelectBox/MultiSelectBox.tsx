@@ -6,30 +6,6 @@ import { classNames, getColorVariantsFromColorThemeValue } from '@utils/classnam
 import { removeValueFromArray, useOnClickOutside } from '@utils/utils';
 import { defaultColors } from '@utils/colorTheme';
 
-interface SelectedItemBadgeProps {
-    name: string,
-    value: number,
-    selectedItemsValues: any[],
-    setSelectedItemsValues: React.Dispatch<React.SetStateAction<any[]>>,
-}
-
-const SelectedItemBadge = ({
-    name,
-    value,
-    selectedItemsValues,
-    setSelectedItemsValues,
-}: SelectedItemBadgeProps) => (
-    <span className="inline-flex rounded items-center py-0.5 pl-2 pr-1 sm:text-sm bg-blue-100 text-blue-500
-        whitespace-nowrap">
-        { name }
-        <div className="flex-shrink-0 ml-2 inline-flex items-center justify-center text-blue-500">
-            <button onClick={ () => { setSelectedItemsValues(removeValueFromArray(value, selectedItemsValues)); }}>
-                <XIcon className="flex-none h-4 w-4 text-blue-500" aria-hidden="true" />
-            </button>
-        </div>
-    </span>
-);
-
 export interface MultiSelectBoxProps {
     defaultValues?: any[],
     handleSelect?: { (value: any): void },
@@ -51,6 +27,25 @@ const MultiSelectBox = ({
     
     const [selectedItemsValues, setSelectedItemsValues] = useState(defaultValues);
 
+    const [searchQuery, setSearchQuery] = useState('');
+
+    const getOptionNamesFromChildren = (children: React.ReactElement[]): string[] => (
+        React.Children.map(children, (child) => {
+            return String(child.props.name);
+        })
+    );
+
+    const getFilteredOptionNames = (searchQuery: string, allOptionNames: string[]) => {
+        return searchQuery === ''
+            ? allOptionNames
+            : allOptionNames.filter((optionName: string) => {
+                return optionName.toLowerCase().includes(searchQuery.toLowerCase());
+            });
+    };
+
+    const allOptionNames = getOptionNamesFromChildren(children);
+    const filteredOptionNames = new Set(getFilteredOptionNames(searchQuery, allOptionNames));
+
     type ValueToNameMapping = {
         [value: string]: string
     }
@@ -63,6 +58,7 @@ const MultiSelectBox = ({
     consturctValueToNameMapping();
 
     useEffect(() => {
+        setSearchQuery('');
         if (selectedItemsValues) {
             if(handleSelect) handleSelect(selectedItemsValues);
             setShowModal(false);
@@ -78,14 +74,12 @@ const MultiSelectBox = ({
                 onClick={ () => {setShowModal(true); console.log('clicked');} }
             >
                 <div className="flex items-center space-x-2 overflow-x-auto">
-                    { selectedItemsValues.length !== 0 ? selectedItemsValues.map((itemValue) => (
-                        <SelectedItemBadge
-                            name={ valueToNameMapping[itemValue] }
-                            value={ itemValue }
-                            selectedItemsValues={ selectedItemsValues }
-                            setSelectedItemsValues={ setSelectedItemsValues }
-                        />
-                    )) : (
+                    { selectedItemsValues.length !== 0 ? (
+                        <div className="flex items-center space-x-2">
+                            <span className="font-semibold">{ selectedItemsValues.length }</span>
+                            <span>Selected</span>
+                        </div>
+                    ) : (
                         <span className={
                             classNames(getColorVariantsFromColorThemeValue(defaultColors.text).textColor)
                         }>
@@ -108,7 +102,7 @@ const MultiSelectBox = ({
                         className={ classNames(
                             'absolute py-1 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y',
                             'divide-gray-100 focus:outline-none -bottom-2 translate-y-full',
-                            'min-w-full max-h-72 overflow-y-auto max-w-sm',
+                            'max-h-72 overflow-y-auto w-full',
                             modalAlignment === 'left' ? 'left-0' : 'right-0'
                         ) }
                     >
@@ -120,22 +114,27 @@ const MultiSelectBox = ({
                                 id="search"
                                 aria-describedby="search-bar"
                                 name="search"
-                                type="email"
+                                type="input"
                                 placeholder="Search"
                                 className="pl-11 py-2 blockfocus:ring-2 focus:ring-opacity-100 focus:rounded-t-lg
                                 focus:outline-none focus:ring-transparent focus:border-transparent border-transparent
                                 bg-transparent w-full"
+                                onChange={ (e) => setSearchQuery(e.target.value) }
                             />
                         </div>
                         <div className="pt-1">
-                            { React.Children.map(children, (child) => (
-                                <>
-                                    { React.cloneElement(child, {
-                                        selectedItemsValues: selectedItemsValues,
-                                        setSelectedItemsValues: setSelectedItemsValues,
-                                    }) }
-                                </>
-                            )) }
+                            { React.Children.map(children, (child) => {
+                                if (filteredOptionNames.has(String(child.props.name))) {
+                                    return (
+                                        <>
+                                            { React.cloneElement(child, {
+                                                selectedItemsValues: selectedItemsValues,
+                                                setSelectedItemsValues: setSelectedItemsValues,
+                                            }) }
+                                        </>
+                                    );
+                                }
+                            }) }
                         </div>
                     </div>
                 ) : null }

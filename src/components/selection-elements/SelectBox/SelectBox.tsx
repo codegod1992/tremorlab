@@ -88,7 +88,7 @@ const SelectBox = ({
                         className={ classNames(
                             'absolute py-1 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y',
                             'divide-gray-100 focus:outline-none -bottom-2 translate-y-full',
-                            'min-w-full max-h-72 overflow-y-auto max-w-sm',
+                            'w-full max-h-72 overflow-y-auto',
                             modalAlignment === 'left' ? 'left-0' : 'right-0'
                         ) }
                     >
