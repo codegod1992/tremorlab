@@ -29,11 +29,13 @@ import { useOnClickOutside } from '@utils/utils';
 
 export interface DatepickerProps {
     handleSelect?: { (selectedStartDay: Date|null, selectedEndDay: Date|null): void },
+    enableRelative?: boolean,
     modalAlignment?: string,
 }
 
 const Datepicker = ({
     handleSelect = (selectedStartDay: Date|null, selectedEndDay: Date|null) => null,
+    enableRelative = true,
     modalAlignment = 'left',
 }: DatepickerProps) => {
     const [showDatePickerModal, setShowDatePickerModal] = useState(false);
@@ -107,9 +109,12 @@ const Datepicker = ({
                 >
                     <button
                         onClick={ () => setShowDatePickerModal(true) }
-                        className="flex whitespace-nowrap items-center px-2 py-2 rounded-l-md border 
-                            border-r-0 border-gray-300 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-opacity-100
-                            focus:outline-none focus:ring-blue-300 w-full truncate"
+                        className={ classNames(
+                            `flex whitespace-nowrap items-center px-2 py-2 rounded-l-md border 
+                            border-gray-300 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-opacity-100
+                            focus:outline-none focus:ring-blue-300 w-full truncate`,
+                            enableRelative ? 'border-r-0' : 'rounded-r-md border-r',
+                        ) }
                     >
                         <CalendarIcon className="flex-none h-5 w-5 text-gray-400" aria-hidden="true" />
                         <div className="ml-2 mr-0.5 whitespace-nowrap truncate">
@@ -118,20 +123,25 @@ const Datepicker = ({
                             ) : <p className="text-gray-500 truncate">Select from...</p> }
                         </div>
                     </button>
-                    <button
-                        onClick={ () => setShowDropdownModal(true) }
-                        className="inline-flex w-48 justify-between text-gray-500 w-full rounded-r-md border font-medium
-                            sm:text-sm border-gray-300 px-4 py-2 hover:bg-gray-50 focus:ring-2 focus:ring-opacity-100
-                            focus:outline-none focus:ring-blue-300 truncate"
-                    >
-                        <span className="whitespace-nowrap truncate">
-                            { selectedRelativeFilterOption
-                                ? relativeFilterOptions.find((filterOption) => (
-                                    filterOption.value === selectedRelativeFilterOption
-                                ))?.name : 'Select' }
-                        </span>
-                        <ChevronDownIcon className="flex-none -mr-1 ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
-                    </button>
+                    { enableRelative ? (
+                        <button
+                            onClick={ () => setShowDropdownModal(true) }
+                            className="inline-flex w-48 justify-between text-gray-500 w-full rounded-r-md border
+                                font-medium sm:text-sm border-gray-300 px-4 py-2 hover:bg-gray-50 focus:ring-2
+                                focus:ring-opacity-100 focus:outline-none focus:ring-blue-300 truncate"
+                        >
+                            <span className="whitespace-nowrap truncate">
+                                { selectedRelativeFilterOption
+                                    ? relativeFilterOptions.find((filterOption) => (
+                                        filterOption.value === selectedRelativeFilterOption
+                                    ))?.name : 'Select' }
+                            </span>
+                            <ChevronDownIcon
+                                className="flex-none -mr-1 ml-2 h-5 w-5 text-gray-400"
+                                aria-hidden="true"
+                            />
+                        </button>
+                    ) : null }
                 </div>
                 { showDatePickerModal ? (
                     <div
