@@ -1,4 +1,4 @@
-import { ButtonColorTypes, ButtonProportionTypes, ButtonShapeTypes } from '@common/common-types';
+import { ButtonColorTypes, ButtonProportionTypes, ButtonShapeTypes, IconProportionTypes } from '@common/common-types';
 import colorTheme, { defaultColors } from '@utils/colorTheme';
 import { BaseColors } from '@utils/objects';
 import { getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
@@ -25,6 +25,26 @@ export const buttonProportions: {[char: string]: ButtonProportionTypes} = {
         textSize: 'text-lg',
     },
 };
+
+export const iconProportions: {[size: string]: IconProportionTypes} = {
+    xs: {
+        margin: 'mr-1.5',
+        iconSize: 'w-4 h-4',
+    },
+    sm: {
+        margin: 'mr-1.5',
+        iconSize: 'w-5 h-5',
+    },
+    md: {
+        margin: 'mr-1.5',
+        iconSize: 'w-5 h-5',
+    },
+    lg: {
+        margin: 'mr-1.5',
+        iconSize: 'w-6 h-6',
+    },
+};
+
 
 export const buttonShape: ButtonShapeTypes = {
     rounded: '',

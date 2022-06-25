@@ -1,12 +1,13 @@
 import React from 'react';
 
 import { BaseColors, Sizes } from '@utils/objects';
-import { buttonColors, buttonProportions, buttonShape } from './mappings';
-import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
+import { buttonColors, buttonProportions, buttonShape, iconProportions } from './mappings';
 import ButtonWrapper from '@common/ButtonWrapper';
+import { classNames } from '@utils/classname-utils';
 
 export interface ButtonInlineProps {
     text: string,
+    Icon?: React.ElementType,
     info?: string,
     arrow?: boolean,
     size?: string,
@@ -16,6 +17,7 @@ export interface ButtonInlineProps {
 
 const ButtonInline = ({
     text,
+    Icon,
     handleClick,
     info,
     arrow = false,
@@ -30,6 +32,19 @@ const ButtonInline = ({
             { ...buttonShape }
             { ...buttonColors[color] }
         >
+            { Icon ? (
+                <Icon
+                    className={ classNames(
+                        iconProportions[size]
+                            ? iconProportions[size].margin!
+                            : iconProportions['md'].margin!,
+                        iconProportions[size]
+                            ? iconProportions[size].iconSize!
+                            : iconProportions['md'].iconSize!,
+                    ) }
+                    aria-hidden="true"
+                />
+            ) : null }
             { text }
             { arrow ? (
                 <span 

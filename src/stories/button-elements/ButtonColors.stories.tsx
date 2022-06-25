@@ -125,6 +125,7 @@ const Template: ComponentStory<never> = () => (
                     return(
                         <ButtonInline
                             text={ buttonText }
+                            Icon={ Icon }
                             color={ key }
                             handleClick={ handleClick }
                         />
