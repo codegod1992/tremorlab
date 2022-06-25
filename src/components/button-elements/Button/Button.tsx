@@ -52,7 +52,9 @@ const Button = ({
                     aria-hidden="true"
                 />
             ) : null }
-            { text }
+            <span className="whitespace-nowrap">
+                { text }
+            </span>
             { arrow ? (
                 <span aria-hidden="true" className="ml-2 inline-block">→</span>
             ) : null}
