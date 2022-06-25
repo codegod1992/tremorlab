@@ -33,6 +33,7 @@ const TrmBarChart = ({
     stack = true,
     showXAxis = true,
     showYAxis = true,
+    yAxisOrientation = 'left',
     showTooltip = true,
     showLegend = true,
     paddingTopPixels = 5,
@@ -91,6 +92,7 @@ const TrmBarChart = ({
             { !alignVertical ? (
                 <YAxis
                     hide={ !showYAxis }
+                    orientation={ yAxisOrientation === 'right' ? 'right' : 'left' }
                     axisLine={ false }
                     tickLine={ false }
                     type="number"
@@ -105,6 +107,7 @@ const TrmBarChart = ({
             ) : (
                 <YAxis
                     hide={ !showYAxis }
+                    orientation={ yAxisOrientation === 'right' ? 'right' : 'left' }
                     dataKey="name"
                     axisLine={ false }
                     tickLine={ false }

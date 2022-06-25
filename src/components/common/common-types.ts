@@ -40,6 +40,7 @@ export interface ChartProps {
     valueFormater?: ValueFormater,
     showXAxis?: boolean,
     showYAxis?: boolean,
+    yAxisOrientation?: string,
     showTooltip?: boolean,
     showLegend?: boolean,
     paddingTopPixels?: number,

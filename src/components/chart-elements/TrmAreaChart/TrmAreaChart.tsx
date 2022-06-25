@@ -4,6 +4,7 @@ import {
     Area,
     AreaChart,
     CartesianGrid,
+    Label,
     Legend,
     ResponsiveContainer,
     Tooltip,
@@ -26,11 +27,12 @@ const TrmAreaChart = ({
     valueFormater = defaultValueFormater,
     showXAxis = true,
     showYAxis = true,
+    yAxisOrientation = 'left',
     showTooltip = true,
     showLegend = true,
     paddingTopPixels = 5,
     paddingRightPixels = 20,
-    paddingBottomPixels = 5,
+    paddingBottomPixels = 20,
     paddingLeftPixels = 5,
 }: ChartProps) => (
     <ResponsiveContainer width="100%" height="100%">
@@ -62,6 +64,7 @@ const TrmAreaChart = ({
                 axisLine={ false }
             />
             <YAxis
+                orientation={ yAxisOrientation === 'right' ? 'right' : 'left' }
                 hide={ !showYAxis }
                 axisLine={ false }
                 tickLine={ false }

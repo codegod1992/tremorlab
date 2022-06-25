@@ -26,6 +26,7 @@ const TrmLineChart = ({
     valueFormater = defaultValueFormater,
     showXAxis = true,
     showYAxis = true,
+    yAxisOrientation = 'left',
     showTooltip = true,
     showLegend = true,
     paddingTopPixels = 5,
@@ -64,6 +65,7 @@ const TrmLineChart = ({
                 />
                 <YAxis
                     hide={ !showYAxis }
+                    orientation={ yAxisOrientation === 'right' ? 'right' : 'left' }
                     axisLine={ false }
                     tickLine={ false }
                     type="number"
