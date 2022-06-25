@@ -2,10 +2,11 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { ChevronDownIcon } from '@heroicons/react/solid';
 
-import { classNames } from '@utils/classname-utils';
+import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
+import BaseComponentProps from '@common/BaseComponentInterface';
 import { useOnClickOutside } from '@utils/utils';
 
-export interface DropdownProps {
+export interface DropdownProps extends BaseComponentProps {
     placeholder?: string,
     defaultValue?: any,
     handleSelect?: { (value: any): void },
@@ -18,6 +19,7 @@ const Dropwdown = ({
     defaultValue = null,
     handleSelect = (value: any) => { value; },
     modalAlignment = 'left',
+    marginTop,
     children,
 }: DropdownProps) => {
     const [showModal, setShowModal] = useState(false);
@@ -75,7 +77,7 @@ const Dropwdown = ({
     }, [selectedItem]);
 
     return(
-        <>
+        <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
             <button
                 className={ classNames(
                     selectedItem ? 'text-gray-700' : 'text-gray-500',
@@ -111,7 +113,7 @@ const Dropwdown = ({
                     </div>
                 ) : null }
             </button>
-        </>
+        </div>
     );
 };
 

@@ -1,20 +1,23 @@
 import React from 'react';
 
-import { classNames } from '@utils/classname-utils';
+import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
+import BaseComponentProps from '@common/BaseComponentInterface';
 
-export interface AccordionListProps {
+export interface AccordionListProps extends BaseComponentProps {
     shadow?: boolean,
     children: React.ReactElement[],
 }
 
 const AccordionList = ({
     shadow = true,
+    marginTop,
     children,
 }: AccordionListProps) => {
     const numChildren = React.Children.count(children);
 
     return (
         <div className={ classNames(
+            parseMarginTopClassNames(marginTop),
             'rounded-lg',
             shadow ? 'shadow' : '',
         ) }>

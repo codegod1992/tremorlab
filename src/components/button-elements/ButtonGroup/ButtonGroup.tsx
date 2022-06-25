@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 
 import { BaseColors, Sizes } from '@utils/objects';
-import { classNames, getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
+import BaseComponentProps from '@common/BaseComponentInterface';
 import { colors } from './mappings';
 import { defaultColors } from '@utils/colorTheme';
 
-export interface ButtonGroupProps {
+export interface ButtonGroupProps extends BaseComponentProps {
     defaultValue?: any,
     size: string,
     color?: string,
@@ -16,6 +17,7 @@ const ButtonGroup = ({
     defaultValue,
     size = Sizes.MD,
     color = BaseColors.Blue,
+    marginTop,
     children,
 }: ButtonGroupProps) => {
     const childrenCount = React.Children.count(children);
@@ -33,7 +35,10 @@ const ButtonGroup = ({
         getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor
     );
     return (
-        <div className="inline-flex">
+        <div className={ classNames(
+            'inline-flex',
+            parseMarginTopClassNames(marginTop),
+        ) }>
             { React.Children.map(children, (child, idx) => {
                 if (idx === 0) {
                     return (

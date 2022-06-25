@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { classNames, parseGapXClassNames, parseGapYClassNames } from '@utils/classname-utils';
+import { classNames, parseGapXClassNames, parseGapYClassNames, parseMarginTopClassNames } from '@utils/classname-utils';
+import BaseComponentProps from '@common/BaseComponentInterface';
 
-export interface ColGridProps {
+export interface ColGridProps extends BaseComponentProps {
     numColumns?: number,
     gapX?: string,
     gapY?: string,
@@ -28,10 +29,12 @@ const ColGrid = ({
     numColumns = 3,
     gapX = 'gap-x-1',
     gapY = 'gap-y-1',
+    marginTop,
     children
 }: ColGridProps) => {
     return(
         <div className={ classNames(
+            parseMarginTopClassNames(marginTop),
             GridCols[numColumns] ? GridCols[numColumns] : 'grid-cols-none',
             parseGapXClassNames(gapX),
             parseGapYClassNames(gapY),

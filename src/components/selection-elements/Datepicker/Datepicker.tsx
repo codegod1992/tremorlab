@@ -13,6 +13,7 @@ import {
     sub,
 } from 'date-fns';
 
+import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
 import {
     colStartClasses,
     displaySelected,
@@ -24,10 +25,10 @@ import {
     previousMonth,
     relativeFilterOptions
 } from 'components/selection-elements/Datepicker/datepicker-utils';
-import { classNames } from '@utils/classname-utils';
+import BaseComponentProps from '@common/BaseComponentInterface';
 import { useOnClickOutside } from '@utils/utils';
 
-export interface DatepickerProps {
+export interface DatepickerProps extends BaseComponentProps {
     handleSelect?: { (selectedStartDay: Date|null, selectedEndDay: Date|null): void },
     enableRelative?: boolean,
     modalAlignment?: string,
@@ -37,6 +38,7 @@ const Datepicker = ({
     handleSelect = (selectedStartDay: Date|null, selectedEndDay: Date|null) => null,
     enableRelative = true,
     modalAlignment = 'left',
+    marginTop,
 }: DatepickerProps) => {
     const [showDatePickerModal, setShowDatePickerModal] = useState(false);
     const datePickerRef = useRef<HTMLDivElement>(null);
@@ -103,7 +105,10 @@ const Datepicker = ({
 
     return (
         <>
-            <div className="relative w-full">
+            <div className={ classNames(
+                parseMarginTopClassNames(marginTop),
+                'relative w-full',
+            ) }>
                 <div className="flex items-center justify-between rounded-md shadow-sm sm:text-sm font-medium
                     text-gray-700 bg-white"
                 >

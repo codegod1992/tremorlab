@@ -7,8 +7,8 @@ import {
     buttonShape,
     iconProportions
 } from 'components/button-elements/Button/mappings';
+import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
 import ButtonWrapper from '@common/ButtonWrapper';
-import { classNames } from '@utils/classname-utils';
 
 export interface ButtonProps {
     text: string,
@@ -29,7 +29,7 @@ const Button = ({
     arrow = false,
     size = Sizes.SM,
     color = BaseColors.Blue,
-    importance = 'primary'
+    importance = 'primary',
 }: ButtonProps) => {
     return(
         <ButtonWrapper

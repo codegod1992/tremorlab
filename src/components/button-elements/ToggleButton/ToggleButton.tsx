@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
 import { BaseColors, Sizes } from '@utils/objects';
-import { classNames, getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
+import BaseComponentProps from '@common/BaseComponentInterface';
 import { defaultColors } from '@utils/colorTheme';
 
-export interface ToggleButtonProps {
+export interface ToggleButtonProps extends BaseComponentProps {
     defaultValue: any,
     size?: string,
     color?: string,
@@ -17,6 +18,7 @@ const ToggleButton = ({
     size = Sizes.MD,
     color = BaseColors.Blue,
     handleSelect = (value) => null,
+    marginTop,
     children,
 }: ToggleButtonProps) => {
     const [activeToggleButtonItem, setActiveToggleButtonItem] = useState<any|null>(defaultValue);
@@ -28,6 +30,7 @@ const ToggleButton = ({
     return (
         <div className={ classNames(
             getColorVariantsFromColorThemeValue(defaultColors.lightBackground).bgColor,
+            parseMarginTopClassNames(marginTop),
             'flex-nowrap inline-flex justify-start rounded-md p-1'
         ) }
         >

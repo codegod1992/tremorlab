@@ -1,14 +1,18 @@
 import React from 'react';
 
-export interface TrackingBlockProps {
+import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
+import BaseComponentProps from '@common/BaseComponentInterface';
+
+export interface TrackingBlockProps extends BaseComponentProps {
     children: React.ReactNode
 }
 
 const Tracking = ({
+    marginTop,
     children
 }: TrackingBlockProps) => {
     return(
-        <div className="w-full flex items-center flex-shrink-0 space-x-0.5">
+        <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
             { children }
         </div>
     );

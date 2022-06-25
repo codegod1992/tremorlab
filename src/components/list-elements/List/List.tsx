@@ -5,7 +5,6 @@ import BaseComponentProps from '@common/BaseComponentInterface';
 import { 
     classNames,
     getColorVariantsFromColorThemeValue,
-    parseDivideColorClassNames,
     parseDivideYClassNames,
     parseMarginTopClassNames 
 } from '@utils/classname-utils';

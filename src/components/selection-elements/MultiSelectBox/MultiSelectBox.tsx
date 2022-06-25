@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import { ChevronDownIcon, SearchIcon, XCircleIcon, XIcon, } from '@heroicons/react/solid';
+import { ChevronDownIcon, SearchIcon, XCircleIcon } from '@heroicons/react/solid';
 
-import { classNames, getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
-import { removeValueFromArray, useOnClickOutside } from '@utils/utils';
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
+import BaseComponentProps from '@common/BaseComponentInterface';
 import { defaultColors } from '@utils/colorTheme';
+import { useOnClickOutside } from '@utils/utils';
 
-export interface MultiSelectBoxProps {
+export interface MultiSelectBoxProps extends BaseComponentProps {
     defaultValues?: any[],
     handleSelect?: { (value: any): void },
     placeholder?: string,
@@ -19,6 +20,7 @@ const MultiSelectBox = ({
     handleSelect = (value) => null,
     placeholder = 'Select',
     modalAlignment = 'left',
+    marginTop,
     children,
 }: MultiSelectBoxProps) => {
     const [showModal, setShowModal] = useState(false);
@@ -66,7 +68,7 @@ const MultiSelectBox = ({
     }, [selectedItemsValues]);
 
     return (
-        <>
+        <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
             <button
                 className="relative flex items-center justify-between rounded-md border border-gray-300 pl-4
                     pr-2 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:ring-2
@@ -139,7 +141,7 @@ const MultiSelectBox = ({
                     </div>
                 ) : null }
             </button>
-        </>
+        </div>
     );
 };
 

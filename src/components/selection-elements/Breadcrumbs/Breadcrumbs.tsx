@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { classNames, parseTextColorClassNames } from '@utils/classname-utils';
+import { classNames, parseMarginTopClassNames, parseTextColorClassNames } from '@utils/classname-utils';
+import BaseComponentProps from '@common/BaseComponentInterface';
 
-export interface BreadcrumbsProps {
+export interface BreadcrumbsProps extends BaseComponentProps {
     maxItems?: number,
     separator?: string,
     textColor?: string,
@@ -13,6 +14,7 @@ const Breadcrumbs = ({
     maxItems = 3,
     separator = '/',
     textColor = 'text-gray-500',
+    marginTop,
     children,
 }: BreadcrumbsProps) => {
     const childrenCount = React.Children.count(children);
@@ -20,7 +22,10 @@ const Breadcrumbs = ({
     const FirstChild = childrenArray[0];
     const LastChild = childrenArray[childrenArray.length - 1];
     return (
-        <div className="w-full flex justify-start items-center">
+        <div className={ classNames(
+            parseMarginTopClassNames(marginTop),
+            'w-full flex justify-start items-center'
+        ) }>
             {
                 childrenCount > maxItems ? (
                     <>

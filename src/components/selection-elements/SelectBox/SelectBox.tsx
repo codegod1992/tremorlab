@@ -2,10 +2,11 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { ChevronDownIcon } from '@heroicons/react/solid';
 
-import { classNames } from '@utils/classname-utils';
+import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
+import BaseComponentProps from '@common/BaseComponentInterface';
 import { useOnClickOutside } from '@utils/utils';
 
-export interface SelectBoxProps {
+export interface SelectBoxProps extends BaseComponentProps {
     defaultValue?: any,
     handleSelect?: { (value: any): void },
     placeholder?: string,
@@ -18,6 +19,7 @@ const SelectBox = ({
     handleSelect,
     placeholder = 'Select',
     modalAlignment = 'left',
+    marginTop,
     children,
 }: SelectBoxProps) => {
     const [showModal, setShowModal] = useState(false);
@@ -63,7 +65,7 @@ const SelectBox = ({
     const filteredOptionNames = new Set(getFilteredOptionNames(searchQuery, allOptionNames));
     
     return (
-        <>
+        <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
             <div className="relative flex w-full">
                 <input
                     key={ selectedItemValue ? valueToNameMapping[selectedItemValue] : null }
@@ -107,7 +109,7 @@ const SelectBox = ({
                     </div>
                 ) : null }
             </div>
-        </>
+        </div>
     );
 };
 
