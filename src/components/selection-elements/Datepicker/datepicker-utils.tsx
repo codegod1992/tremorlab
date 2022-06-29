@@ -53,16 +53,16 @@ export const displaySelected = (selectedStartDay: Date|null, selectedEndDay: Dat
     if (!selectedStartDay && !selectedEndDay) {
         return '';
     } else if (selectedStartDay && !selectedEndDay) {
-        const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+        const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'short', day: 'numeric' };
         return selectedStartDay.toLocaleDateString('en-US', options);
     } else if (selectedStartDay && selectedEndDay) {
         if ((selectedStartDay.getMonth() === selectedEndDay.getMonth())
             && (selectedStartDay.getFullYear() === selectedEndDay.getFullYear())) {
-            const optionsStartDate: Intl.DateTimeFormatOptions = { month: 'long', day: 'numeric' };
+            const optionsStartDate: Intl.DateTimeFormatOptions = { month: 'short', day: 'numeric' };
             return `${selectedStartDay.toLocaleDateString('en-US', optionsStartDate)} - 
                     ${selectedEndDay.getDate()}, ${selectedEndDay.getFullYear()}`;
         } else {
-            const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+            const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'short', day: 'numeric' };
             return `${selectedStartDay.toLocaleDateString('en-US', options)} - 
                     ${selectedEndDay.toLocaleDateString('en-US', options)}`;
         }

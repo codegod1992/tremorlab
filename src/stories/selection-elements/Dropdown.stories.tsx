@@ -18,7 +18,7 @@ const Template: ComponentStory<typeof Dropdown> = (args) => (
     <>
         <div className="max-w-sm">
             <Dropdown handleSelect={ (value) => console.log('The selected value is', value) }>
-                <DropdownItem value={ 5 } name={ 'Five BlablablasbdlabsdlasdlasdbasdadsBlablablasbdlabsdlasdlasdbasdadsBlablablasbdlabsdlasdlasdbasdadsBlablablasbdlabsdlasdlasdbasdads' } Icon={ CalendarIcon } shortcut={ 'F' } />
+                <DropdownItem value={ 5 } name={ 'Five' } Icon={ CalendarIcon } shortcut={ 'F' } />
                 <DropdownItem value={ 3 } name={ 'Three' } Icon={ CalendarIcon } shortcut={ 'T' } />
                 <DropdownItem value={ 1 } name={ 'One' } Icon={ CalendarIcon } shortcut={ 'O' } />
             </Dropdown>
