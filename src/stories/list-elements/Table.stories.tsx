@@ -18,7 +18,7 @@ const Template: ComponentStory<typeof Table> = (args) => (
     <Table {...args}>
         <TableHead>
             <TableRow>
-                <TableHeaderCell textAlignment='text-right'>
+                <TableHeaderCell textAlignment="text-right">
                     Name
                 </TableHeaderCell>
                 <TableHeaderCell>
@@ -31,7 +31,7 @@ const Template: ComponentStory<typeof Table> = (args) => (
         </TableHead>
         <TableBody>
             <TableRow>
-                <TableCell textAlignment='text-right'>
+                <TableCell textAlignment="text-right">
                     Achilleas Georgios Mitrotasios
                 </TableCell>
                 <TableCell>
