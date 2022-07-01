@@ -9,11 +9,13 @@ import { useOnClickOutside } from '@utils/utils';
 
 export interface BreadcrumbsProps extends BaseComponentProps {
     maxItems?: number,
+    currentHref?: string,
     children: React.ReactElement[],
 }
 
 const Breadcrumbs = ({
     maxItems = 3,
+    currentHref,
     marginTop,
     children,
 }: BreadcrumbsProps) => {
@@ -60,7 +62,11 @@ const Breadcrumbs = ({
                 ) }
                 onClick={ () => setShowModal(true) }
             >
-                <span>Select</span>
+                { !currentHref ? <span>Select</span> : React.Children.map(children, (child) => {
+                    if (child.props.href === currentHref) return (
+                        <span className="whitespace-nowrap truncate">{ child.props.name }</span>
+                    );
+                }) }
                 <ChevronDownIcon className="flex-none -mr-1 ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
                 { showModal ? (
                     <div
