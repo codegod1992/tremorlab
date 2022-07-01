@@ -72,7 +72,7 @@ const MultiSelectBox = ({
             <button
                 className="relative flex items-center justify-between rounded-md border border-gray-300 pl-4
                     pr-2 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:ring-2
-                    focus:ring-opacity-100 focus:outline-none focus:ring-blue-300 min-w-[10rem] w-full"
+                    focus:ring-opacity-100 focus:outline-none focus:ring-blue-300 min-w-[10rem] w-full shadow-sm"
                 onClick={ () => {setShowModal(true); console.log('clicked');} }
             >
                 <div className="flex items-center space-x-2 overflow-x-auto">

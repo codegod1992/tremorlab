@@ -34,7 +34,7 @@ const MultiSelectBoxItem = ({
                 name="options"
                 type="checkbox"
                 className="flex-none focus:ring-2 focus:ring-opacity-100 focus:outline-none focus:ring-blue-300 h-4 w-4
-                    text-blue-500 border border-gray-300 rounded"
+                    text-blue-500 border border-gray-300 rounded cursor-pointer"
                 checked={ isValueInArray(value, selectedItemsValues!) }
             />
             <span className="whitespace-nowrap truncate"> { name } </span>

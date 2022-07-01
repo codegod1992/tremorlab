@@ -109,7 +109,7 @@ const Datepicker = ({
                 parseMarginTopClassNames(marginTop),
                 'relative w-full',
             ) }>
-                <div className="flex items-center justify-between rounded-md shadow-sm sm:text-sm font-medium
+                <div className="flex items-center justify-between rounded-md shadow-sm text-sm font-medium
                     text-gray-700 bg-white"
                 >
                     <button
@@ -117,7 +117,7 @@ const Datepicker = ({
                         className={ classNames(
                             `flex whitespace-nowrap items-center px-2 py-2 rounded-l-md border 
                             border-gray-300 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-opacity-100
-                            focus:outline-none focus:ring-blue-300 w-full truncate`,
+                            focus:outline-none focus:ring-blue-300 w-full truncate font-medium`,
                             enableRelative ? 'border-r-0' : 'rounded-r-md border-r',
                         ) }
                     >
@@ -131,15 +131,15 @@ const Datepicker = ({
                     { enableRelative ? (
                         <button
                             onClick={ () => setShowDropdownModal(true) }
-                            className="inline-flex w-48 justify-between text-gray-500 w-full rounded-r-md border
-                                font-medium sm:text-sm border-gray-300 px-4 py-2 hover:bg-gray-50 focus:ring-2
+                            className="inline-flex w-48 justify-between w-full rounded-r-md border
+                                font-medium text-sm border-gray-300 px-4 py-2 hover:bg-gray-50 focus:ring-2
                                 focus:ring-opacity-100 focus:outline-none focus:ring-blue-300 truncate"
                         >
                             <span className="whitespace-nowrap truncate">
                                 { selectedRelativeFilterOption
                                     ? relativeFilterOptions.find((filterOption) => (
                                         filterOption.value === selectedRelativeFilterOption
-                                    ))?.name : 'Select' }
+                                    ))?.name : <span className="text-gray-500">Select</span> }
                             </span>
                             <ChevronDownIcon
                                 className="flex-none -mr-1 ml-2 h-5 w-5 text-gray-400"
