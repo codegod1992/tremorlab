@@ -12,20 +12,13 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
 const Template: ComponentStory<typeof Breadcrumbs> = (args) => (
-    <Breadcrumbs>
-        <BreadcrumbItem>
-            <span>❤️</span>
-            <span>Hello</span>
-        </BreadcrumbItem>
-        <BreadcrumbItem>
-            World
-        </BreadcrumbItem>
-        <BreadcrumbItem>
-            This
-        </BreadcrumbItem>
-        <BreadcrumbItem>
-            is
-        </BreadcrumbItem>
+    <Breadcrumbs maxItems={ 6 }>
+        <BreadcrumbItem name="Hello" />
+        <BreadcrumbItem name="World" />
+        <BreadcrumbItem name="This" />
+        <BreadcrumbItem name="Is" />
+        <BreadcrumbItem name="a" />
+        <BreadcrumbItem name="BreadcrumbBreadcrumbBreadcrumbBreadcrumbBreadcrumbBreadcrumbBreadcrumb" />
     </Breadcrumbs>
 );
   
