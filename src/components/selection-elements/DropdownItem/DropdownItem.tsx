@@ -30,7 +30,7 @@ const DropdownItem = ({
             value={ value }
             onClick={ () => setSelectedItem!(value) }
         >
-            <div className="flex group-hover:text-gray-900 truncate">
+            <div className="flex items-center group-hover:text-gray-900 truncate">
                 { Icon ? (
                     <Icon className={ classNames(
                         'h-5 w-5 mr-3 flex-none text-gray-400'

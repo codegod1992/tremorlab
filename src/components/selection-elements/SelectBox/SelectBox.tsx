@@ -69,7 +69,7 @@ const SelectBox = ({
             <div className="relative flex w-full">
                 <input
                     key={ selectedItemValue ? valueToNameMapping[selectedItemValue] : null }
-                    className="inline-flex rounded-md border border-gray-300 pl-4 pr-10 py-2 bg-white sm:text-sm
+                    className="inline-flex rounded-md border border-gray-300 pl-4 pr-10 py-2 bg-white text-sm
                         font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-0 focus:ring-2
                         focus:ring-opacity-100 w-0 min-w-[10rem] placeholder:text-gray-500 flex-1"
                     type="input"

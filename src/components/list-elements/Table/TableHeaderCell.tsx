@@ -15,7 +15,7 @@ const TableHeaderCell = ({
     <th className={ classNames(
         getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
         parseTextAlignmentClassNames(textAlignment),
-        'pr-2 font-semibold truncate whitespace-nowrap'
+        'sticky top-0 pr-2 font-semibold truncate whitespace-nowrap'
     ) }>
         { children }
     </th>

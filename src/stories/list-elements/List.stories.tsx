@@ -14,40 +14,19 @@ export default {
 
 const Template: ComponentStory<typeof List> = (args) => (
     <List {...args}>
-        <ListItem spaceX="space-x-8">
-            <Flex truncate={ true }>
-            </Flex>
-            <Flex truncate={ true }>
-            </Flex>
+        <ListItem>
+            <div>Hello</div>
+            <div>World</div>
         </ListItem>
-        <ListItem spaceX="">
-            <Flex truncate={ false }>
-            </Flex>
-            <Flex truncate={ false }>
-            </Flex>
+        <ListItem>
+            <div>Hello</div>
+            <div>World</div>
         </ListItem>
     </List>
 );
 
-const SimpleTemplate: ComponentStory<typeof List> = (args) => (
-    <List {...args}>
-        <ListItem spaceX="space-x-10">
-        </ListItem>
-        <ListItem spaceX="">
-        </ListItem>
-    </List>
-);
-  
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
-    divideY: 'divide-y',
-    children: undefined
-};
-
-export const SimpleList = SimpleTemplate.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-SimpleList.args = {
-    divideY: 'divide-y',
     children: undefined
 };

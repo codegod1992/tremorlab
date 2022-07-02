@@ -1,12 +1,13 @@
+/* eslint-disable max-len */
 import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import SelectBox from 'components/selection-elements/SelectBox/SelectBox';
-import { SelectBoxItem } from 'components';
+import { CalendarIcon } from '@heroicons/react/solid';
 import Dropdown from 'components/selection-elements/Dropdown/Dropdown';
 import DropdownItem from 'components/selection-elements/DropdownItem';
-import { CalendarIcon } from '@heroicons/react/solid';
+import SelectBox from 'components/selection-elements/SelectBox/SelectBox';
+import { SelectBoxItem } from 'components';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -25,7 +26,7 @@ const Template: ComponentStory<typeof SelectBox> = (args) => (
             </SelectBox>
         </div>
         <div className="flex justify-end">
-            <Dropdown handleSelect={ (value) => console.log('The selected value is', value) }>
+            <Dropdown handleSelect={ (value) => console.log('The selected value is', value) } marginTop="mt-1" >
                 <DropdownItem value={ 5 } name={ 'Five BlablablasbdlabsdlasdlasdbasdadsBlablablasbdlabsdlasdlasdbasdadsBlablablasbdlabsdlasdlasdbasdadsBlablablasbdlabsdlasdlasdbasdads' } Icon={ CalendarIcon } shortcut={ 'F' } />
                 <DropdownItem value={ 3 } name={ 'Three' } Icon={ CalendarIcon } shortcut={ 'T' } />
                 <DropdownItem value={ 10 } name={ 'One' } Icon={ CalendarIcon } shortcut={ 'O' } />
