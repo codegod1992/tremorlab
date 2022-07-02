@@ -27,6 +27,7 @@ import {
 } from 'components/selection-elements/Datepicker/datepicker-utils';
 import BaseComponentProps from '@common/BaseComponentInterface';
 import Modal from '@common/Modal';
+import SelectText from '@common/SelectText';
 
 export interface DatepickerProps extends BaseComponentProps {
     handleSelect?: { (selectedStartDay: Date|null, selectedEndDay: Date|null): void },
@@ -117,8 +118,14 @@ const Datepicker = ({
                         <CalendarIcon className="flex-none h-5 w-5 text-gray-400" aria-hidden="true" />
                         <div className="ml-2 mr-0.5 whitespace-nowrap truncate">
                             { selectedStartDay ? (
-                                displaySelected(selectedStartDay, selectedEndDay)
-                            ) : <p className="text-gray-500 truncate">Select from...</p> }
+                                <SelectText
+                                    text={ String(displaySelected(selectedStartDay, selectedEndDay)) }
+                                    isActive={ true }
+                                />
+                            ) : <SelectText
+                                text="Select from..."
+                                isActive={ false }
+                            /> }
                         </div>
                     </button>
                     { enableRelative ? (
@@ -130,9 +137,16 @@ const Datepicker = ({
                         >
                             <span className="whitespace-nowrap truncate">
                                 { selectedRelativeFilterOption
-                                    ? relativeFilterOptions.find((filterOption) => (
-                                        filterOption.value === selectedRelativeFilterOption
-                                    ))?.name : <span className="text-gray-500">Select</span> }
+                                    ? (
+                                        <SelectText
+                                            text={
+                                                String(relativeFilterOptions.find((filterOption) => (
+                                                    filterOption.value === selectedRelativeFilterOption
+                                                ))?.name)
+                                            }
+                                            isActive={ true }
+                                        />
+                                    ) : <SelectText text="Select" isActive={ false } /> }
                             </span>
                             <ChevronDownIcon
                                 className="flex-none -mr-1 ml-2 h-5 w-5 text-gray-400"

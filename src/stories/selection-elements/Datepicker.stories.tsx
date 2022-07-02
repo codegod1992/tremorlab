@@ -13,7 +13,7 @@ export default {
 
 const Template: ComponentStory<typeof Datepicker> = (args) => (
     <div className="flex justify-center">
-        <Datepicker modalAlignment="left" />
+        <Datepicker />
     </div>
 );
   

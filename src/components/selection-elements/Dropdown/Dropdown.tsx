@@ -5,6 +5,9 @@ import { ChevronDownIcon } from '@heroicons/react/solid';
 import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
 import BaseComponentProps from '@common/BaseComponentInterface';
 import Modal from '@common/Modal';
+import SelectText from '@common/SelectText';
+import SelectWrapper from '@common/SelectWrapper';
+import { defaultFocusState } from '@utils/colorTheme';
 
 export interface DropdownProps extends BaseComponentProps {
     placeholder?: string,
@@ -74,31 +77,33 @@ const Dropwdown = ({
 
     return(
         <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
-            <button
-                className={ classNames(
-                    selectedItem ? 'text-gray-700' : 'text-gray-500',
-                    'relative inline-flex justify-between rounded-md border border-gray-300 px-4 py-2 bg-white',
-                    'text-sm font-medium shadow-sm hover:bg-gray-50 focus:ring-2 focus:ring-opacity-100',
-                    'focus:outline-none focus:ring-blue-300 button-dropdown w-full',
-                    'min-w-[10rem]'
-                ) }
-                onClick={ () => setShowModal(true) }
-            >
-                { selectedItem ? (
-                    <span className="whitespace-nowrap truncate">{ valueToNameMapping[selectedItem] }</span>
-                ) : placeholder }
-                <ChevronDownIcon className="flex-none -mr-1 ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
-                <Modal showModal={ showModal } setShowModal={ setShowModal }>
-                    { React.Children.map(children, (child: React.ReactElement) => (
-                        <>
-                            { React.cloneElement(child, {
-                                setSelectedItem: setSelectedItem,
-                                isActive: child?.props.value === selectedItem,
-                            }) }
-                        </>
-                    )) }
-                </Modal>
-            </button>
+            <SelectWrapper>
+                <button
+                    className={ classNames(
+                        'flex justify-between items-center w-full h-full rounded-md',
+                        'px-4 py-2',
+                        'focus:ring-2 focus:ring-opacity-100 focus:outline-none focus:ring-blue-300',
+                    ) }
+                    onClick={ () => setShowModal(true) }
+                >
+                    { selectedItem ? (
+                        <SelectText isActive={ true } text={ valueToNameMapping[selectedItem] } />
+                    ) : (
+                        <SelectText isActive={ false } text={ placeholder } />
+                    ) }
+                    <ChevronDownIcon className="flex-none -mr-1 ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
+                    <Modal showModal={ showModal } setShowModal={ setShowModal }>
+                        { React.Children.map(children, (child: React.ReactElement) => (
+                            <>
+                                { React.cloneElement(child, {
+                                    setSelectedItem: setSelectedItem,
+                                    isActive: child?.props.value === selectedItem,
+                                }) }
+                            </>
+                        )) }
+                    </Modal>
+                </button>
+            </SelectWrapper>
         </div>
     );
 };
