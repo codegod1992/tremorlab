@@ -5,7 +5,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Card } from 'components';
 
 import Tracking from 'components/vis-elements/Tracking/Tracking';
-import TrackingBlock from 'components/vis-elements/TrackingBlock/TrackingBlock';
+import TrackingBlock from 'components/vis-elements/Tracking/TrackingBlock';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

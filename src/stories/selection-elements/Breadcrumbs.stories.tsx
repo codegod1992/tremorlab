@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import BreadcrumbItem from 'components/selection-elements/BreadcrumbItem/BreadcrumbItem';
+import BreadcrumbItem from 'components/selection-elements/Breadcrumbs/BreadcrumbItem';
 import Breadcrumbs from 'components/selection-elements/Breadcrumbs/Breadcrumbs';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

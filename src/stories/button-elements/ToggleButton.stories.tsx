@@ -28,7 +28,7 @@ const Template: ComponentStory<typeof ToggleButton> = (args) => (
             { Object.values(BaseColors).map(color => (
                 <div className="mb-2">
                     <ToggleButton
-                        size="sm" defaultValue={ 1 } handleSelect={ (value) => console.log(value) } color={ color }>
+                        defaultValue={ 1 } handleSelect={ (value) => console.log(value) } color={ color }>
                         <ToggleButtonItem
                             value={ 1 } text="Option 1" Icon={ CalendarIcon } />
                         <ToggleButtonItem

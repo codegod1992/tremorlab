@@ -32,14 +32,6 @@ const Template: ComponentStory<typeof ButtonGroup> = (args) => (
                 </ButtonGroup>
             ))}
         </div>
-        <ButtonGroup size="md">
-            <ButtonGroupItem
-                value={ 1 } text="Option 1" handleClick={ (value) => console.log(value) } Icon={ CalendarIcon } />
-            <ButtonGroupItem
-                value={ 2 } text="Option 2" handleClick={ (value) => console.log(value) } Icon={ CalendarIcon } />
-            <ButtonGroupItem
-                value={ 3 } text="Option 3" handleClick={ (value) => console.log(value) } Icon={ CalendarIcon } />
-        </ButtonGroup>
     </div>
 );
   

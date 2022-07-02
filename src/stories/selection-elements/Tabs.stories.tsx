@@ -3,7 +3,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import Tab from 'components/selection-elements/Tab/Tab';
-import TabList from 'components/selection-elements/TabList/TabList';
+import TabList from 'components/selection-elements/Tab/TabList';
 
 import { BaseColors } from '@utils/objects';
 

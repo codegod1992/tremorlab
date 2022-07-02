@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { classNames, getColorVariantsFromColorThemeValue, parseTextColorClassNames } from '@utils/classname-utils';
+import { classNames, getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
 import { BaseColors } from '@utils/objects';
 import { colors } from './mappings';
 import { defaultColors } from '@utils/colorTheme';

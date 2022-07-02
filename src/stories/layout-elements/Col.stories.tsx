@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Card } from 'components';
 
-import Col from 'components/layout-elements/Col/Col';
+import Col from 'components/layout-elements/ColGrid/Col';
 import ColGrid from 'components/layout-elements/ColGrid/ColGrid';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
