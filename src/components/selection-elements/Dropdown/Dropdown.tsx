@@ -4,13 +4,13 @@ import { ChevronDownIcon } from '@heroicons/react/solid';
 
 import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
 import BaseComponentProps from '@common/BaseComponentInterface';
+import Modal from '@common/Modal';
 import { useOnClickOutside } from '@utils/utils';
 
 export interface DropdownProps extends BaseComponentProps {
     placeholder?: string,
     defaultValue?: any,
     handleSelect?: { (value: any): void },
-    modalAlignment?: string,
     children: React.ReactElement[],
 }
 
@@ -18,13 +18,12 @@ const Dropwdown = ({
     placeholder = 'Select',
     defaultValue = null,
     handleSelect = (value: any) => { value; },
-    modalAlignment = 'left',
     marginTop,
     children,
 }: DropdownProps) => {
     const [showModal, setShowModal] = useState(false);
-    const ref = useRef<HTMLDivElement>(null);
-    useOnClickOutside(ref, () => setShowModal(false));
+    const modalRef = useRef<HTMLDivElement>(null);
+    useOnClickOutside(modalRef, () => setShowModal(false));
 
     type ValueToNameMapping = {
         [value: string]: string
@@ -92,26 +91,16 @@ const Dropwdown = ({
                     <span className="whitespace-nowrap truncate">{ valueToNameMapping[selectedItem] }</span>
                 ) : placeholder }
                 <ChevronDownIcon className="flex-none -mr-1 ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
-                { showModal ? (
-                    <div
-                        ref={ ref }
-                        className={ classNames(
-                            'absolute py-1 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y',
-                            'divide-gray-100 focus:outline-none -bottom-2 translate-y-full',
-                            'w-full max-h-72 overflow-y-auto z-10',
-                            modalAlignment === 'left' ? 'left-0' : 'right-0'
-                        ) }
-                    >
-                        { React.Children.map(children, (child: React.ReactElement) => (
-                            <>
-                                { React.cloneElement(child, {
-                                    setSelectedItem: setSelectedItem,
-                                    isActive: child?.props.value === selectedItem,
-                                }) }
-                            </>
-                        )) }
-                    </div>
-                ) : null }
+                <Modal ref={ modalRef } showModal={ showModal }>
+                    { React.Children.map(children, (child: React.ReactElement) => (
+                        <>
+                            { React.cloneElement(child, {
+                                setSelectedItem: setSelectedItem,
+                                isActive: child?.props.value === selectedItem,
+                            }) }
+                        </>
+                    )) }
+                </Modal>
             </button>
         </div>
     );

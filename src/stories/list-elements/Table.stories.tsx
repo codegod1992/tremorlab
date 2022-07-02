@@ -1,11 +1,10 @@
 import React from 'react';
 
+import { Card, TableBody, TableHead, TableHeaderCell } from 'components';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { TableBody, TableHead, TableHeaderCell } from 'components';
 import Table from 'components/list-elements/Table/Table';
 import TableCell from 'components/list-elements/TableCell/TableCell';
 import TableRow from 'components/list-elements/TableRow/TableRow';
-import { Text } from 'components';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -15,7 +14,7 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
 const Template: ComponentStory<typeof Table> = (args) => (
-    <div className="overflow-auto h-72">
+    <Card>
         <Table {...args}>
             <TableHead>
                 <TableRow>
@@ -143,7 +142,7 @@ const Template: ComponentStory<typeof Table> = (args) => (
                 </TableRow>
             </TableBody>
         </Table>
-    </div>
+    </Card>
 );
 
 
