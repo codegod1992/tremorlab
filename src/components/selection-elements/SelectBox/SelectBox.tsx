@@ -1,16 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { ChevronDownIcon } from '@heroicons/react/solid';
 
 import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
 import BaseComponentProps from '@common/BaseComponentInterface';
-import { useOnClickOutside } from '@utils/utils';
+import Modal from '@common/Modal';
 
 export interface SelectBoxProps extends BaseComponentProps {
     defaultValue?: any,
     handleSelect?: { (value: any): void },
     placeholder?: string,
-    modalAlignment?: string,
     children: React.ReactElement[],
 }
 
@@ -18,13 +17,10 @@ const SelectBox = ({
     defaultValue,
     handleSelect,
     placeholder = 'Select',
-    modalAlignment = 'left',
     marginTop,
     children,
 }: SelectBoxProps) => {
     const [showModal, setShowModal] = useState(false);
-    const ref = useRef<HTMLDivElement>(null);
-    useOnClickOutside(ref, () => setShowModal(false));
 
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedItemValue, setSelectedItemValue] = useState(defaultValue);
@@ -84,30 +80,20 @@ const SelectBox = ({
                     className="absolute top-1/2 right-3 h-5 w-5 text-gray-400 -translate-y-1/2"
                     aria-hidden="true"
                 />
-                { showModal && (filteredOptionNames.size !== 0) ? (
-                    <div
-                        ref={ ref }
-                        className={ classNames(
-                            'absolute py-1 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y',
-                            'divide-gray-100 focus:outline-none -bottom-2 translate-y-full',
-                            'w-full max-h-72 overflow-y-auto z-10',
-                            modalAlignment === 'left' ? 'left-0' : 'right-0'
-                        ) }
-                    >
-                        { React.Children.map(children, (child) => {
-                            if (filteredOptionNames.has(String(child.props.name))) {
-                                return (
-                                    <>
-                                        { React.cloneElement(child, {
-                                            setSelectedItemValue: setSelectedItemValue,
-                                        }) }
-                                    </>
-                                );
-                            }
-                            return null;
-                        }) }
-                    </div>
-                ) : null }
+                <Modal showModal={ showModal } setShowModal={ setShowModal }>
+                    { React.Children.map(children, (child) => {
+                        if (filteredOptionNames.has(String(child.props.name))) {
+                            return (
+                                <>
+                                    { React.cloneElement(child, {
+                                        setSelectedItemValue: setSelectedItemValue,
+                                    }) }
+                                </>
+                            );
+                        }
+                        return null;
+                    }) }
+                </Modal>
             </div>
         </div>
     );

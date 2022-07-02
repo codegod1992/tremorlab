@@ -4,8 +4,8 @@ import { ChevronDownIcon } from '@heroicons/react/solid';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
 import BaseComponentProps from '@common/BaseComponentInterface';
+import Modal from '@common/Modal';
 import { defaultColors } from '@utils/colorTheme';
-import { useOnClickOutside } from '@utils/utils';
 
 export interface BreadcrumbsProps extends BaseComponentProps {
     maxItems?: number,
@@ -20,8 +20,6 @@ const Breadcrumbs = ({
     children,
 }: BreadcrumbsProps) => {
     const [showModal, setShowModal] = useState(false);
-    const ref = useRef<HTMLDivElement>(null);
-    useOnClickOutside(ref, () => setShowModal(false));
 
     const childrenCount = React.Children.count(children);
 
@@ -68,30 +66,21 @@ const Breadcrumbs = ({
                     );
                 }) }
                 <ChevronDownIcon className="flex-none -mr-1 ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
-                { showModal ? (
-                    <div
-                        ref={ ref }
-                        className={ classNames(
-                            'absolute py-1 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y',
-                            'divide-gray-100 focus:outline-none -bottom-2 translate-y-full',
-                            'w-full max-h-72 overflow-y-auto z-10 left-0',
-                        ) }
-                    >
-                        { React.Children.map(children, (child) => {
-                            return (
-                                <div
-                                    className={ classNames(
-                                        'text-gray-700',
-                                        `group flex items-center justify-between px-4 py-2.5 space-x-10 w-full
+                <Modal showModal={ showModal } setShowModal={ setShowModal }>
+                    { React.Children.map(children, (child) => {
+                        return (
+                            <div
+                                className={ classNames(
+                                    'text-gray-700',
+                                    `group flex items-center justify-between px-4 py-2.5 space-x-10 w-full
                                         text-sm group-hover:text-gray-500 hover:bg-gray-100 text-left`
-                                    ) }
-                                >
-                                    { child }
-                                </div>
-                            );
-                        }) }   
-                    </div>
-                ) : null }
+                                ) }
+                            >
+                                { child }
+                            </div>
+                        );
+                    }) }   
+                </Modal>
             </button>
         )
     );

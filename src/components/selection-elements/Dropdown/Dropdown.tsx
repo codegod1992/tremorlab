@@ -1,11 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { ChevronDownIcon } from '@heroicons/react/solid';
 
 import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
 import BaseComponentProps from '@common/BaseComponentInterface';
 import Modal from '@common/Modal';
-import { useOnClickOutside } from '@utils/utils';
 
 export interface DropdownProps extends BaseComponentProps {
     placeholder?: string,
@@ -22,8 +21,6 @@ const Dropwdown = ({
     children,
 }: DropdownProps) => {
     const [showModal, setShowModal] = useState(false);
-    const modalRef = useRef<HTMLDivElement>(null);
-    useOnClickOutside(modalRef, () => setShowModal(false));
 
     type ValueToNameMapping = {
         [value: string]: string
@@ -91,7 +88,7 @@ const Dropwdown = ({
                     <span className="whitespace-nowrap truncate">{ valueToNameMapping[selectedItem] }</span>
                 ) : placeholder }
                 <ChevronDownIcon className="flex-none -mr-1 ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
-                <Modal ref={ modalRef } showModal={ showModal }>
+                <Modal showModal={ showModal } setShowModal={ setShowModal }>
                     { React.Children.map(children, (child: React.ReactElement) => (
                         <>
                             { React.cloneElement(child, {

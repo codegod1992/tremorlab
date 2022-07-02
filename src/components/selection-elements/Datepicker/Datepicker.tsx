@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { CalendarIcon, ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 import {
@@ -26,27 +26,20 @@ import {
     relativeFilterOptions
 } from 'components/selection-elements/Datepicker/datepicker-utils';
 import BaseComponentProps from '@common/BaseComponentInterface';
-import { useOnClickOutside } from '@utils/utils';
+import Modal from '@common/Modal';
 
 export interface DatepickerProps extends BaseComponentProps {
     handleSelect?: { (selectedStartDay: Date|null, selectedEndDay: Date|null): void },
     enableRelative?: boolean,
-    modalAlignment?: string,
 }
 
 const Datepicker = ({
     handleSelect = (selectedStartDay: Date|null, selectedEndDay: Date|null) => null,
     enableRelative = true,
-    modalAlignment = 'left',
     marginTop,
 }: DatepickerProps) => {
     const [showDatePickerModal, setShowDatePickerModal] = useState(false);
-    const datePickerRef = useRef<HTMLDivElement>(null);
-    useOnClickOutside(datePickerRef, () => setShowDatePickerModal(false));
-
     const [showDropdownModal, setShowDropdownModal] = useState(false);
-    const dropDownRef = useRef<HTMLDivElement>(null);
-    useOnClickOutside(dropDownRef, () => setShowDropdownModal(false));
 
     const [selectedRelativeFilterOption, setSelectedRelativeFilterOption] = useState<string|null>(null);
 
@@ -148,15 +141,13 @@ const Datepicker = ({
                         </button>
                     ) : null }
                 </div>
-                { showDatePickerModal ? (
-                    <div
-                        ref={ datePickerRef }
-                        className={ classNames(
-                            `absolute w-72 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-2
-                            px-3 -bottom-2 translate-y-full z-10`,
-                            modalAlignment === 'left' ? 'left-0' : 'right-0',
-                        ) }
-                    >
+                <Modal
+                    showModal={ showDatePickerModal }
+                    setShowModal={ setShowDatePickerModal }
+                    width="w-72"
+                    maxHeight="max-h-fit"
+                >
+                    <div className="py-1 px-3">
                         <div className="flex justify-between items-center py-2 px-1">
                             <button
                                 type="button"
@@ -238,43 +229,33 @@ const Datepicker = ({
                             ))}
                         </div>
                     </div>
-                ) : null }
-                { showDropdownModal ? (
-                    <div
-                        ref={ dropDownRef }
-                        className={ classNames(
-                            `absolute min-w-full text-left rounded-md shadow-lg bg-white ring-1 py-1 ring-black
-                            ring-opacity-5 divide-y divide-gray-100 focus:outline-none -bottom-2
-                            translate-y-full z-10 max-w-sm truncate`,
-                            modalAlignment === 'left' ? 'left-0' : 'right-0',
-                        ) }
-                    >
-                        { relativeFilterOptions.map((filterOption) => (
-                            <button
-                                className={ classNames(
-                                    selectedRelativeFilterOption === filterOption.value
-                                        ? 'bg-gray-100 text-gray-900'
-                                        : 'text-gray-700',
-                                    `group flex items-center justify-between px-4 py-2.5 space-x-10 sm:text-sm
+                </Modal>
+                <Modal showModal={ showDropdownModal } setShowModal={ setShowDropdownModal }>
+                    { relativeFilterOptions.map((filterOption) => (
+                        <button
+                            className={ classNames(
+                                selectedRelativeFilterOption === filterOption.value
+                                    ? 'bg-gray-100 text-gray-900'
+                                    : 'text-gray-700',
+                                `group flex items-center justify-between px-4 py-2.5 space-x-10 sm:text-sm
                                     border-gray-100 w-full group-hover:text-gray-500 hover:bg-gray-50 truncate`
-                                ) }
-                                value={ filterOption.value }
-                                onClick={ () => {
-                                    setSelectedRelativeFilterOption(filterOption.value);
-                                    handleRelativeFilterOptionClick(filterOption.value);
-                                    setShowDropdownModal(false);
-                                } }
-                            >
-                                <div className="flex whitespace-nowrap truncate">
-                                    { filterOption.name }
-                                </div>
-                                <span className="font-normal text-gray-400 whitespace-nowrap">
-                                    { filterOption.shortcut }
-                                </span>
-                            </button>
-                        ))}                    
-                    </div>
-                ) : null }
+                            ) }
+                            value={ filterOption.value }
+                            onClick={ () => {
+                                setSelectedRelativeFilterOption(filterOption.value);
+                                handleRelativeFilterOptionClick(filterOption.value);
+                                setShowDropdownModal(false);
+                            } }
+                        >
+                            <div className="flex whitespace-nowrap truncate">
+                                { filterOption.name }
+                            </div>
+                            <span className="font-normal text-gray-400 whitespace-nowrap">
+                                { filterOption.shortcut }
+                            </span>
+                        </button>
+                    ))}      
+                </Modal>
             </div>
         </>
     );
