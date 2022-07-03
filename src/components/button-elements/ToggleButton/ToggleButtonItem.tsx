@@ -43,7 +43,7 @@ const ToggleButtonItem = ({
             onClick={ () => { setActiveToggleButtonItem!(value); }}
         >
             { Icon ? <Icon className="w-5 h-5 mr-2 opacity-70" aria-hidden="true"/> : null }
-            <span>{ text }</span>
+            <span className="whitespace-nowrap truncate">{ text }</span>
         </button>
     );
 };

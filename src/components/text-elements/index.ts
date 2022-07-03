@@ -1,5 +1,5 @@
 export { default as Bold } from './Bold';
-export { default as It } from './It';
+export { default as Italic } from './Italic';
 export { default as Light } from './Light';
 export { default as CallOut } from './CallOut';
 export { default as Caption } from './Caption';

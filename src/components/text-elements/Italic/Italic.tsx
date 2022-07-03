@@ -1,12 +1,12 @@
 import React from 'react';
 
-export interface ItProps {
+export interface ItalicProps {
     children: React.ReactNode;
 }
 
-const It = ({
+const Italic = ({
     children
-}: ItProps) => {
+}: ItalicProps) => {
     return(
         <span className="italic">
             { children }
@@ -14,4 +14,4 @@ const It = ({
     );
 };
 
-export default It;
+export default Italic;
