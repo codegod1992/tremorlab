@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Card, Footer } from 'components';
 
-import Row from 'components/layout-elements/Row/Row';
+import Row from 'components/layout-elements/RowGrid/Row';
 import RowGrid from 'components/layout-elements/RowGrid/RowGrid';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

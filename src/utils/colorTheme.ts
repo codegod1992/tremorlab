@@ -61,7 +61,7 @@ export const defaultColors: DefaultColors = {
     text: 'gray-500',
     darkText: 'gray-700',
     icon: 'gray-500',
-}
+};
 
 export type TwColorValues = {
     500: string,
@@ -134,7 +134,7 @@ export const twColorsHex: {[baseColor: string]: TwColorValues} = {
     rose: {
         500: '#f43f5e'
     },
-}
+};
 
 export type BaseColorTheme = {
     canvasBackground: string,

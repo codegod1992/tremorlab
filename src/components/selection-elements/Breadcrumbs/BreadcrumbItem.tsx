@@ -1,5 +1,6 @@
-import { classNames, parseTextColorClassNames } from '@utils/classname-utils';
 import React from 'react';
+
+import { classNames } from '@utils/classname-utils';
 
 export interface BreadcrumbItemProps {
     href?: string,

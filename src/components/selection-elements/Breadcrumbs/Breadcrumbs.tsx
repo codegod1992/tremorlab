@@ -1,11 +1,13 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 
 import { ChevronDownIcon } from '@heroicons/react/solid';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
 import BaseComponentProps from '@common/BaseComponentInterface';
+import Modal from '@common/Modal';
+import SelectText from '@common/SelectText';
+import SelectWrapper from '@common/SelectWrapper';
 import { defaultColors } from '@utils/colorTheme';
-import { useOnClickOutside } from '@utils/utils';
 
 export interface BreadcrumbsProps extends BaseComponentProps {
     maxItems?: number,
@@ -20,13 +22,11 @@ const Breadcrumbs = ({
     children,
 }: BreadcrumbsProps) => {
     const [showModal, setShowModal] = useState(false);
-    const ref = useRef<HTMLDivElement>(null);
-    useOnClickOutside(ref, () => setShowModal(false));
 
     const childrenCount = React.Children.count(children);
 
     return (
-        childrenCount <= maxItems ? (
+        childrenCount <= maxItems ? (            
             <div className={ classNames(
                 parseMarginTopClassNames(marginTop),
                 getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
@@ -52,47 +52,40 @@ const Breadcrumbs = ({
                 } ) }
             </div>
         ) : (
-            <button
-                className={ classNames(
-                    'text-gray-700',
-                    'relative inline-flex justify-between rounded-md border border-gray-300 px-4 py-2 bg-white',
-                    'sm:text-sm font-medium shadow-sm hover:bg-gray-50 focus:ring-2 focus:ring-opacity-100',
-                    'focus:outline-none focus:ring-blue-300 button-dropdown w-full',
-                    'min-w-[10rem]'
-                ) }
-                onClick={ () => setShowModal(true) }
-            >
-                { !currentHref ? <span>Select</span> : React.Children.map(children, (child) => {
-                    if (child.props.href === currentHref) return (
-                        <span className="whitespace-nowrap truncate">{ child.props.name }</span>
-                    );
-                }) }
-                <ChevronDownIcon className="flex-none -mr-1 ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
-                { showModal ? (
-                    <div
-                        ref={ ref }
-                        className={ classNames(
-                            'absolute py-1 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y',
-                            'divide-gray-100 focus:outline-none -bottom-2 translate-y-full',
-                            'w-full max-h-72 overflow-y-auto z-10 left-0',
-                        ) }
-                    >
-                        { React.Children.map(children, (child) => {
-                            return (
-                                <div
-                                    className={ classNames(
-                                        'text-gray-700',
-                                        `group flex items-center justify-between px-4 py-2.5 space-x-10 w-full
-                                        text-sm group-hover:text-gray-500 hover:bg-gray-100 text-left`
-                                    ) }
-                                >
-                                    { child }
-                                </div>
+            <SelectWrapper>
+                <button
+                    className={ classNames(
+                        'flex justify-between items-center w-full rounded-md',
+                        'px-4 py-2',
+                        'focus:ring-2 focus:ring-opacity-100 focus:outline-none focus:ring-blue-300',
+                    ) }
+                    onClick={ () => setShowModal(true) }
+                >
+                    { !currentHref ? <SelectText text="Select" isActive={ false } /> : (
+                        React.Children.map(children, (child) => {
+                            if (child.props.href === currentHref) return (
+                                <SelectText text={ child.props.name } isActive={ false } />
                             );
-                        }) }   
-                    </div>
-                ) : null }
-            </button>
+                        })
+                    ) }
+                    <ChevronDownIcon className="flex-none -mr-1 ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
+                </button>
+                <Modal showModal={ showModal } setShowModal={ setShowModal }>
+                    { React.Children.map(children, (child) => {
+                        return (
+                            <div
+                                className={ classNames(
+                                    'text-gray-700',
+                                    `group flex items-center justify-between px-4 py-2.5 space-x-10 w-full
+                                    text-sm group-hover:text-gray-500 hover:bg-gray-100 text-left`
+                                ) }
+                            >
+                                { child }
+                            </div>
+                        );
+                    }) }   
+                </Modal>
+            </SelectWrapper>
         )
     );
 };

@@ -4,7 +4,7 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { ButtonColorTypes, ButtonProportionTypes, ButtonShapeTypes } from '@common/common-types';
-import { classNames, getColorVariantsFromTwClassName } from '@utils/classname-utils';
+import { classNames } from '@utils/classname-utils';
 
 export interface ButtonWrapperProps extends ButtonProportionTypes, ButtonShapeTypes, ButtonColorTypes {
     onClick: React.MouseEventHandler<HTMLButtonElement>,

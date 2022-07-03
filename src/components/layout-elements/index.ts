@@ -1,8 +1,5 @@
-export { default as ColGrid } from './ColGrid';
-export { default as Col } from './Col';
-
-export { default as Row } from './Row';
-export { default as RowGrid } from './RowGrid';
+export * from './ColGrid';
+export * from './RowGrid';
 
 export { default as Card } from './Card';
 export { default as ContentOverflow } from './ContentOverflow';

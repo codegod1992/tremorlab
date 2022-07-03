@@ -3,7 +3,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import Flex from 'components/layout-elements/Flex/Flex';
 import List from 'components/list-elements/List/List';
-import ListItem from 'components/list-elements/ListItem/ListItem';
+import ListItem from 'components/list-elements/List/ListItem';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

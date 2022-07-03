@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { isValueInArray, removeValueFromArray } from '@utils/utils';
+import SelectItemWrapper from '@common/SelectItemWrapper';
 
 export interface MultiSelectBoxItemProps {
     value: any,
@@ -15,19 +16,18 @@ const MultiSelectBoxItem = ({
     selectedItemsValues,
     setSelectedItemsValues,
 }: MultiSelectBoxItemProps) => (
-    <button
-        className="group flex items-center justify-between px-4 py-2.5 text-sm border-b border-gray-100 w-full
-            text-gray-700 group-hover:text-gray-500 hover:bg-gray-50 text-left truncate"
-        value={ value }
-        onClick={ () => {
+    <SelectItemWrapper
+        handleClick={ () => {
             if (!isValueInArray(value, selectedItemsValues!)) {
                 setSelectedItemsValues!([...selectedItemsValues!, value]);
             } else {
                 const newSelectedItemsValues = removeValueFromArray(value, selectedItemsValues!);
                 setSelectedItemsValues!([...newSelectedItemsValues!]);
             }
-        } }>
-        <div className="flex items-center space-x-3 h-4 truncate">
+        } }
+        isActive={ false }
+    >
+        <div className="flex items-center space-x-3 truncate">
             <input
                 id="options"
                 aria-describedby="options-description"
@@ -39,7 +39,7 @@ const MultiSelectBoxItem = ({
             />
             <span className="whitespace-nowrap truncate"> { name } </span>
         </div>
-    </button>
+    </SelectItemWrapper>
 );
 
 export default MultiSelectBoxItem;

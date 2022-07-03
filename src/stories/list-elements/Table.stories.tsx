@@ -3,8 +3,8 @@ import React from 'react';
 import { Card, TableBody, TableHead, TableHeaderCell } from 'components';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import Table from 'components/list-elements/Table/Table';
-import TableCell from 'components/list-elements/TableCell/TableCell';
-import TableRow from 'components/list-elements/TableRow/TableRow';
+import TableCell from 'components/list-elements/Table/TableCell';
+import TableRow from 'components/list-elements/Table/TableRow';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
