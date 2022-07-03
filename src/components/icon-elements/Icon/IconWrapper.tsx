@@ -39,9 +39,7 @@ const IconWrapper = (props: IconWrapperProps) => {
                     'flex-shrink-0 inline-flex items-center'
                 ) }
             >
-                <props.Icon className={ classNames(
-                    props.iconSize
-                ) }/>
+                <props.Icon className={ classNames( props.iconSize ) } />
             </div>
         </Tooltip>
     );
