@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Card, TableBody, TableHead, TableHeaderCell } from 'components';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+
+import BadgeDelta from 'components/icon-elements/BadgeDelta/BadgeDelta';
 import Table from 'components/list-elements/Table/Table';
 import TableCell from 'components/list-elements/Table/TableCell';
 import TableRow from 'components/list-elements/Table/TableRow';
@@ -22,17 +24,24 @@ const Template: ComponentStory<typeof Table> = (args) => (
                         Name
                     </TableHeaderCell>
                     <TableHeaderCell>
-                        Sales
+                        Sales ($)
                     </TableHeaderCell>
                     <TableHeaderCell>
-                        Region
+                        Region 
+                    </TableHeaderCell>
+                    <TableHeaderCell>
+                        Status
+                    </TableHeaderCell>
+                    <TableHeaderCell textAlignment="text-right">
+                        Working Hours (h) 
                     </TableHeaderCell>
                 </TableRow>
             </TableHead>
+
             <TableBody>
                 <TableRow>
                     <TableCell>
-                        Achilleas Georgios Mitrotasios
+                        Peter Doe
                     </TableCell>
                     <TableCell>
                         1.000.000
@@ -40,16 +49,11 @@ const Template: ComponentStory<typeof Table> = (args) => (
                     <TableCell>
                         Region A
                     </TableCell>
-                </TableRow>
-                <TableRow>
                     <TableCell>
-                        Jon Doe
+                        <BadgeDelta deltaType="moderateIncrease" delta="overperforming"size="xs"/>
                     </TableCell>
-                    <TableCell>
-                        2.202.000
-                    </TableCell>
-                    <TableCell>
-                        Region B
+                    <TableCell textAlignment="text-right">
+                        211
                     </TableCell>
                 </TableRow>
                 <TableRow>
@@ -62,16 +66,11 @@ const Template: ComponentStory<typeof Table> = (args) => (
                     <TableCell>
                         Region B
                     </TableCell>
-                </TableRow>
-                <TableRow>
                     <TableCell>
-                        Jon Doe
+                        <BadgeDelta deltaType="increase" delta="overperforming"size="xs"/>
                     </TableCell>
-                    <TableCell>
-                        2.202.000
-                    </TableCell>
-                    <TableCell>
-                        Region B
+                    <TableCell textAlignment="text-right">
+                        320
                     </TableCell>
                 </TableRow>
                 <TableRow>
@@ -84,16 +83,11 @@ const Template: ComponentStory<typeof Table> = (args) => (
                     <TableCell>
                         Region B
                     </TableCell>
-                </TableRow>
-                <TableRow>
                     <TableCell>
-                        Jon Doe
+                        <BadgeDelta deltaType="moderateDecrease" delta="underperforming"size="xs"/>
                     </TableCell>
-                    <TableCell>
-                        2.202.000
-                    </TableCell>
-                    <TableCell>
-                        Region B
+                    <TableCell textAlignment="text-right">
+                        290
                     </TableCell>
                 </TableRow>
                 <TableRow>
@@ -106,16 +100,11 @@ const Template: ComponentStory<typeof Table> = (args) => (
                     <TableCell>
                         Region B
                     </TableCell>
-                </TableRow>
-                <TableRow>
                     <TableCell>
-                        Jon Doe
+                        <BadgeDelta deltaType="moderateDecrease" delta="underperforming"size="xs"/>
                     </TableCell>
-                    <TableCell>
-                        2.202.000
-                    </TableCell>
-                    <TableCell>
-                        Region B
+                    <TableCell textAlignment="text-right">
+                        340
                     </TableCell>
                 </TableRow>
                 <TableRow>
@@ -128,16 +117,96 @@ const Template: ComponentStory<typeof Table> = (args) => (
                     <TableCell>
                         Region B
                     </TableCell>
+                    <TableCell>
+                        <BadgeDelta deltaType="unchanged" delta="average"size="xs"/>
+                    </TableCell>
+                    <TableCell textAlignment="text-right">
+                        430
+                    </TableCell>
                 </TableRow>
                 <TableRow>
                     <TableCell>
-                        Achilleas Georgios Mitrotasios
+                        Jon Doe
+                    </TableCell>
+                    <TableCell>
+                        2.202.000
+                    </TableCell>
+                    <TableCell>
+                        Region B
+                    </TableCell>
+                    <TableCell>
+                        <BadgeDelta deltaType="moderateDecrease" delta="underperforming"size="xs"/>
+                    </TableCell>
+                    <TableCell textAlignment="text-right">
+                        190
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>
+                        Jon Doe
+                    </TableCell>
+                    <TableCell>
+                        2.202.000
+                    </TableCell>
+                    <TableCell>
+                        Region B
+                    </TableCell>
+                    <TableCell>
+                        <BadgeDelta deltaType="moderateIncrease" delta="overperforming"size="xs"/>
+                    </TableCell>
+                    <TableCell textAlignment="text-right">
+                        3100
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>
+                        Jon Doe
+                    </TableCell>
+                    <TableCell>
+                        2.202.000
+                    </TableCell>
+                    <TableCell>
+                        Region B
+                    </TableCell>
+                    <TableCell>
+                        <BadgeDelta deltaType="moderateDecrease" delta="underperforming"size="xs"/>
+                    </TableCell>
+                    <TableCell textAlignment="text-right">
+                        340
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>
+                        Jon Doe
+                    </TableCell>
+                    <TableCell>
+                        2.202.000
+                    </TableCell>
+                    <TableCell>
+                        Region B
+                    </TableCell>
+                    <TableCell>
+                        <BadgeDelta deltaType="moderateDecrease" delta="underperforming"size="xs"/>
+                    </TableCell>
+                    <TableCell textAlignment="text-right">
+                        170
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>
+                        Max Doe
                     </TableCell>
                     <TableCell>
                         1.000.000
                     </TableCell>
                     <TableCell>
                         Region A
+                    </TableCell>
+                    <TableCell>
+                        <BadgeDelta deltaType="moderateDecrease" delta="underperforming"size="xs"/>
+                    </TableCell>
+                    <TableCell textAlignment="text-right">
+                        340
                     </TableCell>
                 </TableRow>
             </TableBody>
