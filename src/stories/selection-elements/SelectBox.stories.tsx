@@ -3,9 +3,6 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { CalendarIcon } from '@heroicons/react/solid';
-import Dropdown from 'components/selection-elements/Dropdown/Dropdown';
-import DropdownItem from 'components/selection-elements/DropdownItem';
 import SelectBox from 'components/selection-elements/SelectBox/SelectBox';
 import { SelectBoxItem } from 'components';
 

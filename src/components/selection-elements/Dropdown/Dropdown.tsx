@@ -7,7 +7,6 @@ import BaseComponentProps from '@common/BaseComponentInterface';
 import Modal from '@common/Modal';
 import SelectText from '@common/SelectText';
 import SelectWrapper from '@common/SelectWrapper';
-import { defaultFocusState } from '@utils/colorTheme';
 
 export interface DropdownProps extends BaseComponentProps {
     placeholder?: string,
@@ -51,7 +50,7 @@ const Dropwdown = ({
         });
     };
 
-    const handleKeyDown = (event: React.KeyboardEvent, shortcutMapping: ShortcutMapping) => {
+    const handleKeyDown = (event: KeyboardEvent, shortcutMapping: ShortcutMapping) => {
         const keyLower = event.key.toLocaleLowerCase();
         if (Object.keys(shortcutMapping).includes(keyLower)) {
             setSelectedItem(shortcutMapping[keyLower].value);

@@ -3,7 +3,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import Dropdown from 'components/selection-elements/Dropdown/Dropdown';
-import DropdownItem from 'components/selection-elements/DropdownItem';
+import { DropdownItem } from 'components';
 
 import { CalendarIcon } from '@heroicons/react/solid';
 
