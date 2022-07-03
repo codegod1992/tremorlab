@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 
 import { ChevronDownIcon } from '@heroicons/react/solid';
 
@@ -69,22 +69,22 @@ const Breadcrumbs = ({
                         })
                     ) }
                     <ChevronDownIcon className="flex-none -mr-1 ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
-                    <Modal showModal={ showModal } setShowModal={ setShowModal }>
-                        { React.Children.map(children, (child) => {
-                            return (
-                                <div
-                                    className={ classNames(
-                                        'text-gray-700',
-                                        `group flex items-center justify-between px-4 py-2.5 space-x-10 w-full
-                                        text-sm group-hover:text-gray-500 hover:bg-gray-100 text-left`
-                                    ) }
-                                >
-                                    { child }
-                                </div>
-                            );
-                        }) }   
-                    </Modal>
                 </button>
+                <Modal showModal={ showModal } setShowModal={ setShowModal }>
+                    { React.Children.map(children, (child) => {
+                        return (
+                            <div
+                                className={ classNames(
+                                    'text-gray-700',
+                                    `group flex items-center justify-between px-4 py-2.5 space-x-10 w-full
+                                    text-sm group-hover:text-gray-500 hover:bg-gray-100 text-left`
+                                ) }
+                            >
+                                { child }
+                            </div>
+                        );
+                    }) }   
+                </Modal>
             </SelectWrapper>
         )
     );

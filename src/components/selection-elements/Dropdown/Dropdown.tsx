@@ -91,17 +91,17 @@ const Dropwdown = ({
                         <SelectText isActive={ false } text={ placeholder } />
                     ) }
                     <ChevronDownIcon className="flex-none -mr-1 ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
-                    <Modal showModal={ showModal } setShowModal={ setShowModal }>
-                        { React.Children.map(children, (child: React.ReactElement) => (
-                            <>
-                                { React.cloneElement(child, {
-                                    setSelectedItem: setSelectedItem,
-                                    isActive: child?.props.value === selectedItem,
-                                }) }
-                            </>
-                        )) }
-                    </Modal>
                 </button>
+                <Modal showModal={ showModal } setShowModal={ setShowModal }>
+                    { React.Children.map(children, (child: React.ReactElement) => (
+                        <>
+                            { React.cloneElement(child, {
+                                setSelectedItem: setSelectedItem,
+                                isActive: child?.props.value === selectedItem,
+                            }) }
+                        </>
+                    )) }
+                </Modal>
             </SelectWrapper>
         </div>
     );

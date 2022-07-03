@@ -27,6 +27,7 @@ import {
 } from 'components/selection-elements/Datepicker/datepicker-utils';
 import BaseComponentProps from '@common/BaseComponentInterface';
 import Modal from '@common/Modal';
+import SelectItemWrapper from '@common/SelectItemWrapper';
 import SelectText from '@common/SelectText';
 
 export interface DatepickerProps extends BaseComponentProps {
@@ -35,6 +36,7 @@ export interface DatepickerProps extends BaseComponentProps {
 }
 
 const Datepicker = ({
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     handleSelect = (selectedStartDay: Date|null, selectedEndDay: Date|null) => null,
     enableRelative = true,
     marginTop,
@@ -246,28 +248,22 @@ const Datepicker = ({
                 </Modal>
                 <Modal showModal={ showDropdownModal } setShowModal={ setShowDropdownModal }>
                     { relativeFilterOptions.map((filterOption) => (
-                        <button
-                            className={ classNames(
-                                selectedRelativeFilterOption === filterOption.value
-                                    ? 'bg-gray-100 text-gray-900'
-                                    : 'text-gray-700',
-                                `group flex items-center justify-between px-4 py-2.5 space-x-10 sm:text-sm
-                                    border-gray-100 w-full group-hover:text-gray-500 hover:bg-gray-50 truncate`
-                            ) }
-                            value={ filterOption.value }
-                            onClick={ () => {
+                        <SelectItemWrapper
+                            key={ filterOption.value }
+                            handleClick={ () => {
                                 setSelectedRelativeFilterOption(filterOption.value);
                                 handleRelativeFilterOptionClick(filterOption.value);
                                 setShowDropdownModal(false);
                             } }
+                            isActive={ selectedRelativeFilterOption === filterOption.value }
                         >
-                            <div className="flex whitespace-nowrap truncate">
+                            <div className="whitespace-nowrap truncate">
                                 { filterOption.name }
                             </div>
                             <span className="font-normal text-gray-400 whitespace-nowrap">
                                 { filterOption.shortcut }
                             </span>
-                        </button>
+                        </SelectItemWrapper>
                     ))}      
                 </Modal>
             </div>
