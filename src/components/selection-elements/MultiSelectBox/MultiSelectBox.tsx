@@ -17,6 +17,7 @@ export interface MultiSelectBoxProps extends BaseComponentProps {
 
 const MultiSelectBox = ({
     defaultValues = [],
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     handleSelect = (value) => null,
     placeholder = 'Select',
     marginTop,

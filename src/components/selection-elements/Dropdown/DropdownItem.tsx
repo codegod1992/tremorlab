@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
+import SelectItemWrapper from '@common/SelectItemWrapper';
+import { classNames } from '@utils/classname-utils';
 
 export interface DropdownItemProps {
     value: any,
@@ -20,33 +21,23 @@ const DropdownItem = ({
     isActive = false,
     setSelectedItem,
 }: DropdownItemProps) => (
-    <div>
-        <button
-            className={ classNames(
-                isActive ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                `group flex items-center justify-between px-4 py-2.5 space-x-10 w-full sm:text-sm
-                 group-hover:text-gray-500 hover:bg-gray-100 text-left`
-            ) }
-            value={ value }
-            onClick={ () => setSelectedItem!(value) }
-        >
-            <div className="flex items-center group-hover:text-gray-900 truncate">
-                { Icon ? (
-                    <Icon className={ classNames(
-                        'h-5 w-5 mr-3 flex-none text-gray-400'
-                    ) } aria-hidden="true" />
-                ) : null }
-                <span className="whitespace-nowrap truncate">
-                    { name }
-                </span>
-            </div>
-            { shortcut ? (
-                <span className="font-normal text-gray-400 group-hover:text-gray-500">
-                    { shortcut }
-                </span>
+    <SelectItemWrapper handleClick={ () => setSelectedItem!(value) } isActive={ isActive }>
+        <div className="flex items-center truncate">
+            { Icon ? (
+                <Icon className={ classNames(
+                    'h-5 w-5 mr-3 flex-none text-gray-400'
+                ) } aria-hidden="true" />
             ) : null }
-        </button>
-    </div>
+            <span className="whitespace-nowrap truncate">
+                { name }
+            </span>
+        </div>
+        { shortcut ? (
+            <span className="font-normal text-gray-400">
+                { shortcut }
+            </span>
+        ) : null }
+    </SelectItemWrapper>
 );
 
 export default DropdownItem;

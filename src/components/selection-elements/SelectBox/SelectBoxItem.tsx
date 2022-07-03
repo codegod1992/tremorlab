@@ -1,5 +1,6 @@
 import React from 'react';
 
+import SelectItemWrapper from '@common/SelectItemWrapper';
 import { classNames } from '@utils/classname-utils';
 
 export interface SelectBoxItemProps {
@@ -18,24 +19,16 @@ const SelectBoxItem = ({
     isActive,
     setSelectedItemValue,
 }: SelectBoxItemProps) => (
-    <button
-        className={ classNames(
-            isActive ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-            `group flex items-center justify-between px-4 py-2.5 sm:text-sm w-full
-            group-hover:text-gray-500 hover:bg-gray-100 text-left`
-        ) }
-        value={ value }
-        onClick={ () => setSelectedItemValue!(value) }
-    >
-        <div className="flex group-hover:text-gray-900 truncate">
+    <SelectItemWrapper handleClick={ () => setSelectedItemValue!(value) } isActive={ isActive || false } >
+        <div className="flex truncate">
             { Icon ? (
                 <Icon className={ classNames(
                     'h-5 w-5 mr-3 text-gray-400 flex-none'
-                ) } aria-hidden="true"/>
+                ) } aria-hidden="true" />
             ) : null }
             <span className="whitespace-nowrap truncate">{ name }</span>
         </div>
-    </button>
+    </SelectItemWrapper>
 );
 
 export default SelectBoxItem;
