@@ -68,5 +68,5 @@ export const Default = Template.bind({});
 Default.args = {
     data: data,
     attributes: ['Sales', 'Profit'],
-    valueFormater: dataFormater,
+    valueFormaterY: dataFormater,
 };

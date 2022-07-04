@@ -37,7 +37,7 @@ export interface ChartProps {
     data: any[],
     attributes: string[],
     colors: string[],
-    valueFormater?: ValueFormater,
+    valueFormaterY?: ValueFormater,
     showXAxis?: boolean,
     showYAxis?: boolean,
     yAxisOrientation?: string,

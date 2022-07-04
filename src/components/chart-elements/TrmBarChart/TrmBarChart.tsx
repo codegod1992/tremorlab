@@ -28,7 +28,7 @@ const TrmBarChart = ({
     data,
     attributes,
     colors = themeColorRange,
-    valueFormater = defaultValueFormater,
+    valueFormaterY = defaultValueFormater,
     alignVertical = false,
     stack = true,
     showXAxis = true,
@@ -86,7 +86,7 @@ const TrmBarChart = ({
                     }}
                     tickLine={false}
                     axisLine={false}
-                    tickFormatter={ valueFormater }
+                    tickFormatter={ valueFormaterY }
                 />
             )}
             { !alignVertical ? (
@@ -102,7 +102,7 @@ const TrmBarChart = ({
                         fontSize: '12px',
                         fontFamily: 'Inter; Helvetica',
                     } }
-                    tickFormatter={ valueFormater }
+                    tickFormatter={ valueFormaterY }
                 />
             ) : (
                 <YAxis
@@ -131,7 +131,7 @@ const TrmBarChart = ({
                                 active={ active }
                                 payload={ payload }
                                 label={ label }
-                                valueFormater={ valueFormater }
+                                valueFormater={ valueFormaterY }
                                 colors={ colors }
                             />
                         )
@@ -152,6 +152,7 @@ const TrmBarChart = ({
                 attributes.map((attribute, idx) => (
                     <Bar
                         key={ `item-${idx}` }
+                        name={ attribute }
                         type="linear"
                         stackId={ stack ? 'a' : undefined }
                         dataKey={ attribute }
