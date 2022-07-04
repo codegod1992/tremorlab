@@ -7,20 +7,17 @@ import {
     parseMarginTopClassNames,
     parseTextAlignmentClassNames,
     parseTextColorClassNames,
-    parseTruncateOption 
 } from '@utils/classname-utils';
 
 export interface TextProps extends BaseComponentProps {
     textColor?: string,
     textAlignment?: string,
-    truncate?: boolean,
     children: React.ReactNode
 }
 
 const Text = ({
     textColor = 'text-gray-500',
     textAlignment = 'text-left',
-    truncate = false,
     marginTop,
     children 
 }: TextProps) => {
@@ -28,9 +25,8 @@ const Text = ({
         <p className={classNames(
             parseTextColorClassNames(textColor),
             parseTextAlignmentClassNames(textAlignment),
-            parseTruncateOption(truncate),
             parseMarginTopClassNames(marginTop),
-            'text-sm font-normal shrink-0'
+            'text-sm font-normal shrink-0 truncate'
         )}>
             { children }
         </p>

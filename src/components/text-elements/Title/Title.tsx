@@ -6,30 +6,26 @@ import {
     classNames,
     parseMarginTopClassNames,
     parseTextColorClassNames,
-    parseTruncateOption
 } from '@utils/classname-utils';
 
 export interface TitleProps extends BaseComponentProps {
-    text: string,
-    truncate?: boolean,
     textColor?: string,
+    children: React.ReactNode,
 }
 
 const Title = ({
-    text,
-    truncate = false,
     textColor = 'text-gray-600',
-    marginTop
+    marginTop,
+    children
 }: TitleProps) => {
     return(
         <p className={ classNames(
             parseTextColorClassNames(textColor),
-            parseTruncateOption(truncate),
             parseMarginTopClassNames(marginTop),
-            'text-lg font-medium shrink-0'
+            'text-lg font-medium shrink-0 truncate'
         ) }
         >
-            { text }
+            { children }
         </p>
     );
 };
