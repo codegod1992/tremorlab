@@ -13,15 +13,11 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
 const Template: ComponentStory<typeof TrmLineChart> = (args) => (
-    <ColGrid>
-        <Col>
-            <Card hFull={ true } >
-                <div className="h-96">
-                    <TrmLineChart { ...args } />
-                </div>
-            </Card>
-        </Col>
-    </ColGrid>
+    <Card hFull={ true } >
+        <div className="h-96">
+            <TrmLineChart { ...args } />
+        </div>
+    </Card>
 );
   
 
@@ -72,5 +68,5 @@ export const Default = Template.bind({});
 Default.args = {
     data: data,
     attributes: ['Sales', 'Profit'],
-    valueFormater: dataFormater,
+    valueFormaterY: dataFormater,
 };
