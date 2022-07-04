@@ -23,7 +23,7 @@ const TrmLineChart = ({
     data,
     attributes,
     colors = themeColorRange,
-    valueFormater = defaultValueFormater,
+    valueFormaterY = defaultValueFormater,
     showXAxis = true,
     showYAxis = true,
     yAxisOrientation = 'left',
@@ -75,7 +75,7 @@ const TrmLineChart = ({
                         fontSize: '12px',
                         fontFamily: 'Inter; Helvetica',
                     } }
-                    tickFormatter={ valueFormater  }
+                    tickFormatter={ valueFormaterY  }
                 />
                 <Tooltip
                     isAnimationActive={ false }
@@ -87,7 +87,7 @@ const TrmLineChart = ({
                                     active={ active }
                                     payload={ payload }
                                     label={ label }
-                                    valueFormater={ valueFormater }
+                                    valueFormater={ valueFormaterY }
                                     colors={ colors }
                                 />
                             )
@@ -105,6 +105,7 @@ const TrmLineChart = ({
                 { attributes.map((attribute, idx) => (
                     <Line
                         key={ `item-${idx}` }
+                        name={ attribute }
                         type="linear"
                         dataKey={ attribute }
                         stroke={ getHexFromColorThemeValue(colorTheme[colors[idx]].background) }

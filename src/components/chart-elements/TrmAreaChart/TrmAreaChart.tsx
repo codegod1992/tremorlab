@@ -24,7 +24,7 @@ const TrmAreaChart = ({
     data,
     attributes,
     colors = themeColorRange,
-    valueFormater = defaultValueFormater,
+    valueFormaterY = defaultValueFormater,
     showXAxis = true,
     showYAxis = true,
     yAxisOrientation = 'left',
@@ -75,7 +75,7 @@ const TrmAreaChart = ({
                     fontSize: '12px',
                     fontFamily: 'Inter; Helvetica',
                 } }
-                tickFormatter={ valueFormater }
+                tickFormatter={ valueFormaterY }
             />
             <Tooltip
                 isAnimationActive={false}
@@ -87,7 +87,7 @@ const TrmAreaChart = ({
                                 active={ active }
                                 payload={ payload }
                                 label={ label }
-                                valueFormater={ valueFormater }
+                                valueFormater={ valueFormaterY }
                                 colors={ colors }
                             />
                         )
@@ -120,6 +120,7 @@ const TrmAreaChart = ({
                     </defs>
                     <Area
                         key={ attribute }
+                        name={ attribute }
                         type="linear"
                         dataKey={ attribute }
                         stroke={ getHexFromColorThemeValue(colorTheme[colors[idx]].background) }
