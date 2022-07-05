@@ -27,9 +27,7 @@ const ProgressBar = ({
                 parseMarginTopClassNames(marginTop),
             )
         }>
-            <div className={ classNames(
-                'w-full',
-            ) }>
+            <div className="w-full">
                 <BarWrapper
                     bgColor={ colors[color].secondaryBgColor }
                 >

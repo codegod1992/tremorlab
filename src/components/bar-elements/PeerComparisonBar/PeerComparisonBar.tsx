@@ -2,7 +2,7 @@ import React from 'react';
 
 import BaseComponentProps from '@common/BaseComponentInterface';
 
-import { classNames, parseBgClassNames, parseMarginTopClassNames } from '@utils/classname-utils';
+import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
 import BarWrapper from '@common/BarWrapper';
 import { BaseColors } from '@utils/objects';
 import { colors } from './mappings';
