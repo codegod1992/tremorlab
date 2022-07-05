@@ -23,7 +23,7 @@ const ProgressBar = ({
     return(
         <div className={
             classNames(
-                'flex items-center',
+                'flex items-center w-full',
                 parseMarginTopClassNames(marginTop),
             )
         }>
