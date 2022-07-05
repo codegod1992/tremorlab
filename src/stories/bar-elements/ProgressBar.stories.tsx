@@ -7,6 +7,7 @@ import Card from 'components/layout-elements/Card';
 import Metric from 'components/text-elements/Metric';
 
 import { BaseColors } from '@utils/objects';
+import { Flex } from 'components';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -20,7 +21,9 @@ const Template: ComponentStory<typeof ProgressBar> = (args) => (
         { Object.values(BaseColors).map(color => (
             <Card maxWidth="max-w-md">
                 <Metric value="$23.456" name="Sales"/>
-                <ProgressBar {...args} color={ color } />
+                <Flex>
+                    <ProgressBar {...args} color={ color } />
+                </Flex>
             </Card>
         )) }
     </>
