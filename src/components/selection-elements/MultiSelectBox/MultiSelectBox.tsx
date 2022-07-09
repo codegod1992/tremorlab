@@ -112,8 +112,10 @@ const MultiSelectBox = ({
                                 return (
                                     <>
                                         { React.cloneElement(child, {
-                                            selectedItemsValues: selectedItemsValues,
-                                            setSelectedItemsValues: setSelectedItemsValues,
+                                            privateProps: {
+                                                selectedItemsValues: selectedItemsValues,
+                                                setSelectedItemsValues: setSelectedItemsValues,
+                                            }
                                         }) }
                                     </>
                                 );
