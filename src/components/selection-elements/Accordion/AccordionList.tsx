@@ -27,7 +27,9 @@ const AccordionList = ({
                     return (
                         <>
                             { React.cloneElement(child, {
-                                shapeClassNames: 'border-t border-l border-r border-b rounded-t-lg shadow-none'
+                                privateProps: {
+                                    shapeClassNames: 'border-t border-l border-r border-b rounded-t-lg shadow-none',
+                                },
                             }) }
                         </>
                     );
@@ -36,14 +38,20 @@ const AccordionList = ({
                     return (
                         <>
                             { React.cloneElement(child, {
-                                shapeClassNames: 'border-b border-l border-r rounded-b-lg shadow-none'
+                                privateProps: {
+                                    shapeClassNames: 'border-b border-l border-r rounded-b-lg shadow-none',
+                                },
                             }) }
                         </>
                     );
                 }
                 return (
                     <>
-                        { React.cloneElement(child, { shapeClassNames: 'border-b border-l border-r shadow-none' }) }
+                        { React.cloneElement(child, { 
+                            privateProps: {
+                                shapeClassNames: 'border-b border-l border-r shadow-none',
+                            },
+                        }) }
                     </>
                 );
             })}
