@@ -69,7 +69,7 @@ export const shapeMapping: {[style: string]: IconElementShapeTypes} = {
         ring: 'ring-1',
         shadow: '',
     },
-    'circled': {
+    'outlined': {
         rounded: 'rounded-lg',
         border: 'border',
         ring: 'ring-2',

@@ -9,7 +9,7 @@ export const IconTypes = {
     Light: 'light',
     Shadow: 'shadow',
     Solid: 'solid',
-    Circled: 'circled'
+    Outlined: 'outlined'
 };
 
 export interface IconProps {
