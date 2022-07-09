@@ -31,7 +31,12 @@ const Accordion = ({
             { React.Children.map(children, (child, idx) => {
                 if (idx===0) return (
                     <>
-                        { React.cloneElement(child, { isExpanded: isExpanded, setExpanded: setExpanded }) }
+                        { React.cloneElement(child, {
+                            privateProps: {
+                                isExpanded: isExpanded,
+                                setExpanded: setExpanded
+                            } })
+                        }
                     </>
                 );
 
