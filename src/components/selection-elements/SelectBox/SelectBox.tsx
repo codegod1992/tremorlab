@@ -37,12 +37,12 @@ const SelectBox = ({
     };
     consturctValueToNameMapping();
 
-    useEffect(() => {
-        if (selectedItemValue) {
-            if(handleSelect) handleSelect(selectedItemValue);
-            setShowModal(false);
-        }
-    }, [selectedItemValue]);
+    // useEffect(() => {
+    //     if (selectedItemValue) {
+    //         if(handleSelect) handleSelect(selectedItemValue);
+    //         setShowModal(false);
+    //     }
+    // }, [selectedItemValue]);
 
     const getOptionNamesFromChildren = (children: React.ReactElement[]): string[] => (
         React.Children.map(children, (child) => {
@@ -92,8 +92,12 @@ const SelectBox = ({
                             return (
                                 <>
                                     { React.cloneElement(child, {
-                                        setSelectedItemValue: setSelectedItemValue,
-                                        isActive: selectedItemValue === child.props.value
+                                        privateProps: {
+                                            setSelectedItemValue: setSelectedItemValue,
+                                            isActive: selectedItemValue === child.props.value,
+                                            handleSelect: handleSelect,
+                                            setShowModal: setShowModal,
+                                        }
                                     }) }
                                 </>
                             );
