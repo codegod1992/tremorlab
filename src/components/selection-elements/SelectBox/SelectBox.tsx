@@ -93,6 +93,7 @@ const SelectBox = ({
                                 <>
                                     { React.cloneElement(child, {
                                         setSelectedItemValue: setSelectedItemValue,
+                                        isActive: selectedItemValue === child.props.value
                                     }) }
                                 </>
                             );
