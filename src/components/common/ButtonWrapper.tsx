@@ -13,7 +13,7 @@ export interface ButtonWrapperProps extends ButtonProportionTypes, ButtonShapeTy
 }
 
 const ButtonWrapper = ({
-    onClick = () => null,
+    onClick,
     info,
     paddingX,
     paddingY,
