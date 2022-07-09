@@ -35,7 +35,7 @@ const Card = ({
             parseHFullOption(hFull),
             getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
             parseMarginTopClassNames(marginTop),
-            'relative overflow-hidden mx-auto text-left border rounded-lg',
+            'relative mx-auto text-left border rounded-lg',
             shadow ? 'shadow' : '',
         ) }
         >
