@@ -18,7 +18,7 @@ export interface ButtonProps {
     size?: string,
     color?: string,
     importance?: string,
-    handleClick: { (): void },
+    handleClick?: { (): void },
 }
 
 const Button = ({
