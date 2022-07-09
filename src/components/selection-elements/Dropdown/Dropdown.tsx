@@ -96,8 +96,10 @@ const Dropwdown = ({
                     { React.Children.map(children, (child: React.ReactElement) => (
                         <>
                             { React.cloneElement(child, {
-                                setSelectedItem: setSelectedItem,
-                                isActive: child?.props.value === selectedItem,
+                                privateProps: {
+                                    setSelectedItem: setSelectedItem,
+                                    isActive: child?.props.value === selectedItem,
+                                },
                             }) }
                         </>
                     )) }
