@@ -33,13 +33,13 @@ const TabList = ({
             'border-b -mb-px flex justify-start space-x-4'
         ) }>
             { React.Children.map(children, (child) => (
-                <>
-                    { React.cloneElement(child, {
+                React.cloneElement(child, {
+                    privateProps: {
                         setSelectedTab: setSelectedTab,
                         color: color,
                         isActive: selectedTab === child.props.value,
-                    }) }
-                </>
+                    }
+                })
             )) }
         </ol>
     );
