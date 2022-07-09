@@ -15,7 +15,7 @@ export default {
 
 const Template: ComponentStory<typeof SelectBox> = (args) => (
     <>
-        <SelectBox handleSelect={ (value) => console.log('the new value is', value) }>
+        <SelectBox handleSelect={ (value) => console.log('the new value is', value) } defaultValue={ 1 }>
             <SelectBoxItem  value={1} name="Option One ABCSASDASDASDASASDASDASDSASDASABCSASDASDASDASASDASDASDSASDAS" />
             <SelectBoxItem  value={2} name="Option Two" />
             <SelectBoxItem  value={3} name="Option Three" />
