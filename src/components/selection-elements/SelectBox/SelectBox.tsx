@@ -60,7 +60,7 @@ const SelectBox = ({
 
     const allOptionNames = getOptionNamesFromChildren(children);
     const filteredOptionNames = new Set(getFilteredOptionNames(searchQuery, allOptionNames));
-    
+
     return (
         <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
             <SelectWrapper>
