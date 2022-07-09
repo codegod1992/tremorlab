@@ -18,7 +18,7 @@ export interface ButtonProps {
     size?: string,
     color?: string,
     importance?: string,
-    handleClick: React.MouseEventHandler<HTMLButtonElement>,
+    handleClick: { (): void },
 }
 
 const Button = ({

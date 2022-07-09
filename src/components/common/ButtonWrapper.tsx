@@ -7,13 +7,13 @@ import { ButtonColorTypes, ButtonProportionTypes, ButtonShapeTypes } from '@comm
 import { classNames } from '@utils/classname-utils';
 
 export interface ButtonWrapperProps extends ButtonProportionTypes, ButtonShapeTypes, ButtonColorTypes {
-    onClick: React.MouseEventHandler<HTMLButtonElement>,
+    onClick?: { (): void },
     info?: string,
     children: React.ReactNode
 }
 
 const ButtonWrapper = ({
-    onClick,
+    onClick = () => null,
     info,
     paddingX,
     paddingY,

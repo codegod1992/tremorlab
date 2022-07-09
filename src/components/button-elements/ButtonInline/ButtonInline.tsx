@@ -12,7 +12,7 @@ export interface ButtonInlineProps {
     arrow?: boolean,
     size?: string,
     color?: string,
-    handleClick: React.MouseEventHandler<HTMLButtonElement>,
+    handleClick?: { (): void },
 } 
 
 const ButtonInline = ({
