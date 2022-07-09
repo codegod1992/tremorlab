@@ -77,10 +77,15 @@ const SelectBox = ({
                     onChange={ (e) => setSearchQuery(e.target.value) }
                     onClick={ () => setShowModal(true) }
                 />
-                <ChevronDownIcon
-                    className="absolute top-1/2 right-3 h-5 w-5 text-gray-400 -translate-y-1/2"
-                    aria-hidden="true"
-                />
+                <button
+                    className="absolute top-1/2 -translate-y-1/2 right-3"
+                    onClick={ () => setShowModal(true) }
+                >
+                    <ChevronDownIcon
+                        className="h-5 w-5 text-gray-400"
+                        aria-hidden="true"
+                    />
+                </button>
                 <Modal showModal={ filteredOptionNames.size === 0 ? false : showModal } setShowModal={ setShowModal }>
                     { React.Children.map(children, (child) => {
                         if (filteredOptionNames.has(String(child.props.name))) {
