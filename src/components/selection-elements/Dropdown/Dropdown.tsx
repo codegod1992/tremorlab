@@ -62,13 +62,6 @@ const Dropwdown = ({
     useEffect(() => {
         consturctShortcutMapping();
 
-        // if (selectedItem) {
-        //     if(handleSelect) {
-        //         handleSelect(selectedItem);
-        //     }
-        //     setShowModal(false);
-        // }
-
         document.addEventListener('keydown', (e) => handleKeyDown(e, shortcutMapping));
 
         return () => {
