@@ -8,7 +8,7 @@ export interface SelectBoxItemProps {
     name: string,
     Icon?: React.ElementType,
     privateProps?: {
-        isActive?: boolean,
+        isActive: boolean,
         setSelectedItemValue?: React.Dispatch<React.SetStateAction<any>>,
         handleSelect: { (value: any): void },
         setShowModal: React.Dispatch<React.SetStateAction<boolean>>
@@ -27,7 +27,7 @@ const SelectBoxItem = ({
             privateProps!.handleSelect(value);
             privateProps!.setShowModal(false);
         } }
-        isActive={ privateProps!.isActive || false } >
+        isActive={ privateProps!.isActive } >
         <div className="flex truncate">
             { Icon ? (
                 <Icon className={ classNames(

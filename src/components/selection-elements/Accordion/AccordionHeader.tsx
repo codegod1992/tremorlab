@@ -5,8 +5,8 @@ import ArrowUpSLineIcon from 'remixicon-react/ArrowUpSLineIcon';
 
 export interface AccordionHeaderProps {
     privateProps?: {
-        isExpanded?: boolean,
-        setExpanded?: React.Dispatch<React.SetStateAction<boolean>>,
+        isExpanded: boolean,
+        setExpanded: React.Dispatch<React.SetStateAction<boolean>>,
     }
     children: React.ReactNode;
 }
@@ -18,7 +18,7 @@ const AccordionHeader = ({
     return(
         <button
             className="w-full flex items-center justify-between px-4 py-3"
-            onClick={ () => privateProps!.setExpanded!(!privateProps!.isExpanded) }
+            onClick={ () => privateProps!.setExpanded(!privateProps!.isExpanded) }
         >
             <div className="w-[95%] flex">
                 { children }

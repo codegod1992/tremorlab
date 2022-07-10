@@ -7,7 +7,6 @@ export interface ButtonGroupItemProps {
     privateProps?: {
         handleClick?: { (value: any): void },
         setActiveButtonItem: React.Dispatch<React.SetStateAction<any>>,
-        isActive: boolean,
     }
 }
 
