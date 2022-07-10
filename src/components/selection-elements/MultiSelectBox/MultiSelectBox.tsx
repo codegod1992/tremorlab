@@ -59,10 +59,7 @@ const MultiSelectBox = ({
 
     useEffect(() => {
         setSearchQuery('');
-        if (selectedItemsValues) {
-            if(handleSelect) handleSelect(selectedItemsValues);
-            setShowModal(false);
-        }
+        setShowModal(false);
     }, [selectedItemsValues]);
 
     return (
@@ -112,8 +109,12 @@ const MultiSelectBox = ({
                                 return (
                                     <>
                                         { React.cloneElement(child, {
-                                            selectedItemsValues: selectedItemsValues,
-                                            setSelectedItemsValues: setSelectedItemsValues,
+                                            privateProps: {
+                                                selectedItemsValues,
+                                                setSelectedItemsValues,
+                                                handleSelect,
+                                                setShowModal,
+                                            }
                                         }) }
                                     </>
                                 );

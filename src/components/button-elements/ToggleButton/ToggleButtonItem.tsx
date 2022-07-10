@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
-import { BaseColors } from '@utils/objects';
 import { colors } from './mappings';
 import { defaultColors } from '@utils/colorTheme';
 
@@ -9,22 +8,22 @@ export interface ToggleButtonItemProps {
     value: any,
     text: string,
     Icon?: React.ElementType,
-    color?: string,
-    setActiveToggleButtonItem?: React.Dispatch<React.SetStateAction<any>>,
-    isActive?: boolean,
+    privateProps?: {
+        color: string,
+        setActiveToggleButtonItem: React.Dispatch<React.SetStateAction<any>>,
+        isActive: boolean,
+    }
 }
 
 const ToggleButtonItem = ({
     value,
     text,
     Icon,
-    color = BaseColors.Blue,
-    setActiveToggleButtonItem,
-    isActive,
+    privateProps,
 }: ToggleButtonItemProps) => {
     const activeClassNames = classNames(
         getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
-        colors[color].textColor,
+        colors[privateProps!.color].textColor,
         getColorVariantsFromColorThemeValue(defaultColors.black).ringRolor,
         'shadow-sm ring-opacity-5'
     );
@@ -38,9 +37,9 @@ const ToggleButtonItem = ({
         <button
             className={classNames(
                 'flex items-center rounded-md ring-1 px-3 py-1.5 text-sm',
-                isActive ? activeClassNames : inActiveClassNames,
+                privateProps!.isActive ? activeClassNames : inActiveClassNames,
             )}
-            onClick={ () => { setActiveToggleButtonItem!(value); }}
+            onClick={ () => { privateProps!.setActiveToggleButtonItem!(value); }}
         >
             { Icon ? <Icon className="w-5 h-5 mr-2 opacity-70" aria-hidden="true"/> : null }
             <span className="whitespace-nowrap truncate">{ text }</span>

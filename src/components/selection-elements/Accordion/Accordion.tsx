@@ -7,14 +7,18 @@ import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
 export interface AccordionProps extends BaseComponentProps {
     shadow?: boolean,
     expanded?: boolean,
-    shapeClassNames?: string,
+    privateProps?: {
+        shapeClassNames: string,
+    },
     children: React.ReactElement[],
 }
 
 const Accordion = ({
     shadow,
     expanded = false,
-    shapeClassNames = 'border rounded-lg',
+    privateProps = {
+        shapeClassNames: 'border rounded-lg',
+    },
     marginTop,
     children
 }: AccordionProps) => {
@@ -25,13 +29,18 @@ const Accordion = ({
         <div className={ classNames(
             'overflow-hidden',
             parseMarginTopClassNames(marginTop),
-            shapeClassNames,
+            privateProps!.shapeClassNames,
             shadow ? 'shadow' : '',
         ) }>
             { React.Children.map(children, (child, idx) => {
                 if (idx===0) return (
                     <>
-                        { React.cloneElement(child, { isExpanded: isExpanded, setExpanded: setExpanded }) }
+                        { React.cloneElement(child, {
+                            privateProps: {
+                                isExpanded: isExpanded,
+                                setExpanded: setExpanded
+                            } })
+                        }
                     </>
                 );
 

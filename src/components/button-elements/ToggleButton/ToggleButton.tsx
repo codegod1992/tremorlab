@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
-import { BaseColors, Sizes } from '@utils/objects';
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
+import { BaseColors } from '@utils/objects';
 import BaseComponentProps from '@common/BaseComponentInterface';
 import { defaultColors } from '@utils/colorTheme';
 
 export interface ToggleButtonProps extends BaseComponentProps {
     defaultValue: any,
-    size?: string,
     color?: string,
     handleSelect: {(value: any): void},
     children: React.ReactElement[],
@@ -15,7 +14,6 @@ export interface ToggleButtonProps extends BaseComponentProps {
 
 const ToggleButton = ({
     defaultValue,
-    size = Sizes.MD,
     color = BaseColors.Blue,
     handleSelect = (value) => null,
     marginTop,
@@ -36,10 +34,11 @@ const ToggleButton = ({
         >
             { React.Children.map(children, (child) => (
                 React.cloneElement(child, {
-                    buttonSize: size,
-                    setActiveToggleButtonItem: setActiveToggleButtonItem,
-                    isActive: activeToggleButtonItem === child.props.value,
-                    color: color,
+                    privateProps: {
+                        setActiveToggleButtonItem: setActiveToggleButtonItem,
+                        isActive: activeToggleButtonItem === child.props.value,
+                        color: color,
+                    }
                 })
             )) }
         </div>

@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 
-import { BaseColors, Sizes } from '@utils/objects';
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
+import { BaseColors } from '@utils/objects';
 import BaseComponentProps from '@common/BaseComponentInterface';
 import { colors } from './mappings';
 import { defaultColors } from '@utils/colorTheme';
 
 export interface ButtonGroupProps extends BaseComponentProps {
     defaultValue?: any,
-    size: string,
     color?: string,
+    handleClick: { (value: any): void }
     children: React.ReactElement[]
 }
 
 const ButtonGroup = ({
     defaultValue,
-    size = Sizes.MD,
     color = BaseColors.Blue,
+    handleClick,
     marginTop,
     children,
 }: ButtonGroupProps) => {
@@ -42,7 +42,7 @@ const ButtonGroup = ({
             { React.Children.map(children, (child, idx) => {
                 if (idx === 0) {
                     return (
-                        <div className={ classNames(
+                        <div key={ child.props.value } className={ classNames(
                             `inline-flex rounded-l-md border font-medium focus:z-10 focus:ring-2 focus:ring-opacity-100
                             focus:outline-none`,
                             activeButtonItem === child.props.value
@@ -51,15 +51,17 @@ const ButtonGroup = ({
                         ) }
                         >
                             { React.cloneElement(child, {
-                                setActiveButtonItem: setActiveButtonItem,
-                                buttonSize: size,
+                                privateProps: {
+                                    setActiveButtonItem: setActiveButtonItem,
+                                    handleClick: handleClick,
+                                }
                             }) }
                         </div>
                     );
                 }
                 if (idx === childrenCount - 1) {
                     return (
-                        <div className={ classNames(
+                        <div key={ child.props.value } className={ classNames(
                             `inline-flex rounded-r-md border text-sm font-medium focus:z-10 focus:ring-2
                             focus:ring-opacity-100 focus:outline-none`,
                             activeButtonItem === child.props.value
@@ -68,14 +70,16 @@ const ButtonGroup = ({
                         ) }
                         >
                             { React.cloneElement(child, {
-                                setActiveButtonItem: setActiveButtonItem,
-                                buttonSize: size,
+                                privateProps: {
+                                    setActiveButtonItem: setActiveButtonItem,
+                                    handleClick: handleClick,
+                                }
                             }) }
                         </div>
                     );
                 }
                 return (
-                    <div className={ classNames(
+                    <div key={ child.props.value } className={ classNames(
                         `inline-flex border focus:border-l text-sm font-medium focus:z-10 focus:ring-2
                         focus:ring-opacity-100 focus:outline-none`,
                         activeButtonItem === child.props.value
@@ -84,9 +88,11 @@ const ButtonGroup = ({
                     ) }
                     >
                         { React.cloneElement(child, {
-                            setActiveButtonItem: setActiveButtonItem,
-                            buttonSize: size,
-                        }) }
+                            privateProps: {
+                                setActiveButtonItem: setActiveButtonItem,
+                                handleClick: handleClick,
+                            } }
+                        ) }
                     </div>
                 );
             })}
