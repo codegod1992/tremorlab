@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import { ChevronDownIcon } from '@heroicons/react/solid';
 
@@ -36,13 +36,6 @@ const SelectBox = ({
         });
     };
     consturctValueToNameMapping();
-
-    // useEffect(() => {
-    //     if (selectedItemValue) {
-    //         if(handleSelect) handleSelect(selectedItemValue);
-    //         setShowModal(false);
-    //     }
-    // }, [selectedItemValue]);
 
     const getOptionNamesFromChildren = (children: React.ReactElement[]): string[] => (
         React.Children.map(children, (child) => {
