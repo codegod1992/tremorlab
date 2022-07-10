@@ -11,6 +11,8 @@ export interface DropdownItemProps {
     privateProps?: {
         isActive: boolean,
         setSelectedItem: React.Dispatch<React.SetStateAction<any>>,
+        handleSelect: { (value: any): void },
+        setShowModal: React.Dispatch<React.SetStateAction<boolean>>,
     }
 }
 
@@ -21,7 +23,14 @@ const DropdownItem = ({
     shortcut,
     privateProps,
 }: DropdownItemProps) => (
-    <SelectItemWrapper handleClick={ () => privateProps!.setSelectedItem!(value) } isActive={ privateProps!.isActive }>
+    <SelectItemWrapper
+        handleClick={ () => {
+            privateProps!.setSelectedItem!(value);
+            privateProps!.handleSelect(value);
+            privateProps!.setShowModal(false);
+        } }
+        isActive={ privateProps!.isActive }
+    >
         <div className="flex items-center truncate">
             { Icon ? (
                 <Icon className={ classNames(

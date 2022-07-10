@@ -54,18 +54,20 @@ const Dropwdown = ({
         const keyLower = event.key.toLocaleLowerCase();
         if (Object.keys(shortcutMapping).includes(keyLower)) {
             setSelectedItem(shortcutMapping[keyLower].value);
+            handleSelect(selectedItem);
+            setShowModal(false);
         }
     };
 
     useEffect(() => {
         consturctShortcutMapping();
 
-        if (selectedItem) {
-            if(handleSelect) {
-                handleSelect(selectedItem);
-            }
-            setShowModal(false);
-        }
+        // if (selectedItem) {
+        //     if(handleSelect) {
+        //         handleSelect(selectedItem);
+        //     }
+        //     setShowModal(false);
+        // }
 
         document.addEventListener('keydown', (e) => handleKeyDown(e, shortcutMapping));
 
@@ -99,6 +101,8 @@ const Dropwdown = ({
                                 privateProps: {
                                     setSelectedItem: setSelectedItem,
                                     isActive: child?.props.value === selectedItem,
+                                    handleSelect: handleSelect,
+                                    setShowModal: setShowModal,
                                 },
                             }) }
                         </>
