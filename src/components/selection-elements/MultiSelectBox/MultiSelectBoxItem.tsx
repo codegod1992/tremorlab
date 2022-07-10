@@ -9,6 +9,8 @@ export interface MultiSelectBoxItemProps {
     privateProps?: {
         selectedItemsValues: any[],
         setSelectedItemsValues: React.Dispatch<React.SetStateAction<any[]>>,
+        handleSelect: { (value: any): void },
+        setShowModal: React.Dispatch<React.SetStateAction<boolean>>,
     },
 }
 
@@ -19,12 +21,16 @@ const MultiSelectBoxItem = ({
 }: MultiSelectBoxItemProps) => (
     <SelectItemWrapper
         handleClick={ () => {
+            let newSelectedItemsValues = [];
             if (!isValueInArray(value, privateProps!.selectedItemsValues!)) {
-                privateProps!.setSelectedItemsValues!([...privateProps!.selectedItemsValues!, value]);
+                newSelectedItemsValues = [...privateProps!.selectedItemsValues!, value];
+                privateProps!.setSelectedItemsValues!([...newSelectedItemsValues]);
             } else {
-                const newSelectedItemsValues = removeValueFromArray(value, privateProps!.selectedItemsValues!);
+                newSelectedItemsValues = removeValueFromArray(value, privateProps!.selectedItemsValues!);
                 privateProps!.setSelectedItemsValues!([...newSelectedItemsValues!]);
             }
+            privateProps!.handleSelect(newSelectedItemsValues);
+            privateProps!.setShowModal(false);
         } }
         isActive={ false }
     >
