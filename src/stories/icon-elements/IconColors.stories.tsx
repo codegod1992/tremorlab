@@ -71,7 +71,7 @@ const Template: ComponentStory<never> = () => (
                 {Object.keys(BaseColors).map(key => {
                     console.log(BaseColors[key]);
                     return(
-                        <Icon Icon={ MyIcon } style={ IconTypes.Circled } color={ BaseColors[key] } />
+                        <Icon Icon={ MyIcon } style={ IconTypes.Outlined } color={ BaseColors[key] } />
                     );
                 })}
             </div>

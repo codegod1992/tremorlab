@@ -621,7 +621,7 @@ export const colorMapping: {[style: string]: {[baseColor: string]: IconElementCo
             ringColor: getColorVariantsFromColorThemeValue(defaultColors['lightBorder']).ringRolor,
         }
     },
-    'circled': {
+    'outlined': {
         'slate': { 
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Slate].text).textColor,
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['white']).bgColor,
