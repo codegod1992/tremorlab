@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 
 import BaseComponentProps from '@common/BaseComponentInterface';
 
-import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
+import { defaultColors } from '@utils/colorTheme';
 
 export interface AccordionProps extends BaseComponentProps {
     shadow?: boolean,
@@ -31,6 +32,7 @@ const Accordion = ({
             parseMarginTopClassNames(marginTop),
             privateProps!.shapeClassNames,
             shadow ? 'shadow' : '',
+            getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
         ) }>
             { React.Children.map(children, (child, idx) => {
                 if (idx===0) return (
