@@ -1,3 +1,4 @@
+import { classNames } from '@utils/classname-utils';
 import React from 'react';
 
 type TextBarData = {
@@ -28,6 +29,9 @@ const TextBar = ({
     color,
 }: TextBarProps) => {
     const widths = getWidthsFromValues(data);
+
+    const rowHeight = 'h-8';
+
     return (
         <div className="flex justify-between">
             <div className="w-full">
@@ -37,7 +41,10 @@ const TextBar = ({
                 <div className="w-full mt-3">
                     { data.map((item, idx) => (
                         <div
-                            className="h-8 rounded-sm bg-orange-100 mb-2 truncate flex items-center px-2"
+                            className={ classNames(
+                                rowHeight,
+                                'rounded-sm bg-orange-100 mb-2 truncate flex items-center px-2'
+                            ) }
                             style={ { width: `${widths[idx]}%` } }
                         >
                             <span className="whitespace-nowrap truncate text-sm text-gray-700">{ item.name }</span>
@@ -51,7 +58,10 @@ const TextBar = ({
                 </div>
                 <div className="mt-3">
                     { data.map((item) => (
-                        <div className="h-8 flex items-center mb-2">
+                        <div className={ classNames(
+                            'h-8',
+                            'flex items-center mb-2',
+                        ) }>
                             <span className="text-gray-700">{ item.value }</span>
                         </div>
                     )) }
