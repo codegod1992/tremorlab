@@ -1,5 +1,9 @@
-import { classNames } from '@utils/classname-utils';
 import React from 'react';
+
+import { classNames, getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
+import { BaseColors } from '@utils/objects';
+import colorTheme from '@utils/colorTheme';
+
 
 type TextBarData = {
     value: number,
@@ -7,12 +11,12 @@ type TextBarData = {
 }
 
 const getWidthsFromValues = (data: TextBarData[]) => {
-    let total = 0;
+    let maxValue = -Infinity;
     data.forEach(item => {
-        total += item.value;
+        maxValue = Math.max(maxValue, item.value);
     });
 
-    return data.map(item => (item.value / total) * 100);
+    return data.map(item => (item.value / maxValue) * 100);
 };
 
 export interface TextBarProps {
@@ -26,14 +30,14 @@ const TextBar = ({
     label,
     attribute,
     data,
-    color,
+    color = BaseColors.Blue,
 }: TextBarProps) => {
     const widths = getWidthsFromValues(data);
 
     const rowHeight = 'h-8';
 
     return (
-        <div className="flex justify-between">
+        <div className="flex justify-between space-x-8">
             <div className="w-full">
                 <div className="text-large text-gray-700">
                     { label }
@@ -43,7 +47,8 @@ const TextBar = ({
                         <div
                             className={ classNames(
                                 rowHeight,
-                                'rounded-sm bg-orange-100 mb-2 truncate flex items-center px-2'
+                                getColorVariantsFromColorThemeValue(colorTheme[color].lightBackground).bgColor,
+                                'rounded-sm mb-2 truncate flex items-center px-2'
                             ) }
                             style={ { width: `${widths[idx]}%` } }
                         >
@@ -52,7 +57,7 @@ const TextBar = ({
                     )) }
                 </div>
             </div>
-            <div className="w-28 text-left">
+            <div className="text-left">
                 <div className="text-large text-gray-700">
                     { attribute }
                 </div>
