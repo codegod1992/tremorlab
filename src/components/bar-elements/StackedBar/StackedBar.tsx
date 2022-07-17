@@ -24,18 +24,20 @@ const BarLabels = ({ elements }: {elements: [number, string][]}) => {
                 return (
                     <div
                         key={ `item-${idx}` }
-                        className={ classNames(idx !== 0 ? 'ml-1' : '') }
+                        className={ classNames('flex items-center justify-end') }
                         style={ { 'width': `${widthPercentage}%` } }
                     >
-                        { idx !== 0 ? prefixSum - widthPercentage + 1 : null }
+                        <span className={
+                            classNames(idx === 0 && widthPercentage <= 10 ? 'hidden sm:inline-block' : '')
+                        }
+                        >
+                            { prefixSum }
+                        </span>
                     </div>
                 );
             }) }
-            <div className="absolute left-0 top-0">
+            <div className="absolute left-0 top-0 flex items-center">
                 0
-            </div>
-            <div className="absolute right-0 top-0">
-                100
             </div>
         </div>
     );
