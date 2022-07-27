@@ -13,16 +13,12 @@ import {
 import { defaultColors } from '@utils/colorTheme';
 
 export interface CardProps extends BaseComponentProps {
-    maxWidth?: string,
-    wFull?: boolean,
     hFull?: boolean,
     shadow?: boolean,
     children: React.ReactNode
 }
 
 const Card = ({
-    maxWidth = '',
-    wFull = true,
     hFull = false,
     shadow = true, 
     marginTop,
@@ -30,12 +26,10 @@ const Card = ({
 }: CardProps) => {
     return(
         <div className={ classNames(
-            parseMaxWidthClassNames(maxWidth),
-            parseWFullOption(wFull),
             parseHFullOption(hFull),
             getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
             parseMarginTopClassNames(marginTop),
-            'relative mx-auto text-left border rounded-lg',
+            'relative mx-auto text-left border rounded-lg w-full',
             shadow ? 'shadow' : '',
         ) }
         >

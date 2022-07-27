@@ -135,7 +135,7 @@ const Datepicker = ({
                             onClick={ () => setShowDropdownModal(true) }
                             className="inline-flex w-48 justify-between w-full rounded-r-md border
                                 font-medium text-sm border-gray-300 px-4 py-2 hover:bg-gray-50 focus:ring-2
-                                focus:ring-opacity-100 focus:outline-none focus:ring-blue-300 truncate"
+                                focus:ring-opacity-100 focus:outline-none focus:ring-blue-300 truncate -ml-px"
                         >
                             <span className="whitespace-nowrap truncate">
                                 { selectedRelativeFilterOption

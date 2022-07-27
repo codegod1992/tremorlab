@@ -26,10 +26,10 @@ export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
     data: [
-        { name: '/home', value: 456 },
+        { name: '/home', value: 100000000 },
         { name: '/imprint', value: 351 },
         { name: '/cancellation', value: 271 },
-        { name: '/special-offer-august-get', value: 191 },
+        { name: '/special-offer-august-getsahdkjhagskdfjhgakshjgdfkjahsgdfjkgasdjkhfgajkshgdfjkhagsdkjhfgajhksdgfjkhasdgfjkhagsdjhkgfasjkdgfjkasdhgkjgfdsk', value: 191 },
         { name: '/documentation', value: 91 },
     ]
 };

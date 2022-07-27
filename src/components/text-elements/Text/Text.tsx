@@ -26,7 +26,7 @@ const Text = ({
             parseTextColorClassNames(textColor),
             parseTextAlignmentClassNames(textAlignment),
             parseMarginTopClassNames(marginTop),
-            'text-sm font-normal shrink-0 truncate'
+            'text-sm font-normal shrink-0'
         )}>
             { children }
         </p>
