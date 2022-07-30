@@ -19,7 +19,7 @@ export default {
 const Template: ComponentStory<typeof ProgressBar> = (args) => (
     <>
         { Object.values(BaseColors).map(color => (
-            <Card maxWidth="max-w-md">
+            <Card>
                 <Metric value="$23.456" name="Sales"/>
                 <Flex>
                     <ProgressBar {...args} color={ color } />
@@ -32,7 +32,7 @@ const Template: ComponentStory<typeof ProgressBar> = (args) => (
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
-    widthPercentage: 50,
+    percentageValue: 50,
     marginTop: 'mt-5',
     label: 'hello'
 };

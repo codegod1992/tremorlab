@@ -18,7 +18,7 @@ export default {
 const Template: ComponentStory<typeof MarkerBar> = (args) => (
     <>
         { Object.values(BaseColors).map(color => (
-            <Card maxWidth="max-w-md">
+            <Card>
                 <Metric value="$23.456" name="Sales"/>
                 <MarkerBar {...args} color={ color } />
             </Card>
@@ -29,6 +29,6 @@ const Template: ComponentStory<typeof MarkerBar> = (args) => (
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
-    markerPercentageValue: 80,
+    percentageValue: 80,
     marginTop: 'mt-5'
 };
