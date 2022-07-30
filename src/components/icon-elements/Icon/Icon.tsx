@@ -1,10 +1,12 @@
 import React from 'react';
 
 import { BaseColors, Sizes } from '@utils/objects';
+import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
 import { colorMapping, proportinsMapping, shapeMapping } from './mappings';
+import BaseComponentProps from '@common/BaseComponentInterface';
 import IconWrapper from './IconWrapper';
 
-export const IconTypes = {
+export const IconVariants = {
     Simple: 'simple',
     Light: 'light',
     Shadow: 'shadow',
@@ -12,9 +14,9 @@ export const IconTypes = {
     Outlined: 'outlined'
 };
 
-export interface IconProps {
+export interface IconProps extends BaseComponentProps {
     Icon: React.ElementType,
-    style?: string,
+    variant?: string,
     info?: string,
     size?: string
     color?: string
@@ -22,19 +24,22 @@ export interface IconProps {
 
 const Icon = ({
     Icon,
-    style = IconTypes.Simple,
+    variant = IconVariants.Simple,
     info,
     size = Sizes.SM,
     color = BaseColors.Blue,
+    marginTop,
 }: IconProps) => {
     return(
-        <IconWrapper
-            Icon = { Icon }
-            info={ info }
-            { ...colorMapping[style][color] }
-            { ...proportinsMapping[size] }
-            { ...shapeMapping[style] }
-        />
+        <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
+            <IconWrapper
+                Icon = { Icon }
+                info={ info }
+                { ...colorMapping[variant][color] }
+                { ...shapeMapping[variant] }
+                { ...proportinsMapping[size] }
+            />
+        </div>
     );
 };
 
