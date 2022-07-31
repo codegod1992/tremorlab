@@ -4,24 +4,23 @@ import BaseComponentProps from '@common/BaseComponentInterface';
 
 import { 
     classNames,
+    getColorVariantsFromColorThemeValue,
     parseMarginTopClassNames,
-    parseTextColorClassNames,
 } from '@utils/classname-utils';
+import { defaultColors } from '@utils/colorTheme';
 
 export interface TitleProps extends BaseComponentProps {
-    textColor?: string,
     children: React.ReactNode,
 }
 
 const Title = ({
-    textColor = 'text-gray-600',
     marginTop,
     children
 }: TitleProps) => {
     return(
         <p className={ classNames(
-            parseTextColorClassNames(textColor),
             parseMarginTopClassNames(marginTop),
+            getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
             'text-lg font-medium shrink-0 truncate'
         ) }
         >

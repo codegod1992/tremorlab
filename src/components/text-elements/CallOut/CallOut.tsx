@@ -22,7 +22,7 @@ const CallOut = ({
     text,
     Icon,
     color = BaseColors.Blue,
-    fixedHeight = 'h-24',
+    fixedHeight = '',
     marginTop
 }: CallOutProps) => {
     return(

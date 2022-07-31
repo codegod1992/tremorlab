@@ -14,19 +14,12 @@ export default {
 const Template: ComponentStory<typeof Metric> = (args) => (
     <>
         { Object.values(BaseColors).map(color => (
-            <Metric {...args} color={ color } />
+            <Metric color={ color }>
+                USD 70,000.00
+            </Metric>
         ))}
     </>
 );
   
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Default.args = {
-    value: 'USD 70,000.00',
-};
-
-export const WithName = Template.bind({});
-WithName.args = {
-    value: '70,000.00 USD',
-    name: 'Salary'
-};
