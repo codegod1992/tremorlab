@@ -16,7 +16,7 @@ export interface DropdownProps extends BaseComponentProps {
 }
 
 const Dropwdown = ({
-    placeholder = 'Select',
+    placeholder = 'Select...',
     defaultValue = null,
     handleSelect = (value: any) => { value; },
     marginTop,

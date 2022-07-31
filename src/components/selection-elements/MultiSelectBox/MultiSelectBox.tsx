@@ -19,7 +19,7 @@ const MultiSelectBox = ({
     defaultValues = [],
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     handleSelect = (value) => null,
-    placeholder = 'Select',
+    placeholder = 'Select...',
     marginTop,
     children,
 }: MultiSelectBoxProps) => {

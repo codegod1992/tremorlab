@@ -17,6 +17,7 @@ const TabList = ({
     defaultValue,
     color = BaseColors.Blue,
     marginTop,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     handleSelect = (value) => null,
     children,
 }: TabListProps) => {
