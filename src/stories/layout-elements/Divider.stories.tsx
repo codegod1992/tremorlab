@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import DividerHorizontal from 'components/layout-elements/DividerHorizontal/DividerHorizontal';
+import DividerHorizontal from 'components/layout-elements/Divider/Divider';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -11,9 +11,7 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
 const Template: ComponentStory<typeof DividerHorizontal> = (args) => (
-    <div className="w-72">
-        <DividerHorizontal />
-    </div>
+    <DividerHorizontal />
 );
   
 export const Horizontal = Template.bind({});
