@@ -9,7 +9,7 @@ import { defaultColors } from '@utils/colorTheme';
 import { deltaBgColors } from './mappings';
 import { mapInputsToDeltaType } from '@utils/utils';
 
-const getDelatType = (value: number) => (
+const getDeltaType = (value: number) => (
     value >= 0 ? DeltaTypes.Increase : DeltaTypes.Decrease
 );
 
