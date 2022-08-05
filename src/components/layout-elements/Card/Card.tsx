@@ -1,6 +1,7 @@
 import React from 'react';
 
 import BaseComponentProps from '@common/BaseComponentInterface';
+import { colors } from './mappings';
 
 import { 
     classNames,
@@ -8,32 +9,61 @@ import {
     parseHFullOption,
     parseMarginTopClassNames,
     parseMaxWidthClassNames,
-    parseWFullOption,
 } from '@utils/classname-utils';
+import { BaseColors } from '@utils/objects';
 import { defaultColors } from '@utils/colorTheme';
 
 export interface CardProps extends BaseComponentProps {
     hFull?: boolean,
+    maxWidth: string,
     shadow?: boolean,
+    decoration?: string,
+    decorationColor?: string,
     children: React.ReactNode
 }
 
+const parseDecorationAlignment = (decorationAlignment: string) => {
+    if (!decorationAlignment) return '';
+    switch(decorationAlignment) {
+    case 'left':
+        return 'border-l';
+    case 'top':
+        return 'border-t';
+    case 'right':
+        return 'border-r';
+    case 'bottom':
+        return 'border-b';
+    default:
+        return '';
+    }
+};
+
 const Card = ({
     hFull = false,
-    shadow = true, 
+    maxWidth = '',
+    shadow = true,
+    decoration = '',
+    decorationColor = BaseColors.Blue,
     marginTop,
     children
 }: CardProps) => {
     return(
         <div className={ classNames(
             parseHFullOption(hFull),
+            parseMaxWidthClassNames(maxWidth),
             getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
             parseMarginTopClassNames(marginTop),
-            'relative mx-auto text-left border rounded-lg w-full',
+            'relative mx-auto text-left border rounded-lg',
+            maxWidth ? parseMaxWidthClassNames(maxWidth) : 'w-full',
             shadow ? 'shadow' : '',
+            'overflow-hidden'
         ) }
         >
-            <div className="p-6">
+            <div className={ classNames(
+                'p-6',
+                colors[decorationColor].borderColor,
+                parseDecorationAlignment(decoration),
+            ) }>
                 { children }
             </div>
         </div>

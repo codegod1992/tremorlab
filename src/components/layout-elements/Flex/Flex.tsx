@@ -8,7 +8,6 @@ import {
     parseJustifyContentClassNames,
     parseMarginTopClassNames,
     parseSpaceXClassNames,
-    parseTruncateOption
 } from '@utils/classname-utils';
 
 export interface FlexProps extends BaseComponentProps {
@@ -23,7 +22,6 @@ const Flex = ({
     justifyContent = 'justify-between',
     alignItems = 'items-center',
     spaceX,
-    truncate = false,
     marginTop,
     children
 }: FlexProps) => {
@@ -34,7 +32,6 @@ const Flex = ({
             parseJustifyContentClassNames(justifyContent),
             parseAlignItemsClassNames(alignItems),
             parseSpaceXClassNames(spaceX),
-            parseTruncateOption(truncate),
             parseMarginTopClassNames(marginTop)
         ) }
         >
