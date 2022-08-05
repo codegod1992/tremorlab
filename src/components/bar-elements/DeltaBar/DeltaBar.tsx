@@ -50,7 +50,7 @@ const DeltaBar = ({
                 { percentageValue >= 0 ? (
                     <div 
                         className={ classNames(
-                            deltaBgColors[mapInputsToDeltaType(getDelatType(percentageValue), isIncreasePositive)],
+                            deltaBgColors[mapInputsToDeltaType(getDeltaType(percentageValue), isIncreasePositive)],
                             'rounded-r-full'
                         ) } 
                         style={ {'width': `${Math.abs(percentageValue)}%`} } 
