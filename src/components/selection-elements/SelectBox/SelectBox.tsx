@@ -17,7 +17,7 @@ export interface SelectBoxProps extends BaseComponentProps {
 const SelectBox = ({
     defaultValue,
     handleSelect,
-    placeholder = 'Select',
+    placeholder = 'Select...',
     marginTop,
     children,
 }: SelectBoxProps) => {

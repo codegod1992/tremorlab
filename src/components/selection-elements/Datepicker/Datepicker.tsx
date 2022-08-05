@@ -32,13 +32,15 @@ import SelectText from '@common/SelectText';
 
 export interface DatepickerProps extends BaseComponentProps {
     handleSelect?: { (selectedStartDay: Date|null, selectedEndDay: Date|null): void },
-    enableRelative?: boolean,
+    enableRelativeDates?: boolean,
+    placeholder?: string,
 }
 
 const Datepicker = ({
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     handleSelect = (selectedStartDay: Date|null, selectedEndDay: Date|null) => null,
-    enableRelative = true,
+    enableRelativeDates = true,
+    placeholder = 'Select...',
     marginTop,
 }: DatepickerProps) => {
     const [showDatePickerModal, setShowDatePickerModal] = useState(false);
@@ -114,7 +116,7 @@ const Datepicker = ({
                             `flex whitespace-nowrap items-center px-2 py-2 rounded-l-md border 
                             border-gray-300 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-opacity-100
                             focus:outline-none focus:ring-blue-300 w-full truncate font-medium`,
-                            enableRelative ? 'border-r-0' : 'rounded-r-md border-r',
+                            enableRelativeDates ? 'border-r-0' : 'rounded-r-md border-r',
                         ) }
                     >
                         <CalendarIcon className="flex-none h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -125,12 +127,12 @@ const Datepicker = ({
                                     isActive={ true }
                                 />
                             ) : <SelectText
-                                text="Select from..."
+                                text={ placeholder }
                                 isActive={ false }
                             /> }
                         </div>
                     </button>
-                    { enableRelative ? (
+                    { enableRelativeDates ? (
                         <button
                             onClick={ () => setShowDropdownModal(true) }
                             className="inline-flex w-48 justify-between w-full rounded-r-md border
