@@ -1,6 +1,7 @@
 import React from 'react';
 
 import BaseComponentProps from '@common/BaseComponentInterface';
+import { colors } from './mappings';
 
 import { 
     classNames,
@@ -21,6 +22,22 @@ export interface CardProps extends BaseComponentProps {
     children: React.ReactNode
 }
 
+const parseDecorationAlignment = (decorationAlignment: string) => {
+    if (!decorationAlignment) return '';
+    switch(decorationAlignment) {
+    case 'left':
+        return 'border-l';
+    case 'top':
+        return 'border-t';
+    case 'right':
+        return 'border-r';
+    case 'bottom':
+        return 'border-b';
+    default:
+        return '';
+    }
+};
+
 const Card = ({
     hFull = false,
     maxWidth = '',
@@ -39,10 +56,16 @@ const Card = ({
             'relative mx-auto text-left border rounded-lg',
             maxWidth ? parseMaxWidthClassNames(maxWidth) : 'w-full',
             shadow ? 'shadow' : '',
-            'p-6',
+            'overflow-hidden'
         ) }
         >
-            { children }
+            <div className={ classNames(
+                'p-6',
+                colors[decorationColor].borderColor,
+                parseDecorationAlignment(decoration),
+            ) }>
+                { children }
+            </div>
         </div>
     );
 };
