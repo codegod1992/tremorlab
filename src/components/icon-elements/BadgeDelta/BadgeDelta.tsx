@@ -15,14 +15,14 @@ import BaseComponentProps from '@common/BaseComponentInterface';
 import { mapInputsToDeltaType } from '@utils/utils';
 
 export interface BadgeDeltaProps extends BaseComponentProps {
-    delta?: string,
+    text?: string,
     deltaType: string,
     isIncreasePositive?: boolean,
     size?: string
 }
 
 const BadgeDelta = ({
-    delta,
+    text,
     deltaType,
     isIncreasePositive = true,
     size = 'sm',
@@ -30,7 +30,7 @@ const BadgeDelta = ({
 }: BadgeDeltaProps) => {
     const Icon = deltaIcons[deltaType];
     const mappedDeltaType = mapInputsToDeltaType(deltaType, isIncreasePositive);
-    const badgeProportions = delta ? badgeProportionsWithText : badgeProportionsIconOnly;
+    const badgeProportions = text ? badgeProportionsWithText : badgeProportionsIconOnly;
     return(
         <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
             <BadgeWrapper
@@ -39,15 +39,15 @@ const BadgeDelta = ({
                 textColor={ deltaTextColors[mappedDeltaType] }
             >
                 <Icon className={ classNames(
-                    delta
+                    text
                         ? (iconProportionsWithText[size].margin || '')
                         : (iconProportionsIconOnly[size].margin || '') ,
-                    delta
+                    text
                         ? (iconProportionsWithText[size].iconSize || '')
                         : (iconProportionsIconOnly[size].iconSize || '')
                 ) }
                 />
-                { delta ? delta : null}
+                { text ? text : null}
             </BadgeWrapper>
         </div>
     );
