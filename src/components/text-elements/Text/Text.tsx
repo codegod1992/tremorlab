@@ -4,29 +4,32 @@ import BaseComponentProps from '@common/BaseComponentInterface';
 
 import { 
     classNames,
+    getColorVariantsFromColorThemeValue,
+    parseFixedHeightClassNames,
     parseMarginTopClassNames,
     parseTextAlignmentClassNames,
-    parseTextColorClassNames,
 } from '@utils/classname-utils';
+import { defaultColors } from '@utils/colorTheme';
 
 export interface TextProps extends BaseComponentProps {
-    textColor?: string,
     textAlignment?: string,
+    fixedHeight?: string,
     children: React.ReactNode
 }
 
 const Text = ({
-    textColor = 'text-gray-500',
     textAlignment = 'text-left',
+    fixedHeight = '',
     marginTop,
     children 
 }: TextProps) => {
     return(
         <p className={classNames(
-            parseTextColorClassNames(textColor),
+            getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
             parseTextAlignmentClassNames(textAlignment),
+            parseFixedHeightClassNames(fixedHeight),
             parseMarginTopClassNames(marginTop),
-            'text-sm font-normal shrink-0'
+            'text-sm font-normal shrink-0 overflow-auto'
         )}>
             { children }
         </p>

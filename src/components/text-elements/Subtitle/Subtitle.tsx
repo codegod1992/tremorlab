@@ -4,25 +4,24 @@ import BaseComponentProps from '@common/BaseComponentInterface';
 
 import { 
     classNames,
+    getColorVariantsFromColorThemeValue,
     parseMarginTopClassNames,
-    parseTextColorClassNames,
 } from '@utils/classname-utils';
+import { defaultColors } from '@utils/colorTheme';
 
 export interface SubtitleProps extends BaseComponentProps {
-    textColor?: string,
     children: React.ReactNode,
 }
 
 const Subtitle = ({
-    textColor = 'text-gray-400',
     marginTop,
     children
 }: SubtitleProps) => {
     return(
         <p className={ classNames(
-            parseTextColorClassNames(textColor),
             parseMarginTopClassNames(marginTop),
-            'text-base font-normal shrink-0 truncate'
+            'text-base font-normal shrink-0 truncate',
+            getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
         ) }
         >
             { children }

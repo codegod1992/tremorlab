@@ -1,14 +1,24 @@
 import React from 'react';
 
-export interface ItalicProps {
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
+import BaseComponentProps from '@common/BaseComponentInterface';
+import { defaultColors } from '@utils/colorTheme';
+
+export interface ItalicProps extends BaseComponentProps {
     children: React.ReactNode;
 }
 
 const Italic = ({
+    marginTop,
     children
 }: ItalicProps) => {
     return(
-        <span className="italic">
+        <span className={ classNames(
+            'italic',
+            getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
+            parseMarginTopClassNames(marginTop),
+        ) }
+        >
             { children }
         </span>
     );

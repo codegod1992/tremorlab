@@ -1,14 +1,24 @@
 import React from 'react';
 
-export interface LightProps {
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
+import BaseComponentProps from '@common/BaseComponentInterface';
+import { defaultColors } from '@utils/colorTheme';
+
+export interface LightProps extends BaseComponentProps {
     children: React.ReactNode
 }
 
 const Light = ({
+    marginTop,
     children
 }: LightProps) => {
     return(
-        <span className="font-light">
+        <span className={ classNames(
+            'font-light',
+            getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
+            parseMarginTopClassNames(marginTop),
+        ) }
+        >
             { children }
         </span>
     );
