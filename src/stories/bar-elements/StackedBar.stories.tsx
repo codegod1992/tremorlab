@@ -14,7 +14,7 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
 const Template: ComponentStory<typeof StackedBar> = (args) => (
-    <Card maxWidth="max-w-md">
+    <Card>
         <Metric value="$23.456" name="Sales"/>
         <StackedBar {...args} />
     </Card>
@@ -23,7 +23,7 @@ const Template: ComponentStory<typeof StackedBar> = (args) => (
 
 export const WithoutMarker = Template.bind({});
 WithoutMarker.args = {
-    elements: [
+    categories: [
         [10, 'emerald'],
         [25, 'yellow'],
         [45, 'orange'],
@@ -36,12 +36,12 @@ WithoutMarker.args = {
 export const WithMarker = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 WithMarker.args = {
-    elements: [
+    categories: [
         [10, 'emerald'],
         [25, 'amber'],
         [40, 'yellow'],
         [25, 'rose'],
     ],
-    markerPercentageValue: 90,
+    percentageValue: 90,
     marginTop: 'mt-5' // only applies to story?
 };

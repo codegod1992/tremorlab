@@ -44,29 +44,29 @@ const BarLabels = ({ elements }: {elements: [number, string][]}) => {
 };
 
 export interface StackedBarProps extends BaseComponentProps {
-    elements: [number, string][],
-    markerPercentageValue?: number,
+    categories: [number, string][],
+    percentageValue?: number,
     showLabels?: boolean,
 }
 
 const StackedBar = ({
-    elements,
-    markerPercentageValue,
+    categories,
+    percentageValue,
     showLabels = true,
     marginTop
 }: StackedBarProps) => {
 
     const getMarkerBorderColor = (): string => {
-        if (markerPercentageValue === undefined)
+        if (percentageValue === undefined)
             return '';
 
         let prefixSum = 0;
-        for (let i = 0; i < elements.length; i++) {
-            const currentWidthPercentage = elements[i][0];
-            const currentBgColor = getColorVariantsFromColorThemeValue(colorTheme[elements[i][1]].background).bgColor;
+        for (let i = 0; i < categories.length; i++) {
+            const currentWidthPercentage = categories[i][0];
+            const currentBgColor = getColorVariantsFromColorThemeValue(colorTheme[categories[i][1]].background).bgColor;
 
             prefixSum += currentWidthPercentage;
-            if (prefixSum >= markerPercentageValue)
+            if (prefixSum >= percentageValue)
                 return toBorderColorClass(currentBgColor);
         }
 
@@ -77,9 +77,9 @@ const StackedBar = ({
 
     return(
         <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
-            { showLabels ? <BarLabels elements={ elements } /> : null }
+            { showLabels ? <BarLabels elements={ categories } /> : null }
             <BarWrapper gap={ true }>
-                {elements.map(([widthPercentage, color], idx) => {
+                {categories.map(([widthPercentage, color], idx) => {
                     return(
                         <div key={ `item-${idx}` } style={ { width: `${widthPercentage}%` } } className={ classNames(
                             getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor,
@@ -88,10 +88,10 @@ const StackedBar = ({
                         />
                     );
                 })}
-                { markerPercentageValue!==undefined ? (
+                { percentageValue!==undefined ? (
                     <div 
                         className="absolute inset-0 flex justify-end z-10 items-center"
-                        style={{width: `${markerPercentageValue}%` }}
+                        style={{width: `${percentageValue}%` }}
                     >
                         <div className={ classNames(
                             'flex flex-none z-1 items-center bg-white  border-4 rounded-full h-4 w-4 shadow-md',

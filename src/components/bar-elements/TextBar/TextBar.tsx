@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { classNames, getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
 import { BaseColors } from '@utils/objects';
+import BaseComponentProps from '@common/BaseComponentInterface';
 import colorTheme from '@utils/colorTheme';
 
 
@@ -19,7 +20,7 @@ const getWidthsFromValues = (data: TextBarData[]) => {
     return data.map(item => (item.value / maxValue) * 100);
 };
 
-export interface TextBarProps {
+export interface TextBarProps extends BaseComponentProps {
     data: TextBarData[],
     color?: string,
 }
@@ -27,13 +28,17 @@ export interface TextBarProps {
 const TextBar = ({
     data,
     color = BaseColors.Blue,
+    marginTop,
 }: TextBarProps) => {
     const widths = getWidthsFromValues(data);
 
     const rowHeight = 'h-8';
 
     return (
-        <div className="flex justify-between space-x-8">
+        <div className={ classNames(
+            'flex justify-between space-x-8',
+            parseMarginTopClassNames(marginTop),
+        ) }>
             <div className="w-5/6">
                 <div className="w-full mt-3">
                     { data.map((item, idx) => (

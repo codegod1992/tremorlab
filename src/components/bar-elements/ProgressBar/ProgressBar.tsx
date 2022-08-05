@@ -9,13 +9,13 @@ import { colors } from './mappings';
 import { defaultColors } from '@utils/colorTheme';
 
 export interface ProgressBarProps extends BaseComponentProps {
-    widthPercentage: number,
+    percentageValue: number,
     label?: string,
     color?: string,
 }
 
 const ProgressBar = ({
-    widthPercentage,
+    percentageValue,
     label,
     color = BaseColors.Blue,
     marginTop
@@ -36,7 +36,7 @@ const ProgressBar = ({
                             colors[color].primaryBgColor,
                             'h-full flex-col rounded-lg'
                         ) }
-                        style={ {'width': `${widthPercentage}%`} }
+                        style={ {'width': `${percentageValue}%`} }
                     />
                 </BarWrapper>
             </div>

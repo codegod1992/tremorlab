@@ -13,7 +13,7 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
 const Template: ComponentStory<typeof DeltaBar> = (args) => (
-    <Card maxWidth="max-w-md">
+    <Card>
         <Metric value="$23.456" name="Sales" />
         <DeltaBar {...args} />
     </Card>
@@ -22,22 +22,19 @@ const Template: ComponentStory<typeof DeltaBar> = (args) => (
 export const Increase = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Increase.args = {
-    widthPercentage: 30,
-    deltaType:'increase',
+    percentageValue: 30,
     marginTop:'mt-5'
 };
 
 export const Decrease = Template.bind({});
 Decrease.args = {
-    widthPercentage: 50,
-    deltaType:'decrease',
+    percentageValue: -50,
     marginTop:'mt-5'
 };
 
 export const IncreaseReversed = Template.bind({});
 IncreaseReversed.args = {
-    widthPercentage: 50,
-    deltaType:'increase',
+    percentageValue: 50,
     isIncreasePositive: false,
     marginTop:'mt-5'
 };

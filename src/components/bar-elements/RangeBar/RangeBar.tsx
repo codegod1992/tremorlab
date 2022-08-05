@@ -7,36 +7,36 @@ import BarWrapper from '@common/BarWrapper';
 import { BaseColors } from '@utils/objects';
 import { colors } from './mappings';
 
-export interface PeerComparisonBarProps extends BaseComponentProps {
-    markerPercentage: number,
-    peerGroupMinPercentage: number,
-    peerGroupMaxPercentage: number,
+export interface RangeBarProps extends BaseComponentProps {
+    percentageValue: number,
+    minRangeValue: number,
+    maxRangeValue: number,
     color?: string,
 }
 
-const PeerComparisonBar = ({
-    markerPercentage,
-    peerGroupMinPercentage,
-    peerGroupMaxPercentage,
+const RangeBar = ({
+    percentageValue,
+    minRangeValue,
+    maxRangeValue,
     color = BaseColors.Blue,
     marginTop,
-}: PeerComparisonBarProps) => {
+}: RangeBarProps) => {
     return(
         <BarWrapper
             bgColor={ colors[color].secondaryBgColor }
             marginTop={ parseMarginTopClassNames(marginTop) } 
         >
-            <div className="h-full bg-transparent" style={ {'width': `${peerGroupMinPercentage}%`} } />
+            <div className="h-full bg-transparent" style={ {'width': `${minRangeValue}%`} } />
             <div
                 className={ classNames(
                     colors[color].primaryBgColor,
                     'h-full rounded-full'
                 ) }
-                style={ {'width': `${peerGroupMaxPercentage - peerGroupMinPercentage}%`} } 
+                style={ {'width': `${maxRangeValue - minRangeValue}%`} } 
             />
             <div 
                 className="absolute inset-0 flex justify-end items-center"
-                style={ {'width': `${markerPercentage}%`} }
+                style={ {'width': `${percentageValue}%`} }
             >
                 <div className={ classNames(
                     'bg-blue-500',
@@ -48,4 +48,4 @@ const PeerComparisonBar = ({
     );
 };
 
-export default PeerComparisonBar;
+export default RangeBar;

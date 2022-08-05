@@ -9,18 +9,18 @@ import { defaultColors } from '@utils/colorTheme';
 import { deltaBgColors } from './mappings';
 import { mapInputsToDeltaType } from '@utils/utils';
 
+const getDeltaType = (value: number) => (
+    value >= 0 ? DeltaTypes.Increase : DeltaTypes.Decrease
+);
+
 export interface DeltaBarProps extends BaseComponentProps {
-    // change param here
-    widthPercentage: number,
-    deltaType: string,
+    percentageValue: number,
     isIncreasePositive?: boolean,
     markerBgColor?: string
 }
 
 const DeltaBar = ({
-    // change param here
-    widthPercentage,
-    deltaType,
+    percentageValue,
     isIncreasePositive = true,
     marginTop,
 }: DeltaBarProps) => {
@@ -31,13 +31,13 @@ const DeltaBar = ({
             marginTop={ parseMarginTopClassNames(marginTop) }
         >
             <div className="w-1/2 h-full flex justify-end bg-transparent rounded-l-lg">
-                { deltaType===DeltaTypes.Decrease ? (
+                { percentageValue < 0 ? (
                     <div 
                         className={ classNames(
-                            deltaBgColors[mapInputsToDeltaType(deltaType, isIncreasePositive)],
+                            deltaBgColors[mapInputsToDeltaType(getDelatType(percentageValue), isIncreasePositive)],
                             'rounded-l-full'
                         ) } 
-                        style={ {'width': `${widthPercentage}%`} } 
+                        style={ {'width': `${Math.abs(percentageValue)}%`} } 
                     />
                 ) : null}
             </div>
@@ -47,13 +47,13 @@ const DeltaBar = ({
             ) }
             />
             <div className="w-1/2 h-full flex justify-start bg-transparent rounded-r-lg">
-                { deltaType===DeltaTypes.Increase ? (
+                { percentageValue >= 0 ? (
                     <div 
                         className={ classNames(
-                            deltaBgColors[mapInputsToDeltaType(deltaType, isIncreasePositive)],
+                            deltaBgColors[mapInputsToDeltaType(getDeltaType(percentageValue), isIncreasePositive)],
                             'rounded-r-full'
                         ) } 
-                        style={ {'width': `${widthPercentage}%`} } 
+                        style={ {'width': `${Math.abs(percentageValue)}%`} } 
                     />
                 ) : null}
             </div>
