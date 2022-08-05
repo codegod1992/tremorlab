@@ -4,7 +4,6 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import ArrowUpLineIcon from 'remixicon-react/ArrowUpLineIcon';
 
 import { Sizes } from '@utils/objects';
-import { Title } from 'components';
 
 import { Flex } from 'components';
 
@@ -28,7 +27,6 @@ const buttonText = 'Button Text';
 const Template: ComponentStory<never> = () => (
     <>
         <div className="mb-5">
-            <Title text="ButtonPrimary"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
@@ -37,14 +35,13 @@ const Template: ComponentStory<never> = () => (
                             text={ buttonText }
                             size={ Sizes[key] }
                             handleClick={ handleClick } 
-                            info={ 'Button Info' } 
+                            tooltip={ 'Button Info' } 
                         />
                     );
                 })}
             </div>
         </div>
         <div className="mb-5">
-            <Title text="ButtonSecondary"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
@@ -59,7 +56,6 @@ const Template: ComponentStory<never> = () => (
             </div>
         </div>
         <div className="mb-5">
-            <Title text="ButtonPrimaryArrow"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
@@ -68,14 +64,12 @@ const Template: ComponentStory<never> = () => (
                             text={ buttonText }
                             size={ Sizes[key] }
                             handleClick={ handleClick }
-                            arrow={ true } 
                         />
                     );
                 })}
             </div>
         </div>
         <div className="mb-5">
-            <Title text="ButtonSecondaryArrow"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
@@ -84,7 +78,6 @@ const Template: ComponentStory<never> = () => (
                             text={ buttonText }
                             size={ Sizes[key] }
                             handleClick={ handleClick }
-                            arrow={ true }
                             importance="secondary"
                         />
                     );
@@ -92,7 +85,6 @@ const Template: ComponentStory<never> = () => (
             </div>
         </div>
         <div className="mb-5">
-            <Title text="ButtonPrimaryIconLeading"/>
             <div className="grid grid-cols-8 justify-items-start items-center gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
@@ -108,7 +100,6 @@ const Template: ComponentStory<never> = () => (
             </div>
         </div>
         <div className="mb-5">
-            <Title text="ButtonSecondaryIconLeading"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
@@ -125,7 +116,6 @@ const Template: ComponentStory<never> = () => (
             </div>
         </div>
         <div className="mb-5">
-            <Title text="ButtonInline"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
@@ -140,7 +130,6 @@ const Template: ComponentStory<never> = () => (
             </div>
         </div>
         <div className="mb-5">
-            <Title text="ButtonInlineArrow"/>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
@@ -148,7 +137,6 @@ const Template: ComponentStory<never> = () => (
                         <ButtonInline
                             text={ buttonText }
                             size={ Sizes[key] }
-                            arrow={ true }
                             handleClick={ handleClick }
                         />
                     );

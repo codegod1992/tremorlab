@@ -33,7 +33,7 @@ export const buttonShape: ButtonShapeTypes = {
     shadow: 'shadow-sm'
 };
 
-export const iconProportions: {[size: string]: IconProportionTypes} = {
+export const iconLeftProportions: {[size: string]: IconProportionTypes} = {
     xs: {
         margin: '-ml-0.5 mr-1.5',
         iconSize: 'w-4 h-4',
@@ -48,6 +48,25 @@ export const iconProportions: {[size: string]: IconProportionTypes} = {
     },
     lg: {
         margin: '-ml-1 mr-1.5',
+        iconSize: 'w-6 h-6',
+    },
+};
+
+export const iconRightProportions: {[size: string]: IconProportionTypes} = {
+    xs: {
+        margin: '-mr-0.5 ml-1.5',
+        iconSize: 'w-4 h-4',
+    },
+    sm: {
+        margin: '-mr-1 ml-1.5',
+        iconSize: 'w-5 h-5',
+    },
+    md: {
+        margin: '-mr-1 ml-1.5',
+        iconSize: 'w-5 h-5',
+    },
+    lg: {
+        margin: '-mr-1 ml-1.5',
         iconSize: 'w-6 h-6',
     },
 };
