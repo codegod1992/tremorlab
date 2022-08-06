@@ -4,7 +4,7 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Card, Col, ColGrid, TrmScatterChart } from 'components';
+import { Card, TrmScatterChart } from 'components';
 
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -127,10 +127,6 @@ const data = [
     ]
 
 ];
-
-const dataFormater = (number: number) => {
-    return Intl.NumberFormat('us').format(number).toString() + ' $';
-};
 
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

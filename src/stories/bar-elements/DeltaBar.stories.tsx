@@ -14,7 +14,9 @@ export default {
 
 const Template: ComponentStory<typeof DeltaBar> = (args) => (
     <Card>
-        <Metric value="$23.456" name="Sales" />
+        <Metric>
+            72.000 USD
+        </Metric>
         <DeltaBar {...args} />
     </Card>
 );

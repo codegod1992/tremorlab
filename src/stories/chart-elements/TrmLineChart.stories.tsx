@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Card, Col, ColGrid, TrmLineChart } from 'components';
+import { Card, TrmLineChart } from 'components';
 
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

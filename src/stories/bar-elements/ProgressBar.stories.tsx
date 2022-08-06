@@ -20,7 +20,9 @@ const Template: ComponentStory<typeof ProgressBar> = (args) => (
     <>
         { Object.values(BaseColors).map(color => (
             <Card>
-                <Metric value="$23.456" name="Sales"/>
+                <Metric>
+                    $23.456
+                </Metric>
                 <Flex>
                     <ProgressBar {...args} color={ color } />
                 </Flex>

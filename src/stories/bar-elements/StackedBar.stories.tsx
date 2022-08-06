@@ -15,7 +15,9 @@ export default {
 
 const Template: ComponentStory<typeof StackedBar> = (args) => (
     <Card>
-        <Metric value="$23.456" name="Sales"/>
+        <Metric>
+            $23.456
+        </Metric>
         <StackedBar {...args} />
     </Card>
 );

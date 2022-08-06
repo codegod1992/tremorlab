@@ -50,7 +50,7 @@ const Template: ComponentStory<typeof Table> = (args) => (
                         Region A
                     </TableCell>
                     <TableCell>
-                        <BadgeDelta deltaType="moderateIncrease" delta="overperforming"size="xs"/>
+                        <BadgeDelta deltaType="moderateIncrease" text="overperforming"size="xs"/>
                     </TableCell>
                     <TableCell textAlignment="text-right">
                         211
@@ -67,7 +67,7 @@ const Template: ComponentStory<typeof Table> = (args) => (
                         Region B
                     </TableCell>
                     <TableCell>
-                        <BadgeDelta deltaType="increase" delta="overperforming"size="xs"/>
+                        <BadgeDelta deltaType="increase" text="overperforming"size="xs"/>
                     </TableCell>
                     <TableCell textAlignment="text-right">
                         320
@@ -84,7 +84,7 @@ const Template: ComponentStory<typeof Table> = (args) => (
                         Region B
                     </TableCell>
                     <TableCell>
-                        <BadgeDelta deltaType="moderateDecrease" delta="underperforming"size="xs"/>
+                        <BadgeDelta deltaType="moderateDecrease" text="underperforming"size="xs"/>
                     </TableCell>
                     <TableCell textAlignment="text-right">
                         290
@@ -101,7 +101,7 @@ const Template: ComponentStory<typeof Table> = (args) => (
                         Region B
                     </TableCell>
                     <TableCell>
-                        <BadgeDelta deltaType="moderateDecrease" delta="underperforming"size="xs"/>
+                        <BadgeDelta deltaType="moderateDecrease" text="underperforming"size="xs"/>
                     </TableCell>
                     <TableCell textAlignment="text-right">
                         340
@@ -118,7 +118,7 @@ const Template: ComponentStory<typeof Table> = (args) => (
                         Region B
                     </TableCell>
                     <TableCell>
-                        <BadgeDelta deltaType="unchanged" delta="average"size="xs"/>
+                        <BadgeDelta deltaType="unchanged" text="average"size="xs"/>
                     </TableCell>
                     <TableCell textAlignment="text-right">
                         430
@@ -135,7 +135,7 @@ const Template: ComponentStory<typeof Table> = (args) => (
                         Region B
                     </TableCell>
                     <TableCell>
-                        <BadgeDelta deltaType="moderateDecrease" delta="underperforming"size="xs"/>
+                        <BadgeDelta deltaType="moderateDecrease" text="underperforming"size="xs"/>
                     </TableCell>
                     <TableCell textAlignment="text-right">
                         190
@@ -152,7 +152,7 @@ const Template: ComponentStory<typeof Table> = (args) => (
                         Region B
                     </TableCell>
                     <TableCell>
-                        <BadgeDelta deltaType="moderateIncrease" delta="overperforming"size="xs"/>
+                        <BadgeDelta deltaType="moderateIncrease" text="overperforming"size="xs"/>
                     </TableCell>
                     <TableCell textAlignment="text-right">
                         3100
@@ -169,7 +169,7 @@ const Template: ComponentStory<typeof Table> = (args) => (
                         Region B
                     </TableCell>
                     <TableCell>
-                        <BadgeDelta deltaType="moderateDecrease" delta="underperforming"size="xs"/>
+                        <BadgeDelta deltaType="moderateDecrease" text="underperforming"size="xs"/>
                     </TableCell>
                     <TableCell textAlignment="text-right">
                         340
@@ -186,7 +186,7 @@ const Template: ComponentStory<typeof Table> = (args) => (
                         Region B
                     </TableCell>
                     <TableCell>
-                        <BadgeDelta deltaType="moderateDecrease" delta="underperforming"size="xs"/>
+                        <BadgeDelta deltaType="moderateDecrease" text="underperforming"size="xs"/>
                     </TableCell>
                     <TableCell textAlignment="text-right">
                         170
@@ -203,7 +203,7 @@ const Template: ComponentStory<typeof Table> = (args) => (
                         Region A
                     </TableCell>
                     <TableCell>
-                        <BadgeDelta deltaType="moderateDecrease" delta="underperforming"size="xs"/>
+                        <BadgeDelta deltaType="moderateDecrease" text="underperforming"size="xs"/>
                     </TableCell>
                     <TableCell textAlignment="text-right">
                         340

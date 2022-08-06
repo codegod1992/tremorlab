@@ -6,7 +6,7 @@ import ArrowUpLineIcon from 'remixicon-react/ArrowUpLineIcon';
 import { Sizes } from '@utils/objects';
 import { Title } from 'components';
 
-import Icon, { IconTypes } from 'components/icon-elements/Icon/Icon';
+import Icon, { IconVariants } from 'components/icon-elements/Icon/Icon';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -20,51 +20,61 @@ const MyIcon = ArrowUpLineIcon;
 const Template: ComponentStory<never> = () => (
     <>
         <div className="mb-5">
-            <Title text="Icon Neutral"/>
+            <Title>
+                Icon Simple
+            </Title>
             <div className="grid grid-cols-8 justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     return(
-                        <Icon Icon={ MyIcon } style={ IconTypes.Simple } size={ Sizes[key] } info="Icon Info" />
+                        <Icon Icon={ MyIcon } variant={ IconVariants.Simple } size={ Sizes[key] } info="Icon Info" />
                     );
                 })}
             </div>
         </div>
         <div className="mb-5">
-            <Title text="Icon Light"/>
+            <Title>
+                Icon Light
+            </Title>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     return(
-                        <Icon Icon={ MyIcon } style={ IconTypes.Light } size={ Sizes[key] } info="Icon Info" />
+                        <Icon Icon={ MyIcon } variant={ IconVariants.Light } size={ Sizes[key] } info="Icon Info" />
                     );
                 })}
             </div>
         </div>
         <div className="mb-5">
-            <Title text="Icon Shadow"/>
+            <Title>
+                Icon Shadow
+            </Title>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     return(
-                        <Icon Icon={ MyIcon } style={ IconTypes.Shadow } size={ Sizes[key] } info="Icon Info" />
+                        <Icon Icon={ MyIcon } variant={ IconVariants.Shadow } size={ Sizes[key] } info="Icon Info" />
                     );
                 })}
             </div>
         </div>
         <div className="mb-5">
-            <Title text="Icon Solid"/>
+            <Title>
+                Icon Solid
+            </Title>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     return(
-                        <Icon Icon={ MyIcon } style={ IconTypes.Solid } size={ Sizes[key] } info="Icon Info" />
+                        <Icon Icon={ MyIcon } variant={ IconVariants.Solid } size={ Sizes[key] } info="Icon Info" />
                     );
                 })}
             </div>
         </div>
         <div className="mb-5">
-            <Title text="Icon Circled"/>
+            <Title>
+                Icon Outlined
+            </Title>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     return(
-                        <Icon Icon={ MyIcon } style={ IconTypes.Circled } size={ Sizes[key] } info="Icon Info" />
+                        <Icon Icon={ MyIcon } variant={ IconVariants.Outlined } size={ Sizes[key] } info="Icon Info" />
                     );
                 })}
             </div>

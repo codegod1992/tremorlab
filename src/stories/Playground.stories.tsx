@@ -5,9 +5,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { 
     BadgeDelta,
     Button,
-    Caption,
     Card,
-    ContentOverflow,
     DeltaBar,
     Flex,
     Footer,
@@ -31,35 +29,37 @@ const Template: ComponentStory<typeof Card> = (args) => (
     <div className="grid grid-cols-3 gap-x-3">
         <Card>
             <Flex>
-                <Title text="Ticket Sales" />
-                <BadgeDelta delta="20.1%" deltaType="decrease" isIncreasePositive={ false } />
+                <Title>
+                    Ticket Sales
+                </Title>
+                <BadgeDelta text="20.1%" deltaType="decrease" isIncreasePositive={ false } />
             </Flex>
-            <Subtitle text="April 2021" />
+            <Subtitle>
+                April 2021
+            </Subtitle>
             <div style={{'marginTop': '10px'}}>
-                <Metric value="21.345"/>
+                <Metric>
+                    21.345
+                </Metric>
             </div>
-            <ContentOverflow>
-                <Text>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap into electronic typesetting, remaining essentially unchanged.
-                </Text>
-            </ContentOverflow>
+            <Text>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                leap into electronic typesetting, remaining essentially unchanged.
+            </Text>
             <div style={{'marginTop': '20px'}}>
                 <Flex>
                     <Flex justifyContent="justify-start" alignItems="items-baseline" spaceX="space-x-2">
                         <Text>20.000</Text>
-                        <Caption>(50%)</Caption>
                     </Flex>
                     <Flex justifyContent="justify-end" alignItems="items-baseline" spaceX="space-x-2">
                         <Text>20.000</Text>
-                        <Caption>(50%)</Caption>
                     </Flex>
                 </Flex>
             </div>
             <div style={{'marginTop': '5px'}}>
-                <ProgressBar widthPercentage={50} />
+                <ProgressBar percentageValue={50} />
             </div>
             <Footer>
                 <Flex justifyContent="justify-end" spaceX="space-x-2">
@@ -70,28 +70,31 @@ const Template: ComponentStory<typeof Card> = (args) => (
         </Card>
         <Card>
             <Flex>
-                <Title text="Ticket Sales" />
-                <BadgeDelta delta="20.1%" deltaType="decrease" isIncreasePositive={ false } />
+                <Title>
+                    Ticket Sales
+                </Title>
+                <BadgeDelta text="20.1%" deltaType="decrease" isIncreasePositive={ false } />
             </Flex>
-            <Subtitle text="April 2021" />
+            <Subtitle>
+                April 2021
+            </Subtitle>
             <div style={{'marginTop': '10px'}}>
-                <Metric value="21.345"/>
+                <Metric>
+                    21.345
+                </Metric>
             </div>
-            <ContentOverflow>
-                <Text>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
-                </Text>
-            </ContentOverflow>
+            <Text>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
+            </Text>
             <div style={{'marginTop': '20px'}}>
                 <Flex>
                     <Flex justifyContent="justify-start" alignItems="items-baseline" spaceX="space-x-2">
                         <Text>20.000</Text>
-                        <Caption>(50%)</Caption>
                     </Flex>
                     <Text>20.000</Text>
                 </Flex>
                 <div style={{'marginTop': '5px'}}>
-                    <ProgressBar widthPercentage={50} />
+                    <ProgressBar percentageValue={50} />
                 </div>
             </div>
             <Footer>
@@ -100,31 +103,34 @@ const Template: ComponentStory<typeof Card> = (args) => (
         </Card>
         <Card>
             <Flex>
-                <Title text="Ticket Sales" />
-                <BadgeDelta delta="20.1%" deltaType="decrease" isIncreasePositive={ false } />
+                <Title>
+                    Ticket Sales
+                </Title>
+                <BadgeDelta text="20.1%" deltaType="decrease" isIncreasePositive={ false } />
             </Flex>
-            <Subtitle text="April 2021" />
+            <Subtitle>
+                April 2021
+            </Subtitle>
             <div style={{'marginTop': '10px'}}>
-                <Metric value="21.345"/>
+                <Metric>
+                    21.345
+                </Metric>
             </div>
-            <ContentOverflow>
-                <Text>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type 
-                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap into electronic typesetting, remaining essentially unchanged.
-                </Text>
-            </ContentOverflow>
+            <Text>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type 
+                and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                leap into electronic typesetting, remaining essentially unchanged.
+            </Text>
             <div style={{'marginTop': '20px'}}>
                 <Flex>
                     <Flex justifyContent="justify-start" alignItems="items-baseline" spaceX="space-x-2">
                         <Text>20.000</Text>
-                        <Caption>(50%)</Caption>
                     </Flex>
                     <Text>20.000</Text>
                 </Flex>
                 <div style={{'marginTop': '5px'}}>
-                    <DeltaBar widthPercentage={75} deltaType="increase" />
+                    <DeltaBar percentageValue={75} />
                 </div>
             </div>
             <Footer>

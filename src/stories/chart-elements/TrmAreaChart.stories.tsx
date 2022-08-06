@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Card, Col, ColGrid, TrmAreaChart } from 'components';
+import { Card, TrmAreaChart } from 'components';
 
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -13,15 +13,11 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
 const Template: ComponentStory<typeof TrmAreaChart> = (args) => (
-    <ColGrid>
-        <Col>
-            <Card hFull={ true } >
-                <div className="h-96">
-                    <TrmAreaChart { ...args } />
-                </div>
-            </Card>
-        </Col>
-    </ColGrid>
+    <Card hFull={ true } >
+        <div className="h-96">
+            <TrmAreaChart { ...args } />
+        </div>
+    </Card>
 );
   
 

@@ -24,42 +24,42 @@ const Template: ComponentStory<typeof BadgeDelta> = (args) => (
 export const Increase = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Increase.args = {
-    delta: '12.5%',
+    text: '12.5%',
     deltaType: DeltaTypes.Increase
 };
 
 export const ModerateIncrease = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ModerateIncrease.args = {
-    delta: '12.5%',
+    text: '12.5%',
     deltaType: DeltaTypes.ModerateIncrease
 };
 
 export const Decrease = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Decrease.args = {
-    delta: '12.5%',
+    text: '12.5%',
     deltaType: DeltaTypes.Decrease
 };
 
 export const ModerateDecrease = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ModerateDecrease.args = {
-    delta: '12.5%',
+    text: '12.5%',
     deltaType: DeltaTypes.ModerateDecrease
 };
 
 export const Unchanged = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Unchanged.args = {
-    delta: '0.0%',
+    text: '0.0%',
     deltaType: DeltaTypes.Unchanged
 };
 
 export const IncreaseReversed = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 IncreaseReversed.args = {
-    delta: '12.5%',
+    text: '12.5%',
     deltaType: DeltaTypes.Increase,
     isIncreasePositive: false
 };
@@ -67,7 +67,7 @@ IncreaseReversed.args = {
 export const ModerateIncreaseReversed = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ModerateIncreaseReversed.args = {
-    delta: '12.5%',
+    text: '12.5%',
     deltaType: DeltaTypes.ModerateIncrease,
     isIncreasePositive: false
 };
@@ -75,7 +75,7 @@ ModerateIncreaseReversed.args = {
 export const DecreaseReversed = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 DecreaseReversed.args = {
-    delta: '12.5%',
+    text: '12.5%',
     deltaType: DeltaTypes.Decrease,
     isIncreasePositive: false
 };
@@ -83,7 +83,7 @@ DecreaseReversed.args = {
 export const ModerateDecreaseReversed = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ModerateDecreaseReversed.args = {
-    delta: '12.5%',
+    text: '12.5%',
     deltaType: DeltaTypes.ModerateDecrease,
     isIncreasePositive: false
 };
@@ -91,7 +91,7 @@ ModerateDecreaseReversed.args = {
 export const UnchangedReversed = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 UnchangedReversed.args = {
-    delta: '12.5%',
+    text: '12.5%',
     deltaType: DeltaTypes.Unchanged,
     isIncreasePositive: false
 };
@@ -100,7 +100,7 @@ UnchangedReversed.args = {
 export const IncreaseXs = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 IncreaseXs.args = {
-    delta: '12.5%',
+    text: '12.5%',
     deltaType: DeltaTypes.Increase,
     size: 'xs'
 };
@@ -108,7 +108,7 @@ IncreaseXs.args = {
 export const ModerateIncreaseXs = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ModerateIncreaseXs.args = {
-    delta: '12.5%',
+    text: '12.5%',
     deltaType: DeltaTypes.ModerateIncrease,
     size: 'xs'
 };
@@ -116,7 +116,7 @@ ModerateIncreaseXs.args = {
 export const DecreaseXs = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 DecreaseXs.args = {
-    delta: '12.5%',
+    text: '12.5%',
     deltaType: DeltaTypes.Decrease,
     size: 'xs'
 };
@@ -124,7 +124,7 @@ DecreaseXs.args = {
 export const ModerateDecreaseXs = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ModerateDecreaseXs.args = {
-    delta: '12.5%',
+    text: '12.5%',
     deltaType: DeltaTypes.ModerateDecrease,
     size: 'xs'
 };
@@ -132,7 +132,7 @@ ModerateDecreaseXs.args = {
 export const UnchangedXs = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 UnchangedXs.args = {
-    delta: '12.5%',
+    text: '12.5%',
     deltaType: DeltaTypes.Unchanged,
     size: 'xs'
 };

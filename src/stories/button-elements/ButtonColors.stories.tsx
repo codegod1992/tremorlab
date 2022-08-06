@@ -4,7 +4,6 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import ArrowUpLineIcon from 'remixicon-react/ArrowUpLineIcon';
 
 import { BaseColors } from '@utils/objects';
-import { Title } from 'components';
 
 import { Flex } from 'components';
 

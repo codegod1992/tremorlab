@@ -6,7 +6,7 @@ import ArrowUpLineIcon from 'remixicon-react/ArrowUpLineIcon';
 import { BaseColors } from '@utils/objects';
 import { Title } from 'components';
 
-import { IconTypes } from 'components/icon-elements/Icon/Icon';
+import { IconVariants } from 'components/icon-elements/Icon/Icon';
 
 import Icon from 'components/icon-elements/Icon/Icon';
 
@@ -22,56 +22,66 @@ const MyIcon = ArrowUpLineIcon;
 const Template: ComponentStory<never> = () => (
     <>
         <div className="mb-5">
-            <Title text="Icon Neutral"/>
+            <Title>
+                Icon Simple
+            </Title>
             <div className="grid grid-cols-8">
                 {Object.keys(BaseColors).map(key => {
                     console.log(BaseColors[key]);
                     return(
-                        <Icon Icon={ MyIcon } style={ IconTypes.Simple } color={ BaseColors[key] } />
+                        <Icon Icon={ MyIcon } variant={ IconVariants.Simple } color={ BaseColors[key] } />
                     );
                 })}
             </div>
         </div>
         <div className="mb-5">
-            <Title text="Icon Light"/>
+            <Title>
+                Icon Light
+            </Title>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(BaseColors).map(key => {
                     console.log(BaseColors[key]);
                     return(
-                        <Icon Icon={ MyIcon } style={ IconTypes.Light } color={ BaseColors[key] } />
+                        <Icon Icon={ MyIcon } variant={ IconVariants.Light } color={ BaseColors[key] } />
                     );
                 })}
             </div>
         </div>
         <div className="mb-5">
-            <Title text="Icon Shadow"/>
+            <Title>
+                Icon Shadow
+            </Title>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(BaseColors).map(key => {
                     console.log(BaseColors[key]);
                     return(
-                        <Icon Icon={ MyIcon } style={ IconTypes.Shadow } color={ BaseColors[key] } />
+                        <Icon Icon={ MyIcon } variant={ IconVariants.Shadow } color={ BaseColors[key] } />
                     );
                 })}
             </div>
         </div>
         <div className="mb-5">
-            <Title text="Icon Solid"/>
+            <Title>
+                Icon Solid
+            </Title>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(BaseColors).map(key => {
                     console.log(BaseColors[key]);
                     return(
-                        <Icon Icon={ MyIcon } style={ IconTypes.Solid } color={ BaseColors[key] } />
+                        <Icon Icon={ MyIcon } variant={ IconVariants.Solid } color={ BaseColors[key] } />
                     );
                 })}
             </div>
         </div>
         <div className="mb-5">
-            <Title text="Icon Circled"/>
+            <Title>
+                Icon Outlined
+            </Title>
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
                 {Object.keys(BaseColors).map(key => {
                     console.log(BaseColors[key]);
                     return(
-                        <Icon Icon={ MyIcon } style={ IconTypes.Outlined } color={ BaseColors[key] } />
+                        <Icon Icon={ MyIcon } variant={ IconVariants.Outlined } color={ BaseColors[key] } />
                     );
                 })}
             </div>

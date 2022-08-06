@@ -15,7 +15,7 @@ import { defaultColors } from '@utils/colorTheme';
 
 export interface CardProps extends BaseComponentProps {
     hFull?: boolean,
-    maxWidth: string,
+    maxWidth?: string,
     shadow?: boolean,
     decoration?: string,
     decorationColor?: string,
