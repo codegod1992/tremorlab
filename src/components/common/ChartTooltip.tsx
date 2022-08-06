@@ -19,7 +19,7 @@ const ChartTooltipRow = ({ value, name, color }: ChartTooltipRowProps) => (
             ) } />
             <p className={ classNames(
                 getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
-                'font-medium'
+                'font-medium tabular-nums text-right'
             ) }>
                 { value }
             </p>
