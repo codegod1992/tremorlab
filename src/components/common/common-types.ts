@@ -36,6 +36,7 @@ export type ButtonColorTypes = {
 export interface ChartProps {
     data: any[],
     attributes: string[],
+    dataKey?: string, 
     colors: string[],
     valueFormaterY?: ValueFormater,
     showXAxis?: boolean,
@@ -43,6 +44,7 @@ export interface ChartProps {
     yAxisOrientation?: string,
     showTooltip?: boolean,
     showLegend?: boolean,
+    height?: number,
     paddingTopPixels?: number,
     paddingRightPixels?: number,
     paddingBottomPixels?: number,
