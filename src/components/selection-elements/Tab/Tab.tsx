@@ -22,19 +22,21 @@ const Tab = ({
     const activeClassNames = classNames(
         colors[privateProps!.color].textColor,
         colors[privateProps!.color].borderColor,
-        'border-b-2 -mb-1'
+        'border-b-2'
     );
     const inActiveClassNames = classNames(
         getColorVariantsFromColorThemeValue(defaultColors.transparent).borderColor,
         getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
         getColorVariantsFromColorThemeValue(defaultColors.text).hoverTextColor,
+        getColorVariantsFromColorThemeValue(defaultColors.border).hoverBorderColor,
+        'hover:border-b-2'
     );
     return(
         <li>
             <button
                 className={ classNames(
                     privateProps!.isActive ? activeClassNames : inActiveClassNames,
-                    'whitespace-nowrap py-2 px-1 text-sm font-normal truncate group',
+                    'flex whitespace-nowrap font-normal py-2 px-1 -mb-px text-sm group max-w-xs',
                 ) }
                 value={ value }
                 onClick={ () => privateProps!.setSelectedTab!(value) }
