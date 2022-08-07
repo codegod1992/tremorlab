@@ -67,7 +67,6 @@ const TrmBarChart = ({
                     <XAxis
                         hide={ !showXAxis }
                         dataKey={ dataKey }
-                        padding={{ left: 30, right: 30 }}
                         interval="preserveStartEnd"
                         tick={{ transform: 'translate(0, 6)' }} //padding between labels and axis
                         style={{
@@ -82,7 +81,6 @@ const TrmBarChart = ({
                     <XAxis
                         hide={ !showXAxis }
                         type="number"
-                        padding={{ left: 30, right: 30 }}
                         tick={{ transform: 'translate(0, 6)' }} //padding between labels and axis
                         style={{
                             fontSize: '12px',

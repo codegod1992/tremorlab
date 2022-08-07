@@ -59,7 +59,6 @@ const TrmLineChart = ({
                     <XAxis
                         hide={ !showXAxis }
                         dataKey={ dataKey }
-                        padding={{ left: 30, right: 30 }}
                         interval="preserveStartEnd"
                         tick={{ transform: 'translate(0, 6)' }} //padding between labels and axis
                         style={{
