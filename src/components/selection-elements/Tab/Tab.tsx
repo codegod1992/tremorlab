@@ -33,12 +33,12 @@ const Tab = ({
             <button
                 className={ classNames(
                     privateProps!.isActive ? activeClassNames : inActiveClassNames,
-                    'whitespace-nowrap py-2 px-1 border-b-2 text-sm font-normal truncate group'
+                    'whitespace-nowrap py-2 px-1 border-b-2 text-sm font-normal truncate'
                 ) }
                 value={ value }
                 onClick={ () => privateProps!.setSelectedTab!(value) }
             >
-                { name }
+                <p>{ name }</p>
             </button>
         </li>
     );

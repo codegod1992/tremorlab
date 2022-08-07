@@ -45,7 +45,7 @@ const ProgressBar = ({
                     getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
                     'ml-2 truncate w-16 text-right'
                 ) }>
-                    <span className="whitespace-nowrap truncate">
+                    <span className="text-sm font-normal shrink-0 whitespace-nowrap truncate">
                         { label }
                     </span>
                 </div>

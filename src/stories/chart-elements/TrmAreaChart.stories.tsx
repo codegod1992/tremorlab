@@ -62,4 +62,5 @@ Default.args = {
     data: data,
     attributes: [ 'Sales' ],
     valueFormaterY: dataFormater,
+    showXAxis: false,
 };
