@@ -26,13 +26,13 @@ const parseDecorationAlignment = (decorationAlignment: string) => {
     if (!decorationAlignment) return '';
     switch(decorationAlignment) {
     case 'left':
-        return 'border-l';
+        return 'border-l-4';
     case 'top':
-        return 'border-t';
+        return 'border-t-4';
     case 'right':
-        return 'border-r';
+        return 'border-r-4';
     case 'bottom':
-        return 'border-b';
+        return 'border-b-4';
     default:
         return '';
     }

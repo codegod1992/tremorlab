@@ -36,5 +36,5 @@ export const Default = Template.bind({});
 Default.args = {
     percentageValue: 50,
     marginTop: 'mt-5',
-    label: 'hello'
+    label: 'helloasjdakshgdkjhags akjhsgdkhjagsdjhakg'
 };

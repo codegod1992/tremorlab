@@ -39,7 +39,7 @@ const Tab = ({
                 value={ value }
                 onClick={ () => privateProps!.setSelectedTab!(value) }
             >
-                { name }
+                <p>{ name }</p>
             </button>
         </li>
     );
