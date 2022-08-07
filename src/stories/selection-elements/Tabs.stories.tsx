@@ -6,6 +6,7 @@ import Tab from 'components/selection-elements/Tab/Tab';
 import TabList from 'components/selection-elements/Tab/TabList';
 
 import { BaseColors } from '@utils/objects';
+import { Card } from 'components';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -17,11 +18,13 @@ export default {
 const Template: ComponentStory<typeof TabList> = (args) => (
     <>
         { Object.values(BaseColors).map(color => (
-            <TabList defaultValue={ 1 } handleSelect={ (value) => console.log(value) } color={ color }>
-                <Tab value={ 1 } name="tremor.so" />
-                <Tab value={ 2 } name="thealchly.com" />
-                <Tab value={ 3 } name="nac.coom" />
-            </TabList>
+            <Card>
+                <TabList defaultValue={ 1 } handleSelect={ (value) => console.log(value) } color={ color }>
+                    <Tab value={ 1 } name="tremor.so" />
+                    <Tab value={ 2 } name="thealchly.com" />
+                    <Tab value={ 3 } name="nac.coom" />
+                </TabList>
+            </Card>
         ))}
     </>
 );
