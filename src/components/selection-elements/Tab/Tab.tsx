@@ -22,6 +22,7 @@ const Tab = ({
     const activeClassNames = classNames(
         colors[privateProps!.color].textColor,
         colors[privateProps!.color].borderColor,
+        'border-b-2 -mb-1'
     );
     const inActiveClassNames = classNames(
         getColorVariantsFromColorThemeValue(defaultColors.transparent).borderColor,
@@ -33,7 +34,7 @@ const Tab = ({
             <button
                 className={ classNames(
                     privateProps!.isActive ? activeClassNames : inActiveClassNames,
-                    'whitespace-nowrap py-2 px-1 border-b-2 text-sm font-normal truncate'
+                    'whitespace-nowrap py-2 px-1 text-sm font-normal truncate group',
                 ) }
                 value={ value }
                 onClick={ () => privateProps!.setSelectedTab!(value) }

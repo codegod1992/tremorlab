@@ -14,7 +14,7 @@ const Light = ({
 }: LightProps) => {
     return(
         <span className={ classNames(
-            'font-light',
+            'text-sm font-light',
             getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
             parseMarginTopClassNames(marginTop),
         ) }

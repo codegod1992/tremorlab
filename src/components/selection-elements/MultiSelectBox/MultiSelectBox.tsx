@@ -59,7 +59,6 @@ const MultiSelectBox = ({
 
     useEffect(() => {
         setSearchQuery('');
-        setShowModal(false);
     }, [selectedItemsValues]);
 
     return (

@@ -14,9 +14,7 @@ export default {
 
 const Template: ComponentStory<typeof TrmAreaChart> = (args) => (
     <Card hFull={ true } >
-        <div className="h-96">
-            <TrmAreaChart { ...args } />
-        </div>
+        <TrmAreaChart { ...args } />
     </Card>
 );
   

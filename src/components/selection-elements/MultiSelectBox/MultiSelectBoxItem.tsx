@@ -30,7 +30,6 @@ const MultiSelectBoxItem = ({
                 privateProps!.setSelectedItemsValues!([...newSelectedItemsValues!]);
             }
             privateProps!.handleSelect(newSelectedItemsValues);
-            privateProps!.setShowModal(false);
         } }
         isActive={ false }
     >

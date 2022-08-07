@@ -45,131 +45,138 @@ const TrmScatterChart = ({
     showYAxis = true,
     showTooltip = true,
     showLegend = true,
+    showGridLines = true,
     referenceLineX = null,
     referenceLineY = null,
+    height = 300,
     paddingTopPixels = 5,
     paddingRightPixels = 15,
     paddingBottomPixels = 5,
     paddingLeftPixels = 5,
 }: ScatterChartProps) => {
     return (
-        <ResponsiveContainer width="100%" height="100%">
-            <ScatterChart
-                data={ data }
-                margin={{
-                    top: paddingTopPixels,
-                    right: paddingRightPixels,
-                    left: paddingBottomPixels,
-                    bottom: paddingLeftPixels,
-                }}
-            >
-                <CartesianGrid
-                    strokeDasharray="3 3"
-                    horizontal={ false }
-                    vertical={ false }
-                />
-                <XAxis
-                    hide={ !showXAxis }
-                    dataKey="x"
-                    name={ attributes[0] }
-                    type="number"
-                    tick={{ transform: 'translate(0, 6)' }} 
-                    style={{
-                        fontSize: '12px',
-                        fontFamily: 'Inter; Helvetica',
-                        fill: '#475569',
+        <div style={ { 'height': `${height}px` } }>
+            <ResponsiveContainer width="100%" height="100%">
+                <ScatterChart
+                    data={ data }
+                    margin={{
+                        top: paddingTopPixels,
+                        right: paddingRightPixels,
+                        left: paddingBottomPixels,
+                        bottom: paddingLeftPixels,
                     }}
-                    tickLine={ false }
-                    axisLine={ true }
-                    stroke="#cbd5e1"
-                    tickFormatter={ valueFormaterX }
-                />
-                <YAxis
-                    hide={ !showYAxis }
-                    dataKey="y"
-                    name={ attributes[1] }
-                    axisLine={ true }
-                    tickLine={ false }
-                    stroke="#cbd5e1"
-                    type="number"
-                    domain={ [0, 'auto'] }
-                    tick={ { transform: 'translate(-3, 0)' } } 
-                    style={ {
-                        fontSize: '12px',
-                        fontFamily: 'Inter; Helvetica',
-                        fill: '#475569',
-                    } }                    
-                    tickFormatter={ valueFormaterY }
-                />
-                <ZAxis
-                    dataKey="z"
-                    name={ scoreAttribute }
-                    range={[50, 2000]} 
-                />
-                <Tooltip
-                    isAnimationActive={ false }
-                    cursor={ { stroke: '#d1d5db', strokeWidth: 1 } }
-                    content={ ({ active, payload, label }) => (
-                        showTooltip
-                            ? (
-                                <ScatterChartTooltip
-                                    active={ active }
-                                    payload={ payload }
-                                    label={ label }
-                                    valueFormater={ valueFormaterY }
-                                />
-                            )
-                            : null
-                    ) }
-                />
-
-                { showLegend ? (
-                    <Legend
-                        verticalAlign="top"
-                        height={ 50 }
-                        content={ ({ payload }) => ChartLegend({ payload }, colors) }
-                    />
-                ) : null }
-
-                { referenceLineX ? (
-                    <ReferenceLine 
-                        x={ referenceLineX.position }
-                        stroke="#9ca3af"
-                        strokeDasharray="3 3" >
-                        <Label
-                            value={ referenceLineX.label || '' }
-                            position="insideBottomRight"
-                            style={{ fontSize: 12, fill: '#6b7280'}}
+                >
+                    { showGridLines ? (
+                        <CartesianGrid
+                            strokeDasharray="3 3"
+                            horizontal={ false }
+                            vertical={ false }
                         />
-                    </ReferenceLine>
-                ) : null }
-
-                { referenceLineY ? (
-                    <ReferenceLine
-                        y={ referenceLineY.position }
-                        stroke="#9ca3af" 
-                        strokeDasharray="3 3" >
-                        <Label
-                            value={ referenceLineY.label || '' }
-                            position="insideBottomLeft"
-                            style={{ fontSize: 12, fill: '#6b7280' }}
-                        />
-                    </ReferenceLine>
-
-                ) : null }
-
-                { data.map((dataset, idx) => (
-                    <Scatter
-                        name={ attributes[idx] }
-                        data={ dataset }
-                        fill={ getHexFromColorThemeValue(colorTheme[colors[idx]].background) }
-                        fillOpacity="0.7"
-                        stroke={ getHexFromColorThemeValue(colorTheme[colors[idx]].background) }
-                        strokeWidth={ 1 }
+                    ) : null }
+                    <XAxis
+                        hide={ !showXAxis }
+                        dataKey="x"
+                        name={ attributes[0] }
+                        type="number"
+                        interval="preserveStartEnd"
+                        tick={{ transform: 'translate(0, 6)' }} 
+                        style={{
+                            fontSize: '12px',
+                            fontFamily: 'Inter; Helvetica',
+                            fill: '#475569',
+                        }}
+                        tickLine={ false }
+                        axisLine={ true }
+                        stroke="#cbd5e1"
+                        tickFormatter={ valueFormaterX }
                     />
-                ))}
-            </ScatterChart>
-        </ResponsiveContainer>
+                    <YAxis
+                        hide={ !showYAxis }
+                        dataKey="y"
+                        name={ attributes[1] }
+                        axisLine={ true }
+                        tickLine={ false }
+                        stroke="#cbd5e1"
+                        type="number"
+                        domain={ [0, 'auto'] }
+                        tick={ { transform: 'translate(-3, 0)' } } 
+                        style={ {
+                            fontSize: '12px',
+                            fontFamily: 'Inter; Helvetica',
+                            fill: '#475569',
+                        } }                    
+                        tickFormatter={ valueFormaterY }
+                    />
+                    <ZAxis
+                        dataKey="z"
+                        name={ scoreAttribute }
+                        range={[50, 2000]} 
+                    />
+                    <Tooltip
+                        isAnimationActive={ false }
+                        cursor={ { stroke: '#d1d5db', strokeWidth: 1 } }
+                        content={ ({ active, payload, label }) => (
+                            showTooltip
+                                ? (
+                                    <ScatterChartTooltip
+                                        active={ active }
+                                        payload={ payload }
+                                        label={ label }
+                                        valueFormater={ valueFormaterY }
+                                    />
+                                )
+                                : null
+                        ) }
+                    />
+
+                    { showLegend ? (
+                        <Legend
+                            verticalAlign="top"
+                            height={ 50 }
+                            content={ ({ payload }) => ChartLegend({ payload }, colors) }
+                        />
+                    ) : null }
+
+                    { referenceLineX ? (
+                        <ReferenceLine 
+                            x={ referenceLineX.position }
+                            stroke="#9ca3af"
+                            strokeDasharray="3 3" >
+                            <Label
+                                value={ referenceLineX.label || '' }
+                                position="insideBottomRight"
+                                style={{ fontSize: 12, fill: '#6b7280'}}
+                            />
+                        </ReferenceLine>
+                    ) : null }
+
+                    { referenceLineY ? (
+                        <ReferenceLine
+                            y={ referenceLineY.position }
+                            stroke="#9ca3af" 
+                            strokeDasharray="3 3" >
+                            <Label
+                                value={ referenceLineY.label || '' }
+                                position="insideBottomLeft"
+                                style={{ fontSize: 12, fill: '#6b7280' }}
+                            />
+                        </ReferenceLine>
+
+                    ) : null }
+
+                    { data.map((dataset, idx) => (
+                        <Scatter
+                            name={ attributes[idx] }
+                            data={ dataset }
+                            fill={ getHexFromColorThemeValue(colorTheme[colors[idx]].background) }
+                            fillOpacity="0.7"
+                            stroke={ getHexFromColorThemeValue(colorTheme[colors[idx]].background) }
+                            strokeWidth={ 1 }
+                        />
+                    ))}
+                </ScatterChart>
+            </ResponsiveContainer>
+        </div>
     );
 };
 

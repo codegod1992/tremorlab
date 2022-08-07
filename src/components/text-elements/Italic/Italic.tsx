@@ -14,7 +14,7 @@ const Italic = ({
 }: ItalicProps) => {
     return(
         <span className={ classNames(
-            'italic',
+            'text-sm italic',
             getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
             parseMarginTopClassNames(marginTop),
         ) }
