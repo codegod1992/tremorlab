@@ -45,6 +45,7 @@ const TrmScatterChart = ({
     showYAxis = true,
     showTooltip = true,
     showLegend = true,
+    showGridLines = true,
     referenceLineX = null,
     referenceLineY = null,
     height = 300,
@@ -65,11 +66,13 @@ const TrmScatterChart = ({
                         bottom: paddingLeftPixels,
                     }}
                 >
-                    <CartesianGrid
-                        strokeDasharray="3 3"
-                        horizontal={ false }
-                        vertical={ false }
-                    />
+                    { showGridLines ? (
+                        <CartesianGrid
+                            strokeDasharray="3 3"
+                            horizontal={ false }
+                            vertical={ false }
+                        />
+                    ) : null }
                     <XAxis
                         hide={ !showXAxis }
                         dataKey="x"

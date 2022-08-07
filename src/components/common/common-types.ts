@@ -44,6 +44,7 @@ export interface ChartProps {
     yAxisOrientation?: string,
     showTooltip?: boolean,
     showLegend?: boolean,
+    showGridLines: boolean,
     height?: number,
     paddingTopPixels?: number,
     paddingRightPixels?: number,

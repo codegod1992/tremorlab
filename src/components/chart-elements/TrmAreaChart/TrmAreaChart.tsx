@@ -30,6 +30,7 @@ const TrmAreaChart = ({
     yAxisOrientation = 'left',
     showTooltip = true,
     showLegend = true,
+    showGridLines = true,
     height = 300,
     paddingTopPixels = 5,
     paddingRightPixels = 20,
@@ -47,11 +48,13 @@ const TrmAreaChart = ({
                     bottom: paddingBottomPixels,
                 } }
             >
-                <CartesianGrid
-                    strokeDasharray="3 3"
-                    horizontal={ true }
-                    vertical={ false }
-                />
+                { showGridLines ? (
+                    <CartesianGrid
+                        strokeDasharray="3 3"
+                        horizontal={ true }
+                        vertical={ false }
+                    />
+                ) : null }
                 <XAxis
                     hide={ !showXAxis }
                     dataKey={ dataKey }

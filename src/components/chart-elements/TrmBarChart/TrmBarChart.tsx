@@ -36,6 +36,7 @@ const TrmBarChart = ({
     showYAxis = true,
     showTooltip = true,
     showLegend = true,
+    showGridLines = true,
     height = 300,
     paddingTopPixels = 5,
     paddingRightPixels = 20,
@@ -54,11 +55,13 @@ const TrmBarChart = ({
                     bottom: paddingBottomPixels,
                 }}
             >
-                <CartesianGrid
-                    strokeDasharray="3 3"
-                    horizontal={ true }
-                    vertical={ false }
-                />
+                { showGridLines ? (
+                    <CartesianGrid
+                        strokeDasharray="3 3"
+                        horizontal={ true }
+                        vertical={ false }
+                    />
+                ) : null }
 
                 { layout !== 'vertical' ? (
                     <XAxis
