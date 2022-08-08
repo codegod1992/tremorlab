@@ -12,7 +12,7 @@ const ListItem = ({
     return(
         <>
             <li className={ classNames(
-                'flex justify-between items-center py-2 truncate',
+                'flex justify-between items-center py-2 truncate tabular-nums',
             ) }>
                 { children }
             </li>
