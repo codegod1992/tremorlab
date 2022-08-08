@@ -18,7 +18,7 @@ const TableCell = ({
         <React.Fragment>
             <td className={ classNames(
                 parseTextAlignmentClassNames(textAlignment),
-                'py-4 px-4 whitespace-nowrap align-middle'
+                'py-4 px-4 align-middle whitespace-nowrap tabular-nums'
             )}>
                 { children }
             </td>
