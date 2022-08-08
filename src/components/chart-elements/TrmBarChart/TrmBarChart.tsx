@@ -107,7 +107,7 @@ const TrmBarChart = ({
                             fontSize: '12px',
                             fontFamily: 'Inter; Helvetica',
                         } }
-                        tickFormatter={ valueFormaterY }
+                        tickFormatter={ relative ? (value: number) => `${(value * 100).toString()} %` : valueFormaterY }
                     />
                 ) : (
                     <YAxis
@@ -159,7 +159,7 @@ const TrmBarChart = ({
                             key={ `item-${idx}` }
                             name={ attribute }
                             type="linear"
-                            stackId={ stack ? 'a' : undefined }
+                            stackId={ stack || relative ? 'a' : undefined }
                             dataKey={ attribute }
                             fill={ getHexFromColorThemeValue(colorTheme[colors[idx]].background) }
                             isAnimationActive={false}
