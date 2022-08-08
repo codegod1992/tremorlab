@@ -186,7 +186,7 @@ const Template: ComponentStory<typeof Table> = (args) => (
                         Region B
                     </TableCell>
                     <TableCell>
-                        <BadgeDelta deltaType="moderateDecrease" text="underperforming"size="xs"/>
+                        <BadgeDelta deltaType="moderateDecrease" text="underperforming"size="lg"/>
                     </TableCell>
                     <TableCell textAlignment="text-right">
                         170
