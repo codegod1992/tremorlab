@@ -22,6 +22,7 @@ import { getHexFromColorThemeValue } from '@utils/classname-utils';
 export interface TrmBarChartProps extends ChartProps {
     layout?: string,
     stack?: boolean,
+    relative?: boolean,
 }
 
 const TrmBarChart = ({
@@ -31,7 +32,8 @@ const TrmBarChart = ({
     colors = themeColorRange,
     valueFormaterY = defaultValueFormater,
     layout = 'horizontal',
-    stack = true,
+    stack = false,
+    relative = false,
     showXAxis = true,
     showYAxis = true,
     showTooltip = true,
@@ -47,6 +49,7 @@ const TrmBarChart = ({
         <ResponsiveContainer width="100%" height="100%">
             <BarChart
                 data={ data }
+                stackOffset={ relative ? 'expand' : 'none' }
                 layout={ layout === 'vertical' ? 'vertical' : 'horizontal' }
                 margin={{
                     top: paddingTopPixels,
