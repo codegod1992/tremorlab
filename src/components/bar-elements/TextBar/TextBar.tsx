@@ -3,12 +3,13 @@ import React from 'react';
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
 import { BaseColors } from '@utils/objects';
 import BaseComponentProps from '@common/BaseComponentInterface';
+import { defaultValueFormater, ValueFormater } from '@utils/utils';
 import colorTheme from '@utils/colorTheme';
 
 
 type TextBarData = {
     value: number,
-    name: string
+    name: string,
 }
 
 const getWidthsFromValues = (data: TextBarData[]) => {
@@ -22,12 +23,14 @@ const getWidthsFromValues = (data: TextBarData[]) => {
 
 export interface TextBarProps extends BaseComponentProps {
     data: TextBarData[],
+    valueFormater: ValueFormater,
     color?: string,
 }
 
 const TextBar = ({
     data,
     color = BaseColors.Blue,
+    valueFormater = defaultValueFormater,
     marginTop,
 }: TextBarProps) => {
     const widths = getWidthsFromValues(data);
@@ -62,7 +65,7 @@ const TextBar = ({
                         'flex justify-end items-center mb-2 text-gray-700',
                     ) }
                     >
-                        { item.value }
+                        { valueFormater(item.value) }
                     </div>
                 )) }
             </div>
