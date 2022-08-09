@@ -23,7 +23,7 @@ const getWidthsFromValues = (data: TextBarData[]) => {
 
 export interface TextBarProps extends BaseComponentProps {
     data: TextBarData[],
-    valueFormater: ValueFormater,
+    valueFormater?: ValueFormater,
     color?: string,
 }
 
