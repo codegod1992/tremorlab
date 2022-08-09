@@ -39,37 +39,32 @@ const TextBar = ({
             'flex justify-between space-x-8',
             parseMarginTopClassNames(marginTop),
         ) }>
-            <div className="w-5/6">
-                <div className="w-full mt-3">
-                    { data.map((item, idx) => (
-                        <div
-                            className={ classNames(
-                                rowHeight,
-                                getColorVariantsFromColorThemeValue(colorTheme[color].lightBackground).bgColor,
-                                'rounded-sm mb-2 flex items-center px-2'
-                            ) }
-                            style={ { width: `${widths[idx]}%` } }
-                        >
-                            <span className="whitespace-nowrap truncate text-sm text-gray-700 min-w-[10em]
-                                md:min-w-[20em]">
-                                { item.name }
-                            </span>
-                        </div>
-                    )) }
-                </div>
-            </div>
-            <div className="text-right text-right w-1/6">
-                <div className="mt-3">
-                    { data.map((item) => (
-                        <div className={ classNames(
+            <div className="relative w-full">
+                { data.map((item, idx) => (
+                    <div
+                        className={ classNames(
                             rowHeight,
-                            'flex items-center mb-2 text-gray-700 text-right flex justify-end',
+                            getColorVariantsFromColorThemeValue(colorTheme[color].lightBackground).bgColor,
+                            'rounded-sm mb-2 flex items-center px-2'
                         ) }
-                        >
-                            { item.value }
-                        </div>
-                    )) }
-                </div>
+                        style={ { width: `${widths[idx]}%` } }
+                    >
+                        <span className="absolute left-2 whitespace-nowrap truncate text-sm text-gray-700 max-w-full">
+                            { item.name }
+                        </span>
+                    </div>
+                )) }
+            </div>
+            <div className="text-right min-w-min">
+                { data.map((item) => (
+                    <div className={ classNames(
+                        rowHeight,
+                        'flex justify-end items-center mb-2 text-gray-700',
+                    ) }
+                    >
+                        { item.value }
+                    </div>
+                )) }
             </div>
         </div>
     );
