@@ -10,9 +10,11 @@ import {
     parseTextAlignmentClassNames,
     parseTruncateOption,
 } from '@utils/classname-utils';
-import { defaultColors } from '@utils/colorTheme';
+import { BaseColors } from '@utils/objects';
+import colorTheme from '@utils/colorTheme';
 
 export interface TextProps extends BaseComponentProps {
+    color?: string,
     textAlignment?: string,
     truncate?: boolean,
     fixedHeight?: string,
@@ -20,6 +22,7 @@ export interface TextProps extends BaseComponentProps {
 }
 
 const Text = ({
+    color = BaseColors.Gray,
     textAlignment = 'text-left',
     truncate = false,
     fixedHeight = '',
@@ -28,7 +31,7 @@ const Text = ({
 }: TextProps) => {
     return(
         <p className={classNames(
-            getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
+            getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor,
             parseTextAlignmentClassNames(textAlignment),
             parseFixedHeightClassNames(fixedHeight),
             parseMarginTopClassNames(marginTop),
