@@ -37,7 +37,7 @@ const TrmAreaChart = ({
     paddingBottomPixels = 20,
     paddingLeftPixels = 5,
 }: ChartProps) => (
-    <div style={ { 'height': `${height}px` } }>
+    <div className="w-full" style={ { 'height': `${height}px` } }>
         <ResponsiveContainer width="100%" height="100%">
             <AreaChart
                 data={ data }
