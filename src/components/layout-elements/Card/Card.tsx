@@ -53,19 +53,14 @@ const Card = ({
             parseMaxWidthClassNames(maxWidth),
             getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
             parseMarginTopClassNames(marginTop),
-            'relative mx-auto text-left border rounded-lg',
+            'relative mx-auto text-left rounded-lg p-6',
             maxWidth ? parseMaxWidthClassNames(maxWidth) : 'w-full',
             shadow ? 'shadow' : '',
-            'overflow-hidden'
+            colors[decorationColor].borderColor,
+            parseDecorationAlignment(decoration),
         ) }
         >
-            <div className={ classNames(
-                'p-6',
-                colors[decorationColor].borderColor,
-                parseDecorationAlignment(decoration),
-            ) }>
-                { children }
-            </div>
+            { children }
         </div>
     );
 };

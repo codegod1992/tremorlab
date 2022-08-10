@@ -16,8 +16,15 @@ const Template: ComponentStory<typeof Card> = (args) => (
     </Card>
 );
   
-export const HelloWorld = Template.bind({});
+export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-HelloWorld.args = {
+Default.args = {
+    children: null
+};
+
+export const Decoration = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+Decoration.args = {
+    decoration: 'left',
     children: null
 };
