@@ -1,7 +1,6 @@
 export * from './bar-elements';
 export * from './button-elements';
 export * from './chart-elements';
-export * from './funnel-elements';
 export * from './icon-elements';
 export * from './layout-elements';
 export * from './list-elements';

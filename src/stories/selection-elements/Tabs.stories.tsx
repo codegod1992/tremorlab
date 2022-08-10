@@ -15,7 +15,7 @@ export default {
 } as ComponentMeta<typeof TabList>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Template: ComponentStory<typeof TabList> = (args) => (
+const Template: ComponentStory<typeof TabList> = () => (
     <>
         { Object.values(BaseColors).map(color => (
             <Card>
