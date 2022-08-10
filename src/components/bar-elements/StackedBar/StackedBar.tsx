@@ -19,7 +19,8 @@ const BarLabels = ({ elements }: {elements: [number, string][]}) => {
             getColorVariantsFromColorThemeValue(defaultColors.text).textColor
         ) }
         >
-            { elements.slice(0, elements.length).map(([widthPercentage, _], idx) => {
+            { elements.slice(0, elements.length).map((element, idx) => {
+                const widthPercentage = element[0];
                 prefixSum += widthPercentage;
                 return (
                     <div
