@@ -132,7 +132,9 @@ export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
     data: data,
-    attributes: ['Stature', 'Weight'],
+    categories: ['A', 'B'],
+    attributeX: 'Stature',
+    attributeY: 'Weight',
     referenceLineX: { position: 142, label: 'Ø: 142cm'  },
     referenceLineY: { position: 160, label: 'Ø: 160kg'  },
     valueFormaterX: (value) => value + ' cm',

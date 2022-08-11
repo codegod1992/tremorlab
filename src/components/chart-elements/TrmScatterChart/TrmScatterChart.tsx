@@ -27,20 +27,33 @@ interface ReferenceLine {
 }
 
 export interface ScatterChartProps extends ChartProps {
+    categories: string[],
+    attributeX: string,
+    attributeY: string,
     scoreAttribute: string,
+    dataKeyX?: string,
+    dataKeyY?: string,
+    dataKeyZ?: string,
     referenceLineX?: ReferenceLine | null,
     referenceLineY?: ReferenceLine | null,
     valueFormaterX?: ValueFormater,
+    valueFormaterZ?: ValueFormater,
 }
 
 const TrmScatterChart = ({
     // Please add multiple scatter logic
     data,
-    attributes,
+    categories,
+    attributeX,
+    attributeY,
+    dataKeyX = 'x',
+    dataKeyY = 'y',
+    dataKeyZ = 'z',
     scoreAttribute = 'Score',
     colors = themeColorRange,
-    valueFormaterY = defaultValueFormater,
     valueFormaterX = defaultValueFormater,
+    valueFormaterY = defaultValueFormater,
+    valueFormaterZ = defaultValueFormater,
     showXAxis = true,
     showYAxis = true,
     showTooltip = true,
@@ -75,8 +88,8 @@ const TrmScatterChart = ({
                     ) : null }
                     <XAxis
                         hide={ !showXAxis }
-                        dataKey="x"
-                        name={ attributes[0] }
+                        dataKey={ dataKeyX }
+                        name={ attributeX }
                         type="number"
                         interval="preserveStartEnd"
                         tick={{ transform: 'translate(0, 6)' }} 
@@ -92,8 +105,8 @@ const TrmScatterChart = ({
                     />
                     <YAxis
                         hide={ !showYAxis }
-                        dataKey="y"
-                        name={ attributes[1] }
+                        dataKey={ dataKeyY }
+                        name={ attributeY }
                         axisLine={ true }
                         tickLine={ false }
                         stroke="#cbd5e1"
@@ -108,7 +121,7 @@ const TrmScatterChart = ({
                         tickFormatter={ valueFormaterY }
                     />
                     <ZAxis
-                        dataKey="z"
+                        dataKey={ dataKeyZ }
                         name={ scoreAttribute }
                         range={[50, 2000]} 
                     />
@@ -166,7 +179,7 @@ const TrmScatterChart = ({
 
                     { data.map((dataset, idx) => (
                         <Scatter
-                            name={ attributes[idx] }
+                            name={ categories[idx] }
                             data={ dataset }
                             fill={ getHexFromColorThemeValue(colorTheme[colors[idx]].background) }
                             fillOpacity="0.7"
