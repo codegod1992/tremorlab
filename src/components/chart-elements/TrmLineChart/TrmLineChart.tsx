@@ -21,7 +21,7 @@ import { getHexFromColorThemeValue } from '@utils/classname-utils';
 
 const TrmLineChart = ({
     data,
-    attributes,
+    categories,
     dataKey = 'name',
     colors = themeColorRange,
     valueFormaterY = defaultValueFormater,
@@ -106,12 +106,12 @@ const TrmLineChart = ({
                             content={ ({ payload }) => ChartLegend({ payload }, colors) }
                         />
                     ) : null }
-                    { attributes.map((attribute, idx) => (
+                    { categories.map((category, idx) => (
                         <Line
                             key={ `item-${idx}` }
-                            name={ attribute }
+                            name={ category }
                             type="linear"
-                            dataKey={ attribute }
+                            dataKey={ category }
                             stroke={ getHexFromColorThemeValue(colorTheme[colors[idx]].background) }
                             strokeWidth={ 2 }
                             dot={ false }

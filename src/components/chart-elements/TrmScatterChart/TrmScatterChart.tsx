@@ -27,7 +27,6 @@ interface ReferenceLine {
 }
 
 export interface ScatterChartProps extends ChartProps {
-    categories: string[],
     attributeX: string,
     attributeY: string,
     scoreAttribute: string,
@@ -41,7 +40,6 @@ export interface ScatterChartProps extends ChartProps {
 }
 
 const TrmScatterChart = ({
-    // Please add multiple scatter logic
     data,
     categories,
     attributeX,

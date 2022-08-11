@@ -27,7 +27,7 @@ export interface TrmBarChartProps extends ChartProps {
 
 const TrmBarChart = ({
     data,
-    attributes,
+    categories,
     dataKey = 'name',
     colors = themeColorRange,
     valueFormaterY = defaultValueFormater,
@@ -154,13 +154,13 @@ const TrmBarChart = ({
                     ) : null
                 }
                 {
-                    attributes.map((attribute, idx) => (
+                    categories.map((category, idx) => (
                         <Bar
                             key={ `item-${idx}` }
-                            name={ attribute }
+                            name={ category }
                             type="linear"
                             stackId={ stack || relative ? 'a' : undefined }
-                            dataKey={ attribute }
+                            dataKey={ category }
                             fill={ getHexFromColorThemeValue(colorTheme[colors[idx]].background) }
                             isAnimationActive={false}
                         />

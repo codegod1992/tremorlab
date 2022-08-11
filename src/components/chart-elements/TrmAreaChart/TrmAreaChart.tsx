@@ -21,7 +21,7 @@ import { getHexFromColorThemeValue } from '@utils/classname-utils';
 
 const TrmAreaChart = ({
     data,
-    attributes,
+    categories,
     dataKey = 'name',
     colors = themeColorRange,
     valueFormaterY = defaultValueFormater,
@@ -107,7 +107,7 @@ const TrmAreaChart = ({
                         content={ ({ payload }) => ChartLegend({ payload }, colors) }
                     />
                 ) : null }
-                { attributes.map((attribute, idx) => (
+                { categories.map((category, idx) => (
                     <>
                         <defs key={ `gradient-def-${idx}` }>
                             <linearGradient id={ colors[idx] } x1="0" y1="0" x2="0" y2="1">
@@ -124,10 +124,10 @@ const TrmAreaChart = ({
                             </linearGradient>
                         </defs>
                         <Area
-                            key={ attribute }
-                            name={ attribute }
+                            key={ category }
+                            name={ category }
                             type="linear"
-                            dataKey={ attribute }
+                            dataKey={ category }
                             stroke={ getHexFromColorThemeValue(colorTheme[colors[idx]].background) }
                             fill={ `url(#${colors[idx]})` }
                             strokeWidth={2}
