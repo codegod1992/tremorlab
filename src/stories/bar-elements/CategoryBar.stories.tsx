@@ -1,24 +1,24 @@
 import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import StackedBar from 'components/bar-elements/StackedBar/StackedBar';
+import CategoryBar from 'components/bar-elements/CategoryBar/CategoryBar';
 
 import Card from 'components/layout-elements/Card';
 import Metric from 'components/text-elements/Metric';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/BarElements/StackedBar',
-    component: StackedBar,
-} as ComponentMeta<typeof StackedBar>;
+    title: 'Tremor/BarElements/CategoryBar',
+    component: CategoryBar,
+} as ComponentMeta<typeof CategoryBar>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Template: ComponentStory<typeof StackedBar> = (args) => (
+const Template: ComponentStory<typeof CategoryBar> = (args) => (
     <Card>
         <Metric>
             $23.456
         </Metric>
-        <StackedBar {...args} />
+        <CategoryBar {...args} />
     </Card>
 );
   

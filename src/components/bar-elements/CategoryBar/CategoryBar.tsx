@@ -44,18 +44,18 @@ const BarLabels = ({ elements }: {elements: [number, string][]}) => {
     );
 };
 
-export interface StackedBarProps extends BaseComponentProps {
+export interface CategoryBarProps extends BaseComponentProps {
     categories: [number, string][],
     percentageValue?: number,
     showLabels?: boolean,
 }
 
-const StackedBar = ({
+const CategoryBar = ({
     categories,
     percentageValue,
     showLabels = true,
     marginTop
-}: StackedBarProps) => {
+}: CategoryBarProps) => {
 
     const getMarkerBorderColor = (): string => {
         if (percentageValue === undefined)
@@ -105,4 +105,4 @@ const StackedBar = ({
     );
 };
 
-export default StackedBar;
+export default CategoryBar;
