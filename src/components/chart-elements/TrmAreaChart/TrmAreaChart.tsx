@@ -64,6 +64,7 @@ const TrmAreaChart = ({
                         fontFamily: 'Inter; Helvetica',
                         marginTop: '20px',
                     } }
+                    interval="preserveStartEnd"
                     tickLine={ false }
                     axisLine={ false }
                 />
@@ -74,7 +75,6 @@ const TrmAreaChart = ({
                     tickLine={ false }
                     type="number"
                     domain={ [0, 'auto'] }
-                    interval="preserveStartEnd"
                     tick={ { transform: 'translate(-3, 0)' } } //padding between labels and axis
                     style={ {
                         fontSize: '12px',
