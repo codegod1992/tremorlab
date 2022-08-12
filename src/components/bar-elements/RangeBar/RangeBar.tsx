@@ -39,7 +39,7 @@ const RangeBar = ({
                 style={ {'width': `${percentageValue}%`} }
             >
                 <div className={ classNames(
-                    'bg-blue-500',
+                    colors[color].markerBgColor,
                     'h-4 w-1 rounded-full ring-2 ring-white flex-none'
                 ) }
                 />
