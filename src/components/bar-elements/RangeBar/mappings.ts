@@ -37,7 +37,7 @@ export const colors: {[baseColor: string]: PeerComparisonBarColorTypes} = {
     'red': { 
         primaryBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Red].background).bgColor,
         secondaryBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Red].lightBackground).bgColor,
-        markerBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Stone].background).bgColor,
+        markerBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Red].background).bgColor,
     },
     'orange': { 
         primaryBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].background).bgColor,
