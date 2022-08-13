@@ -25,7 +25,7 @@ export default {
 } as ComponentMeta<typeof Card>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Template: ComponentStory<typeof Card> = (args) => (
+const Template: ComponentStory<typeof Card> = () => (
     <div className="grid grid-cols-3 gap-x-3">
         <Card>
             <Flex>

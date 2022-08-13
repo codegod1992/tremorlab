@@ -1,7 +1,5 @@
 import React from 'react';
 
-import BaseComponentProps from '@common/BaseComponentInterface';
-
 import { 
     classNames,
     getColorVariantsFromColorThemeValue,
@@ -9,9 +7,10 @@ import {
 } from '@utils/classname-utils';
 import { defaultColors } from '@utils/colorTheme';
 
-export interface ListProps extends BaseComponentProps {
+export interface ListProps {
     textColor?: string,
     divideColor?: string,
+    marginTop?: string,
     children: React.ReactNode
 }
 

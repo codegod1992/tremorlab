@@ -16,7 +16,7 @@ export default {
 } as ComponentMeta<typeof Title>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Template: ComponentStory<typeof Text> = (args) => (
+const Template: ComponentStory<typeof Text> = () => (
     <Text>
         Text with <Bold>bold text</Bold> and <Italic>Italics Text</Italic> and <Light>Light Text</Light> 
         and <Bold><Italic>Bold italics text</Italic></Bold>

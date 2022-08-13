@@ -49,7 +49,7 @@ TextJustify.args = {
 export const TextColor = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 TextColor.args = {
-    textColor: 'text-green-500',
+    color: 'green',
     textAlignment: 'text-left',
     children: null
 };

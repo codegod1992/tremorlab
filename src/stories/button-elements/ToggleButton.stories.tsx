@@ -14,7 +14,7 @@ export default {
 } as ComponentMeta<typeof ToggleButton>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Template: ComponentStory<typeof ToggleButton> = (args) => (
+const Template: ComponentStory<typeof ToggleButton> = () => (
     <div>
         <ToggleButton defaultValue={ 1 } handleSelect={ (value) => console.log(value) }>
             <ToggleButtonItem

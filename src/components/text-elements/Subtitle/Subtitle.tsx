@@ -1,7 +1,5 @@
 import React from 'react';
 
-import BaseComponentProps from '@common/BaseComponentInterface';
-
 import { 
     classNames,
     getColorVariantsFromColorThemeValue,
@@ -10,8 +8,9 @@ import {
 import { BaseColors } from '@utils/objects';
 import colorTheme from '@utils/colorTheme';
 
-export interface SubtitleProps extends BaseComponentProps {
+export interface SubtitleProps {
     color?: string,
+    marginTop?: string,
     children: React.ReactNode,
 }
 

@@ -14,7 +14,7 @@ export default {
 } as ComponentMeta<typeof Badge>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Template: ComponentStory<typeof Badge> = (args) => (
+const Template: ComponentStory<typeof Badge> = () => (
     <>
         { Object.values(Sizes).map(size => (
             <>

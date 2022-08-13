@@ -14,7 +14,7 @@ export default {
 } as ComponentMeta<typeof Tracking>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Template: ComponentStory<typeof Tracking> = (args) => (
+const Template: ComponentStory<typeof Tracking> = () => (
     <Card>
         <Tracking>
             <TrackingBlock color="emerald" info="Tracking Info" />

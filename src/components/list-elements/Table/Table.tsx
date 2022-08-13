@@ -1,7 +1,5 @@
 import React from 'react';
 
-import BaseComponentProps from '@common/BaseComponentInterface';
-
 import { 
     classNames,
     getColorVariantsFromColorThemeValue,
@@ -9,7 +7,8 @@ import {
 } from '@utils/classname-utils';
 import { defaultColors } from '@utils/colorTheme';
 
-export interface TableProps extends BaseComponentProps {
+export interface TableProps {
+    marginTop?: string,
     children: React.ReactNode
 }
 

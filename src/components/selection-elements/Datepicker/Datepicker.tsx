@@ -25,15 +25,15 @@ import {
     previousMonth,
     relativeFilterOptions
 } from 'components/selection-elements/Datepicker/datepicker-utils';
-import BaseComponentProps from '@common/BaseComponentInterface';
 import Modal from '@common/Modal';
 import SelectItemWrapper from '@common/SelectItemWrapper';
 import SelectText from '@common/SelectText';
 
-export interface DatepickerProps extends BaseComponentProps {
+export interface DatepickerProps {
     handleSelect?: { (selectedStartDay: Date|null, selectedEndDay: Date|null): void },
     enableRelativeDates?: boolean,
     placeholder?: string,
+    marginTop?: string,
 }
 
 const Datepicker = ({
