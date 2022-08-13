@@ -3,14 +3,14 @@ import React, { useState } from 'react';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 
 import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
-import BaseComponentProps from '@common/BaseComponentInterface';
 import Modal from '@common/Modal';
 import SelectWrapper from '@common/SelectWrapper';
 
-export interface SelectBoxProps extends BaseComponentProps {
+export interface SelectBoxProps {
     defaultValue?: any,
     handleSelect?: { (value: any): void },
     placeholder?: string,
+    marginTop?: string,
     children: React.ReactElement[],
 }
 
