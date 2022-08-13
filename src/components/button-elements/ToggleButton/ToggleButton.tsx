@@ -2,19 +2,20 @@ import React, { useEffect, useState } from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
 import { BaseColors } from '@utils/objects';
-import BaseComponentProps from '@common/BaseComponentInterface';
 import { defaultColors } from '@utils/colorTheme';
 
-export interface ToggleButtonProps extends BaseComponentProps {
+export interface ToggleButtonProps {
     defaultValue: any,
     color?: string,
     handleSelect: {(value: any): void},
     children: React.ReactElement[],
+    marginTop?: string,
 }
 
 const ToggleButton = ({
     defaultValue,
     color = BaseColors.Blue,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     handleSelect = (value) => null,
     marginTop,
     children,

@@ -3,10 +3,9 @@ import React from 'react';
 import { BaseColors, Sizes } from '@utils/objects';
 import { buttonColors, buttonProportions, buttonShape, iconLeftProportions, iconRightProportions } from './mappings';
 import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
-import BaseComponentProps from '@common/BaseComponentInterface';
 import ButtonWrapper from '@common/ButtonWrapper';
 
-export interface ButtonInlineProps extends BaseComponentProps {
+export interface ButtonInlineProps {
     text: string,
     Icon?: React.ElementType,
     iconPosition?: string,
@@ -14,6 +13,7 @@ export interface ButtonInlineProps extends BaseComponentProps {
     size?: string,
     color?: string,
     handleClick?: { (): void },
+    marginTop?: string,
 } 
 
 const ButtonInline = ({
