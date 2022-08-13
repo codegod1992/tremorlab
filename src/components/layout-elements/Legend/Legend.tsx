@@ -5,17 +5,19 @@ import {
     parseFixedHeightClassNames,
 } from '@utils/classname-utils';
 
-export interface FooterProps {
-    // fixedHeight?: string,
-    children: React.ReactNode;
+export interface LegendItemProps {
+    name: string,
+    color: string,
 }
 
-// Declare colors and text as params
+export interface LegendProps {
+    items: LegendItemProps[],
+}
 
 const Legend = ({
     // fixedHeight = 'h-20',
-    children
-}: FooterProps) => {
+    items,
+}: LegendProps) => {
     return(
         <>
             <div className="flow-root">
