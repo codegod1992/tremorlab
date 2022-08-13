@@ -3,8 +3,8 @@ import { render } from '@testing-library/react';
 
 import Flex from 'components/layout-elements/Flex';
 
-describe('Flex', () => {
-    test('renders the Flex component', () => {
+describe('Flex Default', () => {
+    test('renders the Flex component with default props', () => {
         render(
             <Flex>
                 <div>Hello</div>
