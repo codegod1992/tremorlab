@@ -9,7 +9,6 @@ import {
 } from '@utils/classname-utils';
 import colorTheme, { defaultColors } from '@utils/colorTheme';
 import BarWrapper from '@common/BarWrapper';
-import BaseComponentProps from '@common/BaseComponentInterface';
 
 const BarLabels = ({ elements }: {elements: [number, string][]}) => {
     let prefixSum = 0;
@@ -44,10 +43,11 @@ const BarLabels = ({ elements }: {elements: [number, string][]}) => {
     );
 };
 
-export interface CategoryBarProps extends BaseComponentProps {
+export interface CategoryBarProps {
     categories: [number, string][],
     percentageValue?: number,
     showLabels?: boolean,
+    marginTop?: string,
 }
 
 const CategoryBar = ({

@@ -1,17 +1,16 @@
 import React from 'react';
 
-import BaseComponentProps from '@common/BaseComponentInterface';
-
 import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
 import BarWrapper from '@common/BarWrapper';
 import { BaseColors } from '@utils/objects';
 import { colors } from './mappings';
 
-export interface RangeBarProps extends BaseComponentProps {
+export interface RangeBarProps {
     percentageValue: number,
     minRangeValue: number,
     maxRangeValue: number,
     color?: string,
+    marginTop?: string,
 }
 
 const RangeBar = ({
