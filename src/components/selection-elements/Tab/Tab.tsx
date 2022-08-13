@@ -36,7 +36,7 @@ const Tab = ({
             <button
                 className={ classNames(
                     privateProps!.isActive ? activeClassNames : inActiveClassNames,
-                    'flex whitespace-nowrap font-normal py-2 px-1 -mb-px text-sm group max-w-xs',
+                    'flex whitespace-nowrap font-medium py-2 px-1 -mb-px text-sm group max-w-xs',
                 ) }
                 value={ value }
                 onClick={ () => privateProps!.setSelectedTab!(value) }
