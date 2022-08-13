@@ -3,15 +3,15 @@ import React from 'react';
 import { badgeProportionsTextOnly, badgeProportionsWithIcon, iconProportions } from './mappings';
 import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
 import BadgeWrapper from '@common/BadgeWrapper';
-import BaseComponentProps from '@common/BaseComponentInterface';
 import { Sizes } from '@utils/objects';
 import { colors } from './mappings';
 
-export interface BadgeIconTextProps extends BaseComponentProps {
+export interface BadgeIconTextProps {
     text: string,
     color?: string,
     size?: string,
-    Icon?: React.ElementType
+    Icon?: React.ElementType,
+    marginTop?: string,
 }
 
 const Badge = ({

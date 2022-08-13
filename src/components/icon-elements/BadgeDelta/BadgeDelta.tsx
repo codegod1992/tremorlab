@@ -11,14 +11,14 @@ import {
 } from './mappings';
 import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
 import BadgeWrapper from '@common/BadgeWrapper';
-import BaseComponentProps from '@common/BaseComponentInterface';
 import { mapInputsToDeltaType } from '@utils/utils';
 
-export interface BadgeDeltaProps extends BaseComponentProps {
+export interface BadgeDeltaProps {
     text?: string,
     deltaType: string,
     isIncreasePositive?: boolean,
-    size?: string
+    size?: string,
+    marginTop?: string,
 }
 
 const BadgeDelta = ({

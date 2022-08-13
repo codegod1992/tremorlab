@@ -3,7 +3,6 @@ import React from 'react';
 import { BaseColors, Sizes } from '@utils/objects';
 import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
 import { colorMapping, proportinsMapping, shapeMapping } from './mappings';
-import BaseComponentProps from '@common/BaseComponentInterface';
 import IconWrapper from './IconWrapper';
 
 export const IconVariants = {
@@ -14,12 +13,13 @@ export const IconVariants = {
     Outlined: 'outlined'
 };
 
-export interface IconProps extends BaseComponentProps {
+export interface IconProps {
     Icon: React.ElementType,
     variant?: string,
     info?: string,
-    size?: string
-    color?: string
+    size?: string,
+    color?: string,
+    marginTop?: string,
 }
 
 const Icon = ({

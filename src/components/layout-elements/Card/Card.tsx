@@ -1,6 +1,5 @@
 import React from 'react';
 
-import BaseComponentProps from '@common/BaseComponentInterface';
 import { colors } from './mappings';
 
 import { 
@@ -13,12 +12,13 @@ import {
 import { BaseColors } from '@utils/objects';
 import { defaultColors } from '@utils/colorTheme';
 
-export interface CardProps extends BaseComponentProps {
+export interface CardProps {
     hFull?: boolean,
     maxWidth?: string,
     shadow?: boolean,
     decoration?: string,
     decorationColor?: string,
+    marginTop?: string,
     children: React.ReactNode
 }
 
