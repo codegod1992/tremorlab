@@ -6,15 +6,15 @@ import {
     parseMarginTopClassNames,
 } from '@utils/classname-utils';
 import { BaseColors } from '@utils/objects';
-import BaseComponentProps from '@common/BaseComponentInterface';
 import { colors } from './mappings';
 
-export interface CallOutProps extends BaseComponentProps {
+export interface CallOutProps {
     title: string,
     text: string,
     Icon?: React.ElementType,
     color?: string,
     fixedHeight?: string,
+    marginTop?: string,
 }
 
 const CallOut = ({

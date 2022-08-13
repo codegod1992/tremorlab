@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
-import BaseComponentProps from '@common/BaseComponentInterface';
 import { defaultColors } from '@utils/colorTheme';
 
-export interface LightProps extends BaseComponentProps {
-    children: React.ReactNode
+export interface LightProps {
+    marginTop?: string,
+    children: React.ReactNode,
 }
 
 const Light = ({

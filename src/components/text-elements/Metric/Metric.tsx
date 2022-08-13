@@ -1,7 +1,5 @@
 import React from 'react';
 
-import BaseComponentProps from '@common/BaseComponentInterface';
-
 import {
     classNames,
     parseMarginTopClassNames,
@@ -9,8 +7,9 @@ import {
 import { BaseColors } from '@utils/objects'; 
 import { colors } from './mappings';
 
-export interface MetricProps extends BaseComponentProps {
+export interface MetricProps {
     color?: string,
+    marginTop?: string,
     children: React.ReactNode,
 }
 
