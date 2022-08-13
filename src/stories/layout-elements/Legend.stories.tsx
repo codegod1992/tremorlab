@@ -12,7 +12,7 @@ export default {
   
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Legend> = (args) => (
-    <Card maxWidth='max-w-md'>
+    <Card maxWidth="max-w-md">
         <Legend {...args}>
         
         </Legend>
@@ -22,7 +22,12 @@ const Template: ComponentStory<typeof Legend> = (args) => (
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
-    children: null
+    items: [
+        { name: 'Critical', color: 'rose' },
+        { name: 'This is a very long catergory name to test an edge case', color: 'blue' },
+        { name: 'Category C', color: 'emerald' },
+        { name: 'Category D', color: 'yellow' },
+    ]
 };
 
 
