@@ -2,13 +2,37 @@ import React from 'react';
 
 import { 
     classNames,
-    parseFixedHeightClassNames,
+    getColorVariantsFromColorThemeValue,
 } from '@utils/classname-utils';
+import colorTheme, { defaultColors } from '@utils/colorTheme';
 
 export interface LegendItemProps {
     name: string,
     color: string,
 }
+
+const LegendItem = ({
+    name,
+    color,
+}: LegendItemProps) => (
+    <div className={ classNames(
+        'mx-2 inline-flex items-center text-sm font-normal whitespace-nowrap',
+        getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
+    ) }
+    >
+        <svg
+            className={ classNames(
+                '-ml-1 mr-1.5 h-2 w-2 flex-none',
+                getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor,
+            ) }
+            fill="currentColor"
+            viewBox="0 0 8 8"
+        >
+            <circle cx={4} cy={4} r={3} />
+        </svg>
+        { name }
+    </div>
+);
 
 export interface LegendProps {
     items: LegendItemProps[],
@@ -22,30 +46,9 @@ const Legend = ({
         <>
             <div className="flow-root">
                 <div className="-mx-1 flex flex-wrap overflow-hidden truncate">
-                    <div className="mx-2 inline-flex items-center text-sm font-normal text-gray-500 whitespace-nowrap">
-                        <svg className="-ml-1 mr-1.5 h-2 w-2 text-rose-500 flex-none" fill="currentColor" viewBox="0 0 8 8">
-                            <circle cx={4} cy={4} r={3} />
-                        </svg>
-                        Critical
-                    </div>
-                    <div className="mx-2 inline-flex items-center text-sm font-normal text-gray-500 whitespace-nowrap">
-                        <svg className="-ml-1 mr-1.5 h-2 w-2 text-rose-500 flex-none" fill="currentColor" viewBox="0 0 8 8">
-                            <circle cx={4} cy={4} r={3} />
-                        </svg>
-                        Critical
-                    </div>
-                    <div className="mx-2 inline-flex items-center text-sm font-normal text-gray-500 whitespace-nowrap">
-                        <svg className="-ml-1 mr-1.5 h-2 w-2 text-rose-500 flex-none" fill="currentColor" viewBox="0 0 8 8">
-                            <circle cx={4} cy={4} r={3} />
-                        </svg>
-                        This is a edge case. This is a long edge case for  dd ddddddd
-                    </div>
-                    <div className="mx-2 inline-flex items-center text-sm font-normal text-gray-500 whitespace-nowrap">
-                        <svg className="-ml-1 mr-1.5 h-2 w-2 text-rose-500 flex-none" fill="currentColor" viewBox="0 0 8 8">
-                            <circle cx={4} cy={4} r={3} />
-                        </svg>
-                        This is a 
-                    </div>
+                    { items.map((item, idx) => (
+                        <LegendItem key={ `item-${idx}` } name={ item.name } color={ item.color } />
+                    )) }
                 </div>
             </div>
         </>
