@@ -13,7 +13,7 @@ export default {
 } as ComponentMeta<typeof SelectBox>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Template: ComponentStory<typeof SelectBox> = (args) => (
+const Template: ComponentStory<typeof SelectBox> = () => (
     <>
         <SelectBox handleSelect={ (value) => console.log('the new value is', value) } defaultValue={ 1 }>
             <SelectBoxItem  value={1} name="Option One ABCSASDASDASDASASDASDASDSASDASABCSASDASDASDASASDASDASDSASDAS" />

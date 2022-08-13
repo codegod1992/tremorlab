@@ -12,7 +12,7 @@ export default {
 } as ComponentMeta<typeof MultiSelectBox>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Template: ComponentStory<typeof MultiSelectBox> = (args) => (
+const Template: ComponentStory<typeof MultiSelectBox> = () => (
     <MultiSelectBox>
         <MultiSelectBoxItem name="Option 1 ABCSASDASDASDASASDASDASDSASDASABCSASDASDASDASASDASDASDSASDAS" value={ 1 } />
         <MultiSelectBoxItem name="Option 2" value={ 2 } />

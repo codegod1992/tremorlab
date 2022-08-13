@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import Flex from 'components/layout-elements/Flex/Flex';
 import List from 'components/list-elements/List/List';
 import ListItem from 'components/list-elements/List/ListItem';
 

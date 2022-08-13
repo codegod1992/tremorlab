@@ -14,7 +14,7 @@ export default {
 } as ComponentMeta<typeof Dropdown>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Template: ComponentStory<typeof Dropdown> = (args) => (
+const Template: ComponentStory<typeof Dropdown> = () => (
     <Card>
         <Dropdown handleSelect={ (value) => console.log('The selected value is', value) }>
             <DropdownItem value={ 5 } name={ 'Five' } Icon={ CalendarIcon } shortcut={ 'F' } />

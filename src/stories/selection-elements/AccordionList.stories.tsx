@@ -14,7 +14,7 @@ export default {
 } as ComponentMeta<typeof AccordionList>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Template: ComponentStory<typeof AccordionList> = (args) => (
+const Template: ComponentStory<typeof AccordionList> = () => (
     <AccordionList>
         <Accordion>
             <AccordionHeader>Hello</AccordionHeader>
