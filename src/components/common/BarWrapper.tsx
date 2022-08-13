@@ -1,14 +1,13 @@
 import React from 'react';
 
-import BaseComponentProps from '@common/BaseComponentInterface';
-
 import { classNames } from '@utils/classname-utils';
 
-export interface BarWrapperProps extends BaseComponentProps {
+export interface BarWrapperProps {
     bgColor?: string,
     gap?: boolean,
     overflowHidden?: boolean,
     justifyContent?: string,
+    marginTop?: string,
     children: React.ReactNode
 }
 

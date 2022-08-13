@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
-import BaseComponentProps from '@common/BaseComponentInterface';
 
-export interface TrackingProps extends BaseComponentProps {
+export interface TrackingProps {
+    marginTop?: string,
     children: React.ReactNode
 }
 

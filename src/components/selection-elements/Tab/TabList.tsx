@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 
-import BaseComponentProps from '@common/BaseComponentInterface';
-
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
 import { BaseColors } from '@utils/objects';
 import { defaultColors } from '@utils/colorTheme';
 
-export interface TabListProps extends BaseComponentProps {
+export interface TabListProps {
     defaultValue?: any,
     color?: string,
     handleSelect?: { (value: any): void },
+    marginTop?: string,
     children: React.ReactElement[]
 }
 

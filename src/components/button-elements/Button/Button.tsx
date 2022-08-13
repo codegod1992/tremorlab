@@ -9,10 +9,9 @@ import {
     iconRightProportions
 } from 'components/button-elements/Button/mappings';
 import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
-import BaseComponentProps from '@common/BaseComponentInterface';
 import ButtonWrapper from '@common/ButtonWrapper';
 
-export interface ButtonProps extends BaseComponentProps {
+export interface ButtonProps {
     text: string,
     Icon?: React.ElementType,
     iconPosition?: string,
@@ -21,6 +20,7 @@ export interface ButtonProps extends BaseComponentProps {
     color?: string,
     importance?: string,
     handleClick?: { (): void },
+    marginTop?: string,
 }
 
 const Button = ({

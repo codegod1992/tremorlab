@@ -1,17 +1,16 @@
 import React from 'react';
 
-import BaseComponentProps from '@common/BaseComponentInterface';
-
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
 import BarWrapper from '@common/BarWrapper';
 import { BaseColors } from '@utils/objects';
 import { colors } from './mappings';
 import { defaultColors } from '@utils/colorTheme';
 
-export interface ProgressBarProps extends BaseComponentProps {
+export interface ProgressBarProps {
     percentageValue: number,
     label?: string,
     color?: string,
+    marginTop?: string,
 }
 
 const ProgressBar = ({

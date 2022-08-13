@@ -1,7 +1,5 @@
 import React from 'react';
 
-import BaseComponentProps from '@common/BaseComponentInterface';
-
 import { 
     classNames,
     parseAlignItemsClassNames,
@@ -10,11 +8,12 @@ import {
     parseSpaceXClassNames,
 } from '@utils/classname-utils';
 
-export interface FlexProps extends BaseComponentProps {
+export interface FlexProps {
     justifyContent?: string,
     alignItems?: string,
     spaceX?: string,
     truncate?: boolean,
+    marginTop?: string,
     children: React.ReactNode,
 }
 

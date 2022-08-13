@@ -3,7 +3,6 @@ import React from 'react';
 import { ValueFormater, defaultValueFormater } from '@utils/utils';
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
 import { BaseColors } from '@utils/objects';
-import BaseComponentProps from '@common/BaseComponentInterface';
 import colorTheme from '@utils/colorTheme';
 
 
@@ -21,10 +20,11 @@ const getWidthsFromValues = (data: TextBarData[]) => {
     return data.map(item => (item.value / maxValue) * 100);
 };
 
-export interface TextBarProps extends BaseComponentProps {
+export interface TextBarProps {
     data: TextBarData[],
     valueFormater?: ValueFormater,
     color?: string,
+    marginTop?: string,
 }
 
 const TextBar = ({

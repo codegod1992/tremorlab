@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 
-import BaseComponentProps from '@common/BaseComponentInterface';
-
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
 import { defaultColors } from '@utils/colorTheme';
 
-export interface AccordionProps extends BaseComponentProps {
+export interface AccordionProps {
     shadow?: boolean,
     expanded?: boolean,
+    marginTop?: string,
     privateProps?: {
         shapeClassNames: string,
     },

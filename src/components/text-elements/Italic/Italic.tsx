@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
-import BaseComponentProps from '@common/BaseComponentInterface';
 import { defaultColors } from '@utils/colorTheme';
 
-export interface ItalicProps extends BaseComponentProps {
+export interface ItalicProps {
+    marginTop?: string,
     children: React.ReactNode;
 }
 

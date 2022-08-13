@@ -1,7 +1,5 @@
 import React from 'react';
 
-import BaseComponentProps from '@common/BaseComponentInterface';
-
 import { 
     classNames,
     getColorVariantsFromColorThemeValue,
@@ -13,12 +11,13 @@ import {
 import { BaseColors } from '@utils/objects';
 import colorTheme from '@utils/colorTheme';
 
-export interface TextProps extends BaseComponentProps {
+export interface TextProps {
     color?: string,
     textAlignment?: string,
     truncate?: boolean,
     fixedHeight?: string,
-    children: React.ReactNode
+    marginTop?: string,
+    children: React.ReactNode,
 }
 
 const Text = ({

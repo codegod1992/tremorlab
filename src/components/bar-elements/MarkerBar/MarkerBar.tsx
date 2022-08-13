@@ -1,15 +1,14 @@
 import React from 'react';
 
-import BaseComponentProps from '@common/BaseComponentInterface';
-
 import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
 import BarWrapper from '@common/BarWrapper';
 import { BaseColors } from '@utils/objects';
 import { colors } from './mappings';
 
-export interface MarkerBarProps extends BaseComponentProps {
+export interface MarkerBarProps {
     percentageValue: number,
     color?: string,
+    marginTop?: string,
 }
 
 const MarkerBar = ({

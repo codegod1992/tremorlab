@@ -1,7 +1,5 @@
 import React from 'react';
 
-import BaseComponentProps from '@common/BaseComponentInterface';
-
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
 import BarWrapper from '@common/BarWrapper';
 import { DeltaTypes } from '@utils/objects';
@@ -13,10 +11,11 @@ const getDeltaType = (value: number) => (
     value >= 0 ? DeltaTypes.Increase : DeltaTypes.Decrease
 );
 
-export interface DeltaBarProps extends BaseComponentProps {
+export interface DeltaBarProps {
     percentageValue: number,
     isIncreasePositive?: boolean,
-    markerBgColor?: string
+    markerBgColor?: string,
+    marginTop?: string,
 }
 
 const DeltaBar = ({

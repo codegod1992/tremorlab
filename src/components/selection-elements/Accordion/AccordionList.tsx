@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
-import BaseComponentProps from '@common/BaseComponentInterface';
 
-export interface AccordionListProps extends BaseComponentProps {
+export interface AccordionListProps {
     shadow?: boolean,
+    marginTop?: string,
     children: React.ReactElement[],
 }
 

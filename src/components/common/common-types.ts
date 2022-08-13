@@ -33,6 +33,10 @@ export type ButtonColorTypes = {
     focusRingColor: string,
 }
 
+export interface BaseComponentProps {
+    marginTop?: string,
+}
+
 export interface ChartProps {
     data: any[],
     categories: string[],
