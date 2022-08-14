@@ -30,7 +30,7 @@ const TabList = ({
         <ol aria-label="Tabs" className={ classNames(
             getColorVariantsFromColorThemeValue(defaultColors.lightBorder).borderColor,
             parseMarginTopClassNames(marginTop),
-            'border-b -mb-px flex justify-start space-x-4 overflow-hidden'
+            'border-b flex justify-start space-x-4 overflow-x-clip'
         ) }>
             { React.Children.map(children, (child) => (
                 React.cloneElement(child, {
