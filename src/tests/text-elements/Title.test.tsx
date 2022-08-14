@@ -3,10 +3,12 @@ import { render } from '@testing-library/react';
 
 import Title from 'components/text-elements/Title';
 
-describe('Title', () => {
-    test('renders the Title component', () => {
+describe('Title Default', () => {
+    test('renders the Title component with default props', () => {
         render(
-            <Title text="Title" />
+            <Title>
+                Subtitle
+            </Title>
         );
     });
 });

@@ -1,25 +1,64 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Table from 'components/list-elements/Table';
-import TableCell from 'components/list-elements/TableCell';
-import TableRow from 'components/list-elements/TableRow';
-import Text from 'components/text-elements/Text';
+import Table from 'components/list-elements/Table/Table';
+import TableBody from 'components/list-elements/Table/TableBody';
+import TableCell from 'components/list-elements/Table/TableCell';
+import TableHead from 'components/list-elements/Table/TableHead';
+import TableHeaderCell from 'components/list-elements/Table/TableHeaderCell';
+import TableRow from 'components/list-elements/Table/TableRow';
 
-describe('Table', () => {
-    test('renders the Table component', () => {
+
+describe('List Default', () => {
+    test('renders the List component with default props', () => {
         render(
             <Table>
-                <TableRow>
-                    <TableCell>
-                        <Text>Hello</Text>
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell>
-                        <Text>World</Text>
-                    </TableCell>
-                </TableRow>
+                <TableHead>
+                    <TableRow>
+                        <TableHeaderCell>
+                            Name
+                        </TableHeaderCell>
+                        <TableHeaderCell>
+                            Sales ($)
+                        </TableHeaderCell>
+                        <TableHeaderCell>
+                            Region 
+                        </TableHeaderCell>
+                        <TableHeaderCell>
+                            Working Hours (h) 
+                        </TableHeaderCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    <TableRow>
+                        <TableCell>
+                            Peter Doe
+                        </TableCell>
+                        <TableCell>
+                            1.000.000
+                        </TableCell>
+                        <TableCell>
+                            Region A
+                        </TableCell>
+                        <TableCell textAlignment="text-right">
+                            211
+                        </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>
+                            Peter Doe
+                        </TableCell>
+                        <TableCell>
+                            1.000.000
+                        </TableCell>
+                        <TableCell>
+                            Region A
+                        </TableCell>
+                        <TableCell textAlignment="text-right">
+                            211
+                        </TableCell>
+                    </TableRow>
+                </TableBody>
             </Table>
         );
     });

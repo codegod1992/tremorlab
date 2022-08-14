@@ -1,21 +1,20 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import List from 'components/list-elements/List';
-import ListItem from 'components/list-elements/ListItem';
-import ListValue from 'components/list-elements/ListValue';
+import List from 'components/list-elements/List/List';
+import ListItem from 'components/list-elements/List/ListItem';
 
-describe('List', () => {
-    test('renders the List component', () => {
+describe('List Default', () => {
+    test('renders the List component with default props', () => {
         render(
             <List>
                 <ListItem>
-                    <ListValue primary="Hello World" />
-                    <ListValue primary="Hello World" />
+                    <div>Hello</div>
+                    <div>World</div>
                 </ListItem>
                 <ListItem>
-                    <ListValue primary="Hello World" />
-                    <ListValue primary="Hello World" />
+                    <div>Hello</div>
+                    <div>World</div>
                 </ListItem>
             </List>
         );
