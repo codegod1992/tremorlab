@@ -49,12 +49,12 @@ const Card = ({
 }: CardProps) => {
     return(
         <div className={ classNames(
+            'relative mx-auto text-left rounded-lg p-6 w-full',
             parseHFullOption(hFull),
             parseMaxWidthClassNames(maxWidth),
             getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
             parseMarginTopClassNames(marginTop),
-            'relative mx-auto text-left rounded-lg p-6',
-            maxWidth ? parseMaxWidthClassNames(maxWidth) : 'w-full',
+            parseMaxWidthClassNames(maxWidth),
             shadow ? 'shadow' : '',
             colors[decorationColor].borderColor,
             parseDecorationAlignment(decoration),
