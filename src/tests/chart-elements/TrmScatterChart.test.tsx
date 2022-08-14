@@ -53,9 +53,11 @@ describe('TrmScatterChart Default', () => {
     test('renders the TrmScatterChart component with default props', () => {
         render(
             <TrmScatterChart
-                height={300}
                 data={data}
                 categories={[ 'A' ]}
+                attributeX="Weight"
+                attributeY="Height"
+                scoreAttribute="Score"
             />
         );
     });

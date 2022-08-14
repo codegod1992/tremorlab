@@ -39,7 +39,6 @@ describe('TrmBarChart Default', () => {
     test('renders the TrmBarChart component with default props', () => {
         render(
             <TrmBarChart
-                height={300}
                 data={data}
                 categories={[ 'Sales' ]}
             />

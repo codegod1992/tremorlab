@@ -108,7 +108,7 @@ const TrmLineChart = ({
                     ) : null }
                     { categories.map((category, idx) => (
                         <Line
-                            key={ `item-${idx}` }
+                            key={ category }
                             name={ category }
                             type="linear"
                             dataKey={ category }

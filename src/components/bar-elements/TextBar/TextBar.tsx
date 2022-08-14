@@ -45,6 +45,7 @@ const TextBar = ({
             <div className="relative w-full">
                 { data.map((item, idx) => (
                     <div
+                        key={ item.value }
                         className={ classNames(
                             rowHeight,
                             getColorVariantsFromColorThemeValue(colorTheme[color].lightBackground).bgColor,
@@ -60,10 +61,12 @@ const TextBar = ({
             </div>
             <div className="text-right min-w-min">
                 { data.map((item) => (
-                    <div className={ classNames(
-                        rowHeight,
-                        'flex justify-end items-center mb-2 text-gray-700',
-                    ) }
+                    <div
+                        key={ item.value }
+                        className={ classNames(
+                            rowHeight,
+                            'flex justify-end items-center mb-2 text-gray-700',
+                        ) }
                     >
                         { valueFormater(item.value) }
                     </div>

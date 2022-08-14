@@ -109,7 +109,7 @@ const TrmAreaChart = ({
                 ) : null }
                 { categories.map((category, idx) => (
                     <>
-                        <defs key={ `gradient-def-${idx}` }>
+                        <defs key={ category }>
                             <linearGradient id={ colors[idx] } x1="0" y1="0" x2="0" y2="1">
                                 <stop
                                     offset="5%"

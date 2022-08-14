@@ -39,7 +39,6 @@ describe('TrmAreaChart Default', () => {
     test('renders the TrmAreaChart component with default props', () => {
         render(
             <TrmAreaChart
-                height={300}
                 data={data}
                 categories={[ 'Sales' ]}
             />

@@ -177,6 +177,7 @@ const TrmScatterChart = ({
 
                     { data.map((dataset, idx) => (
                         <Scatter
+                            key={ idx }
                             name={ categories[idx] }
                             data={ dataset }
                             fill={ getHexFromColorThemeValue(colorTheme[colors[idx]].background) }

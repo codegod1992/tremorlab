@@ -22,7 +22,6 @@ const AccordionList = ({
             shadow ? 'shadow' : '',
         ) }>
             { React.Children.map(children, (child, idx) => {
-                console.log(child.props.className);
                 if (idx === 0) {
                     return (
                         <>
