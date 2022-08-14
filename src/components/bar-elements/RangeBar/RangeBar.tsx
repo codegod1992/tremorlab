@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
+import colorTheme, { defaultColors } from '@utils/colorTheme';
 import BarWrapper from '@common/BarWrapper';
 import { BaseColors } from '@utils/objects';
-import { colors } from './mappings';
 
 export interface RangeBarProps {
     percentageValue: number,
@@ -22,13 +22,13 @@ const RangeBar = ({
 }: RangeBarProps) => {
     return(
         <BarWrapper
-            bgColor={ colors[color].secondaryBgColor }
+            bgColor={ getColorVariantsFromColorThemeValue(defaultColors.lightBackground).bgColor }
             marginTop={ parseMarginTopClassNames(marginTop) } 
         >
             <div className="h-full bg-transparent" style={ {'width': `${minRangeValue}%`} } />
             <div
                 className={ classNames(
-                    colors[color].primaryBgColor,
+                    getColorVariantsFromColorThemeValue(defaultColors.darkBackground).bgColor,
                     'h-full rounded-full'
                 ) }
                 style={ {'width': `${maxRangeValue - minRangeValue}%`} } 
@@ -38,7 +38,7 @@ const RangeBar = ({
                 style={ {'width': `${percentageValue}%`} }
             >
                 <div className={ classNames(
-                    colors[color].markerBgColor,
+                    getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor,
                     'h-4 w-1 rounded-full ring-2 ring-white flex-none'
                 ) }
                 />
