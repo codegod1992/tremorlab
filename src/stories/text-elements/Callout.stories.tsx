@@ -25,7 +25,6 @@ const Template: ComponentStory<typeof Callout> = (args) => (
 );
   
 export const Default = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
     title: 'Performance Metric',
     text: 'You are outranking 83% of the sales representatives in your cohort. Sit repellendus qui ut at blanditis \
