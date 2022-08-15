@@ -6,7 +6,7 @@ import Legend from 'components/text-elements/Legend/Legend';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/LayoutElements/Legend',
+    title: 'Tremor/TextElements/Legend',
     component: Legend,
 } as ComponentMeta<typeof Legend>;
   
