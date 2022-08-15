@@ -156,7 +156,7 @@ const TrmBarChart = ({
                 {
                     categories.map((category, idx) => (
                         <Bar
-                            key={ `item-${idx}` }
+                            key={ category }
                             name={ category }
                             type="linear"
                             stackId={ stack || relative ? 'a' : undefined }

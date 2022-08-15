@@ -1,14 +1,19 @@
 import React from 'react';
 
-import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
+import 'tippy.js/dist/tippy.css';
+import Tooltip from '@tippyjs/react';
+
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
+import colorTheme, { defaultColors } from '@utils/colorTheme';
 import BarWrapper from '@common/BarWrapper';
 import { BaseColors } from '@utils/objects';
-import { colors } from './mappings';
 
 export interface RangeBarProps {
     percentageValue: number,
     minRangeValue: number,
     maxRangeValue: number,
+    markerTooltip?: string,
+    rangeTooltip?: string,
     color?: string,
     marginTop?: string,
 }
@@ -17,32 +22,46 @@ const RangeBar = ({
     percentageValue,
     minRangeValue,
     maxRangeValue,
+    markerTooltip,
+    rangeTooltip,
     color = BaseColors.Blue,
     marginTop,
 }: RangeBarProps) => {
     return(
         <BarWrapper
-            bgColor={ colors[color].secondaryBgColor }
+            bgColor={ getColorVariantsFromColorThemeValue(defaultColors.lightBackground).bgColor }
             marginTop={ parseMarginTopClassNames(marginTop) } 
         >
-            <div className="h-full bg-transparent" style={ {'width': `${minRangeValue}%`} } />
-            <div
-                className={ classNames(
-                    colors[color].primaryBgColor,
-                    'h-full rounded-full'
-                ) }
-                style={ {'width': `${maxRangeValue - minRangeValue}%`} } 
-            />
-            <div 
+            <Tooltip content={ rangeTooltip } className={ rangeTooltip ? '' : 'hidden' }>
+                <div
+                    className={ classNames(
+                        getColorVariantsFromColorThemeValue(defaultColors.darkBackground).bgColor,
+                        'absolute h-full rounded-full'
+                    ) }
+                    style={ {'left': `${minRangeValue}%`, 'width': `${maxRangeValue - minRangeValue}%`} } 
+                />
+            </Tooltip>
+            <div className="absolute" style={ { 'left': `${percentageValue}%` } }>
+                <Tooltip content={ markerTooltip } className={ markerTooltip ? '' : 'hidden' }>
+                    <div
+                        className={ classNames(
+                            'h-4 w-1 rounded-lg ring-2 ring-white',
+                            'right-1/2 -translate-x-1/2',
+                            getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor,
+                        ) }
+                    />
+                </Tooltip>
+            </div>
+            {/* <div 
                 className="absolute inset-0 flex justify-end items-center"
                 style={ {'width': `${percentageValue}%`} }
             >
                 <div className={ classNames(
-                    colors[color].markerBgColor,
+                    getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor,
                     'h-4 w-1 rounded-full ring-2 ring-white flex-none'
                 ) }
                 />
-            </div>
+            </div> */}
         </BarWrapper>
     );
 };

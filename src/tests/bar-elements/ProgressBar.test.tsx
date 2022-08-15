@@ -4,10 +4,12 @@ import { render } from '@testing-library/react';
 
 import ProgressBar from 'components/bar-elements/ProgressBar';
 
-describe('ProgressBar', () => {
-    test('renders the ProgressBar component', () => {
+describe('ProgressBar Default', () => {
+    test('renders the ProgressBar component with default props', () => {
         render(
-            <ProgressBar widthPercentage={50} />
+            <ProgressBar
+                percentageValue={50}
+            />
         );
     });
 });

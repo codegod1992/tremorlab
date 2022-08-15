@@ -35,6 +35,7 @@ export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
     percentageValue: 50,
+    tooltip: '50%',
     marginTop: 'mt-5',
     label: 'helloasjdakshgdkjhags akjhsgdkhjagsdjhakg'
 };

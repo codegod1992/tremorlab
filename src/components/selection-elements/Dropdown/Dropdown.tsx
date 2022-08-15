@@ -43,10 +43,12 @@ const Dropwdown = ({
     const shortcutMapping: ShortcutMapping = {};
     const consturctShortcutMapping = () => {
         React.Children.map(children, (child) => {
-            shortcutMapping[child.props.shortcut.toLowerCase()] = {
-                value: child.props.value,
-                name: child.props.name,
-            };
+            if (child.props.shortcut) {
+                shortcutMapping[child.props.shortcut.toLowerCase()] = {
+                    value: child.props.value,
+                    name: child.props.name,
+                };
+            }
         });
     };
 

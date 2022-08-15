@@ -7,7 +7,7 @@ import { classNames } from '@utils/classname-utils';
 
 export interface IconWrapperProps {
     Icon: React.ElementType,
-    info?: string,
+    tooltip?: string,
     iconSize: string,
     paddingX: string,
     paddingY: string,
@@ -23,7 +23,7 @@ export interface IconWrapperProps {
 
 const IconWrapper = (props: IconWrapperProps) => {
     return(
-        <Tooltip content={ props.info } className={ props.info ? '' : 'hidden' }>
+        <Tooltip content={ props.tooltip } className={ props.tooltip ? '' : 'hidden' }>
             <div 
                 className={ classNames(
                     props.paddingX,

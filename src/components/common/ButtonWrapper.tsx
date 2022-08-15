@@ -8,13 +8,13 @@ import { classNames } from '@utils/classname-utils';
 
 export interface ButtonWrapperProps extends ButtonProportionTypes, ButtonShapeTypes, ButtonColorTypes {
     onClick?: { (): void },
-    info?: string,
+    tooltip?: string,
     children: React.ReactNode
 }
 
 const ButtonWrapper = ({
     onClick,
-    info,
+    tooltip,
     paddingX,
     paddingY,
     textSize,
@@ -31,7 +31,7 @@ const ButtonWrapper = ({
     children
 }: ButtonWrapperProps) => {
     return(
-        <Tooltip content={ info } className={ info ? '' : 'hidden' }>
+        <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
             <button onClick={ onClick } className={ classNames(
                 paddingX,
                 paddingY,

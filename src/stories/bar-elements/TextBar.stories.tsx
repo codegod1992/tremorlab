@@ -1,7 +1,8 @@
 import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { TextBar } from 'components';
+
+import { Card, TextBar } from 'components';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -11,9 +12,9 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
 const Template: ComponentStory<typeof TextBar> = (args) => (
-    <>
+    <Card>
         <TextBar data={ args.data } />
-    </>
+    </Card>
 );
   
 export const Default = Template.bind({});
