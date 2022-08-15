@@ -2,7 +2,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import ProgressBar from 'components/bar-elements/ProgressBar';
+import ProgressBar from 'components/vis-elements/ProgressBar';
 
 describe('ProgressBar Default', () => {
     test('renders the ProgressBar component with default props', () => {
