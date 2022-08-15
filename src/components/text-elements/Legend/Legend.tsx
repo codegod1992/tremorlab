@@ -15,7 +15,7 @@ const LegendItem = ({
     name,
     color,
 }: LegendItemProps) => (
-    <div className={ classNames(
+    <li className={ classNames(
         'inline-flex items-center truncate mr-2.5',
         getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
     ) }
@@ -31,7 +31,7 @@ const LegendItem = ({
             <circle cx={4} cy={4} r={4} />
         </svg>
         <p className="text-sm font-normal whitespace-nowrap truncate">{ name }</p>
-    </div>
+    </li>
 );
 
 
@@ -40,17 +40,16 @@ export interface LegendProps {
 }
 
 const Legend = ({
-    // fixedHeight = 'h-20',
     categories,
 }: LegendProps) => {
     return(
         <>
             <div className="flow-root">
-                <div className="-mx-1 flex flex-wrap overflow-hidden truncate">
+                <ol className="-mx-1 flex flex-wrap overflow-hidden truncate">
                     { categories.map((category, idx) => (
                         <LegendItem key={ `item-${idx}` } name={ category.name } color={ category.color } />
                     )) }
-                </div>
+                </ol>
             </div>
         </>
     );
