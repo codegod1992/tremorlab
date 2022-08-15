@@ -1,6 +1,5 @@
 export { default as Bold } from './Bold';
 export { default as Italic } from './Italic';
-export { default as Light } from './Light';
 
 export { default as Metric } from './Metric';
 export { default as Subtitle } from './Subtitle';

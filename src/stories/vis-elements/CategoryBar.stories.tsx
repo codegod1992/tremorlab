@@ -1,14 +1,14 @@
 import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import CategoryBar from 'components/bar-elements/CategoryBar/CategoryBar';
+import CategoryBar from 'components/vis-elements/CategoryBar/CategoryBar';
 
 import Card from 'components/layout-elements/Card';
 import Metric from 'components/text-elements/Metric';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/BarElements/CategoryBar',
+    title: 'Tremor/VisElements/CategoryBar',
     component: CategoryBar,
 } as ComponentMeta<typeof CategoryBar>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

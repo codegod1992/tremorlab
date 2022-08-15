@@ -2,7 +2,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import CategoryBar from 'components/bar-elements/CategoryBar';
+import CategoryBar from 'components/vis-elements/CategoryBar';
 
 describe('CategoryBar Default', () => {
     test('renders the CategoryBar component with default props', () => {

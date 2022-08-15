@@ -2,12 +2,12 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import Card from 'components/layout-elements/Card';
-import DeltaBar from 'components/bar-elements/DeltaBar/DeltaBar';
+import DeltaBar from 'components/vis-elements/DeltaBar/DeltaBar';
 import Metric from 'components/text-elements/Metric';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/BarElements/DeltaBar',
+    title: 'Tremor/VisElements/DeltaBar',
     component: DeltaBar,
 } as ComponentMeta<typeof DeltaBar>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

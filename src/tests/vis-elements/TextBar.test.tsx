@@ -2,7 +2,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import TextBar from 'components/bar-elements/TextBar';
+import TextBar from 'components/vis-elements/TextBar';
 
 describe('TextBar Default', () => {
     test('renders the TextBar component with default props', () => {

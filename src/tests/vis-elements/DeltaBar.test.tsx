@@ -2,7 +2,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import DeltaBar from 'components/bar-elements/DeltaBar';
+import DeltaBar from 'components/vis-elements/DeltaBar';
 
 describe('DeltaBar Default', () => {
     test('renders the DeltaBar component with default props', () => {

@@ -2,7 +2,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import RangeBar from 'components/bar-elements/RangeBar';
+import RangeBar from 'components/vis-elements/RangeBar';
 
 describe('RangeBar Default', () => {
     test('renders the RangeBar component with default props', () => {

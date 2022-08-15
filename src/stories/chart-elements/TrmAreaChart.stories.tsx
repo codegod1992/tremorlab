@@ -13,8 +13,8 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
 const Template: ComponentStory<typeof TrmAreaChart> = (args) => (
-    <Card hFull={ true } >
-        <TrmAreaChart { ...args } />
+    <Card>
+        <TrmAreaChart { ...args } height={600} />
     </Card>
 );
   
@@ -60,5 +60,4 @@ Default.args = {
     data: data,
     categories: [ 'Sales' ],
     valueFormaterY: dataFormater,
-    showXAxis: false,
 };

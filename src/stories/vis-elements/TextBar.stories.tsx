@@ -6,7 +6,7 @@ import { Card, TextBar } from 'components';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/BarElements/TextBar',
+    title: 'Tremor/VisElements/TextBar',
     component: TextBar,
 } as ComponentMeta<typeof TextBar>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

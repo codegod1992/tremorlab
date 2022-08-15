@@ -25,8 +25,10 @@ const TrmLineChart = ({
     dataKey = 'name',
     colors = themeColorRange,
     valueFormaterY = defaultValueFormater,
+    startEndOnly = false,
     showXAxis = true,
     showYAxis = true,
+    yAxisWidth,
     showTooltip = true,
     showLegend = true,
     showGridLines = true,
@@ -60,6 +62,7 @@ const TrmLineChart = ({
                         dataKey={ dataKey }
                         interval="preserveStartEnd"
                         tick={{ transform: 'translate(0, 6)' }} //padding between labels and axis
+                        ticks={ startEndOnly ? [data[0][dataKey], data[data.length - 1][dataKey]] : undefined }
                         style={{
                             fontSize: '12px',
                             fontFamily: 'Inter; Helvetica',
@@ -69,6 +72,7 @@ const TrmLineChart = ({
                         axisLine={ false }
                     />
                     <YAxis
+                        width={ yAxisWidth }
                         hide={ !showYAxis }
                         axisLine={ false }
                         tickLine={ false }

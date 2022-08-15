@@ -54,6 +54,7 @@ const TrmScatterChart = ({
     valueFormaterZ = defaultValueFormater,
     showXAxis = true,
     showYAxis = true,
+    yAxisWidth,
     showTooltip = true,
     showLegend = true,
     showGridLines = true,
@@ -102,6 +103,7 @@ const TrmScatterChart = ({
                         tickFormatter={ valueFormaterX }
                     />
                     <YAxis
+                        width={ yAxisWidth }
                         hide={ !showYAxis }
                         dataKey={ dataKeyY }
                         name={ attributeY }

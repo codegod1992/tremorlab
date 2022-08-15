@@ -34,8 +34,10 @@ const TrmBarChart = ({
     layout = 'horizontal',
     stack = false,
     relative = false,
+    startEndOnly = false,
     showXAxis = true,
     showYAxis = true,
+    yAxisWidth,
     showTooltip = true,
     showLegend = true,
     showGridLines = true,
@@ -72,6 +74,7 @@ const TrmBarChart = ({
                         dataKey={ dataKey }
                         interval="preserveStartEnd"
                         tick={{ transform: 'translate(0, 6)' }} //padding between labels and axis
+                        ticks={ startEndOnly ? [data[0][dataKey], data[data.length - 1][dataKey]] : undefined }
                         style={{
                             fontSize: '12px',
                             fontFamily: 'Inter; Helvetica',
@@ -97,6 +100,7 @@ const TrmBarChart = ({
                 )}
                 { layout !== 'vertical' ? (
                     <YAxis
+                        width={ yAxisWidth }
                         hide={ !showYAxis }
                         axisLine={ false }
                         tickLine={ false }
@@ -111,11 +115,12 @@ const TrmBarChart = ({
                     />
                 ) : (
                     <YAxis
+                        width={ yAxisWidth }
                         hide={ !showYAxis }
                         dataKey={ dataKey }
                         axisLine={ false }
                         tickLine={ false }
-                        width={80}
+                        ticks={ startEndOnly ? [data[0][dataKey], data[data.length - 1][dataKey]] : undefined }
                         type="category"
                         interval="preserveStartEnd"
                         tick={ { transform: 'translate(10, 0)' } } 

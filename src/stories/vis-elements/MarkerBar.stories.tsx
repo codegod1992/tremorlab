@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import MarkerBar from 'components/bar-elements/MarkerBar/MarkerBar';
+import MarkerBar from 'components/vis-elements/MarkerBar/MarkerBar';
 
 import Card from 'components/layout-elements/Card';
 import Metric from 'components/text-elements/Metric';
@@ -10,7 +10,7 @@ import { BaseColors } from '@utils/objects';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/BarElements/MarkerBar',
+    title: 'Tremor/VisElements/MarkerBar',
     component: MarkerBar,
 } as ComponentMeta<typeof MarkerBar>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
