@@ -30,7 +30,7 @@ const ButtonInline = ({
         <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
             <ButtonWrapper
                 onClick={ handleClick }
-                info={ tooltip }
+                tooltip={ tooltip }
                 { ...buttonProportions[size] }
                 { ...buttonShape }
                 { ...buttonColors[color] }
