@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import Card from 'components/layout-elements/Card';
-import Legend from 'components/layout-elements/Legend/Legend';
+import Legend from 'components/text-elements/Legend/Legend';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -13,16 +13,14 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Legend> = (args) => (
     <Card maxWidth="max-w-md">
-        <Legend {...args}>
-        
-        </Legend>
+        <Legend {...args} />
     </Card>
 );
   
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
-    items: [
+    categories: [
         { name: 'Critical', color: 'rose' },
         { name: 'This is a very long catergory name to test an edge case', color: 'blue' },
         { name: 'Category C', color: 'emerald' },

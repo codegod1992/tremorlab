@@ -16,13 +16,13 @@ const LegendItem = ({
     color,
 }: LegendItemProps) => (
     <div className={ classNames(
-        'mx-2 inline-flex items-center text-sm font-normal whitespace-nowrap',
+        'inline-flex items-center truncate mr-2.5',
         getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
     ) }
     >
         <svg
             className={ classNames(
-                '-ml-1 mr-1.5 h-2 w-2 flex-none',
+                'mr-1.5 h-2 w-2 flex-none',
                 getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor,
             ) }
             fill="currentColor"
@@ -30,24 +30,24 @@ const LegendItem = ({
         >
             <circle cx={4} cy={4} r={3} />
         </svg>
-        { name }
+        <p className="text-sm font-normal whitespace-nowrap truncate">{ name }</p>
     </div>
 );
 
 export interface LegendProps {
-    items: LegendItemProps[],
+    categories: LegendItemProps[],
 }
 
 const Legend = ({
     // fixedHeight = 'h-20',
-    items,
+    categories,
 }: LegendProps) => {
     return(
         <>
             <div className="flow-root">
                 <div className="-mx-1 flex flex-wrap overflow-hidden truncate">
-                    { items.map((item, idx) => (
-                        <LegendItem key={ `item-${idx}` } name={ item.name } color={ item.color } />
+                    { categories.map((category, idx) => (
+                        <LegendItem key={ `item-${idx}` } name={ category.name } color={ category.color } />
                     )) }
                 </div>
             </div>
