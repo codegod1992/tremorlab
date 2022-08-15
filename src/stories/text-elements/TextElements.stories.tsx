@@ -4,7 +4,6 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import Bold from 'components/text-elements/Bold/Bold';
 import Italic from 'components/text-elements/Italic/Italic';
-import Light from 'components/text-elements/Light/Light';
 
 import Text from 'components/text-elements/Text/Text';
 import Title from 'components/text-elements/Title/Title';
@@ -18,7 +17,7 @@ export default {
 
 const Template: ComponentStory<typeof Text> = () => (
     <Text>
-        Text with <Bold>bold text</Bold> and <Italic>Italics Text</Italic> and <Light>Light Text</Light> 
+        Text with <Bold>bold text</Bold> and <Italic>Italics Text</Italic>
         and <Bold><Italic>Bold italics text</Italic></Bold>
     </Text>
 );
