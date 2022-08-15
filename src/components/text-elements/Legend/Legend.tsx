@@ -28,11 +28,12 @@ const LegendItem = ({
             fill="currentColor"
             viewBox="0 0 8 8"
         >
-            <circle cx={4} cy={4} r={3} />
+            <circle cx={4} cy={4} r={4} />
         </svg>
         <p className="text-sm font-normal whitespace-nowrap truncate">{ name }</p>
     </div>
 );
+
 
 export interface LegendProps {
     categories: LegendItemProps[],
