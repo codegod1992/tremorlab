@@ -18,6 +18,7 @@ export interface BadgeDeltaProps {
     deltaType: string,
     isIncreasePositive?: boolean,
     size?: string,
+    tooltip?: string,
     marginTop?: string,
 }
 
@@ -26,6 +27,7 @@ const BadgeDelta = ({
     deltaType,
     isIncreasePositive = true,
     size = 'sm',
+    tooltip,
     marginTop,
 }: BadgeDeltaProps) => {
     const Icon = deltaIcons[deltaType];
@@ -35,16 +37,17 @@ const BadgeDelta = ({
         <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
             <BadgeWrapper
                 { ...badgeProportions[size] }
+                tooltip={ tooltip }
                 bgColor={ deltaBgColors[mappedDeltaType] }
                 textColor={ deltaTextColors[mappedDeltaType] }
             >
                 <Icon className={ classNames(
                     text
-                        ? (iconProportionsWithText[size].margin || '')
-                        : (iconProportionsIconOnly[size].margin || '') ,
+                        ? (iconProportionsWithText[size]?.margin || '')
+                        : (iconProportionsIconOnly[size]?.margin || '') ,
                     text
-                        ? (iconProportionsWithText[size].iconSize || '')
-                        : (iconProportionsIconOnly[size].iconSize || '')
+                        ? (iconProportionsWithText[size]?.iconSize || '')
+                        : (iconProportionsIconOnly[size]?.iconSize || '')
                 ) }
                 />
                 { text ? text : null}

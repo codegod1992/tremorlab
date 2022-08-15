@@ -34,5 +34,7 @@ Default.args = {
     percentageValue: 50,
     minRangeValue: 25,
     maxRangeValue: 75,
+    rangeTooltip: 'Min: 25% Max: 75%',
+    markerTooltip: '50%',
     marginTop: 'mt-5'
 };

@@ -31,7 +31,7 @@ WithoutMarker.args = {
         [45, 'orange'],
         [20, 'rose'],
     ],
-    marginTop: 'mt-5'
+    marginTop: 'mt-5',
 };
 
 
@@ -45,5 +45,6 @@ WithMarker.args = {
         [25, 'rose'],
     ],
     percentageValue: 90,
+    tooltip: '90%',
     marginTop: 'mt-5' // only applies to story?
 };

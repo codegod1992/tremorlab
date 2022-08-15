@@ -16,16 +16,26 @@ export default {
 
 const Template: ComponentStory<typeof Badge> = () => (
     <>
-        { Object.values(Sizes).map(size => (
-            <>
-                <Badge size={ size } text={ 'Live' } />
-            </>
-        )) }
-        { Object.values(BaseColors).map(color => (
-            <div>
-                <Badge color={ color } text={ 'Live' } />
+        <div>
+            <p>Sizes</p>
+            <div className="flex justify-start space-x-4">
+                { Object.values(Sizes).map(size => (
+                    <>
+                        <Badge size={ size } text={ 'Live' } tooltip={ 'Tooltip' } />
+                    </>
+                )) }
             </div>
-        )) }
+        </div>
+        <div>
+            <p>Colors</p>
+            <div className="grid grid-cols-8 gap-2">
+                { Object.values(BaseColors).map(color => (
+                    <div>
+                        <Badge color={ color } text={ 'Live' } tooltip={ 'Tooltip' } />
+                    </div>
+                )) }
+            </div>
+        </div>
     </>
 );
 

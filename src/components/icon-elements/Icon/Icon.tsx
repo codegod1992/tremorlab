@@ -16,7 +16,7 @@ export const IconVariants = {
 export interface IconProps {
     Icon: React.ElementType,
     variant?: string,
-    info?: string,
+    tooltip?: string,
     size?: string,
     color?: string,
     marginTop?: string,
@@ -25,7 +25,7 @@ export interface IconProps {
 const Icon = ({
     Icon,
     variant = IconVariants.Simple,
-    info,
+    tooltip,
     size = Sizes.SM,
     color = BaseColors.Blue,
     marginTop,
@@ -34,7 +34,7 @@ const Icon = ({
         <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
             <IconWrapper
                 Icon = { Icon }
-                info={ info }
+                tooltip={ tooltip }
                 { ...colorMapping[variant][color] }
                 { ...shapeMapping[variant] }
                 { ...proportinsMapping[size] }

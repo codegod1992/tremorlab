@@ -1,5 +1,8 @@
 import React from 'react';
 
+import 'tippy.js/dist/tippy.css';
+import Tooltip from '@tippyjs/react';
+
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
 import BarWrapper from '@common/BarWrapper';
 import { DeltaTypes } from '@utils/objects';
@@ -14,13 +17,14 @@ const getDeltaType = (value: number) => (
 export interface DeltaBarProps {
     percentageValue: number,
     isIncreasePositive?: boolean,
-    markerBgColor?: string,
+    tooltip?: string,
     marginTop?: string,
 }
 
 const DeltaBar = ({
     percentageValue,
     isIncreasePositive = true,
+    tooltip,
     marginTop,
 }: DeltaBarProps) => {
     return(
@@ -31,13 +35,15 @@ const DeltaBar = ({
         >
             <div className="w-1/2 h-full flex justify-end bg-transparent rounded-l-lg">
                 { percentageValue < 0 ? (
-                    <div 
-                        className={ classNames(
-                            deltaBgColors[mapInputsToDeltaType(getDeltaType(percentageValue), isIncreasePositive)],
-                            'rounded-l-full'
-                        ) } 
-                        style={ {'width': `${Math.abs(percentageValue)}%`} } 
-                    />
+                    <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+                        <div 
+                            className={ classNames(
+                                deltaBgColors[mapInputsToDeltaType(getDeltaType(percentageValue), isIncreasePositive)],
+                                'rounded-l-full'
+                            ) } 
+                            style={ {'width': `${Math.abs(percentageValue)}%`} } 
+                        />
+                    </Tooltip>
                 ) : null}
             </div>
             <div className={ classNames(
@@ -47,13 +53,15 @@ const DeltaBar = ({
             />
             <div className="w-1/2 h-full flex justify-start bg-transparent rounded-r-lg">
                 { percentageValue >= 0 ? (
-                    <div 
-                        className={ classNames(
-                            deltaBgColors[mapInputsToDeltaType(getDeltaType(percentageValue), isIncreasePositive)],
-                            'rounded-r-full'
-                        ) } 
-                        style={ {'width': `${Math.abs(percentageValue)}%`} } 
-                    />
+                    <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+                        <div
+                            className={ classNames(
+                                deltaBgColors[mapInputsToDeltaType(getDeltaType(percentageValue), isIncreasePositive)],
+                                'rounded-r-full'
+                            ) } 
+                            style={ {'width': `${Math.abs(percentageValue)}%`} } 
+                        />
+                    </Tooltip>
                 ) : null}
             </div>
         </BarWrapper>

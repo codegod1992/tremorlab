@@ -27,7 +27,7 @@ const BarWrapper = ({
                 overflowHidden ? 'overflow-hidden' : '',
                 justifyContent,
                 marginTop,
-                'h-2 w-full relative flex rounded-lg items-center',
+                'relative h-2 w-full relative flex rounded-lg items-center',
             ) }
         >
             { children }
