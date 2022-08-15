@@ -52,16 +52,6 @@ const RangeBar = ({
                     />
                 </Tooltip>
             </div>
-            {/* <div 
-                className="absolute inset-0 flex justify-end items-center"
-                style={ {'width': `${percentageValue}%`} }
-            >
-                <div className={ classNames(
-                    getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor,
-                    'h-4 w-1 rounded-full ring-2 ring-white flex-none'
-                ) }
-                />
-            </div> */}
         </BarWrapper>
     );
 };
