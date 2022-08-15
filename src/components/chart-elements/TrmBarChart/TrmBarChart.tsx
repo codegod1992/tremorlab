@@ -34,6 +34,7 @@ const TrmBarChart = ({
     layout = 'horizontal',
     stack = false,
     relative = false,
+    startEndOnly = false,
     showXAxis = true,
     showYAxis = true,
     showTooltip = true,
@@ -72,6 +73,7 @@ const TrmBarChart = ({
                         dataKey={ dataKey }
                         interval="preserveStartEnd"
                         tick={{ transform: 'translate(0, 6)' }} //padding between labels and axis
+                        ticks={ startEndOnly ? [data[0][dataKey], data[data.length - 1][dataKey]] : undefined }
                         style={{
                             fontSize: '12px',
                             fontFamily: 'Inter; Helvetica',
@@ -115,6 +117,7 @@ const TrmBarChart = ({
                         dataKey={ dataKey }
                         axisLine={ false }
                         tickLine={ false }
+                        ticks={ startEndOnly ? [data[0][dataKey], data[data.length - 1][dataKey]] : undefined }
                         width={80}
                         type="category"
                         interval="preserveStartEnd"

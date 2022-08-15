@@ -25,6 +25,7 @@ const TrmAreaChart = ({
     dataKey = 'name',
     colors = themeColorRange,
     valueFormaterY = defaultValueFormater,
+    startEndOnly = false,
     showXAxis = true,
     showYAxis = true,
     yAxisOrientation = 'left',
@@ -59,6 +60,7 @@ const TrmAreaChart = ({
                     hide={ !showXAxis }
                     dataKey={ dataKey }
                     tick={ { transform: 'translate(0, 6)' } } //padding between labels and axis
+                    ticks={ startEndOnly ? [data[0][dataKey], data[data.length - 1][dataKey]] : undefined }
                     style={ {
                         fontSize: '12px',
                         fontFamily: 'Inter; Helvetica',

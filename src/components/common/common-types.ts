@@ -43,6 +43,7 @@ export interface ChartProps {
     dataKey?: string, 
     colors?: string[],
     valueFormaterY?: ValueFormater,
+    startEndOnly?: boolean,
     showXAxis?: boolean,
     showYAxis?: boolean,
     yAxisOrientation?: string,
