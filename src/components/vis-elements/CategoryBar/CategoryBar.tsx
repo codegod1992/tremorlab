@@ -97,7 +97,7 @@ const CategoryBar = ({
                     );
                 })}
                 { percentageValue!==undefined ? (
-                    <div className="absolute" style={ { left: `${0}%` } }>
+                    <div className="absolute" style={ { left: `${percentageValue}%` } }>
                         <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
                             <div
                                 className={ classNames(
