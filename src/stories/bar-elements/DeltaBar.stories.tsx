@@ -25,7 +25,8 @@ export const Increase = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Increase.args = {
     percentageValue: 30,
-    marginTop:'mt-5'
+    marginTop:'mt-5',
+    tooltip: '30%',
 };
 
 export const Decrease = Template.bind({});

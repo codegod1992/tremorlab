@@ -1,4 +1,9 @@
+// TODO: fix potitioning
+
 import React from 'react';
+
+import 'tippy.js/dist/tippy.css';
+import Tooltip from '@tippyjs/react';
 
 import { 
     classNames,
@@ -47,6 +52,7 @@ export interface CategoryBarProps {
     categories: [number, string][],
     percentageValue?: number,
     showLabels?: boolean,
+    tooltip?: string,
     marginTop?: string,
 }
 
@@ -54,6 +60,7 @@ const CategoryBar = ({
     categories,
     percentageValue,
     showLabels = true,
+    tooltip,
     marginTop
 }: CategoryBarProps) => {
 
@@ -90,14 +97,16 @@ const CategoryBar = ({
                     );
                 })}
                 { percentageValue!==undefined ? (
-                    <div 
-                        className="absolute inset-0 flex justify-end z-10 items-center"
-                        style={{width: `${percentageValue}%` }}
-                    >
-                        <div className={ classNames(
-                            'flex flex-none z-1 items-center bg-white  border-4 rounded-full h-4 w-4 shadow-md',
-                            parseBorderClassNames(markerBorderColor)
-                        ) } />
+                    <div className="absolute" style={ { left: `${0}%` } }>
+                        <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+                            <div
+                                className={ classNames(
+                                    'z-1 bg-white border-4 rounded-full h-4 w-4 shadow-md -translate-x-1',
+                                    parseBorderClassNames(markerBorderColor),
+                                    // 'right-1/2 -translate-x-1/2'
+                                ) }
+                            />
+                        </Tooltip>
                     </div>
                 ) : null}
             </BarWrapper>

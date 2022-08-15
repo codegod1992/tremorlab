@@ -9,16 +9,16 @@ import colorTheme from '@utils/colorTheme';
 export interface TrackingBlockProps {
     color: string,
     fixedHeight?: string,
-    info?: string
+    tooltip?: string
 }
 
 const TrackingBlock = ({
     color,
     fixedHeight = 'h-10',
-    info
+    tooltip
 }: TrackingBlockProps) => {
     return(
-        <Tooltip content={ info } className={ info ? '' : 'hidden' }>
+        <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
             <div className={ classNames(
                 getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor,
                 parseFixedHeightClassNames(fixedHeight),

@@ -11,6 +11,7 @@ export interface BadgeIconTextProps {
     color?: string,
     size?: string,
     Icon?: React.ElementType,
+    tooltip?: string,
     marginTop?: string,
 }
 
@@ -19,6 +20,7 @@ const Badge = ({
     color = 'blue',
     Icon,
     size = Sizes.SM,
+    tooltip,
     marginTop,
 }: BadgeIconTextProps) => {
     const badgeProportions = Icon ? badgeProportionsWithIcon : badgeProportionsTextOnly;
@@ -26,8 +28,9 @@ const Badge = ({
         <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
             <BadgeWrapper
                 { ...badgeProportions[size] }
-                bgColor = { colors[color].bgColor }
-                textColor = { colors[color].textColor }
+                tooltip={ tooltip }
+                bgColor={colors[color].bgColor }
+                textColor={ colors[color].textColor }
             >
                 { Icon ? (
                     <Icon className={ classNames(
@@ -36,7 +39,7 @@ const Badge = ({
                     ) }
                     />
                 ) : null }
-                { text }
+                <p>{ text }</p>
             </BadgeWrapper>
         </div>
     );
