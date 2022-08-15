@@ -46,7 +46,7 @@ export interface ChartProps {
     startEndOnly?: boolean,
     showXAxis?: boolean,
     showYAxis?: boolean,
-    yAxisOrientation?: string,
+    yAxisWidth?: number,
     showTooltip?: boolean,
     showLegend?: boolean,
     showGridLines?: boolean,

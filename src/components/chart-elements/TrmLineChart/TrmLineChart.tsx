@@ -28,6 +28,7 @@ const TrmLineChart = ({
     startEndOnly = false,
     showXAxis = true,
     showYAxis = true,
+    yAxisWidth,
     showTooltip = true,
     showLegend = true,
     showGridLines = true,
@@ -71,6 +72,7 @@ const TrmLineChart = ({
                         axisLine={ false }
                     />
                     <YAxis
+                        width={ yAxisWidth }
                         hide={ !showYAxis }
                         axisLine={ false }
                         tickLine={ false }

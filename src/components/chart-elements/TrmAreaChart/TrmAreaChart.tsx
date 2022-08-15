@@ -28,7 +28,7 @@ const TrmAreaChart = ({
     startEndOnly = false,
     showXAxis = true,
     showYAxis = true,
-    yAxisOrientation = 'left',
+    yAxisWidth,
     showTooltip = true,
     showLegend = true,
     showGridLines = true,
@@ -71,7 +71,7 @@ const TrmAreaChart = ({
                     axisLine={ false }
                 />
                 <YAxis
-                    orientation={ yAxisOrientation === 'right' ? 'right' : 'left' }
+                    width={ yAxisWidth }
                     hide={ !showYAxis }
                     axisLine={ false }
                     tickLine={ false }
