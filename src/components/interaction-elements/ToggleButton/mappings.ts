@@ -1,7 +1,13 @@
-import { ButtonProportionTypes, IconProportionTypes } from '@common/common-types';
 import { BaseColors } from '@utils/objects';
+import { IconProportionTypes } from '@common/common-types';
 import colorTheme from '@utils/colorTheme';
 import { getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
+
+type ButtonProportionTypes = {
+    paddingX: string,
+    paddingY: string,
+    textSize: string,
+}
 
 export const buttonProportions: {[char: string]: ButtonProportionTypes} = {
     sm: {
