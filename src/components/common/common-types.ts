@@ -5,28 +5,6 @@ export type IconProportionTypes = {
     iconSize: string,
 }
 
-export type ButtonProportionTypes = {
-    paddingX: string,
-    paddingY: string,
-    textSize: string,
-}
-
-export type ButtonShapeTypes = {
-    rounded: string,
-    border: string,
-    shadow: string,
-}
-
-export type ButtonColorTypes = {
-    textColor: string, 
-    hoverTextColor: string,
-    bgColor: string,
-    hoverBgColor: string,
-    borderColor: string,
-    hoverBorderColor: string,
-    focusRingColor: string,
-}
-
 export interface ChartProps {
     data: any[],
     categories: string[],
