@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import ToggleButton from 'components/selection-elements/ToggleButton/ToggleButton';
-import ToggleButtonItem from 'components/selection-elements/ToggleButton/ToggleButtonItem';
+import ToggleButton from 'components/interaction-elements/ToggleButton/ToggleButton';
+import ToggleButtonItem from 'components/interaction-elements/ToggleButton/ToggleButtonItem';
 
 describe('ToggleButton', () => {
     test('renders the ToggleButton component with default props', () => {

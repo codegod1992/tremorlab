@@ -24,7 +24,7 @@ import {
     nextMonth,
     previousMonth,
     relativeFilterOptions
-} from 'components/selection-elements/Datepicker/datepicker-utils';
+} from 'components/interaction-elements/Datepicker/datepicker-utils';
 import Modal from '@common/Modal';
 import SelectItemWrapper from '@common/SelectItemWrapper';
 import SelectText from '@common/SelectText';

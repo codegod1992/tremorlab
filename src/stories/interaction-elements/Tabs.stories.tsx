@@ -2,15 +2,15 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import Tab from 'components/selection-elements/Tab/Tab';
-import TabList from 'components/selection-elements/Tab/TabList';
+import Tab from 'components/interaction-elements/Tab/Tab';
+import TabList from 'components/interaction-elements/Tab/TabList';
 
 import { BaseColors } from '@utils/objects';
 import { Card } from 'components';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/SelectionElements/TabList',
+    title: 'Tremor/InteractionElements/TabList',
     component: TabList,
 } as ComponentMeta<typeof TabList>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

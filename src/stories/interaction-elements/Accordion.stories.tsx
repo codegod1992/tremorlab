@@ -2,13 +2,13 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import Accordion from 'components/selection-elements/Accordion/Accordion';
-import AccordionBody from 'components/selection-elements/Accordion/AccordionBody';
-import AccordionHeader from 'components/selection-elements/Accordion/AccordionHeader';
+import Accordion from 'components/interaction-elements/Accordion/Accordion';
+import AccordionBody from 'components/interaction-elements/Accordion/AccordionBody';
+import AccordionHeader from 'components/interaction-elements/Accordion/AccordionHeader';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/SelectionElements/Accordion',
+    title: 'Tremor/InteractionElements/Accordion',
     component: Accordion,
 } as ComponentMeta<typeof Accordion>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

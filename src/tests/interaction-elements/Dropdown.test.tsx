@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Dropdown from 'components/selection-elements/Dropdown/Dropdown';
-import DropdownItem from 'components/selection-elements/Dropdown/DropdownItem';
+import Dropdown from 'components/interaction-elements/Dropdown/Dropdown';
+import DropdownItem from 'components/interaction-elements/Dropdown/DropdownItem';
 
 describe('Dropdown', () => {
     test('renders the Dropdown component with default props', () => {
