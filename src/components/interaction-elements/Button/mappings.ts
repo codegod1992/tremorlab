@@ -1,8 +1,14 @@
 /* eslint-disable max-len */
-import { ButtonColorTypes, ButtonProportionTypes, ButtonShapeTypes, IconProportionTypes } from '@common/common-types';
 import colorTheme, { defaultColors } from '@utils/colorTheme';
 import { BaseColors } from '@utils/objects';
+import { IconProportionTypes } from '@common/common-types';
 import { getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
+
+export type ButtonProportionTypes = {
+    paddingX: string,
+    paddingY: string,
+    textSize: string,
+}
 
 export const buttonProportions: {[char: string]: ButtonProportionTypes} = {
     xs: {
@@ -27,7 +33,13 @@ export const buttonProportions: {[char: string]: ButtonProportionTypes} = {
     },
 };
 
-export const buttonShape: ButtonShapeTypes = {
+export type ShapeTypes = {
+    rounded: string,
+    border: string,
+    shadow: string,
+}
+
+export const shape: ShapeTypes = {
     rounded: 'rounded-lg',
     border: 'border',
     shadow: 'shadow-sm'
@@ -71,12 +83,19 @@ export const iconRightProportions: {[size: string]: IconProportionTypes} = {
     },
 };
 
+export type ColorTypes = {
+    textColor: string,
+    bgColor: string,
+    hoverBgColor: string,
+    borderColor: string,
+    hoverBorderColor: string,
+    focusRingColor: string,
+}
 
-export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonColorTypes}} = {
+export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} = {
     'slate': {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Slate].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Slate].darkBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
@@ -85,7 +104,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
         },
         'secondary': {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Slate].text).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Slate].lightBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Slate].border).borderColor,
@@ -96,7 +114,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     'gray': {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Gray].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Gray].darkBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
@@ -105,7 +122,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
         },
         'secondary': {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Gray].text).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Gray].lightBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Gray].border).borderColor,
@@ -116,7 +132,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     'zinc': {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Zinc].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Zinc].darkBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
@@ -125,7 +140,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
         },
         'secondary': {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Zinc].text).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Zinc].lightBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Zinc].border).borderColor,
@@ -136,7 +150,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     'neutral': {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Neutral].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Neutral].darkBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
@@ -145,7 +158,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
         },
         'secondary': {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Neutral].text).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Neutral].lightBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Neutral].border).borderColor,
@@ -156,7 +168,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     'stone': {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Stone].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Stone].darkBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
@@ -165,7 +176,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
         },
         'secondary': {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Stone].text).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Stone].lightBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Stone].border).borderColor,
@@ -176,7 +186,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     'red': {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Red].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Red].darkBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
@@ -185,7 +194,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
         },
         'secondary': {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Red].text).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Red].lightBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Red].border).borderColor,
@@ -196,7 +204,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     'orange': {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].darkBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
@@ -205,7 +212,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
         },
         'secondary': {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].text).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].lightBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].border).borderColor,
@@ -216,7 +222,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     'amber': {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Amber].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Amber].darkBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
@@ -225,7 +230,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
         },
         'secondary': {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Amber].text).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Amber].lightBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Amber].border).borderColor,
@@ -236,7 +240,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     'yellow': {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Yellow].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Yellow].darkBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
@@ -245,7 +248,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
         },
         'secondary': {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Yellow].text).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Yellow].lightBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Yellow].border).borderColor,
@@ -256,7 +258,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     'lime': {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Lime].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Lime].darkBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
@@ -265,7 +266,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
         },
         'secondary': {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Lime].text).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Lime].lightBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Lime].border).borderColor,
@@ -276,7 +276,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     'green': {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Green].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Green].darkBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
@@ -285,7 +284,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
         },
         'secondary': {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Green].text).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Green].lightBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Green].border).borderColor,
@@ -296,7 +294,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     'emerald': {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].darkBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
@@ -305,7 +302,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
         },
         'secondary': {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].text).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].lightBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].border).borderColor,
@@ -316,7 +312,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     'teal': {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Teal].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Teal].darkBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
@@ -325,7 +320,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
         },
         'secondary': {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Teal].text).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Teal].lightBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Teal].border).borderColor,
@@ -336,7 +330,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     'cyan': {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Cyan].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Cyan].darkBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
@@ -345,7 +338,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
         },
         'secondary': {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Cyan].text).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Cyan].lightBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Cyan].border).borderColor,
@@ -356,7 +348,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     'sky': {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Sky].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Sky].darkBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
@@ -365,7 +356,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
         },
         'secondary': {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Sky].text).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Sky].lightBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Sky].border).borderColor,
@@ -376,7 +366,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     'blue': {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].darkBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
@@ -385,7 +374,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
         },
         'secondary': {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].text).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].lightBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].border).borderColor,
@@ -396,7 +384,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     'indigo': {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Indigo].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Indigo].darkBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
@@ -405,7 +392,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
         },
         'secondary': {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Indigo].text).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Indigo].lightBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Indigo].border).borderColor,
@@ -416,7 +402,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     'violet': {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Violet].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Violet].darkBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
@@ -425,7 +410,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
         },
         'secondary': {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Violet].text).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Violet].lightBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Violet].border).borderColor,
@@ -436,7 +420,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     'purple': {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Purple].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Purple].darkBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
@@ -445,7 +428,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
         },
         'secondary': {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Purple].text).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Purple].lightBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Purple].border).borderColor,
@@ -456,7 +438,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     'fuchsia': {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Fuchsia].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Fuchsia].darkBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
@@ -465,7 +446,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
         },
         'secondary': {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Fuchsia].text).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Fuchsia].lightBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Fuchsia].border).borderColor,
@@ -476,7 +456,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     'pink': {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Pink].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Pink].darkBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
@@ -485,7 +464,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
         },
         'secondary': {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Pink].text).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Pink].lightBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Pink].border).borderColor,
@@ -496,7 +474,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
     'rose': {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].darkBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).borderColor,
@@ -505,7 +482,6 @@ export const buttonColors: {[baseColor: string]:  {[importance: string]: ButtonC
         },
         'secondary': {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].text).textColor,
-            hoverTextColor: '',
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].lightBackground).hoverBgColor,
             borderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].border).borderColor,
