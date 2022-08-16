@@ -1,9 +1,15 @@
-import { BadgeProportionTypes, IconProportionTypes } from '@common/common-types';
+
 import { BaseColors } from '@utils/objects';
 import colorTheme from '@utils/colorTheme';
 import { getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
 
-export const badgeProportionsTextOnly: {[char: string]: BadgeProportionTypes} = {
+export type ProportionTypes = {
+    paddingX: string,
+    paddingY: string,
+    textSize: string,
+}
+
+export const proportionsTextOnly: {[char: string]: ProportionTypes} = {
     xs: {
         paddingX: 'px-2',
         paddingY: 'py-0.5',
@@ -26,7 +32,7 @@ export const badgeProportionsTextOnly: {[char: string]: BadgeProportionTypes} = 
     },
 };
 
-export const badgeProportionsWithIcon: {[char: string]: BadgeProportionTypes} = {
+export const proportionsWithIcon: {[char: string]: ProportionTypes} = {
     xs: {
         paddingX: 'px-2',
         paddingY: 'py-0.5',
@@ -48,6 +54,11 @@ export const badgeProportionsWithIcon: {[char: string]: BadgeProportionTypes} = 
         textSize: 'text-lg',
     },
 };
+
+export type IconProportionTypes = {
+    margin: string,
+    iconSize: string,
+}
 
 export const iconProportions: {[char: string]: IconProportionTypes} = {
     xs: {
