@@ -1,9 +1,3 @@
-import ArrowDownLineIcon from 'remixicon-react/ArrowDownLineIcon';
-import ArrowRightDownLineIcon from 'remixicon-react/ArrowRightDownLineIcon';
-import ArrowRightLineIcon from 'remixicon-react/ArrowRightLineIcon';
-import ArrowRightUpLineIcon from 'remixicon-react/ArrowRightUpLineIcon';
-import ArrowUpLineIcon from 'remixicon-react/ArrowUpLineIcon';
-
 import { BadgeProportionTypes, IconProportionTypes } from '@common/common-types';
 import { BaseColors } from '@utils/objects';
 import colorTheme from '@utils/colorTheme';

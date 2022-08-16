@@ -1,7 +1,6 @@
 import React from 'react';
 
-import ArrowDownSLineIcon from 'remixicon-react/ArrowDownSLineIcon';
-import ArrowUpSLineIcon from 'remixicon-react/ArrowUpSLineIcon';
+import { ArrowDownHeadIcon, ArrowUpHeadIcon } from 'assets';
 
 export interface AccordionHeaderProps {
     privateProps?: {
@@ -25,8 +24,8 @@ const AccordionHeader = ({
             </div>
             <div>
                 { privateProps!.isExpanded
-                    ? <ArrowUpSLineIcon className="text-gray-400 h-6 w-6" />
-                    : <ArrowDownSLineIcon className="text-gray-400 h-6 w-6" /> }
+                    ? <ArrowUpHeadIcon className="text-gray-400 h-6 w-6" />
+                    : <ArrowDownHeadIcon className="text-gray-400 h-6 w-6" /> }
             </div>
         </button>
     );

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import ArrowUpLineIcon from 'remixicon-react/ArrowUpLineIcon';
+import { ArrowRightIcon } from 'assets';
 
 import { BaseColors } from '@utils/objects';
 
@@ -20,7 +20,7 @@ export default {
 } as ComponentMeta<typeof Flex>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Icon = ArrowUpLineIcon;
+const Icon = ArrowRightIcon;
 const handleClick = () => console.log('clicked');
 const buttonText = 'Button Text';
 

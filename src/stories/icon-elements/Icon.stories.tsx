@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import ArrowUpLineIcon from 'remixicon-react/ArrowUpLineIcon';
+import { ArrowUpIcon } from 'assets';
 
 import { BaseColors, Sizes } from '@utils/objects';
 import { Title } from 'components';
@@ -17,7 +17,7 @@ export default {
 } as ComponentMeta<typeof Icon>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const MyIcon = ArrowUpLineIcon;
+const MyIcon = ArrowUpIcon;
 
 const Template: ComponentStory<never> = () => (
     <>
