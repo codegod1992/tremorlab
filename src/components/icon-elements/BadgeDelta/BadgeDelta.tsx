@@ -6,9 +6,8 @@ import Tooltip from '@tippyjs/react';
 import { 
     badgeProportionsIconOnly,
     badgeProportionsWithText,
-    deltaBgColors,
+    colors,
     deltaIcons,
-    deltaTextColors,
     iconProportionsIconOnly,
     iconProportionsWithText,
 } from './styles';
@@ -41,8 +40,8 @@ const BadgeDelta = ({
             <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
                 <span className={ classNames(
                     'flex-shrink-0 inline-flex justify-center items-center rounded-full',
-                    deltaBgColors[mappedDeltaType],
-                    deltaTextColors[mappedDeltaType],
+                    colors[mappedDeltaType].bgColor,
+                    colors[mappedDeltaType].textColor,
                     badgeProportions[size]?.paddingX,
                     badgeProportions[size]?.paddingY,
                     badgeProportions[size]?.textSize,

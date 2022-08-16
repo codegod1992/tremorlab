@@ -1,11 +1,25 @@
-import { BaseColors } from '@utils/objects';
+import { BaseColors, DeltaTypes } from '@utils/objects';
 import colorTheme from '@utils/colorTheme';
 import { getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
 
-export const deltaBgColors: {[key: string]: string} = {
-    'increase': getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].background).bgColor,
-    'moderateIncrease': getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].background).bgColor,
-    'decrease': getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].background).bgColor,
-    'moderateDecrease': getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].background).bgColor,
-    'unchanged': getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].background).bgColor,
+export type ColorTypes = {
+    bgColor: string,
+}
+
+export const colors: {[key: string]: ColorTypes} = {
+    [DeltaTypes.Increase]: {
+        bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].background).bgColor
+    },
+    [DeltaTypes.ModerateIncrease]: { 
+        bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].background).bgColor
+    },
+    [DeltaTypes.Decrease]: {
+        bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].background).bgColor
+    },
+    [DeltaTypes.ModerateDecrease]: { 
+        bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].background).bgColor
+    },
+    [DeltaTypes.Unchanged]: {
+        bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].background).bgColor
+    },
 };

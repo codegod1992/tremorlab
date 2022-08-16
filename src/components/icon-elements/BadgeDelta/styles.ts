@@ -1,4 +1,4 @@
-import { BaseColors } from '@utils/objects';
+import { BaseColors, DeltaTypes } from '@utils/objects';
 import colorTheme from '@utils/colorTheme';
 import { getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
 
@@ -95,26 +95,38 @@ export const iconProportionsWithText: {[char: string]: IconProportionTypes} = {
     },
 };
 
-export const deltaBgColors: {[key: string]: string} = {
-    'increase': getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].lightBackground).bgColor,
-    'moderateIncrease': getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].lightBackground).bgColor,
-    'decrease': getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].lightBackground).bgColor,
-    'moderateDecrease': getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].lightBackground).bgColor,
-    'unchanged': getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].lightBackground).bgColor,
-};
+export type ColorTypes = {
+    bgColor: string,
+    textColor: string,
+}
 
-export const deltaTextColors: {[key: string]: string} = {
-    'increase': getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].darkText).textColor,
-    'moderateIncrease': getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].darkText).textColor,
-    'decrease': getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].darkText).textColor,
-    'moderateDecrease': getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].darkText).textColor,
-    'unchanged': getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].darkText).textColor,
+export const colors: {[key: string]: ColorTypes} = {
+    [DeltaTypes.Increase]: {
+        bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].lightBackground).bgColor,
+        textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].darkText).textColor,
+    },
+    [DeltaTypes.ModerateIncrease]: {
+        bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].lightBackground).bgColor,
+        textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].darkText).textColor,
+    },
+    [DeltaTypes.Decrease]: {
+        bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].lightBackground).bgColor,
+        textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].darkText).textColor,
+    },
+    [DeltaTypes.ModerateDecrease]: {
+        bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].lightBackground).bgColor,
+        textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].darkText).textColor,
+    },
+    [DeltaTypes.Unchanged]: { 
+        bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].lightBackground).bgColor,
+        textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].darkText).textColor,
+    },
 };
 
 export const deltaIcons: {[key: string]: React.ElementType} = {
-    'increase': ArrowUpIcon,
-    'moderateIncrease': ArrowUpRightIcon,
-    'decrease': ArrowDownIcon,
-    'moderateDecrease': ArrowDownRightIcon,
-    'unchanged': ArrowRightIcon,
+    [DeltaTypes.Increase]: ArrowUpIcon,
+    [DeltaTypes.ModerateIncrease]: ArrowUpRightIcon,
+    [DeltaTypes.Decrease]: ArrowDownIcon,
+    [DeltaTypes.ModerateDecrease]: ArrowDownRightIcon,
+    [DeltaTypes.Unchanged]: ArrowRightIcon,
 };

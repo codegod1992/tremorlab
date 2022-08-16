@@ -5,8 +5,8 @@ import Tooltip from '@tippyjs/react';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
 import { DeltaTypes } from '@utils/objects';
+import { colors } from './styles';
 import { defaultColors } from '@utils/colorTheme';
-import { deltaBgColors } from './styles';
 import { mapInputsToDeltaType } from '@utils/utils';
 
 const getDeltaType = (value: number) => (
@@ -37,10 +37,10 @@ const DeltaBar = ({
                         <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
                             <div 
                                 className={ classNames(
-                                    deltaBgColors[mapInputsToDeltaType(
+                                    colors[mapInputsToDeltaType(
                                         getDeltaType(percentageValue),
                                         isIncreasePositive
-                                    )],
+                                    )].bgColor,
                                     'rounded-l-full'
                                 ) } 
                                 style={ {'width': `${Math.abs(percentageValue)}%`} } 
@@ -58,10 +58,10 @@ const DeltaBar = ({
                         <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
                             <div
                                 className={ classNames(
-                                    deltaBgColors[mapInputsToDeltaType(
+                                    colors[mapInputsToDeltaType(
                                         getDeltaType(percentageValue),
                                         isIncreasePositive
-                                    )],
+                                    )].bgColor,
                                     'rounded-r-full'
                                 ) } 
                                 style={ {'width': `${Math.abs(percentageValue)}%`} } 
