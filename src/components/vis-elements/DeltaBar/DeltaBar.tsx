@@ -6,7 +6,7 @@ import Tooltip from '@tippyjs/react';
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
 import { DeltaTypes } from '@utils/objects';
 import { defaultColors } from '@utils/colorTheme';
-import { deltaBgColors } from './mappings';
+import { deltaBgColors } from './styles';
 import { mapInputsToDeltaType } from '@utils/utils';
 
 const getDeltaType = (value: number) => (

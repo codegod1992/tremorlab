@@ -2,12 +2,12 @@ import { BaseColors } from '@utils/objects';
 import colorTheme from '@utils/colorTheme';
 import { getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
 
-export type MarkerBarColorTypes = {
+export type ColorTypes = {
     primaryBgColor: string,
     secondaryBgColor: string,
 }
 
-export const colors: {[baseColor: string]: MarkerBarColorTypes} = {
+export const colors: {[baseColor: string]: ColorTypes} = {
     'slate': {
         primaryBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Slate].background).bgColor,
         secondaryBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Slate].lightBackground).bgColor,
