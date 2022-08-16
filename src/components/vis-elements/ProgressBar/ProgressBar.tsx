@@ -4,7 +4,6 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
-import BarWrapper from '@common/BarWrapper';
 import { BaseColors } from '@utils/objects';
 import { colors } from './mappings';
 import { defaultColors } from '@utils/colorTheme';
@@ -31,20 +30,19 @@ const ProgressBar = ({
                 parseMarginTopClassNames(marginTop),
             )
         }>
-            <div className="w-full">
-                <BarWrapper
-                    bgColor={ colors[color].secondaryBgColor }
-                >
-                    <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
-                        <div 
-                            className={ classNames(
-                                colors[color].primaryBgColor,
-                                'h-full flex-col rounded-lg'
-                            ) }
-                            style={ {'width': `${percentageValue}%`} }
-                        />
-                    </Tooltip>
-                </BarWrapper>
+            <div className={ classNames(
+                'relative h-2 w-full flex rounded-lg items-center',
+                colors[color].secondaryBgColor,
+            ) }>
+                <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+                    <div 
+                        className={ classNames(
+                            colors[color].primaryBgColor,
+                            'h-full flex-col rounded-lg'
+                        ) }
+                        style={ {'width': `${percentageValue}%`} }
+                    />
+                </Tooltip>
             </div>
             { label ? (
                 <div className={ classNames(
