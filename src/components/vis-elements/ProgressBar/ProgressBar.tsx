@@ -5,7 +5,7 @@ import Tooltip from '@tippyjs/react';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
 import { BaseColors } from '@utils/objects';
-import { colors } from './mappings';
+import { colors } from './styles';
 import { defaultColors } from '@utils/colorTheme';
 
 export interface ProgressBarProps {
