@@ -4,8 +4,8 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { BaseColors, Sizes } from '@utils/objects';
+import { badgeProportionsTextOnly, badgeProportionsWithIcon, iconProportions } from './styles';
 import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
-import { iconProportions, proportionsTextOnly, proportionsWithIcon } from './styles';
 import { colors } from './styles';
 
 export interface BadgeIconTextProps {
@@ -25,7 +25,7 @@ const Badge = ({
     tooltip,
     marginTop,
 }: BadgeIconTextProps) => {
-    const proportions = Icon ? proportionsWithIcon : proportionsTextOnly;
+    const badgeProportions = Icon ? badgeProportionsWithIcon : badgeProportionsTextOnly;
     return(
         <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
             <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
@@ -33,9 +33,9 @@ const Badge = ({
                     'flex-shrink-0 inline-flex justify-center items-center rounded-full',
                     colors[color].bgColor,
                     colors[color].textColor,
-                    proportions[size]?.paddingX,
-                    proportions[size]?.paddingY,
-                    proportions[size]?.textSize,
+                    badgeProportions[size]?.paddingX,
+                    badgeProportions[size]?.paddingY,
+                    badgeProportions[size]?.textSize,
                 ) }>
                     { Icon ? (
                         <Icon className={ classNames(

@@ -3,13 +3,13 @@ import { BaseColors } from '@utils/objects';
 import colorTheme from '@utils/colorTheme';
 import { getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
 
-export type ProportionTypes = {
+export type BadgeProportionTypes = {
     paddingX: string,
     paddingY: string,
     textSize: string,
 }
 
-export const proportionsTextOnly: {[char: string]: ProportionTypes} = {
+export const badgeProportionsTextOnly: {[char: string]: BadgeProportionTypes} = {
     xs: {
         paddingX: 'px-2',
         paddingY: 'py-0.5',
@@ -32,7 +32,7 @@ export const proportionsTextOnly: {[char: string]: ProportionTypes} = {
     },
 };
 
-export const proportionsWithIcon: {[char: string]: ProportionTypes} = {
+export const badgeProportionsWithIcon: {[char: string]: BadgeProportionTypes} = {
     xs: {
         paddingX: 'px-2',
         paddingY: 'py-0.5',
