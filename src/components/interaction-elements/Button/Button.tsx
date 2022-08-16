@@ -7,7 +7,7 @@ import {
     buttonShape,
     iconLeftProportions,
     iconRightProportions
-} from 'components/selection-elements/Button/mappings';
+} from 'components/interaction-elements/Button/mappings';
 import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
 import ButtonWrapper from '@common/ButtonWrapper';
 

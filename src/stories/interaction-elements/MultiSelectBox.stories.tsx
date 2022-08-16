@@ -2,12 +2,12 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import MultiSelectBox from 'components/selection-elements/MultiSelectBox/MultiSelectBox';
-import MultiSelectBoxItem from 'components/selection-elements/MultiSelectBox/MultiSelectBoxItem';
+import MultiSelectBox from 'components/interaction-elements/MultiSelectBox/MultiSelectBox';
+import MultiSelectBoxItem from 'components/interaction-elements/MultiSelectBox/MultiSelectBoxItem';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/SelectionElements/MultiSelectBox',
+    title: 'Tremor/InteractionElements/MultiSelectBox',
     component: MultiSelectBox,
 } as ComponentMeta<typeof MultiSelectBox>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

@@ -3,12 +3,12 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import SelectBox from 'components/selection-elements/SelectBox/SelectBox';
+import SelectBox from 'components/interaction-elements/SelectBox/SelectBox';
 import { SelectBoxItem } from 'components';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/SelectionElements/SelectBox',
+    title: 'Tremor/InteractionElements/SelectBox',
     component: SelectBox,
 } as ComponentMeta<typeof SelectBox>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

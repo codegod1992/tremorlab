@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Accordion from 'components/selection-elements/Accordion/Accordion';
-import AccordionBody from 'components/selection-elements/Accordion/AccordionBody';
-import AccordionHeader from 'components/selection-elements/Accordion/AccordionHeader';
+import Accordion from 'components/interaction-elements/Accordion/Accordion';
+import AccordionBody from 'components/interaction-elements/Accordion/AccordionBody';
+import AccordionHeader from 'components/interaction-elements/Accordion/AccordionHeader';
 
 describe('Accordion', () => {
     test('renders the Accordion component with default props', () => {
