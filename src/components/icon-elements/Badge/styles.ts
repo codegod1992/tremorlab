@@ -1,5 +1,6 @@
 
 import { BaseColors } from '@utils/objects';
+import { IconProportionTypes } from '@common/common-types';
 import colorTheme from '@utils/colorTheme';
 import { getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
 
@@ -54,11 +55,6 @@ export const badgeProportionsWithIcon: {[char: string]: BadgeProportionTypes} = 
         textSize: 'text-lg',
     },
 };
-
-export type IconProportionTypes = {
-    margin: string,
-    iconSize: string,
-}
 
 export const iconProportions: {[char: string]: IconProportionTypes} = {
     xs: {

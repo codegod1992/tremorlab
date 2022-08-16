@@ -5,12 +5,6 @@ export type IconProportionTypes = {
     iconSize: string,
 }
 
-export type BadgeProportionTypes = {
-    paddingX: string,
-    paddingY: string,
-    textSize: string,
-}
-
 export type ButtonProportionTypes = {
     paddingX: string,
     paddingY: string,
@@ -31,10 +25,6 @@ export type ButtonColorTypes = {
     borderColor: string,
     hoverBorderColor: string,
     focusRingColor: string,
-}
-
-export interface BaseComponentProps {
-    marginTop?: string,
 }
 
 export interface ChartProps {
