@@ -46,12 +46,8 @@ const Button = ({
                 { Icon && (iconPosition !== 'right') ? ( // ensures that icon is rendered if iconPosition is misspelled
                     <Icon
                         className={classNames(
-                            iconLeftProportions[size]
-                                ? iconLeftProportions[size].margin!
-                                : iconLeftProportions['md'].margin!,
-                            iconLeftProportions[size]
-                                ? iconLeftProportions[size].iconSize!
-                                : iconLeftProportions['md'].iconSize!,
+                            iconLeftProportions[size]?.margin || '',
+                            iconLeftProportions[size]?.iconSize,
                         )}
                         aria-hidden="true"
                     />
@@ -62,12 +58,8 @@ const Button = ({
                 { Icon && (iconPosition === 'right') ? (
                     <Icon
                         className={classNames(
-                            iconRightProportions[size]
-                                ? iconRightProportions[size].margin!
-                                : iconRightProportions['md'].margin!,
-                            iconRightProportions[size]
-                                ? iconRightProportions[size].iconSize!
-                                : iconRightProportions['md'].iconSize!,
+                            iconRightProportions[size]?.margin || '',
+                            iconRightProportions[size]?.iconSize,
                         )}
                         aria-hidden="true"
                     />

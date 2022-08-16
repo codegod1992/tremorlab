@@ -44,7 +44,7 @@ const Badge = ({
                         ) }
                         />
                     ) : null }
-                    <p>{ text }</p>
+                    <p className="whitespace-nowrap">{ text }</p>
                 </span>
             </Tooltip>
         </div>

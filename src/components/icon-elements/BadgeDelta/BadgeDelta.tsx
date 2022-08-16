@@ -52,7 +52,7 @@ const BadgeDelta = ({
                         iconProportions[size]?.iconSize
                     ) }
                     />
-                    { text ? text : null}
+                    <p className="whitespace-nowrap">{ text ? text : null}</p>
                 </span>
             </Tooltip>
         </span>
