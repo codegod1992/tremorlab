@@ -56,7 +56,6 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
     "postcss": "^8.4.12",
-    "remixicon-react": "^1.0.0",
     "resize-observer-polyfill": "^1.5.1",
     "rollup": "^2.70.2",
     "rollup-plugin-dts": "^4.2.1",
