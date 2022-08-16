@@ -35,7 +35,7 @@ const data = [
     },
 ];
 
-describe('TrmLineChart Default', () => {
+describe('TrmLineChart', () => {
     test('renders the TrmLineChart component with default props', () => {
         render(
             <TrmLineChart

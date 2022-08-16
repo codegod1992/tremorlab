@@ -5,7 +5,7 @@ import Accordion from 'components/selection-elements/Accordion/Accordion';
 import AccordionBody from 'components/selection-elements/Accordion/AccordionBody';
 import AccordionHeader from 'components/selection-elements/Accordion/AccordionHeader';
 
-describe('Accordion Default', () => {
+describe('Accordion', () => {
     test('renders the Accordion component with default props', () => {
         render(
             <Accordion>

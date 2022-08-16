@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 
 import BadgeDelta from 'components/icon-elements/BadgeDelta';
 
-describe('BadgeDelta Default', () => {
+describe('BadgeDelta', () => {
     test('renders the BadgeDelta component with default props', () => {
         render(
             <BadgeDelta deltaType={ 'increase' } />

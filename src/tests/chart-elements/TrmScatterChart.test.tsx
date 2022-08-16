@@ -49,7 +49,7 @@ const data = [
     ],
 ];
 
-describe('TrmScatterChart Default', () => {
+describe('TrmScatterChart', () => {
     test('renders the TrmScatterChart component with default props', () => {
         render(
             <TrmScatterChart

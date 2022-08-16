@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 
 import RangeBar from 'components/vis-elements/RangeBar';
 
-describe('RangeBar Default', () => {
+describe('RangeBar', () => {
     test('renders the RangeBar component with default props', () => {
         render(
             <RangeBar

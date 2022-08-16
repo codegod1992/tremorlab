@@ -2,9 +2,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import ButtonInline from 'components/button-elements/ButtonInline';
+import ButtonInline from 'components/selection-elements/ButtonInline';
 
-describe('ButtonInline Default', () => {
+describe('ButtonInline', () => {
     test('renders the ButtonInline component with default props', () => {
         render(
             <ButtonInline

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import ToggleButton from 'components/button-elements/ToggleButton/ToggleButton';
+import ToggleButton from 'components/selection-elements/ToggleButton/ToggleButton';
 import { ToggleButtonItem } from 'components';
 
 import { BaseColors } from '@utils/objects';
@@ -9,7 +9,7 @@ import { CalendarIcon } from '@heroicons/react/solid';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/ButtonElements/ToggleButton',
+    title: 'Tremor/SelectionElements/ToggleButton',
     component: ToggleButton,
 } as ComponentMeta<typeof ToggleButton>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

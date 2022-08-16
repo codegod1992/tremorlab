@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 
 import Metric from 'components/text-elements/Metric';
 
-describe('Metric Default', () => {
+describe('Metric', () => {
     test('renders the Metric component with default props', () => {
         render(
             <Metric>
