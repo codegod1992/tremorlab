@@ -37,7 +37,7 @@ const ButtonInline = ({
                     className={ classNames(
                         'flex-shrink-0 inline-flex items-center group font-medium',
                         'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-transparent',
-                        buttonProportions[size].textSize,
+                        buttonProportions[size]?.textSize,
                         colors[color].bgColor,
                         colors[color].hoverBgColor,
                         colors[color].hoverTextColor,

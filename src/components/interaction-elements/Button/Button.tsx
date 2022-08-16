@@ -45,9 +45,9 @@ const Button = ({
                     className={ classNames(
                         'flex-shrink-0 inline-flex items-center group font-medium',
                         'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-transparent',
-                        buttonProportions[size].paddingX,
-                        buttonProportions[size].paddingY,
-                        buttonProportions[size].textSize,
+                        buttonProportions[size]?.paddingX,
+                        buttonProportions[size]?.paddingY,
+                        buttonProportions[size]?.textSize,
                         shape.border,
                         shape.rounded,
                         shape.shadow,
