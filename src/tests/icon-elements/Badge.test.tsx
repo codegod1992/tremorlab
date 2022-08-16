@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 
 import Badge from 'components/icon-elements/Badge';
 
-describe('Badge Default', () => {
+describe('Badge', () => {
     test('renders the Badge component with default props', () => {
         render(
             <Badge

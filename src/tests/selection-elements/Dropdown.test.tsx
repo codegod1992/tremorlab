@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import Dropdown from 'components/selection-elements/Dropdown/Dropdown';
 import DropdownItem from 'components/selection-elements/Dropdown/DropdownItem';
 
-describe('Dropdown Default', () => {
+describe('Dropdown', () => {
     test('renders the Dropdown component with default props', () => {
         render(
             <Dropdown>

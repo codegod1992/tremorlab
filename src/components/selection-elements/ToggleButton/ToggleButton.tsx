@@ -5,9 +5,9 @@ import { BaseColors } from '@utils/objects';
 import { defaultColors } from '@utils/colorTheme';
 
 export interface ToggleButtonProps {
-    defaultValue: any,
+    defaultValue?: any,
     color?: string,
-    handleSelect: {(value: any): void},
+    handleSelect?: { (value: any): void },
     children: React.ReactElement[],
     marginTop?: string,
 }

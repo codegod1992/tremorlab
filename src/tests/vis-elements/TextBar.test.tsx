@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 
 import TextBar from 'components/vis-elements/TextBar';
 
-describe('TextBar Default', () => {
+describe('TextBar', () => {
     test('renders the TextBar component with default props', () => {
         render(
             <TextBar

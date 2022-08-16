@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import MultiSelectBox from 'components/selection-elements/MultiSelectBox/MultiSelectBox';
 import MultiSelectBoxItem from 'components/selection-elements/MultiSelectBox/MultiSelectBoxItem';
 
-describe('SelectBox Default', () => {
+describe('SelectBox', () => {
     test('renders the SelectBox component with default props', () => {
         render(
             <MultiSelectBox>

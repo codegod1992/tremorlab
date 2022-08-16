@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 
 import Text from 'components/text-elements/Text';
 
-describe('Text Default', () => {
+describe('Text', () => {
     test('renders the Text component with default props', () => {
         render(
             <Text>

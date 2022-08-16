@@ -3,7 +3,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ArrowRightIcon } from 'assets';
 
-import { Sizes } from '@utils/objects';
+import { BaseColors } from '@utils/objects';
 
 import { Flex } from 'components';
 
@@ -15,7 +15,7 @@ import {
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/ButtonElements/ButtonSizes',
+    title: 'Tremor/SelectionElements/ButtonColors',
     component: Flex,
 } as ComponentMeta<typeof Flex>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
@@ -28,12 +28,11 @@ const Template: ComponentStory<never> = () => (
     <>
         <div className="mb-5">
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(Sizes).map(key => {
-                    console.log(Sizes[key]);
+                {Object.values(BaseColors).map(key => {
                     return(
                         <Button
                             text={ buttonText }
-                            size={ Sizes[key] }
+                            color={ key }
                             handleClick={ handleClick } 
                             tooltip={ 'Button Info' } 
                         />
@@ -43,12 +42,11 @@ const Template: ComponentStory<never> = () => (
         </div>
         <div className="mb-5">
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(Sizes).map(key => {
-                    console.log(Sizes[key]);
+                {Object.values(BaseColors).map(key => {
                     return(
                         <Button 
                             text={ buttonText }
-                            size={ Sizes[key] }
+                            color={ key }
                             handleClick={ handleClick }
                             importance="secondary" />
                     );
@@ -57,12 +55,11 @@ const Template: ComponentStory<never> = () => (
         </div>
         <div className="mb-5">
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(Sizes).map(key => {
-                    console.log(Sizes[key]);
+                {Object.values(BaseColors).map(key => {
                     return(
                         <Button
                             text={ buttonText }
-                            size={ Sizes[key] }
+                            color={ key }
                             handleClick={ handleClick }
                         />
                     );
@@ -71,12 +68,11 @@ const Template: ComponentStory<never> = () => (
         </div>
         <div className="mb-5">
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(Sizes).map(key => {
-                    console.log(Sizes[key]);
+                {Object.values(BaseColors).map(key => {
                     return(
                         <Button
                             text={ buttonText }
-                            size={ Sizes[key] }
+                            color={ key }
                             handleClick={ handleClick }
                             importance="secondary"
                         />
@@ -86,13 +82,12 @@ const Template: ComponentStory<never> = () => (
         </div>
         <div className="mb-5">
             <div className="grid grid-cols-8 justify-items-start items-center gap-y-2">
-                {Object.keys(Sizes).map(key => {
-                    console.log(Sizes[key]);
+                {Object.values(BaseColors).map(key => {
                     return(
                         <Button
                             Icon={ Icon }
                             text={ buttonText }
-                            size={ Sizes[key] }
+                            color={ key }
                             handleClick={ handleClick }
                         />
                     );
@@ -101,14 +96,13 @@ const Template: ComponentStory<never> = () => (
         </div>
         <div className="mb-5">
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(Sizes).map(key => {
-                    console.log(Sizes[key]);
+                {Object.values(BaseColors).map(key => {
                     return(
                         <Button
                             Icon={ Icon }
                             text={ buttonText }
                             importance={ 'secondary' }
-                            size={ Sizes[key] }
+                            color={ key }
                             handleClick={ handleClick }
                         />
                     );
@@ -117,12 +111,12 @@ const Template: ComponentStory<never> = () => (
         </div>
         <div className="mb-5">
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(Sizes).map(key => {
-                    console.log(Sizes[key]);
+                {Object.values(BaseColors).map(key => {
                     return(
                         <ButtonInline
                             text={ buttonText }
-                            size={ Sizes[key] }
+                            Icon={ Icon }
+                            color={ key }
                             handleClick={ handleClick }
                         />
                     );
@@ -131,12 +125,11 @@ const Template: ComponentStory<never> = () => (
         </div>
         <div className="mb-5">
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(Sizes).map(key => {
-                    console.log(Sizes[key]);
+                {Object.values(BaseColors).map(key => {
                     return(
                         <ButtonInline
                             text={ buttonText }
-                            size={ Sizes[key] }
+                            color={ key }
                             handleClick={ handleClick }
                         />
                     );

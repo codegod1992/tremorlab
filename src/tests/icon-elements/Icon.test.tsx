@@ -6,7 +6,7 @@ import ArrowUpIcon from 'assets/ArrowUpIcon';
 
 import Icon from 'components/icon-elements/Icon';
 
-describe('Icon Default', () => {
+describe('Icon', () => {
     test('renders the Icon component with default props', () => {
         render(
             <Icon Icon={ ArrowUpIcon } />

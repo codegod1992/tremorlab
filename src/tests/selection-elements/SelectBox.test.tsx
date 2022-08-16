@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import SelectBox from 'components/selection-elements/SelectBox/SelectBox';
 import SelectBoxItem from 'components/selection-elements/SelectBox/SelectBoxItem';
 
-describe('SelectBox Default', () => {
+describe('SelectBox', () => {
     test('renders the SelectBox component with default props', () => {
         render(
             <SelectBox>

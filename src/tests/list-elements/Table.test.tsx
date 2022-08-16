@@ -9,7 +9,7 @@ import TableHeaderCell from 'components/list-elements/Table/TableHeaderCell';
 import TableRow from 'components/list-elements/Table/TableRow';
 
 
-describe('List Default', () => {
+describe('List', () => {
     test('renders the List component with default props', () => {
         render(
             <Table>

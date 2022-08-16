@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 
 import Subtitle from 'components/text-elements/Subtitle';
 
-describe('Subtitle Default', () => {
+describe('Subtitle', () => {
     test('renders the Subtitle component with default props', () => {
         render(
             <Subtitle>

@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 
 import MarkerBar from 'components/vis-elements/MarkerBar';
 
-describe('MarkerBar Default', () => {
+describe('MarkerBar', () => {
     test('renders the MarkerBar component with default props', () => {
         render(
             <MarkerBar
