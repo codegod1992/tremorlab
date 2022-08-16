@@ -39,7 +39,7 @@ const Badge = ({
                 ) }>
                     { Icon ? (
                         <Icon className={ classNames(
-                            iconProportions[size]?.margin,
+                            iconProportions[size]?.margin || '',
                             iconProportions[size]?.iconSize,
                         ) }
                         />

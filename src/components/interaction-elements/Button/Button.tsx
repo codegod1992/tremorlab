@@ -56,9 +56,9 @@ const Button = ({
                         aria-hidden="true"
                     />
                 ) : null }
-                <span className="whitespace-nowrap">
+                <p className="whitespace-nowrap">
                     { text }
-                </span>
+                </p>
                 { Icon && (iconPosition === 'right') ? (
                     <Icon
                         className={classNames(

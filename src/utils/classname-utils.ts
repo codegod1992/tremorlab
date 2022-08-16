@@ -2,7 +2,7 @@ import { ColorTypes, colorVariantMapping } from './colorVariantMapping';
 import { twColorsHex } from '@utils/colorTheme';
 
 interface StringJoiner {
-    (...classes: string[]): string
+    (...classes: (string)[]): string
 }
 
 interface TailwindClassParser {

@@ -48,7 +48,7 @@ const ButtonInline = ({
                         aria-hidden="true"
                     />
                 ) : null }
-                { text }
+                <p className="whitespace-nowrap">{ text }</p>
                 { Icon && (iconPosition === 'right') ? (
                     <Icon
                         className={ classNames(

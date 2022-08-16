@@ -48,7 +48,7 @@ const BadgeDelta = ({
                     badgeProportions[size]?.textSize,
                 ) }>
                     <Icon className={ classNames(
-                        iconProportions[size]?.margin,
+                        iconProportions[size]?.margin || '',
                         iconProportions[size]?.iconSize
                     ) }
                     />
