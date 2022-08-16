@@ -1,4 +1,3 @@
-export * from './button-elements';
 export * from './chart-elements';
 export * from './icon-elements';
 export * from './layout-elements';
