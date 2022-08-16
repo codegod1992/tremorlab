@@ -9,6 +9,8 @@ import { BaseColors } from '@utils/objects';
 import colorTheme from '@utils/colorTheme';
 import { getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
 
+import { ArrowDownIcon, ArrowDownRightIcon, ArrowRightIcon, ArrowUpIcon, ArrowUpRightIcon } from 'assets';
+
 export const badgeProportionsIconOnly: {[char: string]: BadgeProportionTypes} = {
     xs: {
         paddingX: 'px-1.5',
@@ -110,9 +112,9 @@ export const deltaTextColors: {[key: string]: string} = {
 };
 
 export const deltaIcons: {[key: string]: React.ElementType} = {
-    'increase': ArrowUpLineIcon,
-    'moderateIncrease': ArrowRightUpLineIcon,
-    'decrease': ArrowDownLineIcon,
-    'moderateDecrease': ArrowRightDownLineIcon,
-    'unchanged': ArrowRightLineIcon,
+    'increase': ArrowUpIcon,
+    'moderateIncrease': ArrowUpRightIcon,
+    'decrease': ArrowDownIcon,
+    'moderateDecrease': ArrowDownRightIcon,
+    'unchanged': ArrowRightIcon,
 };
