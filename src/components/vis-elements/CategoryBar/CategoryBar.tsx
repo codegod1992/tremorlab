@@ -13,7 +13,6 @@ import {
     toBorderColorClass
 } from '@utils/classname-utils';
 import colorTheme, { defaultColors } from '@utils/colorTheme';
-import BarWrapper from '@common/BarWrapper';
 
 const BarLabels = ({ elements }: {elements: [number, string][]}) => {
     let prefixSum = 0;
@@ -86,7 +85,7 @@ const CategoryBar = ({
     return(
         <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
             { showLabels ? <BarLabels elements={ categories } /> : null }
-            <BarWrapper gap={ true }>
+            <div className="relative h-2 w-full flex rounded-lg items-center space-x-1">
                 {categories.map(([widthPercentage, color], idx) => {
                     return(
                         <div key={ `item-${idx}` } style={ { width: `${widthPercentage}%` } } className={ classNames(
@@ -109,7 +108,7 @@ const CategoryBar = ({
                         </Tooltip>
                     </div>
                 ) : null}
-            </BarWrapper>
+            </div>
         </div>
     );
 };
