@@ -3,13 +3,13 @@ import colorTheme, { defaultColors } from '@utils/colorTheme';
 import { BaseColors } from '@utils/objects';
 import { getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
 
-export type IconElementProporions = {
+export type ProporionTypes = {
     paddingX: string,
     paddingY: string,
     iconSize: string,
 }
 
-export const proportinsMapping: {[size: string]: IconElementProporions} = {
+export const proportions: {[size: string]: ProporionTypes} = {
     xs: {
         paddingX: 'px-1.5',
         paddingY: 'py-1.5',
@@ -37,14 +37,14 @@ export const proportinsMapping: {[size: string]: IconElementProporions} = {
     },
 };
 
-export type IconElementShapeTypes = {
+export type ShapeTypes = {
     rounded: string,
     border: string,
     ring: string,
     shadow: string
 }
 
-export const shapeMapping: {[style: string]: IconElementShapeTypes} = {
+export const shape: {[style: string]: ShapeTypes} = {
     'simple': {
         rounded: '',
         border: '',
@@ -77,14 +77,14 @@ export const shapeMapping: {[style: string]: IconElementShapeTypes} = {
     },
 };
 
-export type IconElementColorTypes = {
+export type ColorTypes = {
     textColor: string,
     bgColor: string,
     borderColor: string,
     ringColor: string,
 }
 
-export const colorMapping: {[style: string]: {[baseColor: string]: IconElementColorTypes}} = {
+export const colors: {[style: string]: {[baseColor: string]: ColorTypes}} = {
     'simple': {
         'slate': { 
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Slate].text).textColor,
