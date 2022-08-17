@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
 import colorTheme, { defaultColors } from '@utils/colorTheme';
 import { BaseColors } from '@utils/objects';
-import { IconProportionTypes } from '@common/common-types';
 import { getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
 
 export type ButtonProportionTypes = {
@@ -44,6 +43,11 @@ export const shape: ShapeTypes = {
     border: 'border',
     shadow: 'shadow-sm'
 };
+
+export type IconProportionTypes = {
+    margin?: string,
+    iconSize: string,
+}
 
 export const iconLeftProportions: {[size: string]: IconProportionTypes} = {
     xs: {

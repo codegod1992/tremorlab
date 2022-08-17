@@ -1,5 +1,3 @@
-import { IconProportionTypes } from '@common/common-types';
-
 export type BadgeProportionTypes = {
     paddingX: string,
     paddingY: string,
@@ -51,6 +49,11 @@ export const badgeProportionsWithIcon: {[char: string]: BadgeProportionTypes} = 
         textSize: 'text-lg',
     },
 };
+
+export type IconProportionTypes = {
+    margin?: string,
+    iconSize: string,
+}
 
 export const iconProportions: {[char: string]: IconProportionTypes} = {
     xs: {

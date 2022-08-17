@@ -3,7 +3,6 @@ import colorTheme from '@utils/colorTheme';
 import { getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
 
 import { ArrowDownIcon, ArrowDownRightIcon, ArrowRightIcon, ArrowUpIcon, ArrowUpRightIcon } from 'assets';
-import { IconProportionTypes } from '@common/common-types';
 
 export type BadgeProportionTypes = {
     paddingX: string,
@@ -33,6 +32,11 @@ export const badgeProportionsIconOnly: {[char: string]: BadgeProportionTypes} = 
         textSize: 'text-lg',
     },
 };
+
+export type IconProportionTypes = {
+    margin?: string,
+    iconSize: string,
+}
 
 export const iconProportionsIconOnly: {[char: string]: IconProportionTypes} = {
     xs: {
