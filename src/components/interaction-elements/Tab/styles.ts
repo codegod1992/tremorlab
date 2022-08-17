@@ -2,12 +2,12 @@ import { BaseColors } from '@utils/objects';
 import colorTheme from '@utils/colorTheme';
 import { getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
 
-export type TabColorTypes = {
+export type ColorTypes = {
     textColor: string,
     borderColor: string,
 }
 
-export const colors: {[baseColor: string]: TabColorTypes} = {
+export const colors: {[baseColor: string]: ColorTypes} = {
     'slate': {
         textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Slate].text).textColor,
         borderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Slate].darkBorder).borderColor,

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
-import { colors } from './mappings';
+import { colors } from './styles';
 import { defaultColors } from '@utils/colorTheme';
 
 export interface TabProps {

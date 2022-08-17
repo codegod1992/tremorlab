@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
-import { colors } from './mappings';
-import { defaultColors } from '@utils/colorTheme';
+import colorTheme, { defaultColors } from '@utils/colorTheme';
 
 export interface ToggleButtonItemProps {
     value: any,
@@ -23,7 +22,7 @@ const ToggleButtonItem = ({
 }: ToggleButtonItemProps) => {
     const activeClassNames = classNames(
         getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
-        colors[privateProps!.color].textColor,
+        getColorVariantsFromColorThemeValue(colorTheme[privateProps!.color].text).textColor,
         getColorVariantsFromColorThemeValue(defaultColors.black).ringRolor,
         'shadow-sm ring-opacity-5'
     );
