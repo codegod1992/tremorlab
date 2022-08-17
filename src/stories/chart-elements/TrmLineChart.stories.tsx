@@ -23,37 +23,37 @@ const Template: ComponentStory<typeof TrmLineChart> = (args) => (
 
 const data = [
     {
-        name: 'Jan 21\'',
+        month: 'Jan 21\'',
         Sales: 4000,
         Profit: 2400,
     },
     {
-        name: 'Feb 21\'',
+        month: 'Feb 21\'',
         Sales: 3000,
         Profit: 1398,
     },
     {
-        name: 'Mar 21\'',
+        month: 'Mar 21\'',
         Sales: 2000,
         Profit: 900,
     },
     {
-        name: 'Apr 21\'',
+        month: 'Apr 21\'',
         Sales: 2780,
         Profit: 3908,
     },
     {
-        name: 'May 21',
+        month: 'May 21',
         Sales: 1890,
         Profit: 4800,
     },
     {
-        name: 'Jun 21\'',
+        month: 'Jun 21\'',
         Sales: 2390,
         Profit: 3800,
     },
     {
-        name: 'Jul 21\'',
+        month: 'Jul 21\'',
         Sales: 3490,
         Profit: 4300,
     },
@@ -68,5 +68,6 @@ export const Default = Template.bind({});
 Default.args = {
     data: data,
     categories: ['Sales', 'Profit'],
-    valueFormaterY: dataFormater,
+    dataKey: 'month',
+    valueFormater: dataFormater,
 };

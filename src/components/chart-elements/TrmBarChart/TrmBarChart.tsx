@@ -28,9 +28,9 @@ export interface TrmBarChartProps extends ChartProps {
 const TrmBarChart = ({
     data,
     categories,
-    dataKey = 'name',
+    dataKey,
     colors = themeColorRange,
-    valueFormaterY = defaultValueFormater,
+    valueFormater = defaultValueFormater,
     layout = 'horizontal',
     stack = false,
     relative = false,
@@ -95,7 +95,7 @@ const TrmBarChart = ({
                         }}
                         tickLine={false}
                         axisLine={false}
-                        tickFormatter={ valueFormaterY }
+                        tickFormatter={ valueFormater }
                     />
                 )}
                 { layout !== 'vertical' ? (
@@ -111,7 +111,7 @@ const TrmBarChart = ({
                             fontSize: '12px',
                             fontFamily: 'Inter; Helvetica',
                         } }
-                        tickFormatter={ relative ? (value: number) => `${(value * 100).toString()} %` : valueFormaterY }
+                        tickFormatter={ relative ? (value: number) => `${(value * 100).toString()} %` : valueFormater }
                     />
                 ) : (
                     <YAxis
@@ -141,7 +141,7 @@ const TrmBarChart = ({
                                     active={ active }
                                     payload={ payload }
                                     label={ label }
-                                    valueFormater={ valueFormaterY }
+                                    valueFormater={ valueFormater }
                                     colors={ colors }
                                 />
                             )

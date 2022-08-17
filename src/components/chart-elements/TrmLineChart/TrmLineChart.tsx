@@ -22,9 +22,9 @@ import { getHexFromColorThemeValue } from '@utils/classname-utils';
 const TrmLineChart = ({
     data,
     categories,
-    dataKey = 'name',
+    dataKey,
     colors = themeColorRange,
-    valueFormaterY = defaultValueFormater,
+    valueFormater = defaultValueFormater,
     startEndOnly = false,
     showXAxis = true,
     showYAxis = true,
@@ -83,7 +83,7 @@ const TrmLineChart = ({
                             fontSize: '12px',
                             fontFamily: 'Inter; Helvetica',
                         } }
-                        tickFormatter={ valueFormaterY  }
+                        tickFormatter={ valueFormater  }
                     />
                     <Tooltip
                         isAnimationActive={ false }
@@ -95,7 +95,7 @@ const TrmLineChart = ({
                                         active={ active }
                                         payload={ payload }
                                         label={ label }
-                                        valueFormater={ valueFormaterY }
+                                        valueFormater={ valueFormater }
                                         colors={ colors }
                                     />
                                 )

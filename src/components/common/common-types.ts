@@ -3,9 +3,9 @@ import { ValueFormater } from '@utils/utils';
 export interface ChartProps {
     data: any[],
     categories: string[],
-    dataKey?: string, 
+    dataKey: string,
     colors?: string[],
-    valueFormaterY?: ValueFormater,
+    valueFormater?: ValueFormater,
     startEndOnly?: boolean,
     showXAxis?: boolean,
     showYAxis?: boolean,
