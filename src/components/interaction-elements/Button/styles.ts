@@ -93,7 +93,7 @@ export type ColorTypes = {
 }
 
 export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} = {
-    'slate': {
+    [BaseColors.Slate]: {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Slate].background).bgColor,
@@ -111,7 +111,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Slate].ring).focusRingColor,
         }
     },
-    'gray': {
+    [BaseColors.Gray]: {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Gray].background).bgColor,
@@ -129,7 +129,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Gray].ring).focusRingColor,
         }
     },
-    'zinc': {
+    [BaseColors.Zinc]: {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Zinc].background).bgColor,
@@ -147,7 +147,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Zinc].ring).focusRingColor,
         }
     },
-    'neutral': {
+    [BaseColors.Neutral]: {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Neutral].background).bgColor,
@@ -165,7 +165,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Neutral].ring).focusRingColor,
         }
     },
-    'stone': {
+    [BaseColors.Stone]: {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Stone].background).bgColor,
@@ -183,7 +183,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Stone].ring).focusRingColor,
         }
     },
-    'red': {
+    [BaseColors.Red]: {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Red].background).bgColor,
@@ -201,7 +201,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Red].ring).focusRingColor,
         }
     },
-    'orange': {
+    [BaseColors.Orange]: {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].background).bgColor,
@@ -219,7 +219,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].ring).focusRingColor,
         }
     },
-    'amber': {
+    [BaseColors.Amber]: {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Amber].background).bgColor,
@@ -237,7 +237,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Amber].ring).focusRingColor,
         }
     },
-    'yellow': {
+    [BaseColors.Yellow]: {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Yellow].background).bgColor,
@@ -255,7 +255,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Yellow].ring).focusRingColor,
         }
     },
-    'lime': {
+    [BaseColors.Lime]: {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Lime].background).bgColor,
@@ -273,7 +273,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Lime].ring).focusRingColor,
         }
     },
-    'green': {
+    [BaseColors.Green]: {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Green].background).bgColor,
@@ -291,7 +291,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Green].ring).focusRingColor,
         }
     },
-    'emerald': {
+    [BaseColors.Emerald]: {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].background).bgColor,
@@ -309,7 +309,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].ring).focusRingColor,
         }
     },
-    'teal': {
+    [BaseColors.Teal]: {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Teal].background).bgColor,
@@ -327,7 +327,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Teal].ring).focusRingColor,
         }
     },
-    'cyan': {
+    [BaseColors.Cyan]: {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Cyan].background).bgColor,
@@ -345,7 +345,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Cyan].ring).focusRingColor,
         }
     },
-    'sky': {
+    [BaseColors.Sky]: {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Sky].background).bgColor,
@@ -363,7 +363,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Sky].ring).focusRingColor,
         }
     },
-    'blue': {
+    [BaseColors.Blue]: {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].background).bgColor,
@@ -381,7 +381,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         }
     },
-    'indigo': {
+    [BaseColors.Indigo]: {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Indigo].background).bgColor,
@@ -399,7 +399,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         }
     },
-    'violet': {
+    [BaseColors.Violet]: {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Violet].background).bgColor,
@@ -417,7 +417,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Violet].ring).focusRingColor,
         }
     },
-    'purple': {
+    [BaseColors.Purple]: {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Purple].background).bgColor,
@@ -435,7 +435,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Purple].ring).focusRingColor,
         }
     },
-    'fuchsia': {
+    [BaseColors.Fuchsia]: {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Fuchsia].background).bgColor,
@@ -453,7 +453,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Fuchsia].ring).focusRingColor,
         }
     },
-    'pink': {
+    [BaseColors.Pink]: {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Pink].background).bgColor,
@@ -471,7 +471,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Pink].ring).focusRingColor,
         }
     },
-    'rose': {
+    [BaseColors.Rose]: {
         'primary': {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].background).bgColor,

@@ -10,7 +10,7 @@ import {
     iconLeftProportions,
     iconRightProportions,
     shape,
-} from 'components/interaction-elements/Button/styles';
+} from './styles';
 import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
 
 export interface ButtonProps {

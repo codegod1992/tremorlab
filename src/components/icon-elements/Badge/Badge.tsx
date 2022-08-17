@@ -5,8 +5,8 @@ import Tooltip from '@tippyjs/react';
 
 import { BaseColors, Sizes } from '@utils/objects';
 import { badgeProportionsTextOnly, badgeProportionsWithIcon, iconProportions } from './styles';
-import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
-import { colors } from './styles';
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
+import colorTheme from '@utils/colorTheme';
 
 export interface BadgeIconTextProps {
     text: string,
@@ -31,8 +31,8 @@ const Badge = ({
             <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
                 <span className={ classNames(
                     'flex-shrink-0 inline-flex justify-center items-center rounded-full',
-                    colors[color].bgColor,
-                    colors[color].textColor,
+                    getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor,
+                    getColorVariantsFromColorThemeValue(colorTheme[color].lightBackground).bgColor,
                     badgeProportions[size]?.paddingX,
                     badgeProportions[size]?.paddingY,
                     badgeProportions[size]?.textSize,

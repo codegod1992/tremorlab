@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue } from '@utils/classname-utils';
-import { colors } from './styles';
-import { defaultColors } from '@utils/colorTheme';
+import colorTheme, { defaultColors } from '@utils/colorTheme';
 
 export interface TabProps {
     name: string,
@@ -20,8 +19,8 @@ const Tab = ({
     privateProps,
 }: TabProps) => {
     const activeClassNames = classNames(
-        colors[privateProps!.color].textColor,
-        colors[privateProps!.color].borderColor,
+        getColorVariantsFromColorThemeValue(colorTheme[privateProps!.color].text).textColor,
+        getColorVariantsFromColorThemeValue(colorTheme[privateProps!.color].darkBorder).borderColor,
         'border-b-2'
     );
     const inActiveClassNames = classNames(

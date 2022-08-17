@@ -4,8 +4,9 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { BaseColors, Sizes } from '@utils/objects';
-import { buttonProportions, colors, iconLeftProportions, iconRightProportions } from './styles';
-import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
+import { buttonProportions, iconLeftProportions, iconRightProportions } from './styles';
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
+import colorTheme, { defaultColors } from '@utils/colorTheme';
 
 export interface ButtonInlineProps {
     text: string,
@@ -38,10 +39,10 @@ const ButtonInline = ({
                         'flex-shrink-0 inline-flex items-center group font-medium',
                         'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-transparent',
                         buttonProportions[size]?.textSize,
-                        colors[color].bgColor,
-                        colors[color].hoverBgColor,
-                        colors[color].hoverTextColor,
-                        colors[color].textColor,
+                        getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor,
+                        getColorVariantsFromColorThemeValue(colorTheme[color].darkText).hoverTextColor,
+                        getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
+                        getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
                     ) }
                 >
                     { Icon && (iconPosition !== 'right') ? ( // ensures that icon is rendered if iconPosition is misspelled
