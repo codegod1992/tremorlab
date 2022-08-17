@@ -2,10 +2,11 @@ import React from 'react';
 
 import {
     classNames,
+    getColorVariantsFromColorThemeValue,
     parseMarginTopClassNames,
 } from '@utils/classname-utils';
-import { BaseColors } from '@utils/objects'; 
-import { colors } from './mappings';
+import { BaseColors } from '@utils/objects';
+import colorTheme from '@utils/colorTheme';
 
 export interface MetricProps {
     color?: string,
@@ -21,7 +22,7 @@ const Metric = ({
     return(
         <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
             <p className={ classNames(
-                colors[color].textColor,
+                getColorVariantsFromColorThemeValue(colorTheme[color].darkText).textColor,
                 'text-3xl shrink-0 font-semibold'
             ) }
             >

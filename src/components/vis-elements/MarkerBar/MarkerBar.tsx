@@ -3,10 +3,9 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
-import BarWrapper from '@common/BarWrapper';
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
 import { BaseColors } from '@utils/objects';
-import { colors } from './mappings';
+import colorTheme from '@utils/colorTheme';
 
 export interface MarkerBarProps {
     percentageValue: number,
@@ -21,23 +20,27 @@ const MarkerBar = ({
     tooltip,
     marginTop
 }: MarkerBarProps) => {
+    const primaryBgColor = getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor;
+    const secondaryBgColor = getColorVariantsFromColorThemeValue(colorTheme[color].lightBackground).bgColor;
     return(
-        <BarWrapper
-            bgColor={ colors[color].secondaryBgColor }
-            marginTop={ parseMarginTopClassNames(marginTop) }
-        >
-            <div className="absolute" style={ { 'left': `${percentageValue}%` } }>
-                <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
-                    <div
-                        className={ classNames(
-                            'h-4 w-1 rounded-lg ring-2 ring-white',
-                            'right-1/2 -translate-x-1/2',
-                            colors[color].primaryBgColor,
-                        ) }
-                    />
-                </Tooltip>
+        <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
+            <div className={ classNames(
+                'relative h-2 w-full flex rounded-lg items-center',
+                secondaryBgColor,
+            ) }>
+                <div className="absolute" style={ { 'left': `${percentageValue}%` } }>
+                    <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+                        <div
+                            className={ classNames(
+                                'h-4 w-1 rounded-lg ring-2 ring-white',
+                                'right-1/2 -translate-x-1/2',
+                                primaryBgColor,
+                            ) }
+                        />
+                    </Tooltip>
+                </div>
             </div>
-        </BarWrapper>
+        </div>
     );
 };
 

@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { colors } from './mappings';
-
 import { 
     classNames,
     getColorVariantsFromColorThemeValue,
@@ -9,8 +7,8 @@ import {
     parseMarginTopClassNames,
     parseMaxWidthClassNames,
 } from '@utils/classname-utils';
+import colorTheme, { defaultColors } from '@utils/colorTheme';
 import { BaseColors } from '@utils/objects';
-import { defaultColors } from '@utils/colorTheme';
 
 export interface CardProps {
     hFull?: boolean,
@@ -56,7 +54,7 @@ const Card = ({
             parseMarginTopClassNames(marginTop),
             parseMaxWidthClassNames(maxWidth),
             shadow ? 'shadow' : '',
-            colors[decorationColor].borderColor,
+            getColorVariantsFromColorThemeValue(colorTheme[decorationColor].border).borderColor,
             parseDecorationAlignment(decoration),
         ) }
         >

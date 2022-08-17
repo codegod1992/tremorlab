@@ -1,15 +1,17 @@
 import React from 'react';
 
+import 'tippy.js/dist/tippy.css';
+import Tooltip from '@tippyjs/react';
+
 import { BaseColors, Sizes } from '@utils/objects';
 import {
-    buttonColors,
     buttonProportions,
-    buttonShape,
+    colors,
     iconLeftProportions,
-    iconRightProportions
-} from 'components/interaction-elements/Button/mappings';
+    iconRightProportions,
+    shape,
+} from './styles';
 import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
-import ButtonWrapper from '@common/ButtonWrapper';
 
 export interface ButtonProps {
     text: string,
@@ -35,45 +37,52 @@ const Button = ({
     marginTop,
 }: ButtonProps) => {
     return(
-        <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
-            <ButtonWrapper
-                onClick={ handleClick }
-                tooltip={ tooltip }
-                { ...buttonProportions[size] }
-                { ...buttonShape }
-                { ...buttonColors[color][importance] }
-            >
-                { Icon && (iconPosition !== 'right') ? ( // ensures that icon is rendered if iconPosition is misspelled
-                    <Icon
-                        className={classNames(
-                            iconLeftProportions[size]
-                                ? iconLeftProportions[size].margin!
-                                : iconLeftProportions['md'].margin!,
-                            iconLeftProportions[size]
-                                ? iconLeftProportions[size].iconSize!
-                                : iconLeftProportions['md'].iconSize!,
-                        )}
-                        aria-hidden="true"
-                    />
-                ) : null }
-                <span className="whitespace-nowrap">
-                    { text }
-                </span>
-                { Icon && (iconPosition === 'right') ? (
-                    <Icon
-                        className={classNames(
-                            iconRightProportions[size]
-                                ? iconRightProportions[size].margin!
-                                : iconRightProportions['md'].margin!,
-                            iconRightProportions[size]
-                                ? iconRightProportions[size].iconSize!
-                                : iconRightProportions['md'].iconSize!,
-                        )}
-                        aria-hidden="true"
-                    />
-                ) : null }
-            </ButtonWrapper>
-        </div>
+        <span className={ classNames(parseMarginTopClassNames(marginTop)) }>
+            <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+                <button
+                    type="button"
+                    onClick={ handleClick }
+                    className={ classNames(
+                        'flex-shrink-0 inline-flex items-center group font-medium',
+                        'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-transparent',
+                        buttonProportions[size]?.paddingX,
+                        buttonProportions[size]?.paddingY,
+                        buttonProportions[size]?.textSize,
+                        shape.border,
+                        shape.rounded,
+                        shape.shadow,
+                        colors[color][importance].bgColor,
+                        colors[color][importance].borderColor,
+                        colors[color][importance].focusRingColor,
+                        colors[color][importance].hoverBgColor,
+                        colors[color][importance].hoverBorderColor,
+                        colors[color][importance].textColor,
+                    ) }
+                >
+                    { Icon && (iconPosition !== 'right') ? ( // ensures that icon is rendered if iconPosition is misspelled
+                        <Icon
+                            className={classNames(
+                                iconLeftProportions[size]?.margin || '',
+                                iconLeftProportions[size]?.iconSize,
+                            )}
+                            aria-hidden="true"
+                        />
+                    ) : null }
+                    <p className="whitespace-nowrap">
+                        { text }
+                    </p>
+                    { Icon && (iconPosition === 'right') ? (
+                        <Icon
+                            className={classNames(
+                                iconRightProportions[size]?.margin || '',
+                                iconRightProportions[size]?.iconSize,
+                            )}
+                            aria-hidden="true"
+                        />
+                    ) : null }
+                </button>
+            </Tooltip>
+        </span>
     );
 };
 

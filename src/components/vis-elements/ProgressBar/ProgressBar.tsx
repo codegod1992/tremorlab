@@ -4,10 +4,8 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
-import BarWrapper from '@common/BarWrapper';
+import colorTheme, { defaultColors } from '@utils/colorTheme';
 import { BaseColors } from '@utils/objects';
-import { colors } from './mappings';
-import { defaultColors } from '@utils/colorTheme';
 
 export interface ProgressBarProps {
     percentageValue: number,
@@ -24,6 +22,8 @@ const ProgressBar = ({
     color = BaseColors.Blue,
     marginTop
 }: ProgressBarProps) => {
+    const primaryBgColor = getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor;
+    const secondaryBgColor = getColorVariantsFromColorThemeValue(colorTheme[color].lightBackground).bgColor;
     return(
         <div className={
             classNames(
@@ -31,20 +31,19 @@ const ProgressBar = ({
                 parseMarginTopClassNames(marginTop),
             )
         }>
-            <div className="w-full">
-                <BarWrapper
-                    bgColor={ colors[color].secondaryBgColor }
-                >
-                    <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
-                        <div 
-                            className={ classNames(
-                                colors[color].primaryBgColor,
-                                'h-full flex-col rounded-lg'
-                            ) }
-                            style={ {'width': `${percentageValue}%`} }
-                        />
-                    </Tooltip>
-                </BarWrapper>
+            <div className={ classNames(
+                'relative h-2 w-full flex rounded-lg items-center',
+                secondaryBgColor,
+            ) }>
+                <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+                    <div 
+                        className={ classNames(
+                            primaryBgColor,
+                            'h-full flex-col rounded-lg'
+                        ) }
+                        style={ {'width': `${percentageValue}%`} }
+                    />
+                </Tooltip>
             </div>
             { label ? (
                 <div className={ classNames(

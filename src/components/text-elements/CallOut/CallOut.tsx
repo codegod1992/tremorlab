@@ -2,11 +2,12 @@ import React from 'react';
 
 import { 
     classNames,
+    getColorVariantsFromColorThemeValue,
     parseFixedHeightClassNames,
     parseMarginTopClassNames,
 } from '@utils/classname-utils';
 import { BaseColors } from '@utils/objects';
-import { colors } from './mappings';
+import colorTheme from '@utils/colorTheme';
 
 export interface CallOutProps {
     title: string,
@@ -28,14 +29,14 @@ const CallOut = ({
     return(
         <div className={ classNames(
             parseMarginTopClassNames(marginTop),
-            colors[color].bgColor,
-            colors[color].borderColor,
+            getColorVariantsFromColorThemeValue(colorTheme[color].canvasBackground).bgColor,
+            getColorVariantsFromColorThemeValue(colorTheme[color].border).borderColor,
             'relative rounded border-l-4 p-3'
         ) }
         >
             <div className="ml-1.5 overflow-hidden">
                 <div className={ classNames(
-                    colors[color].headerTextColor,
+                    getColorVariantsFromColorThemeValue(colorTheme[color].darkText).textColor,
                     'flex items-start'
                 ) }
                 >
@@ -46,7 +47,7 @@ const CallOut = ({
                 </div>
                 <div className={ classNames(
                     parseFixedHeightClassNames(fixedHeight),
-                    colors[color].bodyTextColor,
+                    getColorVariantsFromColorThemeValue(colorTheme[color].darkText).textColor,
                     'mt-2 text-sm overflow-y-auto'
                 ) }
                 >
