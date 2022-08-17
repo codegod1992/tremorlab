@@ -25,7 +25,7 @@ const Template: ComponentStory<typeof CategoryBar> = (args) => (
 
 export const WithoutMarker = Template.bind({});
 WithoutMarker.args = {
-    categories: [10, 25, 45, 20],
+    categoryPercentageValues: [10, 25, 45, 20],
     marginTop: 'mt-5',
 };
 
@@ -33,7 +33,7 @@ WithoutMarker.args = {
 export const WithMarker = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 WithMarker.args = {
-    categories: [10, 25, 45, 20],
+    categoryPercentageValues: [10, 25, 45, 20],
     colors: ['emerald', 'yellow', 'orange', 'rose'],
     percentageValue: 50,
     tooltip: '90%',

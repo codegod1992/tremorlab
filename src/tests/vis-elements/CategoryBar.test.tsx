@@ -7,7 +7,7 @@ import CategoryBar from 'components/vis-elements/CategoryBar';
 describe('CategoryBar', () => {
     test('renders the CategoryBar component with default props', () => {
         render(
-            <CategoryBar categories={[10, 25, 45, 20]}
+            <CategoryBar categoryPercentageValues={[10, 25, 45, 20]}
             />
         );
     });

@@ -14,7 +14,7 @@ import {
 } from '@utils/classname-utils';
 import colorTheme, { defaultColors, themeColorRange } from '@utils/colorTheme';
 
-const BarLabels = ({ categories }: {categories: number[]}) => {
+const BarLabels = ({ categoryPercentageValues }: {categoryPercentageValues: number[]}) => {
     let prefixSum = 0;
     return (
         <div className={ classNames(
@@ -22,7 +22,7 @@ const BarLabels = ({ categories }: {categories: number[]}) => {
             getColorVariantsFromColorThemeValue(defaultColors.text).textColor
         ) }
         >
-            { categories.slice(0, categories.length).map((widthPercentage, idx) => {
+            { categoryPercentageValues.slice(0, categoryPercentageValues.length).map((widthPercentage, idx) => {
                 prefixSum += widthPercentage;
                 return (
                     <div
@@ -47,7 +47,7 @@ const BarLabels = ({ categories }: {categories: number[]}) => {
 };
 
 export interface CategoryBarProps {
-    categories: number[],
+    categoryPercentageValues: number[],
     colors?: string[],
     percentageValue?: number,
     showLabels?: boolean,
@@ -56,7 +56,7 @@ export interface CategoryBarProps {
 }
 
 const CategoryBar = ({
-    categories,
+    categoryPercentageValues,
     colors = themeColorRange,
     percentageValue,
     showLabels = true,
@@ -69,8 +69,8 @@ const CategoryBar = ({
             return '';
 
         let prefixSum = 0;
-        for (let i = 0; i < categories.length; i++) {
-            const currentWidthPercentage = categories[i];
+        for (let i = 0; i < categoryPercentageValues.length; i++) {
+            const currentWidthPercentage = categoryPercentageValues[i];
             const currentBgColor = getColorVariantsFromColorThemeValue(colorTheme[colors[i]].background).bgColor;
 
             prefixSum += currentWidthPercentage;
@@ -85,9 +85,9 @@ const CategoryBar = ({
 
     return(
         <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
-            { showLabels ? <BarLabels categories={ categories } /> : null }
+            { showLabels ? <BarLabels categoryPercentageValues={ categoryPercentageValues } /> : null }
             <div className="relative h-2 w-full flex rounded-lg items-center space-x-1">
-                {categories.map((percentageValue, idx) => {
+                {categoryPercentageValues.map((percentageValue, idx) => {
                     return(
                         <div key={ `item-${idx}` } style={ { width: `${percentageValue}%` } } className={ classNames(
                             getColorVariantsFromColorThemeValue(colorTheme[colors[idx]].background).bgColor,
