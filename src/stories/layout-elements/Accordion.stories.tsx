@@ -8,7 +8,7 @@ import AccordionHeader from 'components/layout-elements/Accordion/AccordionHeade
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/InteractionElements/Accordion',
+    title: 'Tremor/LayoutElements/Accordion',
     component: Accordion,
 } as ComponentMeta<typeof Accordion>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
