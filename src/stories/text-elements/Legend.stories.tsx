@@ -21,10 +21,10 @@ export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
     categories: [
-        { name: 'Critical', color: 'rose' },
-        { name: 'This is a very long catergory name to test an edge case', color: 'blue' },
-        { name: 'Category C', color: 'emerald' },
-        { name: 'Category D', color: 'yellow' },
+        'Critical',
+        'This is a very long catergory name to test an edge case',
+        'Category C',
+        'Category D',
     ]
 };
 

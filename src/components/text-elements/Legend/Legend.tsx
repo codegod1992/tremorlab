@@ -4,7 +4,7 @@ import {
     classNames,
     getColorVariantsFromColorThemeValue,
 } from '@utils/classname-utils';
-import colorTheme, { defaultColors } from '@utils/colorTheme';
+import colorTheme, { defaultColors, themeColorRange } from '@utils/colorTheme';
 
 export interface LegendItemProps {
     name: string,
@@ -36,18 +36,20 @@ const LegendItem = ({
 
 
 export interface LegendProps {
-    categories: LegendItemProps[],
+    categories: string[],
+    colors?: string[],
 }
 
 const Legend = ({
     categories,
+    colors = themeColorRange,
 }: LegendProps) => {
     return(
         <>
             <div className="flow-root">
                 <ol className="-mx-1 flex flex-wrap overflow-hidden truncate">
                     { categories.map((category, idx) => (
-                        <LegendItem key={ `item-${idx}` } name={ category.name } color={ category.color } />
+                        <LegendItem key={ `item-${idx}` } name={ category } color={ colors[idx] } />
                     )) }
                 </ol>
             </div>

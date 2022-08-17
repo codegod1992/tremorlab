@@ -26,7 +26,6 @@ const Template: ComponentStory<typeof CategoryBar> = (args) => (
 export const WithoutMarker = Template.bind({});
 WithoutMarker.args = {
     categories: [10, 25, 45, 20],
-    colors: ['emerald', 'yellow', 'orange', 'rose'],
     marginTop: 'mt-5',
 };
 

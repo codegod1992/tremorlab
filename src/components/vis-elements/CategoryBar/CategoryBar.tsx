@@ -12,7 +12,7 @@ import {
     parseMarginTopClassNames,
     toBorderColorClass
 } from '@utils/classname-utils';
-import colorTheme, { defaultColors } from '@utils/colorTheme';
+import colorTheme, { defaultColors, themeColorRange } from '@utils/colorTheme';
 
 const BarLabels = ({ categories }: {categories: number[]}) => {
     let prefixSum = 0;
@@ -48,7 +48,7 @@ const BarLabels = ({ categories }: {categories: number[]}) => {
 
 export interface CategoryBarProps {
     categories: number[],
-    colors: string[],
+    colors?: string[],
     percentageValue?: number,
     showLabels?: boolean,
     tooltip?: string,
@@ -57,7 +57,7 @@ export interface CategoryBarProps {
 
 const CategoryBar = ({
     categories,
-    colors,
+    colors = themeColorRange,
     percentageValue,
     showLabels = true,
     tooltip,
