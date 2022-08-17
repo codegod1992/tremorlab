@@ -1,10 +1,5 @@
 import { ValueFormater } from '@utils/utils';
 
-export type IconProportionTypes = {
-    margin?: string,
-    iconSize: string,
-}
-
 export interface ChartProps {
     data: any[],
     categories: string[],

@@ -1,5 +1,3 @@
-import { IconProportionTypes } from '@common/common-types';
-
 export type ButtonProportionTypes = {
     textSize: string,
 }
@@ -18,6 +16,11 @@ export const buttonProportions: {[char: string]: ButtonProportionTypes} = {
         textSize: 'text-lg',
     },
 };
+
+export type IconProportionTypes = {
+    margin?: string,
+    iconSize: string,
+}
 
 export const iconLeftProportions: {[size: string]: IconProportionTypes} = {
     xs: {
