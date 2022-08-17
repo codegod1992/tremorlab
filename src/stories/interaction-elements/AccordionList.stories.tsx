@@ -2,10 +2,10 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import Accordion from 'components/interaction-elements/Accordion/Accordion';
-import AccordionBody from 'components/interaction-elements/Accordion/AccordionBody';
-import AccordionHeader from 'components/interaction-elements/Accordion/AccordionHeader';
-import AccordionList from 'components/interaction-elements/Accordion/AccordionList';
+import Accordion from 'components/layout-elements/Accordion/Accordion';
+import AccordionBody from 'components/layout-elements/Accordion/AccordionBody';
+import AccordionHeader from 'components/layout-elements/Accordion/AccordionHeader';
+import AccordionList from 'components/layout-elements/Accordion/AccordionList';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
