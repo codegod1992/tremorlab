@@ -1,12 +1,12 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import CallOut from 'components/text-elements/CallOut';
+import Callout from 'components/text-elements/Callout';
 
-describe('CallOut', () => {
-    test('renders the CallOut component with default props', () => {
+describe('Callout', () => {
+    test('renders the Callout component with default props', () => {
         render(
-            <CallOut
+            <Callout
                 title="Performance Metric"
                 text={
                     `You are outranking 83% of the sales representatives in your cohort. Sit repellendus qui ut at

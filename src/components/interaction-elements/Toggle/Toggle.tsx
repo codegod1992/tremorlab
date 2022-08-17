@@ -4,7 +4,7 @@ import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNam
 import { BaseColors } from '@utils/objects';
 import { defaultColors } from '@utils/colorTheme';
 
-export interface ToggleButtonProps {
+export interface ToggleProps {
     defaultValue?: any,
     color?: string,
     handleSelect?: { (value: any): void },
@@ -12,19 +12,19 @@ export interface ToggleButtonProps {
     marginTop?: string,
 }
 
-const ToggleButton = ({
+const Toggle = ({
     defaultValue,
     color = BaseColors.Blue,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     handleSelect = (value) => null,
     marginTop,
     children,
-}: ToggleButtonProps) => {
-    const [activeToggleButtonItem, setActiveToggleButtonItem] = useState<any|null>(defaultValue);
+}: ToggleProps) => {
+    const [activeToggleItem, setActiveToggleItem] = useState<any|null>(defaultValue);
 
     useEffect(() => {
-        handleSelect(activeToggleButtonItem);
-    }, [activeToggleButtonItem]);
+        handleSelect(activeToggleItem);
+    }, [activeToggleItem]);
 
     return (
         <div className={ classNames(
@@ -36,8 +36,8 @@ const ToggleButton = ({
             { React.Children.map(children, (child) => (
                 React.cloneElement(child, {
                     privateProps: {
-                        setActiveToggleButtonItem: setActiveToggleButtonItem,
-                        isActive: activeToggleButtonItem === child.props.value,
+                        setActiveToggleItem: setActiveToggleItem,
+                        isActive: activeToggleItem === child.props.value,
                         color: color,
                     }
                 })
@@ -46,4 +46,4 @@ const ToggleButton = ({
     );
 };
 
-export default ToggleButton;
+export default Toggle;

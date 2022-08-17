@@ -6,5 +6,5 @@ export { default as Subtitle } from './Subtitle';
 export { default as Text } from './Text';
 export { default as Title } from './Title';
 
-export { default as CallOut } from './CallOut';
+export { default as Callout } from './Callout';
 export { default as Legend } from './Legend';
