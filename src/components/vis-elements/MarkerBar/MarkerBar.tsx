@@ -4,7 +4,7 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
-import { BaseColors } from 'lib/objects';
+import { BaseColors } from 'lib/primitives';
 import colorTheme from 'lib/colorTheme';
 
 export interface MarkerBarProps {

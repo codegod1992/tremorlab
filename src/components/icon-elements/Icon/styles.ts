@@ -1,6 +1,6 @@
 import colorTheme, { defaultColors } from 'lib/colorTheme';
 
-import { BaseColors } from 'lib/objects';
+import { BaseColors } from 'lib/primitives';
 import { getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 
 export type ProporionTypes = {

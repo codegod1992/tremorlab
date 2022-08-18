@@ -3,7 +3,7 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { BaseColors, Sizes } from 'lib/objects';
+import { BaseColors, Sizes } from 'lib/primitives';
 import { buttonProportions, iconLeftProportions, iconRightProportions } from './styles';
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
 import colorTheme, { defaultColors } from 'lib/colorTheme';

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
-import { BaseColors } from 'lib/objects';
+import { BaseColors } from 'lib/primitives';
 import { defaultColors } from 'lib/colorTheme';
 
 export interface ToggleProps {

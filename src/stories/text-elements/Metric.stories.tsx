@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { BaseColors } from 'lib/objects';
+import { BaseColors } from 'lib/primitives';
 import Metric from '../../components/text-elements/Metric/Metric';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

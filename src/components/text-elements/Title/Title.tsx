@@ -5,7 +5,7 @@ import {
     getColorVariantsFromColorThemeValue,
     parseMarginTopClassNames,
 } from 'lib/classnameUtils';
-import { BaseColors } from 'lib/objects';
+import { BaseColors } from 'lib/primitives';
 import colorTheme from 'lib/colorTheme';
 
 export interface TitleProps {

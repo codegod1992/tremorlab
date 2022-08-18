@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { ValueFormater, defaultValueFormater } from 'lib/utils';
+import { ValueFormater, defaultValueFormater } from '../../../lib/utils';
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
-import { BaseColors } from 'lib/objects';
+import { BaseColors } from 'lib/primitives';
 import colorTheme from 'lib/colorTheme';
 
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { DeltaTypes } from 'lib/objects';
+import { DeltaTypes } from 'lib/primitives';
 
 export const mapInputsToDeltaType = (deltaType: string, isIncreasePositive: boolean): string => {
     if (isIncreasePositive || deltaType===DeltaTypes.Unchanged) {

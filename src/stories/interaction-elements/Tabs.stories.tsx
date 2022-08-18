@@ -5,7 +5,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import Tab from 'components/interaction-elements/Tab/Tab';
 import TabList from 'components/interaction-elements/Tab/TabList';
 
-import { BaseColors } from 'lib/objects';
+import { BaseColors } from 'lib/primitives';
 import { Card } from 'components';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

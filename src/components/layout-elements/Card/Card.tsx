@@ -8,7 +8,7 @@ import {
     parseMaxWidthClassNames,
 } from 'lib/classnameUtils';
 import colorTheme, { defaultColors } from 'lib/colorTheme';
-import { BaseColors } from 'lib/objects';
+import { BaseColors } from 'lib/primitives';
 
 export interface CardProps {
     hFull?: boolean,

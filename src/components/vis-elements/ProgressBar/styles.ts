@@ -1,4 +1,4 @@
-import { BaseColors } from 'lib/objects';
+import { BaseColors } from 'lib/primitives';
 import colorTheme from 'lib/colorTheme';
 import { getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 

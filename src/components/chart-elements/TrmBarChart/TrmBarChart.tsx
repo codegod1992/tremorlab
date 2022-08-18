@@ -11,15 +11,15 @@ import {
     YAxis,
 } from 'recharts';
 
-import ChartLegend from '@common/ChartLegend';
-import { ChartProps } from '@common/commonTypes';
-import ChartTooltip from '@common/ChartTooltip';
+import BaseChartProps from '../common/BaseChartProps';
+import ChartLegend from '../common/ChartLegend';
+import ChartTooltip from '../common/ChartTooltip';
 
 import colorTheme, { themeColorRange } from 'lib/colorTheme';
 import { defaultValueFormater } from 'lib/utils';
 import { getHexFromColorThemeValue } from 'lib/classnameUtils';
 
-export interface TrmBarChartProps extends ChartProps {
+export interface TrmBarChartProps extends BaseChartProps {
     layout?: string,
     stack?: boolean,
     relative?: boolean,

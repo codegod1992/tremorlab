@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import Toggle from 'components/interaction-elements/Toggle/Toggle';
 import { ToggleItem } from 'components';
 
-import { BaseColors } from 'lib/objects';
+import { BaseColors } from 'lib/primitives';
 import { CalendarIcon } from '@heroicons/react/solid';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
