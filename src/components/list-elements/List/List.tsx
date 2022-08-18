@@ -4,8 +4,8 @@ import {
     classNames,
     getColorVariantsFromColorThemeValue,
     parseMarginTopClassNames 
-} from '@utils/classnameUtils';
-import { defaultColors } from '@utils/colorTheme';
+} from 'lib/classnameUtils';
+import { defaultColors } from 'lib/colorTheme';
 
 export interface ListProps {
     textColor?: string,

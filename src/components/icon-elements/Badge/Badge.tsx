@@ -3,10 +3,10 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { BaseColors, Sizes } from '@utils/objects';
+import { BaseColors, Sizes } from 'lib/objects';
 import { badgeProportionsTextOnly, badgeProportionsWithIcon, iconProportions } from './styles';
-import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classnameUtils';
-import colorTheme from '@utils/colorTheme';
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
+import colorTheme from 'lib/colorTheme';
 
 export interface BadgeIconTextProps {
     text: string,

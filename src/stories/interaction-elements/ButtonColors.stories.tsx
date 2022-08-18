@@ -3,7 +3,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ArrowRightIcon } from 'assets';
 
-import { BaseColors } from '@utils/objects';
+import { BaseColors } from 'lib/objects';
 
 import { Flex } from 'components';
 

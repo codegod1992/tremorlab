@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { classNames, getColorVariantsFromColorThemeValue, parseTextAlignmentClassNames } from '@utils/classnameUtils';
-import { defaultColors } from '@utils/colorTheme';
+import { classNames, getColorVariantsFromColorThemeValue, parseTextAlignmentClassNames } from 'lib/classnameUtils';
+import { defaultColors } from 'lib/colorTheme';
 
 interface TableHeaderCellProps {
     textAlignment?: string,

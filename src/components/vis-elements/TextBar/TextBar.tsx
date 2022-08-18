@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { ValueFormater, defaultValueFormater } from '@utils/utils';
-import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classnameUtils';
-import { BaseColors } from '@utils/objects';
-import colorTheme from '@utils/colorTheme';
+import { ValueFormater, defaultValueFormater } from 'lib/utils';
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
+import { BaseColors } from 'lib/objects';
+import colorTheme from 'lib/colorTheme';
 
 
 type TextBarData = {

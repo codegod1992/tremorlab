@@ -3,7 +3,7 @@ import React from 'react';
 import { 
     classNames,
     parseTextAlignmentClassNames
-} from '@utils/classnameUtils';
+} from 'lib/classnameUtils';
 
 export interface TableCellProps {
     textAlignment?: string,

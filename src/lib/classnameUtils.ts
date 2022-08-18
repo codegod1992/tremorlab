@@ -1,5 +1,5 @@
 import { ColorTypes, colorVariantMapping } from './colorVariantMapping';
-import { twColorsHex } from '@utils/colorTheme';
+import { twColorsHex } from 'lib/colorTheme';
 
 interface StringJoiner {
     (...classes: (string)[]): string

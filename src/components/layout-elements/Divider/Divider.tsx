@@ -3,8 +3,8 @@ import React from 'react';
 import { 
     classNames,
     getColorVariantsFromColorThemeValue,
-} from '@utils/classnameUtils';
-import { defaultColors } from '@utils/colorTheme';
+} from 'lib/classnameUtils';
+import { defaultColors } from 'lib/colorTheme';
 
 const Divider = () => (
     <div className={ classNames(

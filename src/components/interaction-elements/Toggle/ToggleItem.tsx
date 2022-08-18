@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { classNames, getColorVariantsFromColorThemeValue } from '@utils/classnameUtils';
-import colorTheme, { defaultColors } from '@utils/colorTheme';
+import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
+import colorTheme, { defaultColors } from 'lib/colorTheme';
 
 export interface ToggleItemProps {
     value: any,

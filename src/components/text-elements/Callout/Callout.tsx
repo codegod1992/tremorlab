@@ -5,9 +5,9 @@ import {
     getColorVariantsFromColorThemeValue,
     parseFixedHeightClassNames,
     parseMarginTopClassNames,
-} from '@utils/classnameUtils';
-import { BaseColors } from '@utils/objects';
-import colorTheme from '@utils/colorTheme';
+} from 'lib/classnameUtils';
+import { BaseColors } from 'lib/objects';
+import colorTheme from 'lib/colorTheme';
 
 export interface CalloutProps {
     title: string,

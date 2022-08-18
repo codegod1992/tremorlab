@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { classNames, getColorVariantsFromColorThemeValue } from '@utils/classnameUtils';
-import { defaultColors } from '@utils/colorTheme';
+import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
+import { defaultColors } from 'lib/colorTheme';
 
 interface TableBodyProps {
     children: React.ReactElement[]

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { classNames, getColorVariantsFromColorThemeValue } from '@utils/classnameUtils';
-import colorTheme, { defaultColors, themeColorRange } from '@utils/colorTheme';
-import { ValueFormater } from '@utils/utils';
+import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
+import colorTheme, { defaultColors, themeColorRange } from 'lib/colorTheme';
+import { ValueFormater } from 'lib/utils';
 
 export interface ChartTooltipRowProps {
     value: string,

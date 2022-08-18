@@ -1,6 +1,6 @@
-import { BaseColors } from '@utils/objects';
-import colorTheme from '@utils/colorTheme';
-import { getColorVariantsFromColorThemeValue } from '@utils/classnameUtils';
+import { BaseColors } from 'lib/objects';
+import colorTheme from 'lib/colorTheme';
+import { getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 
 export type ColorTypes = {
     primaryBgColor: string,

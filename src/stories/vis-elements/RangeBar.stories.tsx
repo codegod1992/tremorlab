@@ -6,7 +6,7 @@ import RangeBar from 'components/vis-elements/RangeBar/RangeBar';
 import Card from 'components/layout-elements/Card';
 import Metric from 'components/text-elements/Metric';
 
-import { BaseColors } from '@utils/objects';
+import { BaseColors } from 'lib/objects';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

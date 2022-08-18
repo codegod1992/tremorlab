@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
-import colorTheme, { defaultColors } from '@utils/colorTheme';
-import { BaseColors } from '@utils/objects';
-import { getColorVariantsFromColorThemeValue } from '@utils/classnameUtils';
+import colorTheme, { defaultColors } from 'lib/colorTheme';
+import { BaseColors } from 'lib/objects';
+import { getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 
 export type ButtonProportionTypes = {
     paddingX: string,

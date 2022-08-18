@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { DeltaTypes, Sizes } from '@utils/objects';
+import { DeltaTypes, Sizes } from 'lib/objects';
 import BadgeDelta from 'components/icon-elements/BadgeDelta/BadgeDelta';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

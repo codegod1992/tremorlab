@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { ChevronDownIcon } from '@heroicons/react/solid';
 
-import { classNames, parseMarginTopClassNames } from '@utils/classnameUtils';
+import { classNames, parseMarginTopClassNames } from 'lib/classnameUtils';
 import Modal from '@common/Modal';
 import SelectWrapper from '@common/SelectWrapper';
 

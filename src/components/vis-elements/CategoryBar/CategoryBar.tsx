@@ -11,8 +11,8 @@ import {
     parseBorderClassNames,
     parseMarginTopClassNames,
     toBorderColorClass
-} from '@utils/classnameUtils';
-import colorTheme, { defaultColors, themeColorRange } from '@utils/colorTheme';
+} from 'lib/classnameUtils';
+import colorTheme, { defaultColors, themeColorRange } from 'lib/colorTheme';
 
 const BarLabels = ({ categoryPercentageValues }: {categoryPercentageValues: number[]}) => {
     let prefixSum = 0;

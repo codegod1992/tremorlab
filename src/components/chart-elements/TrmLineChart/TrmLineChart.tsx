@@ -15,9 +15,9 @@ import ChartLegend from '@common/ChartLegend';
 import { ChartProps } from '@common/commonTypes';
 import ChartTooltip from '@common/ChartTooltip';
 
-import colorTheme, { themeColorRange } from '@utils/colorTheme';
-import { defaultValueFormater } from '@utils/utils';
-import { getHexFromColorThemeValue } from '@utils/classnameUtils';
+import colorTheme, { themeColorRange } from 'lib/colorTheme';
+import { defaultValueFormater } from 'lib/utils';
+import { getHexFromColorThemeValue } from 'lib/classnameUtils';
 
 const TrmLineChart = ({
     data,

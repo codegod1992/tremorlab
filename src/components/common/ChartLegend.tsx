@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Legend from 'components/text-elements/Legend';
-import { themeColorRange } from '@utils/colorTheme';
+import { themeColorRange } from 'lib/colorTheme';
 
 const ChartLegend = ({ payload }: any, colors: string[] = themeColorRange) => {
     return (

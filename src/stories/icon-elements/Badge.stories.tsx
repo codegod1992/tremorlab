@@ -2,8 +2,8 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { BaseColors } from '@utils/objects';
-import { Sizes } from '@utils/objects';
+import { BaseColors } from 'lib/objects';
+import { Sizes } from 'lib/objects';
 
 import Badge from 'components/icon-elements/Badge/Badge';
 

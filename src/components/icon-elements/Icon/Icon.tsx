@@ -3,8 +3,8 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { BaseColors, Sizes } from '@utils/objects';
-import { classNames, parseMarginTopClassNames } from '@utils/classnameUtils';
+import { BaseColors, Sizes } from 'lib/objects';
+import { classNames, parseMarginTopClassNames } from 'lib/classnameUtils';
 import { colors, proportions, shape } from './styles';
 
 export const IconVariants = {

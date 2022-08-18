@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { classNames } from '@utils/classnameUtils';
+import { classNames } from 'lib/classnameUtils';
 
 interface SelectWrapperProps {
     children: React.ReactNode,

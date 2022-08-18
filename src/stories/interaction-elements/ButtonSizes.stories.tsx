@@ -3,7 +3,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ArrowRightIcon } from 'assets';
 
-import { Sizes } from '@utils/objects';
+import { Sizes } from 'lib/objects';
 
 import { Flex } from 'components';
 

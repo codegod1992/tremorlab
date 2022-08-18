@@ -6,7 +6,7 @@ import {
     parseJustifyContentClassNames,
     parseMarginTopClassNames,
     parseSpaceXClassNames,
-} from '@utils/classnameUtils';
+} from 'lib/classnameUtils';
 
 export interface FlexProps {
     justifyContent?: string,

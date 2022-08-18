@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classnameUtils';
-import { BaseColors } from '@utils/objects';
-import { defaultColors } from '@utils/colorTheme';
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
+import { BaseColors } from 'lib/objects';
+import { defaultColors } from 'lib/colorTheme';
 
 export interface TabListProps {
     defaultValue?: any,

@@ -6,9 +6,9 @@ import {
     parseHFullOption,
     parseMarginTopClassNames,
     parseMaxWidthClassNames,
-} from '@utils/classnameUtils';
-import colorTheme, { defaultColors } from '@utils/colorTheme';
-import { BaseColors } from '@utils/objects';
+} from 'lib/classnameUtils';
+import colorTheme, { defaultColors } from 'lib/colorTheme';
+import { BaseColors } from 'lib/objects';
 
 export interface CardProps {
     hFull?: boolean,

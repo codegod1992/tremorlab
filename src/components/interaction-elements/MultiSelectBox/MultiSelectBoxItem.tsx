@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { isValueInArray, removeValueFromArray } from '@utils/utils';
+import { isValueInArray, removeValueFromArray } from 'lib/utils';
 import SelectItemWrapper from '@common/SelectItemWrapper';
 
 export interface MultiSelectBoxItemProps {

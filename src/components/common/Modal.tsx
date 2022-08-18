@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 
-import { classNames, parseMaxHeightClassNames, parseWidthClassNames } from '@utils/classnameUtils';
-import { useOnClickOutside } from '@utils/utils';
+import { classNames, parseMaxHeightClassNames, parseWidthClassNames } from 'lib/classnameUtils';
+import { useOnClickOutside } from 'lib/utils';
 
 export interface ModalProps {
     showModal: boolean,

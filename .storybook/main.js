@@ -18,7 +18,6 @@ module.exports = {
       path.resolve(__dirname, "../src"),
     ];
     config.resolve.alias = {
-      "@utils": path.resolve(__dirname, "..", "src", "utils"),
       "@common": path.resolve(__dirname, "..", "src", "components", "common"),
     }
     return config;

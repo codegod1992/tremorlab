@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classnameUtils';
-import { defaultColors } from '@utils/colorTheme';
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
+import { defaultColors } from 'lib/colorTheme';
 
 export interface ItalicProps {
     marginTop?: string,

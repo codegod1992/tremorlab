@@ -3,7 +3,7 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { BaseColors, Sizes } from '@utils/objects';
+import { BaseColors, Sizes } from 'lib/objects';
 import {
     buttonProportions,
     colors,
@@ -11,7 +11,7 @@ import {
     iconRightProportions,
     shape,
 } from './styles';
-import { classNames, parseMarginTopClassNames } from '@utils/classnameUtils';
+import { classNames, parseMarginTopClassNames } from 'lib/classnameUtils';
 
 export interface ButtonProps {
     text: string,

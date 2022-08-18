@@ -1,4 +1,4 @@
-import { ValueFormater } from '@utils/utils';
+import { ValueFormater } from 'lib/utils';
 
 export interface ChartProps {
     data: any[],
