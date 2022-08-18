@@ -3,6 +3,7 @@ import React from 'react';
 import { 
     classNames,
     getColorVariantsFromColorThemeValue,
+    parseMarginTopClassNames,
 } from 'lib/classnameUtils';
 import colorTheme, { defaultColors, themeColorRange } from 'lib/colorTheme';
 
@@ -38,22 +39,22 @@ const LegendItem = ({
 export interface LegendProps {
     categories: string[],
     colors?: string[],
+    marginTop: string,
 }
 
 const Legend = ({
     categories,
     colors = themeColorRange,
+    marginTop,
 }: LegendProps) => {
     return(
-        <>
-            <div className="flow-root">
-                <ol className="-mx-1 flex flex-wrap overflow-hidden truncate">
-                    { categories.map((category, idx) => (
-                        <LegendItem key={ `item-${idx}` } name={ category } color={ colors[idx] } />
-                    )) }
-                </ol>
-            </div>
-        </>
+        <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
+            <ol className="-mx-1 flex flex-wrap overflow-hidden truncate">
+                { categories.map((category, idx) => (
+                    <LegendItem key={ `item-${idx}` } name={ category } color={ colors[idx] } />
+                )) }
+            </ol>
+        </div>
     );
 };
 
