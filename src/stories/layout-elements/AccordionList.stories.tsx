@@ -9,7 +9,7 @@ import AccordionList from 'components/layout-elements/Accordion/AccordionList';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/InteractionElements/AccordionList',
+    title: 'Tremor/LayoutElements/AccordionList',
     component: AccordionList,
 } as ComponentMeta<typeof AccordionList>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

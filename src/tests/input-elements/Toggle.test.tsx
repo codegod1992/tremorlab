@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Toggle from 'components/interaction-elements/Toggle/Toggle';
-import ToggleItem from 'components/interaction-elements/Toggle/ToggleItem';
+import Toggle from 'components/input-elements/Toggle/Toggle';
+import ToggleItem from 'components/input-elements/Toggle/ToggleItem';
 
 describe('Toggle', () => {
     test('renders the Toggle component with default props', () => {

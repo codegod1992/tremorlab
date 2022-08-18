@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { ChevronDownIcon, SearchIcon, XCircleIcon } from '@heroicons/react/solid';
 
 import { classNames, parseMarginTopClassNames } from 'lib/classnameUtils';
-import Modal from 'components/interaction-elements/common/Modal';
+import Modal from 'components/input-elements/common/Modal';
 import SelectText from '../common/SelectText';
 import SelectWrapper from '../common/SelectWrapper';
 

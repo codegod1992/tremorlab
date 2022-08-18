@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import Toggle from 'components/interaction-elements/Toggle/Toggle';
+import Toggle from 'components/input-elements/Toggle/Toggle';
 import { ToggleItem } from 'components';
 
 import { BaseColors } from 'lib/primitives';
@@ -9,7 +9,7 @@ import { CalendarIcon } from '@heroicons/react/solid';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/InteractionElements/Toggle',
+    title: 'Tremor/InputElements/Toggle',
     component: Toggle,
 } as ComponentMeta<typeof Toggle>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

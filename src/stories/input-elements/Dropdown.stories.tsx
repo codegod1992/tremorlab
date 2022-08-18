@@ -3,13 +3,13 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Card, DropdownItem } from 'components';
-import Dropdown from 'components/interaction-elements/Dropdown/Dropdown';
+import Dropdown from 'components/input-elements/Dropdown/Dropdown';
 
 import { CalendarIcon } from '@heroicons/react/solid';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/InteractionElements/Dropdown',
+    title: 'Tremor/InputElements/Dropdown',
     component: Dropdown,
 } as ComponentMeta<typeof Dropdown>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
