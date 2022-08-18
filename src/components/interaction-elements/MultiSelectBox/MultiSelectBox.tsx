@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { ChevronDownIcon, SearchIcon, XCircleIcon } from '@heroicons/react/solid';
 
 import { classNames, parseMarginTopClassNames } from 'lib/classnameUtils';
-import Modal from '@common/Modal';
-import SelectText from '@common/SelectText';
-import SelectWrapper from '@common/SelectWrapper';
+import Modal from 'components/interaction-elements/common/Modal';
+import SelectText from '../common/SelectText';
+import SelectWrapper from '../common/SelectWrapper';
 
 export interface MultiSelectBoxProps {
     defaultValues?: any[],

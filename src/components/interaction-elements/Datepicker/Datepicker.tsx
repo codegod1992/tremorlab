@@ -25,9 +25,9 @@ import {
     previousMonth,
     relativeFilterOptions
 } from 'components/interaction-elements/Datepicker/datepicker-utils';
-import Modal from '@common/Modal';
-import SelectItemWrapper from '@common/SelectItemWrapper';
-import SelectText from '@common/SelectText';
+import Modal from 'components/interaction-elements/common/Modal';
+import SelectItemWrapper from '../common/SelectItemWrapper';
+import SelectText from '../common/SelectText';
 
 export interface DatepickerProps {
     handleSelect?: { (selectedStartDay: Date|null, selectedEndDay: Date|null): void },

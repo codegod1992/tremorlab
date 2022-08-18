@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SelectItemWrapper from '@common/SelectItemWrapper';
+import SelectItemWrapper from '../common/SelectItemWrapper';
 import { classNames } from 'lib/classnameUtils';
 
 export interface SelectBoxItemProps {

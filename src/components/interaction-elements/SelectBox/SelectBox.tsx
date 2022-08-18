@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 
 import { classNames, parseMarginTopClassNames } from 'lib/classnameUtils';
-import Modal from '@common/Modal';
-import SelectWrapper from '@common/SelectWrapper';
+import Modal from 'components/interaction-elements/common/Modal';
+import SelectWrapper from '../common/SelectWrapper';
 
 export interface SelectBoxProps {
     defaultValue?: any,

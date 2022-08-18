@@ -17,9 +17,7 @@ module.exports = {
       ...(config.resolve.modules || []),
       path.resolve(__dirname, "../src"),
     ];
-    config.resolve.alias = {
-      "@common": path.resolve(__dirname, "..", "src", "components", "common"),
-    }
+    config.resolve.alias = {}
     return config;
   },
 }

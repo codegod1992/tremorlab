@@ -6,6 +6,5 @@ module.exports = {
         '.(css|less|scss)$': 'identity-obj-proxy',
         'components/(.*)': '<rootDir>/src/components/$1',
         'assets/(.*)': '<rootDir>/src/assets/$1',
-        '^@common/(.*)': '<rootDir>/src/components/common/$1'
     },
 };
