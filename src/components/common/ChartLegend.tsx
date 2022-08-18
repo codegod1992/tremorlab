@@ -6,9 +6,10 @@ import { themeColorRange } from '@utils/colorTheme';
 const ChartLegend = ({ payload }: any, colors: string[] = themeColorRange) => {
     return (
         <div className="flex items-center justify-end">
-            <Legend categories={payload.map((entry: any, idx: number) => (
-                { name: entry.value, color: colors[idx] }
-            ))} />
+            <Legend
+                categories={payload.map((entry: any) => entry.value)}
+                colors={ colors }
+            />
         </div>
     );
 };
