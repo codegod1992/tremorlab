@@ -3,7 +3,7 @@ import React from 'react';
 import { 
     classNames,
     getColorVariantsFromColorThemeValue,
-} from '@utils/classname-utils';
+} from '@utils/classnameUtils';
 import { defaultColors } from '@utils/colorTheme';
 
 const Divider = () => (

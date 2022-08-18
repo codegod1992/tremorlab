@@ -13,7 +13,7 @@ import {
     sub,
 } from 'date-fns';
 
-import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
+import { classNames, parseMarginTopClassNames } from '@utils/classnameUtils';
 import {
     colStartClasses,
     displaySelected,

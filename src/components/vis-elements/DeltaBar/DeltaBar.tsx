@@ -3,7 +3,7 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classnameUtils';
 import { DeltaTypes } from '@utils/objects';
 import { colors } from './styles';
 import { defaultColors } from '@utils/colorTheme';

@@ -3,7 +3,7 @@ import React from 'react';
 import { 
     classNames,
     getColorVariantsFromColorThemeValue,
-} from '@utils/classname-utils';
+} from '@utils/classnameUtils';
 import colorTheme, { defaultColors, themeColorRange } from '@utils/colorTheme';
 
 export interface LegendItemProps {

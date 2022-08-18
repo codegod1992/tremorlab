@@ -3,7 +3,7 @@ import React from 'react';
 import { 
     classNames,
     parseFixedHeightClassNames,
-} from '@utils/classname-utils';
+} from '@utils/classnameUtils';
 
 export interface FooterProps {
     fixedHeight?: string,

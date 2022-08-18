@@ -12,12 +12,12 @@ import {
 } from 'recharts';
 
 import ChartLegend from '@common/ChartLegend';
-import { ChartProps } from '@common/common-types';
+import { ChartProps } from '@common/commonTypes';
 import ChartTooltip from '@common/ChartTooltip';
 
 import colorTheme, { themeColorRange } from '@utils/colorTheme';
 import { defaultValueFormater } from '@utils/utils';
-import { getHexFromColorThemeValue } from '@utils/classname-utils';
+import { getHexFromColorThemeValue } from '@utils/classnameUtils';
 
 const TrmAreaChart = ({
     data,

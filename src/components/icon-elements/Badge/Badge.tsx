@@ -5,7 +5,7 @@ import Tooltip from '@tippyjs/react';
 
 import { BaseColors, Sizes } from '@utils/objects';
 import { badgeProportionsTextOnly, badgeProportionsWithIcon, iconProportions } from './styles';
-import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classnameUtils';
 import colorTheme from '@utils/colorTheme';
 
 export interface BadgeIconTextProps {

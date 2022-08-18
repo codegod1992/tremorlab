@@ -11,7 +11,7 @@ import {
     iconProportionsIconOnly,
     iconProportionsWithText,
 } from './styles';
-import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
+import { classNames, parseMarginTopClassNames } from '@utils/classnameUtils';
 import { mapInputsToDeltaType } from '@utils/utils';
 
 export interface BadgeDeltaProps {

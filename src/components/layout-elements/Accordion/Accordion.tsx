@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classnameUtils';
 import { defaultColors } from '@utils/colorTheme';
 
 export interface AccordionProps {

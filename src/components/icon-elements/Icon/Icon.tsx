@@ -4,7 +4,7 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { BaseColors, Sizes } from '@utils/objects';
-import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
+import { classNames, parseMarginTopClassNames } from '@utils/classnameUtils';
 import { colors, proportions, shape } from './styles';
 
 export const IconVariants = {

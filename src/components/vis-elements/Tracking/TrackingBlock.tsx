@@ -3,7 +3,7 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { classNames, getColorVariantsFromColorThemeValue, parseFixedHeightClassNames } from '@utils/classname-utils';
+import { classNames, getColorVariantsFromColorThemeValue, parseFixedHeightClassNames } from '@utils/classnameUtils';
 import colorTheme from '@utils/colorTheme';
 
 export interface TrackingBlockProps {

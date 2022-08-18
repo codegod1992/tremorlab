@@ -1,7 +1,7 @@
 import React from 'react';
 
 import SelectItemWrapper from '@common/SelectItemWrapper';
-import { classNames } from '@utils/classname-utils';
+import { classNames } from '@utils/classnameUtils';
 
 export interface DropdownItemProps {
     value: any,

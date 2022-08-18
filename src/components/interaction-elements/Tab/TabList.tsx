@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classnameUtils';
 import { BaseColors } from '@utils/objects';
 import { defaultColors } from '@utils/colorTheme';
 

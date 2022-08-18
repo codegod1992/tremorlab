@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { classNames, getColorVariantsFromColorThemeValue, parseTextAlignmentClassNames } from '@utils/classname-utils';
+import { classNames, getColorVariantsFromColorThemeValue, parseTextAlignmentClassNames } from '@utils/classnameUtils';
 import { defaultColors } from '@utils/colorTheme';
 
 interface TableHeaderCellProps {

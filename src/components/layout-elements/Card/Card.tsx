@@ -6,7 +6,7 @@ import {
     parseHFullOption,
     parseMarginTopClassNames,
     parseMaxWidthClassNames,
-} from '@utils/classname-utils';
+} from '@utils/classnameUtils';
 import colorTheme, { defaultColors } from '@utils/colorTheme';
 import { BaseColors } from '@utils/objects';
 

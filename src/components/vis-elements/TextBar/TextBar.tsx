@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ValueFormater, defaultValueFormater } from '@utils/utils';
-import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classname-utils';
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from '@utils/classnameUtils';
 import { BaseColors } from '@utils/objects';
 import colorTheme from '@utils/colorTheme';
 

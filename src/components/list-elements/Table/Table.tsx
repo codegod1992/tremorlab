@@ -4,7 +4,7 @@ import {
     classNames,
     getColorVariantsFromColorThemeValue,
     parseMarginTopClassNames,
-} from '@utils/classname-utils';
+} from '@utils/classnameUtils';
 import { defaultColors } from '@utils/colorTheme';
 
 export interface TableProps {

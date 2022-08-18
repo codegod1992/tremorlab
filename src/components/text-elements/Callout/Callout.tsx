@@ -5,7 +5,7 @@ import {
     getColorVariantsFromColorThemeValue,
     parseFixedHeightClassNames,
     parseMarginTopClassNames,
-} from '@utils/classname-utils';
+} from '@utils/classnameUtils';
 import { BaseColors } from '@utils/objects';
 import colorTheme from '@utils/colorTheme';
 

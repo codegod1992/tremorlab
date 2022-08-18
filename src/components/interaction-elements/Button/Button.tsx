@@ -11,7 +11,7 @@ import {
     iconRightProportions,
     shape,
 } from './styles';
-import { classNames, parseMarginTopClassNames } from '@utils/classname-utils';
+import { classNames, parseMarginTopClassNames } from '@utils/classnameUtils';
 
 export interface ButtonProps {
     text: string,
