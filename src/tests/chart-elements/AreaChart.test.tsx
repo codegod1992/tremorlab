@@ -2,7 +2,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import TrmAreaChart from 'components/chart-elements/TrmAreaChart/TrmAreaChart';
+import AreaChart from 'components/chart-elements/AreaChart/AreaChart';
 
 const data = [
     {
@@ -35,10 +35,10 @@ const data = [
     },
 ];
 
-describe('TrmAreaChart', () => {
-    test('renders the TrmAreaChart component with default props', () => {
+describe('AreaChart', () => {
+    test('renders the AreaChart component with default props', () => {
         render(
-            <TrmAreaChart
+            <AreaChart
                 data={data}
                 categories={[ 'Sales' ]}
                 dataKey="month"

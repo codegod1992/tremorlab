@@ -2,9 +2,9 @@ import React from 'react';
 
 import {
     Bar,
-    BarChart,
     CartesianGrid,
     Legend,
+    BarChart as ReChartsBarChart,
     ResponsiveContainer,
     Tooltip,
     XAxis,
@@ -19,13 +19,13 @@ import colorTheme, { themeColorRange } from 'lib/colorTheme';
 import { defaultValueFormater } from 'lib/utils';
 import { getHexFromColorThemeValue } from 'lib/classnameUtils';
 
-export interface TrmBarChartProps extends BaseChartProps {
+export interface BarChartProps extends BaseChartProps {
     layout?: string,
     stack?: boolean,
     relative?: boolean,
 }
 
-const TrmBarChart = ({
+const BarChart = ({
     data,
     categories,
     dataKey,
@@ -46,10 +46,10 @@ const TrmBarChart = ({
     paddingRightPixels = 20,
     paddingBottomPixels = 5,
     paddingLeftPixels = 5,
-}: TrmBarChartProps) => (
+}: BarChartProps) => (
     <div className="w-full" style={ { 'height': `${height}px` } }>
         <ResponsiveContainer width="100%" height="100%">
-            <BarChart
+            <ReChartsBarChart
                 data={ data }
                 stackOffset={ relative ? 'expand' : 'none' }
                 layout={ layout === 'vertical' ? 'vertical' : 'horizontal' }
@@ -172,9 +172,9 @@ const TrmBarChart = ({
 
                     ))
                 }
-            </BarChart>
+            </ReChartsBarChart>
         </ResponsiveContainer>
     </div>
 );
 
-export default TrmBarChart;
+export default BarChart;

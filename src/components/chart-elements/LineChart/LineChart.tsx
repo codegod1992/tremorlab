@@ -4,7 +4,7 @@ import {
     CartesianGrid,
     Legend,
     Line,
-    LineChart,
+    LineChart as ReChartsLineChart,
     ResponsiveContainer,
     Tooltip,
     XAxis,
@@ -19,7 +19,7 @@ import colorTheme, { themeColorRange } from 'lib/colorTheme';
 import { defaultValueFormater } from 'lib/utils';
 import { getHexFromColorThemeValue } from 'lib/classnameUtils';
 
-const TrmLineChart = ({
+const LineChart = ({
     data,
     categories,
     dataKey,
@@ -41,7 +41,7 @@ const TrmLineChart = ({
     return (
         <div className="w-full" style={ { 'height': `${height}px` } }>
             <ResponsiveContainer width="100%" height="100%">
-                <LineChart
+                <ReChartsLineChart
                     data={ data }
                     margin={{
                         top: paddingTopPixels,
@@ -122,10 +122,10 @@ const TrmLineChart = ({
                             isAnimationActive={ false }
                         />
                     )) }
-                </LineChart>
+                </ReChartsLineChart>
             </ResponsiveContainer>
         </div>
     );
 };
 
-export default TrmLineChart;
+export default LineChart;

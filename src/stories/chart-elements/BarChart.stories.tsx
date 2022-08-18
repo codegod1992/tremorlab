@@ -2,20 +2,20 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Card, TrmBarChart } from 'components';
+import { BarChart, Card } from 'components';
 
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/ChartElements/TrmBarChart',
-    component: TrmBarChart,
-} as ComponentMeta<typeof TrmBarChart>;
+    title: 'Tremor/ChartElements/BarChart',
+    component: BarChart,
+} as ComponentMeta<typeof BarChart>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Template: ComponentStory<typeof TrmBarChart> = (args) => (
+const Template: ComponentStory<typeof BarChart> = (args) => (
     <Card hFull={ true } >
         <div className="h-96">
-            <TrmBarChart { ...args } />
+            <BarChart { ...args } />
         </div>
     </Card>
 );

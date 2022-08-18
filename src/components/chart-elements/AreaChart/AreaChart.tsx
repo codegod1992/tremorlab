@@ -2,9 +2,9 @@ import React from 'react';
 
 import {
     Area,
-    AreaChart,
     CartesianGrid,
     Legend,
+    AreaChart as ReChartsAreaChart,
     ResponsiveContainer,
     Tooltip,
     XAxis,
@@ -19,7 +19,7 @@ import colorTheme, { themeColorRange } from 'lib/colorTheme';
 import { defaultValueFormater } from 'lib/utils';
 import { getHexFromColorThemeValue } from 'lib/classnameUtils';
 
-const TrmAreaChart = ({
+const AreaChart = ({
     data,
     categories,
     dataKey,
@@ -40,7 +40,7 @@ const TrmAreaChart = ({
 }: BaseChartProps) => (
     <div className="w-full" style={ { 'height': `${height}px` } }>
         <ResponsiveContainer width="100%" height="100%">
-            <AreaChart
+            <ReChartsAreaChart
                 data={ data }
                 margin={ {
                     top: paddingTopPixels,
@@ -138,9 +138,9 @@ const TrmAreaChart = ({
                         />
                     </>
                 ))}
-            </AreaChart>
+            </ReChartsAreaChart>
         </ResponsiveContainer>
     </div>
 );
 
-export default TrmAreaChart;
+export default AreaChart;

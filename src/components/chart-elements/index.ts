@@ -1,3 +1,3 @@
-export { default as TrmAreaChart } from './TrmAreaChart';
-export { default as TrmBarChart } from './TrmBarChart';
-export { default as TrmLineChart } from './TrmLineChart';
+export { default as AreaChart } from './AreaChart';
+export { default as BarChart } from './BarChart';
+export { default as LineChart } from './LineChart';

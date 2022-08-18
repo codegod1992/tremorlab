@@ -2,7 +2,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import TrmBarChart from 'components/chart-elements/TrmBarChart/TrmBarChart';
+import LineChart from 'components/chart-elements/LineChart/LineChart';
 
 const data = [
     {
@@ -35,10 +35,10 @@ const data = [
     },
 ];
 
-describe('TrmBarChart', () => {
-    test('renders the TrmBarChart component with default props', () => {
+describe('LineChart', () => {
+    test('renders the LineChart component with default props', () => {
         render(
-            <TrmBarChart
+            <LineChart
                 data={data}
                 categories={[ 'Sales' ]}
                 dataKey="month"
