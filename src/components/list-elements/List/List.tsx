@@ -8,8 +8,6 @@ import {
 import { defaultColors } from 'lib/colorTheme';
 
 export interface ListProps {
-    textColor?: string,
-    divideColor?: string,
     marginTop?: string,
     children: React.ReactNode
 }
