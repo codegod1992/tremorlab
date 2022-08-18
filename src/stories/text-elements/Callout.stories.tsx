@@ -3,22 +3,22 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ArrowUpRightIcon } from 'assets';
 
-import Callout from '../../components/text-elements/Callout/Callout';
+import CallOut from '../../components/text-elements/CallOut/CallOut';
 
 import { BaseColors } from '@utils/objects';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/TextElements/Callout',
-    component: Callout,
-} as ComponentMeta<typeof Callout>;
+    title: 'Tremor/TextElements/CallOut',
+    component: CallOut,
+} as ComponentMeta<typeof CallOut>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Template: ComponentStory<typeof Callout> = (args) => (
+const Template: ComponentStory<typeof CallOut> = (args) => (
     <>
         { Object.values(BaseColors).map(color => (
             <div className="mb-5 max-w-lg">
-                <Callout {...args} color={ color } />
+                <CallOut {...args} color={ color } />
             </div>
         ))}
     </>

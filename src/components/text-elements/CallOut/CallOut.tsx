@@ -9,7 +9,7 @@ import {
 import { BaseColors } from '@utils/objects';
 import colorTheme from '@utils/colorTheme';
 
-export interface CalloutProps {
+export interface CallOutProps {
     title: string,
     text: string,
     Icon?: React.ElementType,
@@ -18,14 +18,14 @@ export interface CalloutProps {
     marginTop?: string,
 }
 
-const Callout = ({
+const CallOut = ({
     title,
     text,
     Icon,
     color = BaseColors.Blue,
     fixedHeight = '',
     marginTop
-}: CalloutProps) => {
+}: CallOutProps) => {
     return(
         <div className={ classNames(
             parseMarginTopClassNames(marginTop),
@@ -58,4 +58,4 @@ const Callout = ({
     );
 };
 
-export default Callout;
+export default CallOut;
