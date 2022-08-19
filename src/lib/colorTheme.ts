@@ -1,3 +1,5 @@
+import { BaseColors } from 'lib/primitives';
+
 export const themeColorRange = [
     'cyan',
     'sky',
@@ -68,70 +70,70 @@ export type TwColorValues = {
 }
 
 export const twColorsHex: {[baseColor: string]: TwColorValues} = {
-    slate: {
+    [BaseColors.Slate]: {
         500: '#64748b'
     },
-    gray: {
+    [BaseColors.Gray]: {
         500: '#6b7280'
     },
-    zinc: {
+    [BaseColors.Zinc]: {
         500: '#71717a'
     },
-    neutral: {
+    [BaseColors.Neutral]: {
         500: '#737373'
     },
-    stone: {
+    [BaseColors.Stone]: {
         500: '#78716c'
     },
-    red: {
+    [BaseColors.Red]: {
         500: '#ef4444'
     },
-    orange: {
+    [BaseColors.Orange]: {
         500: '#f97316'
     },
-    amber: {
+    [BaseColors.Amber]: {
         500: '#f59e0b'
     },
-    yellow: {
+    [BaseColors.Yellow]: {
         500: '#eab308'
     },
-    lime: {
+    [BaseColors.Lime]: {
         500: '#84cc16'
     },
-    green: {
+    [BaseColors.Green]: {
         500: '#22c55e'
     },
-    emerald: {
+    [BaseColors.Emerald]: {
         500: '#10b981'
     },
-    teal: {
+    [BaseColors.Teal]: {
         500: '#14b8a6'
     },
-    cyan: {
+    [BaseColors.Cyan]: {
         500: '#06b6d4'
     },
-    sky: {
+    [BaseColors.Sky]: {
         500: '#0ea5e9'
     },
-    blue: {
+    [BaseColors.Blue]: {
         500: '#3b82f6'
     },
-    indigo: {
+    [BaseColors.Indigo]: {
         500: '#6366f1'
     },
-    violet: {
+    [BaseColors.Violet]: {
         500: '#8b5cf6'
     },
-    purple: {
+    [BaseColors.Purple]: {
         500: '#a855f7'
     },
-    fuchsia: {
+    [BaseColors.Fuchsia]: {
         500: '#d946ef'
     },
-    pink: {
+    [BaseColors.Pink]: {
         500: '#ec4899'
     },
-    rose: {
+    [BaseColors.Rose]: {
         500: '#f43f5e'
     },
 };
@@ -154,7 +156,7 @@ export type BaseColorTheme = {
 }
 
 const colorTheme: { [baseColor: string]: BaseColorTheme } = {
-    'slate': {
+    [BaseColors.Slate]: {
         canvasBackground: 'slate-50',
         lightBackground: 'slate-100',
         background: 'slate-500',
@@ -170,7 +172,7 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         darkText: 'slate-700',
         icon: 'slate-500',
     },
-    'gray': {
+    [BaseColors.Gray]: {
         canvasBackground: 'gray-50',
         lightBackground: 'gray-100',
         background: 'gray-500',
@@ -186,7 +188,7 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         darkText: 'gray-700',
         icon: 'gray-500',
     },
-    'zinc': {
+    [BaseColors.Zinc]: {
         canvasBackground: 'zinc-50',
         lightBackground: 'zinc-100',
         background: 'zinc-500',
@@ -202,7 +204,7 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         darkText: 'zinc-700',
         icon: 'zinc-500',
     },
-    'neutral': {
+    [BaseColors.Neutral]: {
         canvasBackground: 'neutral-50',
         lightBackground: 'neutral-100',
         background: 'neutral-500',
@@ -218,7 +220,7 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         darkText: 'neutral-700',
         icon: 'neutral-500',
     },
-    'stone': {
+    [BaseColors.Stone]: {
         canvasBackground: 'stone-50',
         lightBackground: 'stone-100',
         background: 'stone-500',
@@ -234,7 +236,7 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         darkText: 'stone-700',
         icon: 'stone-500',
     },
-    'red': {
+    [BaseColors.Red]: {
         canvasBackground: 'red-50',
         lightBackground: 'red-100',
         background: 'red-500',
@@ -250,7 +252,7 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         darkText: 'red-700',
         icon: 'red-500',
     },
-    'orange': {
+    [BaseColors.Orange]: {
         canvasBackground: 'orange-50',
         lightBackground: 'orange-100',
         background: 'orange-500',
@@ -266,7 +268,7 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         darkText: 'orange-700',
         icon: 'orange-500',
     },
-    'amber': {
+    [BaseColors.Amber]: {
         canvasBackground: 'amber-50',
         lightBackground: 'amber-100',
         background: 'amber-500',
@@ -282,7 +284,7 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         darkText: 'amber-700',
         icon: 'amber-500',
     },
-    'yellow': {
+    [BaseColors.Yellow]: {
         canvasBackground: 'yellow-50',
         lightBackground: 'yellow-100',
         background: 'yellow-500',
@@ -298,7 +300,7 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         darkText: 'yellow-700',
         icon: 'yellow-500',
     },
-    'lime': {
+    [BaseColors.Lime]: {
         canvasBackground: 'lime-50',
         lightBackground: 'lime-100',
         background: 'lime-500',
@@ -314,7 +316,7 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         darkText: 'lime-700',
         icon: 'lime-500',
     },
-    'green': {
+    [BaseColors.Green]: {
         canvasBackground: 'green-50',
         lightBackground: 'green-100',
         background: 'green-500',
@@ -330,7 +332,7 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         darkText: 'green-700',
         icon: 'green-500',
     },
-    'emerald': {
+    [BaseColors.Emerald]: {
         canvasBackground: 'emerald-50',
         lightBackground: 'emerald-100',
         background: 'emerald-500',
@@ -346,7 +348,7 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         darkText: 'emerald-700',
         icon: 'emerald-500',
     },
-    'teal': {
+    [BaseColors.Teal]: {
         canvasBackground: 'teal-50',
         lightBackground: 'teal-100',
         background: 'teal-500',
@@ -362,7 +364,7 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         darkText: 'teal-700',
         icon: 'teal-500',
     },
-    'cyan': {
+    [BaseColors.Cyan]: {
         canvasBackground: 'cyan-50',
         lightBackground: 'cyan-100',
         background: 'cyan-500',
@@ -378,7 +380,7 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         darkText: 'cyan-700',
         icon: 'cyan-500',
     },
-    'sky': {
+    [BaseColors.Sky]: {
         canvasBackground: 'sky-50',
         lightBackground: 'sky-100',
         background: 'sky-500',
@@ -394,7 +396,7 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         darkText: 'sky-700',
         icon: 'sky-500',
     },
-    'blue': {
+    [BaseColors.Blue]: {
         canvasBackground: 'blue-50',
         lightBackground: 'blue-100',
         background: 'blue-500',
@@ -410,7 +412,7 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         darkText: 'blue-700',
         icon: 'blue-500',
     },
-    'indigo': {
+    [BaseColors.Indigo]: {
         canvasBackground: 'indigo-50',
         lightBackground: 'indigo-100',
         background: 'indigo-500',
@@ -426,7 +428,7 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         darkText: 'indigo-700',
         icon: 'indigo-500',
     },
-    'violet': {
+    [BaseColors.Violet]: {
         canvasBackground: 'violet-50',
         lightBackground: 'violet-100',
         background: 'violet-500',
@@ -442,7 +444,7 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         darkText: 'violet-700',
         icon: 'violet-500',
     },
-    'purple': {
+    [BaseColors.Purple]: {
         canvasBackground: 'purple-50',
         lightBackground: 'purple-100',
         background: 'purple-500',
@@ -458,7 +460,7 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         darkText: 'purple-700',
         icon: 'purple-500',
     },
-    'fuchsia': {
+    [BaseColors.Fuchsia]: {
         canvasBackground: 'fuchsia-50',
         lightBackground: 'fuchsia-100',
         background: 'fuchsia-500',
@@ -474,7 +476,7 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         darkText: 'fuchsia-700',
         icon: 'fuchsia-500',
     },
-    'pink': {
+    [BaseColors.Pink]: {
         canvasBackground: 'pink-50',
         lightBackground: 'pink-100',
         background: 'pink-500',
@@ -490,7 +492,7 @@ const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         darkText: 'pink-700',
         icon: 'pink-500',
     },
-    'rose': {
+    [BaseColors.Rose]: {
         canvasBackground: 'rose-50',
         lightBackground: 'rose-100',
         background: 'rose-500',
