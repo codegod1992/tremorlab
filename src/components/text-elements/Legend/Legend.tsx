@@ -39,7 +39,7 @@ const LegendItem = ({
 export interface LegendProps {
     categories: string[],
     colors?: string[],
-    marginTop: string,
+    marginTop?: string,
 }
 
 const Legend = ({
