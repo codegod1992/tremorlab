@@ -103,18 +103,16 @@ const Dropwdown = ({
                 ) }>
                     { selectedItem ? valueToNameMapping[selectedItem] : placeholder }
                 </p>
-                <span>
-                    <ArrowDownHeadIcon
-                        className={ classNames(
-                            'flex-none',
-                            sizing.lg.height,
-                            sizing.lg.width,
-                            spacing.twoXs.negativeMarginRight,
-                            getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
-                        ) }
-                        aria-hidden="true"
-                    />
-                </span>
+                <ArrowDownHeadIcon
+                    className={ classNames(
+                        'flex-none',
+                        sizing.lg.height,
+                        sizing.lg.width,
+                        spacing.twoXs.negativeMarginRight,
+                        getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
+                    ) }
+                    aria-hidden="true"
+                />
             </button>
             <Modal showModal={ showModal } setShowModal={ setShowModal }>
                 { React.Children.map(children, (child: React.ReactElement) => (

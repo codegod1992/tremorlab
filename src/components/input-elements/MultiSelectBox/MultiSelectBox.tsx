@@ -112,18 +112,16 @@ const MultiSelectBox = ({
                             />
                         </button>
                     ) : null }
-                    <span>
-                        <ArrowDownHeadIcon
-                            className={ classNames(
-                                'flex-none',
-                                sizing.lg.height,
-                                sizing.lg.width,
-                                spacing.twoXs.negativeMarginRight,
-                                getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
-                            ) }
-                            aria-hidden="true"
-                        />
-                    </span>
+                    <ArrowDownHeadIcon
+                        className={ classNames(
+                            'flex-none',
+                            sizing.lg.height,
+                            sizing.lg.width,
+                            spacing.twoXs.negativeMarginRight,
+                            getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
+                        ) }
+                        aria-hidden="true"
+                    />
                 </div>
             </button>
             <Modal showModal={ showModal } setShowModal={ setShowModal }>
