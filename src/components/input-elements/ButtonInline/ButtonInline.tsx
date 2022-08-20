@@ -4,9 +4,10 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { BaseColors, HorizontalPositions, Sizes } from 'lib/primitives';
-import { buttonProportions, iconLeftProportions, iconRightProportions } from './styles';
+import { buttonProportions, iconSizes } from './styles';
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
 import colorTheme, { defaultColors } from 'lib/colorTheme';
+import { spacing } from 'lib/spacing';
 
 export interface ButtonInlineProps {
     text: string,
@@ -48,8 +49,10 @@ const ButtonInline = ({
                     { Icon && (iconPosition !== HorizontalPositions.Right) ? ( // ensures that icon is rendered if iconPosition is misspelled
                         <Icon
                             className={ classNames(
-                                iconLeftProportions[size]?.margin || '',
-                                iconLeftProportions[size]?.iconSize,
+                                spacing.threeXs.negativeMarginLeft,
+                                spacing.xs.marginRight,
+                                iconSizes[size]?.height,
+                                iconSizes[size]?.width,
                             ) }
                             aria-hidden="true"
                         />
@@ -58,8 +61,10 @@ const ButtonInline = ({
                     { Icon && (iconPosition === HorizontalPositions.Right) ? (
                         <Icon
                             className={ classNames(
-                                iconRightProportions[size]?.margin || '',
-                                iconRightProportions[size]?.iconSize,
+                                spacing.threeXs.negativeMarginRight,
+                                spacing.xs.marginLeft,
+                                iconSizes[size]?.height,
+                                iconSizes[size]?.width,
                             ) }
                             aria-hidden="true"
                         />
