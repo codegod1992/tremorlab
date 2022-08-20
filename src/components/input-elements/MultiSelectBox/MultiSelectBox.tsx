@@ -125,17 +125,29 @@ const MultiSelectBox = ({
                 </div>
             </button>
             <Modal showModal={ showModal } setShowModal={ setShowModal }>
-                <div className="relative w-full rounded-t-md bg-gray-50">
-                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                        <SearchIcon className="h-5 w-5 text-gray-400 flex-none" aria-hidden="true" />
-                    </div>
+                <div className={ classNames(
+                    'flex items-center w-full',
+                    getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).bgColor,
+                    spacing.twoXl.paddingLeft,
+                    spacing.twoXl.paddingRight,
+                    fontSize.sm,
+                    fontWeight.md,
+                ) }>
+                    <SearchIcon className={ classNames(
+                        'flex-none',
+                        getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
+                        sizing.lg.height,
+                        sizing.lg.width,
+                        spacing.xs.marginRight,
+                    )
+                    } aria-hidden="true" />
                     <input
                         id="search"
                         aria-describedby="search-bar"
                         name="search"
                         type="input"
                         placeholder="Search"
-                        className="pl-11 py-2 blockfocus:ring-2 focus:ring-opacity-100 focus:rounded-t-lg
+                        className="py-2 blockfocus:ring-2 focus:ring-opacity-100 focus:rounded-t-lg
                                 focus:outline-none focus:ring-transparent focus:border-transparent border-transparent
                                 bg-transparent w-full"
                         onChange={ (e) => setSearchQuery(e.target.value) }
