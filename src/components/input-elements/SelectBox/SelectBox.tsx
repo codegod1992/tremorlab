@@ -62,8 +62,6 @@ const SelectBox = ({
         <div className={ classNames(
             'relative w-full min-w-[10rem] rounded-md shadow-sm border',
             getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
-            fontSize.sm,
-            fontWeight.md,
             parseMarginTopClassNames(marginTop),
         ) }>
             <input
@@ -78,6 +76,8 @@ const SelectBox = ({
                     spacing.twoXl.paddingLeft,
                     spacing.sm.paddingTop,
                     spacing.sm.paddingBottom,
+                    fontSize.sm,
+                    fontWeight.md,
                     'pr-10' // avoid text overflow at arrow down icon
                 ) }
                 type="input"

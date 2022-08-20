@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { CalendarIcon, ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
+import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 import {
     eachDayOfInterval,
     endOfMonth,
@@ -13,7 +13,7 @@ import {
     sub,
 } from 'date-fns';
 
-import { classNames, parseMarginTopClassNames } from 'lib/classnameUtils';
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
 import {
     colStartClasses,
     displaySelected,
@@ -25,9 +25,12 @@ import {
     previousMonth,
     relativeFilterOptions
 } from 'components/input-elements/Datepicker/utils';
+import { fontSize, fontWeight } from 'lib/font';
+import { ArrowDownHeadIcon } from 'assets';
 import Modal from 'components/input-elements/common/Modal';
-import SelectItemWrapper from '../common/SelectItemWrapper';
-import SelectText from '../common/SelectText';
+import { defaultColors } from 'lib/colorTheme';
+import { sizing } from 'lib/sizing';
+import { spacing } from 'lib/spacing';
 
 export interface DatepickerProps {
     handleSelect?: { (selectedStartDay: Date|null, selectedEndDay: Date|null): void },
@@ -102,174 +105,316 @@ const Datepicker = ({
     }, [selectedEndDay]);
 
     return (
-        <>
+        <div className={ classNames(
+            'relative w-full',
+            parseMarginTopClassNames(marginTop),
+        ) }>
             <div className={ classNames(
-                parseMarginTopClassNames(marginTop),
-                'relative w-full',
-            ) }>
-                <div className="flex items-center justify-between rounded-md shadow-sm text-sm font-medium
-                    text-gray-700 bg-white"
+                'flex items-center justify-between rounded-md shadow-sm',
+                getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
+                getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
+            ) }
+            >
+                <button
+                    onClick={ () => setShowDatePickerModal(true) }
+                    className={ classNames(
+                        'flex items-center w-full truncate rounded-l-md border',
+                        'focus:ring-2 focus:outline-none focus:z-10',
+                        enableRelativeDates ? 'border-r-0' : 'rounded-r-md border-r',
+                        getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
+                        getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
+                        getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
+                        spacing.twoXl.paddingLeft,
+                        spacing.twoXl.paddingRight,
+                        spacing.sm.paddingTop,
+                        spacing.sm.paddingBottom,
+                    ) }
                 >
-                    <button
-                        onClick={ () => setShowDatePickerModal(true) }
+                    <CalendarIcon
                         className={ classNames(
-                            `flex whitespace-nowrap items-center px-2 py-2 rounded-l-md border 
-                            border-gray-300 hover:bg-gray-50 focus:z-10 focus:ring-2 focus:ring-opacity-100
-                            focus:outline-none focus:ring-blue-300 w-full truncate font-medium`,
-                            enableRelativeDates ? 'border-r-0' : 'rounded-r-md border-r',
+                            'flex-none',
+                            getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
+                            sizing.lg.height,
+                            sizing.lg.width,
+                            spacing.threeXs.negativeMarginLeft,
+                            spacing.lg.marginRight,
+                        ) }
+                        aria-hidden="true"
+                    />
+                    <p className={ classNames(
+                        'whitespace-nowrap truncate',
+                        fontSize.sm,
+                        fontWeight.md,
+                        selectedStartDay
+                            ? getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor
+                            : getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
+                    ) }>
+                        { selectedStartDay ? String(displaySelected(selectedStartDay, selectedEndDay)) : placeholder }
+                    </p>
+                </button>
+                { enableRelativeDates ? (
+                    <button
+                        onClick={ () => setShowDropdownModal(true) }
+                        className={ classNames(
+                            'inline-flex justify-between w-48 rounded-r-md border',
+                            'focus:ring-2 focus:outline-none',
+                            '-ml-px truncate',
+                            getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
+                            getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
+                            getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
+                            spacing.twoXl.paddingLeft,
+                            spacing.twoXl.paddingRight,
+                            spacing.sm.paddingTop,
+                            spacing.sm.paddingBottom,
                         ) }
                     >
-                        <CalendarIcon className="flex-none h-5 w-5 text-gray-400" aria-hidden="true" />
-                        <div className="ml-2 mr-0.5 whitespace-nowrap truncate">
-                            { selectedStartDay ? (
-                                <SelectText
-                                    text={ String(displaySelected(selectedStartDay, selectedEndDay)) }
-                                    isActive={ true }
-                                />
-                            ) : <SelectText
-                                text={ placeholder }
-                                isActive={ false }
-                            /> }
-                        </div>
+                        <p className={ classNames(
+                            'whitespace-nowrap truncate',
+                            fontSize.sm,
+                            fontWeight.md,
+                            selectedRelativeFilterOption
+                                ? getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor
+                                : getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
+                        ) }>
+                            { selectedRelativeFilterOption
+                                ? String(relativeFilterOptions.find((filterOption) => (
+                                    filterOption.value === selectedRelativeFilterOption
+                                ))?.name)
+                                : 'Select' }
+                        </p>
+                        <ArrowDownHeadIcon
+                            className={ classNames(
+                                'flex-none',
+                                sizing.lg.height,
+                                sizing.lg.width,
+                                spacing.twoXs.negativeMarginRight,
+                                getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
+                            ) }
+                            aria-hidden="true"
+                        />
                     </button>
-                    { enableRelativeDates ? (
+                ) : null }
+            </div>
+            <Modal
+                showModal={ showDatePickerModal }
+                setShowModal={ setShowDatePickerModal }
+                width="w-72"
+                maxHeight="max-h-fit"
+            >
+                <div
+                    className={ classNames(
+                        spacing.lg.paddingLeft,
+                        spacing.lg.paddingRight,
+                        spacing.twoXs.paddingTop,
+                        spacing.twoXs.paddingBottom,
+                    ) }
+                >
+                    <div className={ classNames(
+                        'flex justify-between items-center',
+                        spacing.twoXs.paddingLeft,
+                        spacing.twoXs.paddingRight,
+                        spacing.sm.paddingTop,
+                        spacing.sm.paddingBottom,
+                    )}
+                    >
                         <button
-                            onClick={ () => setShowDropdownModal(true) }
-                            className="inline-flex w-48 justify-between w-full rounded-r-md border
-                                font-medium text-sm border-gray-300 px-4 py-2 hover:bg-gray-50 focus:ring-2
-                                focus:ring-opacity-100 focus:outline-none focus:ring-blue-300 truncate -ml-px"
+                            type="button"
+                            onClick={() => previousMonth(firstDayCurrentMonth, setCurrentMonth)}
+                            className={ classNames(
+                                'inline-flex border rounded shadow-sm focus:outline-none focus:ring-2',
+                                getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
+                                getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
+                                getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
+                                spacing.twoXs.paddingLeft,
+                                spacing.twoXs.paddingRight,
+                                spacing.twoXs.paddingTop,
+                                spacing.twoXs.paddingBottom,
+                                fontSize.sm,
+                                fontWeight.md,
+                            ) }
                         >
-                            <span className="whitespace-nowrap truncate">
-                                { selectedRelativeFilterOption
-                                    ? (
-                                        <SelectText
-                                            text={
-                                                String(relativeFilterOptions.find((filterOption) => (
-                                                    filterOption.value === selectedRelativeFilterOption
-                                                ))?.name)
-                                            }
-                                            isActive={ true }
-                                        />
-                                    ) : <SelectText text="Select" isActive={ false } /> }
-                            </span>
-                            <ChevronDownIcon
-                                className="flex-none -mr-1 ml-2 h-5 w-5 text-gray-400"
+                            <ChevronLeftIcon
+                                className={ classNames(
+                                    getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
+                                    sizing.lg.height,
+                                    sizing.lg.width,
+                                ) }
                                 aria-hidden="true"
                             />
                         </button>
-                    ) : null }
-                </div>
-                <Modal
-                    showModal={ showDatePickerModal }
-                    setShowModal={ setShowDatePickerModal }
-                    width="w-72"
-                    maxHeight="max-h-fit"
-                >
-                    <div className="py-1 px-3">
-                        <div className="flex justify-between items-center py-2 px-1">
-                            <button
-                                type="button"
-                                onClick={() => previousMonth(firstDayCurrentMonth, setCurrentMonth)}
-                                className="inline-flex p-1 sm:text-sm font-medium text-gray-700 bg-white border
-                                    border-gray-300 rounded shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2
-                                    focus:ring-offset-0 focus:ring-blue-500"
+                        <h2 className="font-semibold text-sm text-gray-900">
+                            {format(firstDayCurrentMonth, 'MMMM yyyy')}
+                        </h2>
+                        <button
+                            onClick={() => nextMonth(firstDayCurrentMonth, setCurrentMonth)}
+                            type="button"
+                            className={ classNames(
+                                'inline-flex border rounded shadow-sm focus:outline-none focus:ring-2',
+                                getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
+                                getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
+                                getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
+                                spacing.twoXs.paddingLeft,
+                                spacing.twoXs.paddingRight,
+                                spacing.twoXs.paddingTop,
+                                spacing.twoXs.paddingBottom,
+                                fontSize.sm,
+                                fontWeight.md,
+                            ) }
+                        >
+                            <ChevronRightIcon
+                                className={ classNames(
+                                    getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
+                                    sizing.lg.height,
+                                    sizing.lg.width,
+                                ) }
+                                aria-hidden="true"
+                            />
+                        </button>
+
+                    </div>
+                    <div className={ classNames(
+                        'grid grid-cols-7 text-center',
+                        getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
+                        fontSize.xs,
+                        fontWeight.md,
+                    ) }
+                    >
+                        <div className="w-full flex justify-center">
+                            <div className={ classNames(
+                                'flex items-center justify-center w-full',
+                                sizing.threeXl.height
+                            ) }
                             >
-                                <span className="sr-only">Previous month</span>
-                                <ChevronLeftIcon className="w-5 h-5 text-gray-600" aria-hidden="true" />
-                            </button>
-
-                            <h2 className="font-semibold sm:text-sm text-gray-900">
-                                {format(firstDayCurrentMonth, 'MMMM yyyy')}
-                            </h2>
-
-                            <button
-                                onClick={() => nextMonth(firstDayCurrentMonth, setCurrentMonth)}
-                                type="button"
-                                className="inline-flex p-1 sm:text-sm font-medium text-gray-700 bg-white border
-                                    border-gray-300 rounded shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2
-                                    focus:ring-offset-0 focus:ring-blue-500"
-                            >
-                                <span className="sr-only">Next month</span>
-                                <ChevronRightIcon className="w-5 h-5 text-gray-600" aria-hidden="true" />
-                            </button>
-
-                        </div>
-                        <div className="grid grid-cols-7 text-xs leading-6 text-center font-medium text-gray-400">
-                            <div className="w-full flex justify-center">
-                                <div className="flex items-center justify-center w-full h-10">Su</div>
-                            </div>
-                            <div className="w-full flex justify-center">
-                                <div className="flex items-center justify-center w-full h-10">Mo</div>
-                            </div>
-                            <div className="w-full flex justify-center">
-                                <div className="flex items-center justify-center w-full h-10">Tu</div>
-                            </div>
-                            <div className="w-full flex justify-center">
-                                <div className="flex items-center justify-center w-full h-10">We</div>
-                            </div>
-                            <div className="w-full flex justify-center">
-                                <div className="flex items-center justify-center w-full h-10">Th</div>
-                            </div>
-                            <div className="w-full flex justify-center">
-                                <div className="flex items-center justify-center w-full h-10">Fr</div>
-                            </div>
-                            <div className="w-full flex justify-center">
-                                <div className="flex items-center justify-center w-full h-10">Sa</div>
+                                Su
                             </div>
                         </div>
-                        <div className="grid grid-cols-7 sm:text-sm">
-                            {days.map((day) => (
-                                <div
-                                    key={day.toString()}
-                                    className={classNames(
-                                        colStartClasses[getDay(day)],
-                                        'w-full'
-                                    )}
-                                >
-                                    <button
-                                        type="button"
-                                        onClick={() => handleDayClick(day)}
-                                        onMouseEnter={ () => setHoveredDay(day) }
-                                        onMouseLeave={ () => setHoveredDay(null) }
-                                        className={classNames(
-                                            getDayBgColorClassName(day, selectedStartDay, selectedEndDay, hoveredDay),
-                                            getDayTextClassNames(day, selectedStartDay, selectedEndDay, hoveredDay),
-                                            getDayHoverBgColorClassName(day, selectedStartDay, selectedEndDay),
-                                            getDayRoundedClassName(day, selectedStartDay, selectedEndDay, hoveredDay),
-                                            'h-10 w-full flex items-center justify-center'
-                                        )}
-                                    >
-                                        <time dateTime={format(day, 'yyyy-MM-dd')}>
-                                            {format(day, 'd')}
-                                        </time>
-                                    </button>
-                                </div>
-                            ))}
+                        <div className="w-full flex justify-center">
+                            <div className={ classNames(
+                                'flex items-center justify-center w-full',
+                                sizing.threeXl.height
+                            ) }
+                            >
+                                Mo
+                            </div>
+                        </div>
+                        <div className="w-full flex justify-center">
+                            <div className={ classNames(
+                                'flex items-center justify-center w-full',
+                                sizing.threeXl.height
+                            ) }
+                            >
+                                Tu
+                            </div>
+                        </div>
+                        <div className="w-full flex justify-center">
+                            <div className={ classNames(
+                                'flex items-center justify-center w-full',
+                                sizing.threeXl.height
+                            ) }
+                            >
+                                We
+                            </div>
+                        </div>
+                        <div className="w-full flex justify-center">
+                            <div className={ classNames(
+                                'flex items-center justify-center w-full',
+                                sizing.threeXl.height
+                            ) }
+                            >
+                                Th
+                            </div>
+                        </div>
+                        <div className="w-full flex justify-center">
+                            <div className={ classNames(
+                                'flex items-center justify-center w-full',
+                                sizing.threeXl.height
+                            ) }
+                            >
+                                Fr
+                            </div>
+                        </div>
+                        <div className="w-full flex justify-center">
+                            <div className={ classNames(
+                                'flex items-center justify-center w-full',
+                                sizing.threeXl.height
+                            ) }
+                            >
+                                Sa
+                            </div>
                         </div>
                     </div>
-                </Modal>
-                <Modal showModal={ showDropdownModal } setShowModal={ setShowDropdownModal }>
-                    { relativeFilterOptions.map((filterOption) => (
-                        <SelectItemWrapper
-                            key={ filterOption.value }
-                            handleClick={ () => {
-                                setSelectedRelativeFilterOption(filterOption.value);
-                                handleRelativeFilterOptionClick(filterOption.value);
-                                setShowDropdownModal(false);
-                            } }
-                            isActive={ selectedRelativeFilterOption === filterOption.value }
-                        >
-                            <div className="whitespace-nowrap truncate">
-                                { filterOption.name }
+                    <div className="grid grid-cols-7">
+                        {days.map((day) => (
+                            <div
+                                key={day.toString()}
+                                className={classNames(
+                                    colStartClasses[getDay(day)],
+                                    'w-full'
+                                )}
+                            >
+                                <button
+                                    type="button"
+                                    onClick={() => handleDayClick(day)}
+                                    onMouseEnter={ () => setHoveredDay(day) }
+                                    onMouseLeave={ () => setHoveredDay(null) }
+                                    className={classNames(
+                                        'w-full flex items-center justify-center',
+                                        getDayBgColorClassName(day, selectedStartDay, selectedEndDay, hoveredDay),
+                                        getDayTextClassNames(day, selectedStartDay, selectedEndDay, hoveredDay),
+                                        getDayHoverBgColorClassName(day, selectedStartDay, selectedEndDay),
+                                        getDayRoundedClassName(day, selectedStartDay, selectedEndDay, hoveredDay),
+                                        sizing.threeXl.height,
+                                        fontSize.sm,
+                                    )}
+                                >
+                                    <time dateTime={format(day, 'yyyy-MM-dd')}>
+                                        {format(day, 'd')}
+                                    </time>
+                                </button>
                             </div>
-                            <span className="font-normal text-gray-400 whitespace-nowrap">
-                                { filterOption.shortcut }
-                            </span>
-                        </SelectItemWrapper>
-                    ))}      
-                </Modal>
-            </div>
-        </>
+                        ))}
+                    </div>
+                </div>
+            </Modal>
+            <Modal showModal={ showDropdownModal } setShowModal={ setShowDropdownModal }>
+                { relativeFilterOptions.map((filterOption) => (
+                    <button
+                        onClick={ () => {
+                            setSelectedRelativeFilterOption(filterOption.value);
+                            handleRelativeFilterOptionClick(filterOption.value);
+                            setShowDropdownModal(false);
+                        } }
+                        className={ classNames(
+                            'flex items-center justify-between w-full truncate',
+                            spacing.twoXl.paddingLeft,
+                            spacing.twoXl.paddingRight,
+                            spacing.md.paddingTop,
+                            spacing.md.paddingBottom,
+                            fontSize.sm,
+                            selectedRelativeFilterOption === filterOption.value
+                                ? classNames(
+                                    getColorVariantsFromColorThemeValue(defaultColors.lightBackground).bgColor,
+                                    getColorVariantsFromColorThemeValue(defaultColors.darkestText).textColor,
+                                )
+                                : classNames(
+                                    getColorVariantsFromColorThemeValue(defaultColors.lightBackground).hoverBgColor,
+                                    getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
+                                )
+                        ) }
+                    >
+                        <p className="whitespace-nowrap truncate">
+                            { filterOption.name }
+                        </p>
+                        <p className={ classNames(
+                            fontWeight.sm,
+                            getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
+                        ) }>
+                            { filterOption.shortcut }
+                        </p>
+                    </button>
+                ))}      
+            </Modal>
+        </div>
     );
 };
 

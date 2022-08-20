@@ -1,5 +1,10 @@
-import { add, format, isEqual, isToday, } from 'date-fns';
 import React from 'react';
+
+import { add, format, isEqual, isToday, } from 'date-fns';
+import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
+import colorTheme, { defaultColors } from 'lib/colorTheme';
+import { BaseColors } from 'lib/primitives';
+import { fontWeight } from 'lib/font';
 
 export const relativeFilterOptions = [
     {
@@ -76,18 +81,18 @@ export const getDayBgColorClassName = (
     hoveredDay: Date|null
 ): string => {
     if (selectedStartDay && isEqual(day, selectedStartDay)) {
-        return 'bg-blue-500';
+        return getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].background).bgColor;
     }
     if (selectedStartDay && !selectedEndDay && hoveredDay && (day > selectedStartDay && day < hoveredDay)) {
-        return 'bg-gray-100';
+        return getColorVariantsFromColorThemeValue(defaultColors.lightBackground).bgColor;
     }
     if (selectedEndDay && isEqual(day, selectedEndDay)) {
-        return 'bg-blue-500';
+        return getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].background).bgColor;
     }
     if (selectedStartDay && selectedEndDay && (day > selectedStartDay && day < selectedEndDay)) {
-        return 'bg-gray-100';
+        return getColorVariantsFromColorThemeValue(defaultColors.lightBackground).bgColor;
     }
-    return 'bg-transparent';
+    return getColorVariantsFromColorThemeValue(defaultColors.transparent).bgColor;
     
 };
 
@@ -100,23 +105,26 @@ export const getDayTextClassNames = (
     if (isToday(day)) {
         if ((selectedStartDay && isEqual(day, selectedStartDay))
             || (selectedEndDay && isEqual(day, selectedEndDay))) {
-            return 'text-white';
+            return getColorVariantsFromColorThemeValue(defaultColors.white).textColor;
         }
-        return 'text-blue-500 font-semibold';
+        return classNames(
+            getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].text).textColor,
+            fontWeight.lg,
+        );
     }
     if (selectedStartDay && isEqual(day, selectedStartDay)) {
-        return 'text-white';
+        return getColorVariantsFromColorThemeValue(defaultColors.white).textColor;
     }
     if (selectedStartDay && !selectedEndDay && hoveredDay && (day > selectedStartDay && day < hoveredDay)) {
-        return 'text-gray-900';
+        return getColorVariantsFromColorThemeValue(defaultColors.darkestText).textColor;
     }
     if (selectedEndDay && isEqual(day, selectedEndDay)) {
-        return 'text-white';
+        return getColorVariantsFromColorThemeValue(defaultColors.white).textColor;
     }
     if (selectedStartDay && selectedEndDay && (day > selectedStartDay && day < selectedEndDay)) {
-        return 'text-blue-500';
+        return getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].text).textColor;
     }
-    return 'text-gray-900';
+    return getColorVariantsFromColorThemeValue(defaultColors.darkestText).textColor;
 };
 
 export const getDayHoverBgColorClassName = (

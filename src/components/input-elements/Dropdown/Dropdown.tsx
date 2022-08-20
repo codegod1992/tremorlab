@@ -77,8 +77,6 @@ const Dropwdown = ({
         <div className={ classNames(
             'relative w-full min-w-[10rem] rounded-md shadow-sm border',
             getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
-            fontSize.sm,
-            fontWeight.md,
             parseMarginTopClassNames(marginTop),
         ) }>
             <button
@@ -97,6 +95,8 @@ const Dropwdown = ({
             >
                 <p className={ classNames(
                     'whitespace-nowrap truncate',
+                    fontSize.sm,
+                    fontWeight.md,
                     selectedItem
                         ? getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor
                         : getColorVariantsFromColorThemeValue(defaultColors.text).textColor,

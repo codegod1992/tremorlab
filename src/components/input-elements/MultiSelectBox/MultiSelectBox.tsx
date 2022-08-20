@@ -68,8 +68,6 @@ const MultiSelectBox = ({
         <div className={ classNames(
             'relative w-full min-w-[10rem] rounded-md shadow-sm border',
             getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
-            fontSize.sm,
-            fontWeight.md,
             parseMarginTopClassNames(marginTop),
         ) }>
             <button
@@ -88,6 +86,8 @@ const MultiSelectBox = ({
             >
                 <p className={ classNames(
                     'whitespace-nowrap truncate',
+                    fontSize.sm,
+                    fontWeight.md,
                     selectedItemsValues.length !==0
                         ? getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor
                         : getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
@@ -131,14 +131,16 @@ const MultiSelectBox = ({
                     spacing.twoXl.paddingLeft,
                     spacing.twoXl.paddingRight,
                 ) }>
-                    <SearchIcon className={ classNames(
-                        'flex-none',
-                        getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
-                        spacing.lg.marginRight,
-                        sizing.md.height,
-                        sizing.md.width,
-                    )
-                    } aria-hidden="true" />
+                    <span>
+                        <SearchIcon className={ classNames(
+                            'flex-none',
+                            getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
+                            spacing.threeXs.negativeMarginLeft,
+                            spacing.lg.marginRight,
+                            sizing.md.height,
+                            sizing.md.width,
+                        ) } aria-hidden="true" />
+                    </span>
                     <input
                         name="search"
                         type="input"
@@ -149,6 +151,8 @@ const MultiSelectBox = ({
                             getColorVariantsFromColorThemeValue(defaultColors.transparent).bgColor,
                             spacing.sm.paddingTop,
                             spacing.sm.paddingBottom,
+                            fontSize.sm,
+                            fontWeight.md,
                         ) }
                         onChange={ (e) => setSearchQuery(e.target.value) }
                     />
