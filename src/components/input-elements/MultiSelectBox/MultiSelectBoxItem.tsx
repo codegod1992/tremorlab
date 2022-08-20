@@ -1,7 +1,11 @@
 import React from 'react';
 
+import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
+import colorTheme, { defaultColors } from 'lib/colorTheme';
 import { isValueInArray, removeValueFromArray } from 'lib/utils';
-import SelectItemWrapper from '../common/SelectItemWrapper';
+import { BaseColors } from 'lib/primitives';
+import { fontSize } from 'lib/font';
+import { spacing } from 'lib/spacing';
 
 export interface MultiSelectBoxItemProps {
     value: any,
@@ -19,8 +23,8 @@ const MultiSelectBoxItem = ({
     name,
     privateProps,
 }: MultiSelectBoxItemProps) => (
-    <SelectItemWrapper
-        handleClick={ () => {
+    <button
+        onClick={ () => {
             let newSelectedItemsValues = [];
             if (!isValueInArray(value, privateProps!.selectedItemsValues!)) {
                 newSelectedItemsValues = [...privateProps!.selectedItemsValues!, value];
@@ -31,22 +35,33 @@ const MultiSelectBoxItem = ({
             }
             privateProps!.handleSelect(newSelectedItemsValues);
         } }
-        isActive={ false }
+        className={ classNames(
+            'flex items-center justify-between w-full',
+            spacing.twoXl.paddingLeft,
+            spacing.twoXl.paddingRight,
+            spacing.md.paddingTop,
+            spacing.md.paddingBottom,
+            fontSize.sm,
+            getColorVariantsFromColorThemeValue(defaultColors.lightBackground).hoverBgColor,
+            getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
+        ) }
     >
-        <div className="flex items-center space-x-3 truncate">
+        <div className="flex items-center truncate">
             <input
-                id="options"
-                aria-describedby="options-description"
-                name="options"
                 type="checkbox"
-                className="flex-none focus:ring-2 focus:ring-opacity-100 focus:outline-none focus:ring-blue-300 h-4 w-4
-                    text-blue-500 border border-gray-300 rounded cursor-pointer"
+                className={ classNames(
+                    'flex-none focus:ring-none focus:outline-none border rounded cursor-pointer',
+                    getColorVariantsFromColorThemeValue(defaultColors.lightRing).focusRingColor,
+                    getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].text).textColor,
+                    getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
+                    spacing.lg.marginRight,
+                ) }
                 checked={ isValueInArray(value, privateProps!.selectedItemsValues!) }
                 readOnly={ true }
             />
-            <span className="whitespace-nowrap truncate"> { name } </span>
+            <p className="whitespace-nowrap truncate">{ name }</p>
         </div>
-    </SelectItemWrapper>
+    </button>
 );
 
 export default MultiSelectBoxItem;

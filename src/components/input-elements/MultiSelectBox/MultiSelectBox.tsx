@@ -130,47 +130,45 @@ const MultiSelectBox = ({
                     getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).bgColor,
                     spacing.twoXl.paddingLeft,
                     spacing.twoXl.paddingRight,
-                    fontSize.sm,
-                    fontWeight.md,
                 ) }>
                     <SearchIcon className={ classNames(
                         'flex-none',
                         getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
-                        sizing.lg.height,
-                        sizing.lg.width,
-                        spacing.xs.marginRight,
+                        spacing.lg.marginRight,
+                        sizing.md.height,
+                        sizing.md.width,
                     )
                     } aria-hidden="true" />
                     <input
-                        id="search"
-                        aria-describedby="search-bar"
                         name="search"
                         type="input"
                         placeholder="Search"
-                        className="py-2 blockfocus:ring-2 focus:ring-opacity-100 focus:rounded-t-lg
-                                focus:outline-none focus:ring-transparent focus:border-transparent border-transparent
-                                bg-transparent w-full"
+                        className={ classNames(
+                            'w-full focus:outline-none focus:ring-none',
+                            getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
+                            getColorVariantsFromColorThemeValue(defaultColors.transparent).bgColor,
+                            spacing.sm.paddingTop,
+                            spacing.sm.paddingBottom,
+                        ) }
                         onChange={ (e) => setSearchQuery(e.target.value) }
                     />
                 </div>
-                <div className="pt-1">
-                    { React.Children.map(children, (child) => {
-                        if (filteredOptionNames.has(String(child.props.name))) {
-                            return (
-                                <>
-                                    { React.cloneElement(child, {
-                                        privateProps: {
-                                            selectedItemsValues,
-                                            setSelectedItemsValues,
-                                            handleSelect,
-                                            setShowModal,
-                                        }
-                                    }) }
-                                </>
-                            );
-                        }
-                    }) }
-                </div>
+                { React.Children.map(children, (child) => {
+                    if (filteredOptionNames.has(String(child.props.name))) {
+                        return (
+                            <>
+                                { React.cloneElement(child, {
+                                    privateProps: {
+                                        selectedItemsValues,
+                                        setSelectedItemsValues,
+                                        handleSelect,
+                                        setShowModal,
+                                    }
+                                }) }
+                            </>
+                        );
+                    }
+                }) }
             </Modal>
         </div>
     );
