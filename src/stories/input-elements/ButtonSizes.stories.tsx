@@ -35,7 +35,7 @@ const Template: ComponentStory<never> = () => (
                             text={ buttonText }
                             size={ Sizes[key] }
                             handleClick={ handleClick } 
-                            tooltip={ 'Button Info' } 
+                            tooltip={ 'Button Info' }
                         />
                     );
                 })}
@@ -94,6 +94,7 @@ const Template: ComponentStory<never> = () => (
                             text={ buttonText }
                             size={ Sizes[key] }
                             handleClick={ handleClick }
+                            iconPosition="right"
                         />
                     );
                 })}

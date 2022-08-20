@@ -42,6 +42,7 @@ export type DefaultColors = {
     lightText: string,
     text: string,
     darkText: string,
+    darkestText: string,
     icon: string,
 }
 
@@ -58,10 +59,11 @@ export const defaultColors: DefaultColors = {
     border: 'gray-300',
     darkBorder: 'gray-600',
     lightRing: 'gray-200',
-    ring: 'gray-400',
+    ring: 'blue-300',
     lightText: 'gray-400',
     text: 'gray-500',
     darkText: 'gray-700',
+    darkestText: 'gray-900',
     icon: 'gray-500',
 };
 

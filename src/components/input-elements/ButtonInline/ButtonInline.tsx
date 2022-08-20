@@ -49,7 +49,7 @@ const ButtonInline = ({
                     { Icon && (iconPosition !== HorizontalPositions.Right) ? ( // ensures that icon is rendered if iconPosition is misspelled
                         <Icon
                             className={ classNames(
-                                spacing.threeXs.negativeMarginLeft,
+                                spacing.twoXs.negativeMarginLeft,
                                 spacing.xs.marginRight,
                                 iconSizes[size]?.height,
                                 iconSizes[size]?.width,
@@ -61,7 +61,7 @@ const ButtonInline = ({
                     { Icon && (iconPosition === HorizontalPositions.Right) ? (
                         <Icon
                             className={ classNames(
-                                spacing.threeXs.negativeMarginRight,
+                                spacing.twoXs.negativeMarginRight,
                                 spacing.xs.marginLeft,
                                 iconSizes[size]?.height,
                                 iconSizes[size]?.width,
