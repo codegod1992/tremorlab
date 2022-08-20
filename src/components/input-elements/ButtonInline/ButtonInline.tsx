@@ -3,10 +3,11 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { BaseColors, Sizes } from 'lib/primitives';
-import { buttonProportions, iconLeftProportions, iconRightProportions } from './styles';
+import { BaseColors, HorizontalPositions, Sizes } from 'lib/primitives';
+import { buttonProportions, iconSizes } from './styles';
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
 import colorTheme, { defaultColors } from 'lib/colorTheme';
+import { spacing } from 'lib/spacing';
 
 export interface ButtonInlineProps {
     text: string,
@@ -22,7 +23,7 @@ export interface ButtonInlineProps {
 const ButtonInline = ({
     text,
     Icon,
-    iconPosition = 'left',
+    iconPosition = HorizontalPositions.Left,
     handleClick,
     tooltip,
     size = Sizes.SM,
@@ -38,28 +39,32 @@ const ButtonInline = ({
                     className={ classNames(
                         'flex-shrink-0 inline-flex items-center group font-medium',
                         'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-transparent',
-                        buttonProportions[size]?.textSize,
+                        buttonProportions[size]?.fontSize,
                         getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor,
                         getColorVariantsFromColorThemeValue(colorTheme[color].darkText).hoverTextColor,
-                        getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
-                        getColorVariantsFromColorThemeValue(defaultColors['transparent']).hoverBgColor,
+                        getColorVariantsFromColorThemeValue(defaultColors.transparent).bgColor,
+                        getColorVariantsFromColorThemeValue(defaultColors.transparent).hoverBgColor,
                     ) }
                 >
-                    { Icon && (iconPosition !== 'right') ? ( // ensures that icon is rendered if iconPosition is misspelled
+                    { Icon && (iconPosition !== HorizontalPositions.Right) ? ( // ensures that icon is rendered if iconPosition is misspelled
                         <Icon
                             className={ classNames(
-                                iconLeftProportions[size]?.margin || '',
-                                iconLeftProportions[size]?.iconSize,
+                                spacing.threeXs.negativeMarginLeft,
+                                spacing.xs.marginRight,
+                                iconSizes[size]?.height,
+                                iconSizes[size]?.width,
                             ) }
                             aria-hidden="true"
                         />
                     ) : null }
                     <p className="whitespace-nowrap">{ text }</p>
-                    { Icon && (iconPosition === 'right') ? (
+                    { Icon && (iconPosition === HorizontalPositions.Right) ? (
                         <Icon
                             className={ classNames(
-                                iconRightProportions[size]?.margin || '',
-                                iconRightProportions[size]?.iconSize,
+                                spacing.threeXs.negativeMarginRight,
+                                spacing.xs.marginLeft,
+                                iconSizes[size]?.height,
+                                iconSizes[size]?.width,
                             ) }
                             aria-hidden="true"
                         />

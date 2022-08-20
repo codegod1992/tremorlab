@@ -1,61 +1,40 @@
+import { Sizing, sizing } from 'lib/sizing';
+import { fontSize } from 'lib/font';
+
 export type ButtonProportionTypes = {
-    textSize: string,
+    fontSize: string,
 }
 
-export const buttonProportions: {[char: string]: ButtonProportionTypes} = {
+export const buttonProportions: {[size: string]: ButtonProportionTypes} = {
     xs: {
-        textSize: 'text-xs',
+        fontSize: fontSize.xs,
     },
     sm: {
-        textSize: 'text-sm',
+        fontSize: fontSize.sm,
     },
     md: {
-        textSize: 'text-base',
+        fontSize: fontSize.md,
     },
     lg: {
-        textSize: 'text-lg',
+        fontSize: fontSize.lg,
     },
 };
 
-export type IconProportionTypes = {
-    margin?: string,
-    iconSize: string,
-}
-
-export const iconLeftProportions: {[size: string]: IconProportionTypes} = {
+export const iconSizes: {[size: string]: Sizing} = {
     xs: {
-        margin: 'mr-1.5',
-        iconSize: 'w-4 h-4',
+        height: sizing.md.height,
+        width: sizing.md.width,
     },
     sm: {
-        margin: 'mr-1.5',
-        iconSize: 'w-5 h-5',
+        height: sizing.lg.height,
+        width: sizing.lg.width,
     },
     md: {
-        margin: 'mr-1.5',
-        iconSize: 'w-5 h-5',
+        height: sizing.lg.height,
+        width: sizing.lg.width,
     },
     lg: {
-        margin: 'mr-1.5',
-        iconSize: 'w-6 h-6',
-    },
-};
-
-export const iconRightProportions: {[size: string]: IconProportionTypes} = {
-    xs: {
-        margin: 'ml-1.5',
-        iconSize: 'w-4 h-4',
-    },
-    sm: {
-        margin: 'ml-1.5',
-        iconSize: 'w-5 h-5',
-    },
-    md: {
-        margin: 'ml-1.5',
-        iconSize: 'w-5 h-5',
-    },
-    lg: {
-        margin: 'ml-1.5',
-        iconSize: 'w-6 h-6',
+        height: sizing.xl.height,
+        width: sizing.xl.width,
     },
 };

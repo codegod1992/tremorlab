@@ -5,7 +5,7 @@ import Tooltip from '@tippyjs/react';
 
 import { BaseColors, Sizes } from 'lib/primitives';
 import { classNames, parseMarginTopClassNames } from 'lib/classnameUtils';
-import { colors, proportions, shape } from './styles';
+import { colors, iconSizes, shape, wrapperProportions } from './styles';
 
 export const IconVariants = {
     Simple: 'simple',
@@ -45,11 +45,16 @@ const Icon = ({
                     shape[variant].border,
                     shape[variant].shadow,
                     shape[variant].ring,
-                    proportions[size].paddingX,
-                    proportions[size].paddingY,
+                    wrapperProportions[size].paddingLeft,
+                    wrapperProportions[size].paddingRight,
+                    wrapperProportions[size].paddingTop,
+                    wrapperProportions[size].paddingBottom,
                 ) }
             >
-                <Icon className={ classNames( proportions[size].iconSize ) } />
+                <Icon className={ classNames(
+                    iconSizes[size].height,
+                    iconSizes[size].width,
+                ) } />
             </span>
         </Tooltip>
     </span>
