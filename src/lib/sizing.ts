@@ -1,3 +1,8 @@
+export type Sizing = {
+    height: string,
+    width: string,
+}
+
 export const sizing = {
     threeXs: {
         height: 'h-0.5',

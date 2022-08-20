@@ -1,75 +1,61 @@
+import { Sizing, sizing } from 'lib/sizing';
+import { fontSize } from 'lib/font';
+import { spacing } from 'lib/spacing';
+
 export type BadgeProportionTypes = {
-    paddingX: string,
-    paddingY: string,
-    textSize: string,
+    paddingLeft: string,
+    paddingRight: string,
+    paddingTop: string,
+    paddingBottom: string,
+    fontSize: string,
 }
 
-export const badgeProportionsTextOnly: {[char: string]: BadgeProportionTypes} = {
+export const badgeProportions: {[char: string]: BadgeProportionTypes} = {
     xs: {
-        paddingX: 'px-2',
-        paddingY: 'py-0.5',
-        textSize: 'text-xs',
+        paddingLeft: spacing.sm.paddingLeft,
+        paddingRight: spacing.sm.paddingRight,
+        paddingTop: spacing.threeXs.paddingTop,
+        paddingBottom: spacing.threeXs.paddingBottom,
+        fontSize: fontSize.xs,
     },
     sm: {
-        paddingX: 'px-2.5',
-        paddingY: 'py-0.5',
-        textSize: 'text-sm',
+        paddingLeft: spacing.md.paddingLeft,
+        paddingRight: spacing.md.paddingRight,
+        paddingTop: spacing.threeXs.paddingTop,
+        paddingBottom: spacing.threeXs.paddingBottom,
+        fontSize: fontSize.sm,
     },
     md: {
-        paddingX: 'px-3',
-        paddingY: 'py-1',
-        textSize: 'text-md',
+        paddingLeft: spacing.lg.paddingLeft,
+        paddingRight: spacing.lg.paddingRight,
+        paddingTop: spacing.threeXs.paddingTop,
+        paddingBottom: spacing.threeXs.paddingBottom,
+        fontSize: fontSize.md,
     },
     lg: {
-        paddingX: 'px-3.5',
-        paddingY: 'py-0.5',
-        textSize: 'text-lg',
+        paddingLeft: spacing.xl.paddingLeft,
+        paddingRight: spacing.xl.paddingRight,
+        paddingTop: spacing.threeXs.paddingTop,
+        paddingBottom: spacing.threeXs.paddingBottom,
+        fontSize: fontSize.lg,
     },
 };
 
-export const badgeProportionsWithIcon: {[char: string]: BadgeProportionTypes} = {
+export const iconSizes: {[size: string]: Sizing} = {
     xs: {
-        paddingX: 'px-2',
-        paddingY: 'py-0.5',
-        textSize: 'text-xs',
+        height: sizing.md.height,
+        width: sizing.md.width,
     },
     sm: {
-        paddingX: 'px-2.5',
-        paddingY: 'py-0.5',
-        textSize: 'text-sm',
+        height: sizing.md.height,
+        width: sizing.md.width
     },
     md: {
-        paddingX: 'px-3',
-        paddingY: 'py-0.5',
-        textSize: 'text-md',
+        height: sizing.md.height,
+        width: sizing.md.width
     },
     lg: {
-        paddingX: 'px-3',
-        paddingY: 'py-0.5',
-        textSize: 'text-lg',
-    },
-};
-
-export type IconProportionTypes = {
-    margin?: string,
-    iconSize: string,
-}
-
-export const iconProportions: {[char: string]: IconProportionTypes} = {
-    xs: {
-        margin: 'mr-1',
-        iconSize: 'w-4 h-4',
-    },
-    sm: {
-        margin: '-ml-0.5 mr-1',
-        iconSize: 'w-4 h-4',
-    },
-    md: {
-        margin: '-ml-0.5 mr-1.5',
-        iconSize: 'w-4 h-4',
-    },
-    lg: {
-        margin: '-ml-0.5 mr-1.5',
-        iconSize: 'w-5 h-5',
+        height: sizing.lg.height,
+        width: sizing.lg.width,
     },
 };

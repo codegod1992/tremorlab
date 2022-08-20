@@ -1,58 +1,69 @@
+import { Sizing, sizing } from 'lib/sizing';
 import colorTheme, { defaultColors } from 'lib/colorTheme';
 import { BaseColors } from 'lib/primitives';
 import { getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
-import { sizing } from 'lib/sizing';
 import { spacing } from 'lib/spacing';
 
-export type ProporionTypes = {
+export type WrapperProporionTypes = {
     paddingLeft: string,
     paddingRight: string,
     paddingTop: string,
     paddingBottom: string,
-    iconHeight: string,
-    iconWidth: string,
 }
 
-export const proportions: {[size: string]: ProporionTypes} = {
+export const wrapperProportions: {[size: string]: WrapperProporionTypes} = {
     xs: {
         paddingLeft: spacing.xs.paddingLeft,
         paddingRight: spacing.xs.paddingRight,
         paddingTop: spacing.xs.paddingTop,
         paddingBottom: spacing.xs.paddingBottom,
-        iconHeight: sizing.sm.height,
-        iconWidth: sizing.sm.width,
     },
     sm: {
         paddingLeft: spacing.xs.paddingLeft,
         paddingRight: spacing.xs.paddingRight,
         paddingTop: spacing.xs.paddingTop,
         paddingBottom: spacing.xs.paddingBottom,
-        iconHeight: sizing.lg.height,
-        iconWidth: sizing.lg.width,
     },
     md: {
         paddingLeft: spacing.sm.paddingLeft,
         paddingRight: spacing.sm.paddingRight,
         paddingTop: spacing.sm.paddingTop,
         paddingBottom: spacing.sm.paddingBottom,
-        iconHeight: sizing.lg.height,
-        iconWidth: sizing.lg.width,
     },
     lg: {
         paddingLeft: spacing.sm.paddingLeft,
         paddingRight: spacing.sm.paddingRight,
         paddingTop: spacing.sm.paddingTop,
         paddingBottom: spacing.sm.paddingBottom,
-        iconHeight: sizing.twoXl.height,
-        iconWidth: sizing.twoXl.width,
     },
     xl: {
         paddingLeft: spacing.md.paddingLeft,
         paddingRight: spacing.md.paddingRight,
         paddingTop: spacing.md.paddingTop,
         paddingBottom: spacing.md.paddingBottom,
-        iconHeight: sizing.threeXl.height,
-        iconWidth: sizing.threeXl.width,
+    },
+};
+
+export const iconSizes: {[size: string]: Sizing} = {
+    xs: {
+        height: sizing.sm.height,
+        width: sizing.sm.width,
+    },
+    sm: {
+        height: sizing.lg.height,
+        width: sizing.lg.width,
+    },
+    md: {
+        height: sizing.lg.height,
+        width: sizing.lg.width,
+    },
+    lg: {
+        height: sizing.twoXl.height,
+        width: sizing.twoXl.width,
+    },
+    xl: {
+        height: sizing.threeXl.height,
+        width: sizing.threeXl.width,
     },
 };
 

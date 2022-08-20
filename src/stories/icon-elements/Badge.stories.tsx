@@ -5,6 +5,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { BaseColors } from 'lib/primitives';
 import { Sizes } from 'lib/primitives';
 
+import { ArrowUpIcon } from 'assets';
 import Badge from 'components/icon-elements/Badge/Badge';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -18,11 +19,12 @@ const Template: ComponentStory<typeof Badge> = () => (
     <>
         <div>
             <p>Sizes</p>
-            <div className="flex justify-start space-x-4">
+            <div className="grid grid-cols-1 gap-2">
                 { Object.values(Sizes).map(size => (
-                    <>
+                    <div className="flex justify-start space-x-4">
                         <Badge size={ size } text={ 'Live' } tooltip={ 'Tooltip' } />
-                    </>
+                        <Badge size={ size } text={ 'Live' } Icon={ArrowUpIcon} tooltip={ 'Tooltip' } />
+                    </div>
                 )) }
             </div>
         </div>
