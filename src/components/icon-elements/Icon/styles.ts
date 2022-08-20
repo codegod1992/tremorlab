@@ -1,39 +1,58 @@
 import colorTheme, { defaultColors } from 'lib/colorTheme';
-
 import { BaseColors } from 'lib/primitives';
 import { getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
+import { sizing } from 'lib/sizing';
+import { spacing } from 'lib/spacing';
 
 export type ProporionTypes = {
-    paddingX: string,
-    paddingY: string,
-    iconSize: string,
+    paddingLeft: string,
+    paddingRight: string,
+    paddingTop: string,
+    paddingBottom: string,
+    iconHeight: string,
+    iconWidth: string,
 }
 
 export const proportions: {[size: string]: ProporionTypes} = {
     xs: {
-        paddingX: 'px-1.5',
-        paddingY: 'py-1.5',
-        iconSize: 'w-3 h-3',
+        paddingLeft: spacing.xs.paddingLeft,
+        paddingRight: spacing.xs.paddingRight,
+        paddingTop: spacing.xs.paddingTop,
+        paddingBottom: spacing.xs.paddingBottom,
+        iconHeight: sizing.sm.height,
+        iconWidth: sizing.sm.width,
     },
     sm: {
-        paddingX: 'px-1.5',
-        paddingY: 'py-1.5',
-        iconSize: 'w-5 h-5',
+        paddingLeft: spacing.xs.paddingLeft,
+        paddingRight: spacing.xs.paddingRight,
+        paddingTop: spacing.xs.paddingTop,
+        paddingBottom: spacing.xs.paddingBottom,
+        iconHeight: sizing.lg.height,
+        iconWidth: sizing.lg.width,
     },
     md: {
-        paddingX: 'px-2',
-        paddingY: 'py-2',
-        iconSize: 'w-5 h-5',
+        paddingLeft: spacing.sm.paddingLeft,
+        paddingRight: spacing.sm.paddingRight,
+        paddingTop: spacing.sm.paddingTop,
+        paddingBottom: spacing.sm.paddingBottom,
+        iconHeight: sizing.lg.height,
+        iconWidth: sizing.lg.width,
     },
     lg: {
-        paddingX: 'px-2',
-        paddingY: 'py-2',
-        iconSize: 'w-7 h-7',
+        paddingLeft: spacing.sm.paddingLeft,
+        paddingRight: spacing.sm.paddingRight,
+        paddingTop: spacing.sm.paddingTop,
+        paddingBottom: spacing.sm.paddingBottom,
+        iconHeight: sizing.twoXl.height,
+        iconWidth: sizing.twoXl.width,
     },
     xl: {
-        paddingX: 'px-2.5',
-        paddingY: 'py-2.5',
-        iconSize: 'w-9 h-9',
+        paddingLeft: spacing.md.paddingLeft,
+        paddingRight: spacing.md.paddingRight,
+        paddingTop: spacing.md.paddingTop,
+        paddingBottom: spacing.md.paddingBottom,
+        iconHeight: sizing.threeXl.height,
+        iconWidth: sizing.threeXl.width,
     },
 };
 

@@ -45,11 +45,16 @@ const Icon = ({
                     shape[variant].border,
                     shape[variant].shadow,
                     shape[variant].ring,
-                    proportions[size].paddingX,
-                    proportions[size].paddingY,
+                    proportions[size].paddingLeft,
+                    proportions[size].paddingRight,
+                    proportions[size].paddingTop,
+                    proportions[size].paddingBottom,
                 ) }
             >
-                <Icon className={ classNames( proportions[size].iconSize ) } />
+                <Icon className={ classNames(
+                    proportions[size].iconHeight,
+                    proportions[size].iconWidth,
+                ) } />
             </span>
         </Tooltip>
     </span>
