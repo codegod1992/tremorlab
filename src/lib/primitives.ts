@@ -38,3 +38,18 @@ export const Sizes: {[key: string]: string} = {
     LG: 'lg',
     XL: 'xl',
 };
+
+export const Importances: {[key: string]: string} = {
+    Primary: 'primary',
+    Secondary: 'secondary',
+};
+
+export const HorizontalPositions: {[key: string]: string} = {
+    Left: 'left',
+    Right: 'right',
+};
+
+export const VerticalPositions: {[key: string]: string} = {
+    Top: 'top',
+    Bottom: 'bottom',
+};

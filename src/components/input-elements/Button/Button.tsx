@@ -3,15 +3,15 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { BaseColors, Sizes } from 'lib/primitives';
+import { BaseColors, HorizontalPositions, Importances, Sizes } from 'lib/primitives';
 import {
     buttonProportions,
     colors,
-    iconLeftProportions,
-    iconRightProportions,
+    iconSizes,
     shape,
 } from './styles';
 import { classNames, parseMarginTopClassNames } from 'lib/classnameUtils';
+import { spacing } from 'lib/spacing';
 
 export interface ButtonProps {
     text: string,
@@ -28,12 +28,12 @@ export interface ButtonProps {
 const Button = ({
     text,
     Icon,
-    iconPosition = 'left',
+    iconPosition = HorizontalPositions.Left,
     handleClick,
     tooltip,
     size = Sizes.SM,
     color = BaseColors.Blue,
-    importance = 'primary',
+    importance = Importances.Primary,
     marginTop,
 }: ButtonProps) => {
     return(
@@ -45,9 +45,11 @@ const Button = ({
                     className={ classNames(
                         'flex-shrink-0 inline-flex items-center group font-medium',
                         'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-transparent',
-                        buttonProportions[size]?.paddingX,
-                        buttonProportions[size]?.paddingY,
-                        buttonProportions[size]?.textSize,
+                        buttonProportions[size]?.paddingLeft,
+                        buttonProportions[size]?.paddingRight,
+                        buttonProportions[size]?.paddingTop,
+                        buttonProportions[size]?.paddingBottom,
+                        buttonProportions[size]?.fontSize,
                         shape.border,
                         shape.rounded,
                         shape.shadow,
@@ -59,11 +61,13 @@ const Button = ({
                         colors[color][importance].textColor,
                     ) }
                 >
-                    { Icon && (iconPosition !== 'right') ? ( // ensures that icon is rendered if iconPosition is misspelled
+                    { Icon && (iconPosition !== HorizontalPositions.Right) ? ( // ensures that icon is rendered if iconPosition is misspelled
                         <Icon
                             className={classNames(
-                                iconLeftProportions[size]?.margin || '',
-                                iconLeftProportions[size]?.iconSize,
+                                spacing.threeXs.negativeMarginLeft,
+                                spacing.xs.marginRight,
+                                iconSizes[size]?.height,
+                                iconSizes[size]?.width,
                             )}
                             aria-hidden="true"
                         />
@@ -71,11 +75,13 @@ const Button = ({
                     <p className="whitespace-nowrap">
                         { text }
                     </p>
-                    { Icon && (iconPosition === 'right') ? (
+                    { Icon && (iconPosition === HorizontalPositions.Right) ? (
                         <Icon
                             className={classNames(
-                                iconRightProportions[size]?.margin || '',
-                                iconRightProportions[size]?.iconSize,
+                                spacing.threeXs.negativeMarginRight,
+                                spacing.xs.marginLeft,
+                                iconSizes[size]?.height,
+                                iconSizes[size]?.width,
                             )}
                             aria-hidden="true"
                         />

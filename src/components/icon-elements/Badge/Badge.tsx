@@ -41,8 +41,8 @@ const Badge = ({
                 ) }>
                     { Icon ? (
                         <Icon className={ classNames(
-                            spacing.xs.marginRight,
                             spacing.threeXs.negativeMarginLeft,
+                            spacing.xs.marginRight,
                             iconSizes[size]?.height,
                             iconSizes[size]?.width,
                         ) }

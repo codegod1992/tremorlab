@@ -1,19 +1,21 @@
+import { fontSize } from 'lib/font';
+
 export type ButtonProportionTypes = {
-    textSize: string,
+    fontSize: string,
 }
 
 export const buttonProportions: {[char: string]: ButtonProportionTypes} = {
     xs: {
-        textSize: 'text-xs',
+        fontSize: fontSize.xs,
     },
     sm: {
-        textSize: 'text-sm',
+        fontSize: fontSize.sm,
     },
     md: {
-        textSize: 'text-base',
+        fontSize: fontSize.md,
     },
     lg: {
-        textSize: 'text-lg',
+        fontSize: fontSize.lg,
     },
 };
 

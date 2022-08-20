@@ -1,34 +1,47 @@
 /* eslint-disable max-len */
+import { BaseColors, Importances } from 'lib/primitives';
+import { Sizing, sizing } from 'lib/sizing';
 import colorTheme, { defaultColors } from 'lib/colorTheme';
-import { BaseColors } from 'lib/primitives';
+import { fontSize } from 'lib/font';
 import { getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
+import { spacing } from 'lib/spacing';
 
 export type ButtonProportionTypes = {
-    paddingX: string,
-    paddingY: string,
-    textSize: string,
+    paddingLeft: string,
+    paddingRight: string,
+    paddingTop: string,
+    paddingBottom: string,
+    fontSize: string,
 }
 
 export const buttonProportions: {[char: string]: ButtonProportionTypes} = {
     xs: {
-        paddingX: 'px-2.5',
-        paddingY: 'py-1.5',
-        textSize: 'text-xs',
+        paddingLeft: spacing.md.paddingLeft,
+        paddingRight: spacing.md.paddingRight,
+        paddingTop: spacing.xs.paddingTop,
+        paddingBottom: spacing.xs.paddingBottom,
+        fontSize: fontSize.xs,
     },
     sm: {
-        paddingX: 'px-4',
-        paddingY: 'py-2',
-        textSize: 'text-sm',
+        paddingLeft: spacing.twoXl.paddingLeft,
+        paddingRight: spacing.twoXl.paddingRight,
+        paddingTop: spacing.sm.paddingTop,
+        paddingBottom: spacing.sm.paddingBottom,
+        fontSize: fontSize.sm,
     },
     md: {
-        paddingX: 'px-4',
-        paddingY: 'py-2',
-        textSize: 'text-base',
+        paddingLeft: spacing.twoXl.paddingLeft,
+        paddingRight: spacing.twoXl.paddingRight,
+        paddingTop: spacing.sm.paddingTop,
+        paddingBottom: spacing.sm.paddingBottom,
+        fontSize: fontSize.md,
     },
     lg: {
-        paddingX: 'px-4',
-        paddingY: 'py-2.5',
-        textSize: 'text-lg',
+        paddingLeft: spacing.twoXl.paddingLeft,
+        paddingRight: spacing.twoXl.paddingRight,
+        paddingTop: spacing.md.paddingTop,
+        paddingBottom: spacing.md.paddingBottom,
+        fontSize: fontSize.lg,
     },
 };
 
@@ -44,46 +57,22 @@ export const shape: ShapeTypes = {
     shadow: 'shadow-sm'
 };
 
-export type IconProportionTypes = {
-    margin?: string,
-    iconSize: string,
-}
-
-export const iconLeftProportions: {[size: string]: IconProportionTypes} = {
+export const iconSizes: {[size: string]: Sizing} = {
     xs: {
-        margin: '-ml-0.5 mr-1.5',
-        iconSize: 'w-4 h-4',
+        height: sizing.md.height,
+        width: sizing.md.width,
     },
     sm: {
-        margin: '-ml-1 mr-1.5',
-        iconSize: 'w-5 h-5',
+        height: sizing.lg.height,
+        width: sizing.lg.width,
     },
     md: {
-        margin: '-ml-1 mr-1.5',
-        iconSize: 'w-5 h-5',
+        height: sizing.lg.height,
+        width: sizing.lg.width,
     },
     lg: {
-        margin: '-ml-1 mr-1.5',
-        iconSize: 'w-6 h-6',
-    },
-};
-
-export const iconRightProportions: {[size: string]: IconProportionTypes} = {
-    xs: {
-        margin: '-mr-0.5 ml-1.5',
-        iconSize: 'w-4 h-4',
-    },
-    sm: {
-        margin: '-mr-1 ml-1.5',
-        iconSize: 'w-5 h-5',
-    },
-    md: {
-        margin: '-mr-1 ml-1.5',
-        iconSize: 'w-5 h-5',
-    },
-    lg: {
-        margin: '-mr-1 ml-1.5',
-        iconSize: 'w-6 h-6',
+        height: sizing.xl.height,
+        width: sizing.xl.width,
     },
 };
 
@@ -98,7 +87,7 @@ export type ColorTypes = {
 
 export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} = {
     [BaseColors.Slate]: {
-        'primary': {
+        [Importances.Primary]: {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Slate].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Slate].darkBackground).hoverBgColor,
@@ -106,7 +95,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Slate].darkBackground).hoverBorderColor,
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Slate].ring).focusRingColor,
         },
-        'secondary': {
+        [Importances.Secondary]: {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Slate].text).textColor,
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Slate].lightBackground).hoverBgColor,
@@ -116,7 +105,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
         }
     },
     [BaseColors.Gray]: {
-        'primary': {
+        [Importances.Primary]: {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Gray].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Gray].darkBackground).hoverBgColor,
@@ -124,7 +113,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Gray].darkBackground).hoverBorderColor,
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Gray].ring).focusRingColor,
         },
-        'secondary': {
+        [Importances.Secondary]: {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Gray].text).textColor,
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Gray].lightBackground).hoverBgColor,
@@ -134,7 +123,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
         }
     },
     [BaseColors.Zinc]: {
-        'primary': {
+        [Importances.Primary]: {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Zinc].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Zinc].darkBackground).hoverBgColor,
@@ -142,7 +131,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Zinc].darkBackground).hoverBorderColor,
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Zinc].ring).focusRingColor,
         },
-        'secondary': {
+        [Importances.Secondary]: {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Zinc].text).textColor,
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Zinc].lightBackground).hoverBgColor,
@@ -152,7 +141,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
         }
     },
     [BaseColors.Neutral]: {
-        'primary': {
+        [Importances.Primary]: {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Neutral].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Neutral].darkBackground).hoverBgColor,
@@ -160,7 +149,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Neutral].darkBackground).hoverBorderColor,
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Neutral].ring).focusRingColor,
         },
-        'secondary': {
+        [Importances.Secondary]: {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Neutral].text).textColor,
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Neutral].lightBackground).hoverBgColor,
@@ -170,7 +159,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
         }
     },
     [BaseColors.Stone]: {
-        'primary': {
+        [Importances.Primary]: {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Stone].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Stone].darkBackground).hoverBgColor,
@@ -178,7 +167,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Stone].darkBackground).hoverBorderColor,
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Stone].ring).focusRingColor,
         },
-        'secondary': {
+        [Importances.Secondary]: {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Stone].text).textColor,
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Stone].lightBackground).hoverBgColor,
@@ -188,7 +177,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
         }
     },
     [BaseColors.Red]: {
-        'primary': {
+        [Importances.Primary]: {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Red].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Red].darkBackground).hoverBgColor,
@@ -196,7 +185,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Red].darkBackground).hoverBorderColor,
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Red].ring).focusRingColor,
         },
-        'secondary': {
+        [Importances.Secondary]: {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Red].text).textColor,
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Red].lightBackground).hoverBgColor,
@@ -206,7 +195,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
         }
     },
     [BaseColors.Orange]: {
-        'primary': {
+        [Importances.Primary]: {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].darkBackground).hoverBgColor,
@@ -214,7 +203,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].darkBackground).hoverBorderColor,
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].ring).focusRingColor,
         },
-        'secondary': {
+        [Importances.Secondary]: {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].text).textColor,
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Orange].lightBackground).hoverBgColor,
@@ -224,7 +213,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
         }
     },
     [BaseColors.Amber]: {
-        'primary': {
+        [Importances.Primary]: {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Amber].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Amber].darkBackground).hoverBgColor,
@@ -232,7 +221,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Amber].darkBackground).hoverBorderColor,
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Amber].ring).focusRingColor,
         },
-        'secondary': {
+        [Importances.Secondary]: {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Amber].text).textColor,
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Amber].lightBackground).hoverBgColor,
@@ -242,7 +231,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
         }
     },
     [BaseColors.Yellow]: {
-        'primary': {
+        [Importances.Primary]: {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Yellow].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Yellow].darkBackground).hoverBgColor,
@@ -250,7 +239,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Yellow].darkBackground).hoverBorderColor,
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Yellow].ring).focusRingColor,
         },
-        'secondary': {
+        [Importances.Secondary]: {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Yellow].text).textColor,
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Yellow].lightBackground).hoverBgColor,
@@ -260,7 +249,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
         }
     },
     [BaseColors.Lime]: {
-        'primary': {
+        [Importances.Primary]: {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Lime].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Lime].darkBackground).hoverBgColor,
@@ -268,7 +257,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Lime].darkBackground).hoverBorderColor,
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Lime].ring).focusRingColor,
         },
-        'secondary': {
+        [Importances.Secondary]: {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Lime].text).textColor,
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Lime].lightBackground).hoverBgColor,
@@ -278,7 +267,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
         }
     },
     [BaseColors.Green]: {
-        'primary': {
+        [Importances.Primary]: {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Green].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Green].darkBackground).hoverBgColor,
@@ -286,7 +275,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Green].darkBackground).hoverBorderColor,
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Green].ring).focusRingColor,
         },
-        'secondary': {
+        [Importances.Secondary]: {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Green].text).textColor,
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Green].lightBackground).hoverBgColor,
@@ -296,7 +285,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
         }
     },
     [BaseColors.Emerald]: {
-        'primary': {
+        [Importances.Primary]: {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].darkBackground).hoverBgColor,
@@ -304,7 +293,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].darkBackground).hoverBorderColor,
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].ring).focusRingColor,
         },
-        'secondary': {
+        [Importances.Secondary]: {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].text).textColor,
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Emerald].lightBackground).hoverBgColor,
@@ -314,7 +303,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
         }
     },
     [BaseColors.Teal]: {
-        'primary': {
+        [Importances.Primary]: {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Teal].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Teal].darkBackground).hoverBgColor,
@@ -322,7 +311,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Teal].darkBackground).hoverBorderColor,
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Teal].ring).focusRingColor,
         },
-        'secondary': {
+        [Importances.Secondary]: {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Teal].text).textColor,
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Teal].lightBackground).hoverBgColor,
@@ -332,7 +321,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
         }
     },
     [BaseColors.Cyan]: {
-        'primary': {
+        [Importances.Primary]: {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Cyan].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Cyan].darkBackground).hoverBgColor,
@@ -340,7 +329,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Cyan].darkBackground).hoverBorderColor,
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Cyan].ring).focusRingColor,
         },
-        'secondary': {
+        [Importances.Secondary]: {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Cyan].text).textColor,
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Cyan].lightBackground).hoverBgColor,
@@ -350,7 +339,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
         }
     },
     [BaseColors.Sky]: {
-        'primary': {
+        [Importances.Primary]: {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Sky].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Sky].darkBackground).hoverBgColor,
@@ -358,7 +347,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Sky].darkBackground).hoverBorderColor,
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Sky].ring).focusRingColor,
         },
-        'secondary': {
+        [Importances.Secondary]: {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Sky].text).textColor,
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Sky].lightBackground).hoverBgColor,
@@ -368,7 +357,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
         }
     },
     [BaseColors.Blue]: {
-        'primary': {
+        [Importances.Primary]: {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].darkBackground).hoverBgColor,
@@ -376,7 +365,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].darkBackground).hoverBorderColor,
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
-        'secondary': {
+        [Importances.Secondary]: {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].text).textColor,
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].lightBackground).hoverBgColor,
@@ -386,7 +375,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
         }
     },
     [BaseColors.Indigo]: {
-        'primary': {
+        [Importances.Primary]: {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Indigo].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Indigo].darkBackground).hoverBgColor,
@@ -394,7 +383,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Indigo].darkBackground).hoverBorderColor,
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].ring).focusRingColor,
         },
-        'secondary': {
+        [Importances.Secondary]: {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Indigo].text).textColor,
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Indigo].lightBackground).hoverBgColor,
@@ -404,7 +393,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
         }
     },
     [BaseColors.Violet]: {
-        'primary': {
+        [Importances.Primary]: {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Violet].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Violet].darkBackground).hoverBgColor,
@@ -412,7 +401,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Violet].darkBackground).hoverBorderColor,
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Violet].ring).focusRingColor,
         },
-        'secondary': {
+        [Importances.Secondary]: {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Violet].text).textColor,
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Violet].lightBackground).hoverBgColor,
@@ -422,7 +411,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
         }
     },
     [BaseColors.Purple]: {
-        'primary': {
+        [Importances.Primary]: {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Purple].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Purple].darkBackground).hoverBgColor,
@@ -430,7 +419,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Purple].darkBackground).hoverBorderColor,
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Purple].ring).focusRingColor,
         },
-        'secondary': {
+        [Importances.Secondary]: {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Purple].text).textColor,
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Purple].lightBackground).hoverBgColor,
@@ -440,7 +429,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
         }
     },
     [BaseColors.Fuchsia]: {
-        'primary': {
+        [Importances.Primary]: {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Fuchsia].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Fuchsia].darkBackground).hoverBgColor,
@@ -448,7 +437,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Fuchsia].darkBackground).hoverBorderColor,
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Fuchsia].ring).focusRingColor,
         },
-        'secondary': {
+        [Importances.Secondary]: {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Fuchsia].text).textColor,
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Fuchsia].lightBackground).hoverBgColor,
@@ -458,7 +447,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
         }
     },
     [BaseColors.Pink]: {
-        'primary': {
+        [Importances.Primary]: {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Pink].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Pink].darkBackground).hoverBgColor,
@@ -466,7 +455,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Pink].darkBackground).hoverBorderColor,
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Pink].ring).focusRingColor,
         },
-        'secondary': {
+        [Importances.Secondary]: {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Pink].text).textColor,
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Pink].lightBackground).hoverBgColor,
@@ -476,7 +465,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
         }
     },
     [BaseColors.Rose]: {
-        'primary': {
+        [Importances.Primary]: {
             textColor: getColorVariantsFromColorThemeValue(defaultColors['white']).textColor,
             bgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].background).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].darkBackground).hoverBgColor,
@@ -484,7 +473,7 @@ export const colors: {[baseColor: string]:  {[importance: string]: ColorTypes}} 
             hoverBorderColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].darkBackground).hoverBorderColor,
             focusRingColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].ring).focusRingColor,
         },
-        'secondary': {
+        [Importances.Secondary]: {
             textColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].text).textColor,
             bgColor: getColorVariantsFromColorThemeValue(defaultColors['transparent']).bgColor,
             hoverBgColor: getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Rose].lightBackground).hoverBgColor,
