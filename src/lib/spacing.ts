@@ -10,6 +10,8 @@ export const spacing = {
         marginBottom: 'mb-0',
         negativeMarginLeft: '-ml-0',
         negativeMarginRight: '-mr-0',
+        left: 'left-0',
+        right: 'right-0',
     },
     threeXs: {
         paddingLeft: 'pl-0.5',
@@ -22,6 +24,8 @@ export const spacing = {
         marginBottom: 'mb-0.5',
         negativeMarginLeft: '-ml-0.5',
         negativeMarginRight: '-mr-0.5',
+        left: 'left-0.5',
+        right: 'right-0.5',
     },
     twoXs: {
         paddingLeft: 'pl-1',
@@ -34,6 +38,8 @@ export const spacing = {
         marginBottom: 'mb-1',
         negativeMarginLeft: '-ml-1',
         negativeMarginRight: '-mr-1',
+        left: 'left-1',
+        right: 'right-1',
     },
     xs: {
         paddingLeft: 'pl-1.5',
@@ -46,6 +52,8 @@ export const spacing = {
         marginBottom: 'mb-1.5',
         negativeMarginLeft: '-ml-1.5',
         negativeMarginRight: '-mr-1.5',
+        left: 'left-1.5',
+        right: 'right-1.5',
     },
     sm: {
         paddingLeft: 'pl-2',
@@ -58,6 +66,8 @@ export const spacing = {
         marginBottom: 'mb-2',
         negativeMarginLeft: '-ml-2',
         negativeMarginRight: '-mr-2',
+        left: 'left-2',
+        right: 'right-2',
     },
     md: {
         paddingLeft: 'pl-2.5',
@@ -70,6 +80,8 @@ export const spacing = {
         marginBottom: 'mb-2.5',
         negativeMarginLeft: '-ml-2.5',
         negativeMarginRight: '-mr-2.5',
+        left: 'left-2.5',
+        right: 'right-2.5',
     },
     lg: {
         paddingLeft: 'pl-3',
@@ -82,6 +94,8 @@ export const spacing = {
         marginBottom: 'mb-3',
         negativeMarginLeft: '-ml-3',
         negativeMarginRight: '-mr-3',
+        left: 'left-3',
+        right: 'right-3',
     },
     xl: {
         paddingLeft: 'pl-3.5',
@@ -94,6 +108,8 @@ export const spacing = {
         marginBottom: 'mb-3.5',
         negativeMarginLeft: '-ml-3.5',
         negativeMarginRight: '-mr-3.5',
+        left: 'left-3.5',
+        right: 'right-3.5',
     },
     twoXl: {
         paddingLeft: 'pl-4',
@@ -106,5 +122,7 @@ export const spacing = {
         marginBottom: 'mb-4',
         negativeMarginLeft: '-ml-4',
         negativeMarginRight: '-mr-4',
+        left: 'left-4',
+        right: 'right-4',
     },
 };

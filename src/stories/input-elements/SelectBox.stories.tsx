@@ -4,7 +4,8 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import SelectBox from 'components/input-elements/SelectBox/SelectBox';
-import { SelectBoxItem } from 'components';
+import { Dropdown, DropdownItem, SelectBoxItem } from 'components';
+import { CalendarIcon } from '@heroicons/react/solid';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -25,6 +26,11 @@ const Template: ComponentStory<typeof SelectBox> = () => (
             <SelectBoxItem  value={2} name="Option Two" />
             <SelectBoxItem  value={3} name="Option Three" />
         </SelectBox>
+        <Dropdown handleSelect={ (value) => console.log('The selected value is', value) }>
+            <DropdownItem value={ 5 } name={ 'Five' } Icon={ CalendarIcon } shortcut={ 'F' } />
+            <DropdownItem value={ 3 } name={ 'Three' } Icon={ CalendarIcon } shortcut={ 'T' } />
+            <DropdownItem value={ 1 } name={ 'One' } Icon={ CalendarIcon } shortcut={ 'O' } />
+        </Dropdown>
     </>
 );
   

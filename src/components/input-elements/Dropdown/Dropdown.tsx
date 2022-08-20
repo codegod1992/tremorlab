@@ -104,16 +104,16 @@ const Dropwdown = ({
                     { selectedItem ? valueToNameMapping[selectedItem] : placeholder }
                 </p>
                 <span>
-                    <ChevronDownIcon
-                        className={ classNames(
-                            'flex-none',
-                            sizing.lg.height,
-                            sizing.lg.width,
-                            spacing.twoXs.negativeMarginRight,
-                            getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
-                        ) }
-                        aria-hidden="true"
-                    />
+                <ChevronDownIcon
+                    className={ classNames(
+                        'flex-none',
+                        sizing.lg.height,
+                        sizing.lg.width,
+                        spacing.twoXs.negativeMarginRight,
+                        getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
+                    ) }
+                    aria-hidden="true"
+                />
                 </span>
             </button>
             <Modal showModal={ showModal } setShowModal={ setShowModal }>
