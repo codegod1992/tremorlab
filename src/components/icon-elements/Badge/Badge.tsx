@@ -9,7 +9,7 @@ import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNam
 import colorTheme from 'lib/colorTheme';
 import { spacing } from 'lib/spacing';
 
-export interface BadgeIconTextProps {
+export interface BadgeProps {
     text: string,
     color?: string,
     size?: string,
@@ -25,7 +25,7 @@ const Badge = ({
     size = Sizes.SM,
     tooltip,
     marginTop,
-}: BadgeIconTextProps) => {
+}: BadgeProps) => {
     return(
         <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
             <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>

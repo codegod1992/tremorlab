@@ -17,8 +17,9 @@ const Template: ComponentStory<typeof BadgeDelta> = (args) => (
         <div>
             <p>Sizes</p>
             { Object.values(Sizes).map(size => (
-                <div className="mt-2">
+                <div className="mt-2 space-x-2">
                     <BadgeDelta {...args} size={ size } />
+                    <BadgeDelta {...args} text="" size={ size } />
                 </div>
             )) }
         </div>

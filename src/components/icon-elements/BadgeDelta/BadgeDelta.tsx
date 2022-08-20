@@ -8,11 +8,11 @@ import {
     badgeProportionsWithText,
     colors,
     deltaIcons,
-    iconProportionsIconOnly,
-    iconProportionsWithText,
+    iconSizes,
 } from './styles';
 import { classNames, parseMarginTopClassNames } from 'lib/classnameUtils';
 import { mapInputsToDeltaType } from 'lib/utils';
+import { spacing } from 'lib/spacing';
 
 export interface BadgeDeltaProps {
     text?: string,
@@ -34,7 +34,7 @@ const BadgeDelta = ({
     const Icon = deltaIcons[deltaType];
     const mappedDeltaType = mapInputsToDeltaType(deltaType, isIncreasePositive);
     const badgeProportions = text ? badgeProportionsWithText : badgeProportionsIconOnly;
-    const iconProportions = text ? iconProportionsWithText : iconProportionsIconOnly;
+
     return(
         <span className={ classNames(parseMarginTopClassNames(marginTop)) }>
             <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
@@ -42,16 +42,20 @@ const BadgeDelta = ({
                     'flex-shrink-0 inline-flex justify-center items-center rounded-full',
                     colors[mappedDeltaType].bgColor,
                     colors[mappedDeltaType].textColor,
-                    badgeProportions[size]?.paddingX,
-                    badgeProportions[size]?.paddingY,
-                    badgeProportions[size]?.textSize,
+                    badgeProportions[size]?.paddingLeft,
+                    badgeProportions[size]?.paddingRight,
+                    badgeProportions[size]?.paddingTop,
+                    badgeProportions[size]?.paddingBottom,
+                    badgeProportions[size]?.fontSize,
                 ) }>
                     <Icon className={ classNames(
-                        iconProportions[size]?.margin || '',
-                        iconProportions[size]?.iconSize
+                        text ? spacing.xs.marginRight : '',
+                        text ? spacing.threeXs.negativeMarginLeft : '',
+                        iconSizes[size]?.height,
+                        iconSizes[size]?.width,
                     ) }
                     />
-                    <p className="whitespace-nowrap">{ text ? text : null}</p>
+                    { text ? <p className="whitespace-nowrap">{ text }</p> : null}
                 </span>
             </Tooltip>
         </span>
