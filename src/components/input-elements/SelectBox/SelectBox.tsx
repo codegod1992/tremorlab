@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 
-import { ChevronDownIcon } from '@heroicons/react/solid';
+import { ArrowDownHeadIcon } from 'assets';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
-import Modal from 'components/input-elements/common/Modal';
-import SelectWrapper from '../common/SelectWrapper';
-import { defaultColors } from 'lib/colorTheme';
-import { spacing } from 'lib/spacing';
 import { fontSize, fontWeight } from 'lib/font';
+import Modal from 'components/input-elements/common/Modal';
+import { defaultColors } from 'lib/colorTheme';
 import { sizing } from 'lib/sizing';
+import { spacing } from 'lib/spacing';
 
 export interface SelectBoxProps {
     defaultValue?: any,
@@ -61,36 +60,29 @@ const SelectBox = ({
 
     return (
         <div className={ classNames(
-            'relative',
+            'relative w-full min-w-[10rem] rounded-md shadow-sm border',
+            getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
+            fontSize.sm,
+            fontWeight.md,
             parseMarginTopClassNames(marginTop),
         ) }>
             <input
                 key={ selectedItemValue ? valueToNameMapping[selectedItemValue] : null }
-                // className="pl-4 pr-10 py-2 focus:outline-0 focus:ring-2 focus:ring-opacity-100
-                // placeholder:text-gray-500 text-gray-700 text-sm font-medium flex-1 rounded-md
-                // whitespace-nowrap truncate"
                 className={ classNames(
-                    'flex justify-between items-center w-full min-w-[10rem] rounded-md shadow-sm border',
-                    'focus:ring-2 focus:outline-none',
+                    'w-full rounded-md focus:ring-2 focus:outline-0',
                     getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
-                    getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
                     getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
+                    getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
+                    'placeholder:text-gray-500', // template string / string concatenation not possible with tailwind
                     spacing.twoXl.paddingLeft,
-                    'pr-10',
                     spacing.sm.paddingTop,
                     spacing.sm.paddingBottom,
-                    'whitespace-nowrap truncate',
-                    fontSize.sm,
-                    fontWeight.md,
-                    getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
-                    'placeholder:text-gray-500'
+                    'pr-10' // avoid text overflow at arrow down icon
                 ) }
                 type="input"
                 placeholder={ selectedItemValue ? undefined : placeholder }
-                defaultValue={
-                    selectedItemValue ? valueToNameMapping[selectedItemValue] : undefined
-                }
+                defaultValue={ selectedItemValue ? valueToNameMapping[selectedItemValue] : undefined }
                 onChange={ (e) => setSearchQuery(e.target.value) }
                 onClick={ () => setShowModal(true) }
             />
@@ -101,7 +93,7 @@ const SelectBox = ({
                 ) }
                 onClick={ () => setShowModal(true) }
             >
-                <ChevronDownIcon
+                <ArrowDownHeadIcon
                     className={ classNames(
                         'flex-none',
                         sizing.lg.height,

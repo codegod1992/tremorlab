@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { ChevronDownIcon } from '@heroicons/react/solid';
+import { ArrowDownHeadIcon } from 'assets';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
 import { fontSize, fontWeight } from 'lib/font';
@@ -75,16 +75,18 @@ const Dropwdown = ({
 
     return(
         <div className={ classNames(
-            'relative',
+            'relative w-full min-w-[10rem] rounded-md shadow-sm border',
+            getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
+            fontSize.sm,
+            fontWeight.md,
             parseMarginTopClassNames(marginTop),
         ) }>
             <button
                 className={ classNames(
-                    'flex justify-between items-center w-full min-w-[10rem] rounded-md shadow-sm border',
-                    'focus:ring-2 focus:outline-none',
+                    'flex justify-between items-center w-full rounded-md',
+                    'focus:ring-2 focus:outline-0',
                     getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
-                    getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
                     getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
                     spacing.twoXl.paddingLeft,
                     spacing.twoXl.paddingRight,
@@ -95,8 +97,6 @@ const Dropwdown = ({
             >
                 <p className={ classNames(
                     'whitespace-nowrap truncate',
-                    fontSize.sm,
-                    fontWeight.md,
                     selectedItem
                         ? getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor
                         : getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
@@ -104,16 +104,16 @@ const Dropwdown = ({
                     { selectedItem ? valueToNameMapping[selectedItem] : placeholder }
                 </p>
                 <span>
-                <ChevronDownIcon
-                    className={ classNames(
-                        'flex-none',
-                        sizing.lg.height,
-                        sizing.lg.width,
-                        spacing.twoXs.negativeMarginRight,
-                        getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
-                    ) }
-                    aria-hidden="true"
-                />
+                    <ArrowDownHeadIcon
+                        className={ classNames(
+                            'flex-none',
+                            sizing.lg.height,
+                            sizing.lg.width,
+                            spacing.twoXs.negativeMarginRight,
+                            getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
+                        ) }
+                        aria-hidden="true"
+                    />
                 </span>
             </button>
             <Modal showModal={ showModal } setShowModal={ setShowModal }>
