@@ -51,7 +51,7 @@ const DeltaBar = ({
                     ) : null}
                 </div>
                 <div className={ classNames(
-                    'rounded-full ring-2 z-10',
+                    'rounded-lg ring-2 z-10',
                     getColorVariantsFromColorThemeValue(defaultColors.darkBackground).bgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.white).ringRolor,
                     sizing.md.height,
