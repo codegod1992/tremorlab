@@ -20,9 +20,9 @@ const TrackingBlock = ({
     return(
         <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
             <div className={ classNames(
+                'w-full rounded-md',
                 getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor,
                 parseFixedHeightClassNames(fixedHeight),
-                'w-full rounded'
             ) }
             />
         </Tooltip>
