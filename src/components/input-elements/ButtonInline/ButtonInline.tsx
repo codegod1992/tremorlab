@@ -38,7 +38,7 @@ const ButtonInline = ({
                     onClick={ handleClick }
                     className={ classNames(
                         'flex-shrink-0 inline-flex items-center group font-medium',
-                        'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-transparent',
+                        'focus:outline-none focus:ring-none',
                         buttonProportions[size]?.fontSize,
                         getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor,
                         getColorVariantsFromColorThemeValue(colorTheme[color].darkText).hoverTextColor,

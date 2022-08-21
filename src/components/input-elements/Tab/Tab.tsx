@@ -2,6 +2,8 @@ import React from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 import colorTheme, { defaultColors } from 'lib/colorTheme';
+import { fontSize, fontWeight } from 'lib/font';
+import { spacing } from 'lib/spacing';
 
 export interface TabProps {
     name: string,
@@ -34,13 +36,20 @@ const Tab = ({
         <li>
             <button
                 className={ classNames(
+                    'flex whitespace-nowrap max-w-xs truncate',
+                    spacing.twoXs.paddingRight,
+                    spacing.twoXs.paddingLeft,
+                    '-mb-px',
+                    spacing.sm.paddingTop,
+                    spacing.sm.paddingBottom,
+                    fontSize.sm,
+                    fontWeight.md,
                     privateProps!.isActive ? activeClassNames : inActiveClassNames,
-                    'flex whitespace-nowrap font-medium py-2 px-1 -mb-px text-sm group max-w-xs',
                 ) }
                 value={ value }
                 onClick={ () => privateProps!.setSelectedTab!(value) }
             >
-                <p>{ name }</p>
+                <p className="whitespace-nowrap truncate">{ name }</p>
             </button>
         </li>
     );

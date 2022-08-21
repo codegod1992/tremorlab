@@ -12,6 +12,7 @@ export const spacing = {
         negativeMarginRight: '-mr-0',
         left: 'left-0',
         right: 'right-0',
+        spaceX: 'space-x-0',
     },
     threeXs: {
         paddingLeft: 'pl-0.5',
@@ -26,6 +27,7 @@ export const spacing = {
         negativeMarginRight: '-mr-0.5',
         left: 'left-0.5',
         right: 'right-0.5',
+        spaceX: 'space-x-0.5',
     },
     twoXs: {
         paddingLeft: 'pl-1',
@@ -40,6 +42,7 @@ export const spacing = {
         negativeMarginRight: '-mr-1',
         left: 'left-1',
         right: 'right-1',
+        spaceX: 'space-x-1',
     },
     xs: {
         paddingLeft: 'pl-1.5',
@@ -54,6 +57,7 @@ export const spacing = {
         negativeMarginRight: '-mr-1.5',
         left: 'left-1.5',
         right: 'right-1.5',
+        spaceX: 'space-x-1.5',
     },
     sm: {
         paddingLeft: 'pl-2',
@@ -68,6 +72,7 @@ export const spacing = {
         negativeMarginRight: '-mr-2',
         left: 'left-2',
         right: 'right-2',
+        spaceX: 'space-x-2',
     },
     md: {
         paddingLeft: 'pl-2.5',
@@ -82,6 +87,7 @@ export const spacing = {
         negativeMarginRight: '-mr-2.5',
         left: 'left-2.5',
         right: 'right-2.5',
+        spaceX: 'space-x-2.5',
     },
     lg: {
         paddingLeft: 'pl-3',
@@ -96,6 +102,7 @@ export const spacing = {
         negativeMarginRight: '-mr-3',
         left: 'left-3',
         right: 'right-3',
+        spaceX: 'space-x-3',
     },
     xl: {
         paddingLeft: 'pl-3.5',
@@ -110,6 +117,7 @@ export const spacing = {
         negativeMarginRight: '-mr-3.5',
         left: 'left-3.5',
         right: 'right-3.5',
+        spaceX: 'space-x-3.5',
     },
     twoXl: {
         paddingLeft: 'pl-4',
@@ -124,5 +132,6 @@ export const spacing = {
         negativeMarginRight: '-mr-4',
         left: 'left-4',
         right: 'right-4',
+        spaceX: 'space-x-4',
     },
 };
