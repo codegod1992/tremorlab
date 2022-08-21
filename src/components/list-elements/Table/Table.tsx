@@ -5,6 +5,7 @@ import {
     getColorVariantsFromColorThemeValue,
     parseMarginTopClassNames,
 } from 'lib/classnameUtils';
+import { fontSize, fontWeight } from 'lib/font';
 import { defaultColors } from 'lib/colorTheme';
 
 export interface TableProps {
@@ -15,20 +16,20 @@ export interface TableProps {
 const Table = ({
     marginTop,
     children
-}: TableProps) => {
-    return(
-        <div className="overflow-auto">
-            <table className={ classNames(
-                parseMarginTopClassNames(marginTop),
-                getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
-                'w-full font-normal text-sm tabular-nums'
-            ) }
-            >
-                
-                {children}
-            </table>
-        </div>
-    );
-};
+}: TableProps) => (
+    <div className="overflow-auto">
+        <table className={ classNames(
+            'w-full tabular-nums',
+            parseMarginTopClassNames(marginTop),
+            getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
+            fontSize.sm,
+            fontWeight.sm,
+        ) }
+        >
+            
+            {children}
+        </table>
+    </div>
+);
 
 export default Table;

@@ -4,6 +4,7 @@ import {
     classNames,
     parseTextAlignmentClassNames
 } from 'lib/classnameUtils';
+import { spacing } from 'lib/spacing';
 
 export interface TableCellProps {
     textAlignment?: string,
@@ -15,14 +16,18 @@ const TableCell = ({
     children
 }: TableCellProps) => {
     return(
-        <React.Fragment>
+        <>
             <td className={ classNames(
                 parseTextAlignmentClassNames(textAlignment),
-                'py-4 px-4 align-middle whitespace-nowrap tabular-nums'
+                'align-middle whitespace-nowrap tabular-nums',
+                spacing.twoXl.paddingLeft,
+                spacing.twoXl.paddingRight,
+                spacing.twoXl.paddingTop,
+                spacing.twoXl.paddingBottom,
             )}>
                 { children }
             </td>
-        </React.Fragment>
+        </>
     );
 };
 

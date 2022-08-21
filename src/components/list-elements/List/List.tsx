@@ -18,10 +18,10 @@ const List = ({
 }: ListProps) => {
     return(
         <ul className={ classNames(
+            'w-full overflow-hidden divide-y',
             getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
             getColorVariantsFromColorThemeValue(defaultColors.lightBorder).divideColor,
             parseMarginTopClassNames(marginTop),
-            'overflow-hidden w-full divide-y',
         ) }
         >
             { children }
