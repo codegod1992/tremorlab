@@ -41,21 +41,22 @@ const Card = ({
     hFull = false,
     maxWidth = '',
     shadow = true,
-    decoration = '',
+    decoration = 'left',
     decorationColor = BaseColors.Blue,
     marginTop,
     children
 }: CardProps) => {
     return(
         <div className={ classNames(
-            'relative w-full mx-auto text-left rounded-lg',
+            'relative w-full mx-auto text-left rounded-lg ring-1',
             parseMarginTopClassNames(marginTop),
             parseHFullOption(hFull),
             parseMaxWidthClassNames(maxWidth),
             getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
-            getColorVariantsFromColorThemeValue(colorTheme[decorationColor].border).borderColor,
-            parseDecorationAlignment(decoration),
             shadow ? 'shadow' : '',
+            getColorVariantsFromColorThemeValue(colorTheme[decorationColor].border).borderColor,
+            getColorVariantsFromColorThemeValue(defaultColors.lightBorder).ringRolor,
+            parseDecorationAlignment(decoration),
             spacing.threeXl.paddingLeft,
             spacing.threeXl.paddingRight,
             spacing.threeXl.paddingTop,

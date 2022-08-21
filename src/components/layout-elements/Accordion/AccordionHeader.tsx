@@ -22,8 +22,8 @@ const AccordionHeader = ({
         <button
             className={ classNames(
                 'w-full flex items-center justify-between',
-                spacing.twoXl.paddingLeft,
-                spacing.twoXl.paddingRight,
+                spacing.threeXl.paddingLeft,
+                spacing.threeXl.paddingRight,
                 spacing.lg.paddingTop,
                 spacing.lg.paddingBottom,
             ) }

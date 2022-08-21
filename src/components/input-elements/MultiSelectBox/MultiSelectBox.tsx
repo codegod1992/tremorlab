@@ -5,7 +5,7 @@ import { SearchIcon, XCircleIcon } from '@heroicons/react/solid';
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
 import { fontSize, fontWeight } from 'lib/font';
 import { ArrowDownHeadIcon } from 'assets';
-import Modal from 'components/input-elements/common/Modal';
+import Modal from 'components/layout-elements/Modal';
 import { defaultColors } from 'lib/colorTheme';
 import { sizing } from 'lib/sizing';
 import { spacing } from 'lib/spacing';
