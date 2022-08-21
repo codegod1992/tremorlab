@@ -5,6 +5,7 @@ import {
     getColorVariantsFromColorThemeValue,
     parseMarginTopClassNames,
 } from 'lib/classnameUtils';
+import { fontSize, fontWeight } from 'lib/font';
 import { BaseColors } from 'lib/primitives';
 import colorTheme from 'lib/colorTheme';
 
@@ -22,8 +23,10 @@ const Metric = ({
     return(
         <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
             <p className={ classNames(
+                'shrink-0 truncate',
                 getColorVariantsFromColorThemeValue(colorTheme[color].darkText).textColor,
-                'text-3xl shrink-0 font-semibold'
+                fontSize.threeXl,
+                fontWeight.lg,
             ) }
             >
                 { children }

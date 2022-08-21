@@ -65,9 +65,9 @@ const Callout = ({
                     <h4 className={ classNames(fontWeight.lg) }>{ title }</h4>
                 </div>
                 <div className={ classNames(
+                    'overflow-y-auto',
                     parseFixedHeightClassNames(fixedHeight),
                     getColorVariantsFromColorThemeValue(colorTheme[color].darkText).textColor,
-                    'overflow-y-auto',
                     spacing.sm.marginTop,
                 ) }
                 >

@@ -2,6 +2,7 @@ import React from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
 import { defaultColors } from 'lib/colorTheme';
+import { fontSize } from 'lib/font';
 
 export interface ItalicProps {
     marginTop?: string,
@@ -14,9 +15,10 @@ const Italic = ({
 }: ItalicProps) => {
     return(
         <span className={ classNames(
-            'text-sm italic',
+            'italic',
             getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
             parseMarginTopClassNames(marginTop),
+            fontSize.sm,
         ) }
         >
             { children }

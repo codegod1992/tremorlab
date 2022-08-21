@@ -8,6 +8,7 @@ import {
     parseTextAlignmentClassNames,
     parseTruncateOption,
 } from 'lib/classnameUtils';
+import { fontSize, fontWeight } from 'lib/font';
 import { BaseColors } from 'lib/primitives';
 import colorTheme from 'lib/colorTheme';
 
@@ -30,12 +31,14 @@ const Text = ({
 }: TextProps) => {
     return(
         <p className={classNames(
+            'shrink-0 overflow-auto',
             getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor,
             parseTextAlignmentClassNames(textAlignment),
             parseFixedHeightClassNames(fixedHeight),
             parseMarginTopClassNames(marginTop),
             parseTruncateOption(truncate),
-            'text-sm font-normal shrink-0 overflow-auto'
+            fontSize.sm,
+            fontWeight.sm,
         )}>
             { children }
         </p>
