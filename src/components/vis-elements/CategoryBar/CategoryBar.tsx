@@ -95,7 +95,7 @@ const CategoryBar = ({
             <div className={ classNames(
                 'relative flex items-center w-full rounded-lg',
                 sizing.xs.height,
-                spacing.twoXs.spaceX,
+                spacing.threeXs.spaceX,
             ) }
             >
                 {categoryPercentageValues.map((percentageValue, idx) => {
