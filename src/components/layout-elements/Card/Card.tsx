@@ -48,7 +48,7 @@ const Card = ({
 }: CardProps) => {
     return(
         <div className={ classNames(
-            'w-full mx-auto text-left rounded-lg',
+            'relative w-full mx-auto text-left rounded-lg',
             parseMarginTopClassNames(marginTop),
             parseHFullOption(hFull),
             parseMaxWidthClassNames(maxWidth),
