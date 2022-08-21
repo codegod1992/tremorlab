@@ -2,8 +2,11 @@ import React from 'react';
 
 import { ValueFormater, defaultValueFormater } from '../../../lib/utils';
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
+import colorTheme, { defaultColors } from 'lib/colorTheme';
 import { BaseColors } from 'lib/primitives';
-import colorTheme from 'lib/colorTheme';
+import { fontSize } from 'lib/font';
+import { sizing } from 'lib/sizing';
+import { spacing } from 'lib/spacing';
 
 
 type TextBarData = {
@@ -35,37 +38,48 @@ const TextBar = ({
 }: TextBarProps) => {
     const widths = getWidthsFromValues(data);
 
-    const rowHeight = 'h-8';
+    const rowHeight = sizing.threeXl.height;
 
     return (
         <div className={ classNames(
-            'flex justify-between space-x-8',
+            'flex justify-between',
             parseMarginTopClassNames(marginTop),
+            spacing.threeXl.spaceX,
         ) }>
             <div className="relative w-full">
                 { data.map((item, idx) => (
                     <div
                         key={ item.value }
                         className={ classNames(
+                            'flex items-center rounded-sm',
                             rowHeight,
                             getColorVariantsFromColorThemeValue(colorTheme[color].lightBackground).bgColor,
-                            'rounded-sm mb-2 flex items-center px-2'
+                            spacing.sm.paddingLeft,
+                            spacing.sm.paddingRight,
+                            idx === data.length - 1 ? spacing.none.marginBottom : spacing.sm.marginBottom,
                         ) }
                         style={ { width: `${widths[idx]}%` } }
                     >
-                        <span className="absolute left-2 whitespace-nowrap truncate text-sm text-gray-700 max-w-full">
+                        <p className={ classNames(
+                            'absolute max-w-full whitespace-nowrap truncate',
+                            getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
+                            spacing.sm.left,
+                            fontSize.sm,
+                        ) }>
                             { item.name }
-                        </span>
+                        </p>
                     </div>
                 )) }
             </div>
             <div className="text-right min-w-min">
-                { data.map((item) => (
+                { data.map((item, idx) => (
                     <div
                         key={ item.value }
                         className={ classNames(
+                            'flex justify-end items-center',
                             rowHeight,
-                            'flex justify-end items-center mb-2 text-gray-700',
+                            getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
+                            idx === data.length - 1 ? spacing.none.marginBottom : spacing.sm.marginBottom,
                         ) }
                     >
                         { valueFormater(item.value) }

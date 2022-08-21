@@ -37,5 +37,5 @@ Default.args = {
     percentageValue: 50,
     tooltip: '50%',
     marginTop: 'mt-5',
-    label: 'helloasjdakshgdkjhags akjhsgdkhjagsdjhakg'
+    label: '90% helloasjdakshgdkjhags akjhsgdkhjagsdjhakg'
 };
