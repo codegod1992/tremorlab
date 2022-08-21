@@ -4,6 +4,7 @@ import {
     classNames,
     parseFixedHeightClassNames,
 } from 'lib/classnameUtils';
+import { spacing } from 'lib/spacing';
 
 export interface FooterProps {
     fixedHeight?: string,
@@ -18,8 +19,14 @@ const Footer = ({
         <>
             <div className={ classNames(parseFixedHeightClassNames(fixedHeight)) } />
             <div className={ classNames(
+                'absolute flex items-center w-full border-t',
                 parseFixedHeightClassNames(fixedHeight),
-                'absolute bottom-0 left-0 right-0 px-6 w-full flex items-center border-t'
+                parseFixedHeightClassNames(fixedHeight),
+                spacing.none.left,
+                spacing.none.right,
+                spacing.none.bottom,
+                spacing.threeXl.paddingLeft,
+                spacing.threeXl.paddingRight,
             ) }
             >
                 { children }

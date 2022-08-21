@@ -12,6 +12,8 @@ export const spacing = {
         negativeMarginRight: '-mr-0',
         left: 'left-0',
         right: 'right-0',
+        top: 'top-0',
+        bottom: 'bottom-0',
         spaceX: 'space-x-0',
     },
     threeXs: {
@@ -27,6 +29,8 @@ export const spacing = {
         negativeMarginRight: '-mr-0.5',
         left: 'left-0.5',
         right: 'right-0.5',
+        top: 'top-0.5',
+        bottom: 'bottom-0.5',
         spaceX: 'space-x-0.5',
     },
     twoXs: {
@@ -42,6 +46,8 @@ export const spacing = {
         negativeMarginRight: '-mr-1',
         left: 'left-1',
         right: 'right-1',
+        top: 'top-1',
+        bottom: 'bottom-1',
         spaceX: 'space-x-1',
     },
     xs: {
@@ -57,6 +63,8 @@ export const spacing = {
         negativeMarginRight: '-mr-1.5',
         left: 'left-1.5',
         right: 'right-1.5',
+        top: 'top-1.5',
+        bottom: 'bottom-1.5',
         spaceX: 'space-x-1.5',
     },
     sm: {
@@ -72,6 +80,8 @@ export const spacing = {
         negativeMarginRight: '-mr-2',
         left: 'left-2',
         right: 'right-2',
+        top: 'left-2',
+        bottom: 'bottom-2',
         spaceX: 'space-x-2',
     },
     md: {
@@ -87,6 +97,8 @@ export const spacing = {
         negativeMarginRight: '-mr-2.5',
         left: 'left-2.5',
         right: 'right-2.5',
+        top: 'top-2.5',
+        bottom: 'bottom-2.5',
         spaceX: 'space-x-2.5',
     },
     lg: {
@@ -102,6 +114,8 @@ export const spacing = {
         negativeMarginRight: '-mr-3',
         left: 'left-3',
         right: 'right-3',
+        top: 'top-3',
+        bottom: 'bottom-3',
         spaceX: 'space-x-3',
     },
     xl: {
@@ -117,6 +131,8 @@ export const spacing = {
         negativeMarginRight: '-mr-3.5',
         left: 'left-3.5',
         right: 'right-3.5',
+        top: 'top-3.5',
+        bottom: 'bottom-3.5',
         spaceX: 'space-x-3.5',
     },
     twoXl: {
@@ -132,6 +148,8 @@ export const spacing = {
         negativeMarginRight: '-mr-4',
         left: 'left-4',
         right: 'right-4',
+        top: 'top-4',
+        bottom: 'bottom-4',
         spaceX: 'space-x-4',
     },
     threeXl: {
@@ -147,6 +165,8 @@ export const spacing = {
         negativeMarginRight: '-mr-6',
         left: 'left-6',
         right: 'right-6',
+        top: 'top-6',
+        bottom: 'bottom-6',
         spaceX: 'space-x-6',
     },
 };
