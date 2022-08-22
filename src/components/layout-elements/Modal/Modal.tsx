@@ -1,6 +1,13 @@
 import React, { useRef } from 'react';
 
-import { classNames, parseMaxHeightClassNames, parseWidthClassNames } from 'lib/classnameUtils';
+import {
+    classNames,
+    getColorVariantsFromColorThemeValue,
+    parseMaxHeightClassNames,
+    parseWidthClassNames
+} from 'lib/classnameUtils';
+import { defaultColors } from 'lib/colorTheme';
+import { spacing } from 'lib/spacing';
 import { useOnClickOutside } from 'lib/utils';
 
 export interface ModalProps {
@@ -26,11 +33,16 @@ const Modal = ({
             <div
                 ref={ modalRef }
                 className={ classNames(
-                    'absolute py-1 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y',
-                    'divide-gray-100 focus:outline-none -bottom-2 translate-y-full',
-                    'overflow-y-auto z-10 inset-x-0',
+                    'absolute -bottom-2 translate-y-full z-10 rounded-md shadow-lg border divide-y overflow-y-auto',
                     parseWidthClassNames(width),
                     parseMaxHeightClassNames(maxHeight),
+                    getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
+                    getColorVariantsFromColorThemeValue(defaultColors.lightBorder).borderColor,
+                    getColorVariantsFromColorThemeValue(defaultColors.lightBorder).divideColor,
+                    spacing.none.left,
+                    spacing.none.right,
+                    spacing.twoXs.marginTop,
+                    spacing.twoXs.marginBottom,
                 ) }
             >
                 { children }
