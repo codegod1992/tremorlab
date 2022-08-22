@@ -1,7 +1,10 @@
 import React from 'react';
 
-import SelectItemWrapper from '../common/SelectItemWrapper';
-import { classNames } from 'lib/classnameUtils';
+import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
+import { defaultColors } from 'lib/colorTheme';
+import { fontSize } from 'lib/font';
+import { sizing } from 'lib/sizing';
+import { spacing } from 'lib/spacing';
 
 export interface SelectBoxItemProps {
     value: any,
@@ -21,22 +24,45 @@ const SelectBoxItem = ({
     Icon,
     privateProps,
 }: SelectBoxItemProps) => (
-    <SelectItemWrapper
-        handleClick={ () => {
+    <button
+        onClick={ () => {
             privateProps!.setSelectedItemValue!(value);
             privateProps!.handleSelect(value);
             privateProps!.setShowModal(false);
         } }
-        isActive={ privateProps!.isActive } >
-        <div className="flex truncate">
+        className={ classNames(
+            'flex items-center justify-between w-full',
+            spacing.twoXl.paddingLeft,
+            spacing.twoXl.paddingRight,
+            spacing.md.paddingTop,
+            spacing.md.paddingBottom,
+            fontSize.sm,
+            privateProps!.isActive
+                ? classNames(
+                    getColorVariantsFromColorThemeValue(defaultColors.lightBackground).bgColor,
+                    getColorVariantsFromColorThemeValue(defaultColors.darkestText).textColor,
+                )
+                : classNames(
+                    getColorVariantsFromColorThemeValue(defaultColors.lightBackground).hoverBgColor,
+                    getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
+                )
+        ) }
+    >
+        <div className="flex items-center truncate">
             { Icon ? (
                 <Icon className={ classNames(
-                    'h-5 w-5 mr-3 text-gray-400 flex-none'
+                    'flex-none',
+                    sizing.lg.height,
+                    sizing.lg.width,
+                    spacing.lg.marginRight,
+                    getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
                 ) } aria-hidden="true" />
             ) : null }
-            <span className="whitespace-nowrap truncate">{ name }</span>
+            <p className="whitespace-nowrap truncate">
+                { name }
+            </p>
         </div>
-    </SelectItemWrapper>
+    </button>
 );
 
 export default SelectBoxItem;

@@ -4,8 +4,9 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
+import colorTheme, { defaultColors } from 'lib/colorTheme';
 import { BaseColors } from 'lib/primitives';
-import colorTheme from 'lib/colorTheme';
+import { sizing } from 'lib/sizing';
 
 export interface MarkerBarProps {
     percentageValue: number,
@@ -23,22 +24,24 @@ const MarkerBar = ({
     const primaryBgColor = getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor;
     const secondaryBgColor = getColorVariantsFromColorThemeValue(colorTheme[color].lightBackground).bgColor;
     return(
-        <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
-            <div className={ classNames(
-                'relative h-2 w-full flex rounded-lg items-center',
-                secondaryBgColor,
-            ) }>
-                <div className="absolute" style={ { 'left': `${percentageValue}%` } }>
-                    <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
-                        <div
-                            className={ classNames(
-                                'h-4 w-1 rounded-lg ring-2 ring-white',
-                                'right-1/2 -translate-x-1/2',
-                                primaryBgColor,
-                            ) }
-                        />
-                    </Tooltip>
-                </div>
+        <div className={ classNames(
+            'relative flex items-center w-full rounded-lg',
+            classNames(parseMarginTopClassNames(marginTop)),
+            secondaryBgColor,
+            sizing.xs.height,
+        ) }>
+            <div className="absolute" style={ { 'left': `${percentageValue}%` } }>
+                <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+                    <div
+                        className={ classNames(
+                            'rounded-lg ring-2 right-1/2 -translate-x-1/2',
+                            primaryBgColor,
+                            getColorVariantsFromColorThemeValue(defaultColors.white).ringRolor,
+                            sizing.md.height,
+                            sizing.twoXs.width,
+                        ) }
+                    />
+                </Tooltip>
             </div>
         </div>
     );

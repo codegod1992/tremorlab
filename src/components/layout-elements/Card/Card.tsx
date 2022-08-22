@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { 
+import { BaseColors, HorizontalPositions, VerticalPositions } from 'lib/primitives';
+import {
     classNames,
     getColorVariantsFromColorThemeValue,
     parseHFullOption,
@@ -8,7 +9,7 @@ import {
     parseMaxWidthClassNames,
 } from 'lib/classnameUtils';
 import colorTheme, { defaultColors } from 'lib/colorTheme';
-import { BaseColors } from 'lib/primitives';
+import { spacing } from 'lib/spacing';
 
 export interface CardProps {
     hFull?: boolean,
@@ -23,13 +24,13 @@ export interface CardProps {
 const parseDecorationAlignment = (decorationAlignment: string) => {
     if (!decorationAlignment) return '';
     switch(decorationAlignment) {
-    case 'left':
+    case HorizontalPositions.Left:
         return 'border-l-4';
-    case 'top':
+    case VerticalPositions.Top:
         return 'border-t-4';
-    case 'right':
+    case HorizontalPositions.Right:
         return 'border-r-4';
-    case 'bottom':
+    case VerticalPositions.Bottom:
         return 'border-b-4';
     default:
         return '';
@@ -40,22 +41,26 @@ const Card = ({
     hFull = false,
     maxWidth = '',
     shadow = true,
-    decoration = '',
+    decoration = 'left',
     decorationColor = BaseColors.Blue,
     marginTop,
     children
 }: CardProps) => {
     return(
         <div className={ classNames(
-            'relative mx-auto text-left rounded-lg p-6 w-full',
+            'relative w-full mx-auto text-left rounded-lg ring-1',
+            parseMarginTopClassNames(marginTop),
             parseHFullOption(hFull),
             parseMaxWidthClassNames(maxWidth),
             getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
-            parseMarginTopClassNames(marginTop),
-            parseMaxWidthClassNames(maxWidth),
             shadow ? 'shadow' : '',
             getColorVariantsFromColorThemeValue(colorTheme[decorationColor].border).borderColor,
+            getColorVariantsFromColorThemeValue(defaultColors.lightBorder).ringRolor,
             parseDecorationAlignment(decoration),
+            spacing.threeXl.paddingLeft,
+            spacing.threeXl.paddingRight,
+            spacing.threeXl.paddingTop,
+            spacing.threeXl.paddingBottom,
         ) }
         >
             { children }

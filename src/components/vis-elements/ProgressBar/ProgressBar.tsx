@@ -5,7 +5,10 @@ import Tooltip from '@tippyjs/react';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
 import colorTheme, { defaultColors } from 'lib/colorTheme';
+import { fontSize, fontWeight } from 'lib/font';
 import { BaseColors } from 'lib/primitives';
+import { sizing } from 'lib/sizing';
+import { spacing } from 'lib/spacing';
 
 export interface ProgressBarProps {
     percentageValue: number,
@@ -32,14 +35,15 @@ const ProgressBar = ({
             )
         }>
             <div className={ classNames(
-                'relative h-2 w-full flex rounded-lg items-center',
+                'relative flex items-center w-full rounded-lg',
                 secondaryBgColor,
+                sizing.xs.height,
             ) }>
                 <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
                     <div 
                         className={ classNames(
                             primaryBgColor,
-                            'h-full flex-col rounded-lg'
+                            'flex-col h-full rounded-lg'
                         ) }
                         style={ {'width': `${percentageValue}%`} }
                     />
@@ -47,12 +51,17 @@ const ProgressBar = ({
             </div>
             { label ? (
                 <div className={ classNames(
+                    'w-16 truncate text-right',
                     getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
-                    'ml-2 truncate w-16 text-right'
+                    spacing.sm.marginLeft,
                 ) }>
-                    <span className="text-sm font-normal shrink-0 whitespace-nowrap truncate">
+                    <p className={ classNames(
+                        'shrink-0 whitespace-nowrap truncate',
+                        fontSize.sm,
+                        fontWeight.sm,
+                    ) }>
                         { label }
-                    </span>
+                    </p>
                 </div>
             ) : null }
         </div>

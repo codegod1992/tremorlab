@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 
-import { ChevronDownIcon, SearchIcon, XCircleIcon } from '@heroicons/react/solid';
+import { SearchIcon, XCircleIcon } from '@heroicons/react/solid';
 
-import { classNames, parseMarginTopClassNames } from 'lib/classnameUtils';
-import Modal from 'components/input-elements/common/Modal';
-import SelectText from '../common/SelectText';
-import SelectWrapper from '../common/SelectWrapper';
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
+import { fontSize, fontWeight } from 'lib/font';
+import { ArrowDownHeadIcon } from 'assets';
+import Modal from 'components/layout-elements/Modal';
+import { defaultColors } from 'lib/colorTheme';
+import { sizing } from 'lib/sizing';
+import { spacing } from 'lib/spacing';
 
 export interface MultiSelectBoxProps {
     defaultValues?: any[],
@@ -62,66 +65,115 @@ const MultiSelectBox = ({
     }, [selectedItemsValues]);
 
     return (
-        <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
-            <SelectWrapper>
-                <button
-                    className="flex items-center justify-between rounded-md px-4 py-2
-                    focus:ring-2 focus:ring-opacity-100 focus:outline-none focus:ring-blue-300 w-full"
-                    onClick={ () => {setShowModal(true); console.log('clicked');} }
-                >
-                    
+        <div className={ classNames(
+            'relative w-full min-w-[10rem] rounded-md shadow-sm border',
+            getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
+            parseMarginTopClassNames(marginTop),
+        ) }>
+            <button
+                className={ classNames(
+                    'flex justify-between items-center w-full rounded-md',
+                    'focus:ring-2 focus:outline-0',
+                    getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
+                    getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
+                    getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
+                    spacing.twoXl.paddingLeft,
+                    spacing.twoXl.paddingRight,
+                    spacing.sm.paddingTop,
+                    spacing.sm.paddingBottom,
+                ) }
+                onClick={ () => setShowModal(true) }
+            >
+                <p className={ classNames(
+                    'whitespace-nowrap truncate',
+                    fontSize.sm,
+                    fontWeight.md,
+                    selectedItemsValues.length !==0
+                        ? getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor
+                        : getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
+                ) }>
+                    { selectedItemsValues.length !==0 ? `${selectedItemsValues.length} Selected` : placeholder }
+                </p>
+                <div className="flex items-center">
                     { selectedItemsValues.length !== 0 ? (
-                        <SelectText text={ `${selectedItemsValues.length} Selected` } isActive={ true } />
-                    ) : (
-                        <SelectText text={ placeholder } isActive={ false } />
-                    ) }
-                    <div className="flex items-center">
-                        <span className="sr-only">Remove all selected options</span>
-                        { selectedItemsValues.length !== 0 ? (
-                            <button onClick={ () => setSelectedItemsValues([]) }>
-                                <XCircleIcon className="flex-none h-4 w-4 text-gray-400" aria-hidden="true" />
-                            </button>
-                        ) : null }
-                        <ChevronDownIcon className="flex-none -mr-1 ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
-                    </div>
-                </button>
-                <Modal showModal={ showModal } setShowModal={ setShowModal }>
-                    <div className="relative w-full rounded-t-md bg-gray-50">
-                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                            <SearchIcon className="h-5 w-5 text-gray-400 flex-none" aria-hidden="true" />
-                        </div>
-                        <input
-                            id="search"
-                            aria-describedby="search-bar"
-                            name="search"
-                            type="input"
-                            placeholder="Search"
-                            className="pl-11 py-2 blockfocus:ring-2 focus:ring-opacity-100 focus:rounded-t-lg
-                                focus:outline-none focus:ring-transparent focus:border-transparent border-transparent
-                                bg-transparent w-full"
-                            onChange={ (e) => setSearchQuery(e.target.value) }
-                        />
-                    </div>
-                    <div className="pt-1">
-                        { React.Children.map(children, (child) => {
-                            if (filteredOptionNames.has(String(child.props.name))) {
-                                return (
-                                    <>
-                                        { React.cloneElement(child, {
-                                            privateProps: {
-                                                selectedItemsValues,
-                                                setSelectedItemsValues,
-                                                handleSelect,
-                                                setShowModal,
-                                            }
-                                        }) }
-                                    </>
-                                );
-                            }
-                        }) }
-                    </div>
-                </Modal>
-            </SelectWrapper>
+                        <button onClick={ (e) => {
+                            e.stopPropagation(); // prevent firing parent button
+                            setSelectedItemsValues([]);
+                        } }>
+                            <XCircleIcon 
+                                className={ classNames(
+                                    'flex-none',
+                                    sizing.md.height,
+                                    sizing.md.width,
+                                    spacing.xs.marginRight,
+                                    getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
+                                ) }
+                                aria-hidden="true"
+                            />
+                        </button>
+                    ) : null }
+                    <ArrowDownHeadIcon
+                        className={ classNames(
+                            'flex-none',
+                            sizing.lg.height,
+                            sizing.lg.width,
+                            spacing.twoXs.negativeMarginRight,
+                            getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
+                        ) }
+                        aria-hidden="true"
+                    />
+                </div>
+            </button>
+            <Modal showModal={ showModal } setShowModal={ setShowModal }>
+                <div className={ classNames(
+                    'flex items-center w-full',
+                    getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).bgColor,
+                    spacing.twoXl.paddingLeft,
+                    spacing.twoXl.paddingRight,
+                ) }>
+                    <span>
+                        <SearchIcon className={ classNames(
+                            'flex-none',
+                            getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
+                            spacing.threeXs.negativeMarginLeft,
+                            spacing.lg.marginRight,
+                            sizing.md.height,
+                            sizing.md.width,
+                        ) } aria-hidden="true" />
+                    </span>
+                    <input
+                        name="search"
+                        type="input"
+                        placeholder="Search"
+                        className={ classNames(
+                            'w-full focus:outline-none focus:ring-none',
+                            getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
+                            getColorVariantsFromColorThemeValue(defaultColors.transparent).bgColor,
+                            spacing.sm.paddingTop,
+                            spacing.sm.paddingBottom,
+                            fontSize.sm,
+                            fontWeight.md,
+                        ) }
+                        onChange={ (e) => setSearchQuery(e.target.value) }
+                    />
+                </div>
+                { React.Children.map(children, (child) => {
+                    if (filteredOptionNames.has(String(child.props.name))) {
+                        return (
+                            <>
+                                { React.cloneElement(child, {
+                                    privateProps: {
+                                        selectedItemsValues,
+                                        setSelectedItemsValues,
+                                        handleSelect,
+                                        setShowModal,
+                                    }
+                                }) }
+                            </>
+                        );
+                    }
+                }) }
+            </Modal>
         </div>
     );
 };

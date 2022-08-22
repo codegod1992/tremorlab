@@ -6,6 +6,9 @@ import {
     parseMarginTopClassNames,
 } from 'lib/classnameUtils';
 import colorTheme, { defaultColors, themeColorRange } from 'lib/colorTheme';
+import { fontSize, fontWeight } from 'lib/font';
+import { sizing } from 'lib/sizing';
+import { spacing } from 'lib/spacing';
 
 export interface LegendItemProps {
     name: string,
@@ -17,21 +20,31 @@ const LegendItem = ({
     color,
 }: LegendItemProps) => (
     <li className={ classNames(
-        'inline-flex items-center truncate mr-2.5',
+        'inline-flex items-center truncate',
         getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
+        spacing.md.marginRight,
     ) }
     >
         <svg
             className={ classNames(
-                'mr-1.5 h-2 w-2 flex-none',
+                'flex-none',
                 getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor,
+                sizing.xs.height,
+                sizing.xs.width,
+                spacing.xs.marginRight,
             ) }
             fill="currentColor"
             viewBox="0 0 8 8"
         >
             <circle cx={4} cy={4} r={4} />
         </svg>
-        <p className="text-sm font-normal whitespace-nowrap truncate">{ name }</p>
+        <p className={ classNames(
+            'whitespace-nowrap truncate',
+            fontSize.sm,
+            fontWeight.sm,
+        ) }>
+            { name }
+        </p>
     </li>
 );
 
@@ -49,7 +62,7 @@ const Legend = ({
 }: LegendProps) => {
     return(
         <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
-            <ol className="-mx-1 flex flex-wrap overflow-hidden truncate">
+            <ol className="flex flex-wrap overflow-hidden truncate">
                 { categories.map((category, idx) => (
                     <LegendItem key={ `item-${idx}` } name={ category } color={ colors[idx] } />
                 )) }

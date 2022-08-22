@@ -18,6 +18,8 @@ const Template: ComponentStory<typeof MultiSelectBox> = () => (
         <MultiSelectBoxItem name="Option 2" value={ 2 } />
         <MultiSelectBoxItem name="Option 3" value={ 3 } />
     </MultiSelectBox>
+
+
 );
   
 export const Default = Template.bind({});

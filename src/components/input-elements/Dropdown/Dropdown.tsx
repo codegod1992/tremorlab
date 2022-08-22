@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
-import { ChevronDownIcon } from '@heroicons/react/solid';
+import { ArrowDownHeadIcon } from 'assets';
 
-import { classNames, parseMarginTopClassNames } from 'lib/classnameUtils';
-import Modal from 'components/input-elements/common/Modal';
-import SelectText from '../common/SelectText';
-import SelectWrapper from '../common/SelectWrapper';
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
+import { fontSize, fontWeight } from 'lib/font';
+import Modal from 'components/layout-elements/Modal';
+import { defaultColors } from 'lib/colorTheme';
+import { sizing } from 'lib/sizing';
+import { spacing } from 'lib/spacing';
 
 export interface DropdownProps {
     placeholder?: string,
@@ -72,38 +74,60 @@ const Dropwdown = ({
     }, [selectedItem]);
 
     return(
-        <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
-            <SelectWrapper>
-                <button
+        <div className={ classNames(
+            'relative w-full min-w-[10rem] rounded-md shadow-sm border',
+            getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
+            parseMarginTopClassNames(marginTop),
+        ) }>
+            <button
+                className={ classNames(
+                    'flex justify-between items-center w-full rounded-md',
+                    'focus:ring-2 focus:outline-0',
+                    getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
+                    getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
+                    getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
+                    spacing.twoXl.paddingLeft,
+                    spacing.twoXl.paddingRight,
+                    spacing.sm.paddingTop,
+                    spacing.sm.paddingBottom,
+                ) }
+                onClick={ () => setShowModal(true) }
+            >
+                <p className={ classNames(
+                    'whitespace-nowrap truncate',
+                    fontSize.sm,
+                    fontWeight.md,
+                    selectedItem
+                        ? getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor
+                        : getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
+                ) }>
+                    { selectedItem ? valueToNameMapping[selectedItem] : placeholder }
+                </p>
+                <ArrowDownHeadIcon
                     className={ classNames(
-                        'flex justify-between items-center w-full h-full rounded-md',
-                        'px-4 py-2',
-                        'focus:ring-2 focus:ring-opacity-100 focus:outline-none focus:ring-blue-300',
+                        'flex-none',
+                        sizing.lg.height,
+                        sizing.lg.width,
+                        spacing.twoXs.negativeMarginRight,
+                        getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
                     ) }
-                    onClick={ () => setShowModal(true) }
-                >
-                    { selectedItem ? (
-                        <SelectText isActive={ true } text={ valueToNameMapping[selectedItem] } />
-                    ) : (
-                        <SelectText isActive={ false } text={ placeholder } />
-                    ) }
-                    <ChevronDownIcon className="flex-none -mr-1 ml-2 h-5 w-5 text-gray-400" aria-hidden="true" />
-                </button>
-                <Modal showModal={ showModal } setShowModal={ setShowModal }>
-                    { React.Children.map(children, (child: React.ReactElement) => (
-                        <>
-                            { React.cloneElement(child, {
-                                privateProps: {
-                                    setSelectedItem: setSelectedItem,
-                                    isActive: child?.props.value === selectedItem,
-                                    handleSelect: handleSelect,
-                                    setShowModal: setShowModal,
-                                },
-                            }) }
-                        </>
-                    )) }
-                </Modal>
-            </SelectWrapper>
+                    aria-hidden="true"
+                />
+            </button>
+            <Modal showModal={ showModal } setShowModal={ setShowModal }>
+                { React.Children.map(children, (child: React.ReactElement) => (
+                    <>
+                        { React.cloneElement(child, {
+                            privateProps: {
+                                setSelectedItem: setSelectedItem,
+                                isActive: child?.props.value === selectedItem,
+                                handleSelect: handleSelect,
+                                setShowModal: setShowModal,
+                            },
+                        }) }
+                    </>
+                )) }
+            </Modal>
         </div>
     );
 };

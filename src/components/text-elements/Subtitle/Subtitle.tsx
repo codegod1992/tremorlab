@@ -5,6 +5,7 @@ import {
     getColorVariantsFromColorThemeValue,
     parseMarginTopClassNames,
 } from 'lib/classnameUtils';
+import { fontSize, fontWeight } from 'lib/font';
 import { BaseColors } from 'lib/primitives';
 import colorTheme from 'lib/colorTheme';
 
@@ -21,9 +22,11 @@ const Subtitle = ({
 }: SubtitleProps) => {
     return(
         <p className={ classNames(
+            'shrink-0 truncate',
             parseMarginTopClassNames(marginTop),
-            'text-base font-normal shrink-0 truncate',
             getColorVariantsFromColorThemeValue(colorTheme[color].lightText).textColor,
+            fontSize.md,
+            fontWeight.sm,
         ) }
         >
             { children }

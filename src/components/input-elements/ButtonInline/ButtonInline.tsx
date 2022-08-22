@@ -38,7 +38,7 @@ const ButtonInline = ({
                     onClick={ handleClick }
                     className={ classNames(
                         'flex-shrink-0 inline-flex items-center group font-medium',
-                        'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-transparent',
+                        'focus:outline-none focus:ring-none',
                         buttonProportions[size]?.fontSize,
                         getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor,
                         getColorVariantsFromColorThemeValue(colorTheme[color].darkText).hoverTextColor,
@@ -49,7 +49,7 @@ const ButtonInline = ({
                     { Icon && (iconPosition !== HorizontalPositions.Right) ? ( // ensures that icon is rendered if iconPosition is misspelled
                         <Icon
                             className={ classNames(
-                                spacing.threeXs.negativeMarginLeft,
+                                spacing.twoXs.negativeMarginLeft,
                                 spacing.xs.marginRight,
                                 iconSizes[size]?.height,
                                 iconSizes[size]?.width,
@@ -61,7 +61,7 @@ const ButtonInline = ({
                     { Icon && (iconPosition === HorizontalPositions.Right) ? (
                         <Icon
                             className={ classNames(
-                                spacing.threeXs.negativeMarginRight,
+                                spacing.twoXs.negativeMarginRight,
                                 spacing.xs.marginLeft,
                                 iconSizes[size]?.height,
                                 iconSizes[size]?.width,

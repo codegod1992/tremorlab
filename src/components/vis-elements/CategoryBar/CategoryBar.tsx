@@ -13,13 +13,19 @@ import {
     toBorderColorClass
 } from 'lib/classnameUtils';
 import colorTheme, { defaultColors, themeColorRange } from 'lib/colorTheme';
+import { fontSize } from 'lib/font';
+import { sizing } from 'lib/sizing';
+import { spacing } from 'lib/spacing';
 
 const BarLabels = ({ categoryPercentageValues }: {categoryPercentageValues: number[]}) => {
     let prefixSum = 0;
     return (
         <div className={ classNames(
-            'relative text-sm flex w-full mb-2 space-x-1',
-            getColorVariantsFromColorThemeValue(defaultColors.text).textColor
+            'relative flex w-full',
+            getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
+            spacing.twoXs.spaceX,
+            spacing.sm.marginBottom,
+            fontSize.sm,
         ) }
         >
             { categoryPercentageValues.slice(0, categoryPercentageValues.length).map((widthPercentage, idx) => {
@@ -86,23 +92,30 @@ const CategoryBar = ({
     return(
         <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
             { showLabels ? <BarLabels categoryPercentageValues={ categoryPercentageValues } /> : null }
-            <div className="relative h-2 w-full flex rounded-lg items-center space-x-1">
+            <div className={ classNames(
+                'relative flex items-center w-full rounded-lg',
+                sizing.xs.height,
+                spacing.threeXs.spaceX,
+            ) }
+            >
                 {categoryPercentageValues.map((percentageValue, idx) => {
                     return(
                         <div key={ `item-${idx}` } style={ { width: `${percentageValue}%` } } className={ classNames(
-                            getColorVariantsFromColorThemeValue(colorTheme[colors[idx]].background).bgColor,
                             'h-full rounded-md',
+                            getColorVariantsFromColorThemeValue(colorTheme[colors[idx]].background).bgColor,
                         ) }
                         />
                     );
                 })}
-                { percentageValue!==undefined ? (
+                { percentageValue !== undefined ? (
                     <div className="absolute" style={ { left: `${percentageValue}%` } }>
                         <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
                             <div
                                 className={ classNames(
-                                    'z-1 bg-white border-4 rounded-full h-4 w-4 shadow-md -translate-x-1',
+                                    'bg-white -translate-x-1 z-1 border-4 rounded-full shadow-md',
                                     parseBorderClassNames(markerBorderColor),
+                                    sizing.md.height,
+                                    sizing.md.width,
                                 ) }
                             />
                         </Tooltip>

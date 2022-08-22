@@ -20,7 +20,7 @@ const Template: ComponentStory<typeof TabList> = () => (
         { Object.values(BaseColors).map(color => (
             <Card>
                 <TabList defaultValue={ 1 } handleSelect={ (value) => console.log(value) } color={ color }>
-                    <Tab value={ 1 } name="tremor.so" />
+                    <Tab value={ 1 } name="tremor.so this is an extremely long edge case for testing purposes" />
                     <Tab value={ 2 } name="thealchly.com" />
                     <Tab value={ 3 } name="nac.coom" />
                 </TabList>

@@ -29,9 +29,10 @@ const Accordion = ({
         <div className={ classNames(
             'overflow-hidden',
             parseMarginTopClassNames(marginTop),
+            getColorVariantsFromColorThemeValue(defaultColors.lightBorder).borderColor,
+            getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
             privateProps!.shapeClassNames,
             shadow ? 'shadow' : '',
-            getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
         ) }>
             { React.Children.map(children, (child, idx) => {
                 if (idx===0) return (

@@ -5,11 +5,16 @@ import {
     getColorVariantsFromColorThemeValue,
 } from 'lib/classnameUtils';
 import { defaultColors } from 'lib/colorTheme';
+import { sizing } from 'lib/sizing';
+import { spacing } from 'lib/spacing';
 
 const Divider = () => (
     <div className={ classNames(
-        'h-0.5 my-6 w-full mx-auto',
+        'w-full mx-auto rounded-lg',
         getColorVariantsFromColorThemeValue(defaultColors.background).bgColor,
+        sizing.threeXs.height,
+        spacing.threeXl.marginTop,
+        spacing.threeXl.marginBottom,
     ) }
     />
 );

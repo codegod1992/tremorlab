@@ -6,8 +6,11 @@ import {
     parseFixedHeightClassNames,
     parseMarginTopClassNames,
 } from 'lib/classnameUtils';
+import { fontSize, fontWeight } from 'lib/font';
 import { BaseColors } from 'lib/primitives';
 import colorTheme from 'lib/colorTheme';
+import { sizing } from 'lib/sizing';
+import { spacing } from 'lib/spacing';
 
 export interface CalloutProps {
     title: string,
@@ -28,27 +31,44 @@ const Callout = ({
 }: CalloutProps) => {
     return(
         <div className={ classNames(
+            'relative rounded-md border-l-4',
             parseMarginTopClassNames(marginTop),
             getColorVariantsFromColorThemeValue(colorTheme[color].canvasBackground).bgColor,
             getColorVariantsFromColorThemeValue(colorTheme[color].border).borderColor,
-            'relative rounded border-l-4 p-3'
+            spacing.lg.paddingLeft,
+            spacing.lg.paddingRight,
+            spacing.lg.paddingTop,
+            spacing.lg.paddingBottom,
+            fontSize.sm,
         ) }
         >
-            <div className="ml-1.5 overflow-hidden">
+            <div className={ classNames(
+                'overflow-hidden',
+                spacing.xs.marginLeft,
+            ) }>
                 <div className={ classNames(
+                    'flex items-start',
                     getColorVariantsFromColorThemeValue(colorTheme[color].darkText).textColor,
-                    'flex items-start'
                 ) }
                 >
-                    {Icon ? (
-                        <Icon className="h-5 w-5 mr-2 shrink-0" aria-hidden="true" />
-                    ) : null}
-                    <h4 className="text-sm font-semibold mr-6">{ title }</h4>
+                    { Icon ? (
+                        <Icon
+                            className={ classNames(
+                                'flex-none',
+                                sizing.lg.height,
+                                sizing.lg.width,
+                                spacing.xs.marginRight,
+                            ) }
+                            aria-hidden="true"
+                        />
+                    ) : null }
+                    <h4 className={ classNames(fontWeight.lg) }>{ title }</h4>
                 </div>
                 <div className={ classNames(
+                    'overflow-y-auto',
                     parseFixedHeightClassNames(fixedHeight),
                     getColorVariantsFromColorThemeValue(colorTheme[color].darkText).textColor,
-                    'mt-2 text-sm overflow-y-auto'
+                    spacing.sm.marginTop,
                 ) }
                 >
                     { text }

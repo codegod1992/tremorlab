@@ -1,7 +1,10 @@
 import React from 'react';
 
-import SelectItemWrapper from '../common/SelectItemWrapper';
-import { classNames } from 'lib/classnameUtils';
+import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
+import { fontSize, fontWeight } from 'lib/font';
+import { defaultColors } from 'lib/colorTheme';
+import { sizing } from 'lib/sizing';
+import { spacing } from 'lib/spacing';
 
 export interface DropdownItemProps {
     value: any,
@@ -23,30 +26,53 @@ const DropdownItem = ({
     shortcut,
     privateProps,
 }: DropdownItemProps) => (
-    <SelectItemWrapper
-        handleClick={ () => {
+    <button
+        onClick={ () => {
             privateProps!.setSelectedItem!(value);
             privateProps!.handleSelect(value);
             privateProps!.setShowModal(false);
         } }
-        isActive={ privateProps!.isActive }
+        className={ classNames(
+            'flex items-center justify-between w-full',
+            spacing.twoXl.paddingLeft,
+            spacing.twoXl.paddingRight,
+            spacing.md.paddingTop,
+            spacing.md.paddingBottom,
+            fontSize.sm,
+            privateProps!.isActive
+                ? classNames(
+                    getColorVariantsFromColorThemeValue(defaultColors.lightBackground).bgColor,
+                    getColorVariantsFromColorThemeValue(defaultColors.darkestText).textColor,
+                )
+                : classNames(
+                    getColorVariantsFromColorThemeValue(defaultColors.lightBackground).hoverBgColor,
+                    getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
+                )
+        ) }
     >
         <div className="flex items-center truncate">
             { Icon ? (
                 <Icon className={ classNames(
-                    'h-5 w-5 mr-3 flex-none text-gray-400'
+                    'flex-none',
+                    sizing.lg.height,
+                    sizing.lg.width,
+                    spacing.lg.marginRight,
+                    getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
                 ) } aria-hidden="true" />
             ) : null }
-            <span className="whitespace-nowrap truncate">
+            <p className="whitespace-nowrap truncate">
                 { name }
-            </span>
+            </p>
         </div>
         { shortcut ? (
-            <span className="font-normal text-gray-400">
+            <p className={ classNames(
+                fontWeight.sm,
+                getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
+            ) }>
                 { shortcut }
-            </span>
+            </p>
         ) : null }
-    </SelectItemWrapper>
+    </button>
 );
 
 export default DropdownItem;

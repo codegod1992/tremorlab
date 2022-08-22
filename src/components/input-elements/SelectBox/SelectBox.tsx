@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 
-import { ChevronDownIcon } from '@heroicons/react/solid';
+import { ArrowDownHeadIcon } from 'assets';
 
-import { classNames, parseMarginTopClassNames } from 'lib/classnameUtils';
-import Modal from 'components/input-elements/common/Modal';
-import SelectWrapper from '../common/SelectWrapper';
+import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
+import { fontSize, fontWeight } from 'lib/font';
+import Modal from 'components/layout-elements/Modal';
+import { defaultColors } from 'lib/colorTheme';
+import { sizing } from 'lib/sizing';
+import { spacing } from 'lib/spacing';
 
 export interface SelectBoxProps {
     defaultValue?: any,
@@ -56,50 +59,70 @@ const SelectBox = ({
     const filteredOptionNames = new Set(getFilteredOptionNames(searchQuery, allOptionNames));
 
     return (
-        <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
-            <SelectWrapper>
-                <input
-                    key={ selectedItemValue ? valueToNameMapping[selectedItemValue] : null }
-                    className="pl-4 pr-10 py-2 focus:outline-0 focus:ring-2 focus:ring-opacity-100
-                    placeholder:text-gray-500 text-gray-700 text-sm font-medium flex-1 rounded-md
-                    whitespace-nowrap truncate"
-                    type="input"
-                    placeholder={ selectedItemValue ? undefined : placeholder }
-                    defaultValue={
-                        selectedItemValue ? valueToNameMapping[selectedItemValue] : undefined
-                    }
-                    onChange={ (e) => setSearchQuery(e.target.value) }
-                    onClick={ () => setShowModal(true) }
+        <div className={ classNames(
+            'relative w-full min-w-[10rem] rounded-md shadow-sm border',
+            getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
+            parseMarginTopClassNames(marginTop),
+        ) }>
+            <input
+                key={ selectedItemValue ? valueToNameMapping[selectedItemValue] : null }
+                className={ classNames(
+                    'w-full rounded-md focus:ring-2 focus:outline-0',
+                    getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
+                    getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
+                    getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
+                    getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
+                    'placeholder:text-gray-500', // template string / string concatenation not possible with tailwind
+                    spacing.twoXl.paddingLeft,
+                    spacing.sm.paddingTop,
+                    spacing.sm.paddingBottom,
+                    fontSize.sm,
+                    fontWeight.md,
+                    'pr-10' // avoid text overflow at arrow down icon
+                ) }
+                type="input"
+                placeholder={ selectedItemValue ? undefined : placeholder }
+                defaultValue={ selectedItemValue ? valueToNameMapping[selectedItemValue] : undefined }
+                onChange={ (e) => setSearchQuery(e.target.value) }
+                onClick={ () => setShowModal(true) }
+            />
+            <button
+                className={ classNames(
+                    'absolute top-1/2 -translate-y-1/2',
+                    spacing.twoXl.right,
+                ) }
+                onClick={ () => setShowModal(true) }
+            >
+                <ArrowDownHeadIcon
+                    className={ classNames(
+                        'flex-none',
+                        sizing.lg.height,
+                        sizing.lg.width,
+                        spacing.twoXs.negativeMarginRight,
+                        getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
+                    ) }
+                    aria-hidden="true"
                 />
-                <button
-                    className="absolute top-1/2 -translate-y-1/2 right-3"
-                    onClick={ () => setShowModal(true) }
-                >
-                    <ChevronDownIcon
-                        className="h-5 w-5 text-gray-400"
-                        aria-hidden="true"
-                    />
-                </button>
-                <Modal showModal={ filteredOptionNames.size === 0 ? false : showModal } setShowModal={ setShowModal }>
-                    { React.Children.map(children, (child) => {
-                        if (filteredOptionNames.has(String(child.props.name))) {
-                            return (
-                                <>
-                                    { React.cloneElement(child, {
-                                        privateProps: {
-                                            setSelectedItemValue: setSelectedItemValue,
-                                            isActive: selectedItemValue === child.props.value,
-                                            handleSelect: handleSelect,
-                                            setShowModal: setShowModal,
-                                        }
-                                    }) }
-                                </>
-                            );
-                        }
-                        return null;
-                    }) }
-                </Modal>
-            </SelectWrapper>
+            </button>
+            <Modal showModal={ filteredOptionNames.size === 0 ? false : showModal } setShowModal={ setShowModal }>
+                { React.Children.map(children, (child) => {
+                    if (filteredOptionNames.has(String(child.props.name))) {
+                        return (
+                            <>
+                                { React.cloneElement(child, {
+                                    privateProps: {
+                                        setSelectedItemValue: setSelectedItemValue,
+                                        isActive: selectedItemValue === child.props.value,
+                                        handleSelect: handleSelect,
+                                        setShowModal: setShowModal,
+                                    }
+                                }) }
+                            </>
+                        );
+                    }
+                    return null;
+                }) }
+            </Modal>
         </div>
     );
 };

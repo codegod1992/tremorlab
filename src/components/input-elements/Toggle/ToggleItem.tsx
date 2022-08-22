@@ -2,6 +2,9 @@ import React from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 import colorTheme, { defaultColors } from 'lib/colorTheme';
+import { fontSize } from 'lib/font';
+import { sizing } from 'lib/sizing';
+import { spacing } from 'lib/spacing';
 
 export interface ToggleItemProps {
     value: any,
@@ -23,8 +26,8 @@ const ToggleItem = ({
     const activeClassNames = classNames(
         getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
         getColorVariantsFromColorThemeValue(colorTheme[privateProps!.color].text).textColor,
-        getColorVariantsFromColorThemeValue(defaultColors.black).ringRolor,
-        'shadow-sm ring-opacity-5'
+        getColorVariantsFromColorThemeValue(defaultColors.lightBorder).ringRolor,
+        'shadow-sm'
     );
     const inActiveClassNames = classNames(
         getColorVariantsFromColorThemeValue(defaultColors.transparent).bgColor,
@@ -35,12 +38,27 @@ const ToggleItem = ({
     return (
         <button
             className={classNames(
-                'flex items-center rounded-md ring-1 px-3 py-1.5 text-sm',
+                'flex items-center rounded-md ring-1',
+                spacing.lg.paddingLeft,
+                spacing.lg.paddingRight,
+                spacing.xs.paddingTop,
+                spacing.xs.paddingBottom,
+                fontSize.sm,
                 privateProps!.isActive ? activeClassNames : inActiveClassNames,
             )}
             onClick={ () => { privateProps!.setActiveToggleItem!(value); }}
         >
-            { Icon ? <Icon className="w-5 h-5 mr-2 opacity-70" aria-hidden="true"/> : null }
+            { Icon ? (
+                <Icon
+                    className={ classNames(
+                        'opacity-70',
+                        spacing.xs.marginRight,
+                        sizing.lg.height,
+                        sizing.lg.width,
+                    )}
+                    aria-hidden="true"
+                />
+            ) : null }
             <span className="whitespace-nowrap truncate">{ text }</span>
         </button>
     );

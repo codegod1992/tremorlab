@@ -10,13 +10,14 @@ interface TableBodyProps {
 const TableBody = ({
     children,
 }: TableBodyProps) => (
-    <tbody className={ classNames(
-        'divide-y',
-        getColorVariantsFromColorThemeValue(defaultColors.lightBorder).divideColor,
-        'align-top overflow-x-auto'
-    ) }>
-        { children }
-    </tbody>
+    <>
+        <tbody className={ classNames(
+            'align-top overflow-x-auto divide-y',
+            getColorVariantsFromColorThemeValue(defaultColors.lightBorder).divideColor,
+        ) }>
+            { children }
+        </tbody>
+    </>
 );
 
 export default TableBody;

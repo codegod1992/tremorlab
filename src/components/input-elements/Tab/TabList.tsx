@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
 import { BaseColors } from 'lib/primitives';
 import { defaultColors } from 'lib/colorTheme';
+import { spacing } from 'lib/spacing';
 
 export interface TabListProps {
     defaultValue?: any,
@@ -28,9 +29,10 @@ const TabList = ({
 
     return(
         <ol aria-label="Tabs" className={ classNames(
+            'flex justify-start overflow-x-clip border-b',
             getColorVariantsFromColorThemeValue(defaultColors.lightBorder).borderColor,
             parseMarginTopClassNames(marginTop),
-            'border-b flex justify-start space-x-4 overflow-x-clip'
+            spacing.twoXl.spaceX,
         ) }>
             { React.Children.map(children, (child) => (
                 React.cloneElement(child, {

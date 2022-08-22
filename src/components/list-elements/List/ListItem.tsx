@@ -1,6 +1,8 @@
 import React from 'react';
 
 import { classNames } from 'lib/classnameUtils';
+import { fontSize } from 'lib/font';
+import { spacing } from 'lib/spacing';
 
 export interface ListItemProps {
     children: React.ReactNode
@@ -12,7 +14,10 @@ const ListItem = ({
     return(
         <>
             <li className={ classNames(
-                'flex justify-between items-center py-2 truncate tabular-nums',
+                'flex justify-between items-center truncate tabular-nums',
+                spacing.sm.paddingTop,
+                spacing.sm.paddingBottom,
+                fontSize.sm,
             ) }>
                 { children }
             </li>

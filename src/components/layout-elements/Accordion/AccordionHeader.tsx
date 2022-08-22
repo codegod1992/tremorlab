@@ -1,6 +1,10 @@
 import React from 'react';
 
 import { ArrowDownHeadIcon, ArrowUpHeadIcon } from 'assets';
+import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
+import { defaultColors } from 'lib/colorTheme';
+import { sizing } from 'lib/sizing';
+import { spacing } from 'lib/spacing';
 
 export interface AccordionHeaderProps {
     privateProps?: {
@@ -16,7 +20,13 @@ const AccordionHeader = ({
 }: AccordionHeaderProps) => {
     return(
         <button
-            className="w-full flex items-center justify-between px-4 py-3"
+            className={ classNames(
+                'w-full flex items-center justify-between',
+                spacing.threeXl.paddingLeft,
+                spacing.threeXl.paddingRight,
+                spacing.lg.paddingTop,
+                spacing.lg.paddingBottom,
+            ) }
             onClick={ () => privateProps!.setExpanded(!privateProps!.isExpanded) }
         >
             <div className="w-[95%] flex">
@@ -24,8 +34,17 @@ const AccordionHeader = ({
             </div>
             <div>
                 { privateProps!.isExpanded
-                    ? <ArrowUpHeadIcon className="text-gray-400 h-6 w-6" />
-                    : <ArrowDownHeadIcon className="text-gray-400 h-6 w-6" /> }
+                    ? (
+                        <ArrowUpHeadIcon
+                            className={ classNames(
+                                getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
+                                spacing.twoXs.negativeMarginRight,
+                                sizing.xl.height,
+                                sizing.xl.width,
+                            ) }
+                        />
+                    )
+                    : <ArrowDownHeadIcon className="text-gray-400 -mr-1 h-6 w-6" /> }
             </div>
         </button>
     );

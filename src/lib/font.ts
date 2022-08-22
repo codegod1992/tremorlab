@@ -4,6 +4,7 @@ export const fontSize = {
     md: 'text-base',
     lg: 'text-lg',
     xl: 'text-xl',
+    threeXl: 'text-3xl',
 };
 
 export const fontWeight = {

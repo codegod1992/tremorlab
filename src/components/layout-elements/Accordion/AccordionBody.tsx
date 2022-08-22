@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { classNames } from 'lib/classnameUtils';
+import { spacing } from 'lib/spacing';
+
 export interface AccordionBodyProps {
     children: React.ReactNode;
 }
@@ -8,7 +11,12 @@ const AccordionBody = ({
     children
 }: AccordionBodyProps) => {
     return(
-        <div className="w-full px-4 pb-4">
+        <div className={ classNames(
+            'w-full',
+            spacing.twoXl.paddingLeft,
+            spacing.twoXl.paddingRight,
+            spacing.twoXl.paddingBottom,
+        ) }>
             { children }
         </div>
     );

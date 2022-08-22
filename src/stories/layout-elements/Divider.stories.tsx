@@ -1,17 +1,17 @@
 import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import DividerHorizontal from 'components/layout-elements/Divider/Divider';
+import Divider from 'components/layout-elements/Divider/Divider';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/LayoutElements/DividerHorizontal',
-    component: DividerHorizontal,
-} as ComponentMeta<typeof DividerHorizontal>;
+    title: 'Tremor/LayoutElements/Divider',
+    component: Divider,
+} as ComponentMeta<typeof Divider>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Template: ComponentStory<typeof DividerHorizontal> = () => (
-    <DividerHorizontal />
+const Template: ComponentStory<typeof Divider> = () => (
+    <Divider />
 );
   
 export const Horizontal = Template.bind({});

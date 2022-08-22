@@ -8,6 +8,7 @@ import { DeltaTypes } from 'lib/primitives';
 import { colors } from './styles';
 import { defaultColors } from 'lib/colorTheme';
 import { mapInputsToDeltaType } from 'lib/utils';
+import { sizing } from 'lib/sizing';
 
 const getDeltaType = (value: number) => (
     value >= 0 ? DeltaTypes.Increase : DeltaTypes.Decrease
@@ -29,19 +30,20 @@ const DeltaBar = ({
     return(
         <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
             <div className={ classNames(
-                'relative h-2 w-full flex rounded-lg items-center',
+                'relative flex items-center w-full rounded-lg',
                 getColorVariantsFromColorThemeValue(defaultColors.background).bgColor,
+                sizing.xs.height,
             ) }>
-                <div className="w-1/2 h-full flex justify-end bg-transparent rounded-l-lg">
+                <div className="flex justify-end h-full w-1/2">
                     { percentageValue < 0 ? (
                         <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
                             <div 
                                 className={ classNames(
+                                    'rounded-l-full',
                                     colors[mapInputsToDeltaType(
                                         getDeltaType(percentageValue),
                                         isIncreasePositive
                                     )].bgColor,
-                                    'rounded-l-full'
                                 ) } 
                                 style={ {'width': `${Math.abs(percentageValue)}%`} } 
                             />
@@ -49,20 +51,23 @@ const DeltaBar = ({
                     ) : null}
                 </div>
                 <div className={ classNames(
+                    'rounded-lg ring-2 z-10',
                     getColorVariantsFromColorThemeValue(defaultColors.darkBackground).bgColor,
-                    'h-4 w-1 rounded-full ring-2 ring-white z-10'
+                    getColorVariantsFromColorThemeValue(defaultColors.white).ringRolor,
+                    sizing.md.height,
+                    sizing.twoXs.width,
                 ) }
                 />
-                <div className="w-1/2 h-full flex justify-start bg-transparent rounded-r-lg">
+                <div className="flex justify-start h-full w-1/2">
                     { percentageValue >= 0 ? (
                         <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
                             <div
                                 className={ classNames(
+                                    'rounded-r-full',
                                     colors[mapInputsToDeltaType(
                                         getDeltaType(percentageValue),
                                         isIncreasePositive
                                     )].bgColor,
-                                    'rounded-r-full'
                                 ) } 
                                 style={ {'width': `${Math.abs(percentageValue)}%`} } 
                             />

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
 import { BaseColors } from 'lib/primitives';
 import { defaultColors } from 'lib/colorTheme';
+import { spacing } from 'lib/spacing';
 
 export interface ToggleProps {
     defaultValue?: any,
@@ -28,9 +29,13 @@ const Toggle = ({
 
     return (
         <div className={ classNames(
+            'flex-nowrap inline-flex justify-start rounded-md',
             getColorVariantsFromColorThemeValue(defaultColors.lightBackground).bgColor,
             parseMarginTopClassNames(marginTop),
-            'flex-nowrap inline-flex justify-start rounded-md p-1'
+            spacing.twoXs.paddingLeft,
+            spacing.twoXs.paddingRight,
+            spacing.twoXs.paddingTop,
+            spacing.twoXs.paddingBottom,
         ) }
         >
             { React.Children.map(children, (child) => (

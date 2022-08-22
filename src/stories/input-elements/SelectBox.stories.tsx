@@ -3,8 +3,8 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
+import { Card, SelectBoxItem } from 'components';
 import SelectBox from 'components/input-elements/SelectBox/SelectBox';
-import { SelectBoxItem } from 'components';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -14,7 +14,7 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
 const Template: ComponentStory<typeof SelectBox> = () => (
-    <>
+    <Card>
         <SelectBox handleSelect={ (value) => console.log('the new value is', value) } defaultValue={ 1 }>
             <SelectBoxItem  value={1} name="Option One ABCSASDASDASDASASDASDASDSASDASABCSASDASDASDASASDASDASDSASDAS" />
             <SelectBoxItem  value={2} name="Option Two" />
@@ -25,7 +25,7 @@ const Template: ComponentStory<typeof SelectBox> = () => (
             <SelectBoxItem  value={2} name="Option Two" />
             <SelectBoxItem  value={3} name="Option Three" />
         </SelectBox>
-    </>
+    </Card>
 );
   
 export const Default = Template.bind({});

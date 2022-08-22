@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
+import { fontSize, fontWeight } from 'lib/font';
 import { defaultColors } from 'lib/colorTheme';
 
 export interface BoldProps {
@@ -14,9 +15,10 @@ const Bold = ({
 }: BoldProps) => {
     return(
         <span className={ classNames(
-            'text-sm font-semibold',
-            getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
             parseMarginTopClassNames(marginTop),
+            getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
+            fontSize.sm,
+            fontWeight.lg,
         ) }
         >
             { children }
