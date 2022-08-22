@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
-import { defaultColors } from 'lib/colorTheme';
+import { defaultColors } from 'lib/colors';
 
 export interface AccordionProps {
     shadow?: boolean,

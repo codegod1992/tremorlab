@@ -1,5 +1,5 @@
 import { BaseColors, DeltaTypes } from 'lib/primitives';
-import colorTheme from 'lib/colorTheme';
+import colorTheme from 'lib/colors';
 import { fontSize } from 'lib/font';
 import { getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 import { spacing } from 'lib/spacing';

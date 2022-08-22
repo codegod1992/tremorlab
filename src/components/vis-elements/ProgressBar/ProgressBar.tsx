@@ -4,7 +4,7 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
-import colorTheme, { defaultColors } from 'lib/colorTheme';
+import colorTheme, { defaultColors } from 'lib/colors';
 import { fontSize, fontWeight } from 'lib/font';
 import { BaseColors } from 'lib/primitives';
 import { sizing } from 'lib/sizing';

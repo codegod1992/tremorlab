@@ -1,5 +1,5 @@
 import { BaseColors, DeltaTypes } from 'lib/primitives';
-import colorTheme from 'lib/colorTheme';
+import colorTheme from 'lib/colors';
 import { getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 
 export type ColorTypes = {

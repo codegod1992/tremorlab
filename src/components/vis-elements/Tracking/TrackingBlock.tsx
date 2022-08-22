@@ -4,7 +4,7 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseFixedHeightClassNames } from 'lib/classnameUtils';
-import colorTheme from 'lib/colorTheme';
+import colorTheme from 'lib/colors';
 
 export interface TrackingBlockProps {
     color: string,

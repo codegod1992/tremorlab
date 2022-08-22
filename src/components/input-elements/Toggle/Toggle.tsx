@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
 import { BaseColors } from 'lib/primitives';
-import { defaultColors } from 'lib/colorTheme';
+import { defaultColors } from 'lib/colors';
 import { spacing } from 'lib/spacing';
 
 export interface ToggleProps {

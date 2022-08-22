@@ -2,7 +2,7 @@ import React from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
 import { fontSize, fontWeight } from 'lib/font';
-import { defaultColors } from 'lib/colorTheme';
+import { defaultColors } from 'lib/colors';
 
 export interface BoldProps {
     marginTop?: string,

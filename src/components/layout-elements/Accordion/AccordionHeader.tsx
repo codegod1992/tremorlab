@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ArrowDownHeadIcon, ArrowUpHeadIcon } from 'assets';
 import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
-import { defaultColors } from 'lib/colorTheme';
+import { defaultColors } from 'lib/colors';
 import { sizing } from 'lib/sizing';
 import { spacing } from 'lib/spacing';
 

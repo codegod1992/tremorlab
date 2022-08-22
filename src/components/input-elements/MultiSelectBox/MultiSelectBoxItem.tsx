@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
-import colorTheme, { defaultColors } from 'lib/colorTheme';
+import colorTheme, { defaultColors } from 'lib/colors';
 import { isValueInArray, removeValueFromArray } from 'lib/utils';
 import { BaseColors } from 'lib/primitives';
 import { fontSize } from 'lib/font';

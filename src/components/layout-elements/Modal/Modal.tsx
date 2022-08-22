@@ -6,7 +6,7 @@ import {
     parseMaxHeightClassNames,
     parseWidthClassNames
 } from 'lib/classnameUtils';
-import { defaultColors } from 'lib/colorTheme';
+import { defaultColors } from 'lib/colors';
 import { spacing } from 'lib/spacing';
 import { useOnClickOutside } from 'lib/utils';
 

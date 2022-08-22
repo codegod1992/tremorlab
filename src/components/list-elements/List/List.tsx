@@ -5,7 +5,7 @@ import {
     getColorVariantsFromColorThemeValue,
     parseMarginTopClassNames 
 } from 'lib/classnameUtils';
-import { defaultColors } from 'lib/colorTheme';
+import { defaultColors } from 'lib/colors';
 
 export interface ListProps {
     marginTop?: string,

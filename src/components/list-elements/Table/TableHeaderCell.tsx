@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseTextAlignmentClassNames } from 'lib/classnameUtils';
-import { defaultColors } from 'lib/colorTheme';
+import { defaultColors } from 'lib/colors';
 import { fontWeight } from 'lib/font';
 import { spacing } from 'lib/spacing';
 

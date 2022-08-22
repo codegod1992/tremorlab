@@ -5,7 +5,7 @@ import {
     getColorVariantsFromColorThemeValue,
     parseMarginTopClassNames,
 } from 'lib/classnameUtils';
-import colorTheme, { defaultColors, themeColorRange } from 'lib/colorTheme';
+import colorTheme, { defaultColors, themeColorRange } from 'lib/colors';
 import { fontSize, fontWeight } from 'lib/font';
 import { sizing } from 'lib/sizing';
 import { spacing } from 'lib/spacing';

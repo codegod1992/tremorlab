@@ -2,7 +2,7 @@ import React from 'react';
 
 import { add, format, isEqual, isToday, } from 'date-fns';
 import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
-import colorTheme, { defaultColors } from 'lib/colorTheme';
+import colorTheme, { defaultColors } from 'lib/colors';
 import { BaseColors } from 'lib/primitives';
 import { fontWeight } from 'lib/font';
 

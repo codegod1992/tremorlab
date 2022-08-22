@@ -1,5 +1,5 @@
 import { Sizing, sizing } from 'lib/sizing';
-import colorTheme, { defaultColors } from 'lib/colorTheme';
+import colorTheme, { defaultColors } from 'lib/colors';
 import { BaseColors } from 'lib/primitives';
 import { getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 import { spacing } from 'lib/spacing';

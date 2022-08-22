@@ -6,7 +6,7 @@ import {
     parseMarginTopClassNames,
 } from 'lib/classnameUtils';
 import { fontSize, fontWeight } from 'lib/font';
-import { defaultColors } from 'lib/colorTheme';
+import { defaultColors } from 'lib/colors';
 
 export interface TableProps {
     marginTop?: string,

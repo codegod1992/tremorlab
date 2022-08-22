@@ -15,7 +15,7 @@ import BaseChartProps from '../common/BaseChartProps';
 import ChartLegend from '../common/ChartLegend';
 import ChartTooltip from '../common/ChartTooltip';
 
-import colorTheme, { themeColorRange } from 'lib/colorTheme';
+import colorTheme, { themeColorRange } from 'lib/colors';
 import { defaultValueFormater } from 'lib/utils';
 import { getHexFromColorThemeValue } from 'lib/classnameUtils';
 

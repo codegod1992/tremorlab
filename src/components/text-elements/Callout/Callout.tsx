@@ -8,7 +8,7 @@ import {
 } from 'lib/classnameUtils';
 import { fontSize, fontWeight } from 'lib/font';
 import { BaseColors } from 'lib/primitives';
-import colorTheme from 'lib/colorTheme';
+import colorTheme from 'lib/colors';
 import { sizing } from 'lib/sizing';
 import { spacing } from 'lib/spacing';
 

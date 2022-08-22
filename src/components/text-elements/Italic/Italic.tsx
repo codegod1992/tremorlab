@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
-import { defaultColors } from 'lib/colorTheme';
+import { defaultColors } from 'lib/colors';
 import { fontSize } from 'lib/font';
 
 export interface ItalicProps {

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
-import colorTheme, { defaultColors, themeColorRange } from 'lib/colorTheme';
+import colorTheme, { defaultColors, themeColorRange } from 'lib/colors';
 import { ValueFormater } from 'lib/utils';
 
 export interface ChartTooltipRowProps {

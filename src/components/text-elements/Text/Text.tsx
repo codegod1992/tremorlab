@@ -10,7 +10,7 @@ import {
 } from 'lib/classnameUtils';
 import { fontSize, fontWeight } from 'lib/font';
 import { BaseColors } from 'lib/primitives';
-import colorTheme from 'lib/colorTheme';
+import colorTheme from 'lib/colors';
 
 export interface TextProps {
     color?: string,

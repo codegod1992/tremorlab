@@ -5,7 +5,7 @@ import { ArrowDownHeadIcon } from 'assets';
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
 import { fontSize, fontWeight } from 'lib/font';
 import Modal from 'components/layout-elements/Modal';
-import { defaultColors } from 'lib/colorTheme';
+import { defaultColors } from 'lib/colors';
 import { sizing } from 'lib/sizing';
 import { spacing } from 'lib/spacing';
 

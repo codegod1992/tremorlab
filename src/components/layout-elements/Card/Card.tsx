@@ -8,7 +8,7 @@ import {
     parseMarginTopClassNames,
     parseMaxWidthClassNames,
 } from 'lib/classnameUtils';
-import colorTheme, { defaultColors } from 'lib/colorTheme';
+import colorTheme, { defaultColors } from 'lib/colors';
 import { spacing } from 'lib/spacing';
 
 export interface CardProps {
