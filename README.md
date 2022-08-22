@@ -7,21 +7,18 @@
 <br>
 <br>
 
-  <div align="center"'>
-    <a href="#">
-      <img alt="View Storybook" src="https://raw.githubusercontent.com/storybooks/brand/master/badge/badge-storybook.svg" height="20" width="auto">
-    </a>
+  <div align="center">
     <a href="https://www.npmjs.com/package/@tremor/react">
         <img alt="npm package" src="https://img.shields.io/badge/-npm-0f172a?logo=npm&logoColor=red&style=flat" height="20" width="auto">
     </a>
     <a href="https://twitter.com/tremorlabs">
       <img alt="Follow on twitter" src="https://img.shields.io/twitter/follow/tremorlabs?style=flat&color=5C9BA1" height="20" width="auto">
     </a>
-    <a href="#">
+    <a href="https://tremor.so/docs/getting-started/introduction">
       <img alt="Read the documentation" src="https://img.shields.io/badge/Docs-blue?style=flat&logo=readthedocs&labelColor=5c5c5c&color=5C9BA1" height="20" width="auto">
     </a>
     <a href="https://github.com/tremorlabs/tremor/blob/main/License">
-      <img alt="License MIT" src="https://img.shields.io/badge/license-Apache 2.0-blue.svg?style=flat&color=5C9BA1" height="20" width="auto">
+      <img alt="License Apache 2.0" src="https://img.shields.io/badge/license-Apache 2.0-blue.svg?style=flat&color=5C9BA1" height="20" width="auto">
     </a>
   </div>
 
@@ -57,7 +54,7 @@ To get started with tremor, follow these steps:
     npm install @tremor/react
     ```
 
-**💡 Hint:** If you want to see how you can build your first dashboard, have a look at our [documentation](#).
+**💡 Hint:** If you want to see how you can build your first dashboard, have a look at our [documentation](https://tremor.so/docs/getting-started/demo-dashboard).
 <br>
 <br>
 
@@ -67,21 +64,22 @@ With tremor creating an analytical interface is easy.
 <br>
 <br>
 
-Card.tsx
+
 ```jsx
-// example of component composition
+//Card.tsx
+import { Card, Text, Metric, Flex, ProgressBar } from "@tremor/react";
 
-import { Card, Title, Metric, Flex, Text, Bold, ProgressBar } from "@tremor/react";
-
-<Card>
-    <Title title="Ticket Sales"/>
-    <Metric value="$ 71,465"/>
-        <Flex>
-            <Text><Bold>32%</Bold>of annual target</Text>
-            <Text>$ 223,328</Text>
-        </Flex>
-    <ProgressBar widthPercentage="32%"/>
-</Card>
+export default () => (
+  <Card maxWidth="max-w-sm">
+    <Text>Sales</Text>
+    <Metric>$ 71,465</Metric>
+    <Flex marginTop='mt-4'>
+        <Text>32% of annual target</Text>
+        <Text>$ 223,328</Text>
+    </Flex>
+    <ProgressBar percentageValue={ 32 } marginTop="mt-2" />
+  </Card>
+);
 ```
 <br>
 
