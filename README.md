@@ -75,7 +75,7 @@ export default () => (
     <Metric>$ 71,465</Metric>
     <Flex marginTop='mt-4'>
         <Text>32% of annual target</Text>
-        <Text>$ 223,328</Text>
+        <Text>$ 225,000</Text>
     </Flex>
     <ProgressBar percentageValue={ 32 } marginTop="mt-2" />
   </Card>
