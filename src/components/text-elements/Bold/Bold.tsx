@@ -15,8 +15,8 @@ const Bold = ({
 }: BoldProps) => {
     return(
         <span className={ classNames(
-            getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
             parseMarginTopClassNames(marginTop),
+            getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
             fontSize.sm,
             fontWeight.lg,
         ) }
