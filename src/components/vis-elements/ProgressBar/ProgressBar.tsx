@@ -3,19 +3,25 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
-import colorTheme, { defaultColors } from 'lib/colors';
-import { fontSize, fontWeight } from 'lib/font';
-import { BaseColors } from 'lib/primitives';
-import { sizing } from 'lib/sizing';
-import { spacing } from 'lib/spacing';
+import {
+    BaseColors,
+    classNames,
+    colorTheme,
+    defaultColors,
+    fontSize,
+    fontWeight,
+    getColorVariantsFromColorThemeValue,
+    sizing,
+    spacing
+} from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 export interface ProgressBarProps {
     percentageValue: number,
     label?: string,
     tooltip?: string,
     color?: string,
-    marginTop?: string,
+    marginTop?: TwMarginTop,
 }
 
 const ProgressBar = ({
@@ -23,7 +29,7 @@ const ProgressBar = ({
     label,
     tooltip,
     color = BaseColors.Blue,
-    marginTop
+    marginTop = 'mt-0',
 }: ProgressBarProps) => {
     const primaryBgColor = getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor;
     const secondaryBgColor = getColorVariantsFromColorThemeValue(colorTheme[color].lightBackground).bgColor;
@@ -31,7 +37,7 @@ const ProgressBar = ({
         <div className={
             classNames(
                 'flex items-center w-full',
-                parseMarginTopClassNames(marginTop),
+                marginTop,
             )
         }>
             <div className={ classNames(

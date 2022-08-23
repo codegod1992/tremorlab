@@ -14,9 +14,7 @@ export default {
 
 const Template: ComponentStory<typeof BarChart> = (args) => (
     <Card hFull={ true } >
-        <div className="h-96">
-            <BarChart { ...args } />
-        </div>
+        <BarChart { ...args } />
     </Card>
 );
   

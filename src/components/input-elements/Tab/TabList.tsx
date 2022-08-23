@@ -1,24 +1,22 @@
 import React, { useEffect, useState } from 'react';
 
-import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
-import { BaseColors } from 'lib/primitives';
-import { defaultColors } from 'lib/colors';
-import { spacing } from 'lib/spacing';
+import { BaseColors, classNames, defaultColors, getColorVariantsFromColorThemeValue, spacing } from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 export interface TabListProps {
     defaultValue?: any,
     color?: string,
     handleSelect?: { (value: any): void },
-    marginTop?: string,
+    marginTop?: TwMarginTop,
     children: React.ReactElement[]
 }
 
 const TabList = ({
     defaultValue,
     color = BaseColors.Blue,
-    marginTop,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     handleSelect = (value) => null,
+    marginTop = 'mt-0',
     children,
 }: TabListProps) => {
     const [selectedTab, setSelectedTab] = useState<any|null>(defaultValue);
@@ -31,7 +29,7 @@ const TabList = ({
         <ol aria-label="Tabs" className={ classNames(
             'flex justify-start overflow-x-clip border-b',
             getColorVariantsFromColorThemeValue(defaultColors.lightBorder).borderColor,
-            parseMarginTopClassNames(marginTop),
+            marginTop,
             spacing.twoXl.spaceX,
         ) }>
             { React.Children.map(children, (child) => (

@@ -1,24 +1,24 @@
 import React from 'react';
 
 import { 
+    BaseColors,
     classNames,
+    colorTheme,
+    fontSize,
+    fontWeight,
     getColorVariantsFromColorThemeValue,
-    parseFixedHeightClassNames,
-    parseMarginTopClassNames,
-} from 'lib/classnameUtils';
-import { fontSize, fontWeight } from 'lib/font';
-import { BaseColors } from 'lib/primitives';
-import colorTheme from 'lib/colors';
-import { sizing } from 'lib/sizing';
-import { spacing } from 'lib/spacing';
+    sizing,
+    spacing
+} from 'lib';
+import { TwHeight, TwMarginTop } from '../../../lib';
 
 export interface CalloutProps {
     title: string,
     text: string,
     Icon?: React.ElementType,
     color?: string,
-    fixedHeight?: string,
-    marginTop?: string,
+    height?: TwHeight | '',
+    marginTop?: TwMarginTop,
 }
 
 const Callout = ({
@@ -26,13 +26,13 @@ const Callout = ({
     text,
     Icon,
     color = BaseColors.Blue,
-    fixedHeight = '',
-    marginTop
+    height = '',
+    marginTop = 'mt-0'
 }: CalloutProps) => {
     return(
         <div className={ classNames(
             'relative rounded-md border-l-4',
-            parseMarginTopClassNames(marginTop),
+            marginTop,
             getColorVariantsFromColorThemeValue(colorTheme[color].canvasBackground).bgColor,
             getColorVariantsFromColorThemeValue(colorTheme[color].border).borderColor,
             spacing.lg.paddingLeft,
@@ -66,7 +66,7 @@ const Callout = ({
                 </div>
                 <div className={ classNames(
                     'overflow-y-auto',
-                    parseFixedHeightClassNames(fixedHeight),
+                    height,
                     getColorVariantsFromColorThemeValue(colorTheme[color].darkText).textColor,
                     spacing.sm.marginTop,
                 ) }

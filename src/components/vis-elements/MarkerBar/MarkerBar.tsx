@@ -3,30 +3,28 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
-import colorTheme, { defaultColors } from 'lib/colors';
-import { BaseColors } from 'lib/primitives';
-import { sizing } from 'lib/sizing';
+import { BaseColors, classNames, colorTheme, defaultColors, getColorVariantsFromColorThemeValue, sizing } from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 export interface MarkerBarProps {
     percentageValue: number,
     color?: string,
     tooltip?: string,
-    marginTop?: string,
+    marginTop?: TwMarginTop,
 }
 
 const MarkerBar = ({
     percentageValue,
     color = BaseColors.Blue,
     tooltip,
-    marginTop
+    marginTop = 'mt-0',
 }: MarkerBarProps) => {
     const primaryBgColor = getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor;
     const secondaryBgColor = getColorVariantsFromColorThemeValue(colorTheme[color].lightBackground).bgColor;
     return(
         <div className={ classNames(
             'relative flex items-center w-full rounded-lg',
-            classNames(parseMarginTopClassNames(marginTop)),
+            marginTop,
             secondaryBgColor,
             sizing.xs.height,
         ) }>

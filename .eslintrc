@@ -50,6 +50,6 @@
                 "ignoreComments": true
             }
         ],
-        "eol-last": ["error", "always"],
+        "eol-last": ["error", "always"]
     }
 }

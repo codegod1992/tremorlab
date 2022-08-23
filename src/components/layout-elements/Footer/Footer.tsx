@@ -1,27 +1,23 @@
 import React from 'react';
 
-import { 
-    classNames,
-    parseFixedHeightClassNames,
-} from 'lib/classnameUtils';
-import { spacing } from 'lib/spacing';
+import { classNames, spacing } from 'lib';
+import { TwHeight } from '../../../lib';
 
 export interface FooterProps {
-    fixedHeight?: string,
+    height?: TwHeight,
     children: React.ReactNode;
 }
 
 const Footer = ({
-    fixedHeight = 'h-20',
+    height = 'h-20',
     children
 }: FooterProps) => {
     return(
         <>
-            <div className={ classNames(parseFixedHeightClassNames(fixedHeight)) } />
+            <div className={ classNames(height) } />
             <div className={ classNames(
                 'absolute flex items-center w-full border-t',
-                parseFixedHeightClassNames(fixedHeight),
-                parseFixedHeightClassNames(fixedHeight),
+                height,
                 spacing.none.left,
                 spacing.none.right,
                 spacing.none.bottom,

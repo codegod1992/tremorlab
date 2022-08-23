@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 
 import { DeltaTypes } from 'lib/primitives';
+import { ValueFormater } from './inputTypes';
 
 export const mapInputsToDeltaType = (deltaType: string, isIncreasePositive: boolean): string => {
     if (isIncreasePositive || deltaType===DeltaTypes.Unchanged) {
@@ -18,10 +19,6 @@ export const mapInputsToDeltaType = (deltaType: string, isIncreasePositive: bool
     }
     return '';
 };
-
-export interface ValueFormater {
-    (value: number): string
-}
 
 export const defaultValueFormater: ValueFormater = (value: number) => value.toString();
 
@@ -60,4 +57,13 @@ export const isValueInArray = (value: any, array: any[]): boolean => {
         }
     }
     return false;
+};
+
+
+export const stringIsNumeric = (str: string|undefined): boolean => {
+    return !isNaN(Number(str)) && (str!==undefined);
+};
+
+export const stringEndsWithNumber = (str: string): boolean => {
+    return stringIsNumeric(str.split('-').pop());
 };

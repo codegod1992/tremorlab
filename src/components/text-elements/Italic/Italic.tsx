@@ -1,23 +1,22 @@
 import React from 'react';
 
-import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
-import { defaultColors } from 'lib/colors';
-import { fontSize } from 'lib/font';
+import { classNames, defaultColors, fontSize, getColorVariantsFromColorThemeValue } from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 export interface ItalicProps {
-    marginTop?: string,
+    marginTop?: TwMarginTop,
     children: React.ReactNode;
 }
 
 const Italic = ({
-    marginTop,
+    marginTop = 'mt-0',
     children
 }: ItalicProps) => {
     return(
         <span className={ classNames(
             'italic',
             getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
-            parseMarginTopClassNames(marginTop),
+            marginTop,
             fontSize.sm,
         ) }
         >

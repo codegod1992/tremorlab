@@ -15,9 +15,14 @@ import BaseChartProps from '../common/BaseChartProps';
 import ChartLegend from '../common/ChartLegend';
 import ChartTooltip from '../common/ChartTooltip';
 
-import colorTheme, { themeColorRange } from 'lib/colors';
-import { defaultValueFormater } from 'lib/utils';
-import { getHexFromColorThemeValue } from 'lib/classnameUtils';
+import {
+    classNames,
+    colorTheme,
+    defaultValueFormater,
+    getHexFromColorThemeValue,
+    getPixelsFromTwClassName,
+    themeColorRange
+} from 'lib';
 
 export interface BarChartProps extends BaseChartProps {
     layout?: string,
@@ -37,27 +42,28 @@ const BarChart = ({
     startEndOnly = false,
     showXAxis = true,
     showYAxis = true,
-    yAxisWidth,
+    yAxisWidth = 'w-14',
     showTooltip = true,
     showLegend = true,
     showGridLines = true,
-    height = 300,
-    paddingTopPixels = 5,
-    paddingRightPixels = 20,
-    paddingBottomPixels = 5,
-    paddingLeftPixels = 5,
+    height = 'h-80',
+    paddingTop = 'pt-1',
+    paddingRight = 'pr-5',
+    paddingBottom = 'pb-5',
+    paddingLeft = 'pl-1',
+    marginTop = 'mt-0',
 }: BarChartProps) => (
-    <div className="w-full" style={ { 'height': `${height}px` } }>
+    <div className={ classNames('w-full', height, marginTop) }>
         <ResponsiveContainer width="100%" height="100%">
             <ReChartsBarChart
                 data={ data }
                 stackOffset={ relative ? 'expand' : 'none' }
                 layout={ layout === 'vertical' ? 'vertical' : 'horizontal' }
                 margin={{
-                    top: paddingTopPixels,
-                    right: paddingRightPixels,
-                    left: paddingLeftPixels,
-                    bottom: paddingBottomPixels,
+                    left: getPixelsFromTwClassName(paddingLeft),
+                    top: getPixelsFromTwClassName(paddingTop),
+                    right: getPixelsFromTwClassName(paddingRight),
+                    bottom: getPixelsFromTwClassName(paddingBottom),
                 }}
             >
                 { showGridLines ? (
@@ -100,7 +106,7 @@ const BarChart = ({
                 )}
                 { layout !== 'vertical' ? (
                     <YAxis
-                        width={ yAxisWidth }
+                        width={ getPixelsFromTwClassName(yAxisWidth) }
                         hide={ !showYAxis }
                         axisLine={ false }
                         tickLine={ false }
@@ -115,7 +121,7 @@ const BarChart = ({
                     />
                 ) : (
                     <YAxis
-                        width={ yAxisWidth }
+                        width={ getPixelsFromTwClassName(yAxisWidth) }
                         hide={ !showYAxis }
                         dataKey={ dataKey }
                         axisLine={ false }

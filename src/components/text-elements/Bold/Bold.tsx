@@ -1,21 +1,20 @@
 import React from 'react';
 
-import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
-import { fontSize, fontWeight } from 'lib/font';
-import { defaultColors } from 'lib/colors';
+import { classNames, defaultColors, fontSize, fontWeight, getColorVariantsFromColorThemeValue } from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 export interface BoldProps {
-    marginTop?: string,
+    marginTop?: TwMarginTop,
     children: React.ReactNode
 }
 
 const Bold = ({
-    marginTop,
+    marginTop = 'mt-0',
     children,
 }: BoldProps) => {
     return(
         <span className={ classNames(
-            parseMarginTopClassNames(marginTop),
+            marginTop,
             getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
             fontSize.sm,
             fontWeight.lg,

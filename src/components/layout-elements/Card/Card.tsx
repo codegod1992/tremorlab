@@ -3,23 +3,14 @@ import React from 'react';
 import { BaseColors, HorizontalPositions, VerticalPositions } from 'lib/primitives';
 import {
     classNames,
+    colorTheme,
+    defaultColors,
     getColorVariantsFromColorThemeValue,
     parseHFullOption,
-    parseMarginTopClassNames,
     parseMaxWidthClassNames,
-} from 'lib/classnameUtils';
-import colorTheme, { defaultColors } from 'lib/colors';
-import { spacing } from 'lib/spacing';
-
-export interface CardProps {
-    hFull?: boolean,
-    maxWidth?: string,
-    shadow?: boolean,
-    decoration?: string,
-    decorationColor?: string,
-    marginTop?: string,
-    children: React.ReactNode
-}
+    spacing,
+} from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 const parseDecorationAlignment = (decorationAlignment: string) => {
     if (!decorationAlignment) return '';
@@ -37,19 +28,29 @@ const parseDecorationAlignment = (decorationAlignment: string) => {
     }
 };
 
+export interface CardProps {
+    hFull?: boolean,
+    maxWidth?: string,
+    shadow?: boolean,
+    decoration?: string,
+    decorationColor?: string,
+    marginTop?: TwMarginTop,
+    children: React.ReactNode
+}
+
 const Card = ({
     hFull = false,
     maxWidth = '',
     shadow = true,
-    decoration = 'left',
+    decoration = '',
     decorationColor = BaseColors.Blue,
-    marginTop,
+    marginTop = 'mt-0',
     children
 }: CardProps) => {
     return(
         <div className={ classNames(
             'relative w-full mx-auto text-left rounded-lg ring-1',
-            parseMarginTopClassNames(marginTop),
+            marginTop,
             parseHFullOption(hFull),
             parseMaxWidthClassNames(maxWidth),
             getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,

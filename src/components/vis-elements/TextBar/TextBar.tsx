@@ -1,13 +1,17 @@
 import React from 'react';
 
-import { ValueFormater, defaultValueFormater } from '../../../lib/utils';
-import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
-import colorTheme, { defaultColors } from 'lib/colors';
-import { BaseColors } from 'lib/primitives';
-import { fontSize } from 'lib/font';
-import { sizing } from 'lib/sizing';
-import { spacing } from 'lib/spacing';
-
+import {
+    BaseColors,
+    classNames,
+    colorTheme,
+    defaultColors,
+    defaultValueFormater,
+    fontSize,
+    getColorVariantsFromColorThemeValue,
+    sizing,
+    spacing
+} from 'lib';
+import { TwMarginTop, ValueFormater } from '../../../lib';
 
 type TextBarData = {
     value: number,
@@ -27,14 +31,14 @@ export interface TextBarProps {
     data: TextBarData[],
     valueFormater?: ValueFormater,
     color?: string,
-    marginTop?: string,
+    marginTop?: TwMarginTop,
 }
 
 const TextBar = ({
     data,
     color = BaseColors.Blue,
     valueFormater = defaultValueFormater,
-    marginTop,
+    marginTop = 'mt-0',
 }: TextBarProps) => {
     const widths = getWidthsFromValues(data);
 
@@ -43,7 +47,7 @@ const TextBar = ({
     return (
         <div className={ classNames(
             'flex justify-between',
-            parseMarginTopClassNames(marginTop),
+            marginTop,
             spacing.threeXl.spaceX,
         ) }>
             <div className="relative w-full">

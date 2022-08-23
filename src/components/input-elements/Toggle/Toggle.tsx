@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
 
-import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
-import { BaseColors } from 'lib/primitives';
-import { defaultColors } from 'lib/colors';
-import { spacing } from 'lib/spacing';
+import { BaseColors, classNames, defaultColors, getColorVariantsFromColorThemeValue, spacing } from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 export interface ToggleProps {
     defaultValue?: any,
     color?: string,
     handleSelect?: { (value: any): void },
     children: React.ReactElement[],
-    marginTop?: string,
+    marginTop?: TwMarginTop,
 }
 
 const Toggle = ({
@@ -18,7 +16,7 @@ const Toggle = ({
     color = BaseColors.Blue,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     handleSelect = (value) => null,
-    marginTop,
+    marginTop = 'mt-0',
     children,
 }: ToggleProps) => {
     const [activeToggleItem, setActiveToggleItem] = useState<any|null>(defaultValue);
@@ -31,7 +29,7 @@ const Toggle = ({
         <div className={ classNames(
             'flex-nowrap inline-flex justify-start rounded-md',
             getColorVariantsFromColorThemeValue(defaultColors.lightBackground).bgColor,
-            parseMarginTopClassNames(marginTop),
+            marginTop,
             spacing.twoXs.paddingLeft,
             spacing.twoXs.paddingRight,
             spacing.twoXs.paddingTop,

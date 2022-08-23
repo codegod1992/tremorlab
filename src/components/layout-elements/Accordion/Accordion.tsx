@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
-import { defaultColors } from 'lib/colors';
+import { classNames, defaultColors, getColorVariantsFromColorThemeValue } from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 export interface AccordionProps {
     shadow?: boolean,
     expanded?: boolean,
-    marginTop?: string,
+    marginTop?: TwMarginTop,
     privateProps?: {
         shapeClassNames: string,
     },
@@ -19,7 +19,7 @@ const Accordion = ({
     privateProps = {
         shapeClassNames: 'border rounded-lg',
     },
-    marginTop,
+    marginTop = 'mt-0',
     children
 }: AccordionProps) => {
 
@@ -28,7 +28,7 @@ const Accordion = ({
     return(
         <div className={ classNames(
             'overflow-hidden',
-            parseMarginTopClassNames(marginTop),
+            marginTop,
             getColorVariantsFromColorThemeValue(defaultColors.lightBorder).borderColor,
             getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
             privateProps!.shapeClassNames,

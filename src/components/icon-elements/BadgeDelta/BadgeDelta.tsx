@@ -10,9 +10,8 @@ import {
     deltaIcons,
     iconSizes,
 } from './styles';
-import { classNames, parseMarginTopClassNames } from 'lib/classnameUtils';
-import { mapInputsToDeltaType } from 'lib/utils';
-import { spacing } from 'lib/spacing';
+import { classNames, mapInputsToDeltaType, spacing } from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 export interface BadgeDeltaProps {
     text?: string,
@@ -20,7 +19,7 @@ export interface BadgeDeltaProps {
     isIncreasePositive?: boolean,
     size?: string,
     tooltip?: string,
-    marginTop?: string,
+    marginTop?: TwMarginTop,
 }
 
 const BadgeDelta = ({
@@ -29,14 +28,14 @@ const BadgeDelta = ({
     isIncreasePositive = true,
     size = 'sm',
     tooltip,
-    marginTop,
+    marginTop = 'mt-0',
 }: BadgeDeltaProps) => {
     const Icon = deltaIcons[deltaType];
     const mappedDeltaType = mapInputsToDeltaType(deltaType, isIncreasePositive);
     const badgeProportions = text ? badgeProportionsWithText : badgeProportionsIconOnly;
 
     return(
-        <span className={ classNames(parseMarginTopClassNames(marginTop)) }>
+        <span className={ classNames(marginTop) }>
             <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
                 <span className={ classNames(
                     'flex-shrink-0 inline-flex justify-center items-center rounded-full',

@@ -1,5 +1,3 @@
-// TODO: fix potitioning
-
 import React from 'react';
 
 import 'tippy.js/dist/tippy.css';
@@ -7,15 +5,16 @@ import Tooltip from '@tippyjs/react';
 
 import { 
     classNames,
+    colorTheme,
+    defaultColors,
+    fontSize,
     getColorVariantsFromColorThemeValue,
-    parseBorderClassNames,
-    parseMarginTopClassNames,
+    sizing,
+    spacing,
+    themeColorRange,
     toBorderColorClass
-} from 'lib/classnameUtils';
-import colorTheme, { defaultColors, themeColorRange } from 'lib/colors';
-import { fontSize } from 'lib/font';
-import { sizing } from 'lib/sizing';
-import { spacing } from 'lib/spacing';
+} from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 const BarLabels = ({ categoryPercentageValues }: {categoryPercentageValues: number[]}) => {
     let prefixSum = 0;
@@ -58,7 +57,7 @@ export interface CategoryBarProps {
     percentageValue?: number,
     showLabels?: boolean,
     tooltip?: string,
-    marginTop?: string,
+    marginTop?: TwMarginTop,
 }
 
 const CategoryBar = ({
@@ -67,7 +66,7 @@ const CategoryBar = ({
     percentageValue,
     showLabels = true,
     tooltip,
-    marginTop
+    marginTop = 'mt-0',
 }: CategoryBarProps) => {
 
     const getMarkerBorderColor = (): string => {
@@ -90,7 +89,7 @@ const CategoryBar = ({
     const markerBorderColor = getMarkerBorderColor();
 
     return(
-        <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
+        <div className={ classNames(marginTop) }>
             { showLabels ? <BarLabels categoryPercentageValues={ categoryPercentageValues } /> : null }
             <div className={ classNames(
                 'relative flex items-center w-full rounded-lg',
@@ -113,7 +112,7 @@ const CategoryBar = ({
                             <div
                                 className={ classNames(
                                     'bg-white -translate-x-1 z-1 border-4 rounded-full shadow-md',
-                                    parseBorderClassNames(markerBorderColor),
+                                    markerBorderColor,
                                     sizing.md.height,
                                     sizing.md.width,
                                 ) }

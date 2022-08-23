@@ -1,14 +1,17 @@
 import React from 'react';
 
-import { 
+import {
     classNames,
+    colorTheme,
+    defaultColors,
+    fontSize,
+    fontWeight,
     getColorVariantsFromColorThemeValue,
-    parseMarginTopClassNames,
-} from 'lib/classnameUtils';
-import colorTheme, { defaultColors, themeColorRange } from 'lib/colors';
-import { fontSize, fontWeight } from 'lib/font';
-import { sizing } from 'lib/sizing';
-import { spacing } from 'lib/spacing';
+    sizing,
+    spacing,
+    themeColorRange
+} from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 export interface LegendItemProps {
     name: string,
@@ -52,16 +55,16 @@ const LegendItem = ({
 export interface LegendProps {
     categories: string[],
     colors?: string[],
-    marginTop?: string,
+    marginTop?: TwMarginTop,
 }
 
 const Legend = ({
     categories,
     colors = themeColorRange,
-    marginTop,
+    marginTop = 'mt-0',
 }: LegendProps) => {
     return(
-        <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
+        <div className={ classNames(marginTop) }>
             <ol className="flex flex-wrap overflow-hidden truncate">
                 { categories.map((category, idx) => (
                     <LegendItem key={ `item-${idx}` } name={ category } color={ colors[idx] } />

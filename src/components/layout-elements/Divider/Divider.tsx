@@ -2,11 +2,11 @@ import React from 'react';
 
 import { 
     classNames,
+    defaultColors,
     getColorVariantsFromColorThemeValue,
-} from 'lib/classnameUtils';
-import { defaultColors } from 'lib/colors';
-import { sizing } from 'lib/sizing';
-import { spacing } from 'lib/spacing';
+    sizing,
+    spacing
+} from 'lib';
 
 const Divider = () => (
     <div className={ classNames(

@@ -2,18 +2,18 @@ import React from 'react';
 
 import { 
     classNames,
+    defaultColors,
     getColorVariantsFromColorThemeValue,
-    parseMarginTopClassNames 
-} from 'lib/classnameUtils';
-import { defaultColors } from 'lib/colors';
+} from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 export interface ListProps {
-    marginTop?: string,
+    marginTop?: TwMarginTop,
     children: React.ReactNode
 }
 
 const List = ({
-    marginTop,
+    marginTop = 'mt-0',
     children
 }: ListProps) => {
     return(
@@ -21,7 +21,7 @@ const List = ({
             'w-full overflow-hidden divide-y',
             getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
             getColorVariantsFromColorThemeValue(defaultColors.lightBorder).divideColor,
-            parseMarginTopClassNames(marginTop),
+            marginTop,
         ) }
         >
             { children }
