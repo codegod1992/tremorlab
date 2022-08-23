@@ -1,3 +1,7 @@
+export interface ValueFormater {
+    (value: number): string
+}
+
 export const textAlignmentValues = [
     'text-left',
     'text-center',

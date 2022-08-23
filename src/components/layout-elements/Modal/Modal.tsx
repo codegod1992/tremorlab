@@ -2,13 +2,13 @@ import React, { useRef } from 'react';
 
 import {
     classNames,
+    defaultColors,
     getColorVariantsFromColorThemeValue,
     parseMaxHeightClassNames,
-    parseWidthClassNames
-} from 'lib/classnameUtils';
-import { defaultColors } from 'lib/colors';
-import { spacing } from 'lib/spacing';
-import { useOnClickOutside } from 'lib/utils';
+    parseWidthClassNames,
+    spacing,
+    useOnClickOutside,
+} from 'lib';
 
 export interface ModalProps {
     showModal: boolean,

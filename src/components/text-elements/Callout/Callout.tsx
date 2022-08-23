@@ -1,15 +1,16 @@
 import React from 'react';
 
-import { TwHeight, TwMarginTop } from 'lib/inputTypes';
 import { 
+    BaseColors,
     classNames,
+    colorTheme,
+    fontSize,
+    fontWeight,
     getColorVariantsFromColorThemeValue,
-} from 'lib/classnameUtils';
-import { fontSize, fontWeight } from 'lib/text';
-import { BaseColors } from 'lib/primitives';
-import colorTheme from 'lib/colors';
-import { sizing } from 'lib/sizing';
-import { spacing } from 'lib/spacing';
+    sizing,
+    spacing
+} from 'lib';
+import { TwHeight, TwMarginTop } from '../../../lib';
 
 export interface CalloutProps {
     title: string,

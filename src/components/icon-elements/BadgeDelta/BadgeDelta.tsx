@@ -10,10 +10,8 @@ import {
     deltaIcons,
     iconSizes,
 } from './styles';
-import { TwMarginTop } from 'lib/inputTypes';
-import { classNames } from 'lib/classnameUtils';
-import { mapInputsToDeltaType } from 'lib/utils';
-import { spacing } from 'lib/spacing';
+import { classNames, mapInputsToDeltaType, spacing } from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 export interface BadgeDeltaProps {
     text?: string,

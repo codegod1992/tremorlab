@@ -1,5 +1,3 @@
-// TODO: fix potitioning
-
 import React from 'react';
 
 import 'tippy.js/dist/tippy.css';
@@ -7,14 +5,16 @@ import Tooltip from '@tippyjs/react';
 
 import { 
     classNames,
+    colorTheme,
+    defaultColors,
+    fontSize,
     getColorVariantsFromColorThemeValue,
+    sizing,
+    spacing,
+    themeColorRange,
     toBorderColorClass
-} from 'lib/classnameUtils';
-import colorTheme, { defaultColors, themeColorRange } from 'lib/colors';
-import { TwMarginTop } from 'lib/inputTypes';
-import { fontSize } from 'lib/text';
-import { sizing } from 'lib/sizing';
-import { spacing } from 'lib/spacing';
+} from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 const BarLabels = ({ categoryPercentageValues }: {categoryPercentageValues: number[]}) => {
     let prefixSum = 0;

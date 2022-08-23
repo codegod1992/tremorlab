@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { TwMarginTop } from 'lib/inputTypes';
-import { classNames } from 'lib/classnameUtils';
-import { spacing } from 'lib/spacing';
+import { classNames, spacing } from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 export interface TrackingProps {
     marginTop?: TwMarginTop,

@@ -3,11 +3,8 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
-import colorTheme, { defaultColors } from 'lib/colors';
-import { BaseColors } from 'lib/primitives';
-import { TwMarginTop } from 'lib/inputTypes';
-import { sizing } from 'lib/sizing';
+import { BaseColors, classNames, colorTheme, defaultColors, getColorVariantsFromColorThemeValue, sizing } from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 export interface RangeBarProps {
     percentageValue: number,

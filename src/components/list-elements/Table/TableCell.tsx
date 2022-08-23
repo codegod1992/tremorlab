@@ -2,9 +2,9 @@ import React from 'react';
 
 import { 
     classNames,
-    parseTextAlignmentClassNames
-} from 'lib/classnameUtils';
-import { spacing } from 'lib/spacing';
+    parseTextAlignmentClassNames,
+    spacing,
+} from 'lib';
 
 export interface TableCellProps {
     textAlignment?: string,

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
-import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
-import { TwMarginTop } from 'lib/inputTypes';
-import { defaultColors } from 'lib/colors';
+import { classNames, defaultColors, getColorVariantsFromColorThemeValue } from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 export interface AccordionProps {
     shadow?: boolean,

@@ -5,9 +5,9 @@ import {
     TwPaddinRight,
     TwPaddingBottom,
     TwPaddingTop,
-    TwWidth
-} from 'lib/inputTypes';
-import { ValueFormater } from '../../../lib/utils';
+    TwWidth,
+    ValueFormater,
+} from '../../../lib';
 
 interface BaseChartProps {
     data: any[],

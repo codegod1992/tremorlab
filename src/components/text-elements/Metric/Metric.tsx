@@ -1,13 +1,14 @@
 import React from 'react';
 
 import {
+    BaseColors,
     classNames,
+    colorTheme,
+    fontSize,
+    fontWeight,
     getColorVariantsFromColorThemeValue,
-} from 'lib/classnameUtils';
-import { fontSize, fontWeight } from 'lib/text';
-import { BaseColors } from 'lib/primitives';
-import { TwMarginTop } from 'lib/inputTypes';
-import colorTheme from 'lib/colors';
+} from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 export interface MetricProps {
     color?: string,

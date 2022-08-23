@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { classNames } from 'lib/classnameUtils';
-import { fontSize } from 'lib/text';
-import { spacing } from 'lib/spacing';
+import { classNames, fontSize, spacing } from 'lib';
 
 export interface ListItemProps {
     children: React.ReactNode

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { TwMarginTop } from 'lib/inputTypes';
-import { classNames } from 'lib/classnameUtils';
+import { TwMarginTop } from '../../../lib';
+import { classNames } from 'lib';
 
 export interface AccordionListProps {
     shadow?: boolean,

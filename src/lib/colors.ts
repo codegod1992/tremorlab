@@ -157,7 +157,7 @@ export type BaseColorTheme = {
     icon: string,
 }
 
-const colorTheme: { [baseColor: string]: BaseColorTheme } = {
+export const colorTheme: { [baseColor: string]: BaseColorTheme } = {
     [BaseColors.Slate]: {
         canvasBackground: 'slate-50',
         lightBackground: 'slate-100',

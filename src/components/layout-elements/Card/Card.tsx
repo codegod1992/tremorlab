@@ -3,13 +3,14 @@ import React from 'react';
 import { BaseColors, HorizontalPositions, VerticalPositions } from 'lib/primitives';
 import {
     classNames,
+    colorTheme,
+    defaultColors,
     getColorVariantsFromColorThemeValue,
     parseHFullOption,
     parseMaxWidthClassNames,
-} from 'lib/classnameUtils';
-import colorTheme, { defaultColors } from 'lib/colors';
-import { TwMarginTop } from 'lib/inputTypes';
-import { spacing } from 'lib/spacing';
+    spacing,
+} from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 const parseDecorationAlignment = (decorationAlignment: string) => {
     if (!decorationAlignment) return '';

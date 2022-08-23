@@ -3,13 +3,16 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
-import { DeltaTypes } from 'lib/primitives';
-import { TwMarginTop } from 'lib/inputTypes';
+import {
+    DeltaTypes,
+    classNames,
+    defaultColors,
+    getColorVariantsFromColorThemeValue,
+    mapInputsToDeltaType,
+    sizing
+} from 'lib';
+import { TwMarginTop } from '../../../lib';
 import { colors } from './styles';
-import { defaultColors } from 'lib/colors';
-import { mapInputsToDeltaType } from 'lib/utils';
-import { sizing } from 'lib/sizing';
 
 const getDeltaType = (value: number) => (
     value >= 0 ? DeltaTypes.Increase : DeltaTypes.Decrease

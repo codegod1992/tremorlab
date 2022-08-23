@@ -25,13 +25,10 @@ import {
     previousMonth,
     relativeFilterOptions
 } from 'components/input-elements/Datepicker/utils';
-import { fontSize, fontWeight } from 'lib/text';
+import { defaultColors, fontSize, fontWeight, sizing, spacing } from 'lib';
 import { ArrowDownHeadIcon } from 'assets';
 import Modal from 'components/layout-elements/Modal';
-import { TwMarginTop } from 'lib/inputTypes';
-import { defaultColors } from 'lib/colors';
-import { sizing } from 'lib/sizing';
-import { spacing } from 'lib/spacing';
+import { TwMarginTop } from '../../../lib';
 
 export interface DatepickerProps {
     handleSelect?: { (selectedStartDay: Date|null, selectedEndDay: Date|null): void },

@@ -5,8 +5,8 @@ import {
     parseAlignItemsClassNames,
     parseJustifyContentClassNames,
     parseSpaceXClassNames,
-} from 'lib/classnameUtils';
-import { TwMarginTop } from 'lib/inputTypes';
+} from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 export interface FlexProps {
     justifyContent?: string,

@@ -5,10 +5,8 @@ import Tooltip from '@tippyjs/react';
 
 import { BaseColors, HorizontalPositions, Sizes } from 'lib/primitives';
 import { buttonProportions, iconSizes } from './styles';
-import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
-import colorTheme, { defaultColors } from 'lib/colors';
-import { TwMarginTop } from 'lib/inputTypes';
-import { spacing } from 'lib/spacing';
+import { classNames, colorTheme, defaultColors, getColorVariantsFromColorThemeValue, spacing } from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 export interface ButtonInlineProps {
     text: string,

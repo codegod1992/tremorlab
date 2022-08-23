@@ -2,10 +2,10 @@ import React from 'react';
 
 import { 
     classNames,
+    defaultColors,
     getColorVariantsFromColorThemeValue,
-} from 'lib/classnameUtils';
-import { TwMarginTop } from 'lib/inputTypes';
-import { defaultColors } from 'lib/colors';
+} from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 export interface ListProps {
     marginTop?: TwMarginTop,

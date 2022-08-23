@@ -3,16 +3,14 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { BaseColors, HorizontalPositions, Importances, Sizes } from 'lib/primitives';
+import { BaseColors, HorizontalPositions, Importances, Sizes, classNames, spacing } from 'lib';
 import {
     buttonProportions,
     colors,
     iconSizes,
     shape,
 } from './styles';
-import { TwMarginTop } from 'lib/inputTypes';
-import { classNames } from 'lib/classnameUtils';
-import { spacing } from 'lib/spacing';
+import { TwMarginTop } from '../../../lib';
 
 export interface ButtonProps {
     text: string,

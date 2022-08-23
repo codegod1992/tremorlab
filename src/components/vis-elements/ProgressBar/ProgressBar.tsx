@@ -3,13 +3,18 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
-import colorTheme, { defaultColors } from 'lib/colors';
-import { fontSize, fontWeight } from 'lib/text';
-import { BaseColors } from 'lib/primitives';
-import { TwMarginTop } from 'lib/inputTypes';
-import { sizing } from 'lib/sizing';
-import { spacing } from 'lib/spacing';
+import {
+    BaseColors,
+    classNames,
+    colorTheme,
+    defaultColors,
+    fontSize,
+    fontWeight,
+    getColorVariantsFromColorThemeValue,
+    sizing,
+    spacing
+} from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 export interface ProgressBarProps {
     percentageValue: number,

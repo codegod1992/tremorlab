@@ -3,10 +3,9 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { BaseColors, Sizes } from 'lib/primitives';
+import { BaseColors, Sizes, classNames } from 'lib';
 import { colors, iconSizes, shape, wrapperProportions } from './styles';
-import { TwMarginTop } from 'lib/inputTypes';
-import { classNames } from 'lib/classnameUtils';
+import { TwMarginTop } from '../../../lib';
 
 export const IconVariants = {
     Simple: 'simple',

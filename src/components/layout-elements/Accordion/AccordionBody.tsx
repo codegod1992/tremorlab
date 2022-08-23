@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { classNames } from 'lib/classnameUtils';
-import { spacing } from 'lib/spacing';
+import { classNames, spacing } from 'lib';
 
 export interface AccordionBodyProps {
     children: React.ReactNode;

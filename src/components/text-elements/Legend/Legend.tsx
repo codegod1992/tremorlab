@@ -1,14 +1,17 @@
 import React from 'react';
 
-import { 
+import {
     classNames,
+    colorTheme,
+    defaultColors,
+    fontSize,
+    fontWeight,
     getColorVariantsFromColorThemeValue,
-} from 'lib/classnameUtils';
-import colorTheme, { defaultColors, themeColorRange } from 'lib/colors';
-import { fontSize, fontWeight } from 'lib/text';
-import { TwMarginTop } from 'lib/inputTypes';
-import { sizing } from 'lib/sizing';
-import { spacing } from 'lib/spacing';
+    sizing,
+    spacing,
+    themeColorRange
+} from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 export interface LegendItemProps {
     name: string,

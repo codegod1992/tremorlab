@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { TwHeight } from 'lib/inputTypes';
-import { classNames } from 'lib/classnameUtils';
-import { spacing } from 'lib/spacing';
+import { classNames, spacing } from 'lib';
+import { TwHeight } from '../../../lib';
 
 export interface FooterProps {
     height?: TwHeight,

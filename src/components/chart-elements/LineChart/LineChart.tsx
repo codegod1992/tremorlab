@@ -15,9 +15,14 @@ import BaseChartProps from '../common/BaseChartProps';
 import ChartLegend from 'components/chart-elements/common/ChartLegend';
 import ChartTooltip from '../common/ChartTooltip';
 
-import { classNames, getHexFromColorThemeValue, getPixelsFromTwClassName } from 'lib/classnameUtils';
-import colorTheme, { themeColorRange } from 'lib/colors';
-import { defaultValueFormater } from 'lib/utils';
+import {
+    classNames,
+    colorTheme,
+    defaultValueFormater,
+    getHexFromColorThemeValue,
+    getPixelsFromTwClassName,
+    themeColorRange
+} from 'lib';
 
 const LineChart = ({
     data,

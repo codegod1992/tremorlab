@@ -7,7 +7,7 @@ import {
     TwPaddingBottom,
     TwPaddingTop,
     TwWidth
-} from 'lib/inputTypes';
+} from './inputTypes';
 import { stringIsNumeric } from 'lib/utils';
 import { twColorsHex } from 'lib/colors';
 import { twUnits } from 'lib/twUnits';

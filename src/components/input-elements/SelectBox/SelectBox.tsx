@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 
 import { ArrowDownHeadIcon } from 'assets';
 
-import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
-import { fontSize, fontWeight } from 'lib/text';
+import {
+    classNames,
+    defaultColors,
+    fontSize,
+    fontWeight,
+    getColorVariantsFromColorThemeValue,
+    sizing,
+    spacing
+} from 'lib';
 import Modal from 'components/layout-elements/Modal';
-import { TwMarginTop } from 'lib/inputTypes';
-import { defaultColors } from 'lib/colors';
-import { sizing } from 'lib/sizing';
-import { spacing } from 'lib/spacing';
+import { TwMarginTop } from '../../../lib';
 
 export interface SelectBoxProps {
     defaultValue?: any,

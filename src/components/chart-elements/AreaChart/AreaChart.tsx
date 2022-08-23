@@ -16,8 +16,7 @@ import ChartLegend from '../common/ChartLegend';
 import ChartTooltip from '../common/ChartTooltip';
 
 import { classNames, getHexFromColorThemeValue, getPixelsFromTwClassName } from 'lib/classnameUtils';
-import colorTheme, { themeColorRange } from 'lib/colors';
-import { defaultValueFormater } from 'lib/utils';
+import { colorTheme, defaultValueFormater, themeColorRange } from 'lib';
 
 const AreaChart = ({
     data,

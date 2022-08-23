@@ -1,15 +1,16 @@
 import React from 'react';
 
-import { TwHeight, TwMarginTop } from 'lib/inputTypes';
 import { 
+    BaseColors,
     classNames,
+    colorTheme,
+    fontSize,
+    fontWeight,
     getColorVariantsFromColorThemeValue,
     parseTextAlignmentClassNames,
-    parseTruncateOption,
-} from 'lib/classnameUtils';
-import { fontSize, fontWeight } from 'lib/text';
-import { BaseColors } from 'lib/primitives';
-import colorTheme from 'lib/colors';
+    parseTruncateOption
+} from 'lib';
+import { TwHeight, TwMarginTop } from '../../../lib';
 
 export interface TextProps {
     color?: string,

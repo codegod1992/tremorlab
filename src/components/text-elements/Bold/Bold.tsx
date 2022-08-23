@@ -1,9 +1,7 @@
 import React from 'react';
 
-import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
-import { fontSize, fontWeight } from 'lib/text';
-import { TwMarginTop } from 'lib/inputTypes';
-import { defaultColors } from 'lib/colors';
+import { classNames, defaultColors, fontSize, fontWeight, getColorVariantsFromColorThemeValue } from 'lib';
+import { TwMarginTop } from '../../../lib';
 
 export interface BoldProps {
     marginTop?: TwMarginTop,

@@ -15,9 +15,14 @@ import BaseChartProps from '../common/BaseChartProps';
 import ChartLegend from '../common/ChartLegend';
 import ChartTooltip from '../common/ChartTooltip';
 
-import { classNames, getHexFromColorThemeValue, getPixelsFromTwClassName } from 'lib/classnameUtils';
-import colorTheme, { themeColorRange } from 'lib/colors';
-import { defaultValueFormater } from 'lib/utils';
+import {
+    classNames,
+    colorTheme,
+    defaultValueFormater,
+    getHexFromColorThemeValue,
+    getPixelsFromTwClassName,
+    themeColorRange
+} from 'lib';
 
 export interface BarChartProps extends BaseChartProps {
     layout?: string,
