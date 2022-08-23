@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 import { DeltaTypes } from 'lib/primitives';
-import { ValueFormater } from 'lib/inputTypes';
+import { ValueFormater } from './inputTypes';
 
 export const mapInputsToDeltaType = (deltaType: string, isIncreasePositive: boolean): string => {
     if (isIncreasePositive || deltaType===DeltaTypes.Unchanged) {
