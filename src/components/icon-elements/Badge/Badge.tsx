@@ -4,10 +4,11 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { BaseColors, Sizes } from 'lib/primitives';
-import { TwMarginTop, spacing } from 'lib/spacing';
 import { badgeProportions, iconSizes } from './styles';
 import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
+import { TwMarginTop } from 'lib/inputTypes';
 import colorTheme from 'lib/colors';
+import { spacing } from 'lib/spacing';
 
 export interface BadgeProps {
     text: string,

@@ -1,5 +1,5 @@
 import { Sizing, sizing } from 'lib/sizing';
-import { fontSize } from 'lib/font';
+import { fontSize } from 'lib/text';
 
 export type ButtonProportionTypes = {
     fontSize: string,

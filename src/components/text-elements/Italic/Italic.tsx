@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
-import { TwMarginTop } from 'lib/spacing';
+import { TwMarginTop } from 'lib/inputTypes';
 import { defaultColors } from 'lib/colors';
-import { fontSize } from 'lib/font';
+import { fontSize } from 'lib/text';
 
 export interface ItalicProps {
     marginTop?: TwMarginTop,

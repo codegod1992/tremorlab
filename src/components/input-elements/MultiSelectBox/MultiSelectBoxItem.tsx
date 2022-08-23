@@ -4,7 +4,7 @@ import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUt
 import colorTheme, { defaultColors } from 'lib/colors';
 import { isValueInArray, removeValueFromArray } from 'lib/utils';
 import { BaseColors } from 'lib/primitives';
-import { fontSize } from 'lib/font';
+import { fontSize } from 'lib/text';
 import { spacing } from 'lib/spacing';
 
 export interface MultiSelectBoxItemProps {

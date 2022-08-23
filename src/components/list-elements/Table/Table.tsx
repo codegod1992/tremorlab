@@ -4,8 +4,8 @@ import {
     classNames,
     getColorVariantsFromColorThemeValue,
 } from 'lib/classnameUtils';
-import { fontSize, fontWeight } from 'lib/font';
-import { TwMarginTop } from 'lib/spacing';
+import { fontSize, fontWeight } from 'lib/text';
+import { TwMarginTop } from 'lib/inputTypes';
 import { defaultColors } from 'lib/colors';
 
 export interface TableProps {

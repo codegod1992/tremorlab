@@ -5,7 +5,7 @@ import Tooltip from '@tippyjs/react';
 
 import { BaseColors, Sizes } from 'lib/primitives';
 import { colors, iconSizes, shape, wrapperProportions } from './styles';
-import { TwMarginTop } from 'lib/spacing';
+import { TwMarginTop } from 'lib/inputTypes';
 import { classNames } from 'lib/classnameUtils';
 
 export const IconVariants = {

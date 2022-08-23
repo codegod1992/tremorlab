@@ -13,7 +13,6 @@ import {
     sub,
 } from 'date-fns';
 
-import { TwMarginTop, spacing } from 'lib/spacing';
 import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 import {
     colStartClasses,
@@ -26,11 +25,13 @@ import {
     previousMonth,
     relativeFilterOptions
 } from 'components/input-elements/Datepicker/utils';
-import { fontSize, fontWeight } from 'lib/font';
+import { fontSize, fontWeight } from 'lib/text';
 import { ArrowDownHeadIcon } from 'assets';
 import Modal from 'components/layout-elements/Modal';
+import { TwMarginTop } from 'lib/inputTypes';
 import { defaultColors } from 'lib/colors';
 import { sizing } from 'lib/sizing';
+import { spacing } from 'lib/spacing';
 
 export interface DatepickerProps {
     handleSelect?: { (selectedStartDay: Date|null, selectedEndDay: Date|null): void },

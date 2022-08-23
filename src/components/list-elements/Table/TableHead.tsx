@@ -2,7 +2,7 @@ import React from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 import { defaultColors } from 'lib/colors';
-import { fontWeight } from 'lib/font';
+import { fontWeight } from 'lib/text';
 
 interface TableHeadProps {
     children: React.ReactElement[] | React.ReactElement

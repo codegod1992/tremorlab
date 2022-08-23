@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 
 import { ArrowDownHeadIcon } from 'assets';
 
-import { TwMarginTop, spacing } from 'lib/spacing';
 import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
-import { fontSize, fontWeight } from 'lib/font';
+import { fontSize, fontWeight } from 'lib/text';
 import Modal from 'components/layout-elements/Modal';
+import { TwMarginTop } from 'lib/inputTypes';
 import { defaultColors } from 'lib/colors';
 import { sizing } from 'lib/sizing';
+import { spacing } from 'lib/spacing';
 
 export interface DropdownProps {
     placeholder?: string,

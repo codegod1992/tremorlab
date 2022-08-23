@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-import { TwMarginTop, spacing } from 'lib/spacing';
 import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 import { BaseColors } from 'lib/primitives';
+import { TwMarginTop } from 'lib/inputTypes';
 import { defaultColors } from 'lib/colors';
+import { spacing } from 'lib/spacing';
 
 export interface ToggleProps {
     defaultValue?: any,

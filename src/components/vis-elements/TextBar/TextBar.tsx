@@ -1,12 +1,13 @@
 import React from 'react';
 
-import { TwMarginTop, spacing } from 'lib/spacing';
 import { ValueFormater, defaultValueFormater } from '../../../lib/utils';
 import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 import colorTheme, { defaultColors } from 'lib/colors';
 import { BaseColors } from 'lib/primitives';
-import { fontSize } from 'lib/font';
+import { TwMarginTop } from 'lib/inputTypes';
+import { fontSize } from 'lib/text';
 import { sizing } from 'lib/sizing';
+import { spacing } from 'lib/spacing';
 
 
 type TextBarData = {

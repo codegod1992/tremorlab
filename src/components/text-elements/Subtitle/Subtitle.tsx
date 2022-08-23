@@ -4,9 +4,9 @@ import {
     classNames,
     getColorVariantsFromColorThemeValue,
 } from 'lib/classnameUtils';
-import { fontSize, fontWeight } from 'lib/font';
+import { fontSize, fontWeight } from 'lib/text';
 import { BaseColors } from 'lib/primitives';
-import { TwMarginTop } from 'lib/spacing';
+import { TwMarginTop } from 'lib/inputTypes';
 import colorTheme from 'lib/colors';
 
 export interface SubtitleProps {

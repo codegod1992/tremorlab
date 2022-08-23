@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TwMarginTop } from 'lib/spacing';
+import { TwMarginTop } from 'lib/inputTypes';
 import { classNames } from 'lib/classnameUtils';
 
 export interface AccordionListProps {

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
-import { fontSize, fontWeight } from 'lib/font';
+import { fontSize, fontWeight } from 'lib/text';
 import { defaultColors } from 'lib/colors';
 import { sizing } from 'lib/sizing';
 import { spacing } from 'lib/spacing';

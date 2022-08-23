@@ -2,7 +2,7 @@ import React from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseTextAlignmentClassNames } from 'lib/classnameUtils';
 import { defaultColors } from 'lib/colors';
-import { fontWeight } from 'lib/font';
+import { fontWeight } from 'lib/text';
 import { spacing } from 'lib/spacing';
 
 interface TableHeaderCellProps {

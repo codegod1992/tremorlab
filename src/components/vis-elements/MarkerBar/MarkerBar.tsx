@@ -6,7 +6,7 @@ import Tooltip from '@tippyjs/react';
 import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 import colorTheme, { defaultColors } from 'lib/colors';
 import { BaseColors } from 'lib/primitives';
-import { TwMarginTop } from 'lib/spacing';
+import { TwMarginTop } from 'lib/inputTypes';
 import { sizing } from 'lib/sizing';
 
 export interface MarkerBarProps {

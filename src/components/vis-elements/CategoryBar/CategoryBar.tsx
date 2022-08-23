@@ -5,15 +5,16 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { TwMarginTop, spacing } from 'lib/spacing';
 import { 
     classNames,
     getColorVariantsFromColorThemeValue,
     toBorderColorClass
 } from 'lib/classnameUtils';
 import colorTheme, { defaultColors, themeColorRange } from 'lib/colors';
-import { fontSize } from 'lib/font';
+import { TwMarginTop } from 'lib/inputTypes';
+import { fontSize } from 'lib/text';
 import { sizing } from 'lib/sizing';
+import { spacing } from 'lib/spacing';
 
 const BarLabels = ({ categoryPercentageValues }: {categoryPercentageValues: number[]}) => {
     let prefixSum = 0;

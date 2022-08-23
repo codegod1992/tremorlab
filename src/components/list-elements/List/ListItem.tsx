@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { classNames } from 'lib/classnameUtils';
-import { fontSize } from 'lib/font';
+import { fontSize } from 'lib/text';
 import { spacing } from 'lib/spacing';
 
 export interface ListItemProps {

@@ -5,7 +5,7 @@ import Tooltip from '@tippyjs/react';
 
 import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 import { DeltaTypes } from 'lib/primitives';
-import { TwMarginTop } from 'lib/spacing';
+import { TwMarginTop } from 'lib/inputTypes';
 import { colors } from './styles';
 import { defaultColors } from 'lib/colors';
 import { mapInputsToDeltaType } from 'lib/utils';

@@ -4,7 +4,7 @@ import {
     classNames,
     getColorVariantsFromColorThemeValue,
 } from 'lib/classnameUtils';
-import { TwMarginTop } from 'lib/spacing';
+import { TwMarginTop } from 'lib/inputTypes';
 import { defaultColors } from 'lib/colors';
 
 export interface ListProps {
