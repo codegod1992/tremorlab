@@ -37,9 +37,10 @@ const LineChart = ({
     paddingRight = 'pr-5',
     paddingBottom = 'pb-5',
     paddingLeft = 'pl-1',
+    marginTop = 'mt-0',
 }: BaseChartProps) => {
     return (
-        <div className={ classNames('w-full', height) }>
+        <div className={ classNames('w-full', height, marginTop) }>
             <ResponsiveContainer width="100%" height="100%">
                 <ReChartsLineChart
                     data={ data }
