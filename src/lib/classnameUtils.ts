@@ -113,14 +113,6 @@ export const toBorderColorClass: TailwindClassConverter = (twClassName: string):
     return colorTypes.borderColor;
 };
 
-export const parseTextAlignmentClassNames: TailwindClassParser = (twClassName) => {
-    const validClassNames = new Set<string>([
-        'text-left', 'text-center', 'text-right', 'text-justify'
-    ]);
-    if (twClassName===undefined) return '';
-    return (validClassNames.has(twClassName)) ? twClassName.split(' ')[0] : '';
-};
-
 export const parseMaxWidthClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
     return twClassName.startsWith('max-w-') ? twClassName.split(' ')[0] : '';

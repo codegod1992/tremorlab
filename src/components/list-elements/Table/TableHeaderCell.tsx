@@ -5,12 +5,12 @@ import {
     defaultColors,
     fontWeight,
     getColorVariantsFromColorThemeValue,
-    parseTextAlignmentClassNames,
-    spacing
+    spacing,
 } from 'lib';
+import { TwTextAlignment } from '../../../lib';
 
 interface TableHeaderCellProps {
-    textAlignment?: string,
+    textAlignment?: TwTextAlignment,
     children: React.ReactNode,
 }
 
@@ -21,8 +21,8 @@ const TableHeaderCell = ({
     <>
         <th className={ classNames(
             'sticky whitespace-nowrap',
+            textAlignment,
             getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
-            parseTextAlignmentClassNames(textAlignment),
             spacing.none.top,
             spacing.twoXl.paddingLeft,
             spacing.twoXl.paddingRight,

@@ -7,14 +7,13 @@ import {
     fontSize,
     fontWeight,
     getColorVariantsFromColorThemeValue,
-    parseTextAlignmentClassNames,
-    parseTruncateOption
+    parseTruncateOption,
 } from 'lib';
-import { TwHeight, TwMarginTop } from '../../../lib';
+import { TwHeight, TwMarginTop, TwTextAlignment } from '../../../lib';
 
 export interface TextProps {
     color?: string,
-    textAlignment?: string,
+    textAlignment?: TwTextAlignment,
     truncate?: boolean,
     height?: TwHeight | '',
     marginTop?: TwMarginTop,
@@ -32,11 +31,11 @@ const Text = ({
     return(
         <p className={classNames(
             'shrink-0 overflow-auto',
-            getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor,
-            parseTextAlignmentClassNames(textAlignment),
             height,
             marginTop,
+            textAlignment,
             parseTruncateOption(truncate),
+            getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor,
             fontSize.sm,
             fontWeight.sm,
         )}>

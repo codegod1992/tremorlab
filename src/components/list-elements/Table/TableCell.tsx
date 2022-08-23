@@ -2,12 +2,12 @@ import React from 'react';
 
 import { 
     classNames,
-    parseTextAlignmentClassNames,
     spacing,
 } from 'lib';
+import { TwTextAlignment } from '../../../lib';
 
 export interface TableCellProps {
-    textAlignment?: string,
+    textAlignment?: TwTextAlignment,
     children: React.ReactNode
 }
 
@@ -18,8 +18,8 @@ const TableCell = ({
     return(
         <>
             <td className={ classNames(
-                parseTextAlignmentClassNames(textAlignment),
                 'align-middle whitespace-nowrap tabular-nums',
+                textAlignment,
                 spacing.twoXl.paddingLeft,
                 spacing.twoXl.paddingRight,
                 spacing.twoXl.paddingTop,
