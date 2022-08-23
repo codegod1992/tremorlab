@@ -1,16 +1,15 @@
 import React from 'react';
 
 import { BaseColors, HorizontalPositions, VerticalPositions } from 'lib/primitives';
+import { TwMarginTop, TwMaxWidth } from '../../../lib';
 import {
     classNames,
     colorTheme,
     defaultColors,
     getColorVariantsFromColorThemeValue,
     parseHFullOption,
-    parseMaxWidthClassNames,
     spacing,
 } from 'lib';
-import { TwMarginTop } from '../../../lib';
 
 const parseDecorationAlignment = (decorationAlignment: string) => {
     if (!decorationAlignment) return '';
@@ -30,7 +29,7 @@ const parseDecorationAlignment = (decorationAlignment: string) => {
 
 export interface CardProps {
     hFull?: boolean,
-    maxWidth?: string,
+    maxWidth?: TwMaxWidth,
     shadow?: boolean,
     decoration?: string,
     decorationColor?: string,
@@ -40,7 +39,7 @@ export interface CardProps {
 
 const Card = ({
     hFull = false,
-    maxWidth = '',
+    maxWidth = 'max-w-none',
     shadow = true,
     decoration = '',
     decorationColor = BaseColors.Blue,
@@ -52,7 +51,7 @@ const Card = ({
             'relative w-full mx-auto text-left rounded-lg ring-1',
             marginTop,
             parseHFullOption(hFull),
-            parseMaxWidthClassNames(maxWidth),
+            maxWidth,
             getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
             shadow ? 'shadow' : '',
             getColorVariantsFromColorThemeValue(colorTheme[decorationColor].border).borderColor,

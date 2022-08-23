@@ -13,6 +13,16 @@ export const twJustifyContentValues = [
 
 export type TwJustifyContent = typeof twJustifyContentValues[number];
 
+export const twAlignItemsValues = [
+    'items-start',
+    'items-end',
+    'items-center',
+    'items-baseline',
+    'items-stretch',
+] as const;
+
+export type TwAlignItems = typeof twAlignItemsValues[number];
+
 export const twTextAlignmentValues = [
     'text-left',
     'text-center',
@@ -24,6 +34,71 @@ export const twTextAlignmentValues = [
 
 export type TwTextAlignment = typeof twTextAlignmentValues[number];
 
+export const twMaxWidthValues = [
+    'max-w-0',
+    'max-w-none',
+    'max-w-xs',
+    'max-w-sm',
+    'max-w-md',
+    'max-w-lg',
+    'max-w-xl',
+    'max-w-2xl',
+    'max-w-3xl',
+    'max-w-4xl',
+    'max-w-5xl',
+    'max-w-6xl',
+    'max-w-7xl',
+    'max-w-full',
+    'max-w-min',
+    'max-w-max',
+    'max-w-fit',
+    'max-w-prose',
+    'max-w-screen-sm',
+    'max-w-screen-lg',
+    'max-w-screen-xl',
+    'max-w-screen-2xl',
+] as const;
+
+export type TwMaxWidth = typeof twMaxWidthValues[number];
+
+export const twSpaceXValues = [
+    'space-x-0',
+    'space-x-0.5',
+    'space-x-1',
+    'space-x-1.5',
+    'space-x-2',
+    'space-x-2.5',
+    'space-x-3',
+    'space-x-3.5',
+    'space-x-4',
+    'space-x-5',
+    'space-x-6',
+    'space-x-7',
+    'space-x-8',
+    'space-x-9',
+    'space-x-10',
+    'space-x-11',
+    'space-x-12',
+    'space-x-14',
+    'space-x-16',
+    'space-x-20',
+    'space-x-24',
+    'space-x-28',
+    'space-x-32',
+    'space-x-36',
+    'space-x-40',
+    'space-x-44',
+    'space-x-48',
+    'space-x-52',
+    'space-x-56',
+    'space-x-60',
+    'space-x-64',
+    'space-x-72',
+    'space-x-80',
+    'space-x-96',
+] as const;
+
+export type TwSpaceX = typeof twSpaceXValues[number];
 
 export const twTopMargins = [
     'mt-0',
@@ -63,7 +138,6 @@ export const twTopMargins = [
 ] as const;
 
 export type TwMarginTop = typeof twTopMargins[number];
-
 
 export const twLeftPaddings = [
     'pl-0',
@@ -181,7 +255,6 @@ export const twTopPaddings = [
 ] as const;
 
 export type TwPaddingTop = typeof twTopPaddings[number];
-
 
 export const twBottomPaddings = [
     'pb-0',

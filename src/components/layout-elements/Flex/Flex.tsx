@@ -1,17 +1,12 @@
 import React from 'react';
 
-import { TwJustifyContent, TwMarginTop } from '../../../lib';
-import { 
-    classNames,
-    parseAlignItemsClassNames,
-    parseSpaceXClassNames,
-
-} from 'lib';
+import { TwAlignItems, TwJustifyContent, TwMarginTop, TwSpaceX } from '../../../lib';
+import { classNames } from 'lib';
 
 export interface FlexProps {
     justifyContent?: TwJustifyContent,
-    alignItems?: string,
-    spaceX?: string,
+    alignItems?: TwAlignItems,
+    spaceX?: TwSpaceX,
     truncate?: boolean,
     marginTop?: TwMarginTop,
     children: React.ReactNode,
@@ -20,7 +15,7 @@ export interface FlexProps {
 const Flex = ({
     justifyContent = 'justify-between',
     alignItems = 'items-center',
-    spaceX,
+    spaceX = 'space-x-0',
     marginTop = 'mt-0',
     children
 }: FlexProps) => {
@@ -28,8 +23,8 @@ const Flex = ({
         <div className={ classNames(
             'flex w-full',
             justifyContent,
-            parseAlignItemsClassNames(alignItems),
-            parseSpaceXClassNames(spaceX),
+            alignItems,
+            spaceX,
             marginTop,
         ) }
         >

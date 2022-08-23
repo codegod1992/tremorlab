@@ -4,7 +4,6 @@ import {
     classNames,
     defaultColors,
     getColorVariantsFromColorThemeValue,
-    parseMaxHeightClassNames,
     spacing,
     useOnClickOutside,
 } from 'lib';
@@ -34,7 +33,7 @@ const Modal = ({
                 className={ classNames(
                     'absolute -bottom-2 translate-y-full z-10 rounded-md shadow-lg border divide-y overflow-y-auto',
                     width,
-                    parseMaxHeightClassNames(maxHeight),
+                    maxHeight,
                     getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.lightBorder).borderColor,
                     getColorVariantsFromColorThemeValue(defaultColors.lightBorder).divideColor,

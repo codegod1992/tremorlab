@@ -16,10 +16,6 @@ interface StringJoiner {
     (...classes: (string)[]): string
 }
 
-interface TailwindClassParser {
-    (twClassName: string|undefined): string
-}
-
 interface TailwindClassConverter {
     (twClassName: string): string
 }
@@ -111,26 +107,6 @@ export const getHexFromColorThemeValue = (colorThemeValue: string): string => {
 export const toBorderColorClass: TailwindClassConverter = (twClassName: string): string => {
     const colorTypes = getColorVariantsFromTwClassName(twClassName);
     return colorTypes.borderColor;
-};
-
-export const parseMaxWidthClassNames: TailwindClassParser = (twClassName) => {
-    if (twClassName===undefined) return '';
-    return twClassName.startsWith('max-w-') ? twClassName.split(' ')[0] : '';
-};
-
-export const parseMaxHeightClassNames: TailwindClassParser = (twClassName) => {
-    if (twClassName===undefined) return '';
-    return twClassName.startsWith('max-h-') ? twClassName.split(' ')[0] : '';
-};
-
-export const parseAlignItemsClassNames: TailwindClassParser = (twClassName) => {
-    if (twClassName===undefined) return '';
-    return twClassName.startsWith('items-') ? twClassName.split(' ')[0] : '';
-};
-
-export const parseSpaceXClassNames: TailwindClassParser = (twClassName) => {
-    if (twClassName===undefined) return '';
-    return twClassName.startsWith('space-x-') || twClassName.startsWith('-space-x-') ? twClassName.split(' ')[0] : '';
 };
 
 export const parseTruncateOption: BoolClassParser = (option) => {
