@@ -9,7 +9,6 @@ import { TwMarginTop, spacing } from 'lib/spacing';
 import { 
     classNames,
     getColorVariantsFromColorThemeValue,
-    parseBorderClassNames,
     toBorderColorClass
 } from 'lib/classnameUtils';
 import colorTheme, { defaultColors, themeColorRange } from 'lib/colors';
@@ -112,7 +111,7 @@ const CategoryBar = ({
                             <div
                                 className={ classNames(
                                     'bg-white -translate-x-1 z-1 border-4 rounded-full shadow-md',
-                                    parseBorderClassNames(markerBorderColor),
+                                    markerBorderColor,
                                     sizing.md.height,
                                     sizing.md.width,
                                 ) }

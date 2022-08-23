@@ -3,7 +3,7 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { classNames, getColorVariantsFromColorThemeValue, parseFixedHeightClassNames } from 'lib/classnameUtils';
+import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 import { TwHeight } from 'lib/sizing';
 import colorTheme from 'lib/colors';
 
@@ -23,7 +23,7 @@ const TrackingBlock = ({
             <div className={ classNames(
                 'w-full rounded-md',
                 getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor,
-                parseFixedHeightClassNames(height),
+                height,
             ) }
             />
         </Tooltip>
