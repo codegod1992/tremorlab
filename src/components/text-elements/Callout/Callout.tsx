@@ -1,14 +1,14 @@
 import React from 'react';
 
-import { TwHeight, sizing } from 'lib/sizing';
+import { TwHeight, TwMarginTop } from 'lib/inputTypes';
 import { 
     classNames,
     getColorVariantsFromColorThemeValue,
 } from 'lib/classnameUtils';
 import { fontSize, fontWeight } from 'lib/text';
 import { BaseColors } from 'lib/primitives';
-import { TwMarginTop } from 'lib/inputTypes';
 import colorTheme from 'lib/colors';
+import { sizing } from 'lib/sizing';
 import { spacing } from 'lib/spacing';
 
 export interface CalloutProps {

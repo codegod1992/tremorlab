@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { TwHeight, TwMarginTop } from 'lib/inputTypes';
 import { 
     classNames,
     getColorVariantsFromColorThemeValue,
@@ -8,8 +9,6 @@ import {
 } from 'lib/classnameUtils';
 import { fontSize, fontWeight } from 'lib/text';
 import { BaseColors } from 'lib/primitives';
-import { TwHeight } from 'lib/sizing';
-import { TwMarginTop } from 'lib/inputTypes';
 import colorTheme from 'lib/colors';
 
 export interface TextProps {

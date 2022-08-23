@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TwHeight } from 'lib/sizing';
+import { TwHeight } from 'lib/inputTypes';
 import { classNames } from 'lib/classnameUtils';
 import { spacing } from 'lib/spacing';
 

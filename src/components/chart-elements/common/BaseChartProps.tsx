@@ -1,5 +1,12 @@
-import { TwHeight, TwWidth } from 'lib/sizing';
-import { TwMarginTop, TwPaddinLeft, TwPaddinRight, TwPaddingBottom, TwPaddingTop } from 'lib/inputTypes';
+import {
+    TwHeight,
+    TwMarginTop,
+    TwPaddinLeft,
+    TwPaddinRight,
+    TwPaddingBottom,
+    TwPaddingTop,
+    TwWidth
+} from 'lib/inputTypes';
 import { ValueFormater } from '../../../lib/utils';
 
 interface BaseChartProps {

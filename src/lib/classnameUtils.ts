@@ -1,6 +1,13 @@
 import { ColorTypes, colorVariantMapping } from './colorVariantMapping';
-import { TwHeight, TwWidth } from 'lib/sizing';
-import { TwMarginTop, TwPaddinLeft, TwPaddinRight, TwPaddingBottom, TwPaddingTop } from 'lib/inputTypes';
+import {
+    TwHeight,
+    TwMarginTop,
+    TwPaddinLeft,
+    TwPaddinRight,
+    TwPaddingBottom,
+    TwPaddingTop,
+    TwWidth
+} from 'lib/inputTypes';
 import { stringIsNumeric } from 'lib/utils';
 import { twColorsHex } from 'lib/colors';
 import { twUnits } from 'lib/twUnits';
