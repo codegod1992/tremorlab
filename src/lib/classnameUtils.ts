@@ -1,5 +1,9 @@
 import { ColorTypes, colorVariantMapping } from './colorVariantMapping';
+import { TwHeight, TwWidth } from 'lib/sizing';
+import { TwMarginTop, TwPaddinLeft, TwPaddinRight, TwPaddingBottom, TwPaddingTop } from 'lib/spacing';
+import { stringEndsWithNumber, stringIsNumeric } from 'lib/utils';
 import { twColorsHex } from 'lib/colors';
+import { twUnits } from 'lib/twUnits';
 
 interface StringJoiner {
     (...classes: (string)[]): string
@@ -23,12 +27,18 @@ export const classNames: StringJoiner = (
     return classes.filter(Boolean).join(' ');
 };
 
-export const stringIsNumeric = (str: string|undefined): boolean => {
-    return !isNaN(Number(str)) && (str!==undefined);
-};
+export const getPixelsFromTwClassName = (
+    twClassName: TwMarginTop | TwPaddinLeft | TwPaddinRight | TwPaddingTop | TwPaddingBottom | TwHeight | TwWidth
+): number => {
+    const classNameParts = twClassName.split('-');
+    if (classNameParts.length !== 2) throw 'Invalid input value. Please provide a valid Tailwind Class Name.';
 
-export const stringEndsWithNumber = (str: string): boolean => {
-    return stringIsNumeric(str.split('-').pop());
+    const [_classNamePrefix, tailwindUnit] = classNameParts;
+    if (!stringIsNumeric(tailwindUnit) && twUnits.has(Number(tailwindUnit))) {
+        throw 'Invalid input value. Please provide a Tailwind Class Name with a defined absolute size';
+    }
+
+    return Number(tailwindUnit) * 4;
 };
 
 export const getColorVariantsFromTwClassName = (twClassName: string): ColorTypes => {

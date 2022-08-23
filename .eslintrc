@@ -13,6 +13,7 @@
         "react-in-jsx-scope": "off",
         "@typescript-eslint/no-non-null-assertion": "off",
         "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unused-vars": "off", // already captured by TypeScript natively
         "indent": [
             "error",
             4

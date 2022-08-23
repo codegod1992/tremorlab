@@ -14,7 +14,7 @@ export default {
 
 const Template: ComponentStory<typeof AreaChart> = (args) => (
     <Card>
-        <AreaChart { ...args } height={600} />
+        <AreaChart { ...args } />
     </Card>
 );
   

@@ -41,7 +41,7 @@ const Card = ({
     hFull = false,
     maxWidth = '',
     shadow = true,
-    decoration = 'left',
+    decoration = '',
     decorationColor = BaseColors.Blue,
     marginTop,
     children
