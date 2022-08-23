@@ -3,11 +3,11 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
+import { Colors, TwHeight } from '../../../lib';
 import { classNames, colorTheme, getColorVariantsFromColorThemeValue } from 'lib';
-import { TwHeight } from '../../../lib';
 
 export interface TrackingBlockProps {
-    color: string,
+    color: Colors,
     height?: TwHeight,
     tooltip?: string
 }
