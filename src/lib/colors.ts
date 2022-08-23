@@ -1,6 +1,7 @@
-import { BaseColors } from 'lib/primitives';
+import { BaseColors } from './primitives';
+import { Colors } from './inputTypes';
 
-export const themeColorRange = [
+export const themeColorRange: Colors[] = [
     'cyan',
     'sky',
     'blue',

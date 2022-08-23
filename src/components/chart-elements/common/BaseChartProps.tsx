@@ -1,4 +1,5 @@
 import {
+    Colors,
     TwHeight,
     TwMarginTop,
     TwPaddinLeft,
@@ -13,7 +14,7 @@ interface BaseChartProps {
     data: any[],
     categories: string[],
     dataKey: string,
-    colors?: string[],
+    colors?: Colors[],
     valueFormater?: ValueFormater,
     startEndOnly?: boolean,
     showXAxis?: boolean,

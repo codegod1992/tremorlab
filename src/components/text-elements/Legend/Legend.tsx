@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Colors, TwMarginTop } from '../../../lib';
 import {
     classNames,
     colorTheme,
@@ -11,7 +12,6 @@ import {
     spacing,
     themeColorRange
 } from 'lib';
-import { TwMarginTop } from '../../../lib';
 
 export interface LegendItemProps {
     name: string,
@@ -54,7 +54,7 @@ const LegendItem = ({
 
 export interface LegendProps {
     categories: string[],
-    colors?: string[],
+    colors?: Colors[],
     marginTop?: TwMarginTop,
 }
 
