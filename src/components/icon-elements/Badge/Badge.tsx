@@ -4,10 +4,10 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { BaseColors, Sizes } from 'lib/primitives';
+import { TwMarginTop, spacing } from 'lib/spacing';
 import { badgeProportions, iconSizes } from './styles';
-import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
+import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 import colorTheme from 'lib/colors';
-import { spacing } from 'lib/spacing';
 
 export interface BadgeProps {
     text: string,
@@ -15,7 +15,7 @@ export interface BadgeProps {
     size?: string,
     Icon?: React.ElementType,
     tooltip?: string,
-    marginTop?: string,
+    marginTop?: TwMarginTop,
 }
 
 const Badge = ({
@@ -24,10 +24,10 @@ const Badge = ({
     Icon,
     size = Sizes.SM,
     tooltip,
-    marginTop,
+    marginTop = 'mt-0',
 }: BadgeProps) => {
     return(
-        <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
+        <div className={ classNames(marginTop) }>
             <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
                 <span className={ classNames(
                     'flex-shrink-0 inline-flex justify-center items-center rounded-full',

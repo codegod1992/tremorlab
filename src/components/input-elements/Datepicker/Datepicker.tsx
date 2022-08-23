@@ -13,7 +13,8 @@ import {
     sub,
 } from 'date-fns';
 
-import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
+import { TwMarginTop, spacing } from 'lib/spacing';
+import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 import {
     colStartClasses,
     displaySelected,
@@ -30,13 +31,12 @@ import { ArrowDownHeadIcon } from 'assets';
 import Modal from 'components/layout-elements/Modal';
 import { defaultColors } from 'lib/colors';
 import { sizing } from 'lib/sizing';
-import { spacing } from 'lib/spacing';
 
 export interface DatepickerProps {
     handleSelect?: { (selectedStartDay: Date|null, selectedEndDay: Date|null): void },
     enableRelativeDates?: boolean,
     placeholder?: string,
-    marginTop?: string,
+    marginTop?: TwMarginTop,
 }
 
 const Datepicker = ({
@@ -44,7 +44,7 @@ const Datepicker = ({
     handleSelect = (selectedStartDay: Date|null, selectedEndDay: Date|null) => null,
     enableRelativeDates = true,
     placeholder = 'Select...',
-    marginTop,
+    marginTop = 'mt-0',
 }: DatepickerProps) => {
     const [showDatePickerModal, setShowDatePickerModal] = useState(false);
     const [showDropdownModal, setShowDropdownModal] = useState(false);
@@ -107,7 +107,7 @@ const Datepicker = ({
     return (
         <div className={ classNames(
             'relative w-full',
-            parseMarginTopClassNames(marginTop),
+            marginTop,
         ) }>
             <div className={ classNames(
                 'flex items-center justify-between rounded-md shadow-sm',

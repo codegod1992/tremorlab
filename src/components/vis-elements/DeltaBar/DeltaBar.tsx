@@ -5,6 +5,7 @@ import Tooltip from '@tippyjs/react';
 
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
 import { DeltaTypes } from 'lib/primitives';
+import { TwMarginTop } from 'lib/spacing';
 import { colors } from './styles';
 import { defaultColors } from 'lib/colors';
 import { mapInputsToDeltaType } from 'lib/utils';
@@ -18,17 +19,17 @@ export interface DeltaBarProps {
     percentageValue: number,
     isIncreasePositive?: boolean,
     tooltip?: string,
-    marginTop?: string,
+    marginTop?: TwMarginTop,
 }
 
 const DeltaBar = ({
     percentageValue,
     isIncreasePositive = true,
     tooltip,
-    marginTop,
+    marginTop = 'mt-0',
 }: DeltaBarProps) => {
     return(
-        <div className={ classNames(parseMarginTopClassNames(marginTop)) }>
+        <div className={ classNames(marginTop) }>
             <div className={ classNames(
                 'relative flex items-center w-full rounded-lg',
                 getColorVariantsFromColorThemeValue(defaultColors.background).bgColor,

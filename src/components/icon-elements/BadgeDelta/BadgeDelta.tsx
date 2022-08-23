@@ -3,6 +3,7 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
+import { TwMarginTop, spacing } from 'lib/spacing';
 import { 
     badgeProportionsIconOnly,
     badgeProportionsWithText,
@@ -10,9 +11,8 @@ import {
     deltaIcons,
     iconSizes,
 } from './styles';
-import { classNames, parseMarginTopClassNames } from 'lib/classnameUtils';
+import { classNames } from 'lib/classnameUtils';
 import { mapInputsToDeltaType } from 'lib/utils';
-import { spacing } from 'lib/spacing';
 
 export interface BadgeDeltaProps {
     text?: string,
@@ -20,7 +20,7 @@ export interface BadgeDeltaProps {
     isIncreasePositive?: boolean,
     size?: string,
     tooltip?: string,
-    marginTop?: string,
+    marginTop?: TwMarginTop,
 }
 
 const BadgeDelta = ({
@@ -29,14 +29,14 @@ const BadgeDelta = ({
     isIncreasePositive = true,
     size = 'sm',
     tooltip,
-    marginTop,
+    marginTop = 'mt-0',
 }: BadgeDeltaProps) => {
     const Icon = deltaIcons[deltaType];
     const mappedDeltaType = mapInputsToDeltaType(deltaType, isIncreasePositive);
     const badgeProportions = text ? badgeProportionsWithText : badgeProportionsIconOnly;
 
     return(
-        <span className={ classNames(parseMarginTopClassNames(marginTop)) }>
+        <span className={ classNames(marginTop) }>
             <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
                 <span className={ classNames(
                     'flex-shrink-0 inline-flex justify-center items-center rounded-full',

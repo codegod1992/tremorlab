@@ -1,29 +1,29 @@
 import React from 'react';
 
-import { 
+import {
     classNames,
     getColorVariantsFromColorThemeValue,
-    parseMarginTopClassNames,
 } from 'lib/classnameUtils';
 import { fontSize, fontWeight } from 'lib/font';
 import { BaseColors } from 'lib/primitives';
+import { TwMarginTop } from 'lib/spacing';
 import colorTheme from 'lib/colors';
 
 export interface SubtitleProps {
     color?: string,
-    marginTop?: string,
+    marginTop?: TwMarginTop,
     children: React.ReactNode,
 }
 
 const Subtitle = ({
     color = BaseColors.Gray,
-    marginTop,
+    marginTop = 'mt-0',
     children
 }: SubtitleProps) => {
     return(
         <p className={ classNames(
             'shrink-0 truncate',
-            parseMarginTopClassNames(marginTop),
+            marginTop,
             getColorVariantsFromColorThemeValue(colorTheme[color].lightText).textColor,
             fontSize.md,
             fontWeight.sm,

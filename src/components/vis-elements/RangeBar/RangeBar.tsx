@@ -6,6 +6,7 @@ import Tooltip from '@tippyjs/react';
 import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
 import colorTheme, { defaultColors } from 'lib/colors';
 import { BaseColors } from 'lib/primitives';
+import { TwMarginTop } from 'lib/spacing';
 import { sizing } from 'lib/sizing';
 
 export interface RangeBarProps {
@@ -15,7 +16,7 @@ export interface RangeBarProps {
     markerTooltip?: string,
     rangeTooltip?: string,
     color?: string,
-    marginTop?: string,
+    marginTop?: TwMarginTop,
 }
 
 const RangeBar = ({
@@ -25,12 +26,12 @@ const RangeBar = ({
     markerTooltip,
     rangeTooltip,
     color = BaseColors.Blue,
-    marginTop,
+    marginTop = 'mt-0',
 }: RangeBarProps) => {
     return(
         <div className={ classNames(
             'relative flex items-center w-full rounded-lg',
-            parseMarginTopClassNames(marginTop),
+            marginTop,
             getColorVariantsFromColorThemeValue(defaultColors.lightBackground).bgColor,
             sizing.xs.height,
         ) }>

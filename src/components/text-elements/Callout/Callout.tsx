@@ -1,16 +1,15 @@
 import React from 'react';
 
+import { TwMarginTop, spacing } from 'lib/spacing';
 import { 
     classNames,
     getColorVariantsFromColorThemeValue,
     parseFixedHeightClassNames,
-    parseMarginTopClassNames,
 } from 'lib/classnameUtils';
 import { fontSize, fontWeight } from 'lib/font';
 import { BaseColors } from 'lib/primitives';
 import colorTheme from 'lib/colors';
 import { sizing } from 'lib/sizing';
-import { spacing } from 'lib/spacing';
 
 export interface CalloutProps {
     title: string,
@@ -18,7 +17,7 @@ export interface CalloutProps {
     Icon?: React.ElementType,
     color?: string,
     fixedHeight?: string,
-    marginTop?: string,
+    marginTop?: TwMarginTop,
 }
 
 const Callout = ({
@@ -27,12 +26,12 @@ const Callout = ({
     Icon,
     color = BaseColors.Blue,
     fixedHeight = '',
-    marginTop
+    marginTop = 'mt-0'
 }: CalloutProps) => {
     return(
         <div className={ classNames(
             'relative rounded-md border-l-4',
-            parseMarginTopClassNames(marginTop),
+            marginTop,
             getColorVariantsFromColorThemeValue(colorTheme[color].canvasBackground).bgColor,
             getColorVariantsFromColorThemeValue(colorTheme[color].border).borderColor,
             spacing.lg.paddingLeft,

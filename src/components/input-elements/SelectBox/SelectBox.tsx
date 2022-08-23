@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 
 import { ArrowDownHeadIcon } from 'assets';
 
-import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
+import { TwMarginTop, spacing } from 'lib/spacing';
+import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 import { fontSize, fontWeight } from 'lib/font';
 import Modal from 'components/layout-elements/Modal';
 import { defaultColors } from 'lib/colors';
 import { sizing } from 'lib/sizing';
-import { spacing } from 'lib/spacing';
 
 export interface SelectBoxProps {
     defaultValue?: any,
     handleSelect?: { (value: any): void },
     placeholder?: string,
-    marginTop?: string,
+    marginTop?: TwMarginTop,
     children: React.ReactElement[],
 }
 
@@ -22,7 +22,7 @@ const SelectBox = ({
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     handleSelect = (value) => null,
     placeholder = 'Select...',
-    marginTop,
+    marginTop = 'mt-0',
     children,
 }: SelectBoxProps) => {
     const [showModal, setShowModal] = useState(false);
@@ -62,7 +62,7 @@ const SelectBox = ({
         <div className={ classNames(
             'relative w-full min-w-[10rem] rounded-md shadow-sm border',
             getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
-            parseMarginTopClassNames(marginTop),
+            marginTop,
         ) }>
             <input
                 key={ selectedItemValue ? valueToNameMapping[selectedItemValue] : null }

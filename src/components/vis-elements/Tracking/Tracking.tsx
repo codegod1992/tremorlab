@@ -1,21 +1,21 @@
 import React from 'react';
 
-import { classNames, parseMarginTopClassNames } from 'lib/classnameUtils';
-import { spacing } from 'lib/spacing';
+import { TwMarginTop, spacing } from 'lib/spacing';
+import { classNames } from 'lib/classnameUtils';
 
 export interface TrackingProps {
-    marginTop?: string,
+    marginTop?: TwMarginTop,
     children: React.ReactNode
 }
 
 const Tracking = ({
-    marginTop,
+    marginTop = 'mt-0',
     children
 }: TrackingProps) => {
     return(
         <div className={ classNames(
             'w-full flex items-center',
-            parseMarginTopClassNames(marginTop),
+            marginTop,
             spacing.threeXs.spaceX,
         ) }>
             { children }

@@ -4,14 +4,14 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { BaseColors, HorizontalPositions, Importances, Sizes } from 'lib/primitives';
+import { TwMarginTop, spacing } from 'lib/spacing';
 import {
     buttonProportions,
     colors,
     iconSizes,
     shape,
 } from './styles';
-import { classNames, parseMarginTopClassNames } from 'lib/classnameUtils';
-import { spacing } from 'lib/spacing';
+import { classNames } from 'lib/classnameUtils';
 
 export interface ButtonProps {
     text: string,
@@ -22,7 +22,7 @@ export interface ButtonProps {
     color?: string,
     importance?: string,
     handleClick?: { (): void },
-    marginTop?: string,
+    marginTop?: TwMarginTop,
 }
 
 const Button = ({
@@ -34,10 +34,10 @@ const Button = ({
     size = Sizes.SM,
     color = BaseColors.Blue,
     importance = Importances.Primary,
-    marginTop,
+    marginTop = 'mt-0',
 }: ButtonProps) => {
     return(
-        <span className={ classNames(parseMarginTopClassNames(marginTop)) }>
+        <span className={ classNames(marginTop) }>
             <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
                 <button
                     type="button"

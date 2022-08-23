@@ -2,18 +2,18 @@ import React, { useEffect, useState } from 'react';
 
 import { ArrowDownHeadIcon } from 'assets';
 
-import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
+import { TwMarginTop, spacing } from 'lib/spacing';
+import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 import { fontSize, fontWeight } from 'lib/font';
 import Modal from 'components/layout-elements/Modal';
 import { defaultColors } from 'lib/colors';
 import { sizing } from 'lib/sizing';
-import { spacing } from 'lib/spacing';
 
 export interface DropdownProps {
     placeholder?: string,
     defaultValue?: any,
     handleSelect?: { (value: any): void },
-    marginTop?: string,
+    marginTop?: TwMarginTop,
     children: React.ReactElement[],
 }
 
@@ -21,7 +21,7 @@ const Dropwdown = ({
     placeholder = 'Select...',
     defaultValue = null,
     handleSelect = (value: any) => { value; },
-    marginTop,
+    marginTop = 'mt-0',
     children,
 }: DropdownProps) => {
     const [showModal, setShowModal] = useState(false);
@@ -77,7 +77,7 @@ const Dropwdown = ({
         <div className={ classNames(
             'relative w-full min-w-[10rem] rounded-md shadow-sm border',
             getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
-            parseMarginTopClassNames(marginTop),
+            marginTop,
         ) }>
             <button
                 className={ classNames(

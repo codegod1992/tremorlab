@@ -1,23 +1,24 @@
 import React from 'react';
 
-import { classNames, parseMarginTopClassNames } from 'lib/classnameUtils';
+import { TwMarginTop } from 'lib/spacing';
+import { classNames } from 'lib/classnameUtils';
 
 export interface AccordionListProps {
     shadow?: boolean,
-    marginTop?: string,
+    marginTop?: TwMarginTop,
     children: React.ReactElement[],
 }
 
 const AccordionList = ({
     shadow = true,
-    marginTop,
+    marginTop = 'mt-0',
     children,
 }: AccordionListProps) => {
     const numChildren = React.Children.count(children);
 
     return (
         <div className={ classNames(
-            parseMarginTopClassNames(marginTop),
+            marginTop,
             'rounded-lg',
             shadow ? 'shadow' : '',
         ) }>

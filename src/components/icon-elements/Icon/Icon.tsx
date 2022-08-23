@@ -4,8 +4,9 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { BaseColors, Sizes } from 'lib/primitives';
-import { classNames, parseMarginTopClassNames } from 'lib/classnameUtils';
 import { colors, iconSizes, shape, wrapperProportions } from './styles';
+import { TwMarginTop } from 'lib/spacing';
+import { classNames } from 'lib/classnameUtils';
 
 export const IconVariants = {
     Simple: 'simple',
@@ -21,7 +22,7 @@ export interface IconProps {
     tooltip?: string,
     size?: string,
     color?: string,
-    marginTop?: string,
+    marginTop?: TwMarginTop,
 }
 
 const Icon = ({
@@ -30,9 +31,9 @@ const Icon = ({
     tooltip,
     size = Sizes.SM,
     color = BaseColors.Blue,
-    marginTop,
+    marginTop = 'mt-0',
 }: IconProps) => (
-    <span className={ classNames(parseMarginTopClassNames(marginTop)) }>
+    <span className={ classNames(marginTop) }>
         <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
             <span
                 className={ classNames(
