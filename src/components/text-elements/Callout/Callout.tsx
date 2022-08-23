@@ -1,22 +1,21 @@
 import React from 'react';
 
+import { TwHeight, sizing } from 'lib/sizing';
 import { TwMarginTop, spacing } from 'lib/spacing';
 import { 
     classNames,
     getColorVariantsFromColorThemeValue,
-    parseFixedHeightClassNames,
 } from 'lib/classnameUtils';
 import { fontSize, fontWeight } from 'lib/font';
 import { BaseColors } from 'lib/primitives';
 import colorTheme from 'lib/colors';
-import { sizing } from 'lib/sizing';
 
 export interface CalloutProps {
     title: string,
     text: string,
     Icon?: React.ElementType,
     color?: string,
-    fixedHeight?: string,
+    height?: TwHeight | '',
     marginTop?: TwMarginTop,
 }
 
@@ -25,7 +24,7 @@ const Callout = ({
     text,
     Icon,
     color = BaseColors.Blue,
-    fixedHeight = '',
+    height = '',
     marginTop = 'mt-0'
 }: CalloutProps) => {
     return(
@@ -65,7 +64,7 @@ const Callout = ({
                 </div>
                 <div className={ classNames(
                     'overflow-y-auto',
-                    parseFixedHeightClassNames(fixedHeight),
+                    height,
                     getColorVariantsFromColorThemeValue(colorTheme[color].darkText).textColor,
                     spacing.sm.marginTop,
                 ) }

@@ -3,12 +3,12 @@ import React from 'react';
 import { 
     classNames,
     getColorVariantsFromColorThemeValue,
-    parseFixedHeightClassNames,
     parseTextAlignmentClassNames,
     parseTruncateOption,
 } from 'lib/classnameUtils';
 import { fontSize, fontWeight } from 'lib/font';
 import { BaseColors } from 'lib/primitives';
+import { TwHeight } from 'lib/sizing';
 import { TwMarginTop } from 'lib/spacing';
 import colorTheme from 'lib/colors';
 
@@ -16,7 +16,7 @@ export interface TextProps {
     color?: string,
     textAlignment?: string,
     truncate?: boolean,
-    fixedHeight?: string,
+    height?: TwHeight | '',
     marginTop?: TwMarginTop,
     children: React.ReactNode,
 }
@@ -25,7 +25,7 @@ const Text = ({
     color = BaseColors.Gray,
     textAlignment = 'text-left',
     truncate = false,
-    fixedHeight = '',
+    height = '',
     marginTop = 'mt-0',
     children 
 }: TextProps) => {
@@ -34,7 +34,7 @@ const Text = ({
             'shrink-0 overflow-auto',
             getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor,
             parseTextAlignmentClassNames(textAlignment),
-            parseFixedHeightClassNames(fixedHeight),
+            height,
             marginTop,
             parseTruncateOption(truncate),
             fontSize.sm,
