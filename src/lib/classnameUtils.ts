@@ -33,7 +33,7 @@ export const getPixelsFromTwClassName = (
     const classNameParts = twClassName.split('-');
     if (classNameParts.length !== 2) throw 'Invalid input value. Please provide a valid Tailwind Class Name.';
 
-    const [_classNamePrefix, tailwindUnit] = classNameParts;
+    const tailwindUnit = classNameParts[1];
     if (!stringIsNumeric(tailwindUnit) && twUnits.has(Number(tailwindUnit))) {
         throw 'Invalid input value. Please provide a Tailwind Class Name with a defined absolute size';
     }

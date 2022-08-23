@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
+import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 import { fontSize, fontWeight } from 'lib/font';
 import { TwMarginTop } from 'lib/spacing';
 import { defaultColors } from 'lib/colors';

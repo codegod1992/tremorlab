@@ -2,7 +2,7 @@ import React from 'react';
 
 import { TwMarginTop, spacing } from 'lib/spacing';
 import { ValueFormater, defaultValueFormater } from '../../../lib/utils';
-import { classNames, getColorVariantsFromColorThemeValue, parseMarginTopClassNames } from 'lib/classnameUtils';
+import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 import colorTheme, { defaultColors } from 'lib/colors';
 import { BaseColors } from 'lib/primitives';
 import { fontSize } from 'lib/font';
