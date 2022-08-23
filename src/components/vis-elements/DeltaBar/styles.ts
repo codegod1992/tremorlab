@@ -1,6 +1,4 @@
-import { BaseColors, DeltaTypes } from 'lib/primitives';
-import colorTheme from 'lib/colors';
-import { getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
+import { BaseColors, DeltaTypes, colorTheme, getColorVariantsFromColorThemeValue } from 'lib';
 
 export type ColorTypes = {
     bgColor: string,

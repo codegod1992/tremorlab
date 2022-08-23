@@ -511,5 +511,3 @@ export const colorTheme: { [baseColor: string]: BaseColorTheme } = {
         icon: 'rose-500',
     },
 };
-
-export default colorTheme;

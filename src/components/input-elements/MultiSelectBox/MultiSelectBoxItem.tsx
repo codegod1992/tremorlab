@@ -1,11 +1,16 @@
 import React from 'react';
 
-import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
-import colorTheme, { defaultColors } from 'lib/colors';
-import { isValueInArray, removeValueFromArray } from 'lib/utils';
-import { BaseColors } from 'lib/primitives';
-import { fontSize } from 'lib/text';
-import { spacing } from 'lib/spacing';
+import {
+    BaseColors,
+    classNames,
+    colorTheme,
+    defaultColors,
+    fontSize,
+    getColorVariantsFromColorThemeValue,
+    isValueInArray,
+    removeValueFromArray,
+    spacing
+} from 'lib';
 
 export interface MultiSelectBoxItemProps {
     value: any,

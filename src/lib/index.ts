@@ -5,6 +5,6 @@ export * from './inputTypes';
 export * from './primitives';
 export * from './sizing';
 export * from './spacing';
-export * from './text';
+export * from './font';
 export * from './twUnits';
 export * from './utils';

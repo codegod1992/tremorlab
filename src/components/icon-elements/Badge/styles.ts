@@ -1,5 +1,5 @@
 import { Sizing, sizing } from 'lib/sizing';
-import { fontSize } from 'lib/text';
+import { fontSize } from 'lib/font';
 import { spacing } from 'lib/spacing';
 
 export type BadgeProportionTypes = {

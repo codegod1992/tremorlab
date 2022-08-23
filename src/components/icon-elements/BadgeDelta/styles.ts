@@ -1,11 +1,15 @@
-import { BaseColors, DeltaTypes } from 'lib/primitives';
-import colorTheme from 'lib/colors';
-import { fontSize } from 'lib/text';
-import { getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
-import { spacing } from 'lib/spacing';
+import {
+    BaseColors,
+    DeltaTypes,
+    Sizing,
+    colorTheme,
+    fontSize,
+    getColorVariantsFromColorThemeValue,
+    sizing,
+    spacing
+} from 'lib';
 
 import { ArrowDownIcon, ArrowDownRightIcon, ArrowRightIcon, ArrowUpIcon, ArrowUpRightIcon } from 'assets';
-import { Sizing, sizing } from 'lib/sizing';
 
 export type BadgeProportionTypes = {
     paddingLeft: string,

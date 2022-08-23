@@ -1,8 +1,12 @@
-import { Sizing, sizing } from 'lib/sizing';
-import colorTheme, { defaultColors } from 'lib/colors';
-import { BaseColors } from 'lib/primitives';
-import { getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
-import { spacing } from 'lib/spacing';
+import {
+    BaseColors,
+    Sizing,
+    colorTheme,
+    defaultColors,
+    getColorVariantsFromColorThemeValue,
+    sizing,
+    spacing
+} from 'lib';
 
 export type WrapperProporionTypes = {
     paddingLeft: string,
