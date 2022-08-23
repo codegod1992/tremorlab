@@ -377,6 +377,7 @@ const Datepicker = ({
             <Modal showModal={ showDropdownModal } setShowModal={ setShowDropdownModal }>
                 { relativeFilterOptions.map((filterOption) => (
                     <button
+                        key={ filterOption.value }
                         onClick={ () => {
                             setSelectedRelativeFilterOption(filterOption.value);
                             handleRelativeFilterOptionClick(filterOption.value);
