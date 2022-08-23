@@ -8,10 +8,10 @@ import {
     fontWeight,
     getColorVariantsFromColorThemeValue
 } from 'lib';
-import { TwMarginTop } from '../../../lib';
+import { Colors, TwMarginTop } from '../../../lib';
 
 export interface SubtitleProps {
-    color?: string,
+    color?: Colors,
     marginTop?: TwMarginTop,
     children: React.ReactNode,
 }

@@ -14,13 +14,13 @@ import {
     sizing,
     spacing
 } from 'lib';
-import { TwMarginTop } from '../../../lib';
+import { Colors, TwMarginTop } from '../../../lib';
 
 export interface ProgressBarProps {
     percentageValue: number,
     label?: string,
     tooltip?: string,
-    color?: string,
+    color?: Colors,
     marginTop?: TwMarginTop,
 }
 

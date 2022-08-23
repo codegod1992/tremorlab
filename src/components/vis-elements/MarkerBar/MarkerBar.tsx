@@ -4,11 +4,11 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { BaseColors, classNames, colorTheme, defaultColors, getColorVariantsFromColorThemeValue, sizing } from 'lib';
-import { TwMarginTop } from '../../../lib';
+import { Colors, TwMarginTop } from '../../../lib';
 
 export interface MarkerBarProps {
     percentageValue: number,
-    color?: string,
+    color?: Colors,
     tooltip?: string,
     marginTop?: TwMarginTop,
 }

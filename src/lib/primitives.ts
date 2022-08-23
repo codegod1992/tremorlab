@@ -1,3 +1,5 @@
+import { Colors } from './inputTypes';
+
 export const DeltaTypes: {[key: string]: string} = {
     Increase: 'increase',
     ModerateIncrease: 'moderateIncrease',
@@ -6,7 +8,7 @@ export const DeltaTypes: {[key: string]: string} = {
     Unchanged: 'unchanged'
 };
 
-export const BaseColors: {[key: string]: string} = {
+export const BaseColors: {[key: string]: Colors} = {
     Slate: 'slate',
     Gray: 'gray',
     Zinc: 'zinc',

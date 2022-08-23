@@ -2,6 +2,33 @@ export type ValueFormater = {
     (value: number): string
 }
 
+export const baseColorsValues = [
+    'cyan',
+    'sky',
+    'blue',
+    'indigo',
+    'violet',
+    'purple',
+    'fuchsia',
+    'slate',
+    'gray',
+    'zinc',
+    'neutral',
+    'stone',
+    'red',
+    'orange',
+    'amber',
+    'yellow',
+    'lime',
+    'green',
+    'emerald',
+    'teal',
+    'pink',
+    'rose',
+] as const;
+
+export type Colors = typeof baseColorsValues[number];
+
 export const twJustifyContentValues = [
     'justify-start',
     'justify-end',

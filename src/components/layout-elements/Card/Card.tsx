@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { BaseColors, HorizontalPositions, VerticalPositions } from 'lib/primitives';
-import { TwMarginTop, TwMaxWidth } from '../../../lib';
+import { Colors, TwMarginTop, TwMaxWidth } from '../../../lib';
 import {
     classNames,
     colorTheme,
@@ -32,7 +32,7 @@ export interface CardProps {
     maxWidth?: TwMaxWidth,
     shadow?: boolean,
     decoration?: string,
-    decorationColor?: string,
+    decorationColor?: Colors,
     marginTop?: TwMarginTop,
     children: React.ReactNode
 }

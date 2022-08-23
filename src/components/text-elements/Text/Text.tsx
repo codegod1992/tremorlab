@@ -9,10 +9,10 @@ import {
     getColorVariantsFromColorThemeValue,
     parseTruncateOption,
 } from 'lib';
-import { TwHeight, TwMarginTop, TwTextAlignment } from '../../../lib';
+import { Colors, TwHeight, TwMarginTop, TwTextAlignment } from '../../../lib';
 
 export interface TextProps {
-    color?: string,
+    color?: Colors,
     textAlignment?: TwTextAlignment,
     truncate?: boolean,
     height?: TwHeight | '',

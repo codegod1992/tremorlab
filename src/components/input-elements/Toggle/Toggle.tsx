@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
 import { BaseColors, classNames, defaultColors, getColorVariantsFromColorThemeValue, spacing } from 'lib';
-import { TwMarginTop } from '../../../lib';
+import { Colors, TwMarginTop } from '../../../lib';
 
 export interface ToggleProps {
     defaultValue?: any,
-    color?: string,
+    color?: Colors,
     handleSelect?: { (value: any): void },
     children: React.ReactElement[],
     marginTop?: TwMarginTop,

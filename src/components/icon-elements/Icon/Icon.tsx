@@ -4,8 +4,8 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { BaseColors, Sizes, classNames } from 'lib';
+import { Colors, TwMarginTop } from '../../../lib';
 import { colors, iconSizes, shape, wrapperProportions } from './styles';
-import { TwMarginTop } from '../../../lib';
 
 export const IconVariants = {
     Simple: 'simple',
@@ -20,7 +20,7 @@ export interface IconProps {
     variant?: string,
     tooltip?: string,
     size?: string,
-    color?: string,
+    color?: Colors,
     marginTop?: TwMarginTop,
 }
 
