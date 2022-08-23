@@ -1,15 +1,15 @@
 import React from 'react';
 
+import { TwJustifyContent, TwMarginTop } from '../../../lib';
 import { 
     classNames,
     parseAlignItemsClassNames,
-    parseJustifyContentClassNames,
     parseSpaceXClassNames,
+
 } from 'lib';
-import { TwMarginTop } from '../../../lib';
 
 export interface FlexProps {
-    justifyContent?: string,
+    justifyContent?: TwJustifyContent,
     alignItems?: string,
     spaceX?: string,
     truncate?: boolean,
@@ -27,7 +27,7 @@ const Flex = ({
     return(
         <div className={ classNames(
             'flex w-full',
-            parseJustifyContentClassNames(justifyContent),
+            justifyContent,
             parseAlignItemsClassNames(alignItems),
             parseSpaceXClassNames(spaceX),
             marginTop,

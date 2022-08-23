@@ -123,16 +123,6 @@ export const parseMaxHeightClassNames: TailwindClassParser = (twClassName) => {
     return twClassName.startsWith('max-h-') ? twClassName.split(' ')[0] : '';
 };
 
-export const parseWidthClassNames: TailwindClassParser = (twClassName) => {
-    if (twClassName===undefined) return '';
-    return twClassName.startsWith('w-') ? twClassName.split(' ')[0] : '';
-};
-
-export const parseJustifyContentClassNames: TailwindClassParser = (twClassName) => {
-    if (twClassName===undefined) return '';
-    return twClassName.startsWith('justify-') ? twClassName.split(' ')[0] : '';
-};
-
 export const parseAlignItemsClassNames: TailwindClassParser = (twClassName) => {
     if (twClassName===undefined) return '';
     return twClassName.startsWith('items-') ? twClassName.split(' ')[0] : '';

@@ -1,8 +1,19 @@
-export interface ValueFormater {
+export type ValueFormater = {
     (value: number): string
 }
 
-export const textAlignmentValues = [
+export const twJustifyContentValues = [
+    'justify-start',
+    'justify-end',
+    'justify-center',
+    'justify-between',
+    'justify-around',
+    'justify-evenly',
+] as const;
+
+export type TwJustifyContent = typeof twJustifyContentValues[number];
+
+export const twTextAlignmentValues = [
     'text-left',
     'text-center',
     'text-right',
@@ -11,7 +22,7 @@ export const textAlignmentValues = [
     'text-end',
 ] as const;
 
-export type TwTextAlignment = typeof textAlignmentValues[number];
+export type TwTextAlignment = typeof twTextAlignmentValues[number];
 
 
 export const twTopMargins = [
