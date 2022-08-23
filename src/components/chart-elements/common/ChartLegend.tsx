@@ -1,9 +1,10 @@
 import React from 'react';
 
+import { Colors } from '../../../lib';
 import Legend from 'components/text-elements/Legend';
 import { themeColorRange } from 'lib';
 
-const ChartLegend = ({ payload }: any, colors: string[] = themeColorRange) => {
+const ChartLegend = ({ payload }: any, colors: Colors[] = themeColorRange) => {
     return (
         <div className="flex items-center justify-end">
             <Legend
