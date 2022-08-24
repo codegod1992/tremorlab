@@ -23,7 +23,7 @@ const Subtitle = ({
 }: SubtitleProps) => {
     return(
         <p className={ classNames(
-            'shrink-0 truncate',
+            'shrink-0 whitespace-nowrap truncate',
             marginTop,
             getColorVariantsFromColorThemeValue(colorTheme[color].lightText).textColor,
             fontSize.md,

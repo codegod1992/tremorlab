@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { classNames, defaultColors, fontSize, getColorVariantsFromColorThemeValue } from 'lib';
+import { classNames, fontSize } from 'lib';
 import { MarginTop } from '../../../lib';
 
 export interface ItalicProps {
@@ -14,8 +14,7 @@ const Italic = ({
 }: ItalicProps) => {
     return(
         <span className={ classNames(
-            'italic',
-            getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
+            'italic whitespace-nowrap text-inherit',
             marginTop,
             fontSize.sm,
         ) }

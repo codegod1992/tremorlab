@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { classNames, defaultColors, fontSize, fontWeight, getColorVariantsFromColorThemeValue } from 'lib';
+import { classNames, fontSize, fontWeight } from 'lib';
 import { MarginTop } from '../../../lib';
 
 export interface BoldProps {
@@ -14,8 +14,8 @@ const Bold = ({
 }: BoldProps) => {
     return(
         <span className={ classNames(
+            'text-inherit',
             marginTop,
-            getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
             fontSize.sm,
             fontWeight.lg,
         ) }
