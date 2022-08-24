@@ -33,7 +33,7 @@ const MultiSelectBox = ({
 }: MultiSelectBoxProps) => {
     const [showModal, setShowModal] = useState(false);
     
-    const [selectedItemsValues, setSelectedItemsValues] = useState(defaultValues);
+    const [selectedItems, setSelectedItems] = useState(defaultValues);
 
     const [searchQuery, setSearchQuery] = useState('');
 
@@ -67,7 +67,7 @@ const MultiSelectBox = ({
 
     useEffect(() => {
         setSearchQuery('');
-    }, [selectedItemsValues]);
+    }, [selectedItems]);
 
     return (
         <div className={ classNames(
@@ -93,17 +93,17 @@ const MultiSelectBox = ({
                     'whitespace-nowrap truncate',
                     fontSize.sm,
                     fontWeight.md,
-                    selectedItemsValues.length !==0
+                    selectedItems.length !==0
                         ? getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor
                         : getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
                 ) }>
-                    { selectedItemsValues.length !==0 ? `${selectedItemsValues.length} Selected` : placeholder }
+                    { selectedItems.length !==0 ? `${selectedItems.length} Selected` : placeholder }
                 </p>
                 <div className="flex items-center">
-                    { selectedItemsValues.length !== 0 ? (
+                    { selectedItems.length !== 0 ? (
                         <button onClick={ (e) => {
                             e.stopPropagation(); // prevent firing parent button
-                            setSelectedItemsValues([]);
+                            setSelectedItems([]);
                         } }>
                             <XCircleIcon 
                                 className={ classNames(
@@ -168,8 +168,8 @@ const MultiSelectBox = ({
                             <>
                                 { React.cloneElement(child, {
                                     privateProps: {
-                                        selectedItemsValues,
-                                        setSelectedItemsValues,
+                                        selectedItems,
+                                        setSelectedItems,
                                         handleSelect,
                                         setShowModal,
                                     }

@@ -33,7 +33,7 @@ const SelectBox = ({
     const [showModal, setShowModal] = useState(false);
 
     const [searchQuery, setSearchQuery] = useState('');
-    const [selectedItemValue, setSelectedItemValue] = useState(defaultValue);
+    const [selectedItem, setSelectedItem] = useState(defaultValue);
 
     type ValueToNameMapping = {
         [value: string]: string
@@ -70,7 +70,7 @@ const SelectBox = ({
             marginTop,
         ) }>
             <input
-                key={ selectedItemValue ? valueToNameMapping[selectedItemValue] : null }
+                key={ selectedItem ? valueToNameMapping[selectedItem] : null }
                 className={ classNames(
                     'w-full rounded-md focus:ring-2 focus:outline-0',
                     getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
@@ -86,8 +86,8 @@ const SelectBox = ({
                     'pr-10' // avoid text overflow at arrow down icon
                 ) }
                 type="input"
-                placeholder={ selectedItemValue ? undefined : placeholder }
-                defaultValue={ selectedItemValue ? valueToNameMapping[selectedItemValue] : undefined }
+                placeholder={ selectedItem ? undefined : placeholder }
+                defaultValue={ selectedItem ? valueToNameMapping[selectedItem] : undefined }
                 onChange={ (e) => setSearchQuery(e.target.value) }
                 onClick={ () => setShowModal(true) }
             />
@@ -116,8 +116,8 @@ const SelectBox = ({
                             <>
                                 { React.cloneElement(child, {
                                     privateProps: {
-                                        setSelectedItemValue: setSelectedItemValue,
-                                        isActive: selectedItemValue === child.props.value,
+                                        setSelectedItemValue: setSelectedItem,
+                                        isActive: selectedItem === child.props.value,
                                         handleSelect: handleSelect,
                                         setShowModal: setShowModal,
                                     }
