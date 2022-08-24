@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
-import { fontSize, fontWeight } from 'lib/font';
 import { defaultColors } from 'lib/colors';
+import { fontSize } from 'lib/font';
 import { sizing } from 'lib/sizing';
 import { spacing } from 'lib/spacing';
 
@@ -10,7 +10,6 @@ export interface DropdownItemProps {
     value: any,
     name: string,
     Icon?: React.ElementType,
-    shortcut?: string,
     privateProps?: {
         isActive: boolean,
         setSelectedItem: React.Dispatch<React.SetStateAction<any>>,
@@ -23,7 +22,6 @@ const DropdownItem = ({
     value,
     name,
     Icon,
-    shortcut,
     privateProps,
 }: DropdownItemProps) => (
     <button
@@ -64,14 +62,6 @@ const DropdownItem = ({
                 { name }
             </p>
         </div>
-        { shortcut ? (
-            <p className={ classNames(
-                fontWeight.sm,
-                getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
-            ) }>
-                { shortcut }
-            </p>
-        ) : null }
     </button>
 );
 
