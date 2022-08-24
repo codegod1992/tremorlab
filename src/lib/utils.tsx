@@ -59,7 +59,6 @@ export const isValueInArray = (value: any, array: any[]): boolean => {
     return false;
 };
 
-
 export const stringIsNumeric = (str: string|undefined): boolean => {
     return !isNaN(Number(str)) && (str!==undefined);
 };
