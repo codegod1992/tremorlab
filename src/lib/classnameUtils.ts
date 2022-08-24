@@ -8,9 +8,7 @@ import {
     TwPaddingTop,
     TwWidth
 } from './inputTypes';
-import { stringIsNumeric } from 'lib/utils';
 import { twColorsHex } from 'lib/colors';
-import { twUnits } from 'lib/twUnits';
 
 interface StringJoiner {
     (...classes: (string)[]): string
@@ -34,14 +32,7 @@ export const getPixelsFromTwClassName = (
     twClassName: TwMarginTop | TwPaddinLeft | TwPaddinRight | TwPaddingTop | TwPaddingBottom | TwHeight | TwWidth
 ): number => {
     const classNameParts = twClassName.split('-');
-    if (classNameParts.length !== 2) throw 'Invalid input value. Please provide a valid Tailwind Class Name.';
-
-    const tailwindUnit = classNameParts[1];
-    if (!stringIsNumeric(tailwindUnit) && twUnits.has(Number(tailwindUnit))) {
-        throw 'Invalid input value. Please provide a Tailwind Class Name with a defined absolute size';
-    }
-
-    return Number(tailwindUnit) * 4;
+    return Number(classNameParts[classNameParts.length - 1]) * 4;
 };
 
 export const getColorVariantsFromTwClassName = (twClassName: string): ColorTypes => {

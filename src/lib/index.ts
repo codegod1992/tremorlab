@@ -6,5 +6,4 @@ export * from './primitives';
 export * from './sizing';
 export * from './spacing';
 export * from './font';
-export * from './twUnits';
 export * from './utils';
