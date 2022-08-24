@@ -17,9 +17,9 @@ export default {
 const Template: ComponentStory<typeof Dropdown> = () => (
     <Card>
         <Dropdown handleSelect={ (value) => console.log('The selected value is', value) }>
-            <DropdownItem value={ 5 } name={ 'Five' } Icon={ CalendarIcon } shortcut={ 'F' } />
-            <DropdownItem value={ 3 } name={ 'Three' } Icon={ CalendarIcon } shortcut={ 'T' } />
-            <DropdownItem value={ 1 } name={ 'One' } Icon={ CalendarIcon } shortcut={ 'O' } />
+            <DropdownItem value={ 5 } name={ 'Five' } Icon={ CalendarIcon } />
+            <DropdownItem value={ 3 } name={ 'Three' } Icon={ CalendarIcon } />
+            <DropdownItem value={ 1 } name={ 'One' } Icon={ CalendarIcon } />
         </Dropdown>
         <SelectBox handleSelect={ (value) => console.log('the new value is', value) } defaultValue={ 1 }>
             <SelectBoxItem  value={1} name="Option One ABCSASDASDASDASASDASDASDSASDASABCSASDASDASDASASDASDASDSASDAS" />

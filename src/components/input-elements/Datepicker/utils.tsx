@@ -15,22 +15,18 @@ export const relativeFilterOptions = [
     {
         value: 'w',
         name: 'Last 7 days',
-        shortcut: 'W',
     },
     {
         value: 't',
         name: 'Last 30 days',
-        shortcut: 'T',
     },
     {
         value: 'm',
         name: 'Month to Date',
-        shortcut: 'M',
     },
     {
         value: 'y',
         name: 'Year to Date',
-        shortcut: 'Y',
     },
 ];
 

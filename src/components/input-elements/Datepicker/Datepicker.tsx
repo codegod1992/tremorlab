@@ -404,12 +404,6 @@ const Datepicker = ({
                         <p className="whitespace-nowrap truncate">
                             { filterOption.name }
                         </p>
-                        <p className={ classNames(
-                            fontWeight.sm,
-                            getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
-                        ) }>
-                            { filterOption.shortcut }
-                        </p>
                     </button>
                 ))}      
             </Modal>
