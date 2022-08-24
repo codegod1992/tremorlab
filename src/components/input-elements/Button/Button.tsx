@@ -9,7 +9,6 @@ import {
     buttonProportions,
     colors,
     iconSizes,
-    shape,
 } from './styles';
 
 export interface ButtonProps {
@@ -44,14 +43,12 @@ const Button = ({
                     className={ classNames(
                         'flex-shrink-0 inline-flex items-center group font-medium',
                         'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-transparent',
+                        'rounded-md border shadow-sm',
                         buttonProportions[size]?.paddingLeft,
                         buttonProportions[size]?.paddingRight,
                         buttonProportions[size]?.paddingTop,
                         buttonProportions[size]?.paddingBottom,
                         buttonProportions[size]?.fontSize,
-                        shape.border,
-                        shape.rounded,
-                        shape.shadow,
                         colors[color][importance].bgColor,
                         colors[color][importance].borderColor,
                         colors[color][importance].focusRingColor,

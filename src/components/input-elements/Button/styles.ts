@@ -50,18 +50,6 @@ export const buttonProportions: {[char: string]: ButtonProportionTypes} = {
     },
 };
 
-export type ShapeTypes = {
-    rounded: string,
-    border: string,
-    shadow: string,
-}
-
-export const shape: ShapeTypes = {
-    rounded: 'rounded-lg',
-    border: 'border',
-    shadow: 'shadow-sm'
-};
-
 export const iconSizes: {[size: string]: Sizing} = {
     xs: {
         height: sizing.md.height,
