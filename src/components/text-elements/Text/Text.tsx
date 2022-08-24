@@ -30,7 +30,7 @@ const Text = ({
 }: TextProps) => {
     return(
         <p className={classNames(
-            'shrink-0 overflow-auto',
+            'overflow-y-auto',
             height,
             marginTop,
             textAlignment,
