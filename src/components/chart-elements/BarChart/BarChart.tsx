@@ -25,7 +25,7 @@ import {
 } from 'lib';
 
 export interface BarChartProps extends BaseChartProps {
-    layout?: string,
+    layout?: 'vertical' | 'horizontal',
     stack?: boolean,
     relative?: boolean,
 }
