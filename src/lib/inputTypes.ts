@@ -3,13 +3,6 @@ export type ValueFormater = {
 }
 
 export const baseColorsValues = [
-    'cyan',
-    'sky',
-    'blue',
-    'indigo',
-    'violet',
-    'purple',
-    'fuchsia',
     'slate',
     'gray',
     'zinc',
@@ -23,6 +16,13 @@ export const baseColorsValues = [
     'green',
     'emerald',
     'teal',
+    'cyan',
+    'sky',
+    'blue',
+    'indigo',
+    'violet',
+    'purple',
+    'fuchsia',
     'pink',
     'rose',
 ] as const;
