@@ -33,7 +33,7 @@ export const BaseColors: {[key: string]: Color} = {
     Rose: 'rose'
 };
 
-export const SizeTypes: {[key: string]: Size} = {
+export const Sizes: {[key: string]: Size} = {
     XS: 'xs',
     SM: 'sm',
     MD: 'md',
@@ -41,17 +41,17 @@ export const SizeTypes: {[key: string]: Size} = {
     XL: 'xl',
 };
 
-export const ImportanceTypes: {[key: string]: string} = {
+export const Importances: {[key: string]: string} = {
     Primary: 'primary',
     Secondary: 'secondary',
 };
 
-export const HorizontalPositionTypes: {[key: string]: string} = {
+export const HorizontalPositions: {[key: string]: string} = {
     Left: 'left',
     Right: 'right',
 };
 
-export const VerticalPositionTypes: {[key: string]: string} = {
+export const VerticalPositions: {[key: string]: string} = {
     Top: 'top',
     Bottom: 'bottom',
 };

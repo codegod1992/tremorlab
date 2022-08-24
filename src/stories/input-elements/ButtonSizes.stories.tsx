@@ -3,7 +3,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ArrowRightIcon } from 'assets';
 
-import { SizeTypes } from 'lib/primitives';
+import { Sizes } from 'lib/primitives';
 
 import { Flex } from 'components';
 
@@ -28,12 +28,12 @@ const Template: ComponentStory<never> = () => (
     <>
         <div className="mb-5">
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(SizeTypes).map(key => {
-                    console.log(SizeTypes[key]);
+                {Object.keys(Sizes).map(key => {
+                    console.log(Sizes[key]);
                     return(
                         <Button
                             text={ buttonText }
-                            size={ SizeTypes[key] }
+                            size={ Sizes[key] }
                             handleClick={ handleClick } 
                             tooltip={ 'Button Info' }
                         />
@@ -43,12 +43,12 @@ const Template: ComponentStory<never> = () => (
         </div>
         <div className="mb-5">
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(SizeTypes).map(key => {
-                    console.log(SizeTypes[key]);
+                {Object.keys(Sizes).map(key => {
+                    console.log(Sizes[key]);
                     return(
                         <Button 
                             text={ buttonText }
-                            size={ SizeTypes[key] }
+                            size={ Sizes[key] }
                             handleClick={ handleClick }
                             importance="secondary" />
                     );
@@ -57,12 +57,12 @@ const Template: ComponentStory<never> = () => (
         </div>
         <div className="mb-5">
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(SizeTypes).map(key => {
-                    console.log(SizeTypes[key]);
+                {Object.keys(Sizes).map(key => {
+                    console.log(Sizes[key]);
                     return(
                         <Button
                             text={ buttonText }
-                            size={ SizeTypes[key] }
+                            size={ Sizes[key] }
                             handleClick={ handleClick }
                         />
                     );
@@ -71,12 +71,12 @@ const Template: ComponentStory<never> = () => (
         </div>
         <div className="mb-5">
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(SizeTypes).map(key => {
-                    console.log(SizeTypes[key]);
+                {Object.keys(Sizes).map(key => {
+                    console.log(Sizes[key]);
                     return(
                         <Button
                             text={ buttonText }
-                            size={ SizeTypes[key] }
+                            size={ Sizes[key] }
                             handleClick={ handleClick }
                             importance="secondary"
                         />
@@ -86,13 +86,13 @@ const Template: ComponentStory<never> = () => (
         </div>
         <div className="mb-5">
             <div className="grid grid-cols-8 justify-items-start items-center gap-y-2">
-                {Object.keys(SizeTypes).map(key => {
-                    console.log(SizeTypes[key]);
+                {Object.keys(Sizes).map(key => {
+                    console.log(Sizes[key]);
                     return(
                         <Button
                             Icon={ Icon }
                             text={ buttonText }
-                            size={ SizeTypes[key] }
+                            size={ Sizes[key] }
                             handleClick={ handleClick }
                             iconPosition="right"
                         />
@@ -102,14 +102,14 @@ const Template: ComponentStory<never> = () => (
         </div>
         <div className="mb-5">
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(SizeTypes).map(key => {
-                    console.log(SizeTypes[key]);
+                {Object.keys(Sizes).map(key => {
+                    console.log(Sizes[key]);
                     return(
                         <Button
                             Icon={ Icon }
                             text={ buttonText }
                             importance={ 'secondary' }
-                            size={ SizeTypes[key] }
+                            size={ Sizes[key] }
                             handleClick={ handleClick }
                         />
                     );
@@ -118,12 +118,12 @@ const Template: ComponentStory<never> = () => (
         </div>
         <div className="mb-5">
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(SizeTypes).map(key => {
-                    console.log(SizeTypes[key]);
+                {Object.keys(Sizes).map(key => {
+                    console.log(Sizes[key]);
                     return(
                         <ButtonInline
                             text={ buttonText }
-                            size={ SizeTypes[key] }
+                            size={ Sizes[key] }
                             handleClick={ handleClick }
                         />
                     );
@@ -132,12 +132,12 @@ const Template: ComponentStory<never> = () => (
         </div>
         <div className="mb-5">
             <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
-                {Object.keys(SizeTypes).map(key => {
-                    console.log(SizeTypes[key]);
+                {Object.keys(Sizes).map(key => {
+                    console.log(Sizes[key]);
                     return(
                         <ButtonInline
                             text={ buttonText }
-                            size={ SizeTypes[key] }
+                            size={ Sizes[key] }
                             handleClick={ handleClick }
                         />
                     );

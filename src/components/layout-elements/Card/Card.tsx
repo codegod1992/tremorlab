@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BaseColors, HorizontalPositionTypes, VerticalPositionTypes } from 'lib/primitives';
+import { BaseColors, HorizontalPositions, VerticalPositions } from 'lib/primitives';
 import { Color, MarginTop, MaxWidth } from '../../../lib';
 import {
     classNames,
@@ -14,13 +14,13 @@ import {
 const parseDecorationAlignment = (decorationAlignment: string) => {
     if (!decorationAlignment) return '';
     switch(decorationAlignment) {
-    case HorizontalPositionTypes.Left:
+    case HorizontalPositions.Left:
         return 'border-l-4';
-    case VerticalPositionTypes.Top:
+    case VerticalPositions.Top:
         return 'border-t-4';
-    case HorizontalPositionTypes.Right:
+    case HorizontalPositions.Right:
         return 'border-r-4';
-    case VerticalPositionTypes.Bottom:
+    case VerticalPositions.Bottom:
         return 'border-b-4';
     default:
         return '';

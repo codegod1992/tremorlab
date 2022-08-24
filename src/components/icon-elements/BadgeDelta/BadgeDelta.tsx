@@ -3,7 +3,8 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { 
+import { MarginTop, Size } from '../../../lib';
+import {
     badgeProportionsIconOnly,
     badgeProportionsWithText,
     colors,
@@ -11,13 +12,12 @@ import {
     iconSizes,
 } from './styles';
 import { classNames, mapInputsToDeltaType, spacing } from 'lib';
-import { MarginTop } from '../../../lib';
 
 export interface BadgeDeltaProps {
     text?: string,
     deltaType: string,
     isIncreasePositive?: boolean,
-    size?: string,
+    size?: Size,
     tooltip?: string,
     marginTop?: MarginTop,
 }

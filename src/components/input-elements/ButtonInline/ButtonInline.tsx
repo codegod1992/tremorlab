@@ -3,8 +3,8 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { BaseColors, HorizontalPositionTypes, SizeTypes } from 'lib/primitives';
-import { Color, MarginTop } from '../../../lib';
+import { BaseColors, HorizontalPositions, Sizes } from 'lib/primitives';
+import { Color, MarginTop, Size } from '../../../lib';
 import { buttonProportions, iconSizes } from './styles';
 import { classNames, colorTheme, defaultColors, getColorVariantsFromColorThemeValue, spacing } from 'lib';
 
@@ -13,7 +13,7 @@ export interface ButtonInlineProps {
     Icon?: React.ElementType,
     iconPosition?: string,
     tooltip?: string,
-    size?: string,
+    size?: Size,
     color?: Color,
     handleClick?: { (): void },
     marginTop?: MarginTop,
@@ -22,10 +22,10 @@ export interface ButtonInlineProps {
 const ButtonInline = ({
     text,
     Icon,
-    iconPosition = HorizontalPositionTypes.Left,
+    iconPosition = HorizontalPositions.Left,
     handleClick,
     tooltip,
-    size = SizeTypes.SM,
+    size = Sizes.SM,
     color = BaseColors.Blue,
     marginTop = 'mt-0',
 }: ButtonInlineProps) => {
@@ -45,7 +45,7 @@ const ButtonInline = ({
                         getColorVariantsFromColorThemeValue(defaultColors.transparent).hoverBgColor,
                     ) }
                 >
-                    { Icon && (iconPosition !== HorizontalPositionTypes.Right) ? ( // ensures that icon is rendered if iconPosition is misspelled
+                    { Icon && (iconPosition !== HorizontalPositions.Right) ? ( // ensures that icon is rendered if iconPosition is misspelled
                         <Icon
                             className={ classNames(
                                 spacing.twoXs.negativeMarginLeft,
@@ -57,7 +57,7 @@ const ButtonInline = ({
                         />
                     ) : null }
                     <p className="whitespace-nowrap">{ text }</p>
-                    { Icon && (iconPosition === HorizontalPositionTypes.Right) ? (
+                    { Icon && (iconPosition === HorizontalPositions.Right) ? (
                         <Icon
                             className={ classNames(
                                 spacing.twoXs.negativeMarginRight,
