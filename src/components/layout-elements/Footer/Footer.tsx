@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { classNames, spacing } from 'lib';
-import { TwHeight } from '../../../lib';
+import { Height } from '../../../lib';
 
 export interface FooterProps {
-    height?: TwHeight,
+    height?: Height,
     children: React.ReactNode;
 }
 

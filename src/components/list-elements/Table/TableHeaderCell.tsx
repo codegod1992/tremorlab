@@ -7,10 +7,10 @@ import {
     getColorVariantsFromColorThemeValue,
     spacing,
 } from 'lib';
-import { TwTextAlignment } from '../../../lib';
+import { TextAlignment } from '../../../lib';
 
 interface TableHeaderCellProps {
-    textAlignment?: TwTextAlignment,
+    textAlignment?: TextAlignment,
     children: React.ReactNode,
 }
 

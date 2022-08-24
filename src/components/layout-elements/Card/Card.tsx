@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { BaseColors, HorizontalPositionTypes, VerticalPositionTypes } from 'lib/primitives';
-import { Color, MarginTop, TwMaxWidth } from '../../../lib';
+import { Color, MarginTop, MaxWidth } from '../../../lib';
 import {
     classNames,
     colorTheme,
@@ -29,7 +29,7 @@ const parseDecorationAlignment = (decorationAlignment: string) => {
 
 export interface CardProps {
     hFull?: boolean,
-    maxWidth?: TwMaxWidth,
+    maxWidth?: MaxWidth,
     shadow?: boolean,
     decoration?: string,
     decorationColor?: Color,

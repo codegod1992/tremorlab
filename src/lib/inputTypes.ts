@@ -48,7 +48,7 @@ export const twJustifyContentValues = [
     'justify-evenly',
 ] as const;
 
-export type TwJustifyContent = typeof twJustifyContentValues[number];
+export type JustifyContent = typeof twJustifyContentValues[number];
 
 export const twAlignItemsValues = [
     'items-start',
@@ -58,7 +58,7 @@ export const twAlignItemsValues = [
     'items-stretch',
 ] as const;
 
-export type TwAlignItems = typeof twAlignItemsValues[number];
+export type AlignItems = typeof twAlignItemsValues[number];
 
 export const twTextAlignmentValues = [
     'text-left',
@@ -69,7 +69,7 @@ export const twTextAlignmentValues = [
     'text-end',
 ] as const;
 
-export type TwTextAlignment = typeof twTextAlignmentValues[number];
+export type TextAlignment = typeof twTextAlignmentValues[number];
 
 export const twMaxWidthValues = [
     'max-w-0',
@@ -96,7 +96,7 @@ export const twMaxWidthValues = [
     'max-w-screen-2xl',
 ] as const;
 
-export type TwMaxWidth = typeof twMaxWidthValues[number];
+export type MaxWidth = typeof twMaxWidthValues[number];
 
 export const twSpaceXValues = [
     'space-x-0',
@@ -135,7 +135,7 @@ export const twSpaceXValues = [
     'space-x-96',
 ] as const;
 
-export type TwSpaceX = typeof twSpaceXValues[number];
+export type SpaceX = typeof twSpaceXValues[number];
 
 export const twTopMargins = [
     'mt-0',
@@ -213,7 +213,7 @@ export const twLeftPaddings = [
     'pl-96',
 ] as const;
 
-export type TwPaddinLeft = typeof twLeftPaddings[number];
+export type PaddingLeft = typeof twLeftPaddings[number];
 
 export const twRightPaddings = [
     'pr-0',
@@ -252,7 +252,7 @@ export const twRightPaddings = [
     'pr-96',
 ] as const;
 
-export type TwPaddinRight = typeof twRightPaddings[number];
+export type PaddingRight = typeof twRightPaddings[number];
 
 export const twTopPaddings = [
     'pt-0',
@@ -291,7 +291,7 @@ export const twTopPaddings = [
     'pt-96',
 ] as const;
 
-export type TwPaddingTop = typeof twTopPaddings[number];
+export type PaddingTop = typeof twTopPaddings[number];
 
 export const twBottomPaddings = [
     'pb-0',
@@ -330,7 +330,7 @@ export const twBottomPaddings = [
     'pb-96',
 ] as const;
 
-export type TwPaddingBottom = typeof twBottomPaddings[number];
+export type PaddingBottom = typeof twBottomPaddings[number];
 
 export const twHeights = [
     'h-0',
@@ -369,7 +369,7 @@ export const twHeights = [
     'h-96',
 ] as const;
 
-export type TwHeight = typeof twHeights[number];
+export type Height = typeof twHeights[number];
 
 export const twWidths = [
     'w-0',
@@ -408,4 +408,4 @@ export const twWidths = [
     'w-96',
 ] as const;
 
-export type TwWidth = typeof twWidths[number];
+export type Width = typeof twWidths[number];

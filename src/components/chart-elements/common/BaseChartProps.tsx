@@ -1,13 +1,13 @@
 import {
     Color,
+    Height,
     MarginTop,
-    TwHeight,
-    TwPaddinLeft,
-    TwPaddinRight,
-    TwPaddingBottom,
-    TwPaddingTop,
-    TwWidth,
+    PaddingBottom,
+    PaddingLeft,
+    PaddingRight,
+    PaddingTop,
     ValueFormater,
+    Width,
 } from '../../../lib';
 
 interface BaseChartProps {
@@ -19,15 +19,15 @@ interface BaseChartProps {
     startEndOnly?: boolean,
     showXAxis?: boolean,
     showYAxis?: boolean,
-    yAxisWidth?: TwWidth,
+    yAxisWidth?: Width,
     showTooltip?: boolean,
     showLegend?: boolean,
     showGridLines?: boolean,
-    height?: TwHeight,
-    paddingLeft?: TwPaddinLeft,
-    paddingTop?: TwPaddingTop,
-    paddingRight?: TwPaddinRight,
-    paddingBottom?: TwPaddingBottom,
+    height?: Height,
+    paddingLeft?: PaddingLeft,
+    paddingTop?: PaddingTop,
+    paddingRight?: PaddingRight,
+    paddingBottom?: PaddingBottom,
     marginTop?: MarginTop,
 }
 

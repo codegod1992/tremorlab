@@ -4,10 +4,10 @@ import {
     classNames,
     spacing,
 } from 'lib';
-import { TwTextAlignment } from '../../../lib';
+import { TextAlignment } from '../../../lib';
 
 export interface TableCellProps {
-    textAlignment?: TwTextAlignment,
+    textAlignment?: TextAlignment,
     children: React.ReactNode
 }
 

@@ -10,14 +10,14 @@ import {
     sizing,
     spacing
 } from 'lib';
-import { Color, MarginTop, TwHeight } from '../../../lib';
+import { Color, Height, MarginTop } from '../../../lib';
 
 export interface CalloutProps {
     title: string,
     text: string,
     Icon?: React.ElementType,
     color?: Color,
-    height?: TwHeight | '',
+    height?: Height | '',
     marginTop?: MarginTop,
 }
 
