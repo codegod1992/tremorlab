@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TwAlignItems, TwJustifyContent, TwMarginTop, TwSpaceX } from '../../../lib';
+import { MarginTop, TwAlignItems, TwJustifyContent, TwSpaceX } from '../../../lib';
 import { classNames } from 'lib';
 
 export interface FlexProps {
@@ -8,7 +8,7 @@ export interface FlexProps {
     alignItems?: TwAlignItems,
     spaceX?: TwSpaceX,
     truncate?: boolean,
-    marginTop?: TwMarginTop,
+    marginTop?: MarginTop,
     children: React.ReactNode,
 }
 

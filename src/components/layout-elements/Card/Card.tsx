@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { BaseColors, HorizontalPositions, VerticalPositions } from 'lib/primitives';
-import { Colors, TwMarginTop, TwMaxWidth } from '../../../lib';
+import { BaseColors, HorizontalPositionTypes, VerticalPositionTypes } from 'lib/primitives';
+import { Color, MarginTop, TwMaxWidth } from '../../../lib';
 import {
     classNames,
     colorTheme,
@@ -14,13 +14,13 @@ import {
 const parseDecorationAlignment = (decorationAlignment: string) => {
     if (!decorationAlignment) return '';
     switch(decorationAlignment) {
-    case HorizontalPositions.Left:
+    case HorizontalPositionTypes.Left:
         return 'border-l-4';
-    case VerticalPositions.Top:
+    case VerticalPositionTypes.Top:
         return 'border-t-4';
-    case HorizontalPositions.Right:
+    case HorizontalPositionTypes.Right:
         return 'border-r-4';
-    case VerticalPositions.Bottom:
+    case VerticalPositionTypes.Bottom:
         return 'border-b-4';
     default:
         return '';
@@ -32,8 +32,8 @@ export interface CardProps {
     maxWidth?: TwMaxWidth,
     shadow?: boolean,
     decoration?: string,
-    decorationColor?: Colors,
-    marginTop?: TwMarginTop,
+    decorationColor?: Color,
+    marginTop?: MarginTop,
     children: React.ReactNode
 }
 

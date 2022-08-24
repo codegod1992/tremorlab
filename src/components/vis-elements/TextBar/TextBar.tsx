@@ -11,7 +11,7 @@ import {
     sizing,
     spacing
 } from 'lib';
-import { Colors, TwMarginTop, ValueFormater } from '../../../lib';
+import { Color, MarginTop, ValueFormater } from '../../../lib';
 
 type TextBarData = {
     value: number,
@@ -30,8 +30,8 @@ const getWidthsFromValues = (data: TextBarData[]) => {
 export interface TextBarProps {
     data: TextBarData[],
     valueFormater?: ValueFormater,
-    color?: Colors,
-    marginTop?: TwMarginTop,
+    color?: Color,
+    marginTop?: MarginTop,
 }
 
 const TextBar = ({

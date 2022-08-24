@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
 import { classNames, defaultColors, getColorVariantsFromColorThemeValue } from 'lib';
-import { TwMarginTop } from '../../../lib';
+import { MarginTop } from '../../../lib';
 
 export interface AccordionProps {
     shadow?: boolean,
     expanded?: boolean,
-    marginTop?: TwMarginTop,
+    marginTop?: MarginTop,
     privateProps?: {
         shapeClassNames: string,
     },

@@ -1,7 +1,7 @@
 import { ColorTypes, colorVariantMapping } from './colorVariantMapping';
 import {
+    MarginTop,
     TwHeight,
-    TwMarginTop,
     TwPaddinLeft,
     TwPaddinRight,
     TwPaddingBottom,
@@ -29,7 +29,7 @@ export const classNames: StringJoiner = (
 };
 
 export const getPixelsFromTwClassName = (
-    twClassName: TwMarginTop | TwPaddinLeft | TwPaddinRight | TwPaddingTop | TwPaddingBottom | TwHeight | TwWidth
+    twClassName: MarginTop | TwPaddinLeft | TwPaddinRight | TwPaddingTop | TwPaddingBottom | TwHeight | TwWidth
 ): number => {
     const classNameParts = twClassName.split('-');
     return Number(classNameParts[classNameParts.length - 1]) * 4;

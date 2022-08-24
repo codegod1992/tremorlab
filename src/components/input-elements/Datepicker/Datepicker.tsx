@@ -27,14 +27,14 @@ import {
 } from 'components/input-elements/Datepicker/utils';
 import { defaultColors, fontSize, fontWeight, sizing, spacing } from 'lib';
 import { ArrowDownHeadIcon } from 'assets';
+import { MarginTop } from '../../../lib';
 import Modal from 'components/layout-elements/Modal';
-import { TwMarginTop } from '../../../lib';
 
 export interface DatepickerProps {
     handleSelect?: { (selectedStartDay: Date|null, selectedEndDay: Date|null): void },
     enableRelativeDates?: boolean,
     placeholder?: string,
-    marginTop?: TwMarginTop,
+    marginTop?: MarginTop,
 }
 
 const Datepicker = ({

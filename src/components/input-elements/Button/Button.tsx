@@ -3,8 +3,8 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { BaseColors, HorizontalPositions, Importances, Sizes, classNames, spacing } from 'lib';
-import { Colors, TwMarginTop } from '../../../lib';
+import { BaseColors, HorizontalPositionTypes, ImportanceTypes, SizeTypes, classNames, spacing } from 'lib';
+import { Color, MarginTop } from '../../../lib';
 import {
     buttonProportions,
     colors,
@@ -18,21 +18,21 @@ export interface ButtonProps {
     iconPosition?: string,
     tooltip?: string,
     size?: string,
-    color?: Colors,
+    color?: Color,
     importance?: string,
     handleClick?: { (): void },
-    marginTop?: TwMarginTop,
+    marginTop?: MarginTop,
 }
 
 const Button = ({
     text,
     Icon,
-    iconPosition = HorizontalPositions.Left,
+    iconPosition = HorizontalPositionTypes.Left,
     handleClick,
     tooltip,
-    size = Sizes.SM,
+    size = SizeTypes.SM,
     color = BaseColors.Blue,
-    importance = Importances.Primary,
+    importance = ImportanceTypes.Primary,
     marginTop = 'mt-0',
 }: ButtonProps) => {
     return(
@@ -60,7 +60,7 @@ const Button = ({
                         colors[color][importance].textColor,
                     ) }
                 >
-                    { Icon && (iconPosition !== HorizontalPositions.Right) ? ( // ensures that icon is rendered if iconPosition is misspelled
+                    { Icon && (iconPosition !== HorizontalPositionTypes.Right) ? ( // ensures that icon is rendered if iconPosition is misspelled
                         <Icon
                             className={classNames(
                                 spacing.twoXs.negativeMarginLeft,
@@ -74,7 +74,7 @@ const Button = ({
                     <p className="whitespace-nowrap">
                         { text }
                     </p>
-                    { Icon && (iconPosition === HorizontalPositions.Right) ? (
+                    { Icon && (iconPosition === HorizontalPositionTypes.Right) ? (
                         <Icon
                             className={classNames(
                                 spacing.twoXs.negativeMarginRight,

@@ -11,7 +11,7 @@ import {
     iconSizes,
 } from './styles';
 import { classNames, mapInputsToDeltaType, spacing } from 'lib';
-import { TwMarginTop } from '../../../lib';
+import { MarginTop } from '../../../lib';
 
 export interface BadgeDeltaProps {
     text?: string,
@@ -19,7 +19,7 @@ export interface BadgeDeltaProps {
     isIncreasePositive?: boolean,
     size?: string,
     tooltip?: string,
-    marginTop?: TwMarginTop,
+    marginTop?: MarginTop,
 }
 
 const BadgeDelta = ({

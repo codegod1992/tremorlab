@@ -3,7 +3,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ArrowUpIcon } from 'assets';
 
-import { BaseColors, Sizes } from 'lib/primitives';
+import { BaseColors, SizeTypes } from 'lib/primitives';
 import { Title } from 'components';
 
 import { IconVariants } from 'components/icon-elements/Icon/Icon';
@@ -27,9 +27,14 @@ const Template: ComponentStory<never> = () => (
             </Title>
             <p>Sizes</p>
             <div className="grid grid-cols-8 justify-items-start gap-y-2">
-                {Object.keys(Sizes).map(key => {
+                {Object.keys(SizeTypes).map(key => {
                     return(
-                        <Icon Icon={ MyIcon } variant={ IconVariants.Simple } size={ Sizes[key] } tooltip="Icon Info" />
+                        <Icon
+                            Icon={ MyIcon }
+                            variant={ IconVariants.Simple }
+                            size={ SizeTypes[key] }
+                            tooltip="Icon Info"
+                        />
                     );
                 })}
             </div>
@@ -49,9 +54,14 @@ const Template: ComponentStory<never> = () => (
             </Title>
             <p>Sizes</p>
             <div className="grid grid-cols-8 justify-items-start gap-y-2">
-                {Object.keys(Sizes).map(key => {
+                {Object.keys(SizeTypes).map(key => {
                     return(
-                        <Icon Icon={ MyIcon } variant={ IconVariants.Light } size={ Sizes[key] } tooltip="Icon Info" />
+                        <Icon
+                            Icon={ MyIcon }
+                            variant={ IconVariants.Light }
+                            size={ SizeTypes[key] }
+                            tooltip="Icon Info"
+                        />
                     );
                 })}
             </div>
@@ -71,9 +81,14 @@ const Template: ComponentStory<never> = () => (
             </Title>
             <p>Sizes</p>
             <div className="grid grid-cols-8 justify-items-start gap-y-2">
-                {Object.keys(Sizes).map(key => {
+                {Object.keys(SizeTypes).map(key => {
                     return(
-                        <Icon Icon={ MyIcon } variant={ IconVariants.Shadow } size={ Sizes[key] } tooltip="Icon Info" />
+                        <Icon
+                            Icon={ MyIcon }
+                            variant={ IconVariants.Shadow }
+                            size={ SizeTypes[key] }
+                            tooltip="Icon Info"
+                        />
                     );
                 })}
             </div>
@@ -93,9 +108,14 @@ const Template: ComponentStory<never> = () => (
             </Title>
             <p>Sizes</p>
             <div className="grid grid-cols-8 justify-items-start gap-y-2">
-                {Object.keys(Sizes).map(key => {
+                {Object.keys(SizeTypes).map(key => {
                     return(
-                        <Icon Icon={ MyIcon } variant={ IconVariants.Solid } size={ Sizes[key] } tooltip="Icon Info" />
+                        <Icon
+                            Icon={ MyIcon }
+                            variant={ IconVariants.Solid }
+                            size={ SizeTypes[key] }
+                            tooltip="Icon Info"
+                        />
                     );
                 })}
             </div>
@@ -115,12 +135,12 @@ const Template: ComponentStory<never> = () => (
             </Title>
             <p>Sizes</p>
             <div className="grid grid-cols-8 justify-items-start gap-y-2">
-                {Object.keys(Sizes).map(key => {
+                {Object.keys(SizeTypes).map(key => {
                     return(
                         <Icon
                             Icon={ MyIcon }
                             variant={ IconVariants.Outlined }
-                            size={ Sizes[key] }
+                            size={ SizeTypes[key] }
                             tooltip="Icon Info"
                         />
                     );

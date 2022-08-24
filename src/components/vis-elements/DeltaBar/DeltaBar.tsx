@@ -11,7 +11,7 @@ import {
     mapInputsToDeltaType,
     sizing
 } from 'lib';
-import { TwMarginTop } from '../../../lib';
+import { MarginTop } from '../../../lib';
 import { colors } from './styles';
 
 const getDeltaType = (value: number) => (
@@ -22,7 +22,7 @@ export interface DeltaBarProps {
     percentageValue: number,
     isIncreasePositive?: boolean,
     tooltip?: string,
-    marginTop?: TwMarginTop,
+    marginTop?: MarginTop,
 }
 
 const DeltaBar = ({

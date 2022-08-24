@@ -3,7 +3,7 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { Colors, TwMarginTop } from '../../../lib';
+import { Color, MarginTop } from '../../../lib';
 import { 
     classNames,
     colorTheme,
@@ -53,11 +53,11 @@ const BarLabels = ({ categoryPercentageValues }: {categoryPercentageValues: numb
 
 export interface CategoryBarProps {
     categoryPercentageValues: number[],
-    colors?: Colors[],
+    colors?: Color[],
     percentageValue?: number,
     showLabels?: boolean,
     tooltip?: string,
-    marginTop?: TwMarginTop,
+    marginTop?: MarginTop,
 }
 
 const CategoryBar = ({

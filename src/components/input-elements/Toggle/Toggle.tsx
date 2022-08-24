@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 
 import { BaseColors, classNames, defaultColors, getColorVariantsFromColorThemeValue, spacing } from 'lib';
-import { Colors, TwMarginTop } from '../../../lib';
+import { Color, MarginTop } from '../../../lib';
 
 export interface ToggleProps {
     defaultValue?: any,
-    color?: Colors,
+    color?: Color,
     handleSelect?: { (value: any): void },
     children: React.ReactElement[],
-    marginTop?: TwMarginTop,
+    marginTop?: MarginTop,
 }
 
 const Toggle = ({

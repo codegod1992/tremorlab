@@ -4,7 +4,7 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { BaseColors, classNames, colorTheme, defaultColors, getColorVariantsFromColorThemeValue, sizing } from 'lib';
-import { Colors, TwMarginTop } from '../../../lib';
+import { Color, MarginTop } from '../../../lib';
 
 export interface RangeBarProps {
     percentageValue: number,
@@ -12,8 +12,8 @@ export interface RangeBarProps {
     maxRangeValue: number,
     markerTooltip?: string,
     rangeTooltip?: string,
-    color?: Colors,
-    marginTop?: TwMarginTop,
+    color?: Color,
+    marginTop?: MarginTop,
 }
 
 const RangeBar = ({

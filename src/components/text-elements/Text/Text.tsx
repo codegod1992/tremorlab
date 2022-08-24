@@ -9,14 +9,14 @@ import {
     getColorVariantsFromColorThemeValue,
     parseTruncateOption,
 } from 'lib';
-import { Colors, TwHeight, TwMarginTop, TwTextAlignment } from '../../../lib';
+import { Color, MarginTop, TwHeight, TwTextAlignment } from '../../../lib';
 
 export interface TextProps {
-    color?: Colors,
+    color?: Color,
     textAlignment?: TwTextAlignment,
     truncate?: boolean,
     height?: TwHeight | '',
-    marginTop?: TwMarginTop,
+    marginTop?: MarginTop,
     children: React.ReactNode,
 }
 

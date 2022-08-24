@@ -11,14 +11,14 @@ import {
     sizing,
     spacing
 } from 'lib';
+import { MarginTop } from '../../../lib';
 import Modal from 'components/layout-elements/Modal';
-import { TwMarginTop } from '../../../lib';
 
 export interface DropdownProps {
     placeholder?: string,
     defaultValue?: any,
     handleSelect?: { (value: any): void },
-    marginTop?: TwMarginTop,
+    marginTop?: MarginTop,
     children: React.ReactElement[],
 }
 

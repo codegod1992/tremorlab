@@ -5,10 +5,10 @@ import {
     defaultColors,
     getColorVariantsFromColorThemeValue,
 } from 'lib';
-import { TwMarginTop } from '../../../lib';
+import { MarginTop } from '../../../lib';
 
 export interface ListProps {
-    marginTop?: TwMarginTop,
+    marginTop?: MarginTop,
     children: React.ReactNode
 }
 

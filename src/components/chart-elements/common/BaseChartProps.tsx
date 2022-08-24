@@ -1,7 +1,7 @@
 import {
-    Colors,
+    Color,
+    MarginTop,
     TwHeight,
-    TwMarginTop,
     TwPaddinLeft,
     TwPaddinRight,
     TwPaddingBottom,
@@ -14,7 +14,7 @@ interface BaseChartProps {
     data: any[],
     categories: string[],
     dataKey: string,
-    colors?: Colors[],
+    colors?: Color[],
     valueFormater?: ValueFormater,
     startEndOnly?: boolean,
     showXAxis?: boolean,
@@ -28,7 +28,7 @@ interface BaseChartProps {
     paddingTop?: TwPaddingTop,
     paddingRight?: TwPaddinRight,
     paddingBottom?: TwPaddingBottom,
-    marginTop?: TwMarginTop,
+    marginTop?: MarginTop,
 }
 
 export default BaseChartProps;

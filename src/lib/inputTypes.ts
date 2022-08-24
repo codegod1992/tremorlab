@@ -2,7 +2,17 @@ export type ValueFormater = {
     (value: number): string
 }
 
-export const baseColorsValues = [
+export const sizeValues = [
+    'xs',
+    'sm',
+    'md',
+    'lg',
+    'xl',
+] as const;
+
+export type Size = typeof sizeValues[number];
+
+export const baseColorValues = [
     'slate',
     'gray',
     'zinc',
@@ -27,7 +37,7 @@ export const baseColorsValues = [
     'rose',
 ] as const;
 
-export type Colors = typeof baseColorsValues[number];
+export type Color = typeof baseColorValues[number];
 
 export const twJustifyContentValues = [
     'justify-start',
@@ -164,7 +174,7 @@ export const twTopMargins = [
     'mt-96',
 ] as const;
 
-export type TwMarginTop = typeof twTopMargins[number];
+export type MarginTop = typeof twTopMargins[number];
 
 export const twLeftPaddings = [
     'pl-0',

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
 import { BaseColors, classNames, defaultColors, getColorVariantsFromColorThemeValue, spacing } from 'lib';
-import { Colors, TwMarginTop } from '../../../lib';
+import { Color, MarginTop } from '../../../lib';
 
 export interface TabListProps {
     defaultValue?: any,
-    color?: Colors,
+    color?: Color,
     handleSelect?: { (value: any): void },
-    marginTop?: TwMarginTop,
+    marginTop?: MarginTop,
     children: React.ReactElement[]
 }
 

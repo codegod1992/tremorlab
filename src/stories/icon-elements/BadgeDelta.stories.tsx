@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { DeltaTypes, Sizes } from 'lib/primitives';
+import { DeltaTypes, SizeTypes } from 'lib/primitives';
 import BadgeDelta from 'components/icon-elements/BadgeDelta/BadgeDelta';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -16,7 +16,7 @@ const Template: ComponentStory<typeof BadgeDelta> = (args) => (
     <div className="grid grid-cols-4">
         <div>
             <p>Sizes</p>
-            { Object.values(Sizes).map(size => (
+            { Object.values(SizeTypes).map(size => (
                 <div className="mt-2 space-x-2">
                     <BadgeDelta {...args} size={ size } />
                     <BadgeDelta {...args} text="" size={ size } />

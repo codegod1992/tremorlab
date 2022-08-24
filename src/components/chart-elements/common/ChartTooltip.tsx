@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Colors, ValueFormater } from '../../../lib';
+import { Color, ValueFormater } from '../../../lib';
 import {
     classNames,
     colorTheme,
@@ -42,7 +42,7 @@ export interface ChartTooltipProps {
     active: boolean | undefined,
     payload: any,
     label: string,
-    colors?: Colors[],
+    colors?: Color[],
     valueFormater: ValueFormater,
 }
 

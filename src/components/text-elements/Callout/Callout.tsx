@@ -10,15 +10,15 @@ import {
     sizing,
     spacing
 } from 'lib';
-import { Colors, TwHeight, TwMarginTop } from '../../../lib';
+import { Color, MarginTop, TwHeight } from '../../../lib';
 
 export interface CalloutProps {
     title: string,
     text: string,
     Icon?: React.ElementType,
-    color?: Colors,
+    color?: Color,
     height?: TwHeight | '',
-    marginTop?: TwMarginTop,
+    marginTop?: MarginTop,
 }
 
 const Callout = ({

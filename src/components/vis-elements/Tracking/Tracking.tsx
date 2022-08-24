@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { classNames, spacing } from 'lib';
-import { TwMarginTop } from '../../../lib';
+import { MarginTop } from '../../../lib';
 
 export interface TrackingProps {
-    marginTop?: TwMarginTop,
+    marginTop?: MarginTop,
     children: React.ReactNode
 }
 

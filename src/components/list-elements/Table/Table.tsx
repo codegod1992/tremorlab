@@ -7,10 +7,10 @@ import {
     fontWeight,
     getColorVariantsFromColorThemeValue
 } from 'lib';
-import { TwMarginTop } from '../../../lib';
+import { MarginTop } from '../../../lib';
 
 export interface TableProps {
-    marginTop?: TwMarginTop,
+    marginTop?: MarginTop,
     children: React.ReactNode
 }
 

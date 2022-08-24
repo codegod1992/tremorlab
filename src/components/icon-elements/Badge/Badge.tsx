@@ -3,24 +3,24 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { BaseColors, Sizes, classNames, colorTheme, getColorVariantsFromColorThemeValue, spacing } from 'lib';
-import { Colors, TwMarginTop } from '../../../lib';
+import { BaseColors, SizeTypes, classNames, colorTheme, getColorVariantsFromColorThemeValue, spacing } from 'lib';
+import { Color, MarginTop, Size } from '../../../lib';
 import { badgeProportions, iconSizes } from './styles';
 
 export interface BadgeProps {
     text: string,
-    color?: Colors,
-    size?: string,
+    color?: Color,
+    size?: Size,
     Icon?: React.ElementType,
     tooltip?: string,
-    marginTop?: TwMarginTop,
+    marginTop?: MarginTop,
 }
 
 const Badge = ({
     text,
     color = BaseColors.Blue,
     Icon,
-    size = Sizes.SM,
+    size = SizeTypes.SM,
     tooltip,
     marginTop = 'mt-0',
 }: BadgeProps) => {

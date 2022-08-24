@@ -8,11 +8,11 @@ import {
     fontWeight,
     getColorVariantsFromColorThemeValue
 } from 'lib';
-import { Colors, TwMarginTop } from '../../../lib';
+import { Color, MarginTop } from '../../../lib';
 
 export interface TitleProps {
-    color?: Colors,
-    marginTop?: TwMarginTop,
+    color?: Color,
+    marginTop?: MarginTop,
     children: React.ReactNode,
 }
 

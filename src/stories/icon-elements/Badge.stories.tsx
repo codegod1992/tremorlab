@@ -3,7 +3,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { BaseColors } from 'lib/primitives';
-import { Sizes } from 'lib/primitives';
+import { SizeTypes } from 'lib/primitives';
 
 import { ArrowUpIcon } from 'assets';
 import Badge from 'components/icon-elements/Badge/Badge';
@@ -20,7 +20,7 @@ const Template: ComponentStory<typeof Badge> = () => (
         <div>
             <p>Sizes</p>
             <div className="grid grid-cols-1 gap-2">
-                { Object.values(Sizes).map(size => (
+                { Object.values(SizeTypes).map(size => (
                     <div className="flex justify-start space-x-4">
                         <Badge size={ size } text={ 'Live' } tooltip={ 'Tooltip' } />
                         <Badge size={ size } text={ 'Live' } Icon={ArrowUpIcon} tooltip={ 'Tooltip' } />

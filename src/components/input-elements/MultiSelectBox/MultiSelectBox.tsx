@@ -12,14 +12,14 @@ import {
     spacing
 } from 'lib';
 import { ArrowDownHeadIcon } from 'assets';
+import { MarginTop } from '../../../lib';
 import Modal from 'components/layout-elements/Modal';
-import { TwMarginTop } from '../../../lib';
 
 export interface MultiSelectBoxProps {
     defaultValues?: any[],
     handleSelect?: { (value: any): void },
     placeholder?: string,
-    marginTop?: TwMarginTop,
+    marginTop?: MarginTop,
     children: React.ReactElement[],
 }
 

@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { TwMarginTop } from '../../../lib';
+import { MarginTop } from '../../../lib';
 import { classNames } from 'lib';
 
 export interface AccordionListProps {
     shadow?: boolean,
-    marginTop?: TwMarginTop,
+    marginTop?: MarginTop,
     children: React.ReactElement[],
 }
 
