@@ -2,6 +2,22 @@ export type ValueFormater = {
     (value: number): string
 }
 
+export type HorizontalPosition = 'left' | 'right';
+
+export type VerticalPosition = 'top' | 'bottom';
+
+export type Importance = 'primary' | 'secondary';
+
+export const deltaTypeValues = [
+    'increase',
+    'moderateIncrease',
+    'decrease',
+    'moderateDecrease',
+    'unchanged',
+] as const;
+
+export type DeltaType = typeof deltaTypeValues[number];
+
 export const sizeValues = [
     'xs',
     'sm',

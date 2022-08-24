@@ -4,7 +4,7 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { BaseColors, HorizontalPositions, Importances, Sizes, classNames, spacing } from 'lib';
-import { Color, MarginTop, Size } from '../../../lib';
+import { Color, HorizontalPosition, Importance, MarginTop, Size } from '../../../lib';
 import {
     buttonProportions,
     colors,
@@ -15,11 +15,11 @@ import {
 export interface ButtonProps {
     text: string,
     Icon?: React.ElementType,
-    iconPosition?: string,
+    iconPosition?: HorizontalPosition,
     tooltip?: string,
     size?: Size,
     color?: Color,
-    importance?: string,
+    importance?: Importance,
     handleClick?: { (): void },
     marginTop?: MarginTop,
 }
