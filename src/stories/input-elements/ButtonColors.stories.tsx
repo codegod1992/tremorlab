@@ -32,8 +32,7 @@ const Template: ComponentStory<never> = () => (
                         <Button
                             text={ buttonText }
                             color={ key }
-                            handleClick={ handleClick } 
-                            tooltip={ 'Button Info' } 
+                            handleClick={ handleClick }
                         />
                     );
                 })}

@@ -17,36 +17,36 @@ export default {
 const Template: ComponentStory<typeof Tracking> = () => (
     <Card>
         <Tracking>
-            <TrackingBlock color="emerald" info="Tracking Info" />
-            <TrackingBlock color="emerald" info="Tracking Info" />
-            <TrackingBlock color="yellow" info="Tracking Info" />
-            <TrackingBlock color="emerald" info="Tracking Info" />
-            <TrackingBlock color="red" info="Tracking Info" />
-            <TrackingBlock color="emerald" info="Tracking Info" />
-            <TrackingBlock color="emerald" info="Tracking Info" />
-            <TrackingBlock color="yellow" info="Tracking Info" />
-            <TrackingBlock color="emerald" info="Tracking Info" />
-            <TrackingBlock color="red" info="Tracking Info" />
-            <TrackingBlock color="emerald" info="Tracking Info" />
-            <TrackingBlock color="emerald" info="Tracking Info" />
-            <TrackingBlock color="yellow" info="Tracking Info" />
-            <TrackingBlock color="emerald" info="Tracking Info" />
-            <TrackingBlock color="red" info="Tracking Info" />
-            <TrackingBlock color="emerald" info="Tracking Info" />
-            <TrackingBlock color="emerald" info="Tracking Info" />
-            <TrackingBlock color="yellow" info="Tracking Info" />
-            <TrackingBlock color="emerald" info="Tracking Info" />
-            <TrackingBlock color="red" info="Tracking Info" />
-            <TrackingBlock color="emerald" info="Tracking Info" />
-            <TrackingBlock color="emerald" info="Tracking Info" />
-            <TrackingBlock color="yellow" info="Tracking Info" />
-            <TrackingBlock color="emerald" info="Tracking Info" />
-            <TrackingBlock color="red" info="Tracking Info" />
-            <TrackingBlock color="emerald" info="Tracking Info" />
-            <TrackingBlock color="emerald" info="Tracking Info" />
-            <TrackingBlock color="yellow" info="Tracking Info" />
-            <TrackingBlock color="emerald" info="Tracking Info" />
-            <TrackingBlock color="red" info="Tracking Info" />
+            <TrackingBlock color="emerald" tooltip="Tracking Info" />
+            <TrackingBlock color="emerald" tooltip="Tracking Info" />
+            <TrackingBlock color="yellow" tooltip="Tracking Info" />
+            <TrackingBlock color="emerald" tooltip="Tracking Info" />
+            <TrackingBlock color="red" tooltip="Tracking Info" />
+            <TrackingBlock color="emerald" tooltip="Tracking Info" />
+            <TrackingBlock color="emerald" tooltip="Tracking Info" />
+            <TrackingBlock color="yellow" tooltip="Tracking Info" />
+            <TrackingBlock color="emerald" tooltip="Tracking Info" />
+            <TrackingBlock color="red" tooltip="Tracking Info" />
+            <TrackingBlock color="emerald" tooltip="Tracking Info" />
+            <TrackingBlock color="emerald" tooltip="Tracking Info" />
+            <TrackingBlock color="yellow" tooltip="Tracking Info" />
+            <TrackingBlock color="emerald" tooltip="Tracking Info" />
+            <TrackingBlock color="red" tooltip="Tracking Info" />
+            <TrackingBlock color="emerald" tooltip="Tracking Info" />
+            <TrackingBlock color="emerald" tooltip="Tracking Info" />
+            <TrackingBlock color="yellow" tooltip="Tracking Info" />
+            <TrackingBlock color="emerald" tooltip="Tracking Info" />
+            <TrackingBlock color="red" tooltip="Tracking Info" />
+            <TrackingBlock color="emerald" tooltip="Tracking Info" />
+            <TrackingBlock color="emerald" tooltip="Tracking Info" />
+            <TrackingBlock color="yellow" tooltip="Tracking Info" />
+            <TrackingBlock color="emerald" tooltip="Tracking Info" />
+            <TrackingBlock color="red" tooltip="Tracking Info" />
+            <TrackingBlock color="emerald" tooltip="Tracking Info" />
+            <TrackingBlock color="emerald" tooltip="Tracking Info" />
+            <TrackingBlock color="yellow" tooltip="Tracking Info" />
+            <TrackingBlock color="emerald" tooltip="Tracking Info" />
+            <TrackingBlock color="red" tooltip="Tracking Info" />
         </Tracking>
     </Card>
 );
