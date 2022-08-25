@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import { ArrowDownHeadIcon } from 'assets';
 
@@ -35,6 +35,8 @@ const SelectBox = ({
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedItem, setSelectedItem] = useState(defaultValue);
 
+    const dropdownRef = useRef(null);
+
     type ValueToNameMapping = {
         [value: string]: string
     }
@@ -64,7 +66,7 @@ const SelectBox = ({
     const filteredOptionNames = new Set(getFilteredOptionNames(searchQuery, allOptionNames));
 
     return (
-        <div className={ classNames(
+        <div ref={ dropdownRef } className={ classNames(
             'relative w-full min-w-[10rem] rounded-md shadow-sm border',
             getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
             marginTop,
@@ -89,14 +91,14 @@ const SelectBox = ({
                 placeholder={ selectedItem ? undefined : placeholder }
                 defaultValue={ selectedItem ? valueToNameMapping[selectedItem] : undefined }
                 onChange={ (e) => setSearchQuery(e.target.value) }
-                onClick={ () => setShowModal(true) }
+                onClick={ () => setShowModal(!showModal) }
             />
             <button
                 className={ classNames(
                     'absolute top-1/2 -translate-y-1/2',
                     spacing.twoXl.right,
                 ) }
-                onClick={ () => setShowModal(true) }
+                onClick={ () => setShowModal(!showModal) }
             >
                 <ArrowDownHeadIcon
                     className={ classNames(
@@ -109,7 +111,11 @@ const SelectBox = ({
                     aria-hidden="true"
                 />
             </button>
-            <Modal showModal={ filteredOptionNames.size === 0 ? false : showModal } setShowModal={ setShowModal }>
+            <Modal
+                showModal={ filteredOptionNames.size === 0 ? false : showModal }
+                setShowModal={ setShowModal }
+                triggerRef={ dropdownRef }
+            >
                 { React.Children.map(children, (child) => {
                     if (filteredOptionNames.has(String(child.props.name))) {
                         return (

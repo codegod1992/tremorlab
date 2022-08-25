@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import { ArrowDownHeadIcon } from 'assets';
 
@@ -31,6 +31,8 @@ const Dropwdown = ({
 }: DropdownProps) => {
     const [showModal, setShowModal] = useState(false);
 
+    const dropdownRef = useRef(null);
+
     type ValueToNameMapping = {
         [value: string]: string
     }
@@ -44,12 +46,17 @@ const Dropwdown = ({
 
     const [selectedItem, setSelectedItem] = useState(defaultValue);
 
+    console.log(showModal);
+
     return(
-        <div className={ classNames(
-            'relative w-full min-w-[10rem] rounded-md shadow-sm border',
-            getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
-            marginTop,
-        ) }>
+        <div
+            ref={ dropdownRef }
+            className={ classNames(
+                'relative w-full min-w-[10rem] rounded-md shadow-sm border',
+                getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
+                marginTop,
+            ) }
+        >
             <button
                 className={ classNames(
                     'flex justify-between items-center w-full rounded-md',
@@ -62,7 +69,7 @@ const Dropwdown = ({
                     spacing.sm.paddingTop,
                     spacing.sm.paddingBottom,
                 ) }
-                onClick={ () => setShowModal(true) }
+                onClick={ () => setShowModal(!showModal) }
             >
                 <p className={ classNames(
                     'whitespace-nowrap truncate',
@@ -85,7 +92,11 @@ const Dropwdown = ({
                     aria-hidden="true"
                 />
             </button>
-            <Modal showModal={ showModal } setShowModal={ setShowModal }>
+            <Modal
+                showModal={ showModal }
+                setShowModal={ setShowModal }
+                triggerRef={ dropdownRef }
+            >
                 { React.Children.map(children, (child: React.ReactElement) => (
                     <>
                         { React.cloneElement(child, {

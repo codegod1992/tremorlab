@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 import {
@@ -50,6 +50,9 @@ const Datepicker = ({
     const [showDropdownModal, setShowDropdownModal] = useState(false);
 
     const [selectedRelativeFilterOption, setSelectedRelativeFilterOption] = useState<string|null>(null);
+
+    const datePickerRef = useRef(null);
+    const dropdownRef = useRef(null);
 
     const today = startOfToday();
     const [hoveredDay, setHoveredDay] = useState<Date|null>(null);
@@ -116,6 +119,7 @@ const Datepicker = ({
             ) }
             >
                 <button
+                    ref={ datePickerRef }
                     onClick={ () => setShowDatePickerModal(!showDatePickerModal) }
                     className={ classNames(
                         'flex items-center w-full truncate rounded-l-md border',
@@ -154,6 +158,7 @@ const Datepicker = ({
                 </button>
                 { enableRelativeDates ? (
                     <button
+                        ref={ dropdownRef }
                         onClick={ () => setShowDropdownModal(!showDropdownModal) }
                         className={ classNames(
                             'inline-flex justify-between w-48 rounded-r-md border',
@@ -198,6 +203,7 @@ const Datepicker = ({
             <Modal
                 showModal={ showDatePickerModal }
                 setShowModal={ setShowDatePickerModal }
+                triggerRef={ datePickerRef }
                 width="w-72"
                 maxHeight="max-h-fit"
             >
@@ -388,7 +394,11 @@ const Datepicker = ({
                     </div>
                 </div>
             </Modal>
-            <Modal showModal={ showDropdownModal } setShowModal={ setShowDropdownModal }>
+            <Modal
+                showModal={ showDropdownModal }
+                setShowModal={ setShowDropdownModal }
+                triggerRef={ dropdownRef }
+            >
                 { relativeFilterOptions.map((filterOption) => (
                     <button
                         key={ filterOption.value }

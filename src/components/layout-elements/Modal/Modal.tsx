@@ -11,6 +11,7 @@ import {
 export interface ModalProps {
     showModal: boolean,
     setShowModal: React.Dispatch<React.SetStateAction<boolean>>,
+    triggerRef: React.RefObject<HTMLElement>,
     width?: string,
     maxHeight?: string,
     children: React.ReactNode,
@@ -19,12 +20,16 @@ export interface ModalProps {
 const Modal = ({
     showModal,
     setShowModal,
+    triggerRef,
     width = 'w-full',
     maxHeight = 'max-h-72',
     children,
 }: ModalProps) => {
     const modalRef = useRef<HTMLDivElement>(null);
-    useOnClickOutside(modalRef, () => setShowModal(false));
+    useOnClickOutside(modalRef, (e) => {
+        const isTriggerElem = triggerRef ? triggerRef.current?.contains(e.target) : false;
+        if (!isTriggerElem) setShowModal(false);
+    });
 
     return (
         showModal ? (
