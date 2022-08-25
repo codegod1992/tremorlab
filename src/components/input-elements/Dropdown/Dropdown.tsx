@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import { ArrowDownHeadIcon } from 'assets';
 
@@ -43,40 +43,6 @@ const Dropwdown = ({
     consturctValueToNameMapping();
 
     const [selectedItem, setSelectedItem] = useState(defaultValue);
-
-    type ShortcutMapping = {
-        [shortcut: string]: any
-    }
-    const shortcutMapping: ShortcutMapping = {};
-    const consturctShortcutMapping = () => {
-        React.Children.map(children, (child) => {
-            if (child.props.shortcut) {
-                shortcutMapping[child.props.shortcut.toLowerCase()] = {
-                    value: child.props.value,
-                    name: child.props.name,
-                };
-            }
-        });
-    };
-
-    const handleKeyDown = (event: KeyboardEvent, shortcutMapping: ShortcutMapping) => {
-        const keyLower = event.key.toLocaleLowerCase();
-        if (Object.keys(shortcutMapping).includes(keyLower)) {
-            setSelectedItem(shortcutMapping[keyLower].value);
-            handleSelect(selectedItem);
-            setShowModal(false);
-        }
-    };
-
-    useEffect(() => {
-        consturctShortcutMapping();
-
-        document.addEventListener('keydown', (e) => handleKeyDown(e, shortcutMapping));
-
-        return () => {
-            document.removeEventListener('keydown', (e) => handleKeyDown(e, shortcutMapping));
-        };
-    }, [selectedItem]);
 
     return(
         <div className={ classNames(
