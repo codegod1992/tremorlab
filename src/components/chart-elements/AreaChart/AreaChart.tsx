@@ -84,24 +84,22 @@ const AreaChart = ({
                     } }
                     tickFormatter={ valueFormater }
                 />
-                <Tooltip
-                    isAnimationActive={false}
-                    cursor={{ stroke: '#d1d5db', strokeWidth: 1 }}
-                    content={ ({ active, payload, label }) => (
-                        showTooltip
-                            ? (
-                                <ChartTooltip
-                                    active={ active }
-                                    payload={ payload }
-                                    label={ label }
-                                    valueFormater={ valueFormater }
-                                    colors={ colors }
-                                />
-                            )
-                            : null
-                    ) }
-                    position={ { y: 0 } }
-                />
+                { showTooltip ? (
+                    <Tooltip
+                        isAnimationActive={false}
+                        cursor={{ stroke: '#d1d5db', strokeWidth: 1 }}
+                        content={ ({ active, payload, label }) => (
+                            <ChartTooltip
+                                active={ active }
+                                payload={ payload }
+                                label={ label }
+                                valueFormater={ valueFormater }
+                                colors={ colors }
+                            />
+                        ) }
+                        position={ { y: 0 } }
+                    />
+                ) : null }
                 { showLegend ? (
                     <Legend
                         verticalAlign="top"

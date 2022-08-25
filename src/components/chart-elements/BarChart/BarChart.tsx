@@ -136,25 +136,22 @@ const BarChart = ({
                         } }  
                     />
                 ) }
-
-                <Tooltip
-                    isAnimationActive={false}
-                    cursor={ { fill: '#d1d5db', opacity: '0.15' } }
-                    content={ ({ active, payload, label }) => (
-                        showTooltip
-                            ? (
-                                <ChartTooltip
-                                    active={ active }
-                                    payload={ payload }
-                                    label={ label }
-                                    valueFormater={ valueFormater }
-                                    colors={ colors }
-                                />
-                            )
-                            : null
-                    ) }
-                    position={{ y: 0 }}
-                />
+                { showTooltip ? (
+                    <Tooltip
+                        isAnimationActive={false}
+                        cursor={ { fill: '#d1d5db', opacity: '0.15' } }
+                        content={ ({ active, payload, label }) => (
+                            <ChartTooltip
+                                active={ active }
+                                payload={ payload }
+                                label={ label }
+                                valueFormater={ valueFormater }
+                                colors={ colors }
+                            />
+                        ) }
+                        position={{ y: 0 }}
+                    />
+                ) : null }
                 {
                     showLegend ? (
                         <Legend
