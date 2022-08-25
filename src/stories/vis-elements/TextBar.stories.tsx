@@ -13,7 +13,7 @@ export default {
 
 const Template: ComponentStory<typeof TextBar> = (args) => (
     <Card>
-        <TextBar data={ args.data } />
+        <TextBar {...args} />
     </Card>
 );
   
@@ -27,5 +27,6 @@ Default.args = {
         { name: `/special-offer-august-getsahdkjhagskdfjhgakshjgdfkjahsgdfjkgasdjkhfgajkshgdfjkhagsdkjhfgajhksdgfjkhasdg
             fjkhagsdjhkgfasjkdgfjkasdhgkjgfdsk`, value: 191 },
         { name: '/documentation', value: 91 },
-    ]
+    ],
+    valueFormater: (value) => `${value} USD`
 };

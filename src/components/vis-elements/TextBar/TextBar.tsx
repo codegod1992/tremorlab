@@ -24,7 +24,10 @@ const getWidthsFromValues = (data: TextBarData[]) => {
         maxValue = Math.max(maxValue, item.value);
     });
 
-    return data.map(item => (item.value / maxValue) * 100);
+    return data.map(item => {
+        if (item.value === 0) return 0;
+        return Math.max((item.value / maxValue) * 100, 1);
+    });
 };
 
 export interface TextBarProps {
@@ -58,8 +61,6 @@ const TextBar = ({
                             'flex items-center rounded-sm',
                             rowHeight,
                             getColorVariantsFromColorThemeValue(colorTheme[color].lightBackground).bgColor,
-                            spacing.sm.paddingLeft,
-                            spacing.sm.paddingRight,
                             idx === data.length - 1 ? spacing.none.marginBottom : spacing.sm.marginBottom,
                         ) }
                         style={ { width: `${widths[idx]}%` } }
@@ -82,11 +83,16 @@ const TextBar = ({
                         className={ classNames(
                             'flex justify-end items-center',
                             rowHeight,
-                            getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
                             idx === data.length - 1 ? spacing.none.marginBottom : spacing.sm.marginBottom,
                         ) }
                     >
-                        { valueFormater(item.value) }
+                        <p className={ classNames(
+                            'whitespace-nowrap truncate',
+                            getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
+                            fontSize.sm,
+                        ) }>
+                            { valueFormater(item.value) }
+                        </p>
                     </div>
                 )) }
             </div>
