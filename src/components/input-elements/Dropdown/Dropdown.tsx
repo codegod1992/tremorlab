@@ -46,8 +46,6 @@ const Dropwdown = ({
 
     const [selectedItem, setSelectedItem] = useState(defaultValue);
 
-    console.log(showModal);
-
     return(
         <div
             ref={ dropdownRef }
