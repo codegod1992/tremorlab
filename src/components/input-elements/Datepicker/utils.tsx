@@ -3,13 +3,13 @@ import React from 'react';
 import { add, format, isEqual, isToday, } from 'date-fns';
 
 import {
-    BaseColors,
     classNames,
     colorTheme,
     defaultColors,
     fontWeight,
     getColorVariantsFromColorThemeValue
 } from 'lib';
+import { Color } from '../../../lib';
 
 export const relativeFilterOptions = [
     {
@@ -79,16 +79,17 @@ export const getDayBgColorClassName = (
     day: Date,
     selectedStartDay: Date|null,
     selectedEndDay: Date|null,
-    hoveredDay: Date|null
+    hoveredDay: Date|null,
+    color: Color,
 ): string => {
     if (selectedStartDay && isEqual(day, selectedStartDay)) {
-        return getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].background).bgColor;
+        return getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor;
     }
     if (selectedStartDay && !selectedEndDay && hoveredDay && (day > selectedStartDay && day < hoveredDay)) {
         return getColorVariantsFromColorThemeValue(defaultColors.lightBackground).bgColor;
     }
     if (selectedEndDay && isEqual(day, selectedEndDay)) {
-        return getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].background).bgColor;
+        return getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor;
     }
     if (selectedStartDay && selectedEndDay && (day > selectedStartDay && day < selectedEndDay)) {
         return getColorVariantsFromColorThemeValue(defaultColors.lightBackground).bgColor;
@@ -102,6 +103,7 @@ export const getDayTextClassNames = (
     selectedStartDay: Date|null,
     selectedEndDay: Date|null,
     hoveredDay: Date|null,
+    color: Color,
 ): string => {
     if (isToday(day)) {
         if ((selectedStartDay && isEqual(day, selectedStartDay))
@@ -109,7 +111,7 @@ export const getDayTextClassNames = (
             return getColorVariantsFromColorThemeValue(defaultColors.white).textColor;
         }
         return classNames(
-            getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].text).textColor,
+            getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor,
             fontWeight.lg,
         );
     }
@@ -123,7 +125,7 @@ export const getDayTextClassNames = (
         return getColorVariantsFromColorThemeValue(defaultColors.white).textColor;
     }
     if (selectedStartDay && selectedEndDay && (day > selectedStartDay && day < selectedEndDay)) {
-        return getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].text).textColor;
+        return getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor;
     }
     return getColorVariantsFromColorThemeValue(defaultColors.darkestText).textColor;
 };

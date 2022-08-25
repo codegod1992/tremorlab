@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { SearchIcon, XCircleIcon } from '@heroicons/react/solid';
 
@@ -37,6 +37,8 @@ const MultiSelectBox = ({
 
     const [searchQuery, setSearchQuery] = useState('');
 
+    const dropdownRef = useRef(null);
+
     const getOptionNamesFromChildren = (children: React.ReactElement[]): string[] => (
         React.Children.map(children, (child) => {
             return String(child.props.name);
@@ -70,12 +72,16 @@ const MultiSelectBox = ({
     }, [selectedItems]);
 
     return (
-        <div className={ classNames(
-            'relative w-full min-w-[10rem] rounded-md shadow-sm border',
-            getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
-            marginTop,
-        ) }>
+        <div
+            ref={ dropdownRef }
+            className={ classNames(
+                'relative w-full min-w-[10rem] rounded-md shadow-sm border',
+                getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
+                marginTop,
+            ) }
+        >
             <button
+                id="multiselect-dropdown-button"
                 className={ classNames(
                     'flex justify-between items-center w-full rounded-md',
                     'focus:ring-2 focus:outline-0',
@@ -87,7 +93,7 @@ const MultiSelectBox = ({
                     spacing.sm.paddingTop,
                     spacing.sm.paddingBottom,
                 ) }
-                onClick={ () => setShowModal(true) }
+                onClick={ () => setShowModal(!showModal) }
             >
                 <p className={ classNames(
                     'whitespace-nowrap truncate',
@@ -129,7 +135,11 @@ const MultiSelectBox = ({
                     />
                 </div>
             </button>
-            <Modal showModal={ showModal } setShowModal={ setShowModal }>
+            <Modal
+                showModal={ showModal }
+                setShowModal={ setShowModal }
+                triggerRef={ dropdownRef }
+            >
                 <div className={ classNames(
                     'flex items-center w-full',
                     getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).bgColor,
