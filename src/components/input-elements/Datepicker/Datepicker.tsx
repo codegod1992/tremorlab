@@ -13,6 +13,7 @@ import {
     sub,
 } from 'date-fns';
 
+import { BaseColors, Color, MarginTop } from '../../../lib';
 import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 import {
     colStartClasses,
@@ -27,13 +28,13 @@ import {
 } from 'components/input-elements/Datepicker/utils';
 import { defaultColors, fontSize, fontWeight, sizing, spacing } from 'lib';
 import { ArrowDownHeadIcon } from 'assets';
-import { MarginTop } from '../../../lib';
 import Modal from 'components/layout-elements/Modal';
 
 export interface DatepickerProps {
     handleSelect?: { (selectedStartDay: Date|null, selectedEndDay: Date|null): void },
     enableRelativeDates?: boolean,
     placeholder?: string,
+    color?: Color,
     marginTop?: MarginTop,
 }
 
@@ -42,6 +43,7 @@ const Datepicker = ({
     handleSelect = (selectedStartDay: Date|null, selectedEndDay: Date|null) => null,
     enableRelativeDates = true,
     placeholder = 'Select...',
+    color = BaseColors.Blue,
     marginTop = 'mt-0',
 }: DatepickerProps) => {
     const [showDatePickerModal, setShowDatePickerModal] = useState(false);
@@ -114,7 +116,7 @@ const Datepicker = ({
             ) }
             >
                 <button
-                    onClick={ () => setShowDatePickerModal(true) }
+                    onClick={ () => setShowDatePickerModal(!showDatePickerModal) }
                     className={ classNames(
                         'flex items-center w-full truncate rounded-l-md border',
                         'focus:ring-2 focus:outline-none focus:z-10',
@@ -152,7 +154,7 @@ const Datepicker = ({
                 </button>
                 { enableRelativeDates ? (
                     <button
-                        onClick={ () => setShowDropdownModal(true) }
+                        onClick={ () => setShowDropdownModal(!showDropdownModal) }
                         className={ classNames(
                             'inline-flex justify-between w-48 rounded-r-md border',
                             'focus:ring-2 focus:outline-none',
@@ -357,8 +359,20 @@ const Datepicker = ({
                                     onMouseLeave={ () => setHoveredDay(null) }
                                     className={classNames(
                                         'w-full flex items-center justify-center',
-                                        getDayBgColorClassName(day, selectedStartDay, selectedEndDay, hoveredDay),
-                                        getDayTextClassNames(day, selectedStartDay, selectedEndDay, hoveredDay),
+                                        getDayBgColorClassName(
+                                            day,
+                                            selectedStartDay,
+                                            selectedEndDay,
+                                            hoveredDay,
+                                            color,
+                                        ),
+                                        getDayTextClassNames(
+                                            day,
+                                            selectedStartDay,
+                                            selectedEndDay,
+                                            hoveredDay,
+                                            color,
+                                        ),
                                         getDayHoverBgColorClassName(day, selectedStartDay, selectedEndDay),
                                         getDayRoundedClassName(day, selectedStartDay, selectedEndDay, hoveredDay),
                                         sizing.threeXl.height,
