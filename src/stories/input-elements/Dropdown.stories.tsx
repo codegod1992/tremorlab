@@ -5,7 +5,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Card, DropdownItem, SelectBox, SelectBoxItem } from 'components';
 import Dropdown from 'components/input-elements/Dropdown/Dropdown';
 
-import { CalendarIcon } from '@heroicons/react/solid';
+import { CalendarIcon } from 'assets';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import { SearchIcon, XCircleIcon } from '@heroicons/react/solid';
-
+import { ArrowDownHeadIcon, SearchIcon, XCircleIcon } from 'assets';
 import {
     classNames,
     defaultColors,
@@ -11,7 +10,6 @@ import {
     sizing,
     spacing
 } from 'lib';
-import { ArrowDownHeadIcon } from 'assets';
 import { MarginTop } from '../../../lib';
 import Modal from 'components/layout-elements/Modal';
 

@@ -5,7 +5,7 @@ import Toggle from 'components/input-elements/Toggle/Toggle';
 import { ToggleItem } from 'components';
 
 import { BaseColors } from 'lib/primitives';
-import { CalendarIcon } from '@heroicons/react/solid';
+import { CalendarIcon } from 'assets';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 import {
     eachDayOfInterval,
     endOfMonth,
@@ -13,6 +12,7 @@ import {
     sub,
 } from 'date-fns';
 
+import { ArrowDownHeadIcon, ArrowLeftHeadIcon, ArrowRightHeadIcon, CalendarIcon } from 'assets';
 import { BaseColors, Color, MarginTop } from '../../../lib';
 import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
 import {
@@ -27,7 +27,6 @@ import {
     relativeFilterOptions
 } from 'components/input-elements/Datepicker/utils';
 import { defaultColors, fontSize, fontWeight, sizing, spacing } from 'lib';
-import { ArrowDownHeadIcon } from 'assets';
 import Modal from 'components/layout-elements/Modal';
 
 export interface DatepickerProps {
@@ -239,7 +238,7 @@ const Datepicker = ({
                                 fontWeight.md,
                             ) }
                         >
-                            <ChevronLeftIcon
+                            <ArrowLeftHeadIcon
                                 className={ classNames(
                                     getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
                                     sizing.lg.height,
@@ -267,7 +266,7 @@ const Datepicker = ({
                                 fontWeight.md,
                             ) }
                         >
-                            <ChevronRightIcon
+                            <ArrowRightHeadIcon
                                 className={ classNames(
                                     getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
                                     sizing.lg.height,
