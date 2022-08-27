@@ -14,7 +14,7 @@ const Italic = ({
 }: ItalicProps) => {
     return(
         <span className={ classNames(
-            'italic whitespace-nowrap text-inherit',
+            'italic text-inherit',
             marginTop,
             fontSize.sm,
         ) }

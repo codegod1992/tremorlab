@@ -6,24 +6,27 @@ import {
     colorTheme,
     fontSize,
     fontWeight,
-    getColorVariantsFromColorThemeValue
+    getColorVariantsFromColorThemeValue,
+    parseTruncateOption
 } from 'lib';
 import { Color, MarginTop } from '../../../lib';
 
 export interface TitleProps {
     color?: Color,
+    truncate?: boolean,
     marginTop?: MarginTop,
     children: React.ReactNode,
 }
 
 const Title = ({
     color = BaseColors.Gray,
+    truncate = false,
     marginTop = 'mt-0',
     children
 }: TitleProps) => {
     return(
         <p className={ classNames(
-            'whitespace-nowrap truncate',
+            parseTruncateOption(truncate),
             marginTop,
             getColorVariantsFromColorThemeValue(colorTheme[color].darkText).textColor,
             fontSize.lg,
