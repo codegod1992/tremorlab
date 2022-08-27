@@ -54,7 +54,7 @@ const Template: ComponentStory<typeof Card> = () => (
                         <Text>12.3%</Text>
                         <Text>E 20.000</Text>
                     </Flex>
-                    <Text>$ 20.000 USD</Text>
+                    <Text truncate={ true }>$ 20.000 USD</Text>
                 </Flex>
             </div>
             <div style={{'marginTop': '5px'}}>

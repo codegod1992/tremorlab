@@ -31,7 +31,7 @@ const Text = ({
     return(
         <p className={classNames(
             parseTruncateOption(truncate),
-            truncate ? 'whitespace-nowrap' : '',
+            truncate ? 'whitespace-nowrap' : 'shrink-0',
             height,
             height ? 'overflow-y-auto' : '',
             marginTop,
