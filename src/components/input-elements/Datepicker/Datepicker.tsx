@@ -160,14 +160,14 @@ const Datepicker = ({
                         ref={ dropdownRef }
                         onClick={ () => setShowDropdownModal(!showDropdownModal) }
                         className={ classNames(
-                            'inline-flex justify-between w-48 rounded-r-md border',
+                            'inline-flex justify-between w-48 truncate rounded-r-md border',
                             'focus:ring-2 focus:outline-none',
-                            '-ml-px truncate',
                             getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
                             getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
                             getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
                             spacing.twoXl.paddingLeft,
                             spacing.twoXl.paddingRight,
+                            spacing.px.negativeMarginLeft,
                             spacing.sm.paddingTop,
                             spacing.sm.paddingBottom,
                         ) }
