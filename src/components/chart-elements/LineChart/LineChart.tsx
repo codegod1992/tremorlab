@@ -38,10 +38,10 @@ const LineChart = ({
     showLegend = true,
     showGridLines = true,
     height = 'h-80',
-    paddingTop = 'pt-1',
-    paddingRight = 'pr-5',
-    paddingBottom = 'pb-5',
-    paddingLeft = 'pl-1',
+    paddingTop = 'pt-0',
+    paddingRight = 'pr-0',
+    paddingBottom = 'pb-0',
+    paddingLeft = 'pl-0',
     marginTop = 'mt-0',
 }: BaseChartProps) => {
     return (
