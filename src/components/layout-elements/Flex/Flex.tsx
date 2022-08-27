@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { AlignItems, JustifyContent, MarginTop, SpaceX } from '../../../lib';
-import { classNames } from 'lib';
+import { classNames, parseTruncateOption } from 'lib';
 
 export interface FlexProps {
     justifyContent?: JustifyContent,
@@ -16,12 +16,15 @@ const Flex = ({
     justifyContent = 'justify-between',
     alignItems = 'items-center',
     spaceX = 'space-x-0',
+    truncate = true,
     marginTop = 'mt-0',
     children
 }: FlexProps) => {
     return(
         <div className={ classNames(
             'flex w-full',
+            parseTruncateOption(truncate),
+            truncate ? 'whitespace-nowrap' : '',
             justifyContent,
             alignItems,
             spaceX,

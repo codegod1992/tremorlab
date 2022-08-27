@@ -29,19 +29,21 @@ const Text = ({
     children
 }: TextProps) => {
     return(
-        <p className={classNames(
-            parseTruncateOption(truncate),
-            truncate ? 'whitespace-nowrap' : '',
-            height,
-            height ? 'overflow-y-auto' : '',
-            marginTop,
-            textAlignment,
-            getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor,
-            fontSize.sm,
-            fontWeight.sm,
-        )}>
-            { children }
-        </p>
+        <div className="flex justify-end items-baseline">
+            <p className={classNames(
+                parseTruncateOption(truncate),
+                truncate ? 'whitespace-nowrap' : '',
+                height,
+                height ? 'overflow-y-auto' : '',
+                marginTop,
+                textAlignment,
+                getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor,
+                fontSize.sm,
+                fontWeight.sm,
+            )}>
+                { children }
+            </p>
+        </div>
     );
 };
 

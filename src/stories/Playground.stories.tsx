@@ -51,11 +51,10 @@ const Template: ComponentStory<typeof Card> = () => (
             <div style={{'marginTop': '20px'}}>
                 <Flex>
                     <Flex justifyContent="justify-start" alignItems="items-baseline" spaceX="space-x-2">
-                        <Text>20.000 USD</Text>
+                        <Text>12.3%</Text>
+                        <Text>E 20.000</Text>
                     </Flex>
-                    <Flex justifyContent="justify-end" alignItems="items-baseline" spaceX="space-x-2">
-                        <Text>$ 20.000 USD</Text>
-                    </Flex>
+                    <Text>$ 20.000 USD</Text>
                 </Flex>
             </div>
             <div style={{'marginTop': '5px'}}>
