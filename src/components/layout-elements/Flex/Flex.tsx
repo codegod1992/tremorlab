@@ -16,7 +16,7 @@ const Flex = ({
     justifyContent = 'justify-between',
     alignItems = 'items-center',
     spaceX = 'space-x-0',
-    truncate = true,
+    truncate = false,
     marginTop = 'mt-0',
     children
 }: FlexProps) => {
