@@ -26,6 +26,7 @@ const Title = ({
 }: TitleProps) => {
     return(
         <p className={ classNames(
+            'whitespace-nowrap',
             parseTruncateOption(truncate),
             marginTop,
             getColorVariantsFromColorThemeValue(colorTheme[color].darkText).textColor,

@@ -30,11 +30,12 @@ const Text = ({
 }: TextProps) => {
     return(
         <p className={classNames(
-            'overflow-y-auto',
+            parseTruncateOption(truncate),
+            truncate ? 'whitespace-nowrap' : '',
             height,
+            height ? 'overflow-y-auto' : '',
             marginTop,
             textAlignment,
-            parseTruncateOption(truncate),
             getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor,
             fontSize.sm,
             fontWeight.sm,

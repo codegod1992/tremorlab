@@ -66,7 +66,7 @@ export const toBorderColorClass: TailwindClassConverter = (twClassName: string):
 };
 
 export const parseTruncateOption: BoolClassParser = (option) => {
-    return option===true ? 'truncate whitespace-nowrap' : '';
+    return option===true ? 'truncate' : '';
 };
 
 export const parseHFullOption: BoolClassParser = (option) => {
