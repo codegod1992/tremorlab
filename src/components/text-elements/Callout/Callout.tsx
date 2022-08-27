@@ -34,7 +34,7 @@ const Callout = ({
             'relative rounded-md border-l-4',
             marginTop,
             getColorVariantsFromColorThemeValue(colorTheme[color].canvasBackground).bgColor,
-            getColorVariantsFromColorThemeValue(colorTheme[color].border).borderColor,
+            getColorVariantsFromColorThemeValue(colorTheme[color].darkBorder).borderColor,
             spacing.lg.paddingLeft,
             spacing.lg.paddingRight,
             spacing.lg.paddingTop,

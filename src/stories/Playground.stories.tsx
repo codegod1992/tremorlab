@@ -54,7 +54,7 @@ const Template: ComponentStory<typeof Card> = () => (
                         <Text>20.000 USD</Text>
                     </Flex>
                     <Flex justifyContent="justify-end" alignItems="items-baseline" spaceX="space-x-2">
-                        <Text>20.000 USD</Text>
+                        <Text>$ 20.000 USD</Text>
                     </Flex>
                 </Flex>
             </div>

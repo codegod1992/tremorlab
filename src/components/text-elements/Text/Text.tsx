@@ -26,7 +26,7 @@ const Text = ({
     truncate = false,
     height = '',
     marginTop = 'mt-0',
-    children 
+    children
 }: TextProps) => {
     return(
         <p className={classNames(
