@@ -28,19 +28,25 @@ const MarkerBar = ({
             secondaryBgColor,
             sizing.xs.height,
         ) }>
-            <div className="absolute" style={ { 'left': `${percentageValue}%` } }>
-                <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+            <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+                <div
+                    className={ classNames(
+                        'absolute right-1/2 -translate-x-1/2',
+                        sizing.lg.width, // wide transparant wrapper for tooltip activation
+                    ) }
+                    style={ { 'left': `${percentageValue}%` } }
+                >
                     <div
                         className={ classNames(
-                            'rounded-lg ring-2 right-1/2 -translate-x-1/2',
+                            'rounded-lg ring-2 mx-auto',
                             primaryBgColor,
                             getColorVariantsFromColorThemeValue(defaultColors.white).ringRolor,
                             sizing.md.height,
                             sizing.twoXs.width,
                         ) }
                     />
-                </Tooltip>
-            </div>
+                </div>
+            </Tooltip>
         </div>
     );
 };

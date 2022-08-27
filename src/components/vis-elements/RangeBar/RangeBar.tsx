@@ -41,19 +41,25 @@ const RangeBar = ({
                     style={ {'left': `${minRangeValue}%`, 'width': `${maxRangeValue - minRangeValue}%`} } 
                 />
             </Tooltip>
-            <div className="absolute" style={ { 'left': `${percentageValue}%` } }>
-                <Tooltip content={ markerTooltip } className={ markerTooltip ? '' : 'hidden' }>
+            <Tooltip content={ markerTooltip } className={ markerTooltip ? '' : 'hidden' }>
+                <div
+                    className={ classNames(
+                        'absolute right-1/2 -translate-x-1/2',
+                        sizing.lg.width, // wide transparant wrapper for tooltip activation
+                    ) }
+                    style={ { 'left': `${percentageValue}%` } }
+                >
                     <div
                         className={ classNames(
-                            'rounded-lg ring-2 right-1/2 -translate-x-1/2',
+                            'rounded-lg ring-2 mx-auto',
                             getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor,
                             getColorVariantsFromColorThemeValue(defaultColors.white).ringRolor,
                             sizing.md.height,
                             sizing.twoXs.width,
                         ) }
                     />
-                </Tooltip>
-            </div>
+                </div>
+            </Tooltip>
         </div>
     );
 };
