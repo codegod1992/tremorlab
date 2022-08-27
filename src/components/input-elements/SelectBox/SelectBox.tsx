@@ -122,7 +122,7 @@ const SelectBox = ({
                             <>
                                 { React.cloneElement(child, {
                                     privateProps: {
-                                        setSelectedItemValue: setSelectedItem,
+                                        setSelectedItem: setSelectedItem,
                                         isActive: selectedItem === child.props.value,
                                         handleSelect: handleSelect,
                                         setShowModal: setShowModal,
