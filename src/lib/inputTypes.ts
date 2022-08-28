@@ -8,7 +8,7 @@ export type VerticalPosition = 'top' | 'bottom';
 
 export type Importance = 'primary' | 'secondary';
 
-export const deltaTypeValues = [
+const deltaTypeValues = [
     'increase',
     'moderateIncrease',
     'decrease',
@@ -18,7 +18,7 @@ export const deltaTypeValues = [
 
 export type DeltaType = typeof deltaTypeValues[number];
 
-export const sizeValues = [
+const sizeValues = [
     'xs',
     'sm',
     'md',
@@ -28,7 +28,7 @@ export const sizeValues = [
 
 export type Size = typeof sizeValues[number];
 
-export const baseColorValues = [
+const baseColorValues = [
     'slate',
     'gray',
     'zinc',
@@ -55,7 +55,7 @@ export const baseColorValues = [
 
 export type Color = typeof baseColorValues[number];
 
-export const twJustifyContentValues = [
+const twJustifyContentValues = [
     'justify-start',
     'justify-end',
     'justify-center',
@@ -66,7 +66,7 @@ export const twJustifyContentValues = [
 
 export type JustifyContent = typeof twJustifyContentValues[number];
 
-export const twAlignItemsValues = [
+const twAlignItemsValues = [
     'items-start',
     'items-end',
     'items-center',
@@ -76,7 +76,7 @@ export const twAlignItemsValues = [
 
 export type AlignItems = typeof twAlignItemsValues[number];
 
-export const twTextAlignmentValues = [
+const twTextAlignmentValues = [
     'text-left',
     'text-center',
     'text-right',
@@ -87,7 +87,7 @@ export const twTextAlignmentValues = [
 
 export type TextAlignment = typeof twTextAlignmentValues[number];
 
-export const twMaxWidthValues = [
+const twMaxWidthValues = [
     'max-w-0',
     'max-w-none',
     'max-w-xs',
@@ -114,7 +114,7 @@ export const twMaxWidthValues = [
 
 export type MaxWidth = typeof twMaxWidthValues[number];
 
-export const twSpaceXValues = [
+const twSpaceXValues = [
     'space-x-0',
     'space-x-0.5',
     'space-x-1',
@@ -186,7 +186,7 @@ export const twSpaceXValues = [
 
 export type SpaceX = typeof twSpaceXValues[number];
 
-export const twTopMargins = [
+const twTopMargins = [
     'mt-0',
     'mt-0.5',
     'mt-1',
@@ -258,7 +258,7 @@ export const twTopMargins = [
 
 export type MarginTop = typeof twTopMargins[number];
 
-export const twLeftPaddings = [
+const twLeftPaddings = [
     'pl-0',
     'pl-0.5',
     'pl-1',
@@ -297,7 +297,7 @@ export const twLeftPaddings = [
 
 export type PaddingLeft = typeof twLeftPaddings[number];
 
-export const twRightPaddings = [
+const twRightPaddings = [
     'pr-0',
     'pr-0.5',
     'pr-1',
@@ -336,7 +336,7 @@ export const twRightPaddings = [
 
 export type PaddingRight = typeof twRightPaddings[number];
 
-export const twTopPaddings = [
+const twTopPaddings = [
     'pt-0',
     'pt-0.5',
     'pt-1',
@@ -375,7 +375,7 @@ export const twTopPaddings = [
 
 export type PaddingTop = typeof twTopPaddings[number];
 
-export const twBottomPaddings = [
+const twBottomPaddings = [
     'pb-0',
     'pb-0.5',
     'pb-1',
@@ -414,7 +414,7 @@ export const twBottomPaddings = [
 
 export type PaddingBottom = typeof twBottomPaddings[number];
 
-export const twHeights = [
+const twHeights = [
     'h-0',
     'h-0.5',
     'h-1',
@@ -453,7 +453,7 @@ export const twHeights = [
 
 export type Height = typeof twHeights[number];
 
-export const twWidths = [
+const twWidths = [
     'w-0',
     'w-0.5',
     'w-1',
