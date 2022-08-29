@@ -18,6 +18,9 @@ export const buttonProportions: {[size: string]: ButtonProportionTypes} = {
     lg: {
         fontSize: fontSize.lg,
     },
+    xl: {
+        fontSize: fontSize.xl,
+    },
 };
 
 export const iconSizes: {[size: string]: Sizing} = {
@@ -34,6 +37,10 @@ export const iconSizes: {[size: string]: Sizing} = {
         width: sizing.lg.width,
     },
     lg: {
+        height: sizing.xl.height,
+        width: sizing.xl.width,
+    },
+    xl: {
         height: sizing.xl.height,
         width: sizing.xl.width,
     },

@@ -48,6 +48,13 @@ export const buttonProportions: {[char: string]: ButtonProportionTypes} = {
         paddingBottom: spacing.md.paddingBottom,
         fontSize: fontSize.lg,
     },
+    xl: {
+        paddingLeft: spacing.twoXl.paddingLeft,
+        paddingRight: spacing.twoXl.paddingRight,
+        paddingTop: spacing.lg.paddingTop,
+        paddingBottom: spacing.lg.paddingBottom,
+        fontSize: fontSize.xl,
+    },
 };
 
 export const iconSizes: {[size: string]: Sizing} = {
@@ -64,6 +71,10 @@ export const iconSizes: {[size: string]: Sizing} = {
         width: sizing.lg.width,
     },
     lg: {
+        height: sizing.xl.height,
+        width: sizing.xl.width,
+    },
+    xl: {
         height: sizing.xl.height,
         width: sizing.xl.width,
     },

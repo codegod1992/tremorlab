@@ -39,6 +39,13 @@ export const badgeProportions: {[char: string]: BadgeProportionTypes} = {
         paddingBottom: spacing.threeXs.paddingBottom,
         fontSize: fontSize.lg,
     },
+    xl: {
+        paddingLeft: spacing.twoXl.paddingLeft,
+        paddingRight: spacing.twoXl.paddingRight,
+        paddingTop: spacing.twoXs.paddingTop,
+        paddingBottom: spacing.twoXs.paddingBottom,
+        fontSize: fontSize.xl,
+    },
 };
 
 export const iconSizes: {[size: string]: Sizing} = {
@@ -57,5 +64,9 @@ export const iconSizes: {[size: string]: Sizing} = {
     lg: {
         height: sizing.lg.height,
         width: sizing.lg.width,
+    },
+    xl: {
+        height: sizing.xl.height,
+        width: sizing.xl.width,
     },
 };

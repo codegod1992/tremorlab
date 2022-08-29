@@ -48,6 +48,13 @@ export const badgeProportionsIconOnly: {[char: string]: BadgeProportionTypes} = 
         paddingBottom: spacing.xs.paddingBottom,
         fontSize: fontSize.lg,
     },
+    xl: {
+        paddingLeft: spacing.xl.paddingLeft,
+        paddingRight: spacing.xl.paddingRight,
+        paddingTop: spacing.xs.paddingTop,
+        paddingBottom: spacing.xs.paddingBottom,
+        fontSize: fontSize.xl,
+    },
 };
 
 export const badgeProportionsWithText: {[char: string]: BadgeProportionTypes} = {
@@ -79,6 +86,13 @@ export const badgeProportionsWithText: {[char: string]: BadgeProportionTypes} = 
         paddingBottom: spacing.threeXs.paddingBottom,
         fontSize: fontSize.lg,
     },
+    xl: {
+        paddingLeft: spacing.twoXl.paddingLeft,
+        paddingRight: spacing.twoXl.paddingRight,
+        paddingTop: spacing.twoXs.paddingTop,
+        paddingBottom: spacing.twoXs.paddingBottom,
+        fontSize: fontSize.xl,
+    },
 };
 
 export const iconSizes: {[size: string]: Sizing} = {
@@ -97,6 +111,10 @@ export const iconSizes: {[size: string]: Sizing} = {
     lg: {
         height: sizing.lg.height,
         width: sizing.lg.width,
+    },
+    xl: {
+        height: sizing.xl.height,
+        width: sizing.xl.width,
     },
 };
 
