@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {
+    TextAlignments,
     classNames,
     defaultColors,
     fontWeight,
@@ -15,7 +16,7 @@ interface TableHeaderCellProps {
 }
 
 const TableHeaderCell = ({
-    textAlignment = 'text-left',
+    textAlignment = TextAlignments.Left,
     children,
 }: TableHeaderCellProps) => (
     <>

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { 
+    TextAlignments,
     classNames,
     spacing,
 } from 'lib';
@@ -12,7 +13,7 @@ export interface TableCellProps {
 }
 
 const TableCell = ({
-    textAlignment = 'text-left',
+    textAlignment = TextAlignments.Left,
     children
 }: TableCellProps) => {
     return(
