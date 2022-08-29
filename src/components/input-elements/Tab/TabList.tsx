@@ -8,7 +8,7 @@ export interface TabListProps {
     color?: Color,
     handleSelect?: { (value: any): void },
     marginTop?: MarginTop,
-    children: React.ReactElement[]
+    children: React.ReactElement[] | React.ReactElement
 }
 
 const TabList = ({

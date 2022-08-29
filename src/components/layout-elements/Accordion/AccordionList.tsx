@@ -6,7 +6,7 @@ import { classNames } from 'lib';
 export interface AccordionListProps {
     shadow?: boolean,
     marginTop?: MarginTop,
-    children: React.ReactElement[],
+    children: React.ReactElement[] | React.ReactElement,
 }
 
 const AccordionList = ({

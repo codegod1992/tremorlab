@@ -18,7 +18,7 @@ export interface MultiSelectBoxProps {
     handleSelect?: { (value: any): void },
     placeholder?: string,
     marginTop?: MarginTop,
-    children: React.ReactElement[],
+    children: React.ReactElement[] | React.ReactElement,
 }
 
 const MultiSelectBox = ({
@@ -37,7 +37,7 @@ const MultiSelectBox = ({
 
     const dropdownRef = useRef(null);
 
-    const getOptionNamesFromChildren = (children: React.ReactElement[]): string[] => (
+    const getOptionNamesFromChildren = (children: React.ReactElement[] | React.ReactElement): string[] => (
         React.Children.map(children, (child) => {
             return String(child.props.name);
         })

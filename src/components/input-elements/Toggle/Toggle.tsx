@@ -7,7 +7,7 @@ export interface ToggleProps {
     defaultValue?: any,
     color?: Color,
     handleSelect?: { (value: any): void },
-    children: React.ReactElement[],
+    children: React.ReactElement[] | React.ReactElement,
     marginTop?: MarginTop,
 }
 

@@ -3,7 +3,7 @@ import React from 'react';
 import { classNames, defaultColors, getColorVariantsFromColorThemeValue } from 'lib';
 
 interface TableBodyProps {
-    children: React.ReactElement[]
+    children: React.ReactElement[] | React.ReactElement,
 }
 
 const TableBody = ({

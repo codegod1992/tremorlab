@@ -19,7 +19,7 @@ export interface SelectBoxProps {
     handleSelect?: { (value: any): void },
     placeholder?: string,
     marginTop?: MarginTop,
-    children: React.ReactElement[],
+    children: React.ReactElement[] | React.ReactElement,
 }
 
 const SelectBox = ({
@@ -48,7 +48,7 @@ const SelectBox = ({
     };
     consturctValueToNameMapping();
 
-    const getOptionNamesFromChildren = (children: React.ReactElement[]): string[] => (
+    const getOptionNamesFromChildren = (children: React.ReactElement[] | React.ReactElement): string[] => (
         React.Children.map(children, (child) => {
             return String(child.props.name);
         })

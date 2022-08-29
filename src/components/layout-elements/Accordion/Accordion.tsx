@@ -7,20 +7,20 @@ export interface AccordionProps {
     shadow?: boolean,
     expanded?: boolean,
     marginTop?: MarginTop,
+    children: React.ReactElement[] | React.ReactElement,
     privateProps?: {
         shapeClassNames: string,
     },
-    children: React.ReactElement[],
 }
 
 const Accordion = ({
     shadow,
     expanded = false,
+    marginTop = 'mt-0',
+    children,
     privateProps = {
         shapeClassNames: 'border rounded-lg',
     },
-    marginTop = 'mt-0',
-    children
 }: AccordionProps) => {
 
     const [isExpanded, setExpanded] = useState(expanded);

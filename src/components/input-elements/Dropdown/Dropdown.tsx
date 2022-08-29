@@ -19,7 +19,7 @@ export interface DropdownProps {
     defaultValue?: any,
     handleSelect?: { (value: any): void },
     marginTop?: MarginTop,
-    children: React.ReactElement[],
+    children: React.ReactElement[] | React.ReactElement,
 }
 
 const Dropwdown = ({
