@@ -5,7 +5,7 @@ import {  TextAlignments, classNames, parseTruncateOption } from 'lib';
 
 export interface BlockProps {
     spaceY?: SpaceY,
-    textAlignment: TextAlignment,
+    textAlignment?: TextAlignment,
     truncate?: boolean,
     marginTop?: MarginTop,
     children: React.ReactNode,
