@@ -2,6 +2,7 @@ import React from 'react';
 
 import { 
     BaseColors,
+    TextAlignments,
     classNames,
     colorTheme,
     fontSize,
@@ -22,7 +23,7 @@ export interface TextProps {
 
 const Text = ({
     color = BaseColors.Gray,
-    textAlignment = 'text-left',
+    textAlignment = TextAlignments.Left,
     truncate = false,
     height = '',
     marginTop = 'mt-0',
