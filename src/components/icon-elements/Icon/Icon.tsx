@@ -3,7 +3,7 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { BaseColors, Sizes, classNames, isBaseColor } from 'lib';
+import { BaseColors, Sizes, classNames, isBaseColor, isValidSize } from 'lib';
 import { Color, MarginTop, Size } from '../../../lib';
 import { colors, iconSizes, shape, wrapperProportions } from './styles';
 
@@ -33,6 +33,7 @@ const Icon = ({
     marginTop = 'mt-0',
 }: IconProps) => {
     const iconColors = isBaseColor(color) ? colors[variant][color] : colors[variant][BaseColors.Blue];
+    const iconSize = isValidSize(size) ? size : Sizes.SM;
     return (
         <span className={ classNames(marginTop) }>
             <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
@@ -47,15 +48,15 @@ const Icon = ({
                         shape[variant].border,
                         shape[variant].shadow,
                         shape[variant].ring,
-                        wrapperProportions[size].paddingLeft,
-                        wrapperProportions[size].paddingRight,
-                        wrapperProportions[size].paddingTop,
-                        wrapperProportions[size].paddingBottom,
+                        wrapperProportions[iconSize].paddingLeft,
+                        wrapperProportions[iconSize].paddingRight,
+                        wrapperProportions[iconSize].paddingTop,
+                        wrapperProportions[iconSize].paddingBottom,
                     ) }
                 >
                     <Icon className={ classNames(
-                        iconSizes[size].height,
-                        iconSizes[size].width,
+                        iconSizes[iconSize].height,
+                        iconSizes[iconSize].width,
                     ) } />
                 </span>
             </Tooltip>

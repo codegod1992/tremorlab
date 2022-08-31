@@ -1,6 +1,15 @@
 import React from 'react';
 
-import { BaseColors, HorizontalPositions, Importances, Sizes, classNames, isBaseColor, spacing } from 'lib';
+import {
+    BaseColors,
+    HorizontalPositions,
+    Importances,
+    Sizes,
+    classNames,
+    isBaseColor,
+    isValidSize,
+    spacing,
+} from 'lib';
 import { Color, HorizontalPosition, Importance, MarginTop, Size } from '../../../lib';
 import {
     buttonProportions,
@@ -30,6 +39,7 @@ const Button = ({
     marginTop = 'mt-0',
 }: ButtonProps) => {
     const buttonColors = isBaseColor(color) ? colors[color] : colors[BaseColors.Blue];
+    const buttonSize = isValidSize(size) ? size : Sizes.SM;
     return(
         <span className={ classNames(marginTop) }>
             <button
@@ -39,11 +49,11 @@ const Button = ({
                     'flex-shrink-0 inline-flex items-center group font-medium',
                     'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-transparent',
                     'rounded-md border shadow-sm',
-                    buttonProportions[size]?.paddingLeft,
-                    buttonProportions[size]?.paddingRight,
-                    buttonProportions[size]?.paddingTop,
-                    buttonProportions[size]?.paddingBottom,
-                    buttonProportions[size]?.fontSize,
+                    buttonProportions[buttonSize].paddingLeft,
+                    buttonProportions[buttonSize].paddingRight,
+                    buttonProportions[buttonSize].paddingTop,
+                    buttonProportions[buttonSize].paddingBottom,
+                    buttonProportions[buttonSize].fontSize,
                     buttonColors[importance].bgColor,
                     buttonColors[importance].borderColor,
                     buttonColors[importance].focusRingColor,
@@ -57,8 +67,8 @@ const Button = ({
                         className={classNames(
                             spacing.twoXs.negativeMarginLeft,
                             spacing.xs.marginRight,
-                            iconSizes[size]?.height,
-                            iconSizes[size]?.width,
+                            iconSizes[buttonSize].height,
+                            iconSizes[buttonSize].width,
                         )}
                         aria-hidden="true"
                     />
@@ -71,8 +81,8 @@ const Button = ({
                         className={classNames(
                             spacing.twoXs.negativeMarginRight,
                             spacing.xs.marginLeft,
-                            iconSizes[size]?.height,
-                            iconSizes[size]?.width,
+                            iconSizes[buttonSize].height,
+                            iconSizes[buttonSize].width,
                         )}
                         aria-hidden="true"
                     />

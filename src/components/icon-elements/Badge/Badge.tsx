@@ -3,7 +3,15 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { BaseColors, Sizes, classNames, getColorTheme, getColorVariantsFromColorThemeValue, spacing } from 'lib';
+import {
+    BaseColors,
+    Sizes,
+    classNames,
+    getColorTheme,
+    getColorVariantsFromColorThemeValue,
+    isValidSize,
+    spacing,
+} from 'lib';
 import { Color, MarginTop, Size } from '../../../lib';
 import { badgeProportions, iconSizes } from './styles';
 
@@ -24,6 +32,7 @@ const Badge = ({
     tooltip,
     marginTop = 'mt-0',
 }: BadgeProps) => {
+    const badgeSize = isValidSize(size) ? size : Sizes.SM;
     return(
         <div className={ classNames(marginTop) }>
             <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
@@ -31,18 +40,18 @@ const Badge = ({
                     'flex-shrink-0 inline-flex justify-center items-center rounded-full',
                     getColorVariantsFromColorThemeValue(getColorTheme(color).text).textColor,
                     getColorVariantsFromColorThemeValue(getColorTheme(color).lightBackground).bgColor,
-                    badgeProportions[size]?.paddingLeft,
-                    badgeProportions[size]?.paddingRight,
-                    badgeProportions[size]?.paddingTop,
-                    badgeProportions[size]?.paddingBottom,
-                    badgeProportions[size]?.fontSize,
+                    badgeProportions[badgeSize].paddingLeft,
+                    badgeProportions[badgeSize].paddingRight,
+                    badgeProportions[badgeSize].paddingTop,
+                    badgeProportions[badgeSize].paddingBottom,
+                    badgeProportions[badgeSize].fontSize,
                 ) }>
                     { Icon ? (
                         <Icon className={ classNames(
                             spacing.twoXs.negativeMarginLeft,
                             spacing.xs.marginRight,
-                            iconSizes[size]?.height,
-                            iconSizes[size]?.width,
+                            iconSizes[badgeSize].height,
+                            iconSizes[badgeSize].width,
                         ) }
                         />
                     ) : null }
