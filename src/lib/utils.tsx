@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
-import { BaseColorTheme, colorTheme } from 'lib/colors';
-import { BaseColors, DeltaTypes, Importances, Sizes } from 'lib/primitives';
+import { BaseColorTheme, colorTheme } from './colors';
+import { BaseColors, DeltaTypes, Importances, Sizes } from './primitives';
 import { Color, DeltaType, Importance, Size, ValueFormater } from './inputTypes';
 
 export const isBaseColor = (baseColor: Color): boolean => {
