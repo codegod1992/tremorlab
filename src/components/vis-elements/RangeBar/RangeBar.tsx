@@ -3,7 +3,7 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { BaseColors, classNames, colorTheme, defaultColors, getColorVariantsFromColorThemeValue, sizing } from 'lib';
+import { BaseColors, classNames, defaultColors, getColorTheme, getColorVariantsFromColorThemeValue, sizing } from 'lib';
 import { Color, MarginTop } from '../../../lib';
 
 export interface RangeBarProps {
@@ -52,7 +52,7 @@ const RangeBar = ({
                     <div
                         className={ classNames(
                             'rounded-lg ring-2 mx-auto',
-                            getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor,
+                            getColorVariantsFromColorThemeValue(getColorTheme(color).background).bgColor,
                             getColorVariantsFromColorThemeValue(defaultColors.white).ringRolor,
                             sizing.md.height,
                             sizing.twoXs.width,

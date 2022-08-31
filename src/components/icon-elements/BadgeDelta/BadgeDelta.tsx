@@ -4,6 +4,7 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { DeltaType, DeltaTypes, MarginTop, Size } from '../../../lib';
+import { Sizes, classNames, isValidDeltaType, isValidSize, mapInputsToDeltaType, spacing } from 'lib';
 import {
     badgeProportionsIconOnly,
     badgeProportionsWithText,
@@ -11,7 +12,6 @@ import {
     deltaIcons,
     iconSizes,
 } from './styles';
-import { classNames, mapInputsToDeltaType, spacing } from 'lib';
 
 export interface BadgeDeltaProps {
     text?: string,
@@ -26,13 +26,15 @@ const BadgeDelta = ({
     text,
     deltaType = DeltaTypes.Increase,
     isIncreasePositive = true,
-    size = 'sm',
+    size = Sizes.SM,
     tooltip,
     marginTop = 'mt-0',
 }: BadgeDeltaProps) => {
-    const Icon = deltaIcons[deltaType];
-    const mappedDeltaType = mapInputsToDeltaType(deltaType, isIncreasePositive);
+    const parsedDeltaType = isValidDeltaType(deltaType) ? deltaType : DeltaTypes.Increase;
+    const Icon = deltaIcons[parsedDeltaType];
+    const mappedDeltaType = mapInputsToDeltaType(parsedDeltaType, isIncreasePositive);
     const badgeProportions = text ? badgeProportionsWithText : badgeProportionsIconOnly;
+    const badgeSize = isValidSize(size) ? size : Sizes.SM;
 
     return(
         <span className={ classNames(marginTop) }>
@@ -41,17 +43,17 @@ const BadgeDelta = ({
                     'flex-shrink-0 inline-flex justify-center items-center rounded-full',
                     colors[mappedDeltaType].bgColor,
                     colors[mappedDeltaType].textColor,
-                    badgeProportions[size]?.paddingLeft,
-                    badgeProportions[size]?.paddingRight,
-                    badgeProportions[size]?.paddingTop,
-                    badgeProportions[size]?.paddingBottom,
-                    badgeProportions[size]?.fontSize,
+                    badgeProportions[badgeSize].paddingLeft,
+                    badgeProportions[badgeSize].paddingRight,
+                    badgeProportions[badgeSize].paddingTop,
+                    badgeProportions[badgeSize].paddingBottom,
+                    badgeProportions[badgeSize].fontSize,
                 ) }>
                     <Icon className={ classNames(
                         text ? spacing.twoXs.negativeMarginLeft : '',
                         text ? spacing.xs.marginRight : '',
-                        iconSizes[size]?.height,
-                        iconSizes[size]?.width,
+                        iconSizes[badgeSize].height,
+                        iconSizes[badgeSize].width,
                     ) }
                     />
                     { text ? <p className="whitespace-nowrap">{ text }</p> : null}

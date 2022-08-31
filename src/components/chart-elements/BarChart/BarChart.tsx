@@ -17,8 +17,8 @@ import ChartTooltip from '../common/ChartTooltip';
 
 import {
     classNames,
-    colorTheme,
     defaultValueFormater,
+    getColorTheme,
     getHexFromColorThemeValue,
     getPixelsFromTwClassName,
     themeColorRange
@@ -169,7 +169,7 @@ const BarChart = ({
                             type="linear"
                             stackId={ stack || relative ? 'a' : undefined }
                             dataKey={ category }
-                            fill={ getHexFromColorThemeValue(colorTheme[colors[idx]].background) }
+                            fill={ getHexFromColorThemeValue(getColorTheme(colors[idx]).background) }
                             isAnimationActive={false}
                         />
 

@@ -1,10 +1,9 @@
 import React from 'react';
 
 import { BaseColors, HorizontalPositions, VerticalPositions } from 'lib/primitives';
-import { Color, HorizontalPosition, MarginTop, MaxWidth, VerticalPosition } from '../../../lib';
+import { Color, HorizontalPosition, MarginTop, MaxWidth, VerticalPosition, getColorTheme } from '../../../lib';
 import {
     classNames,
-    colorTheme,
     defaultColors,
     getColorVariantsFromColorThemeValue,
     parseHFullOption,
@@ -54,7 +53,7 @@ const Card = ({
             maxWidth,
             getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
             shadow ? 'shadow' : '',
-            getColorVariantsFromColorThemeValue(colorTheme[decorationColor].border).borderColor,
+            getColorVariantsFromColorThemeValue(getColorTheme(decorationColor).border).borderColor,
             getColorVariantsFromColorThemeValue(defaultColors.lightBorder).ringRolor,
             parseDecorationAlignment(decoration),
             spacing.threeXl.paddingLeft,

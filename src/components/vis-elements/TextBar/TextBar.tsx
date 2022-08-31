@@ -3,10 +3,10 @@ import React from 'react';
 import {
     BaseColors,
     classNames,
-    colorTheme,
     defaultColors,
     defaultValueFormater,
     fontSize,
+    getColorTheme,
     getColorVariantsFromColorThemeValue,
     sizing,
     spacing
@@ -60,7 +60,7 @@ const TextBar = ({
                         className={ classNames(
                             'flex items-center rounded-sm',
                             rowHeight,
-                            getColorVariantsFromColorThemeValue(colorTheme[color].lightBackground).bgColor,
+                            getColorVariantsFromColorThemeValue(getColorTheme(color).lightBackground).bgColor,
                             idx === data.length - 1 ? spacing.none.marginBottom : spacing.sm.marginBottom,
                         ) }
                         style={ { width: `${widths[idx]}%` } }

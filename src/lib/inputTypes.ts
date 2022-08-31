@@ -2,6 +2,16 @@ export type ValueFormater = {
     (value: number): string
 }
 
+const iconVariantValues = [
+    'simple',
+    'light',
+    'shadow',
+    'solid',
+    'outlined',
+] as const;
+
+export type IconVariant = typeof iconVariantValues[number];
+
 export type HorizontalPosition = 'left' | 'right';
 
 export type VerticalPosition = 'top' | 'bottom';

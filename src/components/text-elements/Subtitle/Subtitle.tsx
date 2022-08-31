@@ -3,9 +3,9 @@ import React from 'react';
 import {
     BaseColors,
     classNames,
-    colorTheme,
     fontSize,
     fontWeight,
+    getColorTheme,
     getColorVariantsFromColorThemeValue,
     parseTruncateOption
 } from 'lib';
@@ -29,7 +29,7 @@ const Subtitle = ({
             truncate ? 'whitespace-nowrap' : 'shrink-0',
             parseTruncateOption(truncate),
             marginTop,
-            getColorVariantsFromColorThemeValue(colorTheme[color].lightText).textColor,
+            getColorVariantsFromColorThemeValue(getColorTheme(color).lightText).textColor,
             fontSize.md,
             fontWeight.sm,
         ) }

@@ -3,23 +3,25 @@ import React from 'react';
 import { Color, ValueFormater } from '../../../lib';
 import {
     classNames,
-    colorTheme,
     defaultColors,
+    fontWeight,
+    getColorTheme,
     getColorVariantsFromColorThemeValue,
+    spacing,
     themeColorRange
 } from 'lib';
 
 export interface ChartTooltipRowProps {
     value: string,
     name: string,
-    color: string,
+    color: Color,
 }
 
 const ChartTooltipRow = ({ value, name, color }: ChartTooltipRowProps) => (
     <div className="flex items-center justify-between space-x-8">
         <div className="flex items-center space-x-2">
             <span className={ classNames(
-                getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor,
+                getColorVariantsFromColorThemeValue(getColorTheme(color).background).bgColor,
                 'w-3 h-3 rounded-full border-2 border-white shadow'
             ) } />
             <p className={ classNames(
@@ -51,18 +53,29 @@ const ChartTooltip = ({ active, payload, label, colors = themeColorRange, valueF
         return (
             <div className="bg-white border text-sm shadow-lg rounded-md">
                 <div className={ classNames(
+                    getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.lightBorder).borderColor,
-                    'py-2 px-4 border-b'
+                    spacing.twoXl.paddingLeft,
+                    spacing.twoXl.paddingRight,
+                    spacing.sm.paddingTop,
+                    spacing.sm.paddingBottom,
+                    'border-b'
                 ) }>
                     <p className={ classNames(
                         getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
-                        'font-medium'
+                        fontWeight.md,
                     ) }>
                         { label }
                     </p>
                 </div>
   
-                <div className="pt-2.5 pb-2.5 px-4 space-y-1">
+                <div className={ classNames(
+                    spacing.twoXl.paddingLeft,
+                    spacing.twoXl.paddingRight,
+                    spacing.sm.paddingTop,
+                    spacing.sm.paddingBottom,
+                    'space-y-1',
+                ) }>
                     {
                         payload.map(({value, name}: { value: number, name: string }, idx: number) => (
                             <ChartTooltipRow

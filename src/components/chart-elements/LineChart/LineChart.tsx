@@ -17,8 +17,8 @@ import ChartTooltip from '../common/ChartTooltip';
 
 import {
     classNames,
-    colorTheme,
     defaultValueFormater,
+    getColorTheme,
     getHexFromColorThemeValue,
     getPixelsFromTwClassName,
     themeColorRange
@@ -120,7 +120,7 @@ const LineChart = ({
                             name={ category }
                             type="linear"
                             dataKey={ category }
-                            stroke={ getHexFromColorThemeValue(colorTheme[colors[idx]].background) }
+                            stroke={ getHexFromColorThemeValue(getColorTheme(colors[idx]).background) }
                             strokeWidth={ 2 }
                             dot={ false }
                             isAnimationActive={ false }

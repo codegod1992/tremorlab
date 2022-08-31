@@ -6,9 +6,9 @@ import Tooltip from '@tippyjs/react';
 import { Color, MarginTop } from '../../../lib';
 import { 
     classNames,
-    colorTheme,
     defaultColors,
     fontSize,
+    getColorTheme,
     getColorVariantsFromColorThemeValue,
     sizing,
     spacing,
@@ -76,7 +76,7 @@ const CategoryBar = ({
         let prefixSum = 0;
         for (let i = 0; i < categoryPercentageValues.length; i++) {
             const currentWidthPercentage = categoryPercentageValues[i];
-            const currentBgColor = getColorVariantsFromColorThemeValue(colorTheme[colors[i]].background).bgColor;
+            const currentBgColor = getColorVariantsFromColorThemeValue(getColorTheme(colors[i]).background).bgColor;
 
             prefixSum += currentWidthPercentage;
             if (prefixSum >= percentageValue)
@@ -101,7 +101,7 @@ const CategoryBar = ({
                     return(
                         <div key={ `item-${idx}` } style={ { width: `${percentageValue}%` } } className={ classNames(
                             'h-full rounded-md',
-                            getColorVariantsFromColorThemeValue(colorTheme[colors[idx]].background).bgColor,
+                            getColorVariantsFromColorThemeValue(getColorTheme(colors[idx]).background).bgColor,
                         ) }
                         />
                     );

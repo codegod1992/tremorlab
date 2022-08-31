@@ -3,10 +3,10 @@ import React from 'react';
 import { Color, MarginTop } from '../../../lib';
 import {
     classNames,
-    colorTheme,
     defaultColors,
     fontSize,
     fontWeight,
+    getColorTheme,
     getColorVariantsFromColorThemeValue,
     sizing,
     spacing,
@@ -15,7 +15,7 @@ import {
 
 export interface LegendItemProps {
     name: string,
-    color: string,
+    color: Color,
 }
 
 const LegendItem = ({
@@ -31,7 +31,7 @@ const LegendItem = ({
         <svg
             className={ classNames(
                 'flex-none',
-                getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor,
+                getColorVariantsFromColorThemeValue(getColorTheme(color).text).textColor,
                 sizing.xs.height,
                 sizing.xs.width,
                 spacing.xs.marginRight,

@@ -2,20 +2,21 @@ import React from 'react';
 
 import {
     classNames,
-    colorTheme,
     defaultColors,
     fontSize,
+    getColorTheme,
     getColorVariantsFromColorThemeValue,
     sizing,
     spacing
 } from 'lib';
+import { Color } from '../../../lib';
 
 export interface ToggleItemProps {
     value: any,
     text: string,
     Icon?: React.ElementType,
     privateProps?: {
-        color: string,
+        color: Color,
         setActiveToggleItem: React.Dispatch<React.SetStateAction<any>>,
         isActive: boolean,
     }
@@ -29,7 +30,7 @@ const ToggleItem = ({
 }: ToggleItemProps) => {
     const activeClassNames = classNames(
         getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
-        getColorVariantsFromColorThemeValue(colorTheme[privateProps!.color].text).textColor,
+        getColorVariantsFromColorThemeValue(getColorTheme(privateProps!.color).text).textColor,
         getColorVariantsFromColorThemeValue(defaultColors.lightBorder).ringRolor,
         'shadow-sm'
     );

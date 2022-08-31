@@ -3,9 +3,9 @@ import React from 'react';
 import {
     BaseColors,
     classNames,
-    colorTheme,
     fontSize,
     fontWeight,
+    getColorTheme,
     getColorVariantsFromColorThemeValue,
     parseTruncateOption,
 } from 'lib';
@@ -29,7 +29,7 @@ const Metric = ({
             <p className={ classNames(
                 truncate ? 'whitespace-nowrap' : 'shrink-0',
                 parseTruncateOption(truncate),
-                getColorVariantsFromColorThemeValue(colorTheme[color].darkText).textColor,
+                getColorVariantsFromColorThemeValue(getColorTheme(color).darkText).textColor,
                 fontSize.threeXl,
                 fontWeight.lg,
             ) }

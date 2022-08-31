@@ -1,6 +1,16 @@
 import React from 'react';
 
-import { BaseColors, HorizontalPositions, Importances, Sizes, classNames, spacing } from 'lib';
+import {
+    BaseColors,
+    HorizontalPositions,
+    Importances,
+    Sizes,
+    classNames,
+    isBaseColor,
+    isValidImportance,
+    isValidSize,
+    spacing,
+} from 'lib';
 import { Color, HorizontalPosition, Importance, MarginTop, Size } from '../../../lib';
 import {
     buttonProportions,
@@ -29,6 +39,9 @@ const Button = ({
     importance = Importances.Primary,
     marginTop = 'mt-0',
 }: ButtonProps) => {
+    const buttonColors = isBaseColor(color) ? colors[color] : colors[BaseColors.Blue];
+    const buttonSize = isValidSize(size) ? size : Sizes.SM;
+    const buttonImportance = isValidImportance(importance) ? importance : Importances.Primary;
     return(
         <span className={ classNames(marginTop) }>
             <button
@@ -38,17 +51,17 @@ const Button = ({
                     'flex-shrink-0 inline-flex items-center group font-medium',
                     'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-transparent',
                     'rounded-md border shadow-sm',
-                    buttonProportions[size]?.paddingLeft,
-                    buttonProportions[size]?.paddingRight,
-                    buttonProportions[size]?.paddingTop,
-                    buttonProportions[size]?.paddingBottom,
-                    buttonProportions[size]?.fontSize,
-                    colors[color][importance].bgColor,
-                    colors[color][importance].borderColor,
-                    colors[color][importance].focusRingColor,
-                    colors[color][importance].hoverBgColor,
-                    colors[color][importance].hoverBorderColor,
-                    colors[color][importance].textColor,
+                    buttonProportions[buttonSize].paddingLeft,
+                    buttonProportions[buttonSize].paddingRight,
+                    buttonProportions[buttonSize].paddingTop,
+                    buttonProportions[buttonSize].paddingBottom,
+                    buttonProportions[buttonSize].fontSize,
+                    buttonColors[buttonImportance].bgColor,
+                    buttonColors[buttonImportance].borderColor,
+                    buttonColors[buttonImportance].focusRingColor,
+                    buttonColors[buttonImportance].hoverBgColor,
+                    buttonColors[buttonImportance].hoverBorderColor,
+                    buttonColors[buttonImportance].textColor,
                 ) }
             >
                 { Icon && (iconPosition !== HorizontalPositions.Right) ? ( // ensures that icon is rendered if iconPosition is misspelled
@@ -56,8 +69,8 @@ const Button = ({
                         className={classNames(
                             spacing.twoXs.negativeMarginLeft,
                             spacing.xs.marginRight,
-                            iconSizes[size]?.height,
-                            iconSizes[size]?.width,
+                            iconSizes[buttonSize].height,
+                            iconSizes[buttonSize].width,
                         )}
                         aria-hidden="true"
                     />
@@ -70,8 +83,8 @@ const Button = ({
                         className={classNames(
                             spacing.twoXs.negativeMarginRight,
                             spacing.xs.marginLeft,
-                            iconSizes[size]?.height,
-                            iconSizes[size]?.width,
+                            iconSizes[buttonSize].height,
+                            iconSizes[buttonSize].width,
                         )}
                         aria-hidden="true"
                     />

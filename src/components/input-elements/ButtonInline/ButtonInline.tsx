@@ -1,9 +1,18 @@
 import React from 'react';
 
-import { BaseColors, HorizontalPositions, Sizes } from 'lib/primitives';
-import { Color, HorizontalPosition, MarginTop, Size } from '../../../lib';
+import {
+    BaseColors,
+    HorizontalPositions,
+    Sizes,
+    classNames,
+    defaultColors,
+    getColorTheme,
+    getColorVariantsFromColorThemeValue,
+    isValidSize,
+    spacing
+} from 'lib';
+import { Color, HorizontalPosition, MarginTop, Size } from '../../../lib/inputTypes';
 import { buttonProportions, iconSizes } from './styles';
-import { classNames, colorTheme, defaultColors, getColorVariantsFromColorThemeValue, spacing } from 'lib';
 
 export interface ButtonInlineProps {
     text: string,
@@ -24,6 +33,7 @@ const ButtonInline = ({
     color = BaseColors.Blue,
     marginTop = 'mt-0',
 }: ButtonInlineProps) => {
+    const buttonSize = isValidSize(size) ? size : Sizes.SM;
     return(
         <span className={ classNames(marginTop) }>
             <button
@@ -32,9 +42,9 @@ const ButtonInline = ({
                 className={ classNames(
                     'flex-shrink-0 inline-flex items-center group font-medium',
                     'focus:outline-none focus:ring-none',
-                    buttonProportions[size]?.fontSize,
-                    getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor,
-                    getColorVariantsFromColorThemeValue(colorTheme[color].darkText).hoverTextColor,
+                    buttonProportions[buttonSize].fontSize,
+                    getColorVariantsFromColorThemeValue(getColorTheme(color).text).textColor,
+                    getColorVariantsFromColorThemeValue(getColorTheme(color).darkText).hoverTextColor,
                     getColorVariantsFromColorThemeValue(defaultColors.transparent).bgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.transparent).hoverBgColor,
                 ) }
@@ -44,8 +54,8 @@ const ButtonInline = ({
                         className={ classNames(
                             spacing.twoXs.negativeMarginLeft,
                             spacing.xs.marginRight,
-                            iconSizes[size]?.height,
-                            iconSizes[size]?.width,
+                            iconSizes[buttonSize].height,
+                            iconSizes[buttonSize].width,
                         ) }
                         aria-hidden="true"
                     />
@@ -56,8 +66,8 @@ const ButtonInline = ({
                         className={ classNames(
                             spacing.twoXs.negativeMarginRight,
                             spacing.xs.marginLeft,
-                            iconSizes[size]?.height,
-                            iconSizes[size]?.width,
+                            iconSizes[buttonSize].height,
+                            iconSizes[buttonSize].width,
                         ) }
                         aria-hidden="true"
                     />

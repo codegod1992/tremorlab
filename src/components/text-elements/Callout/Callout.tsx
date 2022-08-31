@@ -3,9 +3,9 @@ import React from 'react';
 import { 
     BaseColors,
     classNames,
-    colorTheme,
     fontSize,
     fontWeight,
+    getColorTheme,
     getColorVariantsFromColorThemeValue,
     sizing,
     spacing
@@ -33,8 +33,8 @@ const Callout = ({
         <div className={ classNames(
             'relative rounded-md border-l-4',
             marginTop,
-            getColorVariantsFromColorThemeValue(colorTheme[color].canvasBackground).bgColor,
-            getColorVariantsFromColorThemeValue(colorTheme[color].darkBorder).borderColor,
+            getColorVariantsFromColorThemeValue(getColorTheme(color).canvasBackground).bgColor,
+            getColorVariantsFromColorThemeValue(getColorTheme(color).darkBorder).borderColor,
             spacing.lg.paddingLeft,
             spacing.lg.paddingRight,
             spacing.lg.paddingTop,
@@ -48,7 +48,7 @@ const Callout = ({
             ) }>
                 <div className={ classNames(
                     'flex items-start',
-                    getColorVariantsFromColorThemeValue(colorTheme[color].darkText).textColor,
+                    getColorVariantsFromColorThemeValue(getColorTheme(color).darkText).textColor,
                 ) }
                 >
                     { Icon ? (
@@ -67,7 +67,7 @@ const Callout = ({
                 <div className={ classNames(
                     'overflow-y-auto',
                     height,
-                    getColorVariantsFromColorThemeValue(colorTheme[color].darkText).textColor,
+                    getColorVariantsFromColorThemeValue(getColorTheme(color).darkText).textColor,
                     spacing.sm.marginTop,
                 ) }
                 >
