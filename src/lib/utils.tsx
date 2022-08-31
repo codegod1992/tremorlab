@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { BaseColorTheme, colorTheme } from 'lib/colors';
 import { BaseColors, DeltaTypes, Sizes } from 'lib/primitives';
-import { Color, Size, ValueFormater } from './inputTypes';
+import { Color, DeltaType, Size, ValueFormater } from './inputTypes';
 
 export const isBaseColor = (baseColor: Color): boolean => {
     return Object.values(BaseColors).includes(baseColor);
@@ -20,6 +20,10 @@ export const getColorTheme = (
 
 export const isValidSize = (size: Size): boolean => {
     return Object.values(Sizes).includes(size);
+};
+
+export const isValidDeltaType = (deltaType: DeltaType): boolean => {
+    return Object.values(DeltaTypes).includes(deltaType);
 };
 
 export const mapInputsToDeltaType = (deltaType: string, isIncreasePositive: boolean): string => {

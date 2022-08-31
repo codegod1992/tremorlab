@@ -4,7 +4,7 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { DeltaType, DeltaTypes, MarginTop, Size } from '../../../lib';
-import { Sizes, classNames, isValidSize, mapInputsToDeltaType, spacing } from 'lib';
+import { Sizes, classNames, isValidDeltaType, isValidSize, mapInputsToDeltaType, spacing } from 'lib';
 import {
     badgeProportionsIconOnly,
     badgeProportionsWithText,
@@ -30,8 +30,9 @@ const BadgeDelta = ({
     tooltip,
     marginTop = 'mt-0',
 }: BadgeDeltaProps) => {
-    const Icon = deltaIcons[deltaType];
-    const mappedDeltaType = mapInputsToDeltaType(deltaType, isIncreasePositive);
+    const parsedDeltaType = isValidDeltaType(deltaType) ? deltaType : DeltaTypes.Increase;
+    const Icon = deltaIcons[parsedDeltaType];
+    const mappedDeltaType = mapInputsToDeltaType(parsedDeltaType, isIncreasePositive);
     const badgeProportions = text ? badgeProportionsWithText : badgeProportionsIconOnly;
     const badgeSize = isValidSize(size) ? size : Sizes.SM;
 
