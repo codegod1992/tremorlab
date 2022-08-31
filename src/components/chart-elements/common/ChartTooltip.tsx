@@ -3,8 +3,8 @@ import React from 'react';
 import { Color, ValueFormater } from '../../../lib';
 import {
     classNames,
-    colorTheme,
     defaultColors,
+    getColorTheme,
     getColorVariantsFromColorThemeValue,
     themeColorRange
 } from 'lib';
@@ -12,14 +12,14 @@ import {
 export interface ChartTooltipRowProps {
     value: string,
     name: string,
-    color: string,
+    color: Color,
 }
 
 const ChartTooltipRow = ({ value, name, color }: ChartTooltipRowProps) => (
     <div className="flex items-center justify-between space-x-8">
         <div className="flex items-center space-x-2">
             <span className={ classNames(
-                getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor,
+                getColorVariantsFromColorThemeValue(getColorTheme(color).background).bgColor,
                 'w-3 h-3 rounded-full border-2 border-white shadow'
             ) } />
             <p className={ classNames(

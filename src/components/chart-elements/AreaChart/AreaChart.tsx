@@ -16,7 +16,7 @@ import ChartLegend from '../common/ChartLegend';
 import ChartTooltip from '../common/ChartTooltip';
 
 import { classNames, getHexFromColorThemeValue, getPixelsFromTwClassName } from 'lib/classnameUtils';
-import { colorTheme, defaultValueFormater, themeColorRange } from 'lib';
+import { defaultValueFormater, getColorTheme, themeColorRange } from 'lib';
 
 const AreaChart = ({
     data,
@@ -113,12 +113,12 @@ const AreaChart = ({
                             <linearGradient id={ colors[idx] } x1="0" y1="0" x2="0" y2="1">
                                 <stop
                                     offset="5%"
-                                    stopColor={ getHexFromColorThemeValue(colorTheme[colors[idx]].background) }
+                                    stopColor={ getHexFromColorThemeValue(getColorTheme(colors[idx]).background) }
                                     stopOpacity={0.4}
                                 />
                                 <stop
                                     offset="95%"
-                                    stopColor={ getHexFromColorThemeValue(colorTheme[colors[idx]].background) }
+                                    stopColor={ getHexFromColorThemeValue(getColorTheme(colors[idx]).background) }
                                     stopOpacity={0}
                                 />
                             </linearGradient>
@@ -128,7 +128,7 @@ const AreaChart = ({
                             name={ category }
                             type="linear"
                             dataKey={ category }
-                            stroke={ getHexFromColorThemeValue(colorTheme[colors[idx]].background) }
+                            stroke={ getHexFromColorThemeValue(getColorTheme(colors[idx]).background) }
                             fill={ `url(#${colors[idx]})` }
                             strokeWidth={2}
                             dot={false}

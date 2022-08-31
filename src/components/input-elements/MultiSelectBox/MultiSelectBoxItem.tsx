@@ -3,9 +3,9 @@ import React from 'react';
 import {
     BaseColors,
     classNames,
-    colorTheme,
     defaultColors,
     fontSize,
+    getColorTheme,
     getColorVariantsFromColorThemeValue,
     isValueInArray,
     removeValueFromArray,
@@ -57,7 +57,7 @@ const MultiSelectBoxItem = ({
                 className={ classNames(
                     'flex-none focus:ring-none focus:outline-none border rounded cursor-pointer',
                     getColorVariantsFromColorThemeValue(defaultColors.lightRing).focusRingColor,
-                    getColorVariantsFromColorThemeValue(colorTheme[BaseColors.Blue].text).textColor,
+                    getColorVariantsFromColorThemeValue(getColorTheme(BaseColors.Blue).text).textColor,
                     getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
                     spacing.lg.marginRight,
                 ) }

@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { BaseColors, HorizontalPositions, Sizes } from 'lib/primitives';
-import { Color, HorizontalPosition, MarginTop, Size } from '../../../lib';
+import { Color, HorizontalPosition, MarginTop, Size, getColorTheme } from '../../../lib';
 import { buttonProportions, iconSizes } from './styles';
-import { classNames, colorTheme, defaultColors, getColorVariantsFromColorThemeValue, spacing } from 'lib';
+import { classNames, defaultColors, getColorVariantsFromColorThemeValue, spacing } from 'lib';
 
 export interface ButtonInlineProps {
     text: string,
@@ -33,8 +33,8 @@ const ButtonInline = ({
                     'flex-shrink-0 inline-flex items-center group font-medium',
                     'focus:outline-none focus:ring-none',
                     buttonProportions[size]?.fontSize,
-                    getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor,
-                    getColorVariantsFromColorThemeValue(colorTheme[color].darkText).hoverTextColor,
+                    getColorVariantsFromColorThemeValue(getColorTheme(color).text).textColor,
+                    getColorVariantsFromColorThemeValue(getColorTheme(color).darkText).hoverTextColor,
                     getColorVariantsFromColorThemeValue(defaultColors.transparent).bgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.transparent).hoverBgColor,
                 ) }

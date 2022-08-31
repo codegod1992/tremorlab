@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BaseColors, HorizontalPositions, Importances, Sizes, classNames, spacing } from 'lib';
+import { BaseColors, HorizontalPositions, Importances, Sizes, classNames, isBaseColor, spacing } from 'lib';
 import { Color, HorizontalPosition, Importance, MarginTop, Size } from '../../../lib';
 import {
     buttonProportions,
@@ -29,6 +29,7 @@ const Button = ({
     importance = Importances.Primary,
     marginTop = 'mt-0',
 }: ButtonProps) => {
+    const buttonColors = isBaseColor(color) ? colors[color] : colors[BaseColors.Blue];
     return(
         <span className={ classNames(marginTop) }>
             <button
@@ -43,12 +44,12 @@ const Button = ({
                     buttonProportions[size]?.paddingTop,
                     buttonProportions[size]?.paddingBottom,
                     buttonProportions[size]?.fontSize,
-                    colors[color][importance].bgColor,
-                    colors[color][importance].borderColor,
-                    colors[color][importance].focusRingColor,
-                    colors[color][importance].hoverBgColor,
-                    colors[color][importance].hoverBorderColor,
-                    colors[color][importance].textColor,
+                    buttonColors[importance].bgColor,
+                    buttonColors[importance].borderColor,
+                    buttonColors[importance].focusRingColor,
+                    buttonColors[importance].hoverBgColor,
+                    buttonColors[importance].hoverBorderColor,
+                    buttonColors[importance].textColor,
                 ) }
             >
                 { Icon && (iconPosition !== HorizontalPositions.Right) ? ( // ensures that icon is rendered if iconPosition is misspelled

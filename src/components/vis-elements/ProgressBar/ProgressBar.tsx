@@ -6,10 +6,10 @@ import Tooltip from '@tippyjs/react';
 import {
     BaseColors,
     classNames,
-    colorTheme,
     defaultColors,
     fontSize,
     fontWeight,
+    getColorTheme,
     getColorVariantsFromColorThemeValue,
     sizing,
     spacing
@@ -31,8 +31,8 @@ const ProgressBar = ({
     color = BaseColors.Blue,
     marginTop = 'mt-0',
 }: ProgressBarProps) => {
-    const primaryBgColor = getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor;
-    const secondaryBgColor = getColorVariantsFromColorThemeValue(colorTheme[color].lightBackground).bgColor;
+    const primaryBgColor = getColorVariantsFromColorThemeValue(getColorTheme(color).background).bgColor;
+    const secondaryBgColor = getColorVariantsFromColorThemeValue(getColorTheme(color).lightBackground).bgColor;
     return(
         <div className={
             classNames(

@@ -1,7 +1,22 @@
 import React, { useEffect } from 'react';
 
-import { DeltaTypes } from 'lib/primitives';
-import { ValueFormater } from './inputTypes';
+import { BaseColorTheme, colorTheme } from 'lib/colors';
+import { BaseColors, DeltaTypes } from 'lib/primitives';
+import { Color, ValueFormater } from './inputTypes';
+
+export const isBaseColor = (baseColor: Color): boolean => {
+    return Object.values(BaseColors).includes(baseColor);
+};
+
+export const getColorTheme = (
+    baseColor: Color,
+    defaultColor: Color = BaseColors.Blue
+): BaseColorTheme => {
+    if (!isBaseColor(baseColor)) {
+        return colorTheme[defaultColor];
+    }
+    return colorTheme[baseColor];
+};
 
 export const mapInputsToDeltaType = (deltaType: string, isIncreasePositive: boolean): string => {
     if (isIncreasePositive || deltaType===DeltaTypes.Unchanged) {

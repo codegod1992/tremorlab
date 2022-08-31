@@ -4,7 +4,7 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { Color, Height } from '../../../lib';
-import { classNames, colorTheme, getColorVariantsFromColorThemeValue } from 'lib';
+import { classNames, getColorTheme, getColorVariantsFromColorThemeValue } from 'lib';
 
 export interface TrackingBlockProps {
     color: Color,
@@ -21,7 +21,7 @@ const TrackingBlock = ({
         <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
             <div className={ classNames(
                 'w-full rounded-md',
-                getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor,
+                getColorVariantsFromColorThemeValue(getColorTheme(color).background).bgColor,
                 height,
             ) }
             />

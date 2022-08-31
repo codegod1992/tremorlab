@@ -2,19 +2,20 @@ import React from 'react';
 
 import {
     classNames,
-    colorTheme,
     defaultColors,
     fontSize,
     fontWeight,
+    getColorTheme,
     getColorVariantsFromColorThemeValue,
     spacing
 } from 'lib';
+import { Color } from '../../../lib';
 
 export interface TabProps {
     name: string,
     value: any,
     privateProps?: {
-        color: string,
+        color: Color,
         isActive: boolean,
         setSelectedTab: React.Dispatch<React.SetStateAction<string>>,
     },
@@ -26,8 +27,8 @@ const Tab = ({
     privateProps,
 }: TabProps) => {
     const activeClassNames = classNames(
-        getColorVariantsFromColorThemeValue(colorTheme[privateProps!.color].text).textColor,
-        getColorVariantsFromColorThemeValue(colorTheme[privateProps!.color].darkBorder).borderColor,
+        getColorVariantsFromColorThemeValue(getColorTheme(privateProps!.color).text).textColor,
+        getColorVariantsFromColorThemeValue(getColorTheme(privateProps!.color).darkBorder).borderColor,
         'border-b-2'
     );
     const inActiveClassNames = classNames(

@@ -4,9 +4,9 @@ import { add, format, isEqual, isToday, } from 'date-fns';
 
 import {
     classNames,
-    colorTheme,
     defaultColors,
     fontWeight,
+    getColorTheme,
     getColorVariantsFromColorThemeValue
 } from 'lib';
 import { Color } from '../../../lib';
@@ -83,13 +83,13 @@ export const getDayBgColorClassName = (
     color: Color,
 ): string => {
     if (selectedStartDay && isEqual(day, selectedStartDay)) {
-        return getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor;
+        return getColorVariantsFromColorThemeValue(getColorTheme(color).background).bgColor;
     }
     if (selectedStartDay && !selectedEndDay && hoveredDay && (day > selectedStartDay && day < hoveredDay)) {
         return getColorVariantsFromColorThemeValue(defaultColors.lightBackground).bgColor;
     }
     if (selectedEndDay && isEqual(day, selectedEndDay)) {
-        return getColorVariantsFromColorThemeValue(colorTheme[color].background).bgColor;
+        return getColorVariantsFromColorThemeValue(getColorTheme(color).background).bgColor;
     }
     if (selectedStartDay && selectedEndDay && (day > selectedStartDay && day < selectedEndDay)) {
         return getColorVariantsFromColorThemeValue(defaultColors.lightBackground).bgColor;
@@ -111,7 +111,7 @@ export const getDayTextClassNames = (
             return getColorVariantsFromColorThemeValue(defaultColors.white).textColor;
         }
         return classNames(
-            getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor,
+            getColorVariantsFromColorThemeValue(getColorTheme(color).text).textColor,
             fontWeight.lg,
         );
     }
@@ -125,7 +125,7 @@ export const getDayTextClassNames = (
         return getColorVariantsFromColorThemeValue(defaultColors.white).textColor;
     }
     if (selectedStartDay && selectedEndDay && (day > selectedStartDay && day < selectedEndDay)) {
-        return getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor;
+        return getColorVariantsFromColorThemeValue(getColorTheme(color).text).textColor;
     }
     return getColorVariantsFromColorThemeValue(defaultColors.darkestText).textColor;
 };

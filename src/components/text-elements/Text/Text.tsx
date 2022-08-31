@@ -4,9 +4,9 @@ import {
     BaseColors,
     TextAlignments,
     classNames,
-    colorTheme,
     fontSize,
     fontWeight,
+    getColorTheme,
     getColorVariantsFromColorThemeValue,
     parseTruncateOption,
 } from 'lib';
@@ -37,7 +37,7 @@ const Text = ({
             height ? 'overflow-y-auto' : '',
             marginTop,
             textAlignment,
-            getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor,
+            getColorVariantsFromColorThemeValue(getColorTheme(color).text).textColor,
             fontSize.sm,
             fontWeight.sm,
         )}>

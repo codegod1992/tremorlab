@@ -3,7 +3,7 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { BaseColors, Sizes, classNames, colorTheme, getColorVariantsFromColorThemeValue, spacing } from 'lib';
+import { BaseColors, Sizes, classNames, getColorTheme, getColorVariantsFromColorThemeValue, spacing } from 'lib';
 import { Color, MarginTop, Size } from '../../../lib';
 import { badgeProportions, iconSizes } from './styles';
 
@@ -29,8 +29,8 @@ const Badge = ({
             <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
                 <span className={ classNames(
                     'flex-shrink-0 inline-flex justify-center items-center rounded-full',
-                    getColorVariantsFromColorThemeValue(colorTheme[color].text).textColor,
-                    getColorVariantsFromColorThemeValue(colorTheme[color].lightBackground).bgColor,
+                    getColorVariantsFromColorThemeValue(getColorTheme(color).text).textColor,
+                    getColorVariantsFromColorThemeValue(getColorTheme(color).lightBackground).bgColor,
                     badgeProportions[size]?.paddingLeft,
                     badgeProportions[size]?.paddingRight,
                     badgeProportions[size]?.paddingTop,
