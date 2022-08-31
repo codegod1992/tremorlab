@@ -4,10 +4,10 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { BaseColors, Sizes, classNames, isBaseColor, isValidSize } from 'lib';
-import { Color, MarginTop, Size } from '../../../lib';
+import { Color, IconVariant, MarginTop, Size } from '../../../lib';
 import { colors, iconSizes, shape, wrapperProportions } from './styles';
 
-export const IconVariants = {
+export const IconVariants: {[key: string]: IconVariant} = {
     Simple: 'simple',
     Light: 'light',
     Shadow: 'shadow',
@@ -15,9 +15,13 @@ export const IconVariants = {
     Outlined: 'outlined'
 };
 
+const isValidIconVariant = (iconVariant: IconVariant): boolean => {
+    return Object.values(IconVariants).includes(iconVariant);
+};
+
 export interface IconProps {
     Icon: React.ElementType,
-    variant?: string,
+    variant?: IconVariant,
     tooltip?: string,
     size?: Size,
     color?: Color,
@@ -32,8 +36,10 @@ const Icon = ({
     color = BaseColors.Blue,
     marginTop = 'mt-0',
 }: IconProps) => {
-    const iconColors = isBaseColor(color) ? colors[variant][color] : colors[variant][BaseColors.Blue];
     const iconSize = isValidSize(size) ? size : Sizes.SM;
+    const iconVariant = isValidIconVariant(variant) ? variant : IconVariants.Simple;
+    const iconColors = isBaseColor(color) ? colors[iconVariant][color] : colors[iconVariant][BaseColors.Blue];
+
     return (
         <span className={ classNames(marginTop) }>
             <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
@@ -44,10 +50,10 @@ const Icon = ({
                         iconColors.textColor,
                         iconColors.borderColor,
                         iconColors.ringColor,
-                        shape[variant].rounded,
-                        shape[variant].border,
-                        shape[variant].shadow,
-                        shape[variant].ring,
+                        shape[iconVariant].rounded,
+                        shape[iconVariant].border,
+                        shape[iconVariant].shadow,
+                        shape[iconVariant].ring,
                         wrapperProportions[iconSize].paddingLeft,
                         wrapperProportions[iconSize].paddingRight,
                         wrapperProportions[iconSize].paddingTop,

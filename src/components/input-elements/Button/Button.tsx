@@ -7,6 +7,7 @@ import {
     Sizes,
     classNames,
     isBaseColor,
+    isValidImportance,
     isValidSize,
     spacing,
 } from 'lib';
@@ -40,6 +41,7 @@ const Button = ({
 }: ButtonProps) => {
     const buttonColors = isBaseColor(color) ? colors[color] : colors[BaseColors.Blue];
     const buttonSize = isValidSize(size) ? size : Sizes.SM;
+    const buttonImportance = isValidImportance(importance) ? importance : Importances.Primary;
     return(
         <span className={ classNames(marginTop) }>
             <button
@@ -54,12 +56,12 @@ const Button = ({
                     buttonProportions[buttonSize].paddingTop,
                     buttonProportions[buttonSize].paddingBottom,
                     buttonProportions[buttonSize].fontSize,
-                    buttonColors[importance].bgColor,
-                    buttonColors[importance].borderColor,
-                    buttonColors[importance].focusRingColor,
-                    buttonColors[importance].hoverBgColor,
-                    buttonColors[importance].hoverBorderColor,
-                    buttonColors[importance].textColor,
+                    buttonColors[buttonImportance].bgColor,
+                    buttonColors[buttonImportance].borderColor,
+                    buttonColors[buttonImportance].focusRingColor,
+                    buttonColors[buttonImportance].hoverBgColor,
+                    buttonColors[buttonImportance].hoverBorderColor,
+                    buttonColors[buttonImportance].textColor,
                 ) }
             >
                 { Icon && (iconPosition !== HorizontalPositions.Right) ? ( // ensures that icon is rendered if iconPosition is misspelled
