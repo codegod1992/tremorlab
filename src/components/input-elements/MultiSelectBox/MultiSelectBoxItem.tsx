@@ -7,8 +7,6 @@ import {
     fontSize,
     getColorTheme,
     getColorVariantsFromColorThemeValue,
-    isValueInArray,
-    removeValueFromArray,
     spacing
 } from 'lib';
 
@@ -16,10 +14,8 @@ export interface MultiSelectBoxItemProps {
     value: any,
     name: string,
     privateProps?: {
-        selectedItems: any[],
-        setSelectedItems: React.Dispatch<React.SetStateAction<any[]>>,
-        handleSelect: { (value: any): void },
-        setShowModal: React.Dispatch<React.SetStateAction<boolean>>,
+        handleMultiSelectBoxItemClick: (value: any) => void,
+        isActive: boolean,
     },
 }
 
@@ -29,17 +25,7 @@ const MultiSelectBoxItem = ({
     privateProps,
 }: MultiSelectBoxItemProps) => (
     <button
-        onClick={ () => {
-            let newSelectedItems = [];
-            if (!isValueInArray(value, privateProps!.selectedItems!)) {
-                newSelectedItems = [...privateProps!.selectedItems!, value];
-                privateProps!.setSelectedItems!([...newSelectedItems]);
-            } else {
-                newSelectedItems = removeValueFromArray(value, privateProps!.selectedItems!);
-                privateProps!.setSelectedItems!([...newSelectedItems!]);
-            }
-            privateProps!.handleSelect(newSelectedItems);
-        } }
+        onClick={ () => privateProps!.handleMultiSelectBoxItemClick(value) }
         className={ classNames(
             'flex items-center justify-between w-full',
             spacing.twoXl.paddingLeft,
@@ -61,7 +47,7 @@ const MultiSelectBoxItem = ({
                     getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
                     spacing.lg.marginRight,
                 ) }
-                checked={ isValueInArray(value, privateProps!.selectedItems!) }
+                checked={ privateProps!.isActive }
                 readOnly={ true }
             />
             <p className="whitespace-nowrap truncate">{ name }</p>

@@ -62,10 +62,10 @@ const SelectBox = ({
     const allOptionNames = getOptionNamesFromChildren(children);
     const filteredOptionNames = new Set(getFilteredOptionNames(searchQuery, allOptionNames));
 
-    const handleSelectBoxItemClick = (selectedItem: any) => {
-        setInputText(valueToNameMapping[selectedItem]);
-        setSelectedItem(selectedItem);
-        handleSelect(selectedItem);
+    const handleSelectBoxItemClick = (value: any) => {
+        setInputText(valueToNameMapping[value]);
+        setSelectedItem(value);
+        handleSelect(value);
         setShowModal(false);
     };
 
