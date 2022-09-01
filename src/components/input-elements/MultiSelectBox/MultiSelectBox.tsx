@@ -33,6 +33,14 @@ const MultiSelectBox = ({
 }: MultiSelectBoxProps) => {
     const dropdownRef = useRef(null);
 
+    const valueToNameMapping: {[value: string]: string} = {};
+    const consturctValueToNameMapping = () => {
+        React.Children.map(children, (child) => {
+            valueToNameMapping[child.props.value] = child.props.name;
+        });
+    };
+    consturctValueToNameMapping();
+
     const getOptionNamesFromChildren = (children: React.ReactElement[] | React.ReactElement): string[] => (
         React.Children.map(children, (child) => {
             return String(child.props.name);
@@ -53,14 +61,6 @@ const MultiSelectBox = ({
 
     const allOptionNames = getOptionNamesFromChildren(children);
     const filteredOptionNames = new Set(getFilteredOptionNames(searchQuery, allOptionNames));
-
-    const valueToNameMapping: {[value: string]: string} = {};
-    const consturctValueToNameMapping = () => {
-        React.Children.map(children, (child) => {
-            valueToNameMapping[child.props.value] = child.props.name;
-        });
-    };
-    consturctValueToNameMapping();
 
     useEffect(() => {
         setSearchQuery(''); // clear search query on modal close

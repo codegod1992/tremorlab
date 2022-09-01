@@ -12,9 +12,7 @@ export interface DropdownItemProps {
     Icon?: React.ElementType,
     privateProps?: {
         isActive: boolean,
-        setSelectedItem: React.Dispatch<React.SetStateAction<any>>,
-        handleSelect: { (value: any): void },
-        setShowModal: React.Dispatch<React.SetStateAction<boolean>>,
+        handleDropdownItemClick: (value: any) => void,
     }
 }
 
@@ -25,11 +23,7 @@ const DropdownItem = ({
     privateProps,
 }: DropdownItemProps) => (
     <button
-        onClick={ () => {
-            privateProps!.setSelectedItem!(value);
-            privateProps!.handleSelect(value);
-            privateProps!.setShowModal(false);
-        } }
+        onClick={ () => privateProps!.handleDropdownItemClick(value) }
         className={ classNames(
             'flex items-center justify-between w-full',
             spacing.twoXl.paddingLeft,
