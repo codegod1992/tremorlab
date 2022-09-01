@@ -30,17 +30,9 @@ const SelectBox = ({
     marginTop = 'mt-0',
     children,
 }: SelectBoxProps) => {
-    const [showModal, setShowModal] = useState(false);
-
-    const [searchQuery, setSearchQuery] = useState('');
-    const [selectedItem, setSelectedItem] = useState(defaultValue);
-
     const dropdownRef = useRef(null);
 
-    type ValueToNameMapping = {
-        [value: string]: string
-    }
-    const valueToNameMapping: ValueToNameMapping = {};
+    const valueToNameMapping: {[value: string]: string} = {};
     const consturctValueToNameMapping = () => {
         React.Children.map(children, (child) => {
             valueToNameMapping[child.props.value] = child.props.name;
@@ -62,8 +54,20 @@ const SelectBox = ({
             });
     };
 
+    const [showModal, setShowModal] = useState(false);
+    const [searchQuery, setSearchQuery] = useState('');
+    const [selectedItem, setSelectedItem] = useState(defaultValue);
+    const [inputText, setInputText] = useState(selectedItem ? valueToNameMapping[selectedItem] : placeholder);
+
     const allOptionNames = getOptionNamesFromChildren(children);
     const filteredOptionNames = new Set(getFilteredOptionNames(searchQuery, allOptionNames));
+
+    const handleSelectBoxItemClick = (selectedItem: any) => {
+        setInputText(valueToNameMapping[selectedItem]);
+        setSelectedItem(selectedItem);
+        handleSelect(selectedItem);
+        setShowModal(false);
+    };
 
     return (
         <div ref={ dropdownRef } className={ classNames(
@@ -72,14 +76,14 @@ const SelectBox = ({
             marginTop,
         ) }>
             <input
-                key={ selectedItem ? valueToNameMapping[selectedItem] : null }
                 className={ classNames(
                     'w-full rounded-md focus:ring-2 focus:outline-0',
                     getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
-                    getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
-                    'placeholder:text-gray-500', // template string / string concatenation not possible with tailwind
+                    selectedItem
+                        ? getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor
+                        : getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
                     spacing.twoXl.paddingLeft,
                     spacing.sm.paddingTop,
                     spacing.sm.paddingBottom,
@@ -87,10 +91,9 @@ const SelectBox = ({
                     fontWeight.md,
                     'pr-10' // avoid text overflow at arrow down icon
                 ) }
-                type="input"
-                placeholder={ selectedItem ? undefined : placeholder }
-                defaultValue={ selectedItem ? valueToNameMapping[selectedItem] : undefined }
-                onChange={ (e) => setSearchQuery(e.target.value) }
+                type="text"
+                value={ inputText }
+                onChange={ (e) => { setSearchQuery(e.target.value); setInputText(e.target.value); } }
                 onClick={ () => setShowModal(!showModal) }
             />
             <button
@@ -122,10 +125,8 @@ const SelectBox = ({
                             <>
                                 { React.cloneElement(child, {
                                     privateProps: {
-                                        setSelectedItem: setSelectedItem,
+                                        handleSelectBoxItemClick: handleSelectBoxItemClick,
                                         isActive: selectedItem === child.props.value,
-                                        handleSelect: handleSelect,
-                                        setShowModal: setShowModal,
                                     }
                                 }) }
                             </>

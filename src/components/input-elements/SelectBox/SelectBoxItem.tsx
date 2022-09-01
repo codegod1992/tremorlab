@@ -11,10 +11,8 @@ export interface SelectBoxItemProps {
     name: string,
     Icon?: React.ElementType,
     privateProps?: {
+        handleSelectBoxItemClick: (selectedItem: any) => void
         isActive: boolean,
-        setSelectedItem?: React.Dispatch<React.SetStateAction<any>>,
-        handleSelect: { (value: any): void },
-        setShowModal: React.Dispatch<React.SetStateAction<boolean>>
     }
 }
 
@@ -25,11 +23,7 @@ const SelectBoxItem = ({
     privateProps,
 }: SelectBoxItemProps) => (
     <button
-        onClick={ () => {
-            privateProps!.setSelectedItem!(value);
-            privateProps!.handleSelect(value);
-            privateProps!.setShowModal(false);
-        } }
+        onClick={ () => privateProps!.handleSelectBoxItemClick(value) }
         className={ classNames(
             'flex items-center justify-between w-full',
             spacing.twoXl.paddingLeft,
