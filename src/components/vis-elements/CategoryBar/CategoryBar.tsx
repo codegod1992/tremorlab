@@ -13,7 +13,6 @@ import {
     sizing,
     spacing,
     themeColorRange,
-    toBorderColorClass
 } from 'lib';
 
 const BarLabels = ({ categoryPercentageValues }: {categoryPercentageValues: number[]}) => {
@@ -69,7 +68,7 @@ const CategoryBar = ({
     marginTop = 'mt-0',
 }: CategoryBarProps) => {
 
-    const getMarkerBorderColor = (): string => {
+    const getMarkerBgColor = (): string => {
         if (percentageValue === undefined)
             return '';
 
@@ -80,13 +79,13 @@ const CategoryBar = ({
 
             prefixSum += currentWidthPercentage;
             if (prefixSum >= percentageValue)
-                return toBorderColorClass(currentBgColor);
+                return currentBgColor;
         }
 
         return '';
     };
 
-    const markerBorderColor = getMarkerBorderColor();
+    const markerBgColor = getMarkerBgColor();
 
     return(
         <div className={ classNames(marginTop) }>
@@ -107,18 +106,25 @@ const CategoryBar = ({
                     );
                 })}
                 { percentageValue !== undefined ? (
-                    <div className="absolute" style={ { left: `${percentageValue}%` } }>
-                        <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+                    <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+                        <div
+                            className={ classNames(
+                                'absolute right-1/2 -translate-x-1/2',
+                                sizing.lg.width, // wide transparant wrapper for tooltip activation
+                            ) }
+                            style={ { 'left': `${percentageValue}%` } }
+                        >
                             <div
                                 className={ classNames(
-                                    'bg-white -translate-x-1 z-1 border-4 rounded-full shadow-md',
-                                    markerBorderColor,
+                                    'rounded-lg ring-2 mx-auto',
+                                    markerBgColor,
+                                    getColorVariantsFromColorThemeValue(defaultColors.white).ringRolor,
                                     sizing.md.height,
-                                    sizing.md.width,
+                                    sizing.twoXs.width,
                                 ) }
                             />
-                        </Tooltip>
-                    </div>
+                        </div>
+                    </Tooltip>
                 ) : null}
             </div>
         </div>

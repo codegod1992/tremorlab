@@ -35,14 +35,6 @@ export const getPixelsFromTwClassName = (
     return Number(classNameParts[classNameParts.length - 1]) * 4;
 };
 
-export const getColorVariantsFromTwClassName = (twClassName: string): ColorTypes => {
-    const classNameParts = twClassName.split('-');
-    const baseColor = classNameParts[1];
-    const colorValue = classNameParts[2] ? classNameParts[2] : 'none';
-    const colorVariants = colorVariantMapping[baseColor][colorValue];
-    return colorVariants;
-};
-
 export const getColorVariantsFromColorThemeValue = (colorThemeValue: string): ColorTypes => {
     const colorThemeValueParts = colorThemeValue.split('-');
     const baseColor = colorThemeValueParts[0];
@@ -58,11 +50,6 @@ export const getHexFromColorThemeValue = (colorThemeValue: string): string => {
     // Currenlty only 500 is supported
     const hexValue = twColorsHex[baseColor][500];
     return hexValue;
-};
-
-export const toBorderColorClass: TailwindClassConverter = (twClassName: string): string => {
-    const colorTypes = getColorVariantsFromTwClassName(twClassName);
-    return colorTypes.borderColor;
 };
 
 export const parseTruncateOption: BoolClassParser = (option) => {
