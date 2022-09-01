@@ -24,13 +24,11 @@ export interface DropdownProps {
 
 const Dropwdown = ({
     placeholder = 'Select...',
-    defaultValue = null,
+    defaultValue,
     handleSelect = (value: any) => { value; },
     marginTop = 'mt-0',
     children,
 }: DropdownProps) => {
-    const [showModal, setShowModal] = useState(false);
-
     const dropdownRef = useRef(null);
 
     type ValueToNameMapping = {
@@ -45,6 +43,13 @@ const Dropwdown = ({
     consturctValueToNameMapping();
 
     const [selectedItem, setSelectedItem] = useState(defaultValue);
+    const [showModal, setShowModal] = useState(false);
+
+    const handleDropdownItemClick = (value: any) => {
+        setSelectedItem(value);
+        handleSelect(value);
+        setShowModal(false);
+    };
 
     return(
         <div
@@ -99,10 +104,8 @@ const Dropwdown = ({
                     <>
                         { React.cloneElement(child, {
                             privateProps: {
-                                setSelectedItem: setSelectedItem,
+                                handleDropdownItemClick,
                                 isActive: child?.props.value === selectedItem,
-                                handleSelect: handleSelect,
-                                setShowModal: setShowModal,
                             },
                         }) }
                     </>

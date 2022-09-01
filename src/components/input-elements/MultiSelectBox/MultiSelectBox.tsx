@@ -7,6 +7,8 @@ import {
     fontSize,
     fontWeight,
     getColorVariantsFromColorThemeValue,
+    isValueInArray,
+    removeValueFromArray,
     sizing,
     spacing
 } from 'lib';
@@ -29,13 +31,15 @@ const MultiSelectBox = ({
     marginTop = 'mt-0',
     children,
 }: MultiSelectBoxProps) => {
-    const [showModal, setShowModal] = useState(false);
-    
-    const [selectedItems, setSelectedItems] = useState(defaultValues);
-
-    const [searchQuery, setSearchQuery] = useState('');
-
     const dropdownRef = useRef(null);
+
+    const valueToNameMapping: {[value: string]: string} = {};
+    const consturctValueToNameMapping = () => {
+        React.Children.map(children, (child) => {
+            valueToNameMapping[child.props.value] = child.props.name;
+        });
+    };
+    consturctValueToNameMapping();
 
     const getOptionNamesFromChildren = (children: React.ReactElement[] | React.ReactElement): string[] => (
         React.Children.map(children, (child) => {
@@ -51,23 +55,28 @@ const MultiSelectBox = ({
             });
     };
 
+    const [showModal, setShowModal] = useState(false);
+    const [selectedItems, setSelectedItems] = useState(defaultValues);
+    const [searchQuery, setSearchQuery] = useState('');
+
     const allOptionNames = getOptionNamesFromChildren(children);
     const filteredOptionNames = new Set(getFilteredOptionNames(searchQuery, allOptionNames));
 
-    type ValueToNameMapping = {
-        [value: string]: string
-    }
-    const valueToNameMapping: ValueToNameMapping = {};
-    const consturctValueToNameMapping = () => {
-        React.Children.map(children, (child) => {
-            valueToNameMapping[child.props.value] = child.props.name;
-        });
-    };
-    consturctValueToNameMapping();
-
     useEffect(() => {
-        setSearchQuery('');
+        setSearchQuery(''); // clear search query on modal close
     }, [selectedItems]);
+
+    const handleMultiSelectBoxItemClick = (value: any) => {
+        let newSelectedItems = [];
+        if (!isValueInArray(value, selectedItems)) {
+            newSelectedItems = [...selectedItems, value];
+            setSelectedItems!([...newSelectedItems]);
+        } else {
+            newSelectedItems = removeValueFromArray(value, selectedItems!);
+            setSelectedItems!([...newSelectedItems!]);
+        }
+        handleSelect(newSelectedItems);
+    };
 
     return (
         <div
@@ -176,10 +185,8 @@ const MultiSelectBox = ({
                             <>
                                 { React.cloneElement(child, {
                                     privateProps: {
-                                        selectedItems,
-                                        setSelectedItems,
-                                        handleSelect,
-                                        setShowModal,
+                                        handleMultiSelectBoxItemClick,
+                                        isActive: isValueInArray(child.props.value, selectedItems),
                                     }
                                 }) }
                             </>
