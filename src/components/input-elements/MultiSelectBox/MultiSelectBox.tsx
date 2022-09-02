@@ -88,7 +88,6 @@ const MultiSelectBox = ({
             ) }
         >
             <button
-                id="multiselect-dropdown-button"
                 className={ classNames(
                     'flex justify-between items-center w-full rounded-md',
                     'focus:ring-2 focus:outline-0',
@@ -114,21 +113,24 @@ const MultiSelectBox = ({
                 </p>
                 <div className="flex items-center">
                     { selectedItems.length !== 0 ? (
-                        <button onClick={ (e) => {
-                            e.stopPropagation(); // prevent firing parent button
-                            setSelectedItems([]);
-                        } }>
+                        <div
+                            role="button"
+                            className={ classNames(spacing.xs.marginRight) }
+                            onClick={ (e) => {
+                                e.stopPropagation(); // prevent firing parent button
+                                setSelectedItems([]);
+                            } }
+                        >
                             <XCircleIcon 
                                 className={ classNames(
                                     'flex-none',
                                     sizing.md.height,
                                     sizing.md.width,
-                                    spacing.xs.marginRight,
                                     getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
                                 ) }
                                 aria-hidden="true"
                             />
-                        </button>
+                        </div>
                     ) : null }
                     <ArrowDownHeadIcon
                         className={ classNames(
