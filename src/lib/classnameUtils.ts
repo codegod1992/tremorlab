@@ -14,10 +14,6 @@ interface StringJoiner {
     (...classes: (string)[]): string
 }
 
-interface TailwindClassConverter {
-    (twClassName: string): string
-}
-
 interface BoolClassParser {
     (twClassName: boolean): string
 }
