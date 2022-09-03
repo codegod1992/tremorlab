@@ -69,8 +69,8 @@ const BarChart = ({
                 { showGridLines ? (
                     <CartesianGrid
                         strokeDasharray="3 3"
-                        horizontal={ true }
-                        vertical={ false }
+                        horizontal={ layout !== 'vertical' ? true : false }
+                        vertical={ layout !== 'vertical' ? false : true }
                     />
                 ) : null }
 
@@ -93,7 +93,7 @@ const BarChart = ({
                     <XAxis
                         hide={ !showXAxis }
                         type="number"
-                        tick={{ transform: 'translate(0, 6)' }} //padding between labels and axis
+                        tick={ { transform: 'translate(-3, 0)' } } //padding between labels and axis
                         style={{
                             fontSize: '12px',
                             fontFamily: 'Inter; Helvetica',
@@ -129,7 +129,7 @@ const BarChart = ({
                         ticks={ startEndOnly ? [data[0][dataKey], data[data.length - 1][dataKey]] : undefined }
                         type="category"
                         interval="preserveStartEnd"
-                        tick={ { transform: 'translate(10, 0)' } } 
+                        tick={ { transform: 'translate(0, 6)' } }
                         style={ {
                             fontSize: '12px',
                             fontFamily: 'Inter; Helvetica',

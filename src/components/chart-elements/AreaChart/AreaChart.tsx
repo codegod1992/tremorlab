@@ -108,33 +108,33 @@ const AreaChart = ({
                     />
                 ) : null }
                 { categories.map((category, idx) => (
-                    <>
-                        <defs key={ category }>
-                            <linearGradient id={ colors[idx] } x1="0" y1="0" x2="0" y2="1">
-                                <stop
-                                    offset="5%"
-                                    stopColor={ getHexFromColorThemeValue(getColorTheme(colors[idx]).background) }
-                                    stopOpacity={0.4}
-                                />
-                                <stop
-                                    offset="95%"
-                                    stopColor={ getHexFromColorThemeValue(getColorTheme(colors[idx]).background) }
-                                    stopOpacity={0}
-                                />
-                            </linearGradient>
-                        </defs>
-                        <Area
-                            key={ category }
-                            name={ category }
-                            type="linear"
-                            dataKey={ category }
-                            stroke={ getHexFromColorThemeValue(getColorTheme(colors[idx]).background) }
-                            fill={ `url(#${colors[idx]})` }
-                            strokeWidth={2}
-                            dot={false}
-                            isAnimationActive={false}
-                        />
-                    </>
+                    <defs key={ category }>
+                        <linearGradient id={ colors[idx] } x1="0" y1="0" x2="0" y2="1">
+                            <stop
+                                offset="5%"
+                                stopColor={ getHexFromColorThemeValue(getColorTheme(colors[idx]).background) }
+                                stopOpacity={0.4}
+                            />
+                            <stop
+                                offset="95%"
+                                stopColor={ getHexFromColorThemeValue(getColorTheme(colors[idx]).background) }
+                                stopOpacity={0}
+                            />
+                        </linearGradient>
+                    </defs>
+                )) }
+                { categories.map((category, idx) => (
+                    <Area
+                        key={ category }
+                        name={ category }
+                        type="linear"
+                        dataKey={ category }
+                        stroke={ getHexFromColorThemeValue(getColorTheme(colors[idx]).background) }
+                        fill={ `url(#${colors[idx]})` }
+                        strokeWidth={2}
+                        dot={false}
+                        isAnimationActive={false}
+                    />
                 ))}
             </ReChartsAreaChart>
         </ResponsiveContainer>
