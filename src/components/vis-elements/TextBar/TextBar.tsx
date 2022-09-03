@@ -14,8 +14,8 @@ import {
 import { Color, MarginTop, ValueFormater } from '../../../lib';
 
 type TextBarData = {
-    value: number,
     name: string,
+    value: number,
 }
 
 const getWidthsFromValues = (data: TextBarData[]) => {
