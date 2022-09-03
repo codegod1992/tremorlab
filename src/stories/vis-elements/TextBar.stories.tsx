@@ -26,7 +26,7 @@ Default.args = {
         { name: '/cancellation', value: 271 },
         { name: `/special-offer-august-getsahdkjhagskdfjhgakshjgdfkjahsgdfjkgasdjkhfgajkshgdfjkhagsdkjhfgajhksdgfjkhasdg
             fjkhagsdjhkgfasjkdgfjkasdhgkjgfdsk`, value: 191 },
-        { name: '/documentation', value: 91 },
+        { name: '/documentation', value: 0 },
     ],
     valueFormater: (value) => `${value} USD`
 };
