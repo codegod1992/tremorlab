@@ -38,8 +38,9 @@
 <br>
 <br>
 
+## Getting Started
 
-## 1. Create a Next.js project
+### 1. Create a Next.js project
 
 We start by creating a new Next.js project with
 [Create Next App](https://nextjs.org/docs/api-reference/create-next-app).
@@ -49,7 +50,7 @@ npx create-next-app my-project
 cd my-project
 ```
 
-## 2. Install Tailwind CSS
+### 2. Install Tailwind CSS
 
 We install Tailwind CSS using npm and initialize the configuration files.
 
@@ -58,11 +59,11 @@ npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
 
-## 3. Set template paths
+### 3. Set template paths
 
 We add the following paths to our `tailwind.config.js` file.
 
-```js
+```jsx
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -76,7 +77,7 @@ module.exports = {
 }
 ```
 
-## 4. Add the Tailwind directives
+### 4. Add the Tailwind directives
 
 We add the following directives to our `globals.css` file.
 
@@ -86,7 +87,7 @@ We add the following directives to our `globals.css` file.
 @tailwind utilities;
 ```
 
-## 5. Install the tremor library
+### 5. Install the tremor library
 
 Install tremor from your command line via npm. And run our build process. Since we are in beta, please be
 aware that there might be breaking changes in the future.
