@@ -38,7 +38,7 @@ export interface TextBarProps {
 }
 
 const TextBar = ({
-    data,
+    data = [],
     color = BaseColors.Blue,
     valueFormater = defaultValueFormater,
     marginTop = 'mt-0',
