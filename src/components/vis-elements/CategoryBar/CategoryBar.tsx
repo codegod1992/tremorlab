@@ -60,7 +60,7 @@ export interface CategoryBarProps {
 }
 
 const CategoryBar = ({
-    categoryPercentageValues,
+    categoryPercentageValues = [],
     colors = themeColorRange,
     percentageValue,
     showLabels = true,

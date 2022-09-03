@@ -31,8 +31,8 @@ export interface BarChartProps extends BaseChartProps {
 }
 
 const BarChart = ({
-    data,
-    categories,
+    data = [],
+    categories = [],
     dataKey,
     colors = themeColorRange,
     valueFormater = defaultValueFormater,

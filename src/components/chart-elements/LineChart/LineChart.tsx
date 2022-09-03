@@ -25,8 +25,8 @@ import {
 } from 'lib';
 
 const LineChart = ({
-    data,
-    categories,
+    data = [],
+    categories = [],
     dataKey,
     colors = themeColorRange,
     valueFormater = defaultValueFormater,

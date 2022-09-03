@@ -19,8 +19,8 @@ import { classNames, getHexFromColorThemeValue, getPixelsFromTwClassName } from 
 import { defaultValueFormater, getColorTheme, themeColorRange } from 'lib';
 
 const AreaChart = ({
-    data,
-    categories,
+    data = [],
+    categories = [],
     dataKey,
     colors = themeColorRange,
     valueFormater = defaultValueFormater,
