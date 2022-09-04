@@ -57,7 +57,7 @@ const SelectBox = ({
     const [showModal, setShowModal] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedItem, setSelectedItem] = useState(defaultValue);
-    const [inputText, setInputText] = useState(selectedItem ? valueToNameMapping[selectedItem] : placeholder);
+    const [inputText, setInputText] = useState(selectedItem ? valueToNameMapping[selectedItem] : '');
 
     const allOptionNames = getOptionNamesFromChildren(children);
     const filteredOptionNames = new Set(getFilteredOptionNames(searchQuery, allOptionNames));
@@ -81,17 +81,17 @@ const SelectBox = ({
                     getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
-                    selectedItem
-                        ? getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor
-                        : getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
+                    getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
                     spacing.twoXl.paddingLeft,
                     spacing.sm.paddingTop,
                     spacing.sm.paddingBottom,
                     fontSize.sm,
                     fontWeight.md,
+                    'placeholder:text-gray-500',
                     'pr-10' // avoid text overflow at arrow down icon
                 ) }
                 type="text"
+                placeholder={ placeholder }
                 value={ inputText }
                 onChange={ (e) => { setSearchQuery(e.target.value); setInputText(e.target.value); } }
                 onClick={ () => setShowModal(!showModal) }
