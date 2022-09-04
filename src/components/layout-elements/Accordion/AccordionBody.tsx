@@ -12,9 +12,9 @@ const AccordionBody = ({
     return(
         <div className={ classNames(
             'w-full',
-            spacing.twoXl.paddingLeft,
-            spacing.twoXl.paddingRight,
-            spacing.twoXl.paddingBottom,
+            spacing.threeXl.paddingLeft,
+            spacing.threeXl.paddingRight,
+            spacing.threeXl.paddingBottom,
         ) }>
             { children }
         </div>
