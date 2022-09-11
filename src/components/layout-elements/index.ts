@@ -1,4 +1,5 @@
 export * from './Accordion';
+export * from './ColGrid';
 
 export { default as Block } from './Block';
 export { default as Card } from './Card';
