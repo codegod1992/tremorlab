@@ -9,7 +9,7 @@ export interface FooterProps {
 }
 
 const Footer = ({
-    height = 'h-20',
+    height = 'h-14',
     children
 }: FooterProps) => {
     return(
