@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Card, ColGrid } from 'components';
+import { Card, Col, ColGrid } from 'components';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -13,15 +13,19 @@ export default {
 
 const Template: ComponentStory<typeof ColGrid> = (args) => (
     <ColGrid {...args}>
+        <Col colSpan="col-span-2">
+            <Card>
+                <div className="h-44" />
+            </Card>
+        </Col>
         <Card>
             <div className="h-44" />
         </Card>
-        <Card>
-            <div className="h-44" />
-        </Card>
-        <Card>
-            <div className="h-44" />
-        </Card>
+        <Col colSpan="col-span-2" colStart="col-start-2">
+            <Card>
+                <div className="h-44" />
+            </Card>
+        </Col>
         <Card>
             <div className="h-44" />
         </Card>
