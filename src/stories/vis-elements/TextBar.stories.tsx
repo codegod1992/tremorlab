@@ -2,18 +2,18 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Card, TextBar } from 'components';
+import { BarList, Card } from 'components';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Tremor/VisElements/TextBar',
-    component: TextBar,
-} as ComponentMeta<typeof TextBar>;
+    title: 'Tremor/VisElements/BarList',
+    component: BarList,
+} as ComponentMeta<typeof BarList>;
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
-const Template: ComponentStory<typeof TextBar> = (args) => (
+const Template: ComponentStory<typeof BarList> = (args) => (
     <Card>
-        <TextBar {...args} />
+        <BarList {...args} />
     </Card>
 );
   

@@ -13,12 +13,12 @@ import {
 } from 'lib';
 import { Color, MarginTop, ValueFormater } from '../../../lib';
 
-type TextBarData = {
+type BarListData = {
     name: string,
     value: number,
 }
 
-const getWidthsFromValues = (data: TextBarData[]) => {
+const getWidthsFromValues = (data: BarListData[]) => {
     let maxValue = -Infinity;
     data.forEach(item => {
         maxValue = Math.max(maxValue, item.value);
@@ -30,19 +30,19 @@ const getWidthsFromValues = (data: TextBarData[]) => {
     });
 };
 
-export interface TextBarProps {
-    data: TextBarData[],
+export interface BarListProps {
+    data: BarListData[],
     valueFormater?: ValueFormater,
     color?: Color,
     marginTop?: MarginTop,
 }
 
-const TextBar = ({
+const BarList = ({
     data = [],
     color = BaseColors.Blue,
     valueFormater = defaultValueFormater,
     marginTop = 'mt-0',
-}: TextBarProps) => {
+}: BarListProps) => {
     const widths = getWidthsFromValues(data);
 
     const rowHeight = sizing.threeXl.height;
@@ -100,4 +100,4 @@ const TextBar = ({
     );
 };
 
-export default TextBar;
+export default BarList;

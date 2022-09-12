@@ -26,7 +26,10 @@ const AccordionHeader = ({
             ) }
             onClick={ () => privateProps!.setExpanded(!privateProps!.isExpanded) }
         >
-            <div className="w-[95%] flex">
+            <div className={ classNames(
+                'flex flex-1',
+                spacing.threeXl.marginRight,
+            ) }>
                 { children }
             </div>
             <div>

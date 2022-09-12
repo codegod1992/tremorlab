@@ -2,12 +2,12 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import TextBar from 'components/vis-elements/TextBar';
+import BarList from 'components/vis-elements/BarList';
 
-describe('TextBar', () => {
-    test('renders the TextBar component with default props', () => {
+describe('BarList', () => {
+    test('renders the BarList component with default props', () => {
         render(
-            <TextBar
+            <BarList
                 data={[
                     { name: '/home', value: 100000000 },
                     { name: '/imprint', value: 351 },

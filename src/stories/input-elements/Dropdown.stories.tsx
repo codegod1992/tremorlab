@@ -16,7 +16,7 @@ export default {
 
 const Template: ComponentStory<typeof Dropdown> = () => (
     <Card>
-        <Dropdown handleSelect={ (value) => console.log('The selected value is', value) }>
+        <Dropdown handleSelect={ (value) => console.log('The selected value is', value) } maxWidth="max-w-sm">
             <DropdownItem value={ 5 } name={ 'Five' } Icon={ CalendarIcon } />
             <DropdownItem value={ 3 } name={ 'Three' } Icon={ CalendarIcon } />
             <DropdownItem value={ 1 } name={ 'One' } Icon={ CalendarIcon } />

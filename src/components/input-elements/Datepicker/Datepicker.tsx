@@ -13,8 +13,8 @@ import {
 } from 'date-fns';
 
 import { ArrowDownHeadIcon, ArrowLeftHeadIcon, ArrowRightHeadIcon, CalendarIcon } from 'assets';
-import { BaseColors, Color, MarginTop } from '../../../lib';
-import { classNames, getColorVariantsFromColorThemeValue } from 'lib/classnameUtils';
+import { BaseColors, classNames, getColorVariantsFromColorThemeValue } from 'lib';
+import { Color, MarginTop, MaxWidth } from '../../../lib/inputTypes';
 import {
     colStartClasses,
     displaySelected,
@@ -35,6 +35,7 @@ export interface DatepickerProps {
     placeholder?: string,
     color?: Color,
     marginTop?: MarginTop,
+    maxWidth?: MaxWidth
 }
 
 const Datepicker = ({
@@ -44,6 +45,7 @@ const Datepicker = ({
     placeholder = 'Select...',
     color = BaseColors.Blue,
     marginTop = 'mt-0',
+    maxWidth = 'max-w-none',
 }: DatepickerProps) => {
     const [showDatePickerModal, setShowDatePickerModal] = useState(false);
     const [showDropdownModal, setShowDropdownModal] = useState(false);
@@ -110,6 +112,7 @@ const Datepicker = ({
         <div className={ classNames(
             'relative w-full',
             marginTop,
+            maxWidth,
         ) }>
             <div className={ classNames(
                 'flex items-center justify-between rounded-md shadow-sm',

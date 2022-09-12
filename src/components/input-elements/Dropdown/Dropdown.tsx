@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 
 import { ArrowDownHeadIcon } from 'assets';
 
+import { MarginTop, MaxWidth } from '../../../lib/inputTypes';
 import {
     classNames,
     defaultColors,
@@ -11,7 +12,6 @@ import {
     sizing,
     spacing
 } from 'lib';
-import { MarginTop } from '../../../lib';
 import Modal from 'components/layout-elements/Modal';
 
 export interface DropdownProps {
@@ -19,6 +19,7 @@ export interface DropdownProps {
     defaultValue?: any,
     handleSelect?: { (value: any): void },
     marginTop?: MarginTop,
+    maxWidth?: MaxWidth,
     children: React.ReactElement[] | React.ReactElement,
 }
 
@@ -27,6 +28,7 @@ const Dropwdown = ({
     defaultValue,
     handleSelect = (value: any) => { value; },
     marginTop = 'mt-0',
+    maxWidth = 'max-w-none',
     children,
 }: DropdownProps) => {
     const dropdownRef = useRef(null);
@@ -56,6 +58,7 @@ const Dropwdown = ({
             ref={ dropdownRef }
             className={ classNames(
                 'relative w-full min-w-[10rem] rounded-md shadow-sm border',
+                maxWidth,
                 getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
                 marginTop,
             ) }

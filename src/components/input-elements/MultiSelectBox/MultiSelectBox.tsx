@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import { ArrowDownHeadIcon, SearchIcon, XCircleIcon } from 'assets';
+import { MarginTop, MaxWidth } from '../../../lib/inputTypes';
 import {
     classNames,
     defaultColors,
@@ -12,7 +13,6 @@ import {
     sizing,
     spacing
 } from 'lib';
-import { MarginTop } from '../../../lib';
 import Modal from 'components/layout-elements/Modal';
 
 export interface MultiSelectBoxProps {
@@ -20,6 +20,7 @@ export interface MultiSelectBoxProps {
     handleSelect?: { (value: any): void },
     placeholder?: string,
     marginTop?: MarginTop,
+    maxWidth?: MaxWidth,
     children: React.ReactElement[] | React.ReactElement,
 }
 
@@ -29,6 +30,7 @@ const MultiSelectBox = ({
     handleSelect = (value) => null,
     placeholder = 'Select...',
     marginTop = 'mt-0',
+    maxWidth = 'max-w-none',
     children,
 }: MultiSelectBoxProps) => {
     const dropdownRef = useRef(null);
@@ -83,6 +85,7 @@ const MultiSelectBox = ({
             ref={ dropdownRef }
             className={ classNames(
                 'relative w-full min-w-[10rem] rounded-md shadow-sm border',
+                maxWidth,
                 getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
                 marginTop,
             ) }
