@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { GapX, GapY } from '../../../lib/inputTypes';
+import { GapX, GapY, MarginTop } from '../../../lib/inputTypes';
 import { GridColsMapping, gridCols, gridColsLg, gridColsMd, gridColsSm } from './styles';
 import { classNames } from 'lib';
 
@@ -11,6 +11,7 @@ export interface ColGridProps {
     numColsLg?: number,
     gapX?: GapX,
     gapY?: GapY,
+    marginTop?: MarginTop,
     children: React.ReactNode,
 }
 
@@ -21,6 +22,7 @@ const ColGrid = ({
     numColsLg,
     gapX = 'gap-x-0',
     gapY = 'gap-y-0',
+    marginTop = 'mt-0',
     children,
 }: ColGridProps) => {
     const getGridCols = (
@@ -47,6 +49,7 @@ const ColGrid = ({
             getColClassNames(),
             gapX,
             gapY,
+            marginTop,
         ) }>
             { children }
         </div>
