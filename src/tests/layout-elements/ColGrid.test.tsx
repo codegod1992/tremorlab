@@ -9,7 +9,7 @@ describe('ColGrid', () => {
     test('renders the ColGrid component with default props', () => {
         render(
             <ColGrid>
-                <Col colSpan="col-span-2">
+                <Col numColSpan={ 2 }>
                     <Card>
                         <div className="h-44" />
                     </Card>
@@ -17,7 +17,7 @@ describe('ColGrid', () => {
                 <Card>
                     <div className="h-44" />
                 </Card>
-                <Col colSpan="col-span-2" colStart="col-start-2">
+                <Col>
                     <Card>
                         <div className="h-44" />
                     </Card>

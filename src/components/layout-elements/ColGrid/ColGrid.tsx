@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { GapX, GapY, MarginTop } from '../../../lib/inputTypes';
-import { GridColsMapping, gridCols, gridColsLg, gridColsMd, gridColsSm } from './styles';
+import { GridClassesMapping, gridCols, gridColsLg, gridColsMd, gridColsSm } from './styles';
 import { classNames } from 'lib';
 
 export interface ColGridProps {
@@ -16,7 +16,7 @@ export interface ColGridProps {
 }
 
 const ColGrid = ({
-    numCols = 3,
+    numCols = 1,
     numColsSm,
     numColsMd,
     numColsLg,
@@ -27,7 +27,7 @@ const ColGrid = ({
 }: ColGridProps) => {
     const getGridCols = (
         numCols: number | undefined,
-        gridColsMapping: GridColsMapping
+        gridColsMapping: GridClassesMapping
     ): string => {
         if (!numCols) return '';
         if (!Object.keys(gridColsMapping).includes(String(numCols))) return '';

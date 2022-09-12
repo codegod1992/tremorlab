@@ -13,7 +13,7 @@ export default {
 
 const Template: ComponentStory<typeof ColGrid> = (args) => (
     <ColGrid {...args}>
-        <Col colSpan="col-span-2">
+        <Col numColSpan={ 2 }>
             <Card>
                 <div className="h-44" />
             </Card>
@@ -21,7 +21,7 @@ const Template: ComponentStory<typeof ColGrid> = (args) => (
         <Card>
             <div className="h-44" />
         </Card>
-        <Col colSpan="col-span-2" colStart="col-start-2">
+        <Col>
             <Card>
                 <div className="h-44" />
             </Card>
