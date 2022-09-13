@@ -12,6 +12,7 @@ export interface RangeBarProps {
     maxRangeValue: number,
     markerTooltip?: string,
     rangeTooltip?: string,
+    showAnimation: boolean,
     color?: Color,
     marginTop?: MarginTop,
 }
@@ -22,6 +23,7 @@ const RangeBar = ({
     maxRangeValue,
     markerTooltip,
     rangeTooltip,
+    showAnimation = true,
     color = BaseColors.Blue,
     marginTop = 'mt-0',
 }: RangeBarProps) => {
@@ -38,7 +40,11 @@ const RangeBar = ({
                         'absolute h-full rounded-lg',
                         getColorVariantsFromColorThemeValue(defaultColors.darkBackground).bgColor,
                     ) }
-                    style={ {'left': `${minRangeValue}%`, 'width': `${maxRangeValue - minRangeValue}%`} } 
+                    style={ {
+                        'left': `${minRangeValue}%`,
+                        'width': `${maxRangeValue - minRangeValue}%`,
+                        'transition': showAnimation ? 'all 2s' : ''
+                    } }
                 />
             </Tooltip>
             <Tooltip content={ markerTooltip } className={ markerTooltip ? '' : 'hidden' }>
@@ -47,7 +53,7 @@ const RangeBar = ({
                         'absolute right-1/2 -translate-x-1/2',
                         sizing.lg.width, // wide transparant wrapper for tooltip activation
                     ) }
-                    style={ { 'left': `${percentageValue}%` } }
+                    style={ { 'left': `${percentageValue}%`, 'transition': showAnimation ? 'all 2s' : '' } }
                 >
                     <div
                         className={ classNames(

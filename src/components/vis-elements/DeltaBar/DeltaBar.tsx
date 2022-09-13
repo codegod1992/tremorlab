@@ -22,6 +22,7 @@ export interface DeltaBarProps {
     percentageValue: number,
     isIncreasePositive?: boolean,
     tooltip?: string,
+    showAnimation?: boolean
     marginTop?: MarginTop,
 }
 
@@ -29,6 +30,7 @@ const DeltaBar = ({
     percentageValue,
     isIncreasePositive = true,
     tooltip,
+    showAnimation = true,
     marginTop = 'mt-0',
 }: DeltaBarProps) => {
     return(
@@ -49,7 +51,10 @@ const DeltaBar = ({
                                         isIncreasePositive
                                     )].bgColor,
                                 ) } 
-                                style={ {'width': `${Math.abs(percentageValue)}%`} } 
+                                style={ {
+                                    'width': `${Math.abs(percentageValue)}%`,
+                                    'transition': showAnimation ? 'all 2s' : ''
+                                } } 
                             />
                         </Tooltip>
                     ) : null}
@@ -73,7 +78,10 @@ const DeltaBar = ({
                                         isIncreasePositive
                                     )].bgColor,
                                 ) } 
-                                style={ {'width': `${Math.abs(percentageValue)}%`} } 
+                                style={ {
+                                    'width': `${Math.abs(percentageValue)}%`,
+                                    'transition': showAnimation ? 'all 2s' : ''
+                                } } 
                             />
                         </Tooltip>
                     ) : null}

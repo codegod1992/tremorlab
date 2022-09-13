@@ -40,6 +40,7 @@ const BarChart = ({
     stack = false,
     relative = false,
     startEndOnly = false,
+    showAnimation = true,
     showXAxis = true,
     showYAxis = true,
     yAxisWidth = 'w-14',
@@ -170,7 +171,7 @@ const BarChart = ({
                             stackId={ stack || relative ? 'a' : undefined }
                             dataKey={ category }
                             fill={ getHexFromColorThemeValue(getColorTheme(colors[idx]).background) }
-                            isAnimationActive={false}
+                            isAnimationActive={ showAnimation }
                         />
 
                     ))

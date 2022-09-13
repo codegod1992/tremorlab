@@ -34,6 +34,7 @@ export interface BarListProps {
     data: BarListData[],
     valueFormater?: ValueFormater,
     color?: Color,
+    showAnimation?: boolean,
     marginTop?: MarginTop,
 }
 
@@ -41,6 +42,7 @@ const BarList = ({
     data = [],
     color = BaseColors.Blue,
     valueFormater = defaultValueFormater,
+    showAnimation = true,
     marginTop = 'mt-0',
 }: BarListProps) => {
     const widths = getWidthsFromValues(data);
@@ -63,7 +65,7 @@ const BarList = ({
                             getColorVariantsFromColorThemeValue(getColorTheme(color).lightBackground).bgColor,
                             idx === data.length - 1 ? spacing.none.marginBottom : spacing.sm.marginBottom,
                         ) }
-                        style={ { width: `${widths[idx]}%` } }
+                        style={ { 'width': `${widths[idx]}%`, 'transition': showAnimation ? 'all 2s' : '' } }
                     >
                         <p className={ classNames(
                             'absolute max-w-full whitespace-nowrap truncate',
