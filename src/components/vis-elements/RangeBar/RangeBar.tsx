@@ -12,7 +12,7 @@ export interface RangeBarProps {
     maxRangeValue: number,
     markerTooltip?: string,
     rangeTooltip?: string,
-    showAnimation: boolean,
+    showAnimation?: boolean,
     color?: Color,
     marginTop?: MarginTop,
 }
