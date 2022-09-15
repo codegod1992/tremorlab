@@ -4,7 +4,7 @@ import { MarginTop, SpaceY, TextAlignment } from '../../../lib';
 import {  TextAlignments, classNames, parseTruncateOption } from 'lib';
 
 export interface BlockProps {
-    spaceY?: SpaceY,
+    spaceY?: SpaceY | '',
     textAlignment?: TextAlignment,
     truncate?: boolean,
     marginTop?: MarginTop,
@@ -12,7 +12,7 @@ export interface BlockProps {
 }
 
 const Block = ({
-    spaceY = 'space-y-0',
+    spaceY = '',
     textAlignment = TextAlignments.Left,
     truncate = false,
     marginTop = 'mt-0',
