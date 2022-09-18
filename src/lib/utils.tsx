@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { BaseColorTheme, colorTheme } from './colors';
 import { BaseColors, DeltaTypes, Importances, Sizes } from './primitives';
-import { Color, DeltaType, Importance, Size, ValueFormater } from './inputTypes';
+import { Color, DeltaType, Importance, Size, ValueFormatter } from './inputTypes';
 
 export const isBaseColor = (baseColor: Color): boolean => {
     return Object.values(BaseColors).includes(baseColor);
@@ -47,7 +47,7 @@ export const mapInputsToDeltaType = (deltaType: string, isIncreasePositive: bool
     return '';
 };
 
-export const defaultValueFormater: ValueFormater = (value: number) => value.toString();
+export const defaultValueFormatter: ValueFormatter = (value: number) => value.toString();
 
 export const useOnClickOutside = (ref: React.RefObject<HTMLDivElement>, handler: {(event: any): void}) => {
     useEffect(

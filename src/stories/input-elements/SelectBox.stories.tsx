@@ -20,14 +20,14 @@ const Template: ComponentStory<typeof SelectBox> = () => (
             defaultValue={ 1 }
             maxWidth="max-w-sm"
         >
-            <SelectBoxItem  value={1} name="Option One ABCSASDASDASDASASDASDASDSASDASABCSASDASDASDASASDASDASDSASDAS" />
-            <SelectBoxItem  value={2} name="Option Two" />
-            <SelectBoxItem  value={3} name="Option Three" />
+            <SelectBoxItem  value={1} text="Option One ABCSASDASDASDASASDASDASDSASDASABCSASDASDASDASASDASDASDSASDAS" />
+            <SelectBoxItem  value={2} text="Option Two" />
+            <SelectBoxItem  value={3} text="Option Three" />
         </SelectBox>
         <SelectBox handleSelect={ (value) => console.log('the new value is', value) } marginTop="mt-1">
-            <SelectBoxItem  value={1} name="Option One ABCSASDASDASDASASDASDASDSASDASABCSASDASDASDASASDASDASDSASDAS" />
-            <SelectBoxItem  value={2} name="Option Two" />
-            <SelectBoxItem  value={3} name="Option Three" />
+            <SelectBoxItem  value={1} text="Option One ABCSASDASDASDASASDASDASDSASDASABCSASDASDASDASASDASDASDSASDAS" />
+            <SelectBoxItem  value={2} text="Option Two" />
+            <SelectBoxItem  value={3} text="Option Three" />
         </SelectBox>
     </Card>
 );

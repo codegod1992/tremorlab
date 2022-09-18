@@ -59,7 +59,7 @@ const data = [
     },
 ];
 
-const dataFormater = (number: number) => {
+const dataFormatter = (number: number) => {
     return Intl.NumberFormat('us').format(number).toString() + ' $';
 };
 
@@ -69,5 +69,5 @@ Default.args = {
     data: data,
     categories: ['Sales', 'Profit'],
     dataKey: 'month',
-    valueFormater: dataFormater,
+    valueFormatter: dataFormatter,
 };

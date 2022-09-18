@@ -17,14 +17,14 @@ export default {
 const Template: ComponentStory<typeof Dropdown> = () => (
     <Card>
         <Dropdown handleSelect={ (value) => console.log('The selected value is', value) } maxWidth="max-w-sm">
-            <DropdownItem value={ 5 } name={ 'Five' } Icon={ CalendarIcon } />
-            <DropdownItem value={ 3 } name={ 'Three' } Icon={ CalendarIcon } />
-            <DropdownItem value={ 1 } name={ 'One' } Icon={ CalendarIcon } />
+            <DropdownItem value={ 5 } text={ 'Five' } Icon={ CalendarIcon } />
+            <DropdownItem value={ 3 } text={ 'Three' } Icon={ CalendarIcon } />
+            <DropdownItem value={ 1 } text={ 'One' } Icon={ CalendarIcon } />
         </Dropdown>
         <SelectBox handleSelect={ (value) => console.log('the new value is', value) } defaultValue={ 1 }>
-            <SelectBoxItem  value={1} name="Option One ABCSASDASDASDASASDASDASDSASDASABCSASDASDASDASASDASDASDSASDAS" />
-            <SelectBoxItem  value={2} name="Option Two" />
-            <SelectBoxItem  value={3} name="Option Three" />
+            <SelectBoxItem  value={1} text="Option One ABCSASDASDASDASASDASDASDSASDASABCSASDASDASDASASDASDASDSASDAS" />
+            <SelectBoxItem  value={2} text="Option Two" />
+            <SelectBoxItem  value={3} text="Option Three" />
         </SelectBox>
     </Card>
 );

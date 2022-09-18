@@ -18,9 +18,9 @@ const Template: ComponentStory<typeof MultiSelectBox> = () => (
         handleSelect={ (selectedItems) => console.log(selectedItems) }
         maxWidth="max-w-sm"
     >
-        <MultiSelectBoxItem name="Option 1 ABCSASDASDASDASASDASDASDSASDASABCSASDASDASDASASDASDASDSASDAS" value={ 1 } />
-        <MultiSelectBoxItem name="Option 2" value={ 2 } />
-        <MultiSelectBoxItem name="Option 3" value={ 3 } />
+        <MultiSelectBoxItem text="Option 1 ABCSASDASDASDASASDASDASDSASDASABCSASDASDASDASASDASDASDSASDAS" value={ 1 } />
+        <MultiSelectBoxItem text="Option 2" value={ 2 } />
+        <MultiSelectBoxItem text="Option 3" value={ 3 } />
     </MultiSelectBox>
 
 

@@ -8,7 +8,7 @@ import { spacing } from 'lib/spacing';
 
 export interface SelectBoxItemProps {
     value: any,
-    name: string,
+    text: string,
     Icon?: React.ElementType,
     privateProps?: {
         handleSelectBoxItemClick: (selectedItem: any) => void
@@ -18,7 +18,7 @@ export interface SelectBoxItemProps {
 
 const SelectBoxItem = ({
     value,
-    name,
+    text,
     Icon,
     privateProps,
 }: SelectBoxItemProps) => (
@@ -53,7 +53,7 @@ const SelectBoxItem = ({
                 ) } aria-hidden="true" />
             ) : null }
             <p className="whitespace-nowrap truncate">
-                { name }
+                { text }
             </p>
         </div>
     </button>

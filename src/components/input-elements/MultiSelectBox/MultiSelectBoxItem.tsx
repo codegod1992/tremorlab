@@ -12,7 +12,7 @@ import {
 
 export interface MultiSelectBoxItemProps {
     value: any,
-    name: string,
+    text: string,
     privateProps?: {
         handleMultiSelectBoxItemClick: (value: any) => void,
         isActive: boolean,
@@ -21,7 +21,7 @@ export interface MultiSelectBoxItemProps {
 
 const MultiSelectBoxItem = ({
     value,
-    name,
+    text,
     privateProps,
 }: MultiSelectBoxItemProps) => (
     <button
@@ -50,7 +50,7 @@ const MultiSelectBoxItem = ({
                 checked={ privateProps!.isActive }
                 readOnly={ true }
             />
-            <p className="whitespace-nowrap truncate">{ name }</p>
+            <p className="whitespace-nowrap truncate">{ text }</p>
         </div>
     </button>
 );

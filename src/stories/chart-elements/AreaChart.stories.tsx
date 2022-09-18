@@ -50,7 +50,7 @@ const data = [
     },
 ];
 
-const dataFormater = (number: number) => {
+const dataFormatter = (number: number) => {
     return Intl.NumberFormat('us').format(number).toString() + ' $';
 };
 
@@ -59,6 +59,6 @@ export const Default = Template.bind({});
 Default.args = {
     data: data,
     categories: [ 'Sales' ],
-    valueFormater: dataFormater,
+    valueFormatter: dataFormatter,
     dataKey: 'month',
 };
