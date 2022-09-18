@@ -17,7 +17,7 @@ import ChartTooltip from '../common/ChartTooltip';
 
 import {
     classNames,
-    defaultValueFormater,
+    defaultValueFormatter,
     getColorTheme,
     getHexFromColorThemeValue,
     getPixelsFromTwClassName,
@@ -35,7 +35,7 @@ const BarChart = ({
     categories = [],
     dataKey,
     colors = themeColorRange,
-    valueFormater = defaultValueFormater,
+    valueFormatter = defaultValueFormatter,
     layout = 'horizontal',
     stack = false,
     relative = false,
@@ -102,7 +102,7 @@ const BarChart = ({
                         }}
                         tickLine={false}
                         axisLine={false}
-                        tickFormatter={ valueFormater }
+                        tickFormatter={ valueFormatter }
                     />
                 )}
                 { layout !== 'vertical' ? (
@@ -118,7 +118,7 @@ const BarChart = ({
                             fontSize: '12px',
                             fontFamily: 'Inter; Helvetica',
                         } }
-                        tickFormatter={ relative ? (value: number) => `${(value * 100).toString()} %` : valueFormater }
+                        tickFormatter={ relative ? (value: number) => `${(value * 100).toString()} %` : valueFormatter }
                     />
                 ) : (
                     <YAxis
@@ -146,7 +146,7 @@ const BarChart = ({
                                 active={ active }
                                 payload={ payload }
                                 label={ label }
-                                valueFormater={ valueFormater }
+                                valueFormatter={ valueFormatter }
                                 colors={ colors }
                             />
                         ) }

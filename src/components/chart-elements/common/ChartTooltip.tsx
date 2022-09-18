@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Color, ValueFormater } from '../../../lib';
+import { Color, ValueFormatter } from '../../../lib';
 import {
     classNames,
     defaultColors,
@@ -45,10 +45,10 @@ export interface ChartTooltipProps {
     payload: any,
     label: string,
     colors?: Color[],
-    valueFormater: ValueFormater,
+    valueFormatter: ValueFormatter,
 }
 
-const ChartTooltip = ({ active, payload, label, colors = themeColorRange, valueFormater }: ChartTooltipProps) => {
+const ChartTooltip = ({ active, payload, label, colors = themeColorRange, valueFormatter }: ChartTooltipProps) => {
     if (active && payload) {
         return (
             <div className="bg-white border text-sm shadow-lg rounded-md">
@@ -80,7 +80,7 @@ const ChartTooltip = ({ active, payload, label, colors = themeColorRange, valueF
                         payload.map(({value, name}: { value: number, name: string }, idx: number) => (
                             <ChartTooltipRow
                                 key={ `id-${idx}` }
-                                value={ valueFormater(value) }
+                                value={ valueFormatter(value) }
                                 name={ name }
                                 color={ colors[idx] }
                             />

@@ -28,5 +28,5 @@ Default.args = {
             fjkhagsdjhkgfasjkdgfjkasdhgkjgfdsk`, value: 191 },
         { name: '/documentation', value: 0 },
     ],
-    valueFormater: (value) => `${value} USD`
+    valueFormatter: (value) => `${value} USD`
 };

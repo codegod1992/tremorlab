@@ -6,7 +6,7 @@ import {
     PaddingLeft,
     PaddingRight,
     PaddingTop,
-    ValueFormater,
+    ValueFormatter,
     Width,
 } from '../../../lib';
 
@@ -15,7 +15,7 @@ interface BaseChartProps {
     categories: string[],
     dataKey: string,
     colors?: Color[],
-    valueFormater?: ValueFormater,
+    valueFormatter?: ValueFormatter,
     startEndOnly?: boolean,
     showXAxis?: boolean,
     showYAxis?: boolean,

@@ -32,8 +32,8 @@ export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
     percentageValue: 50,
-    minRangeValue: 25,
-    maxRangeValue: 75,
+    minPercentageValue: 25,
+    maxPercentageValue: 75,
     rangeTooltip: 'Min: 25% Max: 75%',
     markerTooltip: '50%',
     marginTop: 'mt-5'

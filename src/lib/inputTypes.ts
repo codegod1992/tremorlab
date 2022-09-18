@@ -1,4 +1,4 @@
-export type ValueFormater = {
+export type ValueFormatter = {
     (value: number): string
 }
 

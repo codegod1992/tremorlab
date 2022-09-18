@@ -8,8 +8,8 @@ import { Color, MarginTop } from '../../../lib';
 
 export interface RangeBarProps {
     percentageValue: number,
-    minRangeValue: number,
-    maxRangeValue: number,
+    minPercentageValue: number,
+    maxPercentageValue: number,
     markerTooltip?: string,
     rangeTooltip?: string,
     showAnimation?: boolean,
@@ -19,8 +19,8 @@ export interface RangeBarProps {
 
 const RangeBar = ({
     percentageValue,
-    minRangeValue,
-    maxRangeValue,
+    minPercentageValue,
+    maxPercentageValue,
     markerTooltip,
     rangeTooltip,
     showAnimation = true,
@@ -41,8 +41,8 @@ const RangeBar = ({
                         getColorVariantsFromColorThemeValue(defaultColors.darkBackground).bgColor,
                     ) }
                     style={ {
-                        'left': `${minRangeValue}%`,
-                        'width': `${maxRangeValue - minRangeValue}%`,
+                        'left': `${minPercentageValue}%`,
+                        'width': `${maxPercentageValue - minPercentageValue}%`,
                         'transition': showAnimation ? 'all 2s' : ''
                     } }
                 />

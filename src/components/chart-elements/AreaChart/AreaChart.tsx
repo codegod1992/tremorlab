@@ -16,14 +16,14 @@ import ChartLegend from '../common/ChartLegend';
 import ChartTooltip from '../common/ChartTooltip';
 
 import { classNames, getHexFromColorThemeValue, getPixelsFromTwClassName } from 'lib/classnameUtils';
-import { defaultValueFormater, getColorTheme, themeColorRange } from 'lib';
+import { defaultValueFormatter, getColorTheme, themeColorRange } from 'lib';
 
 const AreaChart = ({
     data = [],
     categories = [],
     dataKey,
     colors = themeColorRange,
-    valueFormater = defaultValueFormater,
+    valueFormatter = defaultValueFormatter,
     startEndOnly = false,
     showXAxis = true,
     showYAxis = true,
@@ -83,7 +83,7 @@ const AreaChart = ({
                         fontSize: '12px',
                         fontFamily: 'Inter; Helvetica',
                     } }
-                    tickFormatter={ valueFormater }
+                    tickFormatter={ valueFormatter }
                 />
                 { showTooltip ? (
                     <Tooltip
@@ -94,7 +94,7 @@ const AreaChart = ({
                                 active={ active }
                                 payload={ payload }
                                 label={ label }
-                                valueFormater={ valueFormater }
+                                valueFormatter={ valueFormatter }
                                 colors={ colors }
                             />
                         ) }
