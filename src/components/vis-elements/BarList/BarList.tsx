@@ -4,14 +4,14 @@ import {
     BaseColors,
     classNames,
     defaultColors,
-    defaultValueFormater,
+    defaultValueFormatter,
     fontSize,
     getColorTheme,
     getColorVariantsFromColorThemeValue,
     sizing,
     spacing
 } from 'lib';
-import { Color, MarginTop, ValueFormater } from '../../../lib';
+import { Color, MarginTop, ValueFormatter } from '../../../lib';
 
 type BarListData = {
     name: string,
@@ -32,7 +32,7 @@ const getWidthsFromValues = (data: BarListData[]) => {
 
 export interface BarListProps {
     data: BarListData[],
-    valueFormater?: ValueFormater,
+    valueFormatter?: ValueFormatter,
     color?: Color,
     showAnimation?: boolean,
     marginTop?: MarginTop,
@@ -41,7 +41,7 @@ export interface BarListProps {
 const BarList = ({
     data = [],
     color = BaseColors.Blue,
-    valueFormater = defaultValueFormater,
+    valueFormatter = defaultValueFormatter,
     showAnimation = true,
     marginTop = 'mt-0',
 }: BarListProps) => {
@@ -93,7 +93,7 @@ const BarList = ({
                             getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
                             fontSize.sm,
                         ) }>
-                            { valueFormater(item.value) }
+                            { valueFormatter(item.value) }
                         </p>
                     </div>
                 )) }

@@ -17,7 +17,7 @@ import ChartTooltip from '../common/ChartTooltip';
 
 import {
     classNames,
-    defaultValueFormater,
+    defaultValueFormatter,
     getColorTheme,
     getHexFromColorThemeValue,
     getPixelsFromTwClassName,
@@ -29,7 +29,7 @@ const LineChart = ({
     categories = [],
     dataKey,
     colors = themeColorRange,
-    valueFormater = defaultValueFormater,
+    valueFormatter = defaultValueFormatter,
     startEndOnly = false,
     showXAxis = true,
     showYAxis = true,
@@ -90,7 +90,7 @@ const LineChart = ({
                             fontSize: '12px',
                             fontFamily: 'Inter; Helvetica',
                         } }
-                        tickFormatter={ valueFormater  }
+                        tickFormatter={ valueFormatter  }
                     />
                     { showTooltip ? (
                         <Tooltip
@@ -101,7 +101,7 @@ const LineChart = ({
                                     active={ active }
                                     payload={ payload }
                                     label={ label }
-                                    valueFormater={ valueFormater }
+                                    valueFormatter={ valueFormatter }
                                     colors={ colors }
                                 />
                             ) }
