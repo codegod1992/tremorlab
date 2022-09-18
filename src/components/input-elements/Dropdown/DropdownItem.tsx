@@ -8,7 +8,7 @@ import { spacing } from 'lib/spacing';
 
 export interface DropdownItemProps {
     value: any,
-    name: string,
+    text: string,
     Icon?: React.ElementType,
     privateProps?: {
         isActive: boolean,
@@ -18,7 +18,7 @@ export interface DropdownItemProps {
 
 const DropdownItem = ({
     value,
-    name,
+    text,
     Icon,
     privateProps,
 }: DropdownItemProps) => (
@@ -53,7 +53,7 @@ const DropdownItem = ({
                 ) } aria-hidden="true" />
             ) : null }
             <p className="whitespace-nowrap truncate">
-                { name }
+                { text }
             </p>
         </div>
     </button>

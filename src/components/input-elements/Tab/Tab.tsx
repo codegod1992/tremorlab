@@ -12,7 +12,7 @@ import {
 import { Color } from '../../../lib';
 
 export interface TabProps {
-    name: string,
+    text: string,
     value: any,
     privateProps?: {
         color: Color,
@@ -22,7 +22,7 @@ export interface TabProps {
 }
 
 const Tab = ({
-    name,
+    text,
     value,
     privateProps,
 }: TabProps) => {
@@ -55,7 +55,7 @@ const Tab = ({
                 value={ value }
                 onClick={ () => privateProps!.setSelectedTab!(value) }
             >
-                <p className="whitespace-nowrap truncate">{ name }</p>
+                <p className="whitespace-nowrap truncate">{ text }</p>
             </button>
         </li>
     );
