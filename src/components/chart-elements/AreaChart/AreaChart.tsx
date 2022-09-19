@@ -70,6 +70,7 @@ const AreaChart = ({
                     interval="preserveStartEnd"
                     tickLine={ false }
                     axisLine={ false }
+                    type="category"
                 />
                 <YAxis
                     width={ getPixelsFromTwClassName(yAxisWidth) }
