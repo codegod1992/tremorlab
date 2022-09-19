@@ -42,14 +42,14 @@ JustifyStart.args = {
 
 export const ItemsEnd = Template.bind({});
 ItemsEnd.args = {
-    justifyContent: 'justify-betwen',
+    justifyContent: 'justify-between',
     alignItems: 'items-end',
     children: null
 };
 
 export const ItemsStart = Template.bind({});
 ItemsStart.args = {
-    justifyContent: 'justify-betwen',
+    justifyContent: 'justify-between',
     alignItems: 'items-start',
     children: null
 };
