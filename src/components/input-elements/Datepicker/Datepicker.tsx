@@ -6,6 +6,7 @@ import {
     format,
     getDay,
     parse,
+    startOfDay,
     startOfMonth,
     startOfToday,
     startOfYear,
@@ -64,10 +65,11 @@ const Datepicker = ({
 
     const [hoveredDay, setHoveredDay] = useState<Date | null>(null);
     const [selectedStartDay, setSelectedStartDay] = useState<Date | null>(
-        hasDefaultDateRange ? defaultStartDate : null);
-    const [selectedEndDay, setSelectedEndDay] = useState<Date | null>(hasDefaultDateRange ? defaultEndDate : null);
+        hasDefaultDateRange ? startOfDay(defaultStartDate) : null);
+    const [selectedEndDay, setSelectedEndDay] = useState<Date | null>(
+        hasDefaultDateRange ? startOfDay(defaultEndDate) : null);
     const [currentMonth, setCurrentMonth] = useState(
-        hasDefaultDateRange ? format(selectedEndDay!, 'MMM-yyyy') : format(today, 'MMM-yyyy'));
+        hasDefaultDateRange ? format(startOfDay(defaultEndDate)!, 'MMM-yyyy') : format(today, 'MMM-yyyy'));
     const firstDayCurrentMonth = parse(currentMonth, 'MMM-yyyy', new Date());
 
     const days = eachDayOfInterval({
