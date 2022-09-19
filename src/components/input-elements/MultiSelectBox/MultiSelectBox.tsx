@@ -80,6 +80,11 @@ const MultiSelectBox = ({
         handleSelect(newSelectedItems);
     };
 
+    const resetSelection = () => {
+        setSelectedItems([]);
+        handleSelect([]);
+    };
+
     return (
         <div
             ref={ dropdownRef }
@@ -121,7 +126,7 @@ const MultiSelectBox = ({
                             className={ classNames(spacing.xs.marginRight) }
                             onClick={ (e) => {
                                 e.stopPropagation(); // prevent firing parent button
-                                setSelectedItems([]);
+                                resetSelection();
                             } }
                         >
                             <XCircleIcon 
