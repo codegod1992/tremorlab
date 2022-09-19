@@ -185,7 +185,7 @@ const MultiSelectBox = ({
                     />
                 </div>
                 { React.Children.map(children, (child) => {
-                    if (filteredOptionNames.has(String(child.props.name))) {
+                    if (filteredOptionNames.has(String(child.props.text))) {
                         return (
                             <>
                                 { React.cloneElement(child, {
