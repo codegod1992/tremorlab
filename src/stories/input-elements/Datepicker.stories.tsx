@@ -13,7 +13,11 @@ export default {
 
 const Template: ComponentStory<typeof Datepicker> = () => (
     <div className="flex justify-end">
-        <Datepicker maxWidth="max-w-sm" />
+        <Datepicker
+            maxWidth="max-w-sm"
+            defaultStartDate={ new Date(2022, 6, 1) }
+            defaultEndDate={ new Date(2022, 6, 20) }
+        />
     </div>
 );
   

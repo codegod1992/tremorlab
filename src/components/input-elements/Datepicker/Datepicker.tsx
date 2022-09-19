@@ -30,8 +30,10 @@ import { defaultColors, fontSize, fontWeight, sizing, spacing } from 'lib';
 import Modal from 'components/layout-elements/Modal';
 
 export interface DatepickerProps {
-    handleSelect?: { (selectedStartDay: Date|null, selectedEndDay: Date|null): void },
+    handleSelect?: { (selectedStartDay: Date | null, selectedEndDay: Date|null): void },
     enableRelativeDates?: boolean,
+    defaultStartDate?: Date | null,
+    defaultEndDate?: Date | null,
     placeholder?: string,
     color?: Color,
     marginTop?: MarginTop,
@@ -40,8 +42,10 @@ export interface DatepickerProps {
 
 const Datepicker = ({
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    handleSelect = (selectedStartDay: Date|null, selectedEndDay: Date|null) => null,
+    handleSelect = (selectedStartDay: Date | null, selectedEndDay: Date | null) => null,
     enableRelativeDates = true,
+    defaultStartDate = null,
+    defaultEndDate = null,
     placeholder = 'Select...',
     color = BaseColors.Blue,
     marginTop = 'mt-0',
@@ -50,16 +54,20 @@ const Datepicker = ({
     const [showDatePickerModal, setShowDatePickerModal] = useState(false);
     const [showDropdownModal, setShowDropdownModal] = useState(false);
 
-    const [selectedRelativeFilterOption, setSelectedRelativeFilterOption] = useState<string|null>(null);
+    const [selectedRelativeFilterOption, setSelectedRelativeFilterOption] = useState<string | null>(null);
 
     const datePickerRef = useRef(null);
     const dropdownRef = useRef(null);
 
     const today = startOfToday();
-    const [hoveredDay, setHoveredDay] = useState<Date|null>(null);
-    const [selectedStartDay, setSelectedStartDay] = useState<Date|null>(null);
-    const [selectedEndDay, setSelectedEndDay] = useState<Date|null>(null);
-    const [currentMonth, setCurrentMonth] = useState(format(today, 'MMM-yyyy'));
+    const hasDefaultDateRange = (defaultStartDate !== null) && (defaultEndDate !== null);
+
+    const [hoveredDay, setHoveredDay] = useState<Date | null>(null);
+    const [selectedStartDay, setSelectedStartDay] = useState<Date | null>(
+        hasDefaultDateRange ? defaultStartDate : null);
+    const [selectedEndDay, setSelectedEndDay] = useState<Date | null>(hasDefaultDateRange ? defaultEndDate : null);
+    const [currentMonth, setCurrentMonth] = useState(
+        hasDefaultDateRange ? format(selectedEndDay!, 'MMM-yyyy') : format(today, 'MMM-yyyy'));
     const firstDayCurrentMonth = parse(currentMonth, 'MMM-yyyy', new Date());
 
     const days = eachDayOfInterval({
