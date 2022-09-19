@@ -38,7 +38,6 @@ const Template: ComponentStory<typeof ColGrid> = (args) => (
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
-    numCols: 0,
     numColsMd: 3,
     gapX: 'gap-x-2',
     gapY: 'gap-y-2'
