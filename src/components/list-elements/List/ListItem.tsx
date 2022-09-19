@@ -15,7 +15,7 @@ const ListItem = ({
     return(
         <>
             <li className={ classNames(
-                'flex justify-between items-center truncate tabular-nums',
+                'w-full flex justify-between items-center truncate tabular-nums',
                 spaceX,
                 spacing.sm.paddingTop,
                 spacing.sm.paddingBottom,
