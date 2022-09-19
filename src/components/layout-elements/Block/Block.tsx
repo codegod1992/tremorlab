@@ -20,7 +20,6 @@ const Block = ({
 }: BlockProps) => {
     return(
         <div className={ classNames(
-            'w-full',
             spaceY,
             textAlignment,
             parseTruncateOption(truncate),
