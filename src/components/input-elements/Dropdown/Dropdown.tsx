@@ -39,7 +39,7 @@ const Dropwdown = ({
     const valueToNameMapping: ValueToNameMapping = {};
     const consturctValueToNameMapping = () => {
         React.Children.map(children, (child) => {
-            valueToNameMapping[child.props.value] = child.props.name;
+            valueToNameMapping[child.props.value] = child.props.text;
         });
     };
     consturctValueToNameMapping();

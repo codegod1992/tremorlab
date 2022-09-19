@@ -38,14 +38,14 @@ const MultiSelectBox = ({
     const valueToNameMapping: {[value: string]: string} = {};
     const consturctValueToNameMapping = () => {
         React.Children.map(children, (child) => {
-            valueToNameMapping[child.props.value] = child.props.name;
+            valueToNameMapping[child.props.value] = child.props.text;
         });
     };
     consturctValueToNameMapping();
 
     const getOptionNamesFromChildren = (children: React.ReactElement[] | React.ReactElement): string[] => (
         React.Children.map(children, (child) => {
-            return String(child.props.name);
+            return String(child.props.text);
         })
     );
 
