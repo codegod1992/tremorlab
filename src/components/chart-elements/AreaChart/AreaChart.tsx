@@ -71,6 +71,8 @@ const AreaChart = ({
                     tickLine={ false }
                     axisLine={ false }
                     type="category"
+                    domain={["auto", "auto"]}
+                    padding={{ left: 20, right: 20 }}
                 />
                 <YAxis
                     width={ getPixelsFromTwClassName(yAxisWidth) }
