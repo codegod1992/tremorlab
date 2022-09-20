@@ -61,4 +61,5 @@ Default.args = {
     categories: [ 'Sales' ],
     valueFormatter: dataFormatter,
     dataKey: 'month',
+    showGradient: false
 };

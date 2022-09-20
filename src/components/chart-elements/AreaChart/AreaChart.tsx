@@ -136,7 +136,7 @@ const AreaChart = ({
                
                
                 { categories.map((category, idx) => (
-                    { showGradient ? ( 
+                    // { showGradient ? ( 
                         <Area
                             key={ category }
                             name={ category }
@@ -148,19 +148,19 @@ const AreaChart = ({
                             dot={false}
                             isAnimationActive={ showAnimation }
                         />
-                    ) : (
-                        <Area
-                            key={ category }
-                            name={ category }
-                            type="linear"
-                            dataKey={ category }
-                            stroke={ getHexFromColorThemeValue(getColorTheme(colors[idx]).background) }
-                            fill={ `#${colors[idx]}` }
-                            strokeWidth={2}
-                            dot={false}
-                            isAnimationActive={ showAnimation }
-                        />
-                    )}
+                    // ) : (
+                        // <Area
+                    //         key={ category }
+                    //         name={ category }
+                    //         type="linear"
+                    //         dataKey={ category }
+                    //         stroke={ getHexFromColorThemeValue(getColorTheme(colors[idx]).background) }
+                    //         fill={ `#${colors[idx]}` }
+                    //         strokeWidth={2}
+                    //         dot={false}
+                    //         isAnimationActive={ showAnimation }
+                    //     />
+                    // )}
                 ))}
                 
             </ReChartsAreaChart>

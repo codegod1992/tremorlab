@@ -22,6 +22,7 @@ interface BaseChartProps {
     yAxisWidth?: Width,
     showAnimation?: boolean,
     showTooltip?: boolean,
+    showGradient?: boolean,
     showLegend?: boolean,
     showGridLines?: boolean,
     height?: Height,
