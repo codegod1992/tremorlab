@@ -82,7 +82,7 @@ const AreaChart = ({
                     tickLine={ false }
                     type="number"
                     domain={ [0, 'auto'] }
-                    tick={ { transform: 'translate(-3, 0)' } } //padding between labels and axis
+                    tick={ { transform: 'translate(-3, 0)' } }
                     style={ {
                         fontSize: '12px',
                         fontFamily: 'Inter; Helvetica',
@@ -133,7 +133,7 @@ const AreaChart = ({
                             <linearGradient id={ colors[idx] } x1="0" y1="0" x2="0" y2="1">
                                 <stop
                                     stopColor={ getHexFromColorThemeValue(getColorTheme(colors[idx]).background) }
-                                    stopOpacity={0.4}
+                                    stopOpacity={0.3}
                                 />
                             </linearGradient>
                         )}

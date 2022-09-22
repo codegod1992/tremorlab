@@ -61,5 +61,6 @@ Default.args = {
     categories: [ 'Sales' ],
     valueFormatter: dataFormatter,
     dataKey: 'month',
-    showGradient: false
+    showGradient: false,
+    colors: ['zinc']
 };
