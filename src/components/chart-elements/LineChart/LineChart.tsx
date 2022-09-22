@@ -73,10 +73,11 @@ const LineChart = ({
                         style={{
                             fontSize: '12px',
                             fontFamily: 'Inter; Helvetica',
-                            marginTop: '20px',
                         }}
                         tickLine={ false }
                         axisLine={ false }
+                        padding={{ left: 10, right: 10 }}
+                        minTickGap={3}
                     />
                     <YAxis
                         width={ getPixelsFromTwClassName(yAxisWidth) }

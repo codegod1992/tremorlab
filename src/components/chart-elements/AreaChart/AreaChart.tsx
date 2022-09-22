@@ -66,12 +66,11 @@ const AreaChart = ({
                     style={ {
                         fontSize: '12px',
                         fontFamily: 'Inter; Helvetica',
-                        marginTop: '40px', 
                     } }
                     interval="preserveStartEnd"
                     tickLine={ false }
                     axisLine={ false }
-                    type="category"
+                    //type="category" // Necessary?
                     padding={{ left: 10, right: 10 }}
                     minTickGap={3}
                 />
