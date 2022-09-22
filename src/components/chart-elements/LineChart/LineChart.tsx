@@ -68,7 +68,7 @@ const LineChart = ({
                         hide={ !showXAxis }
                         dataKey={ dataKey }
                         interval="preserveStartEnd"
-                        tick={{ transform: 'translate(0, 6)' }} //padding between labels and axis
+                        tick={{ transform: 'translate(0, 6)' }} 
                         ticks={ startEndOnly ? [data[0][dataKey], data[data.length - 1][dataKey]] : undefined }
                         style={{
                             fontSize: '12px',
@@ -86,7 +86,7 @@ const LineChart = ({
                         tickLine={ false }
                         type="number"
                         domain={ [0, 'auto'] }
-                        tick={ { transform: 'translate(-3, 0)' } } //padding between labels and axis
+                        tick={ { transform: 'translate(-3, 0)' } } 
                         style={ {
                             fontSize: '12px',
                             fontFamily: 'Inter; Helvetica',
