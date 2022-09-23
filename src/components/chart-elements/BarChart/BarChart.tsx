@@ -94,15 +94,16 @@ const BarChart = ({
                     <XAxis
                         hide={ !showXAxis }
                         type="number"
-                        tick={ { transform: 'translate(-3, 0)' } } //padding between labels and axis
+                        tick={ { transform: 'translate(-3, 0)' } } 
                         style={{
                             fontSize: '12px',
                             fontFamily: 'Inter; Helvetica',
-                            marginTop: '20px',
                         }}
                         tickLine={false}
                         axisLine={false}
                         tickFormatter={ valueFormatter }
+                        padding={{ left: 10, right: 10 }}
+                        minTickGap={3}
                     />
                 )}
                 { layout !== 'vertical' ? (
@@ -113,7 +114,7 @@ const BarChart = ({
                         tickLine={ false }
                         type="number"
                         domain={ [0, 'auto'] }
-                        tick={ { transform: 'translate(-3, 0)' } } //padding between labels and axis
+                        tick={ { transform: 'translate(-3, 0)' } } 
                         style={ {
                             fontSize: '12px',
                             fontFamily: 'Inter; Helvetica',
