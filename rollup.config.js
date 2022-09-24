@@ -30,7 +30,7 @@ export default [
         ],
         plugins: [
             peerDepsExternal(),
-            postcss(),
+            postcss({ extract: true }),
             resolve(),
             commonjs(),
             typescript({ 
