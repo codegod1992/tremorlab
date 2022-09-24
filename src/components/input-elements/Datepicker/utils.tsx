@@ -3,6 +3,7 @@ import React from 'react';
 import { add, format, isEqual, isToday, } from 'date-fns';
 
 import {
+    BaseColors,
     classNames,
     defaultColors,
     fontWeight,
@@ -39,6 +40,7 @@ export const colStartClasses = [
     'col-start-6',
     'col-start-7',
 ];
+
 
 export const previousMonth = (
     firstDayCurrentMonth: Date,
@@ -81,7 +83,9 @@ export const getDayBgColorClassName = (
     selectedEndDay: Date|null,
     hoveredDay: Date|null,
     color: Color,
+    isDayDisabled = false,
 ): string => {
+    if (isDayDisabled) return getColorVariantsFromColorThemeValue(defaultColors.transparent).bgColor;
     if (selectedStartDay && isEqual(day, selectedStartDay)) {
         return getColorVariantsFromColorThemeValue(getColorTheme(color).background).bgColor;
     }
@@ -104,7 +108,9 @@ export const getDayTextClassNames = (
     selectedEndDay: Date|null,
     hoveredDay: Date|null,
     color: Color,
+    isDayDisabled = false,
 ): string => {
+    if (isDayDisabled) return getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor; 
     if (isToday(day)) {
         if ((selectedStartDay && isEqual(day, selectedStartDay))
             || (selectedEndDay && isEqual(day, selectedEndDay))) {
@@ -134,7 +140,9 @@ export const getDayHoverBgColorClassName = (
     day: Date,
     selectedStartDay: Date|null,
     selectedEndDay: Date|null,
+    isDayDisabled = false,
 ): string => {
+    if (isDayDisabled) return '';
     if (selectedStartDay && isEqual(day, selectedStartDay)) {
         return '';
     }

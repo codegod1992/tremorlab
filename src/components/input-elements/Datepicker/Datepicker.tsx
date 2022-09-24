@@ -35,6 +35,8 @@ export interface DatepickerProps {
     enableRelativeDates?: boolean,
     defaultStartDate?: Date | null,
     defaultEndDate?: Date | null,
+    minDate?: Date | null,
+    maxDate?: Date | null,
     placeholder?: string,
     color?: Color,
     marginTop?: MarginTop,
@@ -47,6 +49,8 @@ const Datepicker = ({
     enableRelativeDates = true,
     defaultStartDate = null,
     defaultEndDate = null,
+    minDate = null,
+    maxDate = null,
     placeholder = 'Select...',
     color = BaseColors.Blue,
     marginTop = 'mt-0',
@@ -61,7 +65,11 @@ const Datepicker = ({
     const dropdownRef = useRef(null);
 
     const today = startOfToday();
+    
     const hasDefaultDateRange = (defaultStartDate !== null) && (defaultEndDate !== null);
+    const isDayDisabled = (day: Date): boolean => {
+        return (minDate !== null && maxDate !== null) && (day < minDate || day > maxDate);
+    };
 
     const [hoveredDay, setHoveredDay] = useState<Date | null>(null);
     const [selectedStartDay, setSelectedStartDay] = useState<Date | null>(
@@ -117,6 +125,8 @@ const Datepicker = ({
     useEffect(() => {
         if (selectedStartDay && selectedEndDay) handleSelect(selectedStartDay, selectedEndDay);
     }, [selectedEndDay]);
+
+    console.log(hoveredDay);
 
     return (
         <div className={ classNames(
@@ -373,8 +383,8 @@ const Datepicker = ({
                                 <button
                                     type="button"
                                     onClick={() => handleDayClick(day)}
-                                    onMouseEnter={ () => setHoveredDay(day) }
-                                    onMouseLeave={ () => setHoveredDay(null) }
+                                    onPointerEnter={ () => setHoveredDay(day) }
+                                    onPointerLeave={ () => {setHoveredDay(null); console.log('triggered')} }
                                     className={classNames(
                                         'w-full flex items-center justify-center',
                                         getDayBgColorClassName(
@@ -383,6 +393,7 @@ const Datepicker = ({
                                             selectedEndDay,
                                             hoveredDay,
                                             color,
+                                            isDayDisabled(day),
                                         ),
                                         getDayTextClassNames(
                                             day,
@@ -390,12 +401,19 @@ const Datepicker = ({
                                             selectedEndDay,
                                             hoveredDay,
                                             color,
+                                            isDayDisabled(day),
                                         ),
-                                        getDayHoverBgColorClassName(day, selectedStartDay, selectedEndDay),
+                                        getDayHoverBgColorClassName(
+                                            day,
+                                            selectedStartDay,
+                                            selectedEndDay,
+                                            isDayDisabled(day),
+                                        ),
                                         getDayRoundedClassName(day, selectedStartDay, selectedEndDay, hoveredDay),
                                         sizing.threeXl.height,
                                         fontSize.sm,
                                     )}
+                                    disabled={ isDayDisabled(day) }
                                 >
                                     <time dateTime={format(day, 'yyyy-MM-dd')}>
                                         {format(day, 'd')}
