@@ -50,10 +50,6 @@ const BarChart = ({
     showLegend = true,
     showGridLines = true,
     height = 'h-80',
-    paddingTop = 'pt-0',
-    paddingRight = 'pr-0',
-    paddingBottom = 'pb-0',
-    paddingLeft = 'pl-0',
     marginTop = 'mt-0',
 }: BarChartProps) => (
     <div className={ classNames('w-full', parseHeight(height), parseMarginTop(marginTop)) }>
@@ -62,12 +58,6 @@ const BarChart = ({
                 data={ data }
                 stackOffset={ relative ? 'expand' : 'none' }
                 layout={ layout === 'vertical' ? 'vertical' : 'horizontal' }
-                margin={{
-                    left: getPixelsFromTwClassName(paddingLeft),
-                    top: getPixelsFromTwClassName(paddingTop),
-                    right: getPixelsFromTwClassName(paddingRight),
-                    bottom: getPixelsFromTwClassName(paddingBottom),
-                }}
             >
                 { showGridLines ? (
                     <CartesianGrid

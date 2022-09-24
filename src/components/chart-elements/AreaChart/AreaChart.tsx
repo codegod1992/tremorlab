@@ -42,23 +42,11 @@ const AreaChart = ({
     showGridLines = true,
     showGradient = true,
     height = 'h-80',
-    paddingTop = 'pt-0',
-    paddingRight = 'pr-0',
-    paddingBottom = 'pb-0',
-    paddingLeft = 'pl-0',
     marginTop = 'mt-0',
 }: BaseChartProps) => (
     <div className={ classNames('w-full', parseHeight(height), parseMarginTop(marginTop)) }>
         <ResponsiveContainer width="100%" height="100%">
-            <ReChartsAreaChart
-                data={ data }
-                margin={ {
-                    left: getPixelsFromTwClassName(paddingLeft), 
-                    top: getPixelsFromTwClassName(paddingTop),
-                    right: getPixelsFromTwClassName(paddingRight),
-                    bottom: getPixelsFromTwClassName(paddingBottom),
-                } }
-            >
+            <ReChartsAreaChart data={ data }>
                 { showGridLines ? (
                     <CartesianGrid
                         strokeDasharray="3 3"
