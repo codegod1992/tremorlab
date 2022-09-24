@@ -15,6 +15,7 @@ const Template: ComponentStory<typeof Datepicker> = () => (
     <div className="flex justify-end">
         <Datepicker
             maxWidth="max-w-sm"
+            handleSelect={ (startDate: Date, endDate: Date) => console.log(startDate, endDate) }
             defaultStartDate={ new Date(2022, 6, 1) }
             defaultEndDate={ new Date(2022, 6, 20) }
         />

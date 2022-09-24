@@ -31,7 +31,7 @@ import { defaultColors, fontSize, fontWeight, sizing, spacing } from 'lib';
 import Modal from 'components/layout-elements/Modal';
 
 export interface DatepickerProps {
-    handleSelect?: { (selectedStartDay: Date | null, selectedEndDay: Date|null): void },
+    handleSelect?: { (selectedStartDay: Date, selectedEndDay: Date): void },
     enableRelativeDates?: boolean,
     defaultStartDate?: Date | null,
     defaultEndDate?: Date | null,
@@ -43,7 +43,7 @@ export interface DatepickerProps {
 
 const Datepicker = ({
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    handleSelect = (selectedStartDay: Date | null, selectedEndDay: Date | null) => null,
+    handleSelect = (selectedStartDay: Date, selectedEndDay: Date) => null,
     enableRelativeDates = true,
     defaultStartDate = null,
     defaultEndDate = null,
@@ -115,7 +115,7 @@ const Datepicker = ({
     };
 
     useEffect(() => {
-        if (selectedEndDay) handleSelect(selectedStartDay, selectedEndDay);
+        if (selectedStartDay && selectedEndDay) handleSelect(selectedStartDay, selectedEndDay);
     }, [selectedEndDay]);
 
     return (
