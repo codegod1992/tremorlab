@@ -80,7 +80,7 @@ const SelectBox = ({
         ) }>
             <input
                 className={ classNames(
-                    'w-full rounded-md focus:ring-2 focus:outline-0',
+                    'w-full rounded-md border-0 focus:ring-2 focus:outline-0',
                     getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
