@@ -3,7 +3,6 @@ import React from 'react';
 import { add, format, isEqual, isToday, } from 'date-fns';
 
 import {
-    BaseColors,
     classNames,
     defaultColors,
     fontWeight,

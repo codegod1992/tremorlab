@@ -384,7 +384,7 @@ const Datepicker = ({
                                     type="button"
                                     onClick={() => handleDayClick(day)}
                                     onPointerEnter={ () => setHoveredDay(day) }
-                                    onPointerLeave={ () => {setHoveredDay(null); console.log('triggered')} }
+                                    onPointerLeave={ () => setHoveredDay(null) }
                                     className={classNames(
                                         'w-full flex items-center justify-center',
                                         getDayBgColorClassName(
