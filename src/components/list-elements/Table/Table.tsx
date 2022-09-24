@@ -5,7 +5,8 @@ import {
     defaultColors,
     fontSize,
     fontWeight,
-    getColorVariantsFromColorThemeValue
+    getColorVariantsFromColorThemeValue,
+    parseMarginTop
 } from 'lib';
 import { MarginTop } from '../../../lib';
 
@@ -21,7 +22,7 @@ const Table = ({
     <div className="overflow-auto">
         <table className={ classNames(
             'w-full tabular-nums',
-            marginTop,
+            parseMarginTop(marginTop),
             getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
             fontSize.sm,
             fontWeight.sm,

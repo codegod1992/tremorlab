@@ -9,6 +9,7 @@ import {
     getColorTheme,
     getColorVariantsFromColorThemeValue,
     isValidSize,
+    parseMarginTop,
     spacing
 } from 'lib';
 import { Color, HorizontalPosition, MarginTop, Size } from '../../../lib/inputTypes';
@@ -35,7 +36,7 @@ const ButtonInline = ({
 }: ButtonInlineProps) => {
     const buttonSize = isValidSize(size) ? size : Sizes.SM;
     return(
-        <span className={ classNames(marginTop) }>
+        <span className={ classNames(parseMarginTop(marginTop)) }>
             <button
                 type="button"
                 onClick={ handleClick }

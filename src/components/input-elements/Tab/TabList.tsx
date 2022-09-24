@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
-import { BaseColors, classNames, defaultColors, getColorVariantsFromColorThemeValue, spacing } from 'lib';
+import {
+    BaseColors,
+    classNames,
+    defaultColors,
+    getColorVariantsFromColorThemeValue,
+    parseMarginTop,
+    spacing
+} from 'lib';
 import { Color, MarginTop } from '../../../lib';
 
 export interface TabListProps {
@@ -29,7 +36,7 @@ const TabList = ({
         <ol aria-label="Tabs" className={ classNames(
             'flex justify-start overflow-x-clip border-b',
             getColorVariantsFromColorThemeValue(defaultColors.lightBorder).borderColor,
-            marginTop,
+            parseMarginTop(marginTop),
             spacing.twoXl.spaceX,
         ) }>
             { React.Children.map(children, (child) => (

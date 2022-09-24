@@ -7,6 +7,7 @@ import {
     fontWeight,
     getColorTheme,
     getColorVariantsFromColorThemeValue,
+    parseMarginTop,
     parseTruncateOption
 } from 'lib';
 import { Color, MarginTop } from '../../../lib';
@@ -28,7 +29,7 @@ const Title = ({
         <p className={ classNames(
             truncate ? 'whitespace-nowrap' : 'shrink-0',
             parseTruncateOption(truncate),
-            marginTop,
+            parseMarginTop(marginTop),
             getColorVariantsFromColorThemeValue(getColorTheme(color).darkText).textColor,
             fontSize.lg,
             fontWeight.md,

@@ -1,7 +1,15 @@
 import React from 'react';
 
 import { MarginTop, MaxWidth, SpaceY, TextAlignment } from '../../../lib/inputTypes';
-import {  TextAlignments, classNames, parseTruncateOption } from 'lib';
+import {
+    TextAlignments,
+    classNames,
+    parseMarginTop,
+    parseMaxWidth,
+    parseSpaceY,
+    parseTextAlignment,
+    parseTruncateOption
+} from 'lib';
 
 export interface BlockProps {
     maxWidth?: MaxWidth
@@ -23,12 +31,12 @@ const Block = ({
     return(
         <div className={ classNames(
             'w-full',
-            maxWidth,
-            spaceY,
-            textAlignment,
+            parseMaxWidth(maxWidth),
+            spaceY ? parseSpaceY(spaceY) : spaceY,
+            parseTextAlignment(textAlignment),
             parseTruncateOption(truncate),
             truncate ? 'whitespace-nowrap' : '',
-            marginTop,
+            parseMarginTop(marginTop),
         ) }
         >
             { children }

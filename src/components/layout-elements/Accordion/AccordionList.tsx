@@ -1,7 +1,7 @@
 import React from 'react';
 
+import { classNames, parseMarginTop } from 'lib';
 import { MarginTop } from '../../../lib';
-import { classNames } from 'lib';
 
 export interface AccordionListProps {
     shadow?: boolean,
@@ -18,7 +18,7 @@ const AccordionList = ({
 
     return (
         <div className={ classNames(
-            marginTop,
+            parseMarginTop(marginTop),
             'rounded-lg',
             shadow ? 'shadow' : '',
         ) }>

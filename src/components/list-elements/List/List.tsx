@@ -4,6 +4,7 @@ import {
     classNames,
     defaultColors,
     getColorVariantsFromColorThemeValue,
+    parseMarginTop,
 } from 'lib';
 import { MarginTop } from '../../../lib';
 
@@ -21,7 +22,7 @@ const List = ({
             'w-full overflow-hidden divide-y',
             getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
             getColorVariantsFromColorThemeValue(defaultColors.lightBorder).divideColor,
-            marginTop,
+            parseMarginTop(marginTop),
         ) }
         >
             { children }

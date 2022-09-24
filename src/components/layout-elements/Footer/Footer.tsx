@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { classNames, spacing } from 'lib';
+import { classNames, parseHeight, spacing } from 'lib';
 import { Height } from '../../../lib';
 
 export interface FooterProps {
@@ -17,7 +17,7 @@ const Footer = ({
             <div className={ classNames(height) } />
             <div className={ classNames(
                 'absolute flex items-center w-full border-t',
-                height,
+                parseHeight(height),
                 spacing.none.left,
                 spacing.none.right,
                 spacing.none.bottom,

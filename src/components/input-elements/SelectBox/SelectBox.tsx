@@ -9,6 +9,8 @@ import {
     fontSize,
     fontWeight,
     getColorVariantsFromColorThemeValue,
+    parseMarginTop,
+    parseMaxWidth,
     sizing,
     spacing
 } from 'lib';
@@ -74,9 +76,9 @@ const SelectBox = ({
     return (
         <div ref={ dropdownRef } className={ classNames(
             'relative w-full min-w-[10rem] rounded-md shadow-sm border',
-            maxWidth,
+            parseMaxWidth(maxWidth),
             getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
-            marginTop,
+            parseMarginTop(marginTop),
         ) }>
             <input
                 className={ classNames(

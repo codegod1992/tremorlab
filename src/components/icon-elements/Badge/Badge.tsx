@@ -10,6 +10,7 @@ import {
     getColorTheme,
     getColorVariantsFromColorThemeValue,
     isValidSize,
+    parseMarginTop,
     spacing,
 } from 'lib';
 import { Color, MarginTop, Size } from '../../../lib';
@@ -34,7 +35,7 @@ const Badge = ({
 }: BadgeProps) => {
     const badgeSize = isValidSize(size) ? size : Sizes.SM;
     return(
-        <div className={ classNames(marginTop) }>
+        <div className={ classNames( parseMarginTop(marginTop)) }>
             <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
                 <span className={ classNames(
                     'flex-shrink-0 inline-flex justify-center items-center rounded-full',

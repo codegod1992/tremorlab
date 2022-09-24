@@ -6,9 +6,10 @@ import {
     defaultColors,
     fontWeight,
     getColorVariantsFromColorThemeValue,
+    parseTextAlignment,
     spacing,
 } from 'lib';
-import { TextAlignment } from '../../../lib';
+import { TextAlignment } from '../../../lib/inputTypes';
 
 interface TableHeaderCellProps {
     textAlignment?: TextAlignment,
@@ -22,7 +23,7 @@ const TableHeaderCell = ({
     <>
         <th className={ classNames(
             'sticky whitespace-nowrap',
-            textAlignment,
+            parseTextAlignment(textAlignment),
             getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
             spacing.none.top,
             spacing.twoXl.paddingLeft,

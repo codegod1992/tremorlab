@@ -1,12 +1,15 @@
 import React from 'react';
 
 import { BaseColors, HorizontalPositions, VerticalPositions } from 'lib/primitives';
-import { Color, HorizontalPosition, MarginTop, MaxWidth, VerticalPosition, getColorTheme } from '../../../lib';
+import { Color, HorizontalPosition, MarginTop, MaxWidth, VerticalPosition } from '../../../lib';
 import {
     classNames,
     defaultColors,
+    getColorTheme,
     getColorVariantsFromColorThemeValue,
     parseHFullOption,
+    parseMarginTop,
+    parseMaxWidth,
     spacing,
 } from 'lib';
 
@@ -48,9 +51,9 @@ const Card = ({
     return(
         <div className={ classNames(
             'relative w-full mx-auto text-left rounded-lg ring-1',
-            marginTop,
+            parseMarginTop(marginTop),
             parseHFullOption(hFull),
-            maxWidth,
+            parseMaxWidth(maxWidth),
             getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
             shadow ? 'shadow' : '',
             getColorVariantsFromColorThemeValue(getColorTheme(decorationColor).border).borderColor,

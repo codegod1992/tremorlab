@@ -1,12 +1,19 @@
 import React from 'react';
 
 import { AlignItems, JustifyContent, MarginTop, SpaceX } from '../../../lib';
-import { classNames, parseTruncateOption } from 'lib';
+import {
+    classNames,
+    parseAlignItems,
+    parseJustifyContent,
+    parseMarginTop,
+    parseSpaceX,
+    parseTruncateOption
+} from 'lib';
 
 export interface FlexProps {
     justifyContent?: JustifyContent,
     alignItems?: AlignItems,
-    spaceX?: SpaceX,
+    spaceX?: SpaceX | '',
     truncate?: boolean,
     marginTop?: MarginTop,
     children: React.ReactNode,
@@ -15,20 +22,20 @@ export interface FlexProps {
 const Flex = ({
     justifyContent = 'justify-between',
     alignItems = 'items-center',
-    spaceX = 'space-x-0',
+    spaceX = '',
     truncate = false,
     marginTop = 'mt-0',
     children
 }: FlexProps) => {
     return(
         <div className={ classNames(
-            'flex w-full',
+            'tr-flex tr-w-full',
             parseTruncateOption(truncate),
             truncate ? 'whitespace-nowrap' : '',
-            justifyContent,
-            alignItems,
-            spaceX,
-            marginTop,
+            parseJustifyContent(justifyContent),
+            parseAlignItems(alignItems),
+            spaceX ? parseSpaceX(spaceX) : spaceX,
+            parseMarginTop(marginTop),
         ) }
         >
             { children }

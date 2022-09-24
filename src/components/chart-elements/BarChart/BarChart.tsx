@@ -21,6 +21,8 @@ import {
     getColorTheme,
     getHexFromColorThemeValue,
     getPixelsFromTwClassName,
+    parseHeight,
+    parseMarginTop,
     themeColorRange
 } from 'lib';
 
@@ -54,7 +56,7 @@ const BarChart = ({
     paddingLeft = 'pl-0',
     marginTop = 'mt-0',
 }: BarChartProps) => (
-    <div className={ classNames('w-full', height, marginTop) }>
+    <div className={ classNames('w-full', parseHeight(height), parseMarginTop(marginTop)) }>
         <ResponsiveContainer width="100%" height="100%">
             <ReChartsBarChart
                 data={ data }

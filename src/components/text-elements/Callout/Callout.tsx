@@ -7,6 +7,8 @@ import {
     fontWeight,
     getColorTheme,
     getColorVariantsFromColorThemeValue,
+    parseHeight,
+    parseMarginTop,
     sizing,
     spacing
 } from 'lib';
@@ -32,7 +34,7 @@ const Callout = ({
     return(
         <div className={ classNames(
             'relative rounded-md border-l-4',
-            marginTop,
+            parseMarginTop(marginTop),
             getColorVariantsFromColorThemeValue(getColorTheme(color).canvasBackground).bgColor,
             getColorVariantsFromColorThemeValue(getColorTheme(color).darkBorder).borderColor,
             spacing.lg.paddingLeft,
@@ -66,7 +68,7 @@ const Callout = ({
                 </div>
                 <div className={ classNames(
                     'overflow-y-auto',
-                    height,
+                    height ? parseHeight(height) : height,
                     getColorVariantsFromColorThemeValue(getColorTheme(color).darkText).textColor,
                     spacing.sm.marginTop,
                 ) }

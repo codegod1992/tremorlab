@@ -9,6 +9,7 @@ import {
     isBaseColor,
     isValidImportance,
     isValidSize,
+    parseMarginTop,
     spacing,
 } from 'lib';
 import { Color, HorizontalPosition, Importance, MarginTop, Size } from '../../../lib';
@@ -43,7 +44,7 @@ const Button = ({
     const buttonSize = isValidSize(size) ? size : Sizes.SM;
     const buttonImportance = isValidImportance(importance) ? importance : Importances.Primary;
     return(
-        <span className={ classNames(marginTop) }>
+        <span className={ classNames(parseMarginTop(marginTop)) }>
             <button
                 type="button"
                 onClick={ handleClick }

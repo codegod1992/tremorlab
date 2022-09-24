@@ -21,6 +21,8 @@ import {
     getColorTheme,
     getHexFromColorThemeValue,
     getPixelsFromTwClassName,
+    parseHeight,
+    parseMarginTop,
     themeColorRange
 } from 'lib';
 
@@ -46,7 +48,7 @@ const LineChart = ({
     marginTop = 'mt-0',
 }: BaseChartProps) => {
     return (
-        <div className={ classNames('w-full', height, marginTop) }>
+        <div className={ classNames('w-full', parseHeight(height), parseMarginTop(marginTop)) }>
             <ResponsiveContainer width="100%" height="100%">
                 <ReChartsLineChart
                     data={ data }

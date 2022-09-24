@@ -3,7 +3,15 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { BaseColors, classNames, defaultColors, getColorTheme, getColorVariantsFromColorThemeValue, sizing } from 'lib';
+import {
+    BaseColors,
+    classNames,
+    defaultColors,
+    getColorTheme,
+    getColorVariantsFromColorThemeValue,
+    parseMarginTop,
+    sizing
+} from 'lib';
 import { Color, MarginTop } from '../../../lib';
 
 export interface RangeBarProps {
@@ -30,7 +38,7 @@ const RangeBar = ({
     return(
         <div className={ classNames(
             'relative flex items-center w-full rounded-lg',
-            marginTop,
+            parseMarginTop(marginTop),
             getColorVariantsFromColorThemeValue(defaultColors.lightBackground).bgColor,
             sizing.xs.height,
         ) }>

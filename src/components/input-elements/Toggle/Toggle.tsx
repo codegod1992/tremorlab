@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
-import { BaseColors, classNames, defaultColors, getColorVariantsFromColorThemeValue, spacing } from 'lib';
+import {
+    BaseColors,
+    classNames,
+    defaultColors,
+    getColorVariantsFromColorThemeValue,
+    parseMarginTop,
+    spacing
+} from 'lib';
 import { Color, MarginTop } from '../../../lib';
 
 export interface ToggleProps {
@@ -29,7 +36,7 @@ const Toggle = ({
         <div className={ classNames(
             'flex-nowrap inline-flex justify-start rounded-md',
             getColorVariantsFromColorThemeValue(defaultColors.lightBackground).bgColor,
-            marginTop,
+            parseMarginTop(marginTop),
             spacing.twoXs.paddingLeft,
             spacing.twoXs.paddingRight,
             spacing.twoXs.paddingTop,

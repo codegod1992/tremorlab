@@ -10,6 +10,7 @@ import {
     fontSize,
     getColorTheme,
     getColorVariantsFromColorThemeValue,
+    parseMarginTop,
     sizing,
     spacing,
     themeColorRange,
@@ -90,7 +91,7 @@ const CategoryBar = ({
     const markerBgColor = getMarkerBgColor();
 
     return(
-        <div className={ classNames(marginTop) }>
+        <div className={ classNames(parseMarginTop(marginTop)) }>
             { showLabels ? <BarLabels categoryPercentageValues={ categoryPercentageValues } /> : null }
             <div className={ classNames(
                 'relative flex items-center w-full rounded-lg',

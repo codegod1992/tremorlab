@@ -11,6 +11,7 @@ import {
     fontWeight,
     getColorTheme,
     getColorVariantsFromColorThemeValue,
+    parseMarginTop,
     sizing,
     spacing
 } from 'lib';
@@ -39,7 +40,7 @@ const ProgressBar = ({
         <div className={
             classNames(
                 'flex items-center w-full',
-                marginTop,
+                parseMarginTop(marginTop),
             )
         }>
             <div className={ classNames(

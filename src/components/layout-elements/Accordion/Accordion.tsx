@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { classNames, defaultColors, getColorVariantsFromColorThemeValue } from 'lib';
+import { classNames, defaultColors, getColorVariantsFromColorThemeValue, parseMarginTop } from 'lib';
 import { MarginTop } from '../../../lib';
 
 export interface AccordionProps {
@@ -28,7 +28,7 @@ const Accordion = ({
     return(
         <div className={ classNames(
             'overflow-hidden',
-            marginTop,
+            parseMarginTop(marginTop),
             getColorVariantsFromColorThemeValue(defaultColors.lightBorder).borderColor,
             getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
             privateProps!.shapeClassNames,

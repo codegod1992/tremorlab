@@ -9,6 +9,7 @@ import {
     defaultColors,
     getColorVariantsFromColorThemeValue,
     mapInputsToDeltaType,
+    parseMarginTop,
     sizing
 } from 'lib';
 import { MarginTop } from '../../../lib';
@@ -34,7 +35,7 @@ const DeltaBar = ({
     marginTop = 'mt-0',
 }: DeltaBarProps) => {
     return(
-        <div className={ classNames(marginTop) }>
+        <div className={ classNames(parseMarginTop(marginTop)) }>
             <div className={ classNames(
                 'relative flex items-center w-full rounded-lg',
                 getColorVariantsFromColorThemeValue(defaultColors.background).bgColor,

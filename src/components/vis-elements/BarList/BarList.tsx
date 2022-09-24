@@ -8,6 +8,7 @@ import {
     fontSize,
     getColorTheme,
     getColorVariantsFromColorThemeValue,
+    parseMarginTop,
     sizing,
     spacing
 } from 'lib';
@@ -52,7 +53,7 @@ const BarList = ({
     return (
         <div className={ classNames(
             'flex justify-between',
-            marginTop,
+            parseMarginTop(marginTop),
             spacing.threeXl.spaceX,
         ) }>
             <div className="relative w-full">

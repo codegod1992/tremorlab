@@ -14,7 +14,7 @@ import {
 } from 'date-fns';
 
 import { ArrowDownHeadIcon, ArrowLeftHeadIcon, ArrowRightHeadIcon, CalendarIcon } from 'assets';
-import { BaseColors, classNames, getColorVariantsFromColorThemeValue } from 'lib';
+import { BaseColors, classNames, getColorVariantsFromColorThemeValue, parseMarginTop, parseMaxWidth } from 'lib';
 import { Color, MarginTop, MaxWidth } from '../../../lib/inputTypes';
 import {
     colStartClasses,
@@ -129,8 +129,8 @@ const Datepicker = ({
     return (
         <div className={ classNames(
             'relative w-full',
-            marginTop,
-            maxWidth,
+            parseMarginTop(marginTop),
+            parseMaxWidth(maxWidth),
         ) }>
             <div className={ classNames(
                 'flex items-center justify-between rounded-md shadow-sm',

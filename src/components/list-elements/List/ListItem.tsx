@@ -1,22 +1,22 @@
 import React from 'react';
 
-import { classNames, fontSize, spacing } from 'lib';
+import { classNames, fontSize, parseSpaceX, spacing } from 'lib';
 import { SpaceX } from '../../../lib';
 
 export interface ListItemProps {
-    spaceX?: SpaceX,
+    spaceX?: SpaceX | '',
     children: React.ReactNode
 }
 
 const ListItem = ({
-    spaceX = 'space-x-0',
+    spaceX = '',
     children,
 }: ListItemProps) => {
     return(
         <>
             <li className={ classNames(
                 'w-full flex justify-between items-center truncate tabular-nums',
-                spaceX,
+                spaceX ? parseSpaceX(spaceX) : spaceX,
                 spacing.sm.paddingTop,
                 spacing.sm.paddingBottom,
                 fontSize.sm,

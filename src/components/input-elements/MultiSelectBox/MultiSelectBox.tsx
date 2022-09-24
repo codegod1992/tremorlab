@@ -9,6 +9,8 @@ import {
     fontWeight,
     getColorVariantsFromColorThemeValue,
     isValueInArray,
+    parseMarginTop,
+    parseMaxWidth,
     removeValueFromArray,
     sizing,
     spacing
@@ -90,9 +92,9 @@ const MultiSelectBox = ({
             ref={ dropdownRef }
             className={ classNames(
                 'relative w-full min-w-[10rem] rounded-md shadow-sm border',
-                maxWidth,
+                parseMaxWidth(maxWidth),
                 getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
-                marginTop,
+                parseMarginTop(marginTop),
             ) }
         >
             <button

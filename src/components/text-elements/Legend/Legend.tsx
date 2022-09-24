@@ -8,6 +8,7 @@ import {
     fontWeight,
     getColorTheme,
     getColorVariantsFromColorThemeValue,
+    parseMarginTop,
     sizing,
     spacing,
     themeColorRange
@@ -64,7 +65,7 @@ const Legend = ({
     marginTop = 'mt-0',
 }: LegendProps) => {
     return(
-        <div className={ classNames(marginTop) }>
+        <div className={ classNames(parseMarginTop(marginTop)) }>
             <ol className="flex flex-wrap overflow-hidden truncate">
                 { categories.map((category, idx) => (
                     <LegendItem key={ `item-${idx}` } name={ category } color={ colors[idx] } />

@@ -7,6 +7,7 @@ import {
     fontWeight,
     getColorTheme,
     getColorVariantsFromColorThemeValue,
+    parseMarginTop,
     parseTruncateOption,
 } from 'lib';
 import { Color, MarginTop } from '../../../lib';
@@ -25,7 +26,7 @@ const Metric = ({
     children,
 }: MetricProps) => {
     return(
-        <div className={ classNames(marginTop) }>
+        <div className={ classNames(parseMarginTop(marginTop)) }>
             <p className={ classNames(
                 truncate ? 'whitespace-nowrap' : 'shrink-0',
                 parseTruncateOption(truncate),

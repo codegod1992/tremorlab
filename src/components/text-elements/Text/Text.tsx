@@ -8,9 +8,12 @@ import {
     fontWeight,
     getColorTheme,
     getColorVariantsFromColorThemeValue,
+    parseHeight,
+    parseMarginTop,
+    parseTextAlignment,
     parseTruncateOption,
 } from 'lib';
-import { Color, Height, MarginTop, TextAlignment } from '../../../lib';
+import { Color, Height, MarginTop, TextAlignment } from '../../../lib/inputTypes';
 
 export interface TextProps {
     color?: Color,
@@ -33,10 +36,10 @@ const Text = ({
         <p className={classNames(
             parseTruncateOption(truncate),
             truncate ? 'whitespace-nowrap' : 'shrink-0',
-            height,
+            height ? parseHeight(height) : height,
             height ? 'overflow-y-auto' : '',
-            marginTop,
-            textAlignment,
+            parseMarginTop(marginTop),
+            parseTextAlignment(textAlignment),
             getColorVariantsFromColorThemeValue(getColorTheme(color).text).textColor,
             fontSize.sm,
             fontWeight.sm,

@@ -4,7 +4,7 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { DeltaType, DeltaTypes, MarginTop, Size } from '../../../lib';
-import { Sizes, classNames, isValidDeltaType, isValidSize, mapInputsToDeltaType, spacing } from 'lib';
+import { Sizes, classNames, isValidDeltaType, isValidSize, mapInputsToDeltaType, parseMarginTop, spacing } from 'lib';
 import {
     badgeProportionsIconOnly,
     badgeProportionsWithText,
@@ -37,7 +37,7 @@ const BadgeDelta = ({
     const badgeSize = isValidSize(size) ? size : Sizes.SM;
 
     return(
-        <span className={ classNames(marginTop) }>
+        <span className={ classNames(parseMarginTop(marginTop)) }>
             <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
                 <span className={ classNames(
                     'flex-shrink-0 inline-flex justify-center items-center rounded-full',
