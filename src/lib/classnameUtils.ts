@@ -49,13 +49,13 @@ export const getHexFromColorThemeValue = (colorThemeValue: string): string => {
 };
 
 export const parseTruncateOption: BoolClassParser = (option) => {
-    return option===true ? 'truncate' : '';
+    return option===true ? 'tr-truncate' : '';
 };
 
 export const parseHFullOption: BoolClassParser = (option) => {
-    return option===true ? 'h-full' : '';
+    return option===true ? 'tr-h-full' : '';
 };
 
 export const parseWFullOption: BoolClassParser = (option) => {
-    return option===true ? 'w-full' : '';
+    return option===true ? 'tr-w-full' : '';
 };
