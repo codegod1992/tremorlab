@@ -142,17 +142,17 @@ const AreaChart = ({
                
                
                 { categories.map((category, idx) => (
-                        <Area
-                            key={ category }
-                            name={ category }
-                            type="linear"
-                            dataKey={ category }
-                            stroke={ getHexFromColorThemeValue(getColorTheme(colors[idx]).background) }
-                            fill={ `url(#${colors[idx]})` }
-                            strokeWidth={2}
-                            dot={false}
-                            isAnimationActive={ showAnimation }
-                        />
+                    <Area
+                        key={ category }
+                        name={ category }
+                        type="linear"
+                        dataKey={ category }
+                        stroke={ getHexFromColorThemeValue(getColorTheme(colors[idx]).background) }
+                        fill={ `url(#${colors[idx]})` }
+                        strokeWidth={2}
+                        dot={false}
+                        isAnimationActive={ showAnimation }
+                    />
                 ))}
                 
             </ReChartsAreaChart>
