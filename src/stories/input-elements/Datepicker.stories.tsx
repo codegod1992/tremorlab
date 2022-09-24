@@ -18,7 +18,7 @@ const Template: ComponentStory<typeof Datepicker> = () => (
             handleSelect={ (startDate: Date, endDate: Date) => console.log(startDate, endDate) }
             defaultStartDate={ new Date(2022, 6, 1) }
             defaultEndDate={ new Date(2022, 6, 20) }
-            minDate={ new Date(2022, 6, 1) }
+            // minDate={ new Date(2022, 6, 1) }
             maxDate={ new Date(2022, 6, 20) }
         />
     </div>

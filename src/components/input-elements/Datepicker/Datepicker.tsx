@@ -68,7 +68,7 @@ const Datepicker = ({
     
     const hasDefaultDateRange = (defaultStartDate !== null) && (defaultEndDate !== null);
     const isDayDisabled = (day: Date): boolean => {
-        return (minDate !== null && maxDate !== null) && (day < minDate || day > maxDate);
+        return (minDate !== null && day < minDate) || (maxDate !== null && day > maxDate);
     };
 
     const [hoveredDay, setHoveredDay] = useState<Date | null>(null);
@@ -125,8 +125,6 @@ const Datepicker = ({
     useEffect(() => {
         if (selectedStartDay && selectedEndDay) handleSelect(selectedStartDay, selectedEndDay);
     }, [selectedEndDay]);
-
-    console.log(hoveredDay);
 
     return (
         <div className={ classNames(
