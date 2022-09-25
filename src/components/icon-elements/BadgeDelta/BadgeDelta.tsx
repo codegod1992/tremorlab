@@ -47,9 +47,9 @@ const BadgeDelta = ({
 
     return(
         <span className={ classNames(parseMarginTop(marginTop)) }>
-            <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+            <Tooltip content={ tooltip } className={ tooltip ? '' : 'tr-hidden' }>
                 <span className={ classNames(
-                    'flex-shrink-0 inline-flex justify-center items-center',
+                    'tr-flex-shrink-0 tr-inline-flex tr-justify-center tr-items-center',
                     borderRadius.full.all,
                     colors[mappedDeltaType].bgColor,
                     colors[mappedDeltaType].textColor,
@@ -66,7 +66,7 @@ const BadgeDelta = ({
                         iconSizes[badgeSize].width,
                     ) }
                     />
-                    { text ? <p className="whitespace-nowrap">{ text }</p> : null}
+                    { text ? <p className="tr-whitespace-nowrap">{ text }</p> : null}
                 </span>
             </Tooltip>
         </span>

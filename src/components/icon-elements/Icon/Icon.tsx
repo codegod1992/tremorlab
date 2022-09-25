@@ -42,10 +42,10 @@ const Icon = ({
 
     return (
         <span className={ classNames(parseMarginTop(marginTop)) }>
-            <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+            <Tooltip content={ tooltip } className={ tooltip ? '' : 'tr-hidden' }>
                 <span
                     className={ classNames(
-                        'inline-flex flex-shrink-0 items-center',
+                        'tr-inline-flex tr-flex-shrink-0 tr-items-center',
                         iconColors.bgColor,
                         iconColors.textColor,
                         iconColors.borderColor,

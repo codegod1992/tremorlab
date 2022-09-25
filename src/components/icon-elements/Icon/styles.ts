@@ -103,13 +103,13 @@ export const shape: {[style: string]: ShapeTypes} = {
     'solid': {
         rounded: borderRadius.lg.all,
         border: border.md.all,
-        ring: 'ring-1',
+        ring: 'tr-ring-1',
         shadow: '',
     },
     'outlined': {
         rounded: borderRadius.lg.all,
         border: border.sm.all,
-        ring: 'ring-2',
+        ring: 'tr-ring-2',
         shadow: '',
     },
 };

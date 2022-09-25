@@ -37,9 +37,9 @@ const Badge = ({
     const badgeSize = isValidSize(size) ? size : Sizes.SM;
     return(
         <div className={ classNames( parseMarginTop(marginTop)) }>
-            <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+            <Tooltip content={ tooltip } className={ tooltip ? '' : 'tr-hidden' }>
                 <span className={ classNames(
-                    'flex-shrink-0 inline-flex justify-center items-center',
+                    'tr-flex-shrink-0 tr-inline-flex tr-justify-center tr-items-center',
                     getColorVariantsFromColorThemeValue(getColorTheme(color).text).textColor,
                     getColorVariantsFromColorThemeValue(getColorTheme(color).lightBackground).bgColor,
                     borderRadius.full.all,
@@ -58,7 +58,7 @@ const Badge = ({
                         ) }
                         />
                     ) : null }
-                    <p className="whitespace-nowrap">{ text }</p>
+                    <p className="tr-whitespace-nowrap">{ text }</p>
                 </span>
             </Tooltip>
         </div>
