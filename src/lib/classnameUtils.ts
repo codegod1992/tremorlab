@@ -2,10 +2,6 @@ import { ColorTypes, colorVariantMapping } from './colorVariantMapping';
 import {
     Height,
     MarginTop,
-    PaddingBottom,
-    PaddingLeft,
-    PaddingRight,
-    PaddingTop,
     Width
 } from './inputTypes';
 import { twColorsHex } from 'lib/colors';
@@ -21,7 +17,7 @@ export const classNames: StringJoiner = (
 };
 
 export const getPixelsFromTwClassName = (
-    twClassName: MarginTop | PaddingLeft | PaddingRight | PaddingTop | PaddingBottom | Height | Width
+    twClassName: MarginTop | Height | Width
 ): number => {
     const classNameParts = twClassName.split('-');
     return Number(classNameParts[classNameParts.length - 1]) * 4;
