@@ -8,6 +8,7 @@ import {
     fontWeight,
     getColorTheme,
     getColorVariantsFromColorThemeValue,
+    parseMarginTop,
     sizing,
     spacing,
     themeColorRange
@@ -23,14 +24,14 @@ const LegendItem = ({
     color,
 }: LegendItemProps) => (
     <li className={ classNames(
-        'inline-flex items-center truncate',
+        'tr-inline-flex tr-items-center tr-truncate',
         getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
         spacing.md.marginRight,
     ) }
     >
         <svg
             className={ classNames(
-                'flex-none',
+                'tr-flex-none',
                 getColorVariantsFromColorThemeValue(getColorTheme(color).text).textColor,
                 sizing.xs.height,
                 sizing.xs.width,
@@ -42,7 +43,7 @@ const LegendItem = ({
             <circle cx={4} cy={4} r={4} />
         </svg>
         <p className={ classNames(
-            'whitespace-nowrap truncate',
+            'tr-whitespace-nowrap tr-truncate',
             fontSize.sm,
             fontWeight.sm,
         ) }>
@@ -64,8 +65,8 @@ const Legend = ({
     marginTop = 'mt-0',
 }: LegendProps) => {
     return(
-        <div className={ classNames(marginTop) }>
-            <ol className="flex flex-wrap overflow-hidden truncate">
+        <div className={ classNames(parseMarginTop(marginTop)) }>
+            <ol className="tr-flex tr-flex-wrap tr-overflow-hidden tr-truncate">
                 { categories.map((category, idx) => (
                     <LegendItem key={ `item-${idx}` } name={ category } color={ colors[idx] } />
                 )) }

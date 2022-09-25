@@ -4,7 +4,7 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { Color, Height } from '../../../lib';
-import { classNames, getColorTheme, getColorVariantsFromColorThemeValue } from 'lib';
+import { borderRadius, classNames, getColorTheme, getColorVariantsFromColorThemeValue, parseHeight } from 'lib';
 
 export interface TrackingBlockProps {
     color: Color,
@@ -18,11 +18,12 @@ const TrackingBlock = ({
     tooltip
 }: TrackingBlockProps) => {
     return(
-        <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+        <Tooltip content={ tooltip } className={ tooltip ? '' : 'tr-hidden' }>
             <div className={ classNames(
-                'w-full rounded-md',
+                'tr-w-full',
                 getColorVariantsFromColorThemeValue(getColorTheme(color).background).bgColor,
-                height,
+                parseHeight(height),
+                borderRadius.md.all,
             ) }
             />
         </Tooltip>

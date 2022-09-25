@@ -2,12 +2,14 @@ import React from 'react';
 
 import {
     BaseColors,
+    borderRadius,
     classNames,
     defaultColors,
     defaultValueFormatter,
     fontSize,
     getColorTheme,
     getColorVariantsFromColorThemeValue,
+    parseMarginTop,
     sizing,
     spacing
 } from 'lib';
@@ -51,24 +53,25 @@ const BarList = ({
 
     return (
         <div className={ classNames(
-            'flex justify-between',
-            marginTop,
+            'tr-flex tr-justify-between',
+            parseMarginTop(marginTop),
             spacing.threeXl.spaceX,
         ) }>
-            <div className="relative w-full">
+            <div className="tr-relative tr-w-full">
                 { data.map((item, idx) => (
                     <div
                         key={ item.value }
                         className={ classNames(
-                            'flex items-center rounded-sm',
+                            'tr-flex tr-items-center',
                             rowHeight,
                             getColorVariantsFromColorThemeValue(getColorTheme(color).lightBackground).bgColor,
+                            borderRadius.sm.all,
                             idx === data.length - 1 ? spacing.none.marginBottom : spacing.sm.marginBottom,
                         ) }
                         style={ { 'width': `${widths[idx]}%`, 'transition': showAnimation ? 'all 2s' : '' } }
                     >
                         <p className={ classNames(
-                            'absolute max-w-full whitespace-nowrap truncate',
+                            'tr-absolute tr-max-w-full tr-whitespace-nowrap tr-truncate',
                             getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
                             spacing.sm.left,
                             fontSize.sm,
@@ -78,18 +81,18 @@ const BarList = ({
                     </div>
                 )) }
             </div>
-            <div className="text-right min-w-min">
+            <div className="tr-text-right tr-min-w-min">
                 { data.map((item, idx) => (
                     <div
                         key={ item.value }
                         className={ classNames(
-                            'flex justify-end items-center',
+                            'tr-flex tr-justify-end tr-items-center',
                             rowHeight,
                             idx === data.length - 1 ? spacing.none.marginBottom : spacing.sm.marginBottom,
                         ) }
                     >
                         <p className={ classNames(
-                            'whitespace-nowrap truncate',
+                            'tr-whitespace-nowrap tr-truncate',
                             getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
                             fontSize.sm,
                         ) }>

@@ -2,11 +2,15 @@ import React from 'react';
 
 import { 
     BaseColors,
+    border,
+    borderRadius,
     classNames,
     fontSize,
     fontWeight,
     getColorTheme,
     getColorVariantsFromColorThemeValue,
+    parseHeight,
+    parseMarginTop,
     sizing,
     spacing
 } from 'lib';
@@ -31,8 +35,8 @@ const Callout = ({
 }: CalloutProps) => {
     return(
         <div className={ classNames(
-            'relative rounded-md border-l-4',
-            marginTop,
+            'tr-relative',
+            parseMarginTop(marginTop),
             getColorVariantsFromColorThemeValue(getColorTheme(color).canvasBackground).bgColor,
             getColorVariantsFromColorThemeValue(getColorTheme(color).darkBorder).borderColor,
             spacing.lg.paddingLeft,
@@ -40,21 +44,23 @@ const Callout = ({
             spacing.lg.paddingTop,
             spacing.lg.paddingBottom,
             fontSize.sm,
+            borderRadius.md.all,
+            border.lg.left,
         ) }
         >
             <div className={ classNames(
-                'overflow-hidden',
+                'tr-overflow-hidden',
                 spacing.xs.marginLeft,
             ) }>
                 <div className={ classNames(
-                    'flex items-start',
+                    'tr-flex tr-items-start',
                     getColorVariantsFromColorThemeValue(getColorTheme(color).darkText).textColor,
                 ) }
                 >
                     { Icon ? (
                         <Icon
                             className={ classNames(
-                                'flex-none',
+                                'tr-flex-none',
                                 sizing.lg.height,
                                 sizing.lg.width,
                                 spacing.xs.marginRight,
@@ -65,8 +71,8 @@ const Callout = ({
                     <h4 className={ classNames(fontWeight.lg) }>{ title }</h4>
                 </div>
                 <div className={ classNames(
-                    'overflow-y-auto',
-                    height,
+                    'tr-overflow-y-auto',
+                    height ? parseHeight(height) : height,
                     getColorVariantsFromColorThemeValue(getColorTheme(color).darkText).textColor,
                     spacing.sm.marginTop,
                 ) }

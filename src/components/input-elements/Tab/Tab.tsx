@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {
+    border,
     classNames,
     defaultColors,
     fontSize,
@@ -29,20 +30,20 @@ const Tab = ({
     const activeClassNames = classNames(
         getColorVariantsFromColorThemeValue(getColorTheme(privateProps!.color).text).textColor,
         getColorVariantsFromColorThemeValue(getColorTheme(privateProps!.color).darkBorder).borderColor,
-        'border-b-2'
+        border.md.bottom,
     );
     const inActiveClassNames = classNames(
         getColorVariantsFromColorThemeValue(defaultColors.transparent).borderColor,
         getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
         getColorVariantsFromColorThemeValue(defaultColors.text).hoverTextColor,
         getColorVariantsFromColorThemeValue(defaultColors.border).hoverBorderColor,
-        'hover:border-b-2'
+        'hover:tr-border-b-2'
     );
     return(
         <li>
             <button
                 className={ classNames(
-                    'flex whitespace-nowrap max-w-xs truncate',
+                    'tr-flex tr-whitespace-nowrap tr-max-w-xs tr-truncate',
                     spacing.twoXs.paddingRight,
                     spacing.twoXs.paddingLeft,
                     spacing.sm.paddingTop,
@@ -55,7 +56,7 @@ const Tab = ({
                 value={ value }
                 onClick={ () => privateProps!.setSelectedTab!(value) }
             >
-                <p className="whitespace-nowrap truncate">{ text }</p>
+                <p className="tr-whitespace-nowrap tr-truncate">{ text }</p>
             </button>
         </li>
     );

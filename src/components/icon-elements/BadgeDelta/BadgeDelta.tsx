@@ -4,7 +4,16 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { DeltaType, DeltaTypes, MarginTop, Size } from '../../../lib';
-import { Sizes, classNames, isValidDeltaType, isValidSize, mapInputsToDeltaType, spacing } from 'lib';
+import {
+    Sizes,
+    borderRadius,
+    classNames,
+    isValidDeltaType,
+    isValidSize,
+    mapInputsToDeltaType,
+    parseMarginTop,
+    spacing
+} from 'lib';
 import {
     badgeProportionsIconOnly,
     badgeProportionsWithText,
@@ -37,10 +46,11 @@ const BadgeDelta = ({
     const badgeSize = isValidSize(size) ? size : Sizes.SM;
 
     return(
-        <span className={ classNames(marginTop) }>
-            <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+        <span className={ classNames(parseMarginTop(marginTop)) }>
+            <Tooltip content={ tooltip } className={ tooltip ? '' : 'tr-hidden' }>
                 <span className={ classNames(
-                    'flex-shrink-0 inline-flex justify-center items-center rounded-full',
+                    'tr-flex-shrink-0 tr-inline-flex tr-justify-center tr-items-center',
+                    borderRadius.full.all,
                     colors[mappedDeltaType].bgColor,
                     colors[mappedDeltaType].textColor,
                     badgeProportions[badgeSize].paddingLeft,
@@ -56,7 +66,7 @@ const BadgeDelta = ({
                         iconSizes[badgeSize].width,
                     ) }
                     />
-                    { text ? <p className="whitespace-nowrap">{ text }</p> : null}
+                    { text ? <p className="tr-whitespace-nowrap">{ text }</p> : null}
                 </span>
             </Tooltip>
         </span>

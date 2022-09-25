@@ -4,11 +4,16 @@ import { ArrowDownHeadIcon } from 'assets';
 
 import { MarginTop, MaxWidth } from '../../../lib/inputTypes';
 import {
+    border,
+    borderRadius,
+    boxShadow,
     classNames,
     defaultColors,
     fontSize,
     fontWeight,
     getColorVariantsFromColorThemeValue,
+    parseMarginTop,
+    parseMaxWidth,
     sizing,
     spacing
 } from 'lib';
@@ -73,14 +78,17 @@ const SelectBox = ({
 
     return (
         <div ref={ dropdownRef } className={ classNames(
-            'relative w-full min-w-[10rem] rounded-md shadow-sm border',
-            maxWidth,
+            'tr-relative tr-w-full tr-min-w-[10rem]',
+            parseMaxWidth(maxWidth),
             getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
-            marginTop,
+            parseMarginTop(marginTop),
+            borderRadius.md.all,
+            border.sm.all,
+            boxShadow.sm,
         ) }>
             <input
                 className={ classNames(
-                    'w-full rounded-md border-0 focus:ring-2 focus:outline-0',
+                    'tr-w-full focus:tr-ring-2 focus:tr-outline-0',
                     getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
@@ -90,8 +98,10 @@ const SelectBox = ({
                     spacing.sm.paddingBottom,
                     fontSize.sm,
                     fontWeight.md,
-                    'placeholder:text-gray-500',
-                    'pr-10' // avoid text overflow at arrow down icon
+                    borderRadius.md.all,
+                    border.none.all,
+                    'placeholder:tr-text-gray-500',
+                    'tr-pr-10' // avoid text overflow at arrow down icon
                 ) }
                 type="text"
                 placeholder={ placeholder }
@@ -101,14 +111,14 @@ const SelectBox = ({
             />
             <button
                 className={ classNames(
-                    'absolute top-1/2 -translate-y-1/2',
+                    'tr-absolute tr-top-1/2 -tr-translate-y-1/2',
                     spacing.twoXl.right,
                 ) }
                 onClick={ () => setShowModal(!showModal) }
             >
                 <ArrowDownHeadIcon
                     className={ classNames(
-                        'flex-none',
+                        'tr-flex-none',
                         sizing.lg.height,
                         sizing.lg.width,
                         spacing.twoXs.negativeMarginRight,

@@ -4,8 +4,9 @@ import {
     classNames,
     defaultColors,
     getColorVariantsFromColorThemeValue,
+    parseMarginTop,
 } from 'lib';
-import { MarginTop } from '../../../lib';
+import { MarginTop } from '../../../lib/inputTypes';
 
 export interface ListProps {
     marginTop?: MarginTop,
@@ -18,10 +19,10 @@ const List = ({
 }: ListProps) => {
     return(
         <ul className={ classNames(
-            'w-full overflow-hidden divide-y',
+            'tr-w-full tr-overflow-hidden tr-divide-y',
             getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
             getColorVariantsFromColorThemeValue(defaultColors.lightBorder).divideColor,
-            marginTop,
+            parseMarginTop(marginTop),
         ) }
         >
             { children }

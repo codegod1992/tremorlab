@@ -1,11 +1,14 @@
 import {
     BaseColors,
     Sizing,
+    border,
+    borderRadius,
+    boxShadow,
     defaultColors,
     getColorTheme,
     getColorVariantsFromColorThemeValue,
     sizing,
-    spacing
+    spacing,
 } from 'lib';
 
 export type WrapperProporionTypes = {
@@ -86,27 +89,27 @@ export const shape: {[style: string]: ShapeTypes} = {
         shadow: '',
     },
     'light': {
-        rounded: 'rounded-lg',
+        rounded: borderRadius.lg.all,
         border: '',
         ring: '',
         shadow: '',
     },
     'shadow': {
-        rounded: 'rounded-lg',
-        border: 'border',
+        rounded: borderRadius.lg.all,
+        border: border.sm.all,
         ring: '',
-        shadow: 'shadow',
+        shadow: boxShadow.md,
     },
     'solid': {
-        rounded: 'rounded-lg',
-        border: 'border-2',
-        ring: 'ring-1',
+        rounded: borderRadius.lg.all,
+        border: border.md.all,
+        ring: 'tr-ring-1',
         shadow: '',
     },
     'outlined': {
-        rounded: 'rounded-lg',
-        border: 'border',
-        ring: 'ring-2',
+        rounded: borderRadius.lg.all,
+        border: border.sm.all,
+        ring: 'tr-ring-2',
         shadow: '',
     },
 };

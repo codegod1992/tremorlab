@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { classNames, spacing } from 'lib';
+import { classNames, parseMarginTop, spacing } from 'lib';
 import { MarginTop } from '../../../lib';
 
 export interface TrackingProps {
@@ -14,8 +14,8 @@ const Tracking = ({
 }: TrackingProps) => {
     return(
         <div className={ classNames(
-            'w-full flex items-center',
-            marginTop,
+            'tr-w-full tr-flex tr-items-center',
+            parseMarginTop(marginTop),
             spacing.threeXs.spaceX,
         ) }>
             { children }

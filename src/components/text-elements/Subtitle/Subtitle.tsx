@@ -7,6 +7,7 @@ import {
     fontWeight,
     getColorTheme,
     getColorVariantsFromColorThemeValue,
+    parseMarginTop,
     parseTruncateOption
 } from 'lib';
 import { Color, MarginTop } from '../../../lib';
@@ -26,9 +27,9 @@ const Subtitle = ({
 }: SubtitleProps) => {
     return(
         <p className={ classNames(
-            truncate ? 'whitespace-nowrap' : 'shrink-0',
+            truncate ? 'tr-whitespace-nowrap' : 'tr-shrink-0',
             parseTruncateOption(truncate),
-            marginTop,
+            parseMarginTop(marginTop),
             getColorVariantsFromColorThemeValue(getColorTheme(color).lightText).textColor,
             fontSize.md,
             fontWeight.sm,

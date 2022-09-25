@@ -10,6 +10,7 @@ import {
     getColorVariantsFromColorThemeValue
 } from 'lib';
 import { Color } from '../../../lib';
+import { borderRadius } from 'lib/shape';
 
 export const relativeFilterOptions = [
     {
@@ -148,7 +149,7 @@ export const getDayHoverBgColorClassName = (
     if (selectedEndDay && isEqual(day, selectedEndDay)) {
         return '';
     }
-    return 'hover:bg-gray-200';
+    return 'hover:tr-bg-gray-200';
 };
 
 export const getDayRoundedClassName = (
@@ -158,36 +159,36 @@ export const getDayRoundedClassName = (
     hoveredDay: Date|null
 ): string => {
     if (!selectedStartDay && !selectedEndDay) {
-        return 'rounded-md';
+        return borderRadius.md.all;
     }
     if (selectedStartDay && selectedEndDay && isEqual(day, selectedStartDay)) {
-        return 'rounded-l-md';
+        return borderRadius.md.left;
     }
     if (selectedStartDay && !selectedEndDay && !hoveredDay && isEqual(day, selectedStartDay)) {
-        return 'rounded-md';
+        return borderRadius.md.all;
     }
     if (selectedStartDay && !selectedEndDay && hoveredDay && (day < selectedStartDay)) {
-        return 'rounded-md';
+        return borderRadius.md.all;
     }
     if (selectedStartDay && !selectedEndDay && hoveredDay && (isEqual(day, selectedStartDay))
         && (hoveredDay > selectedStartDay)) {
-        return 'rounded-l-md';
+        return borderRadius.md.left;
     }
     if (selectedStartDay && !selectedEndDay && hoveredDay && (day > selectedStartDay && day < hoveredDay)) {
-        return 'rounded-none';
+        return borderRadius.none.all;
     }
     if (selectedStartDay && selectedEndDay && (day > selectedStartDay && day < selectedEndDay)) {
-        return 'rounded-none';
+        return borderRadius.none.all;
     }
     if (selectedStartDay && !selectedEndDay && hoveredDay && isEqual(day, hoveredDay)
         && !isEqual(day, selectedStartDay)) {
-        return 'rounded-r-md';
+        return borderRadius.md.right;
     }
     if (selectedStartDay && selectedEndDay && isEqual(day, selectedEndDay)) {
-        return 'rounded-r-md';
+        return borderRadius.md.right;
     }
     if (selectedStartDay && selectedEndDay && (day < selectedStartDay || day > selectedEndDay)) {
-        return 'rounded-md';
+        return borderRadius.md.all;
     }
-    return 'rounded-md';
+    return borderRadius.md.all;
 };

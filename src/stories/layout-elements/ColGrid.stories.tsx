@@ -15,22 +15,22 @@ const Template: ComponentStory<typeof ColGrid> = (args) => (
     <ColGrid {...args}>
         <Col numColSpan={ 2 }>
             <Card>
-                <div className="h-44" />
+                <div className="tr-h-44" />
             </Card>
         </Col>
         <Card>
-            <div className="h-44" />
+            <div className="tr-h-44" />
         </Card>
         <Col>
             <Card>
-                <div className="h-44" />
+                <div className="tr-h-44" />
             </Card>
         </Col>
         <Card>
-            <div className="h-44" />
+            <div className="tr-h-44" />
         </Card>
         <Card>
-            <div className="h-44" />
+            <div className="tr-h-44" />
         </Card>
     </ColGrid>
 );

@@ -27,7 +27,7 @@ const buttonText = 'Button Text';
 const Template: ComponentStory<never> = () => (
     <>
         <div className="mb-5">
-            <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
+            <div className="tr-grid tr-grid-cols-8 tr-items-center tr-justify-start tr-gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
@@ -41,7 +41,7 @@ const Template: ComponentStory<never> = () => (
             </div>
         </div>
         <div className="mb-5">
-            <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
+            <div className="tr-grid tr-grid-cols-8 tr-items-center tr-justify-start tr-gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
@@ -55,7 +55,7 @@ const Template: ComponentStory<never> = () => (
             </div>
         </div>
         <div className="mb-5">
-            <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
+            <div className="tr-grid tr-grid-cols-8 tr-items-center tr-justify-start tr-gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
@@ -69,7 +69,7 @@ const Template: ComponentStory<never> = () => (
             </div>
         </div>
         <div className="mb-5">
-            <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
+            <div className="tr-grid tr-grid-cols-8 tr-items-center tr-justify-start tr-gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
@@ -84,7 +84,7 @@ const Template: ComponentStory<never> = () => (
             </div>
         </div>
         <div className="mb-5">
-            <div className="grid grid-cols-8 justify-items-start items-center gap-y-2">
+            <div className="tr-grid tr-grid-cols-8 tr-justify-start tr-items-center tr-gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
@@ -100,7 +100,7 @@ const Template: ComponentStory<never> = () => (
             </div>
         </div>
         <div className="mb-5">
-            <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
+            <div className="tr-grid tr-grid-cols-8 tr-items-center tr-justify-start tr-gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
@@ -116,7 +116,7 @@ const Template: ComponentStory<never> = () => (
             </div>
         </div>
         <div className="mb-5">
-            <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
+            <div className="tr-grid tr-grid-cols-8 tr-items-center tr-justify-start tr-gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(
@@ -130,7 +130,7 @@ const Template: ComponentStory<never> = () => (
             </div>
         </div>
         <div className="mb-5">
-            <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
+            <div className="tr-grid tr-grid-cols-8 tr-items-center tr-justify-start tr-gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     console.log(Sizes[key]);
                     return(

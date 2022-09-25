@@ -6,10 +6,12 @@ import Tooltip from '@tippyjs/react';
 import {
     BaseColors,
     Sizes,
+    borderRadius,
     classNames,
     getColorTheme,
     getColorVariantsFromColorThemeValue,
     isValidSize,
+    parseMarginTop,
     spacing,
 } from 'lib';
 import { Color, MarginTop, Size } from '../../../lib';
@@ -34,12 +36,13 @@ const Badge = ({
 }: BadgeProps) => {
     const badgeSize = isValidSize(size) ? size : Sizes.SM;
     return(
-        <div className={ classNames(marginTop) }>
-            <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+        <div className={ classNames( parseMarginTop(marginTop)) }>
+            <Tooltip content={ tooltip } className={ tooltip ? '' : 'tr-hidden' }>
                 <span className={ classNames(
-                    'flex-shrink-0 inline-flex justify-center items-center rounded-full',
+                    'tr-flex-shrink-0 tr-inline-flex tr-justify-center tr-items-center',
                     getColorVariantsFromColorThemeValue(getColorTheme(color).text).textColor,
                     getColorVariantsFromColorThemeValue(getColorTheme(color).lightBackground).bgColor,
+                    borderRadius.full.all,
                     badgeProportions[badgeSize].paddingLeft,
                     badgeProportions[badgeSize].paddingRight,
                     badgeProportions[badgeSize].paddingTop,
@@ -55,7 +58,7 @@ const Badge = ({
                         ) }
                         />
                     ) : null }
-                    <p className="whitespace-nowrap">{ text }</p>
+                    <p className="tr-whitespace-nowrap">{ text }</p>
                 </span>
             </Tooltip>
         </div>

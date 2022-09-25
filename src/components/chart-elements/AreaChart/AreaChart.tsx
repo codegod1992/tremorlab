@@ -15,8 +15,16 @@ import BaseChartProps from '../common/BaseChartProps';
 import ChartLegend from '../common/ChartLegend';
 import ChartTooltip from '../common/ChartTooltip';
 
-import { classNames, getHexFromColorThemeValue, getPixelsFromTwClassName } from 'lib/classnameUtils';
-import { defaultValueFormatter, getColorTheme, themeColorRange } from 'lib';
+import {
+    classNames,
+    defaultValueFormatter,
+    getColorTheme,
+    getHexFromColorThemeValue,
+    getPixelsFromTwClassName,
+    parseHeight,
+    parseMarginTop,
+    themeColorRange
+} from 'lib';
 
 const AreaChart = ({
     data = [],
@@ -34,23 +42,11 @@ const AreaChart = ({
     showGridLines = true,
     showGradient = true,
     height = 'h-80',
-    paddingTop = 'pt-0',
-    paddingRight = 'pr-0',
-    paddingBottom = 'pb-0',
-    paddingLeft = 'pl-0',
     marginTop = 'mt-0',
 }: BaseChartProps) => (
-    <div className={ classNames('w-full', height, marginTop) }>
+    <div className={ classNames('tr-w-full', parseHeight(height), parseMarginTop(marginTop)) }>
         <ResponsiveContainer width="100%" height="100%">
-            <ReChartsAreaChart
-                data={ data }
-                margin={ {
-                    left: getPixelsFromTwClassName(paddingLeft), 
-                    top: getPixelsFromTwClassName(paddingTop),
-                    right: getPixelsFromTwClassName(paddingRight),
-                    bottom: getPixelsFromTwClassName(paddingBottom),
-                } }
-            >
+            <ReChartsAreaChart data={ data }>
                 { showGridLines ? (
                     <CartesianGrid
                         strokeDasharray="3 3"

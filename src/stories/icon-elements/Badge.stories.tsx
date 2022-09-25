@@ -19,9 +19,9 @@ const Template: ComponentStory<typeof Badge> = () => (
     <>
         <div>
             <p>Sizes</p>
-            <div className="grid grid-cols-1 gap-2">
+            <div className="tr-grid tr-grid-cols-1 tr-gap-2">
                 { Object.values(Sizes).map(size => (
-                    <div className="flex justify-start space-x-4">
+                    <div className="tr-flex tr-justify-start tr-space-x-4">
                         <Badge size={ size } text={ 'Live' } tooltip={ 'Tooltip' } />
                         <Badge size={ size } text={ 'Live' } Icon={ArrowUpIcon} tooltip={ 'Tooltip' } />
                     </div>
@@ -30,7 +30,7 @@ const Template: ComponentStory<typeof Badge> = () => (
         </div>
         <div>
             <p>Colors</p>
-            <div className="grid grid-cols-8 gap-2">
+            <div className="tr-grid tr-grid-cols-8 tr-gap-2">
                 { Object.values(BaseColors).map(color => (
                     <div>
                         <Badge color={ color } text={ 'Live' } tooltip={ 'Tooltip' } />

@@ -2,10 +2,6 @@ import {
     Color,
     Height,
     MarginTop,
-    PaddingBottom,
-    PaddingLeft,
-    PaddingRight,
-    PaddingTop,
     ValueFormatter,
     Width,
 } from '../../../lib';
@@ -26,10 +22,6 @@ interface BaseChartProps {
     showLegend?: boolean,
     showGridLines?: boolean,
     height?: Height,
-    paddingLeft?: PaddingLeft,
-    paddingTop?: PaddingTop,
-    paddingRight?: PaddingRight,
-    paddingBottom?: PaddingBottom,
     marginTop?: MarginTop,
 }
 

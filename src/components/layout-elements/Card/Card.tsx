@@ -1,12 +1,18 @@
 import React from 'react';
 
 import { BaseColors, HorizontalPositions, VerticalPositions } from 'lib/primitives';
-import { Color, HorizontalPosition, MarginTop, MaxWidth, VerticalPosition, getColorTheme } from '../../../lib';
+import { Color, HorizontalPosition, MarginTop, MaxWidth, VerticalPosition } from '../../../lib';
 import {
+    border,
+    borderRadius,
+    boxShadow,
     classNames,
     defaultColors,
+    getColorTheme,
     getColorVariantsFromColorThemeValue,
     parseHFullOption,
+    parseMarginTop,
+    parseMaxWidth,
     spacing,
 } from 'lib';
 
@@ -14,13 +20,13 @@ const parseDecorationAlignment = (decorationAlignment: string) => {
     if (!decorationAlignment) return '';
     switch(decorationAlignment) {
     case HorizontalPositions.Left:
-        return 'border-l-4';
+        return border.lg.left;
     case VerticalPositions.Top:
-        return 'border-t-4';
+        return border.lg.top;
     case HorizontalPositions.Right:
-        return 'border-r-4';
+        return border.lg.right;
     case VerticalPositions.Bottom:
-        return 'border-b-4';
+        return border.lg.bottom;
     default:
         return '';
     }
@@ -47,12 +53,12 @@ const Card = ({
 }: CardProps) => {
     return(
         <div className={ classNames(
-            'relative w-full mx-auto text-left rounded-lg ring-1',
-            marginTop,
+            'tr-relative tr-w-full tr-mx-auto tr-text-left tr-ring-1',
+            parseMarginTop(marginTop),
             parseHFullOption(hFull),
-            maxWidth,
+            parseMaxWidth(maxWidth),
             getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
-            shadow ? 'shadow' : '',
+            shadow ? boxShadow.md : '',
             getColorVariantsFromColorThemeValue(getColorTheme(decorationColor).border).borderColor,
             getColorVariantsFromColorThemeValue(defaultColors.lightBorder).ringRolor,
             parseDecorationAlignment(decoration),
@@ -60,6 +66,7 @@ const Card = ({
             spacing.threeXl.paddingRight,
             spacing.threeXl.paddingTop,
             spacing.threeXl.paddingBottom,
+            borderRadius.lg.all,
         ) }
         >
             { children }

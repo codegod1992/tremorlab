@@ -13,11 +13,11 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
 const Template: ComponentStory<typeof BadgeDelta> = (args) => (
-    <div className="grid grid-cols-4">
+    <div className="tr-grid tr-grid-cols-4">
         <div>
             <p>Sizes</p>
             { Object.values(Sizes).map(size => (
-                <div className="mt-2 space-x-2">
+                <div className="tr-mt-2 tr-space-x-2">
                     <BadgeDelta {...args} size={ size } />
                     <BadgeDelta {...args} text="" size={ size } />
                 </div>
@@ -26,7 +26,7 @@ const Template: ComponentStory<typeof BadgeDelta> = (args) => (
         <div>
             <p>DeltaTypes</p>
             { Object.values(DeltaTypes).map(deltaType => (
-                <div className="mt-2">
+                <div className="tr-mt-2">
                     <BadgeDelta {...args} deltaType={ deltaType } />
                 </div>
             )) }
@@ -34,7 +34,7 @@ const Template: ComponentStory<typeof BadgeDelta> = (args) => (
         <div>
             <p>DeltaTypes IsIncreasePositive False</p>
             { Object.values(DeltaTypes).map(deltaType => (
-                <div className="mt-2">
+                <div className="tr-mt-2">
                     <BadgeDelta {...args} deltaType={ deltaType } isIncreasePositive={ false } />
                 </div>
             )) }
@@ -42,7 +42,7 @@ const Template: ComponentStory<typeof BadgeDelta> = (args) => (
         <div>
             <p>DeltaTypes Icon Only</p>
             { Object.values(DeltaTypes).map(deltaType => (
-                <div className="mt-2">
+                <div className="tr-mt-2">
                     <BadgeDelta deltaType={ deltaType } isIncreasePositive={ false } />
                 </div>
             )) }

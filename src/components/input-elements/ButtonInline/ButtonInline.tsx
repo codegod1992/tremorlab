@@ -9,6 +9,7 @@ import {
     getColorTheme,
     getColorVariantsFromColorThemeValue,
     isValidSize,
+    parseMarginTop,
     spacing
 } from 'lib';
 import { Color, HorizontalPosition, MarginTop, Size } from '../../../lib/inputTypes';
@@ -35,13 +36,13 @@ const ButtonInline = ({
 }: ButtonInlineProps) => {
     const buttonSize = isValidSize(size) ? size : Sizes.SM;
     return(
-        <span className={ classNames(marginTop) }>
+        <span className={ classNames(parseMarginTop(marginTop)) }>
             <button
                 type="button"
                 onClick={ handleClick }
                 className={ classNames(
-                    'flex-shrink-0 inline-flex items-center group font-medium',
-                    'focus:outline-none focus:ring-none',
+                    'tr-flex-shrink-0 tr-inline-flex tr-items-center tr-group tr-font-medium',
+                    'focus:tr-outline-none focus:tr-ring-none',
                     buttonProportions[buttonSize].fontSize,
                     getColorVariantsFromColorThemeValue(getColorTheme(color).text).textColor,
                     getColorVariantsFromColorThemeValue(getColorTheme(color).darkText).hoverTextColor,
@@ -60,7 +61,7 @@ const ButtonInline = ({
                         aria-hidden="true"
                     />
                 ) : null }
-                <p className="whitespace-nowrap">{ text }</p>
+                <p className="tr-whitespace-nowrap">{ text }</p>
                 { Icon && (iconPosition === HorizontalPositions.Right) ? (
                     <Icon
                         className={ classNames(

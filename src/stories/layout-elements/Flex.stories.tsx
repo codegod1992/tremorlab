@@ -11,9 +11,9 @@ export default {
   
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Flex> = (args) => (
-    <div className="h-screen">
+    <div className="tr-h-screen">
         <Flex {...args}>
-            <div className="text-3xl">Hello</div>
+            <div className="tr-text-3xl">Hello</div>
             <div>World</div>
         </Flex>
     </div>

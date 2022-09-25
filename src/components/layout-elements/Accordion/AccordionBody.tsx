@@ -11,10 +11,10 @@ const AccordionBody = ({
 }: AccordionBodyProps) => {
     return(
         <div className={ classNames(
-            'w-full',
+            'tr-w-full',
             spacing.threeXl.paddingLeft,
             spacing.threeXl.paddingRight,
-            spacing.threeXl.paddingBottom,
+            spacing.lg.paddingBottom,
         ) }>
             { children }
         </div>

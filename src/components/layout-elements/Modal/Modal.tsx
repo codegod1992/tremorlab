@@ -1,6 +1,9 @@
 import React, { useRef } from 'react';
 
 import {
+    border,
+    borderRadius,
+    boxShadow,
     classNames,
     defaultColors,
     getColorVariantsFromColorThemeValue,
@@ -21,8 +24,8 @@ const Modal = ({
     showModal,
     setShowModal,
     triggerRef,
-    width = 'w-full',
-    maxHeight = 'max-h-72',
+    width = 'tr-w-full',
+    maxHeight = 'tr-max-h-72',
     children,
 }: ModalProps) => {
     const modalRef = useRef<HTMLDivElement>(null);
@@ -36,7 +39,7 @@ const Modal = ({
             <div
                 ref={ modalRef }
                 className={ classNames(
-                    'absolute -bottom-2 translate-y-full z-10 rounded-md shadow-lg border divide-y overflow-y-auto',
+                    'tr-absolute -tr-bottom-2 tr-translate-y-full tr-z-10 tr-divide-y tr-overflow-y-auto',
                     width,
                     maxHeight,
                     getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
@@ -46,6 +49,9 @@ const Modal = ({
                     spacing.none.right,
                     spacing.twoXs.marginTop,
                     spacing.twoXs.marginBottom,
+                    borderRadius.md.all,
+                    border.sm.all,
+                    boxShadow.lg,
                 ) }
             >
                 { children }

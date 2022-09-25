@@ -5,10 +5,15 @@ import {
     HorizontalPositions,
     Importances,
     Sizes,
+    border,
+    borderRadius,
+    boxShadow,
     classNames,
+    fontWeight,
     isBaseColor,
     isValidImportance,
     isValidSize,
+    parseMarginTop,
     spacing,
 } from 'lib';
 import { Color, HorizontalPosition, Importance, MarginTop, Size } from '../../../lib';
@@ -43,14 +48,17 @@ const Button = ({
     const buttonSize = isValidSize(size) ? size : Sizes.SM;
     const buttonImportance = isValidImportance(importance) ? importance : Importances.Primary;
     return(
-        <span className={ classNames(marginTop) }>
+        <span className={ classNames(parseMarginTop(marginTop)) }>
             <button
                 type="button"
                 onClick={ handleClick }
                 className={ classNames(
-                    'flex-shrink-0 inline-flex items-center group font-medium',
-                    'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-transparent',
-                    'rounded-md border shadow-sm',
+                    'tr-flex-shrink-0 tr-inline-flex tr-items-center tr-group',
+                    'focus:tr-outline-none focus:tr-ring-2 focus:tr-ring-offset-2 focus:tr-ring-transparent',
+                    borderRadius.md.all,
+                    border.sm.all,
+                    boxShadow.sm,
+                    fontWeight.md,
                     buttonProportions[buttonSize].paddingLeft,
                     buttonProportions[buttonSize].paddingRight,
                     buttonProportions[buttonSize].paddingTop,
@@ -75,7 +83,7 @@ const Button = ({
                         aria-hidden="true"
                     />
                 ) : null }
-                <p className="whitespace-nowrap">
+                <p className="tr-whitespace-nowrap">
                     { text }
                 </p>
                 { Icon && (iconPosition === HorizontalPositions.Right) ? (

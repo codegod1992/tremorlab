@@ -2,7 +2,7 @@ import React from 'react';
 
 import { GapX, GapY, MarginTop } from '../../../lib/inputTypes';
 import { GridClassesMapping, gridCols, gridColsLg, gridColsMd, gridColsSm } from './styles';
-import { classNames } from 'lib';
+import { classNames, parseGapX, parseGapY, parseMarginTop } from 'lib';
 
 export interface ColGridProps {
     numCols?: number,
@@ -45,11 +45,11 @@ const ColGrid = ({
 
     return (
         <div className={ classNames(
-            'grid',
+            'tr-grid',
             getColClassNames(),
-            gapX,
-            gapY,
-            marginTop,
+            parseGapX(gapX),
+            parseGapY(gapY),
+            parseMarginTop(marginTop),
         ) }>
             { children }
         </div>

@@ -2,20 +2,12 @@ import { ColorTypes, colorVariantMapping } from './colorVariantMapping';
 import {
     Height,
     MarginTop,
-    PaddingBottom,
-    PaddingLeft,
-    PaddingRight,
-    PaddingTop,
     Width
 } from './inputTypes';
 import { twColorsHex } from 'lib/colors';
 
 interface StringJoiner {
     (...classes: (string)[]): string
-}
-
-interface BoolClassParser {
-    (twClassName: boolean): string
 }
 
 export const classNames: StringJoiner = (
@@ -25,7 +17,7 @@ export const classNames: StringJoiner = (
 };
 
 export const getPixelsFromTwClassName = (
-    twClassName: MarginTop | PaddingLeft | PaddingRight | PaddingTop | PaddingBottom | Height | Width
+    twClassName: MarginTop | Height | Width
 ): number => {
     const classNameParts = twClassName.split('-');
     return Number(classNameParts[classNameParts.length - 1]) * 4;
@@ -48,14 +40,18 @@ export const getHexFromColorThemeValue = (colorThemeValue: string): string => {
     return hexValue;
 };
 
+interface BoolClassParser {
+    (twClassName: boolean): string
+}
+
 export const parseTruncateOption: BoolClassParser = (option) => {
-    return option===true ? 'truncate' : '';
+    return option===true ? 'tr-truncate' : '';
 };
 
 export const parseHFullOption: BoolClassParser = (option) => {
-    return option===true ? 'h-full' : '';
+    return option===true ? 'tr-h-full' : '';
 };
 
 export const parseWFullOption: BoolClassParser = (option) => {
-    return option===true ? 'w-full' : '';
+    return option===true ? 'tr-w-full' : '';
 };

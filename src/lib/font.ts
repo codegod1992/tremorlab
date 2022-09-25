@@ -1,14 +1,14 @@
 export const fontSize = {
-    xs: 'text-xs',
-    sm: 'text-sm',
-    md: 'text-base',
-    lg: 'text-lg',
-    xl: 'text-xl',
-    threeXl: 'text-3xl',
+    xs: 'tr-text-xs',
+    sm: 'tr-text-sm',
+    md: 'tr-text-base',
+    lg: 'tr-text-lg',
+    xl: 'tr-text-xl',
+    threeXl: 'tr-text-3xl',
 };
 
 export const fontWeight = {
-    sm: 'font-normal',
-    md: 'font-medium',
-    lg: 'font-semibold',
+    sm: 'tr-font-normal',
+    md: 'tr-font-medium',
+    lg: 'tr-font-semibold',
 };

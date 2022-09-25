@@ -25,7 +25,7 @@ const SelectBoxItem = ({
     <button
         onClick={ () => privateProps!.handleSelectBoxItemClick(value) }
         className={ classNames(
-            'flex items-center justify-between w-full',
+            'tr-flex tr-items-center tr-justify-between tr-w-full',
             spacing.twoXl.paddingLeft,
             spacing.twoXl.paddingRight,
             spacing.md.paddingTop,
@@ -42,17 +42,17 @@ const SelectBoxItem = ({
                 )
         ) }
     >
-        <div className="flex items-center truncate">
+        <div className="tr-flex tr-items-center tr-truncate">
             { Icon ? (
                 <Icon className={ classNames(
-                    'flex-none',
+                    'tr-flex-none',
                     sizing.lg.height,
                     sizing.lg.width,
                     spacing.lg.marginRight,
                     getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
                 ) } aria-hidden="true" />
             ) : null }
-            <p className="whitespace-nowrap truncate">
+            <p className="tr-whitespace-nowrap tr-truncate">
                 { text }
             </p>
         </div>

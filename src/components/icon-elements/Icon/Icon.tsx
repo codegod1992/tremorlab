@@ -3,7 +3,7 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { BaseColors, Sizes, classNames, isBaseColor, isValidSize } from 'lib';
+import { BaseColors, Sizes, classNames, isBaseColor, isValidSize, parseMarginTop } from 'lib';
 import { Color, IconVariant, MarginTop, Size } from '../../../lib';
 import { colors, iconSizes, shape, wrapperProportions } from './styles';
 
@@ -41,11 +41,11 @@ const Icon = ({
     const iconColors = isBaseColor(color) ? colors[iconVariant][color] : colors[iconVariant][BaseColors.Blue];
 
     return (
-        <span className={ classNames(marginTop) }>
-            <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+        <span className={ classNames(parseMarginTop(marginTop)) }>
+            <Tooltip content={ tooltip } className={ tooltip ? '' : 'tr-hidden' }>
                 <span
                     className={ classNames(
-                        'inline-flex flex-shrink-0 items-center',
+                        'tr-inline-flex tr-flex-shrink-0 tr-items-center',
                         iconColors.bgColor,
                         iconColors.textColor,
                         iconColors.borderColor,

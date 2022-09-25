@@ -3,7 +3,16 @@ import React from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
-import { BaseColors, classNames, defaultColors, getColorTheme, getColorVariantsFromColorThemeValue, sizing } from 'lib';
+import {
+    BaseColors,
+    borderRadius,
+    classNames,
+    defaultColors,
+    getColorTheme,
+    getColorVariantsFromColorThemeValue,
+    parseMarginTop,
+    sizing
+} from 'lib';
 import { Color, MarginTop } from '../../../lib';
 
 export interface MarkerBarProps {
@@ -25,26 +34,28 @@ const MarkerBar = ({
     const secondaryBgColor = getColorVariantsFromColorThemeValue(getColorTheme(color).lightBackground).bgColor;
     return(
         <div className={ classNames(
-            'relative flex items-center w-full rounded-lg',
-            marginTop,
+            'tr-relative tr-flex tr-items-center tr-w-full',
+            parseMarginTop(marginTop),
             secondaryBgColor,
             sizing.xs.height,
+            borderRadius.lg.all,
         ) }>
-            <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+            <Tooltip content={ tooltip } className={ tooltip ? '' : 'tr-hidden' }>
                 <div
                     className={ classNames(
-                        'absolute right-1/2 -translate-x-1/2',
+                        'tr-absolute tr-right-1/2 -tr-translate-x-1/2',
                         sizing.lg.width, // wide transparant wrapper for tooltip activation
                     ) }
                     style={ { 'left': `${percentageValue}%`, 'transition': showAnimation ? 'all 2s' : ''} }
                 >
                     <div
                         className={ classNames(
-                            'rounded-lg ring-2 mx-auto',
+                            'tr-ring-2 tr-mx-auto',
                             primaryBgColor,
                             getColorVariantsFromColorThemeValue(defaultColors.white).ringRolor,
                             sizing.md.height,
                             sizing.twoXs.width,
+                            borderRadius.lg.all,
                         ) }
                     />
                 </div>

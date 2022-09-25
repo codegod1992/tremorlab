@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 
-import { classNames, defaultColors, getColorVariantsFromColorThemeValue } from 'lib';
+import {
+    border,
+    borderRadius,
+    boxShadow,
+    classNames,
+    defaultColors,
+    getColorVariantsFromColorThemeValue,
+    parseMarginTop
+} from 'lib';
 import { MarginTop } from '../../../lib';
 
 export interface AccordionProps {
@@ -19,7 +27,7 @@ const Accordion = ({
     marginTop = 'mt-0',
     children,
     privateProps = {
-        shapeClassNames: 'border rounded-lg',
+        shapeClassNames: classNames(border.sm.all, borderRadius.lg.all),
     },
 }: AccordionProps) => {
 
@@ -27,12 +35,12 @@ const Accordion = ({
 
     return(
         <div className={ classNames(
-            'overflow-hidden',
-            marginTop,
+            'tr-overflow-hidden',
+            parseMarginTop(marginTop),
             getColorVariantsFromColorThemeValue(defaultColors.lightBorder).borderColor,
             getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
             privateProps!.shapeClassNames,
-            shadow ? 'shadow' : '',
+            shadow ? boxShadow.md : '',
         ) }>
             { React.Children.map(children, (child, idx) => {
                 if (idx===0) return (
@@ -47,7 +55,7 @@ const Accordion = ({
                 );
 
                 return (
-                    <div className={ isExpanded ? '' : 'hidden' }>
+                    <div className={ isExpanded ? '' : 'tr-hidden' }>
                         { child }
                     </div>
                 );

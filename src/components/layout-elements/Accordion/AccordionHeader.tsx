@@ -18,7 +18,7 @@ const AccordionHeader = ({
     return(
         <button
             className={ classNames(
-                'w-full flex items-center justify-between',
+                'tr-w-full tr-flex tr-items-center tr-justify-between',
                 spacing.threeXl.paddingLeft,
                 spacing.threeXl.paddingRight,
                 spacing.lg.paddingTop,
@@ -27,7 +27,7 @@ const AccordionHeader = ({
             onClick={ () => privateProps!.setExpanded(!privateProps!.isExpanded) }
         >
             <div className={ classNames(
-                'flex flex-1',
+                'tr-flex tr-flex-1',
                 spacing.threeXl.marginRight,
             ) }>
                 { children }
@@ -44,7 +44,16 @@ const AccordionHeader = ({
                             ) }
                         />
                     )
-                    : <ArrowDownHeadIcon className="text-gray-400 -mr-1 h-6 w-6" /> }
+                    : (
+                        <ArrowDownHeadIcon
+                            className={ classNames(
+                                getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
+                                spacing.twoXs.negativeMarginRight,
+                                sizing.xl.height,
+                                sizing.xl.width,
+                            ) }
+                        />
+                    ) }
             </div>
         </button>
     );

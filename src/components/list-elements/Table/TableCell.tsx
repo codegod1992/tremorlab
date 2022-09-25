@@ -3,9 +3,10 @@ import React from 'react';
 import { 
     TextAlignments,
     classNames,
+    parseTextAlignment,
     spacing,
 } from 'lib';
-import { TextAlignment } from '../../../lib';
+import { TextAlignment } from '../../../lib/inputTypes';
 
 export interface TableCellProps {
     textAlignment?: TextAlignment,
@@ -19,8 +20,8 @@ const TableCell = ({
     return(
         <>
             <td className={ classNames(
-                'align-middle whitespace-nowrap tabular-nums',
-                textAlignment,
+                'tr-align-middle tr-whitespace-nowrap tr-tabular-nums',
+                parseTextAlignment(textAlignment),
                 spacing.twoXl.paddingLeft,
                 spacing.twoXl.paddingRight,
                 spacing.twoXl.paddingTop,

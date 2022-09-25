@@ -1,6 +1,8 @@
 import React from 'react';
 
 import {
+    borderRadius,
+    boxShadow,
     classNames,
     defaultColors,
     fontSize,
@@ -32,7 +34,7 @@ const ToggleItem = ({
         getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
         getColorVariantsFromColorThemeValue(getColorTheme(privateProps!.color).text).textColor,
         getColorVariantsFromColorThemeValue(defaultColors.lightBorder).ringRolor,
-        'shadow-sm'
+        boxShadow.sm,
     );
     const inActiveClassNames = classNames(
         getColorVariantsFromColorThemeValue(defaultColors.transparent).bgColor,
@@ -43,12 +45,13 @@ const ToggleItem = ({
     return (
         <button
             className={classNames(
-                'flex items-center rounded-md ring-1',
+                'tr-flex tr-items-center tr-ring-1',
                 spacing.lg.paddingLeft,
                 spacing.lg.paddingRight,
                 spacing.xs.paddingTop,
                 spacing.xs.paddingBottom,
                 fontSize.sm,
+                borderRadius.md.all,
                 privateProps!.isActive ? activeClassNames : inActiveClassNames,
             )}
             onClick={ () => { privateProps!.setActiveToggleItem!(value); }}
@@ -56,7 +59,7 @@ const ToggleItem = ({
             { Icon ? (
                 <Icon
                     className={ classNames(
-                        'opacity-70',
+                        'tr-opacity-70',
                         spacing.xs.marginRight,
                         sizing.lg.height,
                         sizing.lg.width,
@@ -64,7 +67,7 @@ const ToggleItem = ({
                     aria-hidden="true"
                 />
             ) : null }
-            <span className="whitespace-nowrap truncate">{ text }</span>
+            <span className="tr-whitespace-nowrap tr-truncate">{ text }</span>
         </button>
     );
 };

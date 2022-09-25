@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { 
+    borderRadius,
     classNames,
     defaultColors,
     getColorVariantsFromColorThemeValue,
@@ -10,11 +11,12 @@ import {
 
 const Divider = () => (
     <div className={ classNames(
-        'w-full mx-auto rounded-lg',
+        'tr-w-full tr-mx-auto',
         getColorVariantsFromColorThemeValue(defaultColors.background).bgColor,
         sizing.threeXs.height,
         spacing.threeXl.marginTop,
         spacing.threeXl.marginBottom,
+        borderRadius.lg.all,
     ) }
     />
 );
