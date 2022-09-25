@@ -5,12 +5,13 @@ import Tooltip from '@tippyjs/react';
 
 import {
     DeltaTypes,
+    borderRadius,
     classNames,
     defaultColors,
     getColorVariantsFromColorThemeValue,
     mapInputsToDeltaType,
     parseMarginTop,
-    sizing
+    sizing,
 } from 'lib';
 import { MarginTop } from '../../../lib';
 import { colors } from './styles';
@@ -37,20 +38,21 @@ const DeltaBar = ({
     return(
         <div className={ classNames(parseMarginTop(marginTop)) }>
             <div className={ classNames(
-                'relative flex items-center w-full rounded-lg',
+                'relative flex items-center w-full',
                 getColorVariantsFromColorThemeValue(defaultColors.background).bgColor,
                 sizing.xs.height,
+                borderRadius.lg.all,
             ) }>
                 <div className="flex justify-end h-full w-1/2">
                     { percentageValue < 0 ? (
                         <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
                             <div 
                                 className={ classNames(
-                                    'rounded-l-full',
                                     colors[mapInputsToDeltaType(
                                         getDeltaType(percentageValue),
                                         isIncreasePositive
                                     )].bgColor,
+                                    borderRadius.full.left,
                                 ) } 
                                 style={ {
                                     'width': `${Math.abs(percentageValue)}%`,
@@ -61,11 +63,12 @@ const DeltaBar = ({
                     ) : null}
                 </div>
                 <div className={ classNames(
-                    'rounded-lg ring-2 z-10',
+                    'ring-2 z-10',
                     getColorVariantsFromColorThemeValue(defaultColors.darkBackground).bgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.white).ringRolor,
                     sizing.md.height,
                     sizing.twoXs.width,
+                    borderRadius.lg.all,
                 ) }
                 />
                 <div className="flex justify-start h-full w-1/2">
@@ -73,11 +76,11 @@ const DeltaBar = ({
                         <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
                             <div
                                 className={ classNames(
-                                    'rounded-r-full',
                                     colors[mapInputsToDeltaType(
                                         getDeltaType(percentageValue),
                                         isIncreasePositive
                                     )].bgColor,
+                                    borderRadius.full.right,
                                 ) } 
                                 style={ {
                                     'width': `${Math.abs(percentageValue)}%`,

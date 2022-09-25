@@ -2,6 +2,8 @@ import React from 'react';
 
 import { 
     BaseColors,
+    border,
+    borderRadius,
     classNames,
     fontSize,
     fontWeight,
@@ -33,7 +35,7 @@ const Callout = ({
 }: CalloutProps) => {
     return(
         <div className={ classNames(
-            'relative rounded-md border-l-4',
+            'relative',
             parseMarginTop(marginTop),
             getColorVariantsFromColorThemeValue(getColorTheme(color).canvasBackground).bgColor,
             getColorVariantsFromColorThemeValue(getColorTheme(color).darkBorder).borderColor,
@@ -42,6 +44,8 @@ const Callout = ({
             spacing.lg.paddingTop,
             spacing.lg.paddingBottom,
             fontSize.sm,
+            borderRadius.md.all,
+            border.lg.left,
         ) }
         >
             <div className={ classNames(

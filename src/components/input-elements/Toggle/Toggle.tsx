@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import {
     BaseColors,
+    borderRadius,
     classNames,
     defaultColors,
     getColorVariantsFromColorThemeValue,
@@ -34,13 +35,14 @@ const Toggle = ({
 
     return (
         <div className={ classNames(
-            'flex-nowrap inline-flex justify-start rounded-md',
+            'flex-nowrap inline-flex justify-start',
             getColorVariantsFromColorThemeValue(defaultColors.lightBackground).bgColor,
             parseMarginTop(marginTop),
             spacing.twoXs.paddingLeft,
             spacing.twoXs.paddingRight,
             spacing.twoXs.paddingTop,
             spacing.twoXs.paddingBottom,
+            borderRadius.md.all
         ) }
         >
             { React.Children.map(children, (child) => (

@@ -2,6 +2,7 @@ import React from 'react';
 
 import {
     BaseColors,
+    borderRadius,
     classNames,
     defaultColors,
     defaultValueFormatter,
@@ -61,9 +62,10 @@ const BarList = ({
                     <div
                         key={ item.value }
                         className={ classNames(
-                            'flex items-center rounded-sm',
+                            'flex items-center',
                             rowHeight,
                             getColorVariantsFromColorThemeValue(getColorTheme(color).lightBackground).bgColor,
+                            borderRadius.sm.all,
                             idx === data.length - 1 ? spacing.none.marginBottom : spacing.sm.marginBottom,
                         ) }
                         style={ { 'width': `${widths[idx]}%`, 'transition': showAnimation ? 'all 2s' : '' } }

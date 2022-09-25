@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {
+    borderRadius,
     classNames,
     defaultColors,
     fontSize,
@@ -43,12 +44,13 @@ const ToggleItem = ({
     return (
         <button
             className={classNames(
-                'flex items-center rounded-md ring-1',
+                'flex items-center ring-1',
                 spacing.lg.paddingLeft,
                 spacing.lg.paddingRight,
                 spacing.xs.paddingTop,
                 spacing.xs.paddingBottom,
                 fontSize.sm,
+                borderRadius.md.all,
                 privateProps!.isActive ? activeClassNames : inActiveClassNames,
             )}
             onClick={ () => { privateProps!.setActiveToggleItem!(value); }}

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {
+    border,
     classNames,
     defaultColors,
     fontSize,
@@ -29,7 +30,7 @@ const Tab = ({
     const activeClassNames = classNames(
         getColorVariantsFromColorThemeValue(getColorTheme(privateProps!.color).text).textColor,
         getColorVariantsFromColorThemeValue(getColorTheme(privateProps!.color).darkBorder).borderColor,
-        'border-b-2'
+        border.md.left,
     );
     const inActiveClassNames = classNames(
         getColorVariantsFromColorThemeValue(defaultColors.transparent).borderColor,

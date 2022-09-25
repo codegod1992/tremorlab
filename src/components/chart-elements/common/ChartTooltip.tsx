@@ -2,8 +2,11 @@ import React from 'react';
 
 import { Color, ValueFormatter } from '../../../lib';
 import {
+    border,
+    borderRadius,
     classNames,
     defaultColors,
+    fontSize,
     fontWeight,
     getColorTheme,
     getColorVariantsFromColorThemeValue,
@@ -21,8 +24,11 @@ const ChartTooltipRow = ({ value, name, color }: ChartTooltipRowProps) => (
     <div className="flex items-center justify-between space-x-8">
         <div className="flex items-center space-x-2">
             <span className={ classNames(
+                'w-3 h-3 shadow',
                 getColorVariantsFromColorThemeValue(getColorTheme(color).background).bgColor,
-                'w-3 h-3 rounded-full border-2 border-white shadow'
+                getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
+                borderRadius.full.all,
+                border.md.all,
             ) } />
             <p className={ classNames(
                 getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
@@ -51,15 +57,20 @@ export interface ChartTooltipProps {
 const ChartTooltip = ({ active, payload, label, colors = themeColorRange, valueFormatter }: ChartTooltipProps) => {
     if (active && payload) {
         return (
-            <div className="bg-white border text-sm shadow-lg rounded-md">
+            <div className={ classNames(
+                'shadow-lg',
+                getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
+                fontSize.sm,
+                borderRadius.md.all,
+                border.sm.all,
+            ) }>
                 <div className={ classNames(
-                    getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.lightBorder).borderColor,
                     spacing.twoXl.paddingLeft,
                     spacing.twoXl.paddingRight,
                     spacing.sm.paddingTop,
                     spacing.sm.paddingBottom,
-                    'border-b'
+                    border.sm.bottom,
                 ) }>
                     <p className={ classNames(
                         getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,

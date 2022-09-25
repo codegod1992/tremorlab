@@ -5,6 +5,7 @@ import Tooltip from '@tippyjs/react';
 
 import {
     BaseColors,
+    borderRadius,
     classNames,
     defaultColors,
     getColorTheme,
@@ -33,10 +34,11 @@ const MarkerBar = ({
     const secondaryBgColor = getColorVariantsFromColorThemeValue(getColorTheme(color).lightBackground).bgColor;
     return(
         <div className={ classNames(
-            'relative flex items-center w-full rounded-lg',
+            'relative flex items-center w-full',
             parseMarginTop(marginTop),
             secondaryBgColor,
             sizing.xs.height,
+            borderRadius.lg.all,
         ) }>
             <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
                 <div
@@ -48,11 +50,12 @@ const MarkerBar = ({
                 >
                     <div
                         className={ classNames(
-                            'rounded-lg ring-2 mx-auto',
+                            'ring-2 mx-auto',
                             primaryBgColor,
                             getColorVariantsFromColorThemeValue(defaultColors.white).ringRolor,
                             sizing.md.height,
                             sizing.twoXs.width,
+                            borderRadius.lg.all,
                         ) }
                     />
                 </div>

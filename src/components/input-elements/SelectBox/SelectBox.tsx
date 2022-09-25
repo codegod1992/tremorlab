@@ -4,6 +4,8 @@ import { ArrowDownHeadIcon } from 'assets';
 
 import { MarginTop, MaxWidth } from '../../../lib/inputTypes';
 import {
+    border,
+    borderRadius,
     classNames,
     defaultColors,
     fontSize,
@@ -75,14 +77,16 @@ const SelectBox = ({
 
     return (
         <div ref={ dropdownRef } className={ classNames(
-            'relative w-full min-w-[10rem] rounded-md shadow-sm border',
+            'relative w-full min-w-[10rem] shadow-sm',
             parseMaxWidth(maxWidth),
             getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
             parseMarginTop(marginTop),
+            borderRadius.md.all,
+            border.sm.all,
         ) }>
             <input
                 className={ classNames(
-                    'w-full rounded-md border-0 focus:ring-2 focus:outline-0',
+                    'w-full focus:ring-2 focus:outline-0',
                     getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
@@ -92,6 +96,8 @@ const SelectBox = ({
                     spacing.sm.paddingBottom,
                     fontSize.sm,
                     fontWeight.md,
+                    borderRadius.md.all,
+                    border.none.all,
                     'placeholder:text-gray-500',
                     'pr-10' // avoid text overflow at arrow down icon
                 ) }

@@ -4,6 +4,8 @@ import { ArrowDownHeadIcon } from 'assets';
 
 import { MarginTop, MaxWidth } from '../../../lib/inputTypes';
 import {
+    border,
+    borderRadius,
     classNames,
     defaultColors,
     fontSize,
@@ -59,15 +61,17 @@ const Dropwdown = ({
         <div
             ref={ dropdownRef }
             className={ classNames(
-                'relative w-full min-w-[10rem] rounded-md shadow-sm border',
+                'relative w-full min-w-[10rem] shadow-sm',
                 parseMaxWidth(maxWidth),
                 getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
                 parseMarginTop(marginTop),
+                borderRadius.md.all,
+                border.sm.all,
             ) }
         >
             <button
                 className={ classNames(
-                    'flex justify-between items-center w-full rounded-md',
+                    'flex justify-between items-center w-full',
                     'focus:ring-2 focus:outline-0',
                     getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
@@ -76,6 +80,7 @@ const Dropwdown = ({
                     spacing.twoXl.paddingRight,
                     spacing.sm.paddingTop,
                     spacing.sm.paddingBottom,
+                    borderRadius.md.all,
                 ) }
                 onClick={ () => setShowModal(!showModal) }
             >

@@ -5,6 +5,7 @@ import Tooltip from '@tippyjs/react';
 
 import {
     BaseColors,
+    borderRadius,
     classNames,
     defaultColors,
     fontSize,
@@ -44,15 +45,17 @@ const ProgressBar = ({
             )
         }>
             <div className={ classNames(
-                'relative flex items-center w-full rounded-lg',
+                'relative flex items-center w-full',
                 secondaryBgColor,
                 sizing.xs.height,
+                borderRadius.lg.all,
             ) }>
                 <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
                     <div 
                         className={ classNames(
                             primaryBgColor,
-                            'flex-col h-full rounded-lg'
+                            'flex-col h-full',
+                            borderRadius.lg.all,
                         ) }
                         style={ {'width': `${percentageValue}%`, 'transition': showAnimation ? 'all 2s' : ''} }
                     />

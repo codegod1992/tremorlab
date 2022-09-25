@@ -3,6 +3,8 @@ import React from 'react';
 import { BaseColors, HorizontalPositions, VerticalPositions } from 'lib/primitives';
 import { Color, HorizontalPosition, MarginTop, MaxWidth, VerticalPosition } from '../../../lib';
 import {
+    border,
+    borderRadius,
     classNames,
     defaultColors,
     getColorTheme,
@@ -17,13 +19,13 @@ const parseDecorationAlignment = (decorationAlignment: string) => {
     if (!decorationAlignment) return '';
     switch(decorationAlignment) {
     case HorizontalPositions.Left:
-        return 'border-l-4';
+        return border.lg.left;
     case VerticalPositions.Top:
-        return 'border-t-4';
+        return border.lg.top;
     case HorizontalPositions.Right:
-        return 'border-r-4';
+        return border.lg.right;
     case VerticalPositions.Bottom:
-        return 'border-b-4';
+        return border.lg.bottom;
     default:
         return '';
     }
@@ -50,7 +52,7 @@ const Card = ({
 }: CardProps) => {
     return(
         <div className={ classNames(
-            'relative w-full mx-auto text-left rounded-lg ring-1',
+            'relative w-full mx-auto text-left ring-1',
             parseMarginTop(marginTop),
             parseHFullOption(hFull),
             parseMaxWidth(maxWidth),
@@ -63,6 +65,7 @@ const Card = ({
             spacing.threeXl.paddingRight,
             spacing.threeXl.paddingTop,
             spacing.threeXl.paddingBottom,
+            borderRadius.lg.all,
         ) }
         >
             { children }

@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 
-import { classNames, defaultColors, getColorVariantsFromColorThemeValue, parseMarginTop } from 'lib';
+import {
+    border,
+    borderRadius,
+    classNames,
+    defaultColors,
+    getColorVariantsFromColorThemeValue,
+    parseMarginTop
+} from 'lib';
 import { MarginTop } from '../../../lib';
 
 export interface AccordionProps {
@@ -19,7 +26,7 @@ const Accordion = ({
     marginTop = 'mt-0',
     children,
     privateProps = {
-        shapeClassNames: 'border rounded-lg',
+        shapeClassNames: classNames(border.sm.all, borderRadius.lg.all),
     },
 }: AccordionProps) => {
 

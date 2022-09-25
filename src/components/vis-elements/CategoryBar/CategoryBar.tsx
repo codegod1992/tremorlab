@@ -4,7 +4,8 @@ import 'tippy.js/dist/tippy.css';
 import Tooltip from '@tippyjs/react';
 
 import { Color, MarginTop } from '../../../lib';
-import { 
+import {
+    borderRadius,
     classNames,
     defaultColors,
     fontSize,
@@ -94,16 +95,18 @@ const CategoryBar = ({
         <div className={ classNames(parseMarginTop(marginTop)) }>
             { showLabels ? <BarLabels categoryPercentageValues={ categoryPercentageValues } /> : null }
             <div className={ classNames(
-                'relative flex items-center w-full rounded-lg',
+                'relative flex items-center w-full',
                 sizing.xs.height,
                 spacing.threeXs.spaceX,
+                borderRadius.lg.all,
             ) }
             >
                 {categoryPercentageValues.map((percentageValue, idx) => {
                     return(
                         <div key={ `item-${idx}` } style={ { width: `${percentageValue}%` } } className={ classNames(
-                            'h-full rounded-md',
+                            'h-full',
                             getColorVariantsFromColorThemeValue(getColorTheme(colors[idx]).background).bgColor,
+                            borderRadius.md.all,
                         ) }
                         />
                     );
@@ -119,11 +122,12 @@ const CategoryBar = ({
                         >
                             <div
                                 className={ classNames(
-                                    'rounded-lg ring-2 mx-auto',
+                                    'ring-2 mx-auto',
                                     markerBgColor,
                                     getColorVariantsFromColorThemeValue(defaultColors.white).ringRolor,
                                     sizing.md.height,
                                     sizing.twoXs.width,
+                                    borderRadius.lg.all,
                                 ) }
                             />
                         </div>

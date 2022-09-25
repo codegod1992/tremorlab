@@ -6,6 +6,7 @@ import Tooltip from '@tippyjs/react';
 import {
     BaseColors,
     Sizes,
+    borderRadius,
     classNames,
     getColorTheme,
     getColorVariantsFromColorThemeValue,
@@ -38,9 +39,10 @@ const Badge = ({
         <div className={ classNames( parseMarginTop(marginTop)) }>
             <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
                 <span className={ classNames(
-                    'flex-shrink-0 inline-flex justify-center items-center rounded-full',
+                    'flex-shrink-0 inline-flex justify-center items-center',
                     getColorVariantsFromColorThemeValue(getColorTheme(color).text).textColor,
                     getColorVariantsFromColorThemeValue(getColorTheme(color).lightBackground).bgColor,
+                    borderRadius.full.all,
                     badgeProportions[badgeSize].paddingLeft,
                     badgeProportions[badgeSize].paddingRight,
                     badgeProportions[badgeSize].paddingTop,

@@ -5,6 +5,7 @@ import Tooltip from '@tippyjs/react';
 
 import {
     BaseColors,
+    borderRadius,
     classNames,
     defaultColors,
     getColorTheme,
@@ -37,16 +38,18 @@ const RangeBar = ({
 }: RangeBarProps) => {
     return(
         <div className={ classNames(
-            'relative flex items-center w-full rounded-lg',
+            'relative flex items-center w-full',
             parseMarginTop(marginTop),
             getColorVariantsFromColorThemeValue(defaultColors.lightBackground).bgColor,
             sizing.xs.height,
+            borderRadius.lg.all,
         ) }>
             <Tooltip content={ rangeTooltip } className={ rangeTooltip ? '' : 'hidden' }>
                 <div
                     className={ classNames(
-                        'absolute h-full rounded-lg',
+                        'absolute h-full',
                         getColorVariantsFromColorThemeValue(defaultColors.darkBackground).bgColor,
+                        borderRadius.lg.all,
                     ) }
                     style={ {
                         'left': `${minPercentageValue}%`,
@@ -65,11 +68,12 @@ const RangeBar = ({
                 >
                     <div
                         className={ classNames(
-                            'rounded-lg ring-2 mx-auto',
+                            'ring-2 mx-auto',
                             getColorVariantsFromColorThemeValue(getColorTheme(color).background).bgColor,
                             getColorVariantsFromColorThemeValue(defaultColors.white).ringRolor,
                             sizing.md.height,
                             sizing.twoXs.width,
+                            borderRadius.lg.all,
                         ) }
                     />
                 </div>

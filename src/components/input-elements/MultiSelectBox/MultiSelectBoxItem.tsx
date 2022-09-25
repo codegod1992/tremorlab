@@ -2,6 +2,8 @@ import React from 'react';
 
 import {
     BaseColors,
+    border,
+    borderRadius,
     classNames,
     defaultColors,
     fontSize,
@@ -41,11 +43,13 @@ const MultiSelectBoxItem = ({
             <input
                 type="checkbox"
                 className={ classNames(
-                    'flex-none focus:ring-none focus:outline-none border rounded cursor-pointer',
+                    'flex-none focus:ring-none focus:outline-none cursor-pointer',
                     getColorVariantsFromColorThemeValue(defaultColors.lightRing).focusRingColor,
                     getColorVariantsFromColorThemeValue(getColorTheme(BaseColors.Blue).text).textColor,
                     getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
                     spacing.lg.marginRight,
+                    borderRadius.sm.all,
+                    border.sm.all,
                 ) }
                 checked={ privateProps!.isActive }
                 readOnly={ true }

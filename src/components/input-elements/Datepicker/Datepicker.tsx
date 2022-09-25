@@ -14,8 +14,16 @@ import {
 } from 'date-fns';
 
 import { ArrowDownHeadIcon, ArrowLeftHeadIcon, ArrowRightHeadIcon, CalendarIcon } from 'assets';
-import { BaseColors, classNames, getColorVariantsFromColorThemeValue, parseMarginTop, parseMaxWidth } from 'lib';
+import {
+    BaseColors,
+    border,
+    classNames,
+    getColorVariantsFromColorThemeValue,
+    parseMarginTop,
+    parseMaxWidth
+} from 'lib';
 import { Color, MarginTop, MaxWidth } from '../../../lib/inputTypes';
+import { borderRadius, defaultColors, fontSize, fontWeight, sizing, spacing } from 'lib';
 import {
     colStartClasses,
     displaySelected,
@@ -27,7 +35,6 @@ import {
     previousMonth,
     relativeFilterOptions
 } from 'components/input-elements/Datepicker/utils';
-import { defaultColors, fontSize, fontWeight, sizing, spacing } from 'lib';
 import Modal from 'components/layout-elements/Modal';
 
 export interface DatepickerProps {
@@ -133,18 +140,19 @@ const Datepicker = ({
             parseMaxWidth(maxWidth),
         ) }>
             <div className={ classNames(
-                'flex items-center justify-between rounded-md shadow-sm',
+                'flex items-center justify-between shadow-sm',
                 getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
                 getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
+                borderRadius.md.all,
             ) }
             >
                 <button
                     ref={ datePickerRef }
                     onClick={ () => setShowDatePickerModal(!showDatePickerModal) }
                     className={ classNames(
-                        'flex items-center w-full truncate rounded-l-md border',
+                        'flex items-center w-full truncate',
                         'focus:ring-2 focus:outline-none focus:z-10',
-                        enableRelativeDates ? 'border-r-0' : 'rounded-r-md border-r',
+                        enableRelativeDates ? border.none.right : classNames(borderRadius.md.right, border.sm.right),
                         getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
                         getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
                         getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
@@ -152,6 +160,8 @@ const Datepicker = ({
                         spacing.twoXl.paddingRight,
                         spacing.sm.paddingTop,
                         spacing.sm.paddingBottom,
+                        borderRadius.md.left,
+                        border.sm.all,
                     ) }
                 >
                     <CalendarIcon
@@ -181,7 +191,7 @@ const Datepicker = ({
                         ref={ dropdownRef }
                         onClick={ () => setShowDropdownModal(!showDropdownModal) }
                         className={ classNames(
-                            'inline-flex justify-between w-48 truncate rounded-r-md border',
+                            'inline-flex justify-between w-48 truncate',
                             'focus:ring-2 focus:outline-none',
                             getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
                             getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
@@ -191,6 +201,8 @@ const Datepicker = ({
                             spacing.px.negativeMarginLeft,
                             spacing.sm.paddingTop,
                             spacing.sm.paddingBottom,
+                            borderRadius.md.right,
+                            border.sm.all,
                         ) }
                     >
                         <p className={ classNames(
@@ -247,7 +259,7 @@ const Datepicker = ({
                             type="button"
                             onClick={() => previousMonth(firstDayCurrentMonth, setCurrentMonth)}
                             className={ classNames(
-                                'inline-flex border rounded shadow-sm focus:outline-none focus:ring-2',
+                                'inline-flex shadow-sm focus:outline-none focus:ring-2',
                                 getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
                                 getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
                                 getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
@@ -257,6 +269,8 @@ const Datepicker = ({
                                 spacing.twoXs.paddingBottom,
                                 fontSize.sm,
                                 fontWeight.md,
+                                borderRadius.sm.all,
+                                border.sm.all,
                             ) }
                         >
                             <ArrowLeftHeadIcon
@@ -275,7 +289,7 @@ const Datepicker = ({
                             onClick={() => nextMonth(firstDayCurrentMonth, setCurrentMonth)}
                             type="button"
                             className={ classNames(
-                                'inline-flex border rounded shadow-sm focus:outline-none focus:ring-2',
+                                'inline-flex shadow-sm focus:outline-none focus:ring-2',
                                 getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
                                 getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
                                 getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
@@ -285,6 +299,8 @@ const Datepicker = ({
                                 spacing.twoXs.paddingBottom,
                                 fontSize.sm,
                                 fontWeight.md,
+                                borderRadius.sm.all,
+                                border.sm.all,
                             ) }
                         >
                             <ArrowRightHeadIcon
