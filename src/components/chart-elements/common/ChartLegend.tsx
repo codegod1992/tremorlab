@@ -6,7 +6,7 @@ import { themeColorRange } from 'lib';
 
 const ChartLegend = ({ payload }: any, colors: Color[] = themeColorRange) => {
     return (
-        <div className="flex items-center justify-end">
+        <div className="tr-flex tr-items-center tr-justify-end">
             <Legend
                 categories={payload.map((entry: any) => entry.value)}
                 colors={ colors }

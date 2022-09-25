@@ -11,6 +11,7 @@ import {
     fontWeight,
     getColorTheme,
     getColorVariantsFromColorThemeValue,
+    sizing,
     spacing,
     themeColorRange
 } from 'lib';
@@ -22,26 +23,27 @@ export interface ChartTooltipRowProps {
 }
 
 const ChartTooltipRow = ({ value, name, color }: ChartTooltipRowProps) => (
-    <div className="flex items-center justify-between space-x-8">
-        <div className="flex items-center space-x-2">
+    <div className="tr-flex tr-items-center tr-justify-between tr-space-x-8">
+        <div className="tr-flex tr-items-center tr-space-x-2">
             <span className={ classNames(
-                'w-3 h-3',
                 getColorVariantsFromColorThemeValue(getColorTheme(color).background).bgColor,
                 getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
+                sizing.sm.height,
+                sizing.sm.width,
                 borderRadius.full.all,
                 border.md.all,
                 boxShadow.md,
             ) } />
             <p className={ classNames(
                 getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
-                'font-medium tabular-nums text-right'
+                'tr-font-medium tr-tabular-nums tr-text-right'
             ) }>
                 { value }
             </p>
         </div>
         <p className={ classNames(
             getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
-            'font-normal'
+            fontWeight.sm,
         ) }>
             { name }
         </p>
@@ -87,7 +89,7 @@ const ChartTooltip = ({ active, payload, label, colors = themeColorRange, valueF
                     spacing.twoXl.paddingRight,
                     spacing.sm.paddingTop,
                     spacing.sm.paddingBottom,
-                    'space-y-1',
+                    'tr-space-y-1',
                 ) }>
                     {
                         payload.map(({value, name}: { value: number, name: string }, idx: number) => (

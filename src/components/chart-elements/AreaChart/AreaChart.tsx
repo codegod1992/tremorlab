@@ -44,7 +44,7 @@ const AreaChart = ({
     height = 'h-80',
     marginTop = 'mt-0',
 }: BaseChartProps) => (
-    <div className={ classNames('w-full', parseHeight(height), parseMarginTop(marginTop)) }>
+    <div className={ classNames('tr-w-full', parseHeight(height), parseMarginTop(marginTop)) }>
         <ResponsiveContainer width="100%" height="100%">
             <ReChartsAreaChart data={ data }>
                 { showGridLines ? (
