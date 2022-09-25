@@ -7,13 +7,13 @@ import {
     Sizes,
     border,
     borderRadius,
+    boxShadow,
     classNames,
     isBaseColor,
     isValidImportance,
     isValidSize,
     parseMarginTop,
     spacing,
-    boxShadow,
 } from 'lib';
 import { Color, HorizontalPosition, Importance, MarginTop, Size } from '../../../lib';
 import {
