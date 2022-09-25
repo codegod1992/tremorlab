@@ -33,7 +33,7 @@
 <br>
 <br>
 
-![Tremor Banner](images/banner2.png)
+![Tremor Banner](images/banner3.png)
 
 <br>
 <br>
