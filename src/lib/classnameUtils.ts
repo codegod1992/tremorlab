@@ -14,10 +14,6 @@ interface StringJoiner {
     (...classes: (string)[]): string
 }
 
-interface BoolClassParser {
-    (twClassName: boolean): string
-}
-
 export const classNames: StringJoiner = (
     ...classes: string[]
 ): string => {
@@ -47,6 +43,10 @@ export const getHexFromColorThemeValue = (colorThemeValue: string): string => {
     const hexValue = twColorsHex[baseColor][500];
     return hexValue;
 };
+
+interface BoolClassParser {
+    (twClassName: boolean): string
+}
 
 export const parseTruncateOption: BoolClassParser = (option) => {
     return option===true ? 'tr-truncate' : '';
