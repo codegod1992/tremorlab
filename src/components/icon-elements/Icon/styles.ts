@@ -3,6 +3,7 @@ import {
     Sizing,
     border,
     borderRadius,
+    boxShadow,
     defaultColors,
     getColorTheme,
     getColorVariantsFromColorThemeValue,
@@ -97,7 +98,7 @@ export const shape: {[style: string]: ShapeTypes} = {
         rounded: borderRadius.lg.all,
         border: border.sm.all,
         ring: '',
-        shadow: 'shadow',
+        shadow: boxShadow.md,
     },
     'solid': {
         rounded: borderRadius.lg.all,

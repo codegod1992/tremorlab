@@ -5,6 +5,7 @@ import { MarginTop, MaxWidth } from '../../../lib/inputTypes';
 import {
     border,
     borderRadius,
+    boxShadow,
     classNames,
     defaultColors,
     fontSize,
@@ -93,12 +94,13 @@ const MultiSelectBox = ({
         <div
             ref={ dropdownRef }
             className={ classNames(
-                'relative w-full min-w-[10rem] shadow-sm',
+                'relative w-full min-w-[10rem]',
                 parseMaxWidth(maxWidth),
                 getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
                 parseMarginTop(marginTop),
                 borderRadius.md.all,
                 border.sm.all,
+                boxShadow.sm,
             ) }
         >
             <button

@@ -13,6 +13,7 @@ import {
     isValidSize,
     parseMarginTop,
     spacing,
+    boxShadow,
 } from 'lib';
 import { Color, HorizontalPosition, Importance, MarginTop, Size } from '../../../lib';
 import {
@@ -53,9 +54,9 @@ const Button = ({
                 className={ classNames(
                     'flex-shrink-0 inline-flex items-center group font-medium',
                     'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-transparent',
-                    'shadow-sm',
                     borderRadius.md.all,
                     border.sm.all,
+                    boxShadow.sm,
                     buttonProportions[buttonSize].paddingLeft,
                     buttonProportions[buttonSize].paddingRight,
                     buttonProportions[buttonSize].paddingTop,

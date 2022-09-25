@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import {
     border,
     borderRadius,
+    boxShadow,
     classNames,
     defaultColors,
     getColorVariantsFromColorThemeValue,
@@ -39,7 +40,7 @@ const Accordion = ({
             getColorVariantsFromColorThemeValue(defaultColors.lightBorder).borderColor,
             getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
             privateProps!.shapeClassNames,
-            shadow ? 'shadow' : '',
+            shadow ? boxShadow.md : '',
         ) }>
             { React.Children.map(children, (child, idx) => {
                 if (idx===0) return (

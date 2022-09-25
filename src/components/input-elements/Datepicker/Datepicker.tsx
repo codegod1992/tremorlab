@@ -17,6 +17,7 @@ import { ArrowDownHeadIcon, ArrowLeftHeadIcon, ArrowRightHeadIcon, CalendarIcon 
 import {
     BaseColors,
     border,
+    boxShadow,
     classNames,
     getColorVariantsFromColorThemeValue,
     parseMarginTop,
@@ -140,10 +141,11 @@ const Datepicker = ({
             parseMaxWidth(maxWidth),
         ) }>
             <div className={ classNames(
-                'flex items-center justify-between shadow-sm',
+                'flex items-center justify-between',
                 getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
                 getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
                 borderRadius.md.all,
+                boxShadow.sm,
             ) }
             >
                 <button
@@ -259,7 +261,7 @@ const Datepicker = ({
                             type="button"
                             onClick={() => previousMonth(firstDayCurrentMonth, setCurrentMonth)}
                             className={ classNames(
-                                'inline-flex shadow-sm focus:outline-none focus:ring-2',
+                                'inline-flex focus:outline-none focus:ring-2',
                                 getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
                                 getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
                                 getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
@@ -271,6 +273,7 @@ const Datepicker = ({
                                 fontWeight.md,
                                 borderRadius.sm.all,
                                 border.sm.all,
+                                boxShadow.sm,
                             ) }
                         >
                             <ArrowLeftHeadIcon
@@ -289,7 +292,7 @@ const Datepicker = ({
                             onClick={() => nextMonth(firstDayCurrentMonth, setCurrentMonth)}
                             type="button"
                             className={ classNames(
-                                'inline-flex shadow-sm focus:outline-none focus:ring-2',
+                                'inline-flex focus:outline-none focus:ring-2',
                                 getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
                                 getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
                                 getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
@@ -301,6 +304,7 @@ const Datepicker = ({
                                 fontWeight.md,
                                 borderRadius.sm.all,
                                 border.sm.all,
+                                boxShadow.sm,
                             ) }
                         >
                             <ArrowRightHeadIcon

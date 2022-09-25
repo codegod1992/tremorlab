@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { border, borderRadius, classNames, parseMarginTop } from 'lib';
+import { border, borderRadius, boxShadow, classNames, parseMarginTop } from 'lib';
 import { MarginTop } from '../../../lib';
 
 export interface AccordionListProps {
@@ -20,7 +20,7 @@ const AccordionList = ({
         <div className={ classNames(
             parseMarginTop(marginTop),
             borderRadius.lg.all,
-            shadow ? 'shadow' : '',
+            shadow ? boxShadow.md : '',
         ) }>
             { React.Children.map(children, (child, idx) => {
                 if (idx === 0) {
@@ -29,12 +29,12 @@ const AccordionList = ({
                             { React.cloneElement(child, {
                                 privateProps: {
                                     shapeClassNames: classNames(
-                                        'shadow-none',
                                         borderRadius.lg.top,
                                         border.sm.left,
                                         border.sm.top,
                                         border.sm.right,
                                         border.sm.bottom,
+                                        boxShadow.none,
                                     ),
                                 },
                             }) }
@@ -47,11 +47,11 @@ const AccordionList = ({
                             { React.cloneElement(child, {
                                 privateProps: {
                                     shapeClassNames: classNames(
-                                        'shadow-none',
                                         borderRadius.lg.bottom,
                                         border.sm.left,
                                         border.sm.right,
                                         border.sm.bottom,
+                                        boxShadow.none,
                                     ),
                                 },
                             }) }
@@ -63,10 +63,10 @@ const AccordionList = ({
                         { React.cloneElement(child, { 
                             privateProps: {
                                 shapeClassNames:  classNames(
-                                    'shadow-none',
                                     border.sm.left,
                                     border.sm.right,
                                     border.sm.bottom,
+                                    boxShadow.none,
                                 ),
                             },
                         }) }

@@ -5,6 +5,7 @@ import { Color, HorizontalPosition, MarginTop, MaxWidth, VerticalPosition } from
 import {
     border,
     borderRadius,
+    boxShadow,
     classNames,
     defaultColors,
     getColorTheme,
@@ -57,7 +58,7 @@ const Card = ({
             parseHFullOption(hFull),
             parseMaxWidth(maxWidth),
             getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
-            shadow ? 'shadow' : '',
+            shadow ? boxShadow.md : '',
             getColorVariantsFromColorThemeValue(getColorTheme(decorationColor).border).borderColor,
             getColorVariantsFromColorThemeValue(defaultColors.lightBorder).ringRolor,
             parseDecorationAlignment(decoration),

@@ -2,6 +2,7 @@ import React from 'react';
 
 import {
     borderRadius,
+    boxShadow,
     classNames,
     defaultColors,
     fontSize,
@@ -33,7 +34,7 @@ const ToggleItem = ({
         getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
         getColorVariantsFromColorThemeValue(getColorTheme(privateProps!.color).text).textColor,
         getColorVariantsFromColorThemeValue(defaultColors.lightBorder).ringRolor,
-        'shadow-sm'
+        boxShadow.sm,
     );
     const inActiveClassNames = classNames(
         getColorVariantsFromColorThemeValue(defaultColors.transparent).bgColor,

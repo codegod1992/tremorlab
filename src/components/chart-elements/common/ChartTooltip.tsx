@@ -4,6 +4,7 @@ import { Color, ValueFormatter } from '../../../lib';
 import {
     border,
     borderRadius,
+    boxShadow,
     classNames,
     defaultColors,
     fontSize,
@@ -24,11 +25,12 @@ const ChartTooltipRow = ({ value, name, color }: ChartTooltipRowProps) => (
     <div className="flex items-center justify-between space-x-8">
         <div className="flex items-center space-x-2">
             <span className={ classNames(
-                'w-3 h-3 shadow',
+                'w-3 h-3',
                 getColorVariantsFromColorThemeValue(getColorTheme(color).background).bgColor,
                 getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
                 borderRadius.full.all,
                 border.md.all,
+                boxShadow.md,
             ) } />
             <p className={ classNames(
                 getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
@@ -58,11 +60,11 @@ const ChartTooltip = ({ active, payload, label, colors = themeColorRange, valueF
     if (active && payload) {
         return (
             <div className={ classNames(
-                'shadow-lg',
                 getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
                 fontSize.sm,
                 borderRadius.md.all,
                 border.sm.all,
+                boxShadow.lg,
             ) }>
                 <div className={ classNames(
                     getColorVariantsFromColorThemeValue(defaultColors.lightBorder).borderColor,

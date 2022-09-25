@@ -36,8 +36,7 @@ export const borderRadius = {
     },
 };
 
-
-export const shadow = {
+export const boxShadow = {
     none: 'tr-shadow-none',
     sm: 'tr-shadow-sm',
     md: 'tr-shadow',
