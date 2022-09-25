@@ -26,7 +26,7 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
 const Template: ComponentStory<typeof Card> = () => (
-    <div className="grid grid-cols-3 gap-x-3">
+    <div className="tr-grid tr-grid-cols-3 tr-gap-x-3">
         <Card>
             <Flex>
                 <Title>

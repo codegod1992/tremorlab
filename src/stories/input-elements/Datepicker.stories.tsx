@@ -12,7 +12,7 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 
 const Template: ComponentStory<typeof Datepicker> = () => (
-    <div className="flex justify-end">
+    <div className="tr-flex tr-justify-end">
         <Datepicker
             maxWidth="max-w-sm"
             handleSelect={ (startDate: Date, endDate: Date) => console.log(startDate, endDate) }

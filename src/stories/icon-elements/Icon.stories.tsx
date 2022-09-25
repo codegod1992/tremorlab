@@ -21,12 +21,12 @@ const MyIcon = ArrowUpIcon;
 
 const Template: ComponentStory<never> = () => (
     <>
-        <div className="mb-5">
+        <div className="tr-mb-5">
             <Title>
                 Icon Simple
             </Title>
             <p>Sizes</p>
-            <div className="grid grid-cols-8 justify-items-start gap-y-2">
+            <div className="tr-grid tr-grid-cols-8 tr-justify-start tr-gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     return(
                         <Icon
@@ -39,7 +39,7 @@ const Template: ComponentStory<never> = () => (
                 })}
             </div>
             <p>Colors</p>
-            <div className="grid grid-cols-8">
+            <div className="tr-grid tr-grid-cols-8">
                 {Object.keys(BaseColors).map(key => {
                     console.log(BaseColors[key]);
                     return(
@@ -48,12 +48,12 @@ const Template: ComponentStory<never> = () => (
                 })}
             </div>
         </div>
-        <div className="mb-5">
+        <div className="tr-mb-5">
             <Title>
                 Icon Light
             </Title>
             <p>Sizes</p>
-            <div className="grid grid-cols-8 justify-items-start gap-y-2">
+            <div className="tr-grid tr-grid-cols-8 tr-justify-start tr-gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     return(
                         <Icon
@@ -66,7 +66,7 @@ const Template: ComponentStory<never> = () => (
                 })}
             </div>
             <p>Colors</p>
-            <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
+            <div className="tr-grid tr-grid-cols-8 tr-items-center tr-justify-start tr-gap-y-2">
                 {Object.keys(BaseColors).map(key => {
                     console.log(BaseColors[key]);
                     return(
@@ -75,12 +75,12 @@ const Template: ComponentStory<never> = () => (
                 })}
             </div>
         </div>
-        <div className="mb-5">
+        <div className="tr-mb-5">
             <Title>
                 Icon Shadow
             </Title>
             <p>Sizes</p>
-            <div className="grid grid-cols-8 justify-items-start gap-y-2">
+            <div className="tr-grid tr-grid-cols-8 tr-justify-start tr-gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     return(
                         <Icon
@@ -93,7 +93,7 @@ const Template: ComponentStory<never> = () => (
                 })}
             </div>
             <p>Colors</p>
-            <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
+            <div className="tr-grid tr-grid-cols-8 tr-items-center tr-justify-start tr-gap-y-2">
                 {Object.keys(BaseColors).map(key => {
                     console.log(BaseColors[key]);
                     return(
@@ -107,7 +107,7 @@ const Template: ComponentStory<never> = () => (
                 Icon Solid
             </Title>
             <p>Sizes</p>
-            <div className="grid grid-cols-8 justify-items-start gap-y-2">
+            <div className="tr-grid tr-grid-cols-8 tr-justify-start tr-gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     return(
                         <Icon
@@ -120,7 +120,7 @@ const Template: ComponentStory<never> = () => (
                 })}
             </div>
             <p>Colors</p>
-            <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
+            <div className="tr-grid tr-grid-cols-8 tr-items-center tr-justify-start tr-gap-y-2">
                 {Object.keys(BaseColors).map(key => {
                     console.log(BaseColors[key]);
                     return(
@@ -129,12 +129,12 @@ const Template: ComponentStory<never> = () => (
                 })}
             </div>
         </div>
-        <div className="mb-5">
+        <div className="tr-mb-5">
             <Title>
                 Icon Outlined
             </Title>
             <p>Sizes</p>
-            <div className="grid grid-cols-8 justify-items-start gap-y-2">
+            <div className="tr-grid tr-grid-cols-8 tr-justify-start tr-gap-y-2">
                 {Object.keys(Sizes).map(key => {
                     return(
                         <Icon
@@ -147,7 +147,7 @@ const Template: ComponentStory<never> = () => (
                 })}
             </div>
             <p>Colors</p>
-            <div className="grid grid-cols-8 items-center justify-items-start gap-y-2">
+            <div className="tr-grid tr-grid-cols-8 tr-items-center tr-justify-start tr-gap-y-2">
                 {Object.keys(BaseColors).map(key => {
                     console.log(BaseColors[key]);
                     return(
