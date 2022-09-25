@@ -45,7 +45,7 @@ const ToggleItem = ({
     return (
         <button
             className={classNames(
-                'flex items-center ring-1',
+                'tr-flex tr-items-center tr-ring-1',
                 spacing.lg.paddingLeft,
                 spacing.lg.paddingRight,
                 spacing.xs.paddingTop,
@@ -59,7 +59,7 @@ const ToggleItem = ({
             { Icon ? (
                 <Icon
                     className={ classNames(
-                        'opacity-70',
+                        'tr-opacity-70',
                         spacing.xs.marginRight,
                         sizing.lg.height,
                         sizing.lg.width,
@@ -67,7 +67,7 @@ const ToggleItem = ({
                     aria-hidden="true"
                 />
             ) : null }
-            <span className="whitespace-nowrap truncate">{ text }</span>
+            <span className="tr-whitespace-nowrap tr-truncate">{ text }</span>
         </button>
     );
 };

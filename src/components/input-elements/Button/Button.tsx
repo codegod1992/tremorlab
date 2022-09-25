@@ -9,6 +9,7 @@ import {
     borderRadius,
     boxShadow,
     classNames,
+    fontWeight,
     isBaseColor,
     isValidImportance,
     isValidSize,
@@ -52,11 +53,12 @@ const Button = ({
                 type="button"
                 onClick={ handleClick }
                 className={ classNames(
-                    'flex-shrink-0 inline-flex items-center group font-medium',
-                    'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-transparent',
+                    'tr-flex-shrink-0 tr-inline-flex tr-items-center tr-group',
+                    'focus:tr-outline-none focus:tr-ring-2 focus:tr-ring-offset-2 focus:tr-ring-transparent',
                     borderRadius.md.all,
                     border.sm.all,
                     boxShadow.sm,
+                    fontWeight.md,
                     buttonProportions[buttonSize].paddingLeft,
                     buttonProportions[buttonSize].paddingRight,
                     buttonProportions[buttonSize].paddingTop,
@@ -81,7 +83,7 @@ const Button = ({
                         aria-hidden="true"
                     />
                 ) : null }
-                <p className="whitespace-nowrap">
+                <p className="tr-whitespace-nowrap">
                     { text }
                 </p>
                 { Icon && (iconPosition === HorizontalPositions.Right) ? (

@@ -35,7 +35,7 @@ const Accordion = ({
 
     return(
         <div className={ classNames(
-            'overflow-hidden',
+            'tr-overflow-hidden',
             parseMarginTop(marginTop),
             getColorVariantsFromColorThemeValue(defaultColors.lightBorder).borderColor,
             getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
@@ -55,7 +55,7 @@ const Accordion = ({
                 );
 
                 return (
-                    <div className={ isExpanded ? '' : 'hidden' }>
+                    <div className={ isExpanded ? '' : 'tr-hidden' }>
                         { child }
                     </div>
                 );

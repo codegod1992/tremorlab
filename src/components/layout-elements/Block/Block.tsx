@@ -30,12 +30,12 @@ const Block = ({
 }: BlockProps) => {
     return(
         <div className={ classNames(
-            'w-full',
+            'tr-w-full',
             parseMaxWidth(maxWidth),
             spaceY ? parseSpaceY(spaceY) : spaceY,
             parseTextAlignment(textAlignment),
             parseTruncateOption(truncate),
-            truncate ? 'whitespace-nowrap' : '',
+            truncate ? 'tr-whitespace-nowrap' : '',
             parseMarginTop(marginTop),
         ) }
         >

@@ -94,7 +94,7 @@ const MultiSelectBox = ({
         <div
             ref={ dropdownRef }
             className={ classNames(
-                'relative w-full min-w-[10rem]',
+                'tr-relative tr-w-full tr-min-w-[10rem]',
                 parseMaxWidth(maxWidth),
                 getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
                 parseMarginTop(marginTop),
@@ -105,8 +105,8 @@ const MultiSelectBox = ({
         >
             <button
                 className={ classNames(
-                    'flex justify-between items-center w-full',
-                    'focus:ring-2 focus:outline-0',
+                    'tr-flex tr-justify-between tr-items-center tr-w-full',
+                    'focus:tr-ring-2 focus:tr-outline-0',
                     getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
@@ -119,7 +119,7 @@ const MultiSelectBox = ({
                 onClick={ () => setShowModal(!showModal) }
             >
                 <p className={ classNames(
-                    'whitespace-nowrap truncate',
+                    'tr-whitespace-nowrap tr-truncate',
                     fontSize.sm,
                     fontWeight.md,
                     selectedItems.length !==0
@@ -128,7 +128,7 @@ const MultiSelectBox = ({
                 ) }>
                     { selectedItems.length !==0 ? `${selectedItems.length} Selected` : placeholder }
                 </p>
-                <div className="flex items-center">
+                <div className="tr-flex tr-items-center">
                     { selectedItems.length !== 0 ? (
                         <div
                             role="button"
@@ -140,7 +140,7 @@ const MultiSelectBox = ({
                         >
                             <XCircleIcon 
                                 className={ classNames(
-                                    'flex-none',
+                                    'tr-flex-none',
                                     sizing.md.height,
                                     sizing.md.width,
                                     getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
@@ -151,7 +151,7 @@ const MultiSelectBox = ({
                     ) : null }
                     <ArrowDownHeadIcon
                         className={ classNames(
-                            'flex-none',
+                            'tr-flex-none',
                             sizing.lg.height,
                             sizing.lg.width,
                             spacing.twoXs.negativeMarginRight,
@@ -167,14 +167,14 @@ const MultiSelectBox = ({
                 triggerRef={ dropdownRef }
             >
                 <div className={ classNames(
-                    'flex items-center w-full',
+                    'tr-flex tr-items-center tr-w-full',
                     getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).bgColor,
                     spacing.twoXl.paddingLeft,
                     spacing.twoXl.paddingRight,
                 ) }>
                     <span>
                         <SearchIcon className={ classNames(
-                            'flex-none',
+                            'tr-flex-none',
                             getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
                             spacing.threeXs.negativeMarginLeft,
                             spacing.lg.marginRight,
@@ -187,7 +187,7 @@ const MultiSelectBox = ({
                         type="input"
                         placeholder="Search"
                         className={ classNames(
-                            'w-full focus:outline-none focus:ring-none',
+                            'tr-w-full focus:tr-outline-none focus:tr-ring-none',
                             getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
                             getColorVariantsFromColorThemeValue(defaultColors.transparent).bgColor,
                             spacing.sm.paddingTop,

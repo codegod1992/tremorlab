@@ -31,7 +31,7 @@ const Flex = ({
         <div className={ classNames(
             'tr-flex tr-w-full',
             parseTruncateOption(truncate),
-            truncate ? 'whitespace-nowrap' : '',
+            truncate ? 'tr-whitespace-nowrap' : '',
             parseJustifyContent(justifyContent),
             parseAlignItems(alignItems),
             spaceX ? parseSpaceX(spaceX) : spaceX,

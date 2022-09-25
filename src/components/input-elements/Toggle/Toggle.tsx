@@ -35,7 +35,7 @@ const Toggle = ({
 
     return (
         <div className={ classNames(
-            'flex-nowrap inline-flex justify-start',
+            'tr-flex-nowrap tr-inline-flex tr-justify-start',
             getColorVariantsFromColorThemeValue(defaultColors.lightBackground).bgColor,
             parseMarginTop(marginTop),
             spacing.twoXs.paddingLeft,

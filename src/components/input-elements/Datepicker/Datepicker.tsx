@@ -35,7 +35,7 @@ import {
     nextMonth,
     previousMonth,
     relativeFilterOptions
-} from 'components/input-elements/Datepicker/utils';
+} from './utils';
 import Modal from 'components/layout-elements/Modal';
 
 export interface DatepickerProps {
@@ -136,12 +136,12 @@ const Datepicker = ({
 
     return (
         <div className={ classNames(
-            'relative w-full',
+            'tr-relative tr-w-full',
             parseMarginTop(marginTop),
             parseMaxWidth(maxWidth),
         ) }>
             <div className={ classNames(
-                'flex items-center justify-between',
+                'tr-flex tr-items-center tr-justify-between',
                 getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
                 getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
                 borderRadius.md.all,
@@ -152,8 +152,8 @@ const Datepicker = ({
                     ref={ datePickerRef }
                     onClick={ () => setShowDatePickerModal(!showDatePickerModal) }
                     className={ classNames(
-                        'flex items-center w-full truncate',
-                        'focus:ring-2 focus:outline-none focus:z-10',
+                        'tr-flex tr-items-center tr-w-full tr-truncate',
+                        'focus:tr-ring-2 focus:tr-outline-none focus:tr-z-10',
                         enableRelativeDates ? border.none.right : classNames(borderRadius.md.right, border.sm.right),
                         getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
                         getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
@@ -178,7 +178,7 @@ const Datepicker = ({
                         aria-hidden="true"
                     />
                     <p className={ classNames(
-                        'whitespace-nowrap truncate',
+                        'tr-whitespace-nowrap tr-truncate',
                         fontSize.sm,
                         fontWeight.md,
                         selectedStartDay
@@ -193,8 +193,8 @@ const Datepicker = ({
                         ref={ dropdownRef }
                         onClick={ () => setShowDropdownModal(!showDropdownModal) }
                         className={ classNames(
-                            'inline-flex justify-between w-48 truncate',
-                            'focus:ring-2 focus:outline-none',
+                            'tr-inline-flex tr-justify-between tr-w-48 tr-truncate',
+                            'focus:tr-ring-2 focus:tr-outline-none',
                             getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
                             getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
                             getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
@@ -208,7 +208,7 @@ const Datepicker = ({
                         ) }
                     >
                         <p className={ classNames(
-                            'whitespace-nowrap truncate',
+                            'tr-whitespace-nowrap tr-truncate',
                             fontSize.sm,
                             fontWeight.md,
                             selectedRelativeFilterOption
@@ -223,7 +223,7 @@ const Datepicker = ({
                         </p>
                         <ArrowDownHeadIcon
                             className={ classNames(
-                                'flex-none',
+                                'tr-flex-none',
                                 sizing.lg.height,
                                 sizing.lg.width,
                                 spacing.twoXs.negativeMarginRight,
@@ -238,8 +238,8 @@ const Datepicker = ({
                 showModal={ showDatePickerModal }
                 setShowModal={ setShowDatePickerModal }
                 triggerRef={ datePickerRef }
-                width="w-72"
-                maxHeight="max-h-fit"
+                width="tr-w-72"
+                maxHeight="tr-max-h-fit"
             >
                 <div
                     className={ classNames(
@@ -250,7 +250,7 @@ const Datepicker = ({
                     ) }
                 >
                     <div className={ classNames(
-                        'flex justify-between items-center',
+                        'tr-flex tr-justify-between tr-items-center',
                         spacing.twoXs.paddingLeft,
                         spacing.twoXs.paddingRight,
                         spacing.sm.paddingTop,
@@ -261,7 +261,7 @@ const Datepicker = ({
                             type="button"
                             onClick={() => previousMonth(firstDayCurrentMonth, setCurrentMonth)}
                             className={ classNames(
-                                'inline-flex focus:outline-none focus:ring-2',
+                                'tr-inline-flex focus:tr-outline-none focus:tr-ring-2',
                                 getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
                                 getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
                                 getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
@@ -285,14 +285,19 @@ const Datepicker = ({
                                 aria-hidden="true"
                             />
                         </button>
-                        <h2 className="font-semibold text-sm text-gray-900">
+                        <h2 className={ classNames(
+                            getColorVariantsFromColorThemeValue(defaultColors.darkestText).textColor,
+                            fontSize.sm,
+                            fontWeight.lg,
+                        ) }
+                        >
                             {format(firstDayCurrentMonth, 'MMMM yyyy')}
                         </h2>
                         <button
                             onClick={() => nextMonth(firstDayCurrentMonth, setCurrentMonth)}
                             type="button"
                             className={ classNames(
-                                'inline-flex focus:outline-none focus:ring-2',
+                                'tr-inline-flex focus:tr-outline-none focus:tr-ring-2',
                                 getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
                                 getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
                                 getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
@@ -319,83 +324,31 @@ const Datepicker = ({
 
                     </div>
                     <div className={ classNames(
-                        'grid grid-cols-7 text-center',
+                        'tr-grid tr-grid-cols-7 tr-text-center',
                         getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
                         fontSize.xs,
                         fontWeight.md,
                     ) }
                     >
-                        <div className="w-full flex justify-center">
-                            <div className={ classNames(
-                                'flex items-center justify-center w-full',
-                                sizing.threeXl.height
-                            ) }
-                            >
-                                Su
+                        { ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map((dayName) => (
+                            <div className="tr-w-full tr-flex tr-justify-center">
+                                <div className={ classNames(
+                                    'tr-flex tr-items-center tr-justify-center tr-w-full',
+                                    sizing.threeXl.height
+                                ) }
+                                >
+                                    { dayName }
+                                </div>
                             </div>
-                        </div>
-                        <div className="w-full flex justify-center">
-                            <div className={ classNames(
-                                'flex items-center justify-center w-full',
-                                sizing.threeXl.height
-                            ) }
-                            >
-                                Mo
-                            </div>
-                        </div>
-                        <div className="w-full flex justify-center">
-                            <div className={ classNames(
-                                'flex items-center justify-center w-full',
-                                sizing.threeXl.height
-                            ) }
-                            >
-                                Tu
-                            </div>
-                        </div>
-                        <div className="w-full flex justify-center">
-                            <div className={ classNames(
-                                'flex items-center justify-center w-full',
-                                sizing.threeXl.height
-                            ) }
-                            >
-                                We
-                            </div>
-                        </div>
-                        <div className="w-full flex justify-center">
-                            <div className={ classNames(
-                                'flex items-center justify-center w-full',
-                                sizing.threeXl.height
-                            ) }
-                            >
-                                Th
-                            </div>
-                        </div>
-                        <div className="w-full flex justify-center">
-                            <div className={ classNames(
-                                'flex items-center justify-center w-full',
-                                sizing.threeXl.height
-                            ) }
-                            >
-                                Fr
-                            </div>
-                        </div>
-                        <div className="w-full flex justify-center">
-                            <div className={ classNames(
-                                'flex items-center justify-center w-full',
-                                sizing.threeXl.height
-                            ) }
-                            >
-                                Sa
-                            </div>
-                        </div>
+                        )) }
                     </div>
-                    <div className="grid grid-cols-7">
+                    <div className="tr-grid tr-grid-cols-7">
                         {days.map((day) => (
                             <div
                                 key={day.toString()}
                                 className={classNames(
                                     colStartClasses[getDay(day)],
-                                    'w-full'
+                                    'tr-w-full'
                                 )}
                             >
                                 <button
@@ -404,7 +357,7 @@ const Datepicker = ({
                                     onPointerEnter={ () => setHoveredDay(day) }
                                     onPointerLeave={ () => setHoveredDay(null) }
                                     className={classNames(
-                                        'w-full flex items-center justify-center',
+                                        'tr-w-full tr-flex tr-items-center tr-justify-center',
                                         getDayBgColorClassName(
                                             day,
                                             selectedStartDay,
@@ -456,7 +409,7 @@ const Datepicker = ({
                             setShowDropdownModal(false);
                         } }
                         className={ classNames(
-                            'flex items-center justify-between w-full truncate',
+                            'tr-flex tr-items-center tr-justify-between tr-w-full tr-truncate',
                             spacing.twoXl.paddingLeft,
                             spacing.twoXl.paddingRight,
                             spacing.md.paddingTop,
@@ -473,7 +426,7 @@ const Datepicker = ({
                                 )
                         ) }
                     >
-                        <p className="whitespace-nowrap truncate">
+                        <p className="tr-whitespace-nowrap tr-truncate">
                             { filterOption.name }
                         </p>
                     </button>

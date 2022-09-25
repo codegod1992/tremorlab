@@ -16,7 +16,7 @@ const Footer = ({
         <>
             <div className={ classNames(height) } />
             <div className={ classNames(
-                'absolute flex items-center w-full',
+                'tr-absolute tr-flex tr-items-center tr-w-full',
                 parseHeight(height),
                 spacing.none.left,
                 spacing.none.right,

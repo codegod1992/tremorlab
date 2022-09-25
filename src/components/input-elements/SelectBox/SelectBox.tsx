@@ -78,7 +78,7 @@ const SelectBox = ({
 
     return (
         <div ref={ dropdownRef } className={ classNames(
-            'relative w-full min-w-[10rem]',
+            'tr-relative tr-w-full tr-min-w-[10rem]',
             parseMaxWidth(maxWidth),
             getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
             parseMarginTop(marginTop),
@@ -88,7 +88,7 @@ const SelectBox = ({
         ) }>
             <input
                 className={ classNames(
-                    'w-full focus:ring-2 focus:outline-0',
+                    'tr-w-full focus:tr-ring-2 focus:tr-outline-0',
                     getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
@@ -100,8 +100,8 @@ const SelectBox = ({
                     fontWeight.md,
                     borderRadius.md.all,
                     border.none.all,
-                    'placeholder:text-gray-500',
-                    'pr-10' // avoid text overflow at arrow down icon
+                    'placeholder:tr-text-gray-500',
+                    'tr-pr-10' // avoid text overflow at arrow down icon
                 ) }
                 type="text"
                 placeholder={ placeholder }
@@ -111,14 +111,14 @@ const SelectBox = ({
             />
             <button
                 className={ classNames(
-                    'absolute top-1/2 -translate-y-1/2',
+                    'tr-absolute tr-top-1/2 -tr-translate-y-1/2',
                     spacing.twoXl.right,
                 ) }
                 onClick={ () => setShowModal(!showModal) }
             >
                 <ArrowDownHeadIcon
                     className={ classNames(
-                        'flex-none',
+                        'tr-flex-none',
                         sizing.lg.height,
                         sizing.lg.width,
                         spacing.twoXs.negativeMarginRight,

@@ -62,7 +62,7 @@ const Dropwdown = ({
         <div
             ref={ dropdownRef }
             className={ classNames(
-                'relative w-full min-w-[10rem]',
+                'tr-relative tr-w-full tr-min-w-[10rem]',
                 parseMaxWidth(maxWidth),
                 getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
                 parseMarginTop(marginTop),
@@ -73,8 +73,8 @@ const Dropwdown = ({
         >
             <button
                 className={ classNames(
-                    'flex justify-between items-center w-full',
-                    'focus:ring-2 focus:outline-0',
+                    'tr-flex tr-justify-between tr-items-center tr-w-full',
+                    'focus:tr-ring-2 focus:tr-outline-0',
                     getColorVariantsFromColorThemeValue(defaultColors.white).bgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.canvasBackground).hoverBgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.ring).focusRingColor,
@@ -87,7 +87,7 @@ const Dropwdown = ({
                 onClick={ () => setShowModal(!showModal) }
             >
                 <p className={ classNames(
-                    'whitespace-nowrap truncate',
+                    'tr-whitespace-nowrap tr-truncate',
                     fontSize.sm,
                     fontWeight.md,
                     selectedItem
@@ -98,7 +98,7 @@ const Dropwdown = ({
                 </p>
                 <ArrowDownHeadIcon
                     className={ classNames(
-                        'flex-none',
+                        'tr-flex-none',
                         sizing.lg.height,
                         sizing.lg.width,
                         spacing.twoXs.negativeMarginRight,
