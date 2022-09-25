@@ -14,7 +14,7 @@ const Tracking = ({
 }: TrackingProps) => {
     return(
         <div className={ classNames(
-            'w-full flex items-center',
+            'tr-w-full tr-flex tr-items-center',
             parseMarginTop(marginTop),
             spacing.threeXs.spaceX,
         ) }>

@@ -40,21 +40,21 @@ const ProgressBar = ({
     return(
         <div className={
             classNames(
-                'flex items-center w-full',
+                'tr-flex tr-items-center tr-w-full',
                 parseMarginTop(marginTop),
             )
         }>
             <div className={ classNames(
-                'relative flex items-center w-full',
+                'tr-relative tr-flex tr-items-center tr-w-full',
                 secondaryBgColor,
                 sizing.xs.height,
                 borderRadius.lg.all,
             ) }>
-                <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+                <Tooltip content={ tooltip } className={ tooltip ? '' : 'tr-hidden' }>
                     <div 
                         className={ classNames(
                             primaryBgColor,
-                            'flex-col h-full',
+                            'tr-flex-col tr-h-full',
                             borderRadius.lg.all,
                         ) }
                         style={ {'width': `${percentageValue}%`, 'transition': showAnimation ? 'all 2s' : ''} }
@@ -63,12 +63,12 @@ const ProgressBar = ({
             </div>
             { label ? (
                 <div className={ classNames(
-                    'w-16 truncate text-right',
+                    'tr-w-16 tr-truncate tr-text-right',
                     getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor,
                     spacing.sm.marginLeft,
                 ) }>
                     <p className={ classNames(
-                        'shrink-0 whitespace-nowrap truncate',
+                        'tr-shrink-0 tr-whitespace-nowrap tr-truncate',
                         fontSize.sm,
                         fontWeight.sm,
                     ) }>

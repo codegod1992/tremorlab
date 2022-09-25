@@ -38,14 +38,14 @@ const DeltaBar = ({
     return(
         <div className={ classNames(parseMarginTop(marginTop)) }>
             <div className={ classNames(
-                'relative flex items-center w-full',
+                'tr-relative tr-flex tr-items-center tr-w-full',
                 getColorVariantsFromColorThemeValue(defaultColors.background).bgColor,
                 sizing.xs.height,
                 borderRadius.lg.all,
             ) }>
-                <div className="flex justify-end h-full w-1/2">
+                <div className="tr-flex tr-justify-end tr-h-full tr-w-1/2">
                     { percentageValue < 0 ? (
-                        <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+                        <Tooltip content={ tooltip } className={ tooltip ? '' : 'tr-hidden' }>
                             <div 
                                 className={ classNames(
                                     colors[mapInputsToDeltaType(
@@ -63,7 +63,7 @@ const DeltaBar = ({
                     ) : null}
                 </div>
                 <div className={ classNames(
-                    'ring-2 z-10',
+                    'tr-ring-2 tr-z-10',
                     getColorVariantsFromColorThemeValue(defaultColors.darkBackground).bgColor,
                     getColorVariantsFromColorThemeValue(defaultColors.white).ringRolor,
                     sizing.md.height,
@@ -71,9 +71,9 @@ const DeltaBar = ({
                     borderRadius.lg.all,
                 ) }
                 />
-                <div className="flex justify-start h-full w-1/2">
+                <div className="tr-flex tr-justify-start tr-h-full tr-w-1/2">
                     { percentageValue >= 0 ? (
-                        <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+                        <Tooltip content={ tooltip } className={ tooltip ? '' : 'tr-hidden' }>
                             <div
                                 className={ classNames(
                                     colors[mapInputsToDeltaType(

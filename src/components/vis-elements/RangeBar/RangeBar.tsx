@@ -38,16 +38,16 @@ const RangeBar = ({
 }: RangeBarProps) => {
     return(
         <div className={ classNames(
-            'relative flex items-center w-full',
+            'tr-relative tr-flex tr-items-center tr-w-full',
             parseMarginTop(marginTop),
             getColorVariantsFromColorThemeValue(defaultColors.lightBackground).bgColor,
             sizing.xs.height,
             borderRadius.lg.all,
         ) }>
-            <Tooltip content={ rangeTooltip } className={ rangeTooltip ? '' : 'hidden' }>
+            <Tooltip content={ rangeTooltip } className={ rangeTooltip ? '' : 'tr-hidden' }>
                 <div
                     className={ classNames(
-                        'absolute h-full',
+                        'tr-absolute tr-h-full',
                         getColorVariantsFromColorThemeValue(defaultColors.darkBackground).bgColor,
                         borderRadius.lg.all,
                     ) }
@@ -58,17 +58,17 @@ const RangeBar = ({
                     } }
                 />
             </Tooltip>
-            <Tooltip content={ markerTooltip } className={ markerTooltip ? '' : 'hidden' }>
+            <Tooltip content={ markerTooltip } className={ markerTooltip ? '' : 'tr-hidden' }>
                 <div
                     className={ classNames(
-                        'absolute right-1/2 -translate-x-1/2',
+                        'tr-absolute tr-right-1/2 -tr-translate-x-1/2',
                         sizing.lg.width, // wide transparant wrapper for tooltip activation
                     ) }
                     style={ { 'left': `${percentageValue}%`, 'transition': showAnimation ? 'all 2s' : '' } }
                 >
                     <div
                         className={ classNames(
-                            'ring-2 mx-auto',
+                            'tr-ring-2 tr-mx-auto',
                             getColorVariantsFromColorThemeValue(getColorTheme(color).background).bgColor,
                             getColorVariantsFromColorThemeValue(defaultColors.white).ringRolor,
                             sizing.md.height,

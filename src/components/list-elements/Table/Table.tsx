@@ -19,9 +19,9 @@ const Table = ({
     marginTop = 'mt-0',
     children
 }: TableProps) => (
-    <div className="overflow-auto">
+    <div className="tr-overflow-auto">
         <table className={ classNames(
-            'w-full tabular-nums',
+            'tr-w-full tr-tabular-nums',
             parseMarginTop(marginTop),
             getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
             fontSize.sm,

@@ -35,9 +35,9 @@ const Text = ({
     return(
         <p className={classNames(
             parseTruncateOption(truncate),
-            truncate ? 'whitespace-nowrap' : 'shrink-0',
+            truncate ? 'tr-whitespace-nowrap' : 'tr-shrink-0',
             height ? parseHeight(height) : height,
-            height ? 'overflow-y-auto' : '',
+            height ? 'tr-overflow-y-auto' : '',
             parseMarginTop(marginTop),
             parseTextAlignment(textAlignment),
             getColorVariantsFromColorThemeValue(getColorTheme(color).text).textColor,

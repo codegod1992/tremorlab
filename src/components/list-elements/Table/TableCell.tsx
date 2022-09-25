@@ -20,7 +20,7 @@ const TableCell = ({
     return(
         <>
             <td className={ classNames(
-                'align-middle whitespace-nowrap tabular-nums',
+                'tr-align-middle tr-whitespace-nowrap tr-tabular-nums',
                 parseTextAlignment(textAlignment),
                 spacing.twoXl.paddingLeft,
                 spacing.twoXl.paddingRight,

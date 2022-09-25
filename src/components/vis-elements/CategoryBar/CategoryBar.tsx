@@ -21,7 +21,7 @@ const BarLabels = ({ categoryPercentageValues }: {categoryPercentageValues: numb
     let prefixSum = 0;
     return (
         <div className={ classNames(
-            'relative flex w-full',
+            'tr-relative tr-flex tr-w-full',
             getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
             spacing.twoXs.spaceX,
             spacing.sm.marginBottom,
@@ -33,11 +33,11 @@ const BarLabels = ({ categoryPercentageValues }: {categoryPercentageValues: numb
                 return (
                     <div
                         key={ `item-${idx}` }
-                        className="flex items-center justify-end"
+                        className="tr-flex tr-items-center tr-justify-end"
                         style={ { 'width': `${widthPercentage}%` } }
                     >
                         <span className={
-                            classNames(idx === 0 && widthPercentage <= 10 ? 'hidden sm:inline-block' : '')
+                            classNames(idx === 0 && widthPercentage <= 10 ? 'tr-hidden sm:tr-inline-block' : '')
                         }
                         >
                             { prefixSum }
@@ -45,7 +45,7 @@ const BarLabels = ({ categoryPercentageValues }: {categoryPercentageValues: numb
                     </div>
                 );
             }) }
-            <div className="absolute -left-1 top-0 flex items-center">
+            <div className="tr-absolute -tr-left-1 tr-top-0 tr-flex tr-items-center">
                 0
             </div>
         </div>
@@ -95,7 +95,7 @@ const CategoryBar = ({
         <div className={ classNames(parseMarginTop(marginTop)) }>
             { showLabels ? <BarLabels categoryPercentageValues={ categoryPercentageValues } /> : null }
             <div className={ classNames(
-                'relative flex items-center w-full',
+                'tr-relative tr-flex tr-items-center tr-w-full',
                 sizing.xs.height,
                 spacing.threeXs.spaceX,
                 borderRadius.lg.all,
@@ -104,7 +104,7 @@ const CategoryBar = ({
                 {categoryPercentageValues.map((percentageValue, idx) => {
                     return(
                         <div key={ `item-${idx}` } style={ { width: `${percentageValue}%` } } className={ classNames(
-                            'h-full',
+                            'tr-h-full',
                             getColorVariantsFromColorThemeValue(getColorTheme(colors[idx]).background).bgColor,
                             borderRadius.md.all,
                         ) }
@@ -112,17 +112,17 @@ const CategoryBar = ({
                     );
                 })}
                 { percentageValue !== undefined ? (
-                    <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+                    <Tooltip content={ tooltip } className={ tooltip ? '' : 'tr-hidden' }>
                         <div
                             className={ classNames(
-                                'absolute right-1/2 -translate-x-1/2',
+                                'tr-absolute tr-right-1/2 -tr-translate-x-1/2',
                                 sizing.lg.width, // wide transparant wrapper for tooltip activation
                             ) }
                             style={ { 'left': `${percentageValue}%`, 'transition': showAnimation ? 'all 2s' : '' } }
                         >
                             <div
                                 className={ classNames(
-                                    'ring-2 mx-auto',
+                                    'tr-ring-2 tr-mx-auto',
                                     markerBgColor,
                                     getColorVariantsFromColorThemeValue(defaultColors.white).ringRolor,
                                     sizing.md.height,

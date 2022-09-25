@@ -18,9 +18,9 @@ const TrackingBlock = ({
     tooltip
 }: TrackingBlockProps) => {
     return(
-        <Tooltip content={ tooltip } className={ tooltip ? '' : 'hidden' }>
+        <Tooltip content={ tooltip } className={ tooltip ? '' : 'tr-hidden' }>
             <div className={ classNames(
-                'w-full',
+                'tr-w-full',
                 getColorVariantsFromColorThemeValue(getColorTheme(color).background).bgColor,
                 parseHeight(height),
                 borderRadius.md.all,

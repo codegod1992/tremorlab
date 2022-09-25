@@ -28,7 +28,7 @@ const Metric = ({
     return(
         <div className={ classNames(parseMarginTop(marginTop)) }>
             <p className={ classNames(
-                truncate ? 'whitespace-nowrap' : 'shrink-0',
+                truncate ? 'tr-whitespace-nowrap' : 'tr-shrink-0',
                 parseTruncateOption(truncate),
                 getColorVariantsFromColorThemeValue(getColorTheme(color).darkText).textColor,
                 fontSize.threeXl,

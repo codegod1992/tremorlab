@@ -11,7 +11,7 @@ const Italic = ({
 }: ItalicProps) => {
     return(
         <span className={ classNames(
-            'italic text-inherit',
+            'tr-italic tr-text-inherit',
             fontSize.sm,
         ) }
         >

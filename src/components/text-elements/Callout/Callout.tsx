@@ -35,7 +35,7 @@ const Callout = ({
 }: CalloutProps) => {
     return(
         <div className={ classNames(
-            'relative',
+            'tr-relative',
             parseMarginTop(marginTop),
             getColorVariantsFromColorThemeValue(getColorTheme(color).canvasBackground).bgColor,
             getColorVariantsFromColorThemeValue(getColorTheme(color).darkBorder).borderColor,
@@ -49,18 +49,18 @@ const Callout = ({
         ) }
         >
             <div className={ classNames(
-                'overflow-hidden',
+                'tr-overflow-hidden',
                 spacing.xs.marginLeft,
             ) }>
                 <div className={ classNames(
-                    'flex items-start',
+                    'tr-flex tr-items-start',
                     getColorVariantsFromColorThemeValue(getColorTheme(color).darkText).textColor,
                 ) }
                 >
                     { Icon ? (
                         <Icon
                             className={ classNames(
-                                'flex-none',
+                                'tr-flex-none',
                                 sizing.lg.height,
                                 sizing.lg.width,
                                 spacing.xs.marginRight,
@@ -71,7 +71,7 @@ const Callout = ({
                     <h4 className={ classNames(fontWeight.lg) }>{ title }</h4>
                 </div>
                 <div className={ classNames(
-                    'overflow-y-auto',
+                    'tr-overflow-y-auto',
                     height ? parseHeight(height) : height,
                     getColorVariantsFromColorThemeValue(getColorTheme(color).darkText).textColor,
                     spacing.sm.marginTop,

@@ -15,7 +15,7 @@ const ListItem = ({
     return(
         <>
             <li className={ classNames(
-                'w-full flex justify-between items-center truncate tabular-nums',
+                'tr-w-full tr-flex tr-justify-between tr-items-center tr-truncate tr-tabular-nums',
                 spaceX ? parseSpaceX(spaceX) : spaceX,
                 spacing.sm.paddingTop,
                 spacing.sm.paddingBottom,

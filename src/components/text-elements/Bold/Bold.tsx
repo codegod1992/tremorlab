@@ -11,7 +11,7 @@ const Bold = ({
 }: BoldProps) => {
     return(
         <span className={ classNames(
-            'text-inherit',
+            'tr-text-inherit',
             fontSize.sm,
             fontWeight.lg,
         ) }
