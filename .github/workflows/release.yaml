@@ -3,7 +3,11 @@ name: "Release"
 on:
   push:
     branches:
-      - ci-cd-pipeline
+      - 'ci-cd-test'
+    workflow_run:
+      workflows: ["Build"]
+      types: 
+        - completed
 
 jobs:
   release:
@@ -17,16 +21,6 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org
-      - name: install react
-        run: npm i react
-      - name: install dependencies
-        run: npm install
-      - name: lint checks
-        run: npm run lint
-      - name: unit tests
-        run: npm run tests
-      - name: build
-        run: npm run rollup
       - name: publish
         run: npm publish --access public
         env:
