@@ -30,7 +30,7 @@ export default [
         ],
         plugins: [
             peerDepsExternal(),
-            postcss({ extract: true }),
+            postcss({ extract: 'tremor.css' }),
             resolve(),
             commonjs(),
             typescript({ 

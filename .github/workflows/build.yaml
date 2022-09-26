@@ -1,0 +1,30 @@
+name: "Build"
+
+on:
+  push:
+    branches:
+      - '!main'
+      - '**'
+
+jobs:
+  build:
+    name: Build dist
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2.4.2
+      - name: node
+        uses: actions/setup-node@v3.4.1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org
+      - name: install react
+        run: npm i react
+      - name: install npm dependencies
+        run: npm install
+      - name: lint checks
+        run: npm run lint
+      - name: unit tests
+        run: npm run tests
+      - name: build
+        run: npm run rollup

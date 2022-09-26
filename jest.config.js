@@ -7,4 +7,5 @@ module.exports = {
         'components/(.*)': '<rootDir>/src/components/$1',
         'assets/(.*)': '<rootDir>/src/assets/$1',
     },
+    transformIgnorePatterns: [ '<rootDir>/node_modules/(?!react-dnd|dnd-core|@react-dnd)' ]
 };

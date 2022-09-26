@@ -27,7 +27,7 @@ const ChartTooltipRow = ({ value, name, color }: ChartTooltipRowProps) => (
         <div className="tr-flex tr-items-center tr-space-x-2">
             <span className={ classNames(
                 getColorVariantsFromColorThemeValue(getColorTheme(color).background).bgColor,
-                getColorVariantsFromColorThemeValue(defaultColors.border).borderColor,
+                getColorVariantsFromColorThemeValue(defaultColors.white).borderColor,
                 sizing.sm.height,
                 sizing.sm.width,
                 borderRadius.full.all,
