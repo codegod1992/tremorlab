@@ -332,10 +332,12 @@ const Datepicker = ({
                     >
                         { ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map((dayName) => (
                             <div className="tr-w-full tr-flex tr-justify-center">
-                                <div className={ classNames(
-                                    'tr-flex tr-items-center tr-justify-center tr-w-full',
-                                    sizing.threeXl.height
-                                ) }
+                                <div
+                                    key={ dayName }
+                                    className={ classNames(
+                                        'tr-flex tr-items-center tr-justify-center tr-w-full',
+                                        sizing.threeXl.height
+                                    ) }
                                 >
                                     { dayName }
                                 </div>
