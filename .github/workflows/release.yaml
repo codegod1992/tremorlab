@@ -18,7 +18,7 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org
       - name: install react
-        run: npm i react react-dom
+        run: npm i react
       - name: install dependencies
         run: npm install
       - name: lint checks
