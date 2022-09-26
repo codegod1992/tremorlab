@@ -1,4 +1,4 @@
-name: "🚀 release"
+name: "Release"
 
 on:
   push:
@@ -17,11 +17,13 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org
-      - name: install-deps
+      - name: install react
+        run: npm i react    
+      - name: install dependencies
         run: npm install
-      - name: lint
+      - name: lint checks
         run: npm run lint
-      - name: unit-tests
+      - name: unit tests
         run: npm run tests
       - name: build
         run: npm run rollup
