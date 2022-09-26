@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - 'ci-cd-test'
-  workflow_run:
-    workflows: ["Build"]
-    types: [completed]
 
 jobs:
   release:
@@ -20,6 +17,8 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org
+      - name: build
+        run: npm run rollup
       - name: publish
         run: npm publish --access public
         env:
