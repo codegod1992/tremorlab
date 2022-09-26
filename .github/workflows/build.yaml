@@ -24,11 +24,21 @@ jobs:
     steps:
       - name: install react
         run: npm i react
-      - name: install dependencies
+      - name: install npm dependencies
         run: npm install
+  run_checks:
+    name: Run checks
+    needs: install_deps
+    runs-on: ubuntu-latest
+    steps:
       - name: lint checks
         run: npm run lint
       - name: unit tests
         run: npm run tests
+  build:
+    name: Build dist
+    needs: run_checks
+    runs-on: ubuntu-latest
+    steps:
       - name: build
         run: npm run rollup
