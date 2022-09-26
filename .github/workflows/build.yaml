@@ -20,6 +20,7 @@ jobs:
   install_deps:
     name: Install dependencies
     needs: set_up_env
+    runs-on: ubuntu-latest
     steps:
       - name: install react
         run: npm i react
