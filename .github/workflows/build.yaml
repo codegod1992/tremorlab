@@ -22,6 +22,8 @@ jobs:
     needs: set_up_env
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v2.4.2
       - name: install react
         run: npm i react
       - name: install npm dependencies
@@ -31,6 +33,8 @@ jobs:
     needs: install_deps
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v2.4.2
       - name: lint checks
         run: npm run lint
       - name: unit tests
@@ -40,5 +44,7 @@ jobs:
     needs: run_checks
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v2.4.2
       - name: build
         run: npm run rollup
