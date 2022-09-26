@@ -4,10 +4,9 @@ on:
   push:
     branches:
       - 'ci-cd-test'
-    workflow_run:
-      workflows: ["Build"]
-      types: 
-        - completed
+  workflow_run:
+    workflows: ["Build"]
+    types: [completed]
 
 jobs:
   release:
