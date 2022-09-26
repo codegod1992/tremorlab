@@ -6,8 +6,8 @@ on:
       - '**'
 
 jobs:
-  set_up_env:
-    name: Set up environment
+  build:
+    name: Build dist
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -17,34 +17,13 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org
-  install_deps:
-    name: Install dependencies
-    needs: set_up_env
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2.4.2
       - name: install react
         run: npm i react
       - name: install npm dependencies
         run: npm install
-  run_checks:
-    name: Run checks
-    needs: install_deps
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2.4.2
       - name: lint checks
         run: npm run lint
       - name: unit tests
         run: npm run tests
-  build:
-    name: Build dist
-    needs: run_checks
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2.4.2
       - name: build
         run: npm run rollup
