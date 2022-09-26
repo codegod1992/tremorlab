@@ -14,7 +14,7 @@ const Footer = ({
 }: FooterProps) => {
     return(
         <>
-            <div className={ classNames(height) } />
+            <div className={ classNames(parseHeight(height))} />
             <div className={ classNames(
                 'tr-absolute tr-flex tr-items-center tr-w-full',
                 parseHeight(height),
