@@ -52,13 +52,19 @@ cd my-project
 
 ### 2. Install the tremor library
 
-Install tremor from your command line via npm. And run our build process. Since we are in beta, please be
-aware that there might be breaking changes in the future.
+Install tremor from your command line via npm.
 
 ```bash
 npm install @tremor/react
 ```
 
+Import our stylesheet into your `_app.tsx` file.
+```tsx
+import '@tremor/react/dist/esm/tremor.css';
+```
+Since we are in beta, please be aware that there might be breaking changes in the future.
+
+Finally, run the dev server.
 ```bash
 npm run dev
 ```
