@@ -67,7 +67,7 @@ export const border = {
     },
     lg: {
         left: 'tr-border-l-4',
-        top: 'tr-border-t-2',
+        top: 'tr-border-t-4',
         right: 'tr-border-r-4',
         bottom: 'tr-border-b-4',
         all: 'tr-border-4',
