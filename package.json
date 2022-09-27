@@ -1,7 +1,7 @@
 {
   "name": "@tremor/react",
   "version": "0.0.102",
-  "description": "",
+  "description": "The React library to build dashboards faster.",
   "scripts": {
     "rollup": "rollup -c",
     "upgrade-patch": "npm version patch",
@@ -17,8 +17,8 @@
     "type": "git",
     "url": "git+https://github.com/tremorlabs/tremor.git"
   },
-  "author": "Tremor Labs",
-  "license": "MIT",
+  "author": "tremor",
+  "license": "Apache 2.0",
   "bugs": {
     "url": "https://github.com/tremorlabs/tremor/issues"
   },
