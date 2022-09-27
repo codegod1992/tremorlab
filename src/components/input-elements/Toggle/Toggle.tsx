@@ -42,7 +42,7 @@ const Toggle = ({
             spacing.twoXs.paddingRight,
             spacing.twoXs.paddingTop,
             spacing.twoXs.paddingBottom,
-            borderRadius.md.all
+            borderRadius.lg.all
         ) }
         >
             { React.Children.map(children, (child) => (
