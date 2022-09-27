@@ -86,6 +86,8 @@ const AreaChart = ({
                 />
                 { showTooltip ? (
                     <Tooltip
+                        // ongoing issue: https://github.com/recharts/recharts/issues/2920
+                        wrapperStyle={{ outline: 'none' }}
                         isAnimationActive={false}
                         cursor={{ stroke: '#d1d5db', strokeWidth: 1 }}
                         content={ ({ active, payload, label }) => (

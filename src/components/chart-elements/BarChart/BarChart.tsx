@@ -132,6 +132,8 @@ const BarChart = ({
                 ) }
                 { showTooltip ? (
                     <Tooltip
+                        // ongoing issue: https://github.com/recharts/recharts/issues/2920
+                        wrapperStyle={{ outline: 'none' }}
                         isAnimationActive={false}
                         cursor={ { fill: '#d1d5db', opacity: '0.15' } }
                         content={ ({ active, payload, label }) => (
