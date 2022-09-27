@@ -1,6 +1,6 @@
 {
   "name": "@tremor/react",
-  "version": "0.0.101",
+  "version": "0.0.102",
   "description": "",
   "scripts": {
     "rollup": "rollup -c",
