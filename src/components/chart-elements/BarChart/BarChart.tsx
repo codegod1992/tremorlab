@@ -95,7 +95,7 @@ const BarChart = ({
                         axisLine={false}
                         tickFormatter={ valueFormatter }
                         padding={{ left: 10, right: 10 }}
-                        minTickGap={3}
+                        minTickGap={5}
                     />
                 )}
                 { layout !== 'vertical' ? (
