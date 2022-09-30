@@ -2,8 +2,9 @@ name: "Build"
 
 on:
   push:
-    branches-ignore:
-      - 'main'
+    branches:
+      - '**'
+      - '!main'
 
 jobs:
   build:
@@ -19,11 +20,12 @@ jobs:
           registry-url: https://registry.npmjs.org
       - name: install react
         run: npm i react
-      - name: install npm dependencies
-        run: npm install
+      - name: install dependencies
+        run: npm ci
       - name: lint checks
         run: npm run lint
       - name: unit tests
         run: npm run tests
       - name: build
         run: npm run rollup
+
