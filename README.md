@@ -24,12 +24,11 @@
       <img alt="License Apache 2.0" src="https://img.shields.io/badge/license-Apache 2.0-blue.svg?style=flat&color=5C9BA1" height="20" width="auto">
     </a>
   </div>
-  <br>
-  <h4 align="center">
+  <h5 align="center">
     <a href="https://www.tremor.so/docs/getting-started/introduction">Documentation</a> |
     <a href="https://demo.tremor.so/">Demo Dashboard</a> |
     <a href="https://www.tremor.so">Website</a>
-  </h4>
+  </h5>
 
 <br>
 
