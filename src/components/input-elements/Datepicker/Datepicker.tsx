@@ -7,6 +7,8 @@ import {
     getDay,
     isSaturday,
     isSunday,
+    max,
+    min,
     nextSaturday,
     parse,
     previousSunday,
@@ -72,6 +74,21 @@ const Datepicker = ({
 
     const hasDefaultDateRange = (defaultStartDate !== null) && (defaultEndDate !== null);
 
+    const getInitialStartDate = (): Date | null => (
+        hasDefaultDateRange ? startOfDay(
+            minDate
+                ? max([defaultStartDate, minDate])
+                : defaultStartDate
+        ) : null
+    );
+    const getInitialEndDate = (): Date | null => (
+        hasDefaultDateRange ? startOfDay(
+            maxDate
+                ? min([defaultEndDate, maxDate])
+                : defaultEndDate
+        ) : null
+    );
+
     const datePickerRef = useRef(null);
     const dropdownRef = useRef(null);
 
@@ -81,12 +98,20 @@ const Datepicker = ({
     const [selectedRelativeFilterOption, setSelectedRelativeFilterOption] = useState<string | null>(null);
 
     const [hoveredDay, setHoveredDay] = useState<Date | null>(null);
-    const [selectedStartDay, setSelectedStartDay] = useState<Date | null>(
-        hasDefaultDateRange ? startOfDay(defaultStartDate) : null);
-    const [selectedEndDay, setSelectedEndDay] = useState<Date | null>(
-        hasDefaultDateRange ? startOfDay(defaultEndDate) : null);
-    const [currentMonth, setCurrentMonth] = useState(
-        hasDefaultDateRange ? format(startOfDay(defaultEndDate)!, 'MMM-yyyy') : format(today, 'MMM-yyyy'));
+    const [selectedStartDay, setSelectedStartDay] = useState<Date | null>(getInitialStartDate());
+    const [selectedEndDay, setSelectedEndDay] = useState<Date | null>(getInitialEndDate());
+    
+    // Get month that will be displayed when opening the modal
+    const getInitialCurrentMonth = () => {
+        if (getInitialEndDate() !== null) {
+            return format(getInitialEndDate() as Date, 'MMM-yyyy');
+        } else if (maxDate !== null) {
+            return format(maxDate, 'MMM-yyyy');
+        } else {
+            return format(today, 'MMM-yyyy');
+        }
+    };
+    const [currentMonth, setCurrentMonth] = useState(getInitialCurrentMonth());
     
     const firstDayCurrentMonth = parse(currentMonth, 'MMM-yyyy', new Date());
     const lastDayCurrentMonth = endOfMonth(firstDayCurrentMonth);
@@ -184,7 +209,7 @@ const Datepicker = ({
                 >
                     <CalendarIcon
                         className={ classNames(
-                            'flex-none',
+                            'tr-flex-none',
                             getColorVariantsFromColorThemeValue(defaultColors.lightText).textColor,
                             sizing.lg.height,
                             sizing.lg.width,
@@ -253,8 +278,8 @@ const Datepicker = ({
             <Modal
                 showModal={ showDatePickerModal }
                 setShowModal={ setShowDatePickerModal }
-                triggerRef={ datePickerRef }
-                width="tr-w-72"
+                triggerButtonRef={ datePickerRef }
+                width="w-72"
                 maxHeight="tr-max-h-fit"
             >
                 <div
@@ -418,7 +443,7 @@ const Datepicker = ({
             <Modal
                 showModal={ showDropdownModal }
                 setShowModal={ setShowDropdownModal }
-                triggerRef={ dropdownRef }
+                triggerButtonRef={ dropdownRef }
             >
                 { relativeFilterOptions.map((filterOption) => (
                     <button
