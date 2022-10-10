@@ -71,7 +71,7 @@ Since we are in beta, please be aware that there might be breaking changes in th
 
 Finally, run the dev server.
 ```bash
-npm run dev
+npm start
 ```
 
 **💡 Hint:** If you want to see how you can build your first dashboard, have a look at our [documentation](https://tremor.so/docs/getting-started/demo-dashboard).
