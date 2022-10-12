@@ -8,9 +8,6 @@
 <br>
 
   <div align="center">
-    <a href="https://www.npmjs.com/package/@tremor/react">
-      <img alt="npm" src="https://img.shields.io/npm/dm/@tremor/react?color=5C9BA1&label=npm&logo=npm">
-    </a>
     <a href="https://twitter.com/tremorlabs">
       <img alt="Follow on twitter" src="https://img.shields.io/twitter/follow/tremorlabs?style=flat&color=5C9BA1" height="20" width="auto">
     </a>
