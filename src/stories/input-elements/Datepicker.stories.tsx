@@ -86,8 +86,12 @@ const WithSelfDetectingModalTemplate: ComponentStory<typeof Datepicker> = () => 
     </ColGrid>
 );
 
-  
+const handleSelect = (startDate: Date, endDate: Date) => alert(`${startDate} + ${endDate}`);
+
 export const DefaultResponsive = ResponsiveTemplate.bind({});
+DefaultResponsive.args = {
+    handleSelect: handleSelect,
+};
 
 export const WithFlexParent = FlexTemplate.bind({});
 WithFlexParent.args = {
@@ -98,6 +102,7 @@ export const WithDefaultDates = ResponsiveTemplate.bind({});
 WithDefaultDates.args = {
     defaultStartDate: new Date(2022, 6, 1),
     defaultEndDate: new Date(2022, 7, 30),
+    handleSelect: handleSelect,
 };
 
 export const WithRelativeDatesDisabled = ResponsiveTemplate.bind({});
@@ -105,6 +110,7 @@ WithRelativeDatesDisabled.args = {
     defaultStartDate: new Date(2022, 6, 1),
     defaultEndDate: new Date(2022, 7, 30),
     enableRelativeDates: false,
+    handleSelect: handleSelect,
 };
 
 export const WithMinDate = ResponsiveTemplate.bind({});
@@ -121,6 +127,7 @@ export const WithMinAndMaxDate = ResponsiveTemplate.bind({});
 WithMinAndMaxDate.args = {
     minDate: new Date(2022, 6, 1),
     maxDate: new Date(2022, 7, 30),
+    handleSelect: handleSelect,
 };
 
 export const WithMinAndMaxDateAndDefaultDates = ResponsiveTemplate.bind({});
@@ -129,6 +136,7 @@ WithMinAndMaxDateAndDefaultDates.args = {
     defaultEndDate: new Date(2022, 7, 30),
     minDate: new Date(2022, 6, 1),
     maxDate: new Date(2022, 7, 30),
+    handleSelect: handleSelect,
 };
 
 export const WithDefaultDatesExceedingMinMax = ResponsiveTemplate.bind({});
@@ -154,4 +162,5 @@ export const WithSelfDetectingModal = WithSelfDetectingModalTemplate.bind({});
 export const WithDefaultRelativeFilterOption = ResponsiveTemplate.bind({});
 WithDefaultRelativeFilterOption.args = {
     defaultRelativeFilterOption: 'w',
+    handleSelect: handleSelect,
 };
