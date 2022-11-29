@@ -12,6 +12,7 @@ interface BaseChartProps {
     dataKey: string,
     colors?: Color[],
     valueFormatter?: ValueFormatter,
+    autoMinValue?: boolean,
     startEndOnly?: boolean,
     showXAxis?: boolean,
     showYAxis?: boolean,

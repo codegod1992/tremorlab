@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ArrowRightIcon } from 'assets';
@@ -68,6 +68,35 @@ const ResponsiveFlexTemplate: ComponentStory<typeof Button> = (args) => (
     </>
 );
 
+const LoadingStateTemplate: ComponentStory<typeof Button> = () => {
+    const [loading, setLoading] = useState(false);
+    
+    return (
+        <Card>
+            <Button text="Click to Load" handleClick={ () => setLoading(!loading) } />
+            <ColGrid numCols={3} gapY="gap-y-2" marginTop="mt-10">
+                {
+                    Object.values(InputSizes).map(size => (
+                        <>
+                            <Button size={size} text="Button" loading={ loading } />
+                            <Button size={size} text="Button" icon={MyIcon} loading={ loading } />
+                            <Button size={size} text="Button" icon={MyIcon} iconPosition="right" loading={ loading } />
+                            <Button size={size} text="Button" importance="secondary" loading={ loading } />
+                        </>
+                    ))
+                }
+            </ColGrid>
+            <Title>With Loading Text</Title>
+            <ColGrid numCols={4} gapY="gap-y-2">
+                <Button text="Button" loading={ loading } loadingText="Loading" />
+                <Button text="Button" icon={MyIcon} loading={ loading } loadingText="Loading"  />
+                <Button text="Button" icon={MyIcon} iconPosition="right" loading={ loading } loadingText="Loading" />
+                <Button text="Button" importance="secondary" loading={ loading } loadingText="Loading" />
+            </ColGrid>
+        </Card>
+    );
+};
+
 export const Sizes = SizesTemplate.bind({});
 
 export const Colors = ColorsTemplate.bind({});
@@ -76,6 +105,11 @@ export const WithFlexParent = ResponsiveFlexTemplate.bind({});
 
 export const WithDisabled = ResponsiveFlexTemplate.bind({});
 WithDisabled.args = {
+    disabled: true,
+};
+
+export const LoadingStates = LoadingStateTemplate.bind({});
+LoadingStates.args = {
     disabled: true,
 };
 

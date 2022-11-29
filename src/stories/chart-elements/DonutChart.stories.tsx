@@ -140,6 +140,14 @@ WithLongValues.args = {
     dataKey: 'city',
 };
 
+export const WithVariantPie = DefaultTemplate.bind({});
+WithVariantPie.args = {
+    data: data,
+    category: 'sales',
+    variant: 'pie',
+    dataKey: 'city',
+};
+
 export const WithNoData = DefaultTemplate.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 WithNoData.args = {

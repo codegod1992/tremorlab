@@ -161,6 +161,12 @@ export const WithSelfDetectingModal = WithSelfDetectingModalTemplate.bind({});
 
 export const WithDefaultRelativeFilterOption = ResponsiveTemplate.bind({});
 WithDefaultRelativeFilterOption.args = {
-    defaultRelativeFilterOption: 'w',
+    defaultRelativeFilterOption: 'tdy',
+    handleSelect: handleSelect,
+};
+
+export const WithYearPagination = ResponsiveTemplate.bind({});
+WithYearPagination.args = {
+    enableYearPagination: true,
     handleSelect: handleSelect,
 };

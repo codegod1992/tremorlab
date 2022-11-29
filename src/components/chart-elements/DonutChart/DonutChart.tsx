@@ -21,15 +21,14 @@ import {
 import { parseData, parseLabelInput } from './inputParser';
 import { DonutChartTooltip } from './DonutChartTooltip';
 
-export interface DonutChartDataPoint {
-    color?: Color,
-}
+type DonutChartVariant = 'donut' | 'pie';
 
 export interface DonutChartProps {
     data: any[],
     category?: string,
     dataKey?: string,
-    colors?: Color[]
+    colors?: Color[],
+    variant?: DonutChartVariant,
     valueFormatter?: ValueFormatter,
     label?: string,
     showLabel?: boolean,
@@ -44,6 +43,7 @@ const DonutChart = ({
     category = 'value',
     dataKey = 'name',
     colors = themeColorRange,
+    variant = 'donut',
     valueFormatter = defaultValueFormatter,
     label,
     showLabel = true,
@@ -52,6 +52,8 @@ const DonutChart = ({
     height = 'h-44',
     marginTop = 'mt-0',
 }: DonutChartProps) => {
+    const isDonut = variant == 'donut';
+
     const parsedLabelInput = parseLabelInput(label, valueFormatter, data, category);
 
     return (
@@ -63,7 +65,7 @@ const DonutChart = ({
         >
             <ResponsiveContainer width="100%" height="100%">
                 <ReChartsDonutChart>
-                    { showLabel ? (
+                    { showLabel && isDonut ? (
                         <text
                             x="50%"
                             y="50%"
@@ -80,7 +82,7 @@ const DonutChart = ({
                         cy="50%"
                         startAngle={ 90 }
                         endAngle={ -270 }
-                        innerRadius="75%"
+                        innerRadius={ isDonut ? '75%' : '0%'} 
                         outerRadius="100%"
                         paddingAngle={ 0 }
                         dataKey={ category }
