@@ -1,3 +1,8 @@
+/**
+ * NOTE: The Datepicker component is deprecated and will be removed in the next major release.
+ * Please refer to the DateRangePicker component instead.
+ */
+
 import React, { Dispatch, Ref, SetStateAction, useRef, useState } from 'react';
 
 import {
@@ -48,7 +53,7 @@ import {
     previousMonth,
     previousYear,
     relativeFilterOptions
-} from './utils';
+} from './datepickerUtils';
 import Modal from 'components/layout-elements/Modal';
 
 export const WEEKDAYS = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
@@ -439,7 +444,7 @@ const DatepickerBody = ({
 );
 
 export interface DatepickerProps {
-    handleSelect?: { (selectedStartDay: Date, selectedEndDay: Date): void },
+    handleSelect?: (selectedStartDay: Date, selectedEndDay: Date) => void,
     enableRelativeDates?: boolean,
     defaultRelativeFilterOption?: RelativeFilterOption,
     defaultStartDate?: Date | null,
@@ -455,7 +460,7 @@ export interface DatepickerProps {
 
 const Datepicker = ({
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    handleSelect = (selectedStartDay: Date, selectedEndDay: Date) => null,
+    handleSelect,
     enableRelativeDates = true,
     defaultRelativeFilterOption = null,
     defaultStartDate = null,
@@ -468,6 +473,9 @@ const Datepicker = ({
     maxWidth = 'max-w-none',
     enableYearPagination = false,
 }: DatepickerProps) => {
+    console.warn('DeprecationWarning: The `Datepicker` component is deprecated and will be removed \
+        in the next major release. Please the `DateRangePicker` component instead.');
+
     const today = startOfToday();
 
     const datePickerRef = useRef(null);
@@ -526,7 +534,7 @@ const Datepicker = ({
                 setSelectedStartDay(day);
             // Selection complete
             } else {
-                handleSelect(selectedStartDay, day);
+                handleSelect?.(selectedStartDay, day);
                 setSelectedEndDay(day);
                 setShowDatePickerModal(false);
                 setSelectedRelativeFilterOption(null); // Clear relative filter
@@ -541,7 +549,7 @@ const Datepicker = ({
         const startDate = getStartDateFromRelativeFilterOption(selectedRelativeFilterOption);
         const endDate = today;
 
-        handleSelect(startDate, endDate);
+        handleSelect?.(startDate, endDate);
 
         setSelectedStartDay(startDate);
         setSelectedEndDay(endDate);

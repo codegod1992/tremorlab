@@ -1,6 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
+
+import { HoveredValueContext, SelectedValueContext } from 'contexts';
+
+import { useInternalState, useSelectOnKeyDown } from 'hooks';
 
 import { ArrowDownHeadIcon, SearchIcon, XCircleIcon } from 'assets';
+
 import { MarginTop, MaxWidth } from '../../../lib/inputTypes';
 import {
     border,
@@ -11,8 +16,7 @@ import {
     fontSize,
     fontWeight,
     getColorVariantsFromColorThemeValue,
-    getFilteredOptionNames,
-    getOptionNamesFromChildren,
+    getFilteredOptions,
     isValueInArray,
     parseMarginTop,
     parseMaxWidth,
@@ -21,10 +25,14 @@ import {
     spacing
 } from 'lib';
 import Modal from 'components/layout-elements/Modal';
+import { MultiSelectBoxItemProps } from './MultiSelectBoxItem';
 
-export interface MultiSelectBoxProps {
-    defaultValues?: any[],
-    handleSelect?: { (values: any[]): void },
+export interface MultiSelectBoxProps<T> {
+    defaultValues?: any,
+    defaultValue?: T[],
+    value?: T[],
+    onValueChange?: (value: T[]) => void,
+    handleSelect?: (values: any[]) => void, // Deprecated in next major release
     placeholder?: string,
     icon?: React.ElementType | React.JSXElementConstructor<any>,
     marginTop?: MarginTop,
@@ -32,46 +40,74 @@ export interface MultiSelectBoxProps {
     children: React.ReactElement[] | React.ReactElement,
 }
 
-const MultiSelectBox = ({
-    defaultValues = [],
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    handleSelect = (values) => null,
+const MultiSelectBox = <T,>({
+    defaultValues, // Deprecated
+    defaultValue,
+    value,
+    onValueChange,
+    handleSelect, // Deprecated
     placeholder = 'Select...',
     icon,
     marginTop = 'mt-0',
     maxWidth = 'max-w-none',
     children,
-}: MultiSelectBoxProps) => {
+}: MultiSelectBoxProps<T>) => {
+    if (handleSelect !== undefined) {
+        console.warn('DeprecationWarning: The `handleSelect` property is deprecated and will be removed \
+            in the next major release. Please use `onValuesChange` instead.');
+    }
+
+    if (defaultValues !== undefined) {
+        console.warn('DeprecationWarning: The `defaultValues` property is deprecated and will be removed \
+            in the next major release. Please use `defaultValue` instead.');
+    }
+
     const Icon = icon;
     const dropdownRef = useRef(null);
 
     const [showModal, setShowModal] = useState(false);
-    const [selectedItems, setSelectedItems] = useState(defaultValues);
+    const [selectedValue, setSelectedValue] = useInternalState(defaultValues ?? defaultValue, value);
     const [searchQuery, setSearchQuery] = useState('');
 
-    const allOptionNames = getOptionNamesFromChildren(children);
-    const filteredOptionNames = new Set(getFilteredOptionNames(searchQuery, allOptionNames));
+    const selectedItems = selectedValue ?? [];
+    const displayText = selectedItems.length !==0 ? `${selectedItems.length} Selected` : placeholder;
+    const showResetButton = selectedItems.length > 0;
 
-    useEffect(() => {
-        setSearchQuery(''); // clear search query on modal close
-    }, [selectedItems]);
+    const options = React.Children.map(children, (child: { props: MultiSelectBoxItemProps }) => ({ ...child.props }));
+    const filteredOptions = getFilteredOptions(searchQuery, options);
+    const filteredOptionTexts = new Set(filteredOptions.map(option => option.text));
+    const filteredOptionValues = filteredOptions.map(option => option.value);
 
-    const handleMultiSelectBoxItemClick = (value: any) => {
+    const handleModalToggle = (show: boolean) =>  {
+        setSearchQuery('');
+        setShowModal(show);
+    };
+
+    const handleValueChange = (value: T) => {
         let newSelectedItems = [];
         if (!isValueInArray(value, selectedItems)) {
             newSelectedItems = [...selectedItems, value];
-            setSelectedItems!([...newSelectedItems]);
         } else {
-            newSelectedItems = removeValueFromArray(value, selectedItems!);
-            setSelectedItems!([...newSelectedItems!]);
+            newSelectedItems = [...removeValueFromArray(value, selectedItems!)];
         }
-        handleSelect(newSelectedItems);
+        setSelectedValue(newSelectedItems);
+        onValueChange?.(newSelectedItems);
+        handleSelect?.(newSelectedItems);
     };
 
-    const resetSelection = () => {
-        setSelectedItems([]);
-        handleSelect([]);
+    const handleReset = () => {
+        setSelectedValue([]);
+        onValueChange?.([]);
+        handleSelect?.([]);
     };
+
+
+    const [hoveredValue, handleKeyDown] = useSelectOnKeyDown(
+        handleValueChange,
+        filteredOptionValues,
+        showModal,
+        setShowModal,
+    );
 
     return (
         <div
@@ -87,6 +123,7 @@ const MultiSelectBox = ({
                 border.sm.all,
                 boxShadow.sm,
             ) }
+            onKeyDown={ handleKeyDown }
         >
             <button
                 type="button"
@@ -98,7 +135,7 @@ const MultiSelectBox = ({
                     spacing.sm.paddingTop,
                     spacing.sm.paddingBottom,
                 ) }
-                onClick={ () => setShowModal(!showModal) }
+                onClick={ () => handleModalToggle(!showModal) }
             >
                 <div className="tr-flex tr-justify-start tr-items-center tr-truncate">
                     {
@@ -123,17 +160,17 @@ const MultiSelectBox = ({
                             ? getColorVariantsFromColorThemeValue(defaultColors.darkText).textColor
                             : getColorVariantsFromColorThemeValue(defaultColors.text).textColor,
                     ) }>
-                        { selectedItems.length !==0 ? `${selectedItems.length} Selected` : placeholder }
+                        { displayText }
                     </p>
                 </div>
                 <div className="tr-flex tr-items-center">
-                    { selectedItems.length !== 0 ? (
+                    { showResetButton ? (
                         <div
                             role="button"
                             className={ classNames(spacing.xs.marginRight) }
                             onClick={ (e) => {
                                 e.stopPropagation(); // prevent firing parent button
-                                resetSelection();
+                                handleReset();
                             } }
                         >
                             <XCircleIcon 
@@ -161,7 +198,7 @@ const MultiSelectBox = ({
             </button>
             <Modal
                 showModal={ showModal }
-                setShowModal={ setShowModal }
+                setShowModal={ handleModalToggle }
                 triggerRef={ dropdownRef }
             >
                 <div className={ classNames(
@@ -196,20 +233,18 @@ const MultiSelectBox = ({
                         onChange={ (e) => setSearchQuery(e.target.value) }
                     />
                 </div>
-                { React.Children.map(children, (child) => {
-                    if (filteredOptionNames.has(String(child.props.text))) {
-                        return (
-                            <>
-                                { React.cloneElement(child, {
-                                    privateProps: {
-                                        handleMultiSelectBoxItemClick,
-                                        isActive: isValueInArray(child.props.value, selectedItems),
-                                    }
-                                }) }
-                            </>
-                        );
-                    }
-                }) }
+                <SelectedValueContext.Provider value={ {
+                    selectedValue: selectedItems,
+                    handleValueChange,
+                } }>
+                    <HoveredValueContext.Provider value={ { hoveredValue } }>
+                        { React.Children.map(children, (child) => {
+                            if (filteredOptionTexts.has(String(child.props.text))) {
+                                return React.cloneElement(child);
+                            }
+                        }) }
+                    </HoveredValueContext.Provider>
+                </SelectedValueContext.Provider>
             </Modal>
         </div>
     );
